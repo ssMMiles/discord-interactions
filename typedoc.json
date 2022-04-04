@@ -1,0 +1,6 @@
+{
+  "name": "Interactions.ts",
+
+  "entryPoints": ["src/index.ts"],
+  "out": "docs"
+}
