@@ -61,6 +61,8 @@ export class BaseCommandContext<
     message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource,
     id = "@original"
   ): Promise<APIMessage> {
+    if (this.expired) throw new InteractionTokenExpired(this.interaction);
+
     if (typeof message === "string") message = SimpleEmbed(message);
 
     if (message instanceof MessageBuilder)
@@ -68,10 +70,6 @@ export class BaseCommandContext<
         type: InteractionResponseType.ChannelMessageWithSource,
         data: message.toJSON()
       };
-
-    if (this.expired) {
-      throw new InteractionTokenExpired(this.interaction);
-    }
 
     // TODO: fix this it's messy
     return this.webhook.editMessage(id, message.data as WebhookEditMessageOptions) as unknown as Promise<APIMessage>;
@@ -80,6 +78,8 @@ export class BaseCommandContext<
   async sendMessage(
     message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource
   ): Promise<APIMessage> {
+    if (this.expired) throw new InteractionTokenExpired(this.interaction);
+
     if (typeof message === "string") message = SimpleEmbed(message);
 
     if (message instanceof MessageBuilder)
@@ -87,10 +87,6 @@ export class BaseCommandContext<
         type: InteractionResponseType.ChannelMessageWithSource,
         data: message.toJSON()
       };
-
-    if (this.expired) {
-      throw new InteractionTokenExpired(this.interaction);
-    }
 
     // TODO: fix this it's messy
     return this.webhook.send(message.data as WebhookMessageOptions) as unknown as Promise<APIMessage>;

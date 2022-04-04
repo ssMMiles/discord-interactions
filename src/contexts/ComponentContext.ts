@@ -65,6 +65,8 @@ class BaseComponentContext<
   }
 
   async editMessage(message: string | MessageBuilder | APIInteractionResponseUpdateMessage): Promise<APIMessage> {
+    if (this.expired) throw new InteractionTokenExpired(this.interaction);
+
     if (typeof message === "string") message = SimpleEmbed(message);
 
     if (message instanceof MessageBuilder)
@@ -72,10 +74,6 @@ class BaseComponentContext<
         type: InteractionResponseType.UpdateMessage,
         data: message.toJSON()
       };
-
-    if (!this.expired) {
-      throw new InteractionTokenExpired(this.interaction);
-    }
 
     // TODO: write webhook client or wait for discord.js to update
     return this.webhook.editMessage(
@@ -87,6 +85,8 @@ class BaseComponentContext<
   async sendMessage(
     message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource
   ): Promise<APIMessage> {
+    if (this.expired) throw new InteractionTokenExpired(this.interaction);
+
     if (typeof message === "string") message = SimpleEmbed(message);
 
     if (message instanceof MessageBuilder)
@@ -94,10 +94,6 @@ class BaseComponentContext<
         type: InteractionResponseType.ChannelMessageWithSource,
         data: message.toJSON()
       };
-
-    if (this.expired) {
-      throw new InteractionTokenExpired(this.interaction);
-    }
 
     // TODO: fix this it's messy
     return this.webhook.send(message.data as WebhookMessageOptions) as unknown as Promise<APIMessage>;
