@@ -7,16 +7,12 @@ import {
   ButtonContext,
   ChannelMessageResponse,
   CommandManager,
-  ComponentBuilder,
   ComponentManager,
   handleInteraction,
-  MessageCommandBuilder,
   MessageCommandContext,
   MessageUpdateResponse,
   SelectMenuContext,
-  SlashCommandBuilder,
   SlashCommandContext,
-  UserCommandBuilder,
   UserCommandContext
 } from "..";
 
@@ -42,25 +38,8 @@ export interface DiscordApplicationOptions {
   /** Application's Bot Token */
   token: string;
 
-  /** Whether to overwrite existing versions of commands */
-  overwriteExisting?: boolean;
-  /** Whether to remove commands not handled here */
+  /** Whether to delete commands not handled by the client upon loading */
   removeUnregistered?: boolean;
-
-  /** Commands */
-  commands: {
-    /** Slash Commands */
-    slash?: SlashCommandBuilder[];
-
-    /** User Commands */
-    user?: UserCommandBuilder[];
-
-    /** Message Commands */
-    message?: MessageCommandBuilder[];
-  };
-
-  /** Components */
-  components?: ComponentBuilder[];
 
   /** Functions to be run on interactions. For commands, these are executed before the main handler. */
   hooks?: InteractionHooks;
@@ -87,16 +66,9 @@ export class DiscordApplication {
 
     this.rest = new REST().setToken(options.token);
 
-    this.commands = new CommandManager(this, {
-      overwriteExisting: options.overwriteExisting,
-      removeUnregistered: options.removeUnregistered,
+    this.commands = new CommandManager(this, options.removeUnregistered);
 
-      commands: options.commands.slash,
-      user: options.commands.user,
-      message: options.commands.message
-    });
-
-    this.components = new ComponentManager(options.components);
+    this.components = new ComponentManager();
 
     if (options.timeout) this.timeout = options.timeout;
     if (options.hooks) this.hooks = options.hooks;

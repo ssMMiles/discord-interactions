@@ -30,30 +30,12 @@ export class CommandManager {
 
   private manager: DiscordApplication;
 
-  private removeUnregistered = false;
+  private removeUnregistered;
 
-  constructor(
-    manager: DiscordApplication,
-    options: {
-      removeUnregistered?: boolean;
-      overwriteExisting?: boolean;
-
-      commands?: SlashCommandBuilder[];
-      user?: UserCommandBuilder[];
-      message?: MessageCommandBuilder[];
-    }
-  ) {
+  constructor(manager: DiscordApplication, removeUnregistered = true) {
     this.manager = manager;
 
-    if (options.removeUnregistered) this.removeUnregistered = options.removeUnregistered;
-
-    let commands: (SlashCommandBuilder | UserCommandBuilder | MessageCommandBuilder)[] = [];
-
-    if (options.commands) commands = [...commands, ...options.commands];
-    if (options.user) commands = [...commands, ...options.user];
-    if (options.message) commands = [...commands, ...options.message];
-
-    this.load(commands, options.overwriteExisting);
+    this.removeUnregistered = removeUnregistered;
   }
 
   private _commands(
@@ -111,9 +93,7 @@ export class CommandManager {
     const remoteCommands = this.parseGlobalCommands(await this.getGlobalCommands());
 
     for (const command of commands) {
-      for (const component of command.components) {
-        this.manager.components.loadComponent(component);
-      }
+      this.manager.components.load(command.components);
 
       if (command instanceof SlashCommandBuilder) {
         let data: APIApplicationSlashCommand;

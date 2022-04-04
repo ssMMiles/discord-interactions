@@ -4,7 +4,6 @@ import rawBody from "fastify-raw-body";
 import {
   DiscordApplication,
   MessageBuilder,
-  MessageCommandBuilder,
   SlashCommandBuilder,
   UnauthorizedInteraction,
   UnknownApplicationCommandType,
@@ -22,35 +21,19 @@ if (
   process.exit(1);
 }
 
-const slashCommands = [
-  new SlashCommandBuilder("joke").setDescription("gamers").setHandler(async (context) => {
-    context.reply(new MessageBuilder().setContent(":rofl: classic"));
-  })
-];
-
 const app = new DiscordApplication({
   clientId: process.env.CLIENT_ID as string,
   token: process.env.TOKEN as string,
   publicKey: process.env.PUBLIC_KEY as string,
 
-  commands: {
-    slash: slashCommands,
-    message: [
-      new MessageCommandBuilder("laugh")
-        .setHandler(async (context) => {
-          context.reply(
-            new MessageBuilder().setContent(
-              `https://tenor.com/view/rolling-on-the-floor-laughing-emoji-lol-gif-14379156`
-            )
-          );
-        })
-        .setDefaultPermission(true)
-    ]
-  },
-
-  overwriteExisting: true,
   removeUnregistered: true
 });
+
+app.commands.load([
+  new SlashCommandBuilder("joke").setDescription("funny joke").setHandler(async (context) => {
+    context.reply(new MessageBuilder().setContent(":rofl: classic"));
+  })
+]);
 
 const server = fastify();
 server.register(rawBody);

@@ -4,12 +4,6 @@ import { ComponentBuilder } from "../builders";
 export class ComponentManager {
   private _components: Map<string, ComponentBuilder> = new Map();
 
-  constructor(components: ComponentBuilder[] = []) {
-    for (const component of components) {
-      this.loadComponent(component);
-    }
-  }
-
   has(name: string): boolean {
     return this._components.has(name);
   }
@@ -18,11 +12,13 @@ export class ComponentManager {
     return this._components.get(name);
   }
 
-  loadComponent(component: ComponentBuilder) {
-    this._components.set(component.id, component);
+  load(components: ComponentBuilder[] = []) {
+    for (const component of components) {
+      this._components.set(component.id, component);
+    }
   }
 
-  unloadComponent(id: string) {
+  unload(id: string) {
     this._components.delete(id);
   }
 
