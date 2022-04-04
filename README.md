@@ -6,9 +6,9 @@ Helpers for creating and managing Discord Application Commands + A framework for
 
 `npm install interactions.ts`
 
-## Documentation
+## Docs
 
-https://interactions-ts.pages.dev/ or [/docs](./docs/)
+https://interactions-ts.pages.dev/
 
 ## Examples
 
