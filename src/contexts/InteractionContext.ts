@@ -30,7 +30,7 @@ export class InteractionContext<T extends APIInteraction = APIInteraction, R = A
 
   private invokedAt: number = Date.now();
   public get expired(): boolean {
-    return this.invokedAt + InteractionTokenExpiryTime > Date.now();
+    return this.invokedAt + InteractionTokenExpiryTime < Date.now();
   }
 
   private _timeout: NodeJS.Timeout;
