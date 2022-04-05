@@ -1,5 +1,5 @@
 import { APIInteraction, APIInteractionResponse, APIUser } from "discord-api-types/v10";
-import { DiscordApplication, InteractionHandlerTimedOut, InteractionResponseAlreadySent, ResponseCallback } from "..";
+import { DiscordApplication, InteractionResponseAlreadySent, ResponseCallback } from "..";
 
 // lasts 15 minutes, 5s buffer to be safe
 const InteractionTokenExpiryTime = 15 * 60 * 1000 - 5000;
@@ -11,12 +11,11 @@ export class InteractionContext<
   private responseCallback: ResponseCallback<R>;
   protected replied = false;
 
-  private invokedAt: number = Date.now();
+  private repliedAt: number | undefined;
   public get expired(): boolean {
-    return this.invokedAt + InteractionTokenExpiryTime < Date.now();
+    if (!this.replied) return false;
+    return (this.repliedAt as number) + InteractionTokenExpiryTime < Date.now();
   }
-
-  private _timeout: NodeJS.Timeout;
 
   public manager: DiscordApplication;
 
@@ -33,17 +32,14 @@ export class InteractionContext<
 
     this.isDM = this.interaction.user !== undefined;
     this.user = (this.isDM ? this.interaction.user : this.interaction?.member?.user) as APIUser;
-
-    this._timeout = setTimeout(() => {
-      throw new InteractionHandlerTimedOut(this.interaction);
-    }, this.manager.timeout);
   }
 
   protected async _reply(message: R): Promise<void> {
     if (this.replied) throw new InteractionResponseAlreadySent(this.interaction);
-    this.replied = true;
 
-    clearTimeout(this._timeout);
+    this.replied = true;
+    this.repliedAt = Date.now();
+
     return this.responseCallback(message);
   }
 

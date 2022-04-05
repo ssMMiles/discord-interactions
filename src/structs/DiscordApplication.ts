@@ -17,6 +17,7 @@ import {
   handleApplicationCommand,
   handleCommandAutocomplete,
   handleMessageComponent,
+  InteractionHandlerTimedOut,
   MessageCommandContext,
   MessageUpdateResponse,
   SelectMenuContext,
@@ -132,26 +133,41 @@ export class DiscordApplication {
     signature: string | false,
     timestamp?: string
   ): Promise<void> {
-    if (
-      signature !== false &&
-      (!timestamp || !DiscordApplication.verifyInteractionSignature(this.publicKey, signature, timestamp, body))
-    ) {
-      throw new UnauthorizedInteraction(body);
-    }
+    return new Promise((resolve, reject) => {
+      if (
+        signature !== false &&
+        (!timestamp || !DiscordApplication.verifyInteractionSignature(this.publicKey, signature, timestamp, body))
+      ) {
+        reject(new UnauthorizedInteraction(body));
+      }
 
-    const interaction = JSON.parse(body) as APIInteraction;
+      const interaction = JSON.parse(body) as APIInteraction;
 
-    switch (interaction.type) {
-      case InteractionType.Ping:
-        return responseCallback({ type: InteractionResponseType.Pong });
-      case InteractionType.ApplicationCommand:
-        return handleApplicationCommand(this, interaction, responseCallback);
-      case InteractionType.ApplicationCommandAutocomplete:
-        return handleCommandAutocomplete(this, interaction, responseCallback);
-      case InteractionType.MessageComponent:
-        return handleMessageComponent(this, interaction, responseCallback);
-      default:
-        throw new UnknownInteractionType(interaction);
-    }
+      const timeout = setTimeout(() => {
+        reject(new InteractionHandlerTimedOut(interaction));
+      }, this.timeout);
+
+      const responseCallbackWithTimeout: ResponseCallback = (response) => {
+        clearTimeout(timeout);
+        return responseCallback(response);
+      };
+
+      switch (interaction.type) {
+        case InteractionType.Ping:
+          resolve(responseCallbackWithTimeout({ type: InteractionResponseType.Pong }));
+          break;
+        case InteractionType.ApplicationCommand:
+          resolve(handleApplicationCommand(this, interaction, responseCallbackWithTimeout));
+          break;
+        case InteractionType.ApplicationCommandAutocomplete:
+          resolve(handleCommandAutocomplete(this, interaction, responseCallbackWithTimeout));
+          break;
+        case InteractionType.MessageComponent:
+          resolve(handleMessageComponent(this, interaction, responseCallbackWithTimeout));
+          break;
+        default:
+          reject(new UnknownInteractionType(interaction));
+      }
+    });
   }
 }
