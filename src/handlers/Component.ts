@@ -32,7 +32,7 @@ export async function handleMessageComponent(
       if (manager.hooks.component?.button) {
         const result = await manager.hooks.component.button(context);
 
-        if (result && result[0] === true) return context.rawReply(result[1]);
+        if (result === true) return;
       }
 
       const button = manager.components.get(context.id);
@@ -51,7 +51,7 @@ export async function handleMessageComponent(
       if (manager.hooks.component?.selectMenu) {
         const result = await manager.hooks.component.selectMenu(context);
 
-        if (result && result[0] === true) return context.rawReply(result[1]);
+        if (result === true) return;
       }
 
       const selectMenu = manager.components.get(context.id);

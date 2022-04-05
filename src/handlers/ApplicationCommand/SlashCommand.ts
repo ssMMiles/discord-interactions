@@ -15,10 +15,10 @@ export async function handleSlashCommand(
 ): Promise<void> {
   const context = new SlashCommandContext(manager, interaction, responseCallback);
 
-  if (manager.hooks.applicationCommand?.slashCommand) {
-    const result = await manager.hooks.applicationCommand.slashCommand(context);
+  if (manager.hooks.command?.slash) {
+    const result = await manager.hooks.command.slash(context);
 
-    if (result && result[0] === true) return context.rawReply(result[1]);
+    if (result === true) return;
   }
 
   const command = manager.commands.get(context.name) as SlashCommandBuilder | undefined;

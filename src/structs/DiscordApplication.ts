@@ -9,17 +9,15 @@ import { Snowflake } from "discord.js";
 import { sign } from "tweetnacl";
 import {
   AutocompleteContext,
-  AutocompleteResponse,
   ButtonContext,
-  ChannelMessageResponse,
   CommandManager,
   ComponentManager,
   handleApplicationCommand,
   handleCommandAutocomplete,
   handleMessageComponent,
+  InteractionContext,
   InteractionHandlerTimedOut,
   MessageCommandContext,
-  MessageUpdateResponse,
   SelectMenuContext,
   SlashCommandContext,
   UnauthorizedInteraction,
@@ -35,18 +33,22 @@ export type ResponseCallback<T extends APIInteractionResponse = APIInteractionRe
 ) => Promise<void>;
 
 /**
- * Hooks to be executed when an interaction is received - These are executed before any command handlers.
+ * Hooks to be executed on receiving an interaction. These are executed before command handlers, and will abort further handling the interaction on returning true;
  */
 export interface InteractionHooks {
-  applicationCommand?: {
-    slashCommand: (ctx: SlashCommandContext) => Promise<[boolean, ChannelMessageResponse] | void>;
-    autocomplete: (ctx: AutocompleteContext) => Promise<[boolean, AutocompleteResponse] | void>;
-    user: (ctx: UserCommandContext) => Promise<[boolean, ChannelMessageResponse] | void>;
-    message: (ctx: MessageCommandContext) => Promise<[boolean, ChannelMessageResponse] | void>;
+  /** This hook will run first and on ALL incoming interactions. */
+  interaction?: (ctx: InteractionContext) => Promise<void | true>;
+
+  command?: {
+    slash?: (ctx: SlashCommandContext) => Promise<void | true>;
+    autocomplete?: (ctx: AutocompleteContext) => Promise<void | true>;
+    user?: (ctx: UserCommandContext) => Promise<void | true>;
+    message?: (ctx: MessageCommandContext) => Promise<void | true>;
   };
+
   component?: {
-    button: (ctx: ButtonContext) => Promise<[boolean, MessageUpdateResponse] | void>;
-    selectMenu: (ctx: SelectMenuContext) => Promise<[boolean, MessageUpdateResponse] | void>;
+    button?: (ctx: ButtonContext) => Promise<void | true>;
+    selectMenu?: (ctx: SelectMenuContext) => Promise<void | true>;
   };
 }
 
@@ -67,8 +69,6 @@ export interface DiscordApplicationOptions {
   /** Timeout(ms) after which InteractionHandlerTimedOut is thrown - Default: 2500ms */
   timeout?: number;
 }
-
-export type InteractionResponse<T extends APIInteractionResponse = APIInteractionResponse> = [T, () => void];
 
 /**
  * Main class for managing a Discord Application's commands and handling interactions.
@@ -133,7 +133,7 @@ export class DiscordApplication {
     signature: string | false,
     timestamp?: string
   ): Promise<void> {
-    return new Promise((resolve, reject) => {
+    return new Promise(async (resolve, reject) => {
       if (
         signature !== false &&
         (!timestamp || !DiscordApplication.verifyInteractionSignature(this.publicKey, signature, timestamp, body))
@@ -151,6 +151,14 @@ export class DiscordApplication {
         clearTimeout(timeout);
         return responseCallback(response);
       };
+
+      if (this.hooks.interaction) {
+        const context = new InteractionContext(this, interaction, responseCallback);
+
+        const result = await this.hooks.interaction(context);
+
+        if (result === true) return resolve();
+      }
 
       switch (interaction.type) {
         case InteractionType.Ping:

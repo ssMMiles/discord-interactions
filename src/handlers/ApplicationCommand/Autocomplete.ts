@@ -11,10 +11,10 @@ export async function handleCommandAutocomplete(
 ): Promise<void> {
   const context = new AutocompleteContext(manager, interaction, responseCallback);
 
-  if (manager.hooks.applicationCommand?.slashCommand) {
-    const result = await manager.hooks.applicationCommand.autocomplete(context);
+  if (manager.hooks.command?.autocomplete) {
+    const result = await manager.hooks.command.autocomplete(context);
 
-    if (result && result[0] === true) return context.rawReply(result[1]);
+    if (result === true) return;
   }
 
   const command = manager.commands.get(context.name) as SlashCommandBuilder | undefined;

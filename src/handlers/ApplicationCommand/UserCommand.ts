@@ -15,10 +15,10 @@ export async function handleUserCommand(
 ): Promise<void> {
   const context = new UserCommandContext(manager, interaction, responseCallback);
 
-  if (manager.hooks.applicationCommand?.slashCommand) {
-    const result = await manager.hooks.applicationCommand.user(context);
+  if (manager.hooks.command?.user) {
+    const result = await manager.hooks.command.user(context);
 
-    if (result && result[0] === true) return context.rawReply(result[1]);
+    if (result === true) return;
   }
 
   const command = manager.commands.get(context.name, ApplicationCommandType.User) as UserCommandBuilder | undefined;
