@@ -4,12 +4,11 @@ import {
   APIMessage,
   InteractionResponseType
 } from "discord-api-types/v10";
-import { WebhookClient, WebhookEditMessageOptions, WebhookMessageOptions } from "discord.js";
 import {
   ChannelMessageResponse,
   DiscordApplication,
   InteractionResponseAlreadySent,
-  InteractionTokenExpired,
+  InteractionWebhook,
   MessageBuilder,
   ResponseCallback,
   SimpleEmbed
@@ -20,17 +19,14 @@ export class BaseCommandContext<
   T extends APIApplicationCommandInteraction = APIApplicationCommandInteraction
 > extends InteractionContext<T, ChannelMessageResponse> {
   public name: string;
-  private webhook: WebhookClient;
+  private followup: InteractionWebhook;
 
   constructor(manager: DiscordApplication, interaction: T, responseCallback: ResponseCallback<ChannelMessageResponse>) {
     super(manager, interaction, responseCallback);
 
     this.name = this.interaction.data.name;
 
-    this.webhook = new WebhookClient({
-      id: this.interaction.application_id,
-      token: this.interaction.token
-    });
+    this.followup = new InteractionWebhook(this.interaction.application_id, this.interaction.token);
   }
 
   defer(): Promise<void> {
@@ -53,38 +49,11 @@ export class BaseCommandContext<
     return this._reply(message);
   }
 
-  async editMessage(
-    message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource,
-    id = "@original"
-  ): Promise<APIMessage> {
-    if (this.expired) throw new InteractionTokenExpired(this.interaction);
-
-    if (typeof message === "string") message = SimpleEmbed(message);
-
-    if (message instanceof MessageBuilder)
-      message = {
-        type: InteractionResponseType.ChannelMessageWithSource,
-        data: message.toJSON()
-      };
-
-    // TODO: fix this it's messy
-    return this.webhook.editMessage(id, message.data as WebhookEditMessageOptions) as unknown as Promise<APIMessage>;
+  edit(message: string | MessageBuilder): Promise<APIMessage> {
+    return this.followup.edit(message, "@original");
   }
 
-  async sendMessage(
-    message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource
-  ): Promise<APIMessage> {
-    if (this.expired) throw new InteractionTokenExpired(this.interaction);
-
-    if (typeof message === "string") message = SimpleEmbed(message);
-
-    if (message instanceof MessageBuilder)
-      message = {
-        type: InteractionResponseType.ChannelMessageWithSource,
-        data: message.toJSON()
-      };
-
-    // TODO: fix this it's messy
-    return this.webhook.send(message.data as WebhookMessageOptions) as unknown as Promise<APIMessage>;
+  delete(): Promise<void> {
+    return this.followup.delete("@original");
   }
 }

@@ -1,5 +1,4 @@
 import {
-  APIInteractionResponseChannelMessageWithSource,
   APIInteractionResponseUpdateMessage,
   APIMessage,
   APIMessageComponentButtonInteraction,
@@ -7,22 +6,21 @@ import {
   APIMessageComponentSelectMenuInteraction,
   InteractionResponseType
 } from "discord-api-types/v10";
-import { WebhookClient, WebhookEditMessageOptions, WebhookMessageOptions } from "discord.js";
 import {
   DiscordApplication,
+  InteractionContext,
   InteractionResponseAlreadySent,
-  InteractionTokenExpired,
+  InteractionWebhook,
   MessageBuilder,
+  MessageUpdateResponse,
   ResponseCallback,
   SimpleEmbed
 } from "..";
-import { MessageUpdateResponse } from "../util";
-import { InteractionContext } from "./InteractionContext";
 
 class BaseComponentContext<
   T extends APIMessageComponentInteraction = APIMessageComponentInteraction
 > extends InteractionContext<T, MessageUpdateResponse> {
-  private webhook: WebhookClient;
+  private followup: InteractionWebhook;
 
   public id: string;
   public args: string[];
@@ -30,10 +28,7 @@ class BaseComponentContext<
   constructor(manager: DiscordApplication, interaction: T, responseCallback: ResponseCallback<MessageUpdateResponse>) {
     super(manager, interaction, responseCallback);
 
-    this.webhook = new WebhookClient({
-      id: this.interaction.application_id,
-      token: this.interaction.token
-    });
+    this.followup = new InteractionWebhook(this.interaction.application_id, this.interaction.token);
 
     this.args = this.interaction.data.custom_id.split("|");
 
@@ -63,39 +58,12 @@ class BaseComponentContext<
     return this._reply(message);
   }
 
-  async editMessage(message: string | MessageBuilder | APIInteractionResponseUpdateMessage): Promise<APIMessage> {
-    if (this.expired) throw new InteractionTokenExpired(this.interaction);
-
-    if (typeof message === "string") message = SimpleEmbed(message);
-
-    if (message instanceof MessageBuilder)
-      message = {
-        type: InteractionResponseType.UpdateMessage,
-        data: message.toJSON()
-      };
-
-    // TODO: write webhook client or wait for discord.js to update
-    return this.webhook.editMessage(
-      "@original",
-      message.data as WebhookEditMessageOptions
-    ) as unknown as Promise<APIMessage>;
+  edit(message: string | MessageBuilder): Promise<APIMessage> {
+    return this.followup.edit(message, "@original");
   }
 
-  async sendMessage(
-    message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource
-  ): Promise<APIMessage> {
-    if (this.expired) throw new InteractionTokenExpired(this.interaction);
-
-    if (typeof message === "string") message = SimpleEmbed(message);
-
-    if (message instanceof MessageBuilder)
-      message = {
-        type: InteractionResponseType.ChannelMessageWithSource,
-        data: message.toJSON()
-      };
-
-    // TODO: fix this it's messy
-    return this.webhook.send(message.data as WebhookMessageOptions) as unknown as Promise<APIMessage>;
+  delete(): Promise<void> {
+    return this.followup.delete("@original");
   }
 }
 
