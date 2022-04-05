@@ -3,7 +3,7 @@ import {
   APIUser,
   APIUserApplicationCommandInteraction
 } from "discord-api-types/v10";
-import { DiscordApplication } from "../..";
+import { ChannelMessageResponse, DiscordApplication, ResponseCallback } from "../..";
 import { BaseCommandContext } from "./BaseCommandContext";
 
 export class UserCommandContext extends BaseCommandContext<APIUserApplicationCommandInteraction> {
@@ -12,8 +12,12 @@ export class UserCommandContext extends BaseCommandContext<APIUserApplicationCom
     member?: APIInteractionDataResolvedGuildMember;
   };
 
-  constructor(manager: DiscordApplication, interaction: APIUserApplicationCommandInteraction) {
-    super(manager, interaction);
+  constructor(
+    manager: DiscordApplication,
+    interaction: APIUserApplicationCommandInteraction,
+    responseCallback: ResponseCallback<ChannelMessageResponse>
+  ) {
+    super(manager, interaction, responseCallback);
 
     const userId = Object.keys(this.interaction.data.resolved.users)[0];
 

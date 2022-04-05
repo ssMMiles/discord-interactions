@@ -8,59 +8,58 @@ import {
   ButtonBuilder,
   ButtonContext,
   DiscordApplication,
-  MessageUpdateResponse,
+  ResponseCallback,
   SelectMenuBuilder,
   SelectMenuContext,
   SimpleError,
   UnknownComponentType
 } from "..";
+import { MessageUpdateResponse } from "../util";
 
 /**
  * Component handling
  */
 export async function handleMessageComponent(
   manager: DiscordApplication,
-  interaction: APIMessageComponentInteraction
-): Promise<MessageUpdateResponse> {
+  interaction: APIMessageComponentInteraction,
+  responseCallback: ResponseCallback<MessageUpdateResponse>
+): Promise<void> {
   const componentData = interaction.data;
   switch (componentData.component_type) {
     case ComponentType.Button: {
-      const context = new ButtonContext(manager, interaction as APIMessageComponentButtonInteraction);
+      const context = new ButtonContext(manager, interaction as APIMessageComponentButtonInteraction, responseCallback);
 
       if (manager.hooks.component?.button) {
         const result = await manager.hooks.component.button(context);
 
-        if (result && result[0] === true) return result[1];
+        if (result && result[0] === true) return context.rawReply(result[1]);
       }
 
       const button = manager.components.get(context.id);
 
-      if (!button || !(button instanceof ButtonBuilder)) {
-        return context.reply(SimpleError("Button not found."));
-      }
+      if (!button || !(button instanceof ButtonBuilder)) return context.reply(SimpleError("Button not found."));
 
-      await button.handler(context);
-
-      return context.response;
+      return button.handler(context);
     }
     case ComponentType.SelectMenu: {
-      const context = new SelectMenuContext(manager, interaction as APIMessageComponentSelectMenuInteraction);
+      const context = new SelectMenuContext(
+        manager,
+        interaction as APIMessageComponentSelectMenuInteraction,
+        responseCallback
+      );
 
       if (manager.hooks.component?.selectMenu) {
         const result = await manager.hooks.component.selectMenu(context);
 
-        if (result && result[0] === true) return result[1];
+        if (result && result[0] === true) return context.rawReply(result[1]);
       }
 
       const selectMenu = manager.components.get(context.id);
 
-      if (!selectMenu || !(selectMenu instanceof SelectMenuBuilder)) {
+      if (!selectMenu || !(selectMenu instanceof SelectMenuBuilder))
         return context.reply(SimpleError("Select menu not found."));
-      }
 
-      await selectMenu.handler(context);
-
-      return context.response;
+      return selectMenu.handler(context);
     }
     default: {
       throw new UnknownComponentType(interaction);

@@ -8,7 +8,7 @@ import {
   ApplicationCommandOptionType,
   InteractionResponseType
 } from "discord-api-types/v10";
-import { DiscordApplication } from "../..";
+import { DiscordApplication, ResponseCallback } from "../..";
 import { InteractionContext } from "../InteractionContext";
 
 export type AutocompleteSupportedOptions =
@@ -23,8 +23,12 @@ export class AutocompleteContext extends InteractionContext<
   public name: string;
   public option: AutocompleteSupportedOptions;
 
-  constructor(manager: DiscordApplication, interaction: APIApplicationCommandAutocompleteInteraction) {
-    super(manager, interaction);
+  constructor(
+    manager: DiscordApplication,
+    interaction: APIApplicationCommandAutocompleteInteraction,
+    responseCallback: ResponseCallback<APIApplicationCommandAutocompleteResponse>
+  ) {
+    super(manager, interaction, responseCallback);
 
     this.name = this.interaction.data.name;
 
@@ -48,8 +52,8 @@ export class AutocompleteContext extends InteractionContext<
     }
   }
 
-  public reply(choices: APIApplicationCommandOptionChoice[]): Promise<APIApplicationCommandAutocompleteResponse> {
-    return this._reply<APIApplicationCommandAutocompleteResponse>({
+  public reply(choices: APIApplicationCommandOptionChoice[]): Promise<void> {
+    return this._reply({
       type: InteractionResponseType.ApplicationCommandAutocompleteResult,
       data: {
         choices

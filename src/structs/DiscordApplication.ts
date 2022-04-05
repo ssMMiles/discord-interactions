@@ -1,4 +1,10 @@
 import { REST } from "@discordjs/rest";
+import {
+  APIInteraction,
+  APIInteractionResponse,
+  InteractionResponseType,
+  InteractionType
+} from "discord-api-types/v10";
 import { Snowflake } from "discord.js";
 import { sign } from "tweetnacl";
 import {
@@ -8,14 +14,28 @@ import {
   ChannelMessageResponse,
   CommandManager,
   ComponentManager,
-  handleInteraction,
+  handleApplicationCommand,
+  handleCommandAutocomplete,
+  handleMessageComponent,
   MessageCommandContext,
   MessageUpdateResponse,
   SelectMenuContext,
   SlashCommandContext,
+  UnauthorizedInteraction,
+  UnknownInteractionType,
   UserCommandContext
 } from "..";
 
+/**
+ * Callback to be executed with the result of an interaction.
+ */
+export type ResponseCallback<T extends APIInteractionResponse = APIInteractionResponse> = (
+  response: T
+) => Promise<void>;
+
+/**
+ * Hooks to be executed when an interaction is received - These are executed before any command handlers.
+ */
 export interface InteractionHooks {
   applicationCommand?: {
     slashCommand: (ctx: SlashCommandContext) => Promise<[boolean, ChannelMessageResponse] | void>;
@@ -47,6 +67,11 @@ export interface DiscordApplicationOptions {
   timeout?: number;
 }
 
+export type InteractionResponse<T extends APIInteractionResponse = APIInteractionResponse> = [T, () => void];
+
+/**
+ * Main class for managing a Discord Application's commands and handling interactions.
+ */
 export class DiscordApplication {
   public publicKey: Buffer;
 
@@ -94,5 +119,39 @@ export class DiscordApplication {
     return sign.detached.verify(message, signatureBuffer, publicKey);
   }
 
-  public handleInteraction = handleInteraction;
+  /**
+   * Handle an incoming interaction request
+   * @param body Raw interaction body
+   * @param signature Request's "X-Signature-Ed25519" header or false to skip signature verification
+   * @param timestamp Request's "X-Signature-Timestamp" header
+   * @returns Array containing the interaction response, and a callback to be called after you have sent the response
+   */
+  public handleInteraction(
+    responseCallback: ResponseCallback,
+    body: string,
+    signature: string | false,
+    timestamp?: string
+  ): Promise<void> {
+    if (
+      signature !== false &&
+      (!timestamp || !DiscordApplication.verifyInteractionSignature(this.publicKey, signature, timestamp, body))
+    ) {
+      throw new UnauthorizedInteraction(body);
+    }
+
+    const interaction = JSON.parse(body) as APIInteraction;
+
+    switch (interaction.type) {
+      case InteractionType.Ping:
+        return responseCallback({ type: InteractionResponseType.Pong });
+      case InteractionType.ApplicationCommand:
+        return handleApplicationCommand(this, interaction, responseCallback);
+      case InteractionType.ApplicationCommandAutocomplete:
+        return handleCommandAutocomplete(this, interaction, responseCallback);
+      case InteractionType.MessageComponent:
+        return handleMessageComponent(this, interaction, responseCallback);
+      default:
+        throw new UnknownInteractionType(interaction);
+    }
+  }
 }

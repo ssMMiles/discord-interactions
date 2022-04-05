@@ -1,7 +1,6 @@
 import {
   APIApplicationCommandInteraction,
   APIInteractionResponseChannelMessageWithSource,
-  APIInteractionResponseDeferredChannelMessageWithSource,
   APIMessage,
   InteractionResponseType
 } from "discord-api-types/v10";
@@ -12,6 +11,7 @@ import {
   InteractionResponseAlreadySent,
   InteractionTokenExpired,
   MessageBuilder,
+  ResponseCallback,
   SimpleEmbed
 } from "../..";
 import { InteractionContext } from "../InteractionContext";
@@ -22,8 +22,8 @@ export class BaseCommandContext<
   public name: string;
   private webhook: WebhookClient;
 
-  constructor(manager: DiscordApplication, interaction: T) {
-    super(manager, interaction);
+  constructor(manager: DiscordApplication, interaction: T, responseCallback: ResponseCallback<ChannelMessageResponse>) {
+    super(manager, interaction, responseCallback);
 
     this.name = this.interaction.data.name;
 
@@ -33,19 +33,15 @@ export class BaseCommandContext<
     });
   }
 
-  async defer(): Promise<APIInteractionResponseDeferredChannelMessageWithSource> {
+  defer(): Promise<void> {
     if (this.replied) throw new InteractionResponseAlreadySent(this.interaction);
 
-    return this._reply<APIInteractionResponseDeferredChannelMessageWithSource>({
+    return this._reply({
       type: InteractionResponseType.DeferredChannelMessageWithSource
     });
   }
 
-  reply(
-    message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource
-  ): Promise<APIInteractionResponseChannelMessageWithSource> {
-    if (this.replied) throw new InteractionResponseAlreadySent(this.interaction);
-
+  reply(message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource): Promise<void> {
     if (typeof message === "string") message = SimpleEmbed(message);
 
     if (message instanceof MessageBuilder)
@@ -54,7 +50,7 @@ export class BaseCommandContext<
         data: message.toJSON()
       };
 
-    return this._reply<APIInteractionResponseChannelMessageWithSource>(message);
+    return this._reply(message);
   }
 
   async editMessage(

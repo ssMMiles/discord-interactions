@@ -3,14 +3,19 @@ import {
   APIChatInputApplicationCommandInteraction,
   ApplicationCommandOptionType
 } from "discord-api-types/v10";
-import { DiscordApplication } from "../..";
+import { DiscordApplication, ResponseCallback } from "../..";
+import { ChannelMessageResponse } from "../../util";
 import { BaseCommandContext } from "./BaseCommandContext";
 
 export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicationCommandInteraction> {
   public options: Map<string, APIApplicationCommandInteractionDataBasicOption> = new Map();
 
-  constructor(manager: DiscordApplication, interaction: APIChatInputApplicationCommandInteraction) {
-    super(manager, interaction);
+  constructor(
+    manager: DiscordApplication,
+    interaction: APIChatInputApplicationCommandInteraction,
+    responseCallback: ResponseCallback<ChannelMessageResponse>
+  ) {
+    super(manager, interaction, responseCallback);
 
     const rootOption = this.interaction.data.options?.[0];
 

@@ -1,6 +1,5 @@
 import {
   APIInteractionResponseChannelMessageWithSource,
-  APIInteractionResponseDeferredMessageUpdate,
   APIInteractionResponseUpdateMessage,
   APIMessage,
   APIMessageComponentButtonInteraction,
@@ -14,20 +13,22 @@ import {
   InteractionResponseAlreadySent,
   InteractionTokenExpired,
   MessageBuilder,
+  ResponseCallback,
   SimpleEmbed
 } from "..";
+import { MessageUpdateResponse } from "../util";
 import { InteractionContext } from "./InteractionContext";
 
 class BaseComponentContext<
   T extends APIMessageComponentInteraction = APIMessageComponentInteraction
-> extends InteractionContext<T, APIInteractionResponseDeferredMessageUpdate | APIInteractionResponseUpdateMessage> {
+> extends InteractionContext<T, MessageUpdateResponse> {
   private webhook: WebhookClient;
 
   public id: string;
   public args: string[];
 
-  constructor(manager: DiscordApplication, interaction: T) {
-    super(manager, interaction);
+  constructor(manager: DiscordApplication, interaction: T, responseCallback: ResponseCallback<MessageUpdateResponse>) {
+    super(manager, interaction, responseCallback);
 
     this.webhook = new WebhookClient({
       id: this.interaction.application_id,
@@ -40,17 +41,15 @@ class BaseComponentContext<
     this.id = this.args.shift() as string;
   }
 
-  async defer(): Promise<APIInteractionResponseDeferredMessageUpdate> {
+  defer(): Promise<void> {
     if (this.replied) throw new InteractionResponseAlreadySent(this.interaction);
 
-    return this._reply<APIInteractionResponseDeferredMessageUpdate>({
+    return this._reply({
       type: InteractionResponseType.DeferredMessageUpdate
     });
   }
 
-  reply(
-    message: string | MessageBuilder | APIInteractionResponseUpdateMessage
-  ): Promise<APIInteractionResponseUpdateMessage> {
+  reply(message: string | MessageBuilder | APIInteractionResponseUpdateMessage): Promise<void> {
     if (this.replied) throw new InteractionResponseAlreadySent(this.interaction);
 
     if (typeof message === "string") message = SimpleEmbed(message);
@@ -61,7 +60,7 @@ class BaseComponentContext<
         data: message.toJSON()
       };
 
-    return this._reply<APIInteractionResponseUpdateMessage>(message);
+    return this._reply(message);
   }
 
   async editMessage(message: string | MessageBuilder | APIInteractionResponseUpdateMessage): Promise<APIMessage> {
@@ -105,8 +104,12 @@ export class ButtonContext extends BaseComponentContext<APIMessageComponentButto
 export class SelectMenuContext extends BaseComponentContext<APIMessageComponentSelectMenuInteraction> {
   public values: string[];
 
-  constructor(manager: DiscordApplication, interaction: APIMessageComponentSelectMenuInteraction) {
-    super(manager, interaction);
+  constructor(
+    manager: DiscordApplication,
+    interaction: APIMessageComponentSelectMenuInteraction,
+    responseCallback: ResponseCallback<MessageUpdateResponse>
+  ) {
+    super(manager, interaction, responseCallback);
 
     this.values = this.interaction.data.values;
   }
