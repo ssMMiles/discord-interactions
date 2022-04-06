@@ -92,7 +92,7 @@ export class DiscordApplication {
 
     this.rest = new REST().setToken(options.token);
 
-    this.commands = new CommandManager(this, options.removeUnregistered);
+    this.commands = new CommandManager(this, null, options.removeUnregistered);
 
     this.components = new ComponentManager();
 

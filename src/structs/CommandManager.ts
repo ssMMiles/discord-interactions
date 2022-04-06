@@ -17,7 +17,7 @@ import {
   UserCommandBuilder
 } from "..";
 
-export interface GlobalCommands {
+interface ParsedCommands {
   slash: Map<string, APIApplicationSlashCommand>;
   user: Map<string, APIApplicationUserCommand>;
   message: Map<string, APIApplicationMessageCommand>;
@@ -30,12 +30,26 @@ export class CommandManager {
 
   private manager: DiscordApplication;
 
-  private removeUnregistered;
+  private guildId: string | null;
+  private removeUnregistered: boolean;
 
-  constructor(manager: DiscordApplication, removeUnregistered = true) {
+  constructor(manager: DiscordApplication, guildId: string | null = null, removeUnregistered = true) {
     this.manager = manager;
 
+    this.guildId = guildId;
     this.removeUnregistered = removeUnregistered;
+  }
+
+  private route() {
+    return this.guildId === null
+      ? Routes.applicationCommands(this.manager.clientId)
+      : Routes.applicationGuildCommands(this.manager.clientId, this.guildId);
+  }
+
+  private commandRoute(id: string) {
+    return this.guildId === null
+      ? Routes.applicationCommand(this.manager.clientId, id)
+      : Routes.applicationGuildCommand(this.manager.clientId, this.guildId, id);
   }
 
   private _commands(
@@ -51,7 +65,7 @@ export class CommandManager {
     }
   }
 
-  private parseGlobalCommands(commands: APIApplicationCommand[]): GlobalCommands {
+  private parse(commands: APIApplicationCommand[]): ParsedCommands {
     const parsed = {
       slash: new Map(),
       user: new Map(),
@@ -90,7 +104,7 @@ export class CommandManager {
     commands: (SlashCommandBuilder | UserCommandBuilder | MessageCommandBuilder)[],
     overwrite = true
   ): Promise<void> {
-    const remoteCommands = this.parseGlobalCommands(await this.getGlobalCommands());
+    const remoteCommands = this.parse(await this.getCommands());
 
     for (const command of commands) {
       this.manager.components.load(command.components);
@@ -101,9 +115,9 @@ export class CommandManager {
         if (remoteCommands.slash.has(command.name)) {
           const existing = remoteCommands.slash.get(command.name) as APIApplicationSlashCommand;
 
-          data = overwrite ? await this.updateGlobalCommand(command.toJSON(), existing.id) : existing;
+          data = overwrite ? await this.updateCommand(command.toJSON(), existing.id) : existing;
         } else {
-          data = await this.putGlobalCommand(command.toJSON());
+          data = await this.putCommand(command.toJSON());
         }
 
         this.slash.set(command.name, new LoadedSlashCommand(command, data));
@@ -117,9 +131,9 @@ export class CommandManager {
         if (remoteCommands.user.has(command.name)) {
           const existing = remoteCommands.user.get(command.name) as APIApplicationUserCommand;
 
-          data = overwrite ? await this.updateGlobalCommand(command.toJSON(), existing.id) : existing;
+          data = overwrite ? await this.updateCommand(command.toJSON(), existing.id) : existing;
         } else {
-          data = await this.putGlobalCommand(command.toJSON());
+          data = await this.putCommand(command.toJSON());
         }
 
         this.user.set(command.name, new LoadedUserCommand(command, data));
@@ -133,9 +147,9 @@ export class CommandManager {
         if (remoteCommands.message.has(command.name)) {
           const existing = remoteCommands.message.get(command.name) as APIApplicationMessageCommand;
 
-          data = overwrite ? await this.updateGlobalCommand(command.toJSON(), existing.id) : existing;
+          data = overwrite ? await this.updateCommand(command.toJSON(), existing.id) : existing;
         } else {
-          data = await this.putGlobalCommand(command.toJSON());
+          data = await this.putCommand(command.toJSON());
         }
 
         this.message.set(command.name, new LoadedMessageCommand(command, data));
@@ -146,15 +160,15 @@ export class CommandManager {
 
     if (this.removeUnregistered) {
       for (const command of remoteCommands.slash.values()) {
-        this.deleteGlobalCommand(command.id);
+        this.deleteCommand(command.id);
       }
 
       for (const command of remoteCommands.user.values()) {
-        this.deleteGlobalCommand(command.id);
+        this.deleteCommand(command.id);
       }
 
       for (const command of remoteCommands.message.values()) {
-        this.deleteGlobalCommand(command.id);
+        this.deleteCommand(command.id);
       }
     }
   }
@@ -164,7 +178,7 @@ export class CommandManager {
     if (!command) throw new Error("Command isn't loaded.");
 
     this._commands(type).delete(name);
-    if (unregister) await this.deleteGlobalCommand(command.id);
+    if (unregister) await this.deleteCommand(command.id);
   }
 
   getAPIData(): RESTPostAPIApplicationCommandsJSONBody[] {
@@ -177,37 +191,34 @@ export class CommandManager {
     return commandData;
   }
 
-  getGlobalCommands(): Promise<APIApplicationCommand[]> {
-    return this.manager.rest.get(Routes.applicationCommands(this.manager.clientId), {
+  getCommands(): Promise<APIApplicationCommand[]> {
+    return this.manager.rest.get(this.route(), {
       query: new URLSearchParams(`with_localizations=true`)
     }) as Promise<APIApplicationCommand[]>;
   }
 
-  putGlobalCommands(data: RESTPostAPIApplicationCommandsJSONBody[]): Promise<APIApplicationCommand[]> {
-    return this.manager.rest.put(Routes.applicationCommands(this.manager.clientId), {
+  putCommands(data: RESTPostAPIApplicationCommandsJSONBody[]): Promise<APIApplicationCommand[]> {
+    return this.manager.rest.put(this.route(), {
       body: data
     }) as Promise<APIApplicationCommand[]>;
   }
 
-  putGlobalCommand<T extends APIApplicationCommand>(data: RESTPostAPIApplicationCommandsJSONBody): Promise<T> {
-    return this.manager.rest.post(Routes.applicationCommands(this.manager.clientId), {
+  putCommand<T extends APIApplicationCommand>(data: RESTPostAPIApplicationCommandsJSONBody): Promise<T> {
+    return this.manager.rest.post(this.route(), {
       body: data
     }) as Promise<T>;
   }
 
-  updateGlobalCommand<T extends APIApplicationCommand>(
-    data: RESTPostAPIApplicationCommandsJSONBody,
-    id: string
-  ): Promise<T> {
+  updateCommand<T extends APIApplicationCommand>(data: RESTPostAPIApplicationCommandsJSONBody, id: string): Promise<T> {
     delete data.type;
 
-    return this.manager.rest.patch(Routes.applicationCommand(this.manager.clientId, id), {
+    return this.manager.rest.patch(this.commandRoute(id), {
       body: data
     }) as Promise<T>;
   }
 
-  async deleteGlobalCommand(id: string): Promise<void> {
-    await this.manager.rest.delete(Routes.applicationCommand(this.manager.clientId, id));
+  async deleteCommand(id: string): Promise<void> {
+    await this.manager.rest.delete(this.commandRoute(id));
 
     return;
   }
