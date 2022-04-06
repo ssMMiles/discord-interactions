@@ -53,7 +53,7 @@ describe("Discord Application", () => {
   const app = new DiscordApplication(options);
 
   describe("Handling Commands", () => {
-    it("Basic Command", async () => {
+    it("Basic Command", async (done) => {
       await app.commands.load([
         new SlashCommandBuilder()
           .setName("test")
@@ -66,17 +66,22 @@ describe("Discord Application", () => {
       app.commands.has("test").should.be.true;
       app.commands.get("test")?.should.be.instanceOf(LoadedSlashCommand);
 
-      const response = await app.handleInteraction(JSON.stringify(testCommandInteraction), false);
-
-      response.should.deep.equal({
-        type: InteractionResponseType.ChannelMessageWithSource,
-        data: {
-          content: "Test command executed!"
-        }
-      });
+      await app.handleInteraction(
+        async (response) => {
+          response.should.deep.equal({
+            type: InteractionResponseType.ChannelMessageWithSource,
+            data: {
+              content: "Test command executed!"
+            }
+          });
+          done();
+        },
+        JSON.stringify(testCommandInteraction),
+        false
+      );
     });
 
-    it("Basic Command With A Button", async () => {
+    it("Basic Command With A Button", async (done) => {
       app.components.load([
         new ButtonBuilder("testButton")
           .setLabel("Test Button")
@@ -107,27 +112,32 @@ describe("Discord Application", () => {
       app.commands.has("test2").should.be.true;
       app.commands.get("test2")?.should.be.instanceOf(LoadedSlashCommand);
 
-      const response = await app.handleInteraction(JSON.stringify(test2CommandInteraction), false);
-
-      response.should.deep.equal({
-        type: InteractionResponseType.ChannelMessageWithSource,
-        data: {
-          content: "Test command executed!",
-          components: [
-            {
-              type: ComponentType.ActionRow,
+      await app.handleInteraction(
+        async (response) => {
+          response.should.deep.equal({
+            type: InteractionResponseType.ChannelMessageWithSource,
+            data: {
+              content: "Test command executed!",
               components: [
                 {
-                  type: ComponentType.Button,
-                  custom_id: "testButton|",
-                  label: "Test Button",
-                  style: 1
+                  type: ComponentType.ActionRow,
+                  components: [
+                    {
+                      type: ComponentType.Button,
+                      custom_id: "testButton|",
+                      label: "Test Button",
+                      style: 1
+                    }
+                  ]
                 }
               ]
             }
-          ]
-        }
-      });
+          });
+          done();
+        },
+        JSON.stringify(test2CommandInteraction),
+        false
+      );
     });
   });
 });
