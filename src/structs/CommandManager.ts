@@ -17,7 +17,7 @@ import {
   UserCommandBuilder
 } from "..";
 
-interface ParsedCommands {
+export interface ParsedCommands {
   slash: Map<string, APIApplicationSlashCommand>;
   user: Map<string, APIApplicationUserCommand>;
   message: Map<string, APIApplicationMessageCommand>;
