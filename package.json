@@ -1,7 +1,7 @@
 {
   "name": "interactions.ts",
   "description": "Helpers for creating and manage Discord Application Commands + A framework for easily handling incoming interactions.",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -42,6 +42,9 @@
     "typedoc-plugin-merge-modules": "^3.1.0",
     "typescript": "^4.5.4"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "author": "ssMMiles",
   "license": "MIT"
 }
