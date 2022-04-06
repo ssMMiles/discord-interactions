@@ -138,7 +138,7 @@ export class DiscordApplication {
         signature !== false &&
         (!timestamp || !DiscordApplication.verifyInteractionSignature(this.publicKey, signature, timestamp, body))
       ) {
-        reject(new UnauthorizedInteraction(body));
+        return reject(new UnauthorizedInteraction(body));
       }
 
       const interaction = JSON.parse(body) as APIInteraction;
