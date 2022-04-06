@@ -88,7 +88,7 @@ export class CommandManager {
 
   async load(
     commands: (SlashCommandBuilder | UserCommandBuilder | MessageCommandBuilder)[],
-    overwriteExisting = false
+    overwrite = true
   ): Promise<void> {
     const remoteCommands = this.parseGlobalCommands(await this.getGlobalCommands());
 
@@ -101,7 +101,7 @@ export class CommandManager {
         if (remoteCommands.slash.has(command.name)) {
           const existing = remoteCommands.slash.get(command.name) as APIApplicationSlashCommand;
 
-          data = overwriteExisting ? await this.updateGlobalCommand(command.toJSON(), existing.id) : existing;
+          data = overwrite ? await this.updateGlobalCommand(command.toJSON(), existing.id) : existing;
         } else {
           data = await this.putGlobalCommand(command.toJSON());
         }
@@ -117,7 +117,7 @@ export class CommandManager {
         if (remoteCommands.user.has(command.name)) {
           const existing = remoteCommands.user.get(command.name) as APIApplicationUserCommand;
 
-          data = overwriteExisting ? await this.updateGlobalCommand(command.toJSON(), existing.id) : existing;
+          data = overwrite ? await this.updateGlobalCommand(command.toJSON(), existing.id) : existing;
         } else {
           data = await this.putGlobalCommand(command.toJSON());
         }
@@ -133,7 +133,7 @@ export class CommandManager {
         if (remoteCommands.message.has(command.name)) {
           const existing = remoteCommands.message.get(command.name) as APIApplicationMessageCommand;
 
-          data = overwriteExisting ? await this.updateGlobalCommand(command.toJSON(), existing.id) : existing;
+          data = overwrite ? await this.updateGlobalCommand(command.toJSON(), existing.id) : existing;
         } else {
           data = await this.putGlobalCommand(command.toJSON());
         }
