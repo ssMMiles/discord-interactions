@@ -14,10 +14,10 @@
   dependencies:
     "@cspotcode/source-map-consumer" "0.8.0"
 
-"@discordjs/builders@^0.13.0-dev":
-  version "0.13.0-dev.1648515278-ac4bc3a"
-  resolved "https://registry.npmjs.org/@discordjs/builders/-/builders-0.13.0-dev.1648515278-ac4bc3a.tgz"
-  integrity sha512-ELYfdaX2+fHmP3SeYvGt5wNt/vt2fDV7Fou0fKun4qe+TZ+S0RKKpce+Hh/VG7oJk3kFsdPbxDQMGQmPYALXLg==
+"@discordjs/builders@^0.13.0-dev.1649160523-402514f":
+  version "0.13.0-dev.1649160523-402514f"
+  resolved "https://registry.yarnpkg.com/@discordjs/builders/-/builders-0.13.0-dev.1649160523-402514f.tgz#6db22def51959ba682fbb2355517161dfedd79c4"
+  integrity sha512-10yl4OIa0YE8tVYdCunbU374HW8X2gqkxwJaWGXjJbqmyWCvbgvxQwHYPhjvEgda8NMAoQyafHVpTAFjbttU4Q==
   dependencies:
     "@sindresorhus/is" "^4.4.0"
     discord-api-types "^0.29.0"

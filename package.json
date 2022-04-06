@@ -15,7 +15,7 @@
     "prepublish": "yarn build && yarn test && yarn docs"
   },
   "dependencies": {
-    "@discordjs/builders": "^0.13.0-dev",
+    "@discordjs/builders": "^0.13.0-dev.1649160523-402514f",
     "@discordjs/rest": "^0.3.0",
     "discord-api-types": "^0.30.0",
     "dotenv": "^13.0.0",
