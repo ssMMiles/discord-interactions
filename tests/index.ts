@@ -53,7 +53,7 @@ describe("Discord Application", () => {
   const app = new DiscordApplication(options);
 
   describe("Handling Commands", () => {
-    it("Basic Command", async (done) => {
+    it("Basic Command", async () => {
       await app.commands.load([
         new SlashCommandBuilder()
           .setName("test")
@@ -74,14 +74,13 @@ describe("Discord Application", () => {
               content: "Test command executed!"
             }
           });
-          done();
         },
         JSON.stringify(testCommandInteraction),
         false
       );
     });
 
-    it("Basic Command With A Button", async (done) => {
+    it("Basic Command With A Button", async () => {
       app.components.load([
         new ButtonBuilder("testButton")
           .setLabel("Test Button")
@@ -133,7 +132,6 @@ describe("Discord Application", () => {
               ]
             }
           });
-          done();
         },
         JSON.stringify(test2CommandInteraction),
         false

@@ -16,4 +16,7 @@ jobs:
         with:
           node-version: '16'
       - run: yarn install
-      - run: yarn test
+        env:
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
+          TOKEN: ${{ secrets.TOKEN }}
