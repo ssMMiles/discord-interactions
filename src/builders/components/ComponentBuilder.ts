@@ -1,4 +1,4 @@
-import { ButtonBuilder, SelectMenuBuilder } from "../..";
+import { ButtonBuilder, SelectMenuBuilder } from "..";
 
 export type ComponentBuilder = ButtonBuilder | SelectMenuBuilder;
 

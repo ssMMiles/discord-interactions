@@ -1,6 +1,12 @@
 import { APIMessageApplicationCommandInteraction, ApplicationCommandType } from "discord-api-types/v10";
-import { DiscordApplication, MessageCommandBuilder, MessageCommandContext, ResponseCallback, SimpleError } from "../..";
-import { ChannelMessageResponse } from "../../util";
+import {
+  ChannelMessageResponse,
+  DiscordApplication,
+  MessageCommandBuilder,
+  MessageCommandContext,
+  ResponseCallback,
+  SimpleError
+} from "../..";
 
 export async function handleMessageCommand(
   manager: DiscordApplication,

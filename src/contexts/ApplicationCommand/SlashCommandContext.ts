@@ -3,8 +3,7 @@ import {
   APIChatInputApplicationCommandInteraction,
   ApplicationCommandOptionType
 } from "discord-api-types/v10";
-import { DiscordApplication, ResponseCallback } from "../..";
-import { ChannelMessageResponse } from "../../util";
+import { ChannelMessageResponse, DiscordApplication, ResponseCallback } from "../..";
 import { BaseCommandContext } from "./BaseCommandContext";
 
 export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicationCommandInteraction> {

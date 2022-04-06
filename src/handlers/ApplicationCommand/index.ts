@@ -5,8 +5,7 @@ import {
   APIUserApplicationCommandInteraction,
   ApplicationCommandType
 } from "discord-api-types/v10";
-import { DiscordApplication, ResponseCallback, UnknownApplicationCommandType } from "../..";
-import { ChannelMessageResponse } from "../../util";
+import { ChannelMessageResponse, DiscordApplication, ResponseCallback, UnknownApplicationCommandType } from "../..";
 import { handleMessageCommand } from "./MessageCommand";
 import { handleSlashCommand } from "./SlashCommand";
 import { handleUserCommand } from "./UserCommand";

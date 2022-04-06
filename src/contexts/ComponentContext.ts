@@ -8,7 +8,6 @@ import {
 } from "discord-api-types/v10";
 import {
   DiscordApplication,
-  InteractionContext,
   InteractionResponseAlreadySent,
   InteractionWebhook,
   MessageBuilder,
@@ -16,6 +15,7 @@ import {
   ResponseCallback,
   SimpleEmbed
 } from "..";
+import { InteractionContext } from "./InteractionContext";
 
 class BaseComponentContext<
   T extends APIMessageComponentInteraction = APIMessageComponentInteraction

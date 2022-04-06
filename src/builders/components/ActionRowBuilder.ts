@@ -1,6 +1,6 @@
 import { ComponentBuilder as BaseComponentBuilder } from "@discordjs/builders";
 import { APIActionRowComponent, APIMessageActionRowComponent, ComponentType } from "discord-api-types/v10";
-import { ComponentBuilder } from "../..";
+import { ComponentBuilder } from "..";
 
 export class ActionRowBuilder extends BaseComponentBuilder<
   Omit<

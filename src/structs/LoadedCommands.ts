@@ -4,8 +4,15 @@ import {
   RESTPostAPIApplicationCommandsJSONBody,
   Snowflake
 } from "discord-api-types/v10";
-import { MessageCommandBuilder, SlashCommandBuilder, UserCommandBuilder } from "../builders";
-import { AutocompleteContext, MessageCommandContext, SlashCommandContext, UserCommandContext } from "../contexts";
+import {
+  AutocompleteContext,
+  MessageCommandBuilder,
+  MessageCommandContext,
+  SlashCommandBuilder,
+  SlashCommandContext,
+  UserCommandBuilder,
+  UserCommandContext
+} from "..";
 
 export interface APIApplicationSlashCommand extends APIApplicationCommand {
   type: ApplicationCommandType.ChatInput;

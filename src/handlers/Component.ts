@@ -8,13 +8,13 @@ import {
   ButtonBuilder,
   ButtonContext,
   DiscordApplication,
+  MessageUpdateResponse,
   ResponseCallback,
   SelectMenuBuilder,
   SelectMenuContext,
   SimpleError,
   UnknownComponentType
 } from "..";
-import { MessageUpdateResponse } from "../util";
 
 /**
  * Component handling

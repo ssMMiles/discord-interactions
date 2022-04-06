@@ -1,7 +1,6 @@
 import { REST } from "@discordjs/rest";
 import { APIMessage, Routes } from "discord-api-types/v10";
-import { SimpleEmbed } from "..";
-import { MessageBuilder } from "../builders";
+import { MessageBuilder, SimpleEmbed } from "..";
 
 export class InteractionWebhook {
   private id: string;

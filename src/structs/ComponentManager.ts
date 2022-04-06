@@ -1,5 +1,5 @@
 import { APIMessageActionRowComponent } from "discord-api-types/v10";
-import { ComponentBuilder } from "../builders";
+import { ComponentBuilder } from "..";
 
 export class ComponentManager {
   private _components: Map<string, ComponentBuilder> = new Map();

@@ -10,7 +10,6 @@ import {
 } from "discord-api-types/v10";
 import { DiscordApplication, ResponseCallback } from "../..";
 import { InteractionContext } from "../InteractionContext";
-
 export type AutocompleteSupportedOptions =
   | APIApplicationCommandInteractionDataStringOption
   | APIApplicationCommandInteractionDataIntegerOption
