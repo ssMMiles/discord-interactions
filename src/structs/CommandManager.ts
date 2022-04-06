@@ -18,13 +18,13 @@ import {
 } from "..";
 
 export interface GlobalCommands {
-  commands: Map<string, APIApplicationSlashCommand>;
+  slash: Map<string, APIApplicationSlashCommand>;
   user: Map<string, APIApplicationUserCommand>;
   message: Map<string, APIApplicationMessageCommand>;
 }
 
 export class CommandManager {
-  private commands: Map<string, LoadedSlashCommand> = new Map();
+  private slash: Map<string, LoadedSlashCommand> = new Map();
   private user: Map<string, LoadedUserCommand> = new Map();
   private message: Map<string, LoadedMessageCommand> = new Map();
 
@@ -43,7 +43,7 @@ export class CommandManager {
   ): Map<string, LoadedSlashCommand | LoadedUserCommand | LoadedMessageCommand> {
     switch (type) {
       case ApplicationCommandType.ChatInput:
-        return this.commands;
+        return this.slash;
       case ApplicationCommandType.User:
         return this.user;
       case ApplicationCommandType.Message:
@@ -53,7 +53,7 @@ export class CommandManager {
 
   private parseGlobalCommands(commands: APIApplicationCommand[]): GlobalCommands {
     const parsed = {
-      commands: new Map(),
+      slash: new Map(),
       user: new Map(),
       message: new Map()
     };
@@ -61,7 +61,7 @@ export class CommandManager {
     for (const command of commands) {
       switch (command.type) {
         case ApplicationCommandType.ChatInput:
-          parsed.commands.set(command.name, command);
+          parsed.slash.set(command.name, command);
           break;
         case ApplicationCommandType.User:
           parsed.user.set(command.name, command);
@@ -98,17 +98,17 @@ export class CommandManager {
       if (command instanceof SlashCommandBuilder) {
         let data: APIApplicationSlashCommand;
 
-        if (remoteCommands.commands.has(command.name)) {
-          const existing = remoteCommands.commands.get(command.name) as APIApplicationSlashCommand;
+        if (remoteCommands.slash.has(command.name)) {
+          const existing = remoteCommands.slash.get(command.name) as APIApplicationSlashCommand;
 
           data = overwriteExisting ? await this.updateGlobalCommand(command.toJSON(), existing.id) : existing;
         } else {
           data = await this.putGlobalCommand(command.toJSON());
         }
 
-        this.commands.set(command.name, new LoadedSlashCommand(command, data));
+        this.slash.set(command.name, new LoadedSlashCommand(command, data));
 
-        remoteCommands.commands.delete(command.name);
+        remoteCommands.slash.delete(command.name);
       }
 
       if (command instanceof UserCommandBuilder) {
@@ -145,7 +145,7 @@ export class CommandManager {
     }
 
     if (this.removeUnregistered) {
-      for (const command of remoteCommands.commands.values()) {
+      for (const command of remoteCommands.slash.values()) {
         this.deleteGlobalCommand(command.id);
       }
 
@@ -159,14 +159,18 @@ export class CommandManager {
     }
   }
 
-  unload(name: string, type: ApplicationCommandType = ApplicationCommandType.ChatInput) {
+  async unload(name: string, unregister = false, type: ApplicationCommandType = ApplicationCommandType.ChatInput) {
+    const command = this.get(name, type);
+    if (!command) throw new Error("Command isn't loaded.");
+
     this._commands(type).delete(name);
+    if (unregister) await this.deleteGlobalCommand(command.id);
   }
 
   getAPIData(): RESTPostAPIApplicationCommandsJSONBody[] {
     const commandData = [];
 
-    for (const command of [...this.commands.values(), ...this.user.values(), ...this.message.values()]) {
+    for (const command of [...this.slash.values(), ...this.user.values(), ...this.message.values()]) {
       commandData.push(command.json);
     }
 
