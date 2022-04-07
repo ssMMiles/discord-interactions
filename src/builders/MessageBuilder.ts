@@ -1,5 +1,11 @@
 import { EmbedBuilder, UnsafeEmbedBuilder } from "@discordjs/builders";
-import { APIAllowedMentions, APIInteractionResponseCallbackData, MessageFlags } from "discord-api-types/v10";
+import {
+  APIActionRowComponent,
+  APIAllowedMentions,
+  APIInteractionResponseCallbackData,
+  APIMessageActionRowComponent,
+  MessageFlags
+} from "discord-api-types/v10";
 import { ActionRowBuilder } from "..";
 
 export class MessageBuilder {
@@ -47,6 +53,14 @@ export class MessageBuilder {
     if (!this.data.components) this.data.components = [];
 
     this.data.components.push(actionRow.toJSON());
+
+    return this;
+  }
+
+  public setComponents(components: APIActionRowComponent<APIMessageActionRowComponent>[] = []) {
+    if (!this.data.components) this.data.components = [];
+
+    this.data.components.push(...components);
 
     return this;
   }
