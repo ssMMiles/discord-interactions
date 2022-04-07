@@ -18,19 +18,25 @@ export class InteractionWebhook {
   send(message: string | MessageBuilder): Promise<APIMessage> {
     if (typeof message === "string") message = SimpleEmbed(message);
 
-    return this.rest.post(Routes.webhook(this.id, this.token), { body: message.toJSON() }) as Promise<APIMessage>;
+    return this.rest.post(Routes.webhook(this.id, this.token), {
+      body: message.toJSON(),
+      auth: false
+    }) as Promise<APIMessage>;
   }
 
   edit(message: string | MessageBuilder, id: string): Promise<APIMessage> {
     if (typeof message === "string") message = SimpleEmbed(message);
 
     return this.rest.patch(Routes.webhookMessage(this.id, this.token, id), {
-      body: message.toJSON()
+      body: message.toJSON(),
+      auth: false
     }) as Promise<APIMessage>;
   }
 
   async delete(id: string): Promise<void> {
-    await this.rest.delete(Routes.webhookMessage(this.id, this.token, id));
+    await this.rest.delete(Routes.webhookMessage(this.id, this.token, id), {
+      auth: false
+    });
     return;
   }
 }
