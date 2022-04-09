@@ -58,6 +58,10 @@ class BaseComponentContext<
     return this._reply(message);
   }
 
+  send(message: string | MessageBuilder): Promise<APIMessage> {
+    return this.followup.send(message);
+  }
+
   edit(message: string | MessageBuilder): Promise<APIMessage> {
     return this.followup.edit(message, "@original");
   }
