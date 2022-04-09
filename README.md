@@ -1,4 +1,4 @@
-# Interactions.ts
+# Discord Interactions.TS
 
 This library provides an easy way to create and manage your Discord Application's commands based on [@discord.js/builders](https://github.com/discordjs/discord.js/tree/main/packages/builders/).
 
