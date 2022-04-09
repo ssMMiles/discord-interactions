@@ -1,7 +1,7 @@
 {
-  "name": "interactions.ts",
+  "name": "discord-interactions.ts",
   "description": "Helpers for creating and manage Discord Application Commands + A framework for easily handling incoming interactions.",
-  "version": "1.0.17",
+  "version": "1.0.18",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -24,6 +24,7 @@
   "devDependencies": {
     "@types/chai": "^4.3.0",
     "@types/chai-as-promised": "^7.1.5",
+    "@types/deep-equal": "^1.0.1",
     "@types/mocha": "^9.1.0",
     "@types/node": "^14.18.3",
     "@types/node-fetch": "^2.6.1",
@@ -31,6 +32,7 @@
     "@typescript-eslint/parser": "^5.17.0",
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
+    "deep-equal": "^2.0.5",
     "eslint": "^8.12.0",
     "fastify": "^3.27.4",
     "fastify-raw-body": "^3.2.0",
