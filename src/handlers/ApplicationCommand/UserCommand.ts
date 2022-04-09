@@ -1,32 +1,19 @@
-import { APIUserApplicationCommandInteraction, ApplicationCommandType } from "discord-api-types/v10";
-import {
-  ChannelMessageResponse,
-  DiscordApplication,
-  ResponseCallback,
-  SimpleError,
-  UserCommandBuilder,
-  UserCommandContext
-} from "../..";
+import { ApplicationCommandType } from "discord-api-types/v10";
+import { SimpleError, UserCommandBuilder, UserCommandContext } from "../..";
 
-export async function handleUserCommand(
-  manager: DiscordApplication,
-  interaction: APIUserApplicationCommandInteraction,
-  responseCallback: ResponseCallback<ChannelMessageResponse>
-): Promise<void> {
-  const context = new UserCommandContext(manager, interaction, responseCallback);
-
-  if (manager.hooks.command?.user) {
-    const result = await manager.hooks.command.user(context);
+export async function handleUserCommand(ctx: UserCommandContext): Promise<void> {
+  if (ctx.manager.hooks.command?.user) {
+    const result = await ctx.manager.hooks.command.user(ctx);
 
     if (result === true) return;
   }
 
-  const command = manager.commands.get(context.name, ApplicationCommandType.User) as UserCommandBuilder | undefined;
+  const command = ctx.manager.commands.get(context.name, ApplicationCommandType.User) as UserCommandBuilder | undefined;
 
-  if (!command) return context.reply(SimpleError("Command not found."));
+  if (!command) return ctx.reply(SimpleError("Command not found."));
 
-  if (command.guildOnly && context.isDM)
-    return context.reply(SimpleError("This command can only be used within a Discord server.", "Server Required"));
+  if (command.guildOnly && ctx.isDM)
+    return ctx.reply(SimpleError("This command can only be used within a Discord server.", "Server Required"));
 
-  return command.handler(context);
+  return command.handler(ctx);
 }

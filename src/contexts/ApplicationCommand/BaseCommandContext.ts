@@ -13,11 +13,11 @@ import {
   ResponseCallback,
   SimpleEmbed
 } from "../..";
-import { InteractionContext } from "../InteractionContext";
+import { BaseInteractionContext } from "../BaseInteractionContext";
 
 export class BaseCommandContext<
   T extends APIApplicationCommandInteraction = APIApplicationCommandInteraction
-> extends InteractionContext<T, ChannelMessageResponse> {
+> extends BaseInteractionContext<T, ChannelMessageResponse> {
   public name: string;
   private followup: InteractionWebhook;
 

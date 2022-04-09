@@ -9,13 +9,13 @@ import {
   InteractionResponseType
 } from "discord-api-types/v10";
 import { DiscordApplication, ResponseCallback } from "../..";
-import { InteractionContext } from "../InteractionContext";
+import { BaseInteractionContext } from "../BaseInteractionContext";
 export type AutocompleteSupportedOptions =
   | APIApplicationCommandInteractionDataStringOption
   | APIApplicationCommandInteractionDataIntegerOption
   | APIApplicationCommandInteractionDataNumberOption;
 
-export class AutocompleteContext extends InteractionContext<
+export class AutocompleteContext extends BaseInteractionContext<
   APIApplicationCommandAutocompleteInteraction,
   APIApplicationCommandAutocompleteResponse
 > {

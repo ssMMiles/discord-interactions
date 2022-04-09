@@ -4,7 +4,7 @@ import { DiscordApplication, InteractionResponseAlreadySent, ResponseCallback } 
 // lasts 15 minutes, 5s buffer to be safe
 const InteractionTokenExpiryTime = 15 * 60 * 1000 - 5000;
 
-export class InteractionContext<
+export class BaseInteractionContext<
   T extends APIInteraction = APIInteraction,
   R extends APIInteractionResponse = APIInteractionResponse
 > {

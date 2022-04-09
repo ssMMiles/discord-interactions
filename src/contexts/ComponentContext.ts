@@ -15,11 +15,11 @@ import {
   ResponseCallback,
   SimpleEmbed
 } from "..";
-import { InteractionContext } from "./InteractionContext";
+import { BaseInteractionContext } from "./BaseInteractionContext";
 
 class BaseComponentContext<
   T extends APIMessageComponentInteraction = APIMessageComponentInteraction
-> extends InteractionContext<T, MessageUpdateResponse> {
+> extends BaseInteractionContext<T, MessageUpdateResponse> {
   private followup: InteractionWebhook;
 
   public id: string;

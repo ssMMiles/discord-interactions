@@ -4,9 +4,10 @@ import { ButtonStyle, ComponentType, InteractionResponseType } from "discord-api
 import "dotenv/config";
 import {
   ActionRowBuilder,
-  ButtonBuilder,
   ButtonContext,
   DiscordApplication,
+  DiscordApplicationOptions,
+  HandledButtonBuilder,
   LoadedSlashCommand,
   MessageBuilder,
   SlashCommandBuilder,
@@ -26,10 +27,12 @@ if (
   process.exit(1);
 }
 
-const options = {
+const options: DiscordApplicationOptions = {
   clientId: process.env.CLIENT_ID,
   token: process.env.TOKEN,
-  publicKey: process.env.PUBLIC_KEY
+  publicKey: process.env.PUBLIC_KEY,
+
+  removeUnregistered: false
 };
 
 describe("Discord Application", () => {
@@ -54,14 +57,17 @@ describe("Discord Application", () => {
 
   describe("Handling Commands", () => {
     it("Basic Command", async () => {
-      await app.commands.load([
-        new SlashCommandBuilder()
-          .setName("test")
-          .setDescription("Test command")
-          .setHandler(async (context: SlashCommandContext) => {
-            await context.reply(new MessageBuilder().setContent("Test command executed!"));
-          })
-      ]);
+      await app.commands.load(
+        [
+          new SlashCommandBuilder()
+            .setName("test")
+            .setDescription("Test command")
+            .setHandler(async (context: SlashCommandContext) => {
+              await context.reply(new MessageBuilder().setContent("Test command executed!"));
+            })
+        ],
+        false
+      );
 
       app.commands.has("test").should.be.true;
       app.commands.get("test")?.should.be.instanceOf(LoadedSlashCommand);
@@ -82,7 +88,7 @@ describe("Discord Application", () => {
 
     it("Basic Command With A Button", async () => {
       app.components.load([
-        new ButtonBuilder("testButton")
+        new HandledButtonBuilder("testButton")
           .setLabel("Test Button")
           .setStyle(ButtonStyle.Primary)
           .setHandler(async (context: ButtonContext) => {
@@ -91,22 +97,22 @@ describe("Discord Application", () => {
       ]);
 
       app.components.has("testButton").should.be.true;
-      app.components.get("testButton")?.should.be.instanceOf(ButtonBuilder);
+      app.components.get("testButton")?.should.be.instanceOf(HandledButtonBuilder);
 
-      await app.commands.load([
-        new SlashCommandBuilder()
-          .setName("test2")
-          .setDescription("Test command")
-          .setHandler(async (context: SlashCommandContext) => {
-            await context.reply(
-              new MessageBuilder()
-                .setContent("Test command executed!")
-                .addActionRow(
-                  new ActionRowBuilder().addComponents(context.manager.components.createInstance("testButton"))
-                )
-            );
-          })
-      ]);
+      const command = new SlashCommandBuilder()
+        .setName("test2")
+        .setDescription("Test command")
+        .setHandler(async (context: SlashCommandContext) => {
+          await context.reply(
+            new MessageBuilder()
+              .setContent("Test command executed!")
+              .addComponents(
+                new ActionRowBuilder().addComponents(context.manager.components.createInstance("testButton"))
+              )
+          );
+        });
+
+      await app.commands.load([command], false);
 
       app.commands.has("test2").should.be.true;
       app.commands.get("test2")?.should.be.instanceOf(LoadedSlashCommand);

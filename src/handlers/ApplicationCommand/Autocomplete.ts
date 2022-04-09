@@ -1,25 +1,15 @@
-import {
-  APIApplicationCommandAutocompleteInteraction,
-  APIApplicationCommandAutocompleteResponse
-} from "discord-api-types/v10";
-import { AutocompleteContext, DiscordApplication, ResponseCallback, SlashCommandBuilder } from "../..";
+import { AutocompleteContext, SlashCommandBuilder } from "../..";
 
-export async function handleCommandAutocomplete(
-  manager: DiscordApplication,
-  interaction: APIApplicationCommandAutocompleteInteraction,
-  responseCallback: ResponseCallback<APIApplicationCommandAutocompleteResponse>
-): Promise<void> {
-  const context = new AutocompleteContext(manager, interaction, responseCallback);
-
-  if (manager.hooks.command?.autocomplete) {
-    const result = await manager.hooks.command.autocomplete(context);
+export async function handleAutocomplete(ctx: AutocompleteContext): Promise<void> {
+  if (ctx.manager.hooks.command?.autocomplete) {
+    const result = await ctx.manager.hooks.command.autocomplete(ctx);
 
     if (result === true) return;
   }
 
-  const command = manager.commands.get(context.name) as SlashCommandBuilder | undefined;
+  const command = ctx.manager.commands.get(context.name) as SlashCommandBuilder | undefined;
 
-  if (!command || command.autocompleteHandler === undefined) return context.reply([]);
+  if (!command || command.autocompleteHandler === undefined) return ctx.reply([]);
 
-  return command.autocompleteHandler(context);
+  return command.autocompleteHandler(ctx);
 }

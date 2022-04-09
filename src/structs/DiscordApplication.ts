@@ -1,29 +1,20 @@
 import { REST } from "@discordjs/rest";
-import {
-  APIInteraction,
-  APIInteractionResponse,
-  InteractionResponseType,
-  InteractionType,
-  Snowflake
-} from "discord-api-types/v10";
+import { APIInteraction, APIInteractionResponse, Snowflake } from "discord-api-types/v10";
 import { sign } from "tweetnacl";
 import {
   AutocompleteContext,
   ButtonContext,
   CommandManager,
   ComponentManager,
-  handleApplicationCommand,
-  handleCommandAutocomplete,
-  handleMessageComponent,
   InteractionContext,
   InteractionHandlerTimedOut,
   MessageCommandContext,
   SelectMenuContext,
   SlashCommandContext,
   UnauthorizedInteraction,
-  UnknownInteractionType,
   UserCommandContext
 } from "..";
+import { _handleInteraction } from "../handlers/handleInteraction";
 
 /**
  * Callback to be executed with the result of an interaction.
@@ -36,7 +27,7 @@ export type ResponseCallback<T extends APIInteractionResponse = APIInteractionRe
  * Hooks to be executed on receiving an interaction. These are executed before command handlers, and will abort further handling the interaction on returning true;
  */
 export interface InteractionHooks {
-  /** This hook will run first and on ALL incoming interactions. */
+  /** This hook will run first on all incoming interactions. */
   interaction?: (ctx: InteractionContext) => Promise<void | true>;
 
   command?: {
@@ -152,30 +143,17 @@ export class DiscordApplication {
         return responseCallback(response);
       };
 
-      if (this.hooks.interaction) {
-        const context = new InteractionContext(this, interaction, responseCallback);
+      const context = await this._handleInteraction(interaction, responseCallbackWithTimeout);
 
+      if (this.hooks.interaction) {
         const result = await this.hooks.interaction(context);
 
         if (result === true) return resolve();
       }
 
-      switch (interaction.type) {
-        case InteractionType.Ping:
-          resolve(responseCallbackWithTimeout({ type: InteractionResponseType.Pong }));
-          break;
-        case InteractionType.ApplicationCommand:
-          resolve(handleApplicationCommand(this, interaction, responseCallbackWithTimeout));
-          break;
-        case InteractionType.ApplicationCommandAutocomplete:
-          resolve(handleCommandAutocomplete(this, interaction, responseCallbackWithTimeout));
-          break;
-        case InteractionType.MessageComponent:
-          resolve(handleMessageComponent(this, interaction, responseCallbackWithTimeout));
-          break;
-        default:
-          reject(new UnknownInteractionType(interaction));
-      }
+      resolve();
     });
   }
+
+  private _handleInteraction = _handleInteraction;
 }
