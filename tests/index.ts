@@ -1,9 +1,9 @@
 import { should, use } from "chai";
 import chaiAsPromised from "chai-as-promised";
-import { ButtonStyle, ComponentType, InteractionResponseType } from "discord-api-types/v10";
+import equal from "deep-equal";
+import { ButtonStyle, InteractionResponseType } from "discord-api-types/v10";
 import "dotenv/config";
 import {
-  ActionRowBuilder,
   ButtonContext,
   DiscordApplication,
   DiscordApplicationOptions,
@@ -13,7 +13,7 @@ import {
   SlashCommandBuilder,
   SlashCommandContext
 } from "../src";
-import { test2CommandInteraction, testCommandInteraction } from "./data";
+import { buttonInteraction, testCommandInteraction } from "./data";
 
 use(chaiAsPromised);
 should();
@@ -55,38 +55,43 @@ describe("Discord Application", () => {
 
   const app = new DiscordApplication(options);
 
-  describe("Handling Commands", () => {
-    it("Basic Command", async () => {
-      await app.commands.load(
-        [
-          new SlashCommandBuilder()
-            .setName("test")
-            .setDescription("Test command")
-            .setHandler(async (context: SlashCommandContext) => {
-              await context.reply(new MessageBuilder().setContent("Test command executed!"));
-            })
-        ],
-        false
-      );
+  describe("Handling Interactions", () => {
+    it("Slash Command", (done) => {
+      app.commands
+        .load(
+          [
+            new SlashCommandBuilder()
+              .setName("test")
+              .setDescription("Test command")
+              .setHandler(async (context: SlashCommandContext) => {
+                await context.reply(new MessageBuilder().setContent("Test command executed!"));
+              })
+          ],
+          false
+        )
+        .then(async () => {
+          app.commands.has("test").should.be.true;
+          app.commands.get("test")?.should.be.instanceOf(LoadedSlashCommand);
 
-      app.commands.has("test").should.be.true;
-      app.commands.get("test")?.should.be.instanceOf(LoadedSlashCommand);
+          await app.handleInteraction(
+            async (response) => {
+              // If test is timing out this is just not equal, it don't fail properly
+              equal(response, {
+                type: InteractionResponseType.ChannelMessageWithSource,
+                data: {
+                  content: "Test command executed!"
+                }
+              }).should.be.true;
 
-      await app.handleInteraction(
-        async (response) => {
-          response.should.deep.equal({
-            type: InteractionResponseType.ChannelMessageWithSource,
-            data: {
-              content: "Test command executed!"
-            }
-          });
-        },
-        JSON.stringify(testCommandInteraction),
-        false
-      );
+              done();
+            },
+            JSON.stringify(testCommandInteraction),
+            false
+          );
+        });
     });
 
-    it("Basic Command With A Button", async () => {
+    it("Button", (done) => {
       app.components.load([
         new HandledButtonBuilder("testButton")
           .setLabel("Test Button")
@@ -96,50 +101,20 @@ describe("Discord Application", () => {
           })
       ]);
 
-      app.components.has("testButton").should.be.true;
-      app.components.get("testButton")?.should.be.instanceOf(HandledButtonBuilder);
-
-      const command = new SlashCommandBuilder()
-        .setName("test2")
-        .setDescription("Test command")
-        .setHandler(async (context: SlashCommandContext) => {
-          await context.reply(
-            new MessageBuilder()
-              .setContent("Test command executed!")
-              .addComponents(
-                new ActionRowBuilder().addComponents(context.manager.components.createInstance("testButton"))
-              )
-          );
-        });
-
-      await app.commands.load([command], false);
-
-      app.commands.has("test2").should.be.true;
-      app.commands.get("test2")?.should.be.instanceOf(LoadedSlashCommand);
-
-      await app.handleInteraction(
+      app.handleInteraction(
         async (response) => {
-          response.should.deep.equal({
-            type: InteractionResponseType.ChannelMessageWithSource,
+          const data = {
+            type: InteractionResponseType.UpdateMessage,
             data: {
-              content: "Test command executed!",
-              components: [
-                {
-                  type: ComponentType.ActionRow,
-                  components: [
-                    {
-                      type: ComponentType.Button,
-                      custom_id: "testButton|",
-                      label: "Test Button",
-                      style: 1
-                    }
-                  ]
-                }
-              ]
+              content: "Test button executed!"
             }
-          });
+          };
+
+          equal(response, data, { strict: true }).should.be.true;
+
+          done();
         },
-        JSON.stringify(test2CommandInteraction),
+        JSON.stringify(buttonInteraction),
         false
       );
     });
