@@ -1,7 +1,7 @@
 {
   "name": "interactions.ts",
   "description": "Helpers for creating and manage Discord Application Commands + A framework for easily handling incoming interactions.",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
