@@ -2,15 +2,16 @@ import {
   AutocompleteContext,
   ButtonContext,
   MessageCommandContext,
+  PingContext,
   SelectMenuContext,
   SlashCommandContext,
   UserCommandContext
 } from "..";
-import { PingContext } from "./PingContext";
 
 export * from "./ApplicationCommand";
 export * from "./BaseInteractionContext";
 export * from "./ComponentContext";
+export * from "./PingContext";
 
 export type InteractionContext =
   | PingContext

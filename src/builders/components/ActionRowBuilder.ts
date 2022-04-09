@@ -6,7 +6,7 @@ import {
 import { APIActionRowComponent, APIMessageActionRowComponent, ComponentType } from "discord-api-types/v10";
 import { HandledComponentBuilder } from "./HandledComponentBuilder";
 
-type ComponentBuilder = UnsafeButtonBuilder | UnsafeSelectMenuBuilder | HandledComponentBuilder;
+export type ComponentBuilder = UnsafeButtonBuilder | UnsafeSelectMenuBuilder | HandledComponentBuilder;
 
 export class ActionRowBuilder extends BaseComponentBuilder<
   Omit<
@@ -34,7 +34,7 @@ export class ActionRowBuilder extends BaseComponentBuilder<
     return this;
   }
 
-  public setComponents(components: HandledComponentBuilder[] | APIMessageActionRowComponent[]) {
+  public setComponents(components: ComponentBuilder[] | APIMessageActionRowComponent[]) {
     this.components = this.flattenComponentBuilders(components);
     return this;
   }

@@ -8,7 +8,7 @@ export async function handleUserCommand(ctx: UserCommandContext): Promise<void> 
     if (result === true) return;
   }
 
-  const command = ctx.manager.commands.get(context.name, ApplicationCommandType.User) as UserCommandBuilder | undefined;
+  const command = ctx.manager.commands.get(ctx.name, ApplicationCommandType.User) as UserCommandBuilder | undefined;
 
   if (!command) return ctx.reply(SimpleError("Command not found."));
 

@@ -8,7 +8,7 @@ export async function handleMessageCommand(ctx: MessageCommandContext): Promise<
     if (result === true) return;
   }
 
-  const command = ctx.manager.commands.get(context.name, ApplicationCommandType.Message) as
+  const command = ctx.manager.commands.get(ctx.name, ApplicationCommandType.Message) as
     | MessageCommandBuilder
     | undefined;
 

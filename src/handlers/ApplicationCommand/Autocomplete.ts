@@ -7,7 +7,7 @@ export async function handleAutocomplete(ctx: AutocompleteContext): Promise<void
     if (result === true) return;
   }
 
-  const command = ctx.manager.commands.get(context.name) as SlashCommandBuilder | undefined;
+  const command = ctx.manager.commands.get(ctx.name) as SlashCommandBuilder | undefined;
 
   if (!command || command.autocompleteHandler === undefined) return ctx.reply([]);
 

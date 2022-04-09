@@ -143,13 +143,7 @@ export class DiscordApplication {
         return responseCallback(response);
       };
 
-      const context = await this._handleInteraction(interaction, responseCallbackWithTimeout);
-
-      if (this.hooks.interaction) {
-        const result = await this.hooks.interaction(context);
-
-        if (result === true) return resolve();
-      }
+      await this._handleInteraction(interaction, responseCallbackWithTimeout);
 
       resolve();
     });
