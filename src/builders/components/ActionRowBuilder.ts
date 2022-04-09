@@ -1,6 +1,12 @@
-import { ComponentBuilder as BaseComponentBuilder } from "@discordjs/builders";
+import {
+  ComponentBuilder as BaseComponentBuilder,
+  UnsafeButtonBuilder,
+  UnsafeSelectMenuBuilder
+} from "@discordjs/builders";
 import { APIActionRowComponent, APIMessageActionRowComponent, ComponentType } from "discord-api-types/v10";
-import { ComponentBuilder } from "..";
+import { HandledComponentBuilder } from "./HandledComponentBuilder";
+
+type ComponentBuilder = UnsafeButtonBuilder | UnsafeSelectMenuBuilder | HandledComponentBuilder;
 
 export class ActionRowBuilder extends BaseComponentBuilder<
   Omit<
@@ -12,7 +18,7 @@ export class ActionRowBuilder extends BaseComponentBuilder<
 > {
   private components: APIMessageActionRowComponent[] = [];
 
-  public constructor(components: ComponentBuilder[] | APIMessageActionRowComponent[] = []) {
+  public constructor(components: HandledComponentBuilder[] | APIMessageActionRowComponent[] = []) {
     super({ type: ComponentType.ActionRow });
     this.components = this.flattenComponentBuilders(components);
   }
@@ -28,7 +34,7 @@ export class ActionRowBuilder extends BaseComponentBuilder<
     return this;
   }
 
-  public setComponents(...components: ComponentBuilder[] | APIMessageActionRowComponent[]) {
+  public setComponents(components: HandledComponentBuilder[] | APIMessageActionRowComponent[]) {
     this.components = this.flattenComponentBuilders(components);
     return this;
   }

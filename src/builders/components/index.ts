@@ -1,4 +1,4 @@
 export * from "./ActionRowBuilder";
-export * from "./ButtonBuilder";
-export { ComponentBuilder } from "./ComponentBuilder";
-export * from "./SelectMenuBuilder";
+export * from "./HandledButtonBuilder";
+export { HandledComponentBuilder } from "./HandledComponentBuilder";
+export * from "./HandledSelectMenuBuilder";

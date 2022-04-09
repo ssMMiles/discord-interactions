@@ -1,11 +1,11 @@
 import { ContextMenuCommandBuilder as ContextMenuCommandBuilderBase } from "@discordjs/builders";
 import { ApplicationCommandType } from "discord-api-types/v10";
-import { ComponentBuilder, MessageCommandContext, UserCommandContext } from "../..";
+import { HandledComponentBuilder, MessageCommandContext, UserCommandContext } from "../..";
 
 class ContextMenuCommandBuilder<
   T extends UserCommandContext | MessageCommandContext
 > extends ContextMenuCommandBuilderBase {
-  public components: ComponentBuilder[] = [];
+  public components: HandledComponentBuilder[] = [];
 
   public guildOnly = true;
 

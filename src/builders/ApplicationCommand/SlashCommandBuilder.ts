@@ -1,8 +1,8 @@
 import { SlashCommandBuilder as SlashCommandBuilderBase } from "@discordjs/builders";
-import { AutocompleteContext, ComponentBuilder, SlashCommandContext } from "../..";
+import { AutocompleteContext, HandledComponentBuilder, SlashCommandContext } from "../..";
 
 export class SlashCommandBuilder extends SlashCommandBuilderBase {
-  public components: ComponentBuilder[] = [];
+  public components: HandledComponentBuilder[] = [];
 
   public guildOnly = true;
 
@@ -32,7 +32,7 @@ export class SlashCommandBuilder extends SlashCommandBuilderBase {
     return this;
   }
 
-  addComponents(components: ComponentBuilder[]) {
+  addComponents(components: HandledComponentBuilder[]) {
     this.components = [...this.components, ...components];
 
     return this;

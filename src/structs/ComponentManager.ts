@@ -1,18 +1,18 @@
-import { APIMessageActionRowComponent } from "discord-api-types/v10";
-import { ComponentBuilder } from "..";
+import { UnsafeButtonBuilder, UnsafeSelectMenuBuilder } from "@discordjs/builders";
+import { HandledComponentBuilder } from "..";
 
 export class ComponentManager {
-  private _components: Map<string, ComponentBuilder> = new Map();
+  private _components: Map<string, HandledComponentBuilder> = new Map();
 
   has(name: string): boolean {
     return this._components.has(name);
   }
 
-  get(name: string): ComponentBuilder | undefined {
+  get(name: string): HandledComponentBuilder | undefined {
     return this._components.get(name);
   }
 
-  load(components: ComponentBuilder[] = []) {
+  load(components: HandledComponentBuilder[] = []) {
     for (const component of components) {
       this._components.set(component.id, component);
     }
@@ -22,11 +22,11 @@ export class ComponentManager {
     this._components.delete(id);
   }
 
-  createInstance(name: string, args: string[] = []): APIMessageActionRowComponent {
+  createInstance(name: string, ...args: string[]): UnsafeButtonBuilder | UnsafeSelectMenuBuilder {
     const component = this.get(name);
 
     if (!component) throw new Error(`Component ${name} does not exist.`);
 
-    return component.createInstance(args);
+    return component.createInstance(...args);
   }
 }

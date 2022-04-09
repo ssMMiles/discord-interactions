@@ -1,13 +1,13 @@
-import { ButtonBuilder, SelectMenuBuilder } from "..";
+import { HandledButtonBuilder, HandledSelectMenuBuilder } from "..";
 
-export type ComponentBuilder = ButtonBuilder | SelectMenuBuilder;
+export type HandledComponentBuilder = HandledButtonBuilder | HandledSelectMenuBuilder;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/ban-types
 type Constructor = new (...args: any[]) => {};
 
 export function createHandledComponent<TBase extends Constructor>(Base: TBase) {
   return class HandledComponent extends Base {
-    id = "";
+    id!: string;
 
     setId(id: string) {
       this.id = id;

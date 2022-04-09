@@ -49,10 +49,10 @@ export class MessageBuilder {
     return this;
   }
 
-  public addActionRow(actionRow: ActionRowBuilder) {
+  public addComponents(...components: ActionRowBuilder[]) {
     if (!this.data.components) this.data.components = [];
 
-    this.data.components.push(actionRow.toJSON());
+    this.data.components.push(...components.map((component) => component.toJSON()));
 
     return this;
   }
@@ -60,7 +60,7 @@ export class MessageBuilder {
   public setComponents(components: APIActionRowComponent<APIMessageActionRowComponent>[] = []) {
     if (!this.data.components) this.data.components = [];
 
-    this.data.components.push(...components);
+    this.data.components = components;
 
     return this;
   }
