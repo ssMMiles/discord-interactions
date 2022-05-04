@@ -10,16 +10,20 @@ This library provides an easy way to create and manage your Discord Application'
  - Tests
 
 ## Links 
+ - ### [Example Bot](https://github.com/ssMMiles/bot-template)
  - ### [Documentation](https://interactions-ts.pages.dev/)
+ - ### [Github](https://github.com/ssMMiles/interactions.ts)
  - ### [NPM](https://www.npmjs.com/package/interactions.ts)
 
 ## Getting Started
 
 ### Install
 
-`npm install interactions.ts @discordjs/builders@dev`
+`npm install interactions.ts @discordjs/builders`
 
-### Creating A Global Slash Command
+---------------------------------------------------------------------------------------------------------------------
+
+### Registering a Slash Command
 
 ```typescript
 const app = new DiscordApplication({
@@ -37,12 +41,66 @@ const commands = [
 app.commands.load(commands);
 ```
 
-This will create a global `/ping` command. If one is already registered, it will be overwritten.
+This will create a global `/ping` command on your application. If one is already registered, it will be overwritten.
 
-Incoming interactions must then be passed to `app.handleInteractions()` from your webserver, as shown below with a fastify server.
+Components must be registered similarly before they can be used in your responses. They can then be instantiated with a state object stored within the `custom_id` parameter. If this data is too large and no external cache is configured, an error will be thrown.
 
+### Command With Components
 
-### Receiving Interactions From Fastify
+```typescript
+type TestButtonState = {
+  word: string;
+};
+
+const components = [
+  new HandledButtonBuilder("testbutton")
+    .setEmoji({ name: "🔍" })
+    .setHandler(async (ctx: ButtonContext<TestButtonState>): Promise<void> => {
+      const word = ctx.state ? ctx.state.word : "Component State expired";
+
+      return ctx.reply(new MessageBuilder().addEmbed(new UnsafeEmbedBuilder().setTitle(word)));
+    })
+    .setStyle(ButtonStyle.Primary)
+]
+
+app.components.load(components);
+
+app.commands.load([
+  new SlashCommandBuilder("test").setDescription("Test!").setHandler(async (context) => {
+    return context.reply(
+      new MessageBuilder()
+        .addEmbed(new UnsafeEmbedBuilder().setTitle("Press the button to update the message!"))
+        .addComponents(
+          new ActionRowBuilder().addComponents(await context.manager.components.createInstance("testbutton", { word: "Surprise!" }))
+        )
+    );
+  })
+]);
+
+```
+
+Redis is recommended for this external state cache:
+
+```typescript
+const redisClient = createClient();
+
+await redisClient.connect();
+
+const app = new DiscordApplication({
+  clientId: process.env.CLIENT_ID as string,
+  token: process.env.TOKEN as string,
+  publicKey: process.env.PUBLIC_KEY as string,
+
+  cache: {
+    get: (key: string) => redisClient.get(key),
+    set: (key: string, ttl: number, value: string) => redisClient.setEx(key, ttl, value)
+  }
+});
+```
+
+For your application to respond to commands and appear online, incoming interactions must then be passed to `app.handleInteractions()` from your webserver of choice.
+
+### Using Fastify to listen for Interactions
 
 ```typescript
 const server = fastify();

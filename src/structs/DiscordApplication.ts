@@ -47,6 +47,14 @@ export interface InteractionHooks {
   };
 }
 
+/** Component state cache for when it is too large for the `custom_id` field. TTL Defaults to 900 */
+export interface GenericCache {
+  ttl?: number;
+
+  get: (key: string) => Promise<string | null>;
+  set: (key: string, ttl: number, value: string) => Promise<string | void>;
+}
+
 export interface DiscordApplicationOptions {
   /** Discord Client ID */
   clientId: Snowflake;
@@ -59,8 +67,11 @@ export interface DiscordApplicationOptions {
   /** Whether to delete commands not handled by the client upon loading */
   removeUnregistered?: boolean;
 
-  /** Functions to be run on interactions. For commands, these are executed before the main handler. */
   hooks?: InteractionHooks;
+
+  /** Cache to store additional component state */
+  cache?: GenericCache;
+
   /** Timeout(ms) after which InteractionHandlerTimedOut is thrown - Default: 2500ms */
   timeout?: number;
 }
@@ -89,7 +100,7 @@ export class DiscordApplication {
 
     this.commands = new CommandManager(this, null, options.removeUnregistered);
 
-    this.components = new ComponentManager();
+    this.components = new ComponentManager(options.cache);
 
     if (options.timeout) this.timeout = options.timeout;
     if (options.hooks) this.hooks = options.hooks;

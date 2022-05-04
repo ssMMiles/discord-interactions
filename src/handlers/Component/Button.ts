@@ -3,6 +3,10 @@ import { ButtonContext } from "../../contexts";
 import { SimpleError } from "../../util";
 
 export async function handleButton(ctx: ButtonContext): Promise<void> {
+  await ctx._fetchState();
+
+  if (!ctx.state && !ctx.allowExpired) return ctx.defer();
+
   if (ctx.manager.hooks.component?.button) {
     const result = await ctx.manager.hooks.component.button(ctx);
 

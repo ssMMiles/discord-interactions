@@ -12,11 +12,11 @@ export class HandledButtonBuilder extends HandledButton {
     this.id = id;
   }
 
-  createInstance(...args: string[]): UnsafeButtonBuilder {
+  createInstance(data: string): UnsafeButtonBuilder {
     return new UnsafeButtonBuilder({
       ...this.data,
       ...{
-        custom_id: this.buildCustomId(args)
+        custom_id: this._buildCustomId(data)
       }
     });
   }

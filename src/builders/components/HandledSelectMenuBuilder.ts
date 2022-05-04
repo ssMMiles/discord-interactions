@@ -12,11 +12,11 @@ export class HandledSelectMenuBuilder extends HandledSelectMenu {
     this.id = id;
   }
 
-  createInstance(...args: string[]): UnsafeSelectMenuBuilder {
+  createInstance(data: string): UnsafeSelectMenuBuilder {
     return new UnsafeSelectMenuBuilder({
       ...this.data,
       ...{
-        custom_id: this.buildCustomId(args)
+        custom_id: this._buildCustomId(data)
       }
     });
   }

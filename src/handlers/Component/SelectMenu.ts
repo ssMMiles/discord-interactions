@@ -3,6 +3,10 @@ import { SelectMenuContext } from "../../contexts";
 import { SimpleError } from "../../util";
 
 export async function handleSelectMenu(ctx: SelectMenuContext): Promise<void> {
+  await ctx._fetchState();
+
+  if (!ctx.state && !ctx.allowExpired) return ctx.defer();
+
   if (ctx.manager.hooks.component?.selectMenu) {
     const result = await ctx.manager.hooks.component.selectMenu(ctx);
 

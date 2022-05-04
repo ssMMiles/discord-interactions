@@ -18,22 +18,41 @@ import {
 import { BaseInteractionContext } from "./BaseInteractionContext";
 
 class BaseComponentContext<
+  S,
   T extends APIMessageComponentInteraction = APIMessageComponentInteraction
 > extends BaseInteractionContext<T, MessageUpdateResponse> {
   private followup: InteractionWebhook;
+  public allowExpired = false;
 
   public id: string;
-  public args: string[];
+  public state?: S;
 
   constructor(manager: DiscordApplication, interaction: T, responseCallback: ResponseCallback<MessageUpdateResponse>) {
     super(manager, interaction, responseCallback);
 
     this.followup = new InteractionWebhook(this.interaction.application_id, this.interaction.token);
+    this.id = this.interaction.data.custom_id.split("|")[0];
 
-    this.args = this.interaction.data.custom_id.split("|");
+    const builder = manager.components.get(this.id);
+    if (builder) this.allowExpired = builder.allowExpired;
+  }
 
-    if (this.args.length === 0) throw new Error("Component ID not found.");
-    this.id = this.args.shift() as string;
+  async _fetchState(): Promise<void> {
+    this.state = undefined;
+    let dataStr = this.interaction.data.custom_id.split("|")[1];
+
+    if (!dataStr.startsWith("{") && this.manager.components.cache) {
+      const result = await this.manager.components.cache.get(dataStr);
+      if (!result) return;
+
+      dataStr = result;
+    }
+
+    try {
+      this.state = JSON.parse(dataStr);
+    } catch (err) {
+      throw err;
+    }
   }
 
   defer(): Promise<void> {
@@ -71,9 +90,9 @@ class BaseComponentContext<
   }
 }
 
-export class ButtonContext extends BaseComponentContext<APIMessageComponentButtonInteraction> {}
+export class ButtonContext<S = never> extends BaseComponentContext<S, APIMessageComponentButtonInteraction> {}
 
-export class SelectMenuContext extends BaseComponentContext<APIMessageComponentSelectMenuInteraction> {
+export class SelectMenuContext<S = never> extends BaseComponentContext<S, APIMessageComponentSelectMenuInteraction> {
   public values: string[];
 
   constructor(

@@ -41,7 +41,7 @@ export class ActionRowBuilder extends BaseComponentBuilder<
 
   toJSON(): APIActionRowComponent<APIMessageActionRowComponent> {
     return {
-      ...this.data,
+      type: ComponentType.ActionRow,
       components: this.components
     };
   }
