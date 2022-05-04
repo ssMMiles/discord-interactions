@@ -1,6 +1,6 @@
 {
   "name": "interactions.ts",
-  "description": "Helpers for creating and manage Discord Application Commands + A framework for easily handling incoming interactions.",
+  "description": "Command framework for Discord interactions based on @discordjs/builders.",
   "version": "1.0.20",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -50,5 +50,13 @@
     "dist/**/*"
   ],
   "author": "ssMMiles",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "discord",
+    "interactions",
+    "slash commands",
+    "framework",
+    "api",
+    "wrapper"
+  ]
 }
