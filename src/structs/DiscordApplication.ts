@@ -9,6 +9,7 @@ import {
   InteractionContext,
   InteractionHandlerTimedOut,
   MessageCommandContext,
+  PingContext,
   SelectMenuContext,
   SlashCommandContext,
   UnauthorizedInteraction,
@@ -27,6 +28,9 @@ export type ResponseCallback<T extends APIInteractionResponse = APIInteractionRe
  * Hooks to be executed on receiving an interaction. These are executed before command handlers, and will abort further handling the interaction on returning true;
  */
 export interface InteractionHooks {
+  /** Pings */
+  ping?: (context: PingContext) => Promise<void | true>;
+
   /** This hook will run first on all incoming interactions. */
   interaction?: (ctx: InteractionContext) => Promise<void | true>;
 

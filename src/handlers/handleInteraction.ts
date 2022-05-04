@@ -34,7 +34,16 @@ export async function _handleInteraction(
 
   switch (interaction.type) {
     case InteractionType.Ping:
-      return new PingContext(responseCallback);
+      context = new PingContext(responseCallback);
+
+      if (this.hooks.ping) {
+        const result = await this.hooks.ping(context);
+
+        if (result === true) break;
+      }
+
+      context.reply();
+      break;
     case InteractionType.ApplicationCommand:
       switch (interaction.data.type) {
         case ApplicationCommandType.ChatInput:
