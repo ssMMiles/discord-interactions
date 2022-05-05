@@ -55,8 +55,8 @@ describe("Discord Application", () => {
 
   const app = new DiscordApplication(options);
 
-  describe("Handling Interactions", () => {
-    it("Slash Command", (done) => {
+  describe("Managing Application", () => {
+    it("Creating Slash Command", (done) => {
       app.commands
         .load(
           [
@@ -73,22 +73,28 @@ describe("Discord Application", () => {
           app.commands.has("test").should.be.true;
           app.commands.get("test")?.should.be.instanceOf(LoadedSlashCommand);
 
-          await app.handleInteraction(
-            async (response) => {
-              // If test is timing out this is just not equal, it don't fail properly
-              equal(response, {
-                type: InteractionResponseType.ChannelMessageWithSource,
-                data: {
-                  content: "Test command executed!"
-                }
-              }).should.be.true;
-
-              done();
-            },
-            JSON.stringify(testCommandInteraction),
-            false
-          );
+          done();
         });
+    }).timeout(3000);
+  });
+
+  describe("Handling Interactions", () => {
+    it("Slash Command", (done) => {
+      app.handleInteraction(
+        async (response) => {
+          // If test is timing out this is just not equal, it don't fail properly
+          equal(response, {
+            type: InteractionResponseType.ChannelMessageWithSource,
+            data: {
+              content: "Test command executed!"
+            }
+          }).should.be.true;
+
+          done();
+        },
+        JSON.stringify(testCommandInteraction),
+        false
+      );
     });
 
     it("Button", (done) => {

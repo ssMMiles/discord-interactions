@@ -6,8 +6,7 @@ This library provides an easy way to create and manage your Discord Application'
 
 ### To-Do
  - Modal Support
- - Logging
- - Tests
+ - More Tests
 
 ## Links 
  - ### [Example Bot](https://github.com/ssMMiles/bot-template)

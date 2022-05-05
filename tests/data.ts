@@ -73,7 +73,7 @@ const buttonInteraction = {
   channel_id: "690256246003204228",
   data: {
     component_type: 2,
-    custom_id: "testButton"
+    custom_id: "testButton|{}"
   },
   guild_id: "690255418060046348",
   guild_locale: "en-US",
