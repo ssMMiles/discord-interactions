@@ -1,28 +1,26 @@
 # Discord Interactions.TS
 
-This library provides an easy way to create and manage your Discord Application's commands based on [@discord.js/builders](https://github.com/discordjs/discord.js/tree/main/packages/builders/).
+A full command framework for Discord interactions based on [@discord.js/builders](https://github.com/discordjs/discord.js/tree/main/packages/builders/).
 
 **Still a work in progress.**
 
-### To-Do
+### To-Do:
  - Modal Support
  - More Tests
-
-## Links 
- - ### [Example Bot](https://github.com/ssMMiles/bot-template)
- - ### [Documentation](https://interactions-ts.pages.dev/)
- - ### [Github](https://github.com/ssMMiles/interactions.ts)
- - ### [NPM](https://www.npmjs.com/package/interactions.ts)
-
-## Getting Started
 
 ### Install
 
 `npm install interactions.ts @discordjs/builders`
 
----------------------------------------------------------------------------------------------------------------------
+### Links
+ - #### [Example Bot](https://github.com/ssMMiles/bot-template)
+ - #### [Documentation](https://interactions-ts.pages.dev/)
+ - #### [Github](https://github.com/ssMMiles/interactions.ts)
+ - #### [NPM](https://www.npmjs.com/package/interactions.ts)
 
-### Registering a Slash Command
+# Getting Started
+
+## Registering a basic Slash Command
 
 ```typescript
 const app = new DiscordApplication({
@@ -42,9 +40,13 @@ app.commands.load(commands);
 
 This will create a global `/ping` command on your application. If one is already registered, it will be overwritten.
 
-Components must be registered similarly before they can be used in your responses. They can then be instantiated with a state object stored within the `custom_id` parameter. If this data is too large and no external cache is configured, an error will be thrown.
+---------------------------------------------------------------------------------------------------------------------
 
-### Command With Components
+Components must be registered similarly before they can be used. You can then create instances of your components and use them in your commands with an arbitrary state object to be passed through. 
+
+This state is stored in the `custom_id` property by default, which will constrain the size of your data. To avoid this, an external cache can be configured.
+
+## Command using Components
 
 ```typescript
 type TestButtonState = {
@@ -78,7 +80,7 @@ app.commands.load([
 
 ```
 
-Redis is recommended for this external state cache:
+## Using Redis for caching
 
 ```typescript
 const redisClient = createClient();
@@ -97,9 +99,9 @@ const app = new DiscordApplication({
 });
 ```
 
-For your application to respond to commands and appear online, incoming interactions must then be passed to `app.handleInteractions()` from your webserver of choice.
+---------------------------------------------------------------------------------------------------------------------
 
-### Using Fastify to listen for Interactions
+## Receiving + Handling interactions with Fastify
 
 ```typescript
 const server = fastify();
@@ -129,3 +131,5 @@ server.post("/", async (request, reply) => {
   }
 });
 ```
+
+Once incoming interaction requests start being passed to `app.handleInteraction()`, your application should appear online and be ready to respond to any commands you have configured.
