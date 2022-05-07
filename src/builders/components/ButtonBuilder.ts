@@ -3,12 +3,19 @@ import {
   APIButtonComponentWithCustomId,
   APIButtonComponentWithURL,
   APIMessageComponentEmoji,
-  ButtonStyle,
   ComponentType
 } from "discord-api-types/v10";
 import { ComponentBuilderBase } from "./ComponentBuilderBase";
 
-export class ButtonBuilderBase extends ComponentBuilderBase<APIButtonComponent> {
+export enum ButtonStyle {
+  Primary = 1,
+  Secondary = 2,
+  Success = 3,
+  Danger = 4,
+  Link = 5
+}
+
+abstract class ButtonBuilderBase extends ComponentBuilderBase<APIButtonComponent> {
   public constructor(data?: Partial<APIButtonComponent>) {
     super({ type: ComponentType.Button, ...data });
   }
