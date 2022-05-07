@@ -41,7 +41,7 @@ export class SlashCommand
     public autocompleteHandler: (ctx: AutocompleteContext) => Promise<void> = async (ctx: AutocompleteContext) => {
       ctx.reply([]);
     },
-    components: Component[]
+    components: Component[] = []
   ) {
     super(builder, handler, components);
 
