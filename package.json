@@ -1,7 +1,7 @@
 {
   "name": "interactions.ts",
   "description": "A full command framework for Discord interactions based on @discordjs/builders.",
-  "version": "1.0.21",
+  "version": "1.0.22",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
@@ -19,7 +19,6 @@
     "prepublish": "yarn build && yarn test && yarn docs"
   },
   "dependencies": {
-    "@discordjs/builders": "^0.13.0",
     "@discordjs/rest": "^0.3.0",
     "discord-api-types": "^0.32.1",
     "dotenv": "^13.0.0",

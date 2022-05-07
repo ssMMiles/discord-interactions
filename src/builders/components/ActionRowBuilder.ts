@@ -1,48 +1,55 @@
-import {
-  ComponentBuilder as BaseComponentBuilder,
-  UnsafeButtonBuilder,
-  UnsafeSelectMenuBuilder
-} from "@discordjs/builders";
 import { APIActionRowComponent, APIMessageActionRowComponent, ComponentType } from "discord-api-types/v10";
-import { HandledComponentBuilder } from "./HandledComponentBuilder";
+import { ButtonBuilder } from "./ButtonBuilder";
+import { ComponentBuilderBase } from "./ComponentBuilderBase";
+import { SelectMenuBuilder } from "./SelectMenuBuilder";
 
-export type ComponentBuilder = UnsafeButtonBuilder | UnsafeSelectMenuBuilder | HandledComponentBuilder;
+export type MessageComponentBuilder =
+  | MessageActionRowComponentBuilder
+  | ActionRowBuilder<MessageActionRowComponentBuilder>;
+//export type ModalComponentBuilder = ModalActionRowComponentBuilder | ActionRowBuilder<ModalActionRowComponentBuilder>;
+export type MessageActionRowComponentBuilder = ButtonBuilder | SelectMenuBuilder;
+//export type ModalActionRowComponentBuilder = TextInputBuilder;
+export type AnyComponentBuilder = MessageActionRowComponentBuilder /* | ModalActionRowComponentBuilder */;
 
-export class ActionRowBuilder extends BaseComponentBuilder<
-  Omit<
-    Partial<APIActionRowComponent<APIMessageActionRowComponent>> & {
-      type: ComponentType.ActionRow;
-    },
-    "components"
-  >
+/**
+ * Represents an action row component
+ */
+export class ActionRowBuilder<T extends AnyComponentBuilder> extends ComponentBuilderBase<
+  APIActionRowComponent<APIMessageActionRowComponent /* | APIModalActionRowComponent*/>
 > {
-  private components: APIMessageActionRowComponent[] = [];
+  /**
+   * The components within this action row
+   */
+  public readonly components: T[];
 
-  public constructor(components: HandledComponentBuilder[] | APIMessageActionRowComponent[] = []) {
+  public constructor(components: T[]) {
     super({ type: ComponentType.ActionRow });
-    this.components = this.flattenComponentBuilders(components);
+    this.components = components;
   }
 
-  private flattenComponentBuilders(
-    components: ComponentBuilder[] | APIMessageActionRowComponent[]
-  ): APIMessageActionRowComponent[] {
-    return components.map((component) => ("toJSON" in component ? component.toJSON() : component));
-  }
-
-  public addComponents(...components: ComponentBuilder[] | APIMessageActionRowComponent[]) {
-    this.components.push(...this.flattenComponentBuilders(components));
+  /**
+   * Adds components to this action row.
+   * @param components The components to add to this action row.
+   * @returns
+   */
+  public addComponents(components: T[]) {
+    this.components.push(...components);
     return this;
   }
 
-  public setComponents(components: ComponentBuilder[] | APIMessageActionRowComponent[]) {
-    this.components = this.flattenComponentBuilders(components);
+  /**
+   * Sets the components in this action row
+   * @param components The components to set this row to
+   */
+  public setComponents(components: T[]) {
+    this.components.splice(0, this.components.length, ...components);
     return this;
   }
 
-  toJSON(): APIActionRowComponent<APIMessageActionRowComponent> {
+  public toJSON(): APIActionRowComponent<ReturnType<T["toJSON"]>> {
     return {
-      type: ComponentType.ActionRow,
-      components: this.components
-    };
+      ...this.data,
+      components: this.components.map((component) => component.toJSON())
+    } as APIActionRowComponent<ReturnType<T["toJSON"]>>;
   }
 }

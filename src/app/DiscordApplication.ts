@@ -64,9 +64,7 @@ export interface DiscordApplicationOptions {
   /** Application's Bot Token */
   token: string;
 
-  /** Whether to delete commands not handled by the client upon loading */
-  removeUnregistered?: boolean;
-
+  /** Custom hooks to be executed on interactions */
   hooks?: InteractionHooks;
 
   /** Cache to store additional component state */
@@ -81,8 +79,9 @@ export interface DiscordApplicationOptions {
  */
 export class DiscordApplication {
   public publicKey: Buffer;
-
   public clientId: Snowflake;
+
+  public cache?: GenericCache;
 
   public commands: CommandManager;
   public components: ComponentManager;
@@ -98,9 +97,10 @@ export class DiscordApplication {
 
     this.rest = new REST().setToken(options.token);
 
-    this.commands = new CommandManager(this, null, options.removeUnregistered);
+    this.cache = options.cache;
 
-    this.components = new ComponentManager(options.cache);
+    this.commands = new CommandManager(this, null);
+    this.components = new ComponentManager(this.cache);
 
     if (options.timeout) this.timeout = options.timeout;
     if (options.hooks) this.hooks = options.hooks;

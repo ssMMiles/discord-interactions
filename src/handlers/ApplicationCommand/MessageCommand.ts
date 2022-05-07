@@ -1,5 +1,4 @@
-import { ApplicationCommandType } from "discord-api-types/v10";
-import { MessageCommandBuilder, MessageCommandContext, SimpleError } from "../..";
+import { MessageCommandContext, SimpleError } from "../..";
 
 export async function handleMessageCommand(ctx: MessageCommandContext): Promise<void> {
   if (ctx.manager.hooks.command?.message) {
@@ -8,14 +7,9 @@ export async function handleMessageCommand(ctx: MessageCommandContext): Promise<
     if (result === true) return;
   }
 
-  const command = ctx.manager.commands.get(ctx.name, ApplicationCommandType.Message) as
-    | MessageCommandBuilder
-    | undefined;
+  const command = ctx.manager.commands.message.get(ctx.name);
 
   if (!command) return ctx.reply(SimpleError("Command not found."));
-
-  if (command.guildOnly && ctx.isDM)
-    return ctx.reply(SimpleError("This command can only be used within a Discord server.", "Server Required"));
 
   return command.handler(ctx);
 }

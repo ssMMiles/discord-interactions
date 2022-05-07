@@ -1,27 +1,34 @@
-import { UnsafeButtonBuilder, UnsafeSelectMenuBuilder } from "@discordjs/builders";
 import { v4 as uuidv4 } from "uuid";
-import { GenericCache, HandledComponentBuilder } from "..";
+import { Component, GenericCache } from "../..";
+import { ButtonBuilder, SelectMenuBuilder } from "../components";
 
 export class ComponentManager {
-  private _components: Map<string, HandledComponentBuilder> = new Map();
+  private _components: Map<string, Component> = new Map();
 
-  constructor(public cache?: GenericCache) {}
+  /**
+   * Create a new component manager, with an optional cache.
+   * @param cache Cache to use for storing large state objects
+   * @param prefix Prefix for component IDs, used to namespace components (e.g per-command) as duplicate IDs will cause issues
+   */
+  constructor(public cache?: GenericCache) {
+    this.cache = cache;
+  }
 
   has(name: string): boolean {
     return this._components.has(name);
   }
 
-  get(name: string): HandledComponentBuilder | undefined {
+  get(name: string): Component | undefined {
     return this._components.get(name);
   }
 
-  load(components: HandledComponentBuilder[] = []) {
+  register(components: Component[] = []) {
     for (const component of components) {
       this._components.set(component.id, component);
     }
   }
 
-  unload(id: string) {
+  unregister(id: string) {
     this._components.delete(id);
   }
 
@@ -29,7 +36,7 @@ export class ComponentManager {
     name: string,
     data: object = {},
     ttl = this.cache?.ttl ?? 900
-  ): Promise<UnsafeButtonBuilder | UnsafeSelectMenuBuilder> {
+  ): Promise<ButtonBuilder | SelectMenuBuilder> {
     const component = this.get(name);
 
     if (!component) throw new Error(`Component ${name} does not exist.`);

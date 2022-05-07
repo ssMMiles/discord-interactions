@@ -4,14 +4,15 @@ import equal from "deep-equal";
 import { ButtonStyle, InteractionResponseType } from "discord-api-types/v10";
 import "dotenv/config";
 import {
+  Button,
+  ButtonBuilder,
   ButtonContext,
   DiscordApplication,
   DiscordApplicationOptions,
-  HandledButtonBuilder,
-  LoadedSlashCommand,
   MessageBuilder,
-  SlashCommandBuilder,
-  SlashCommandContext
+  RegisteredSlashCommand,
+  SlashCommand,
+  SlashCommandBuilder
 } from "../src";
 import { buttonInteraction, testCommandInteraction } from "./data";
 
@@ -30,9 +31,7 @@ if (
 const options: DiscordApplicationOptions = {
   clientId: process.env.CLIENT_ID,
   token: process.env.TOKEN,
-  publicKey: process.env.PUBLIC_KEY,
-
-  removeUnregistered: false
+  publicKey: process.env.PUBLIC_KEY
 };
 
 describe("Discord Application", () => {
@@ -58,20 +57,17 @@ describe("Discord Application", () => {
   describe("Managing Application", () => {
     it("Creating Slash Command", (done) => {
       app.commands
-        .load(
+        .register(
           [
-            new SlashCommandBuilder()
-              .setName("test")
-              .setDescription("Test command")
-              .setHandler(async (context: SlashCommandContext) => {
-                await context.reply(new MessageBuilder().setContent("Test command executed!"));
-              })
+            new SlashCommand(new SlashCommandBuilder("test", "A simple testing command!"), async (context) => {
+              context.reply(new MessageBuilder().setContent("Test command executed!"));
+            })
           ],
           false
         )
         .then(async () => {
           app.commands.has("test").should.be.true;
-          app.commands.get("test")?.should.be.instanceOf(LoadedSlashCommand);
+          app.commands.get("test")?.should.be.instanceOf(RegisteredSlashCommand);
 
           done();
         });
@@ -98,13 +94,14 @@ describe("Discord Application", () => {
     });
 
     it("Button", (done) => {
-      app.components.load([
-        new HandledButtonBuilder("testButton")
-          .setLabel("Test Button")
-          .setStyle(ButtonStyle.Primary)
-          .setHandler(async (context: ButtonContext) => {
+      app.components.register([
+        new Button(
+          "testButton",
+          new ButtonBuilder().setLabel("Test Button").setStyle(ButtonStyle.Primary),
+          async (context: ButtonContext) => {
             context.reply(new MessageBuilder().setContent("Test button executed!"));
-          })
+          }
+        )
       ]);
 
       app.handleInteraction(

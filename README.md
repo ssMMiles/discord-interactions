@@ -1,16 +1,29 @@
 # Discord Interactions.TS
+A simple command framework for Discord's HTTP interactions. 
 
-A full command framework for Discord interactions based on [@discord.js/builders](https://github.com/discordjs/discord.js/tree/main/packages/builders/).
+Easily create and manage your application's commands with helpers based on [@discord.js/builders](https://github.com/discordjs/discord.js/tree/main/packages/builders/), then just pass along incoming requests from your webserver of choice to start responding to them.
+
+Maintaining state information in the `custom_id` field of components is supported, as well as an external cache (Redis recommended) to store larger data.
 
 **Still a work in progress.**
 
+<div align="center">
+  <br />
+  <p>
+    <a href="https://discord.gg/BTXJmW4Bh7"><img src="https://img.shields.io/discord/395423304112013334?logo=discord&logoColor=white" alt="Discord server" /></a>
+    <a href="https://www.npmjs.com/package/interactions.ts"><img src="https://img.shields.io/npm/v/interactions.ts.svg?maxAge=3600" alt="npm version" /></a>
+    <a href="https://www.npmjs.com/package/interactions.ts"><img src="https://img.shields.io/npm/dt/interactions.ts.svg?maxAge=3600" alt="npm downloads" /></a>
+    <a href="https://github.com/ssMMiles/interactions.ts/actions"><img src="https://github.com/ssMMiles/interactions.ts/actions/workflows/tests.yml/badge.svg" alt="Tests status" /></a>
+  </p>
+</div>
+
 ### To-Do:
  - Modal Support
- - More Tests
+ - Better Tests
 
 ### Install
 
-`npm install interactions.ts @discordjs/builders`
+`npm install interactions.ts`
 
 ### Links
  - #### [Example Bot](https://github.com/ssMMiles/bot-template)
@@ -18,7 +31,7 @@ A full command framework for Discord interactions based on [@discord.js/builders
  - #### [Github](https://github.com/ssMMiles/interactions.ts)
  - #### [NPM](https://www.npmjs.com/package/interactions.ts)
 
-# Getting Started
+# Example Usage
 
 ## Registering a basic Slash Command
 
@@ -30,12 +43,12 @@ const app = new DiscordApplication({
 });
 
 const commands = [
-  new SlashCommandBuilder("ping").setDescription("Pong!").setHandler((context) => {
-    return context.reply(new MessageBuilder().addEmbed(new UnsafeEmbedBuilder().setTitle("Pong!")));
+  new SlashCommand(new SlashCommandBuilder("test", "A simple testing command!"), async (context) => {
+    context.reply(new MessageBuilder().setContent("Test command executed!"));
   })
 ]
 
-app.commands.load(commands);
+app.commands.register(commands);
 ```
 
 This will create a global `/ping` command on your application. If one is already registered, it will be overwritten.
@@ -54,25 +67,26 @@ type TestButtonState = {
 };
 
 const components = [
-  new HandledButtonBuilder("testbutton")
-    .setEmoji({ name: "🔍" })
-    .setHandler(async (ctx: ButtonContext<TestButtonState>): Promise<void> => {
+  new Button(
+    "testButton",
+    new ButtonBuilder().setLabel("Test Button").setStyle(ButtonStyle.Primary),
+    async (ctx: ButtonContext<TestButtonState>): Promise<void> => {
       const word = ctx.state ? ctx.state.word : "Component State expired";
 
       return ctx.reply(new MessageBuilder().addEmbed(new UnsafeEmbedBuilder().setTitle(word)));
-    })
-    .setStyle(ButtonStyle.Primary)
+    }
+  ).allowExpiredState(true)
 ]
 
-app.components.load(components);
+app.components.register(components);
 
-app.commands.load([
-  new SlashCommandBuilder("test").setDescription("Test!").setHandler(async (context) => {
-    return context.reply(
+app.commands.register([
+  new SlashCommand(new SlashCommandBuilder("test", "A simple testing command!"), async (context) => {
+    context.reply(
       new MessageBuilder()
         .addEmbed(new UnsafeEmbedBuilder().setTitle("Press the button to update the message!"))
         .addComponents(
-          new ActionRowBuilder().addComponents(await context.manager.components.createInstance("testbutton", { word: "Surprise!" }))
+          new ActionRowBuilder().addComponents(await context.manager.components.createInstance("testButton", { word: "Surprise!" }))
         )
     );
   })

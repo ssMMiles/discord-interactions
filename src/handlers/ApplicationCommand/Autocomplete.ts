@@ -1,4 +1,4 @@
-import { AutocompleteContext, SlashCommandBuilder } from "../..";
+import { AutocompleteContext } from "../..";
 
 export async function handleAutocomplete(ctx: AutocompleteContext): Promise<void> {
   if (ctx.manager.hooks.command?.autocomplete) {
@@ -7,7 +7,7 @@ export async function handleAutocomplete(ctx: AutocompleteContext): Promise<void
     if (result === true) return;
   }
 
-  const command = ctx.manager.commands.get(ctx.name) as SlashCommandBuilder | undefined;
+  const command = ctx.manager.commands.slash.get(ctx.name);
 
   if (!command || command.autocompleteHandler === undefined) return ctx.reply([]);
 

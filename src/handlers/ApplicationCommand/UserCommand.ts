@@ -1,5 +1,4 @@
-import { ApplicationCommandType } from "discord-api-types/v10";
-import { SimpleError, UserCommandBuilder, UserCommandContext } from "../..";
+import { SimpleError, UserCommandContext } from "../..";
 
 export async function handleUserCommand(ctx: UserCommandContext): Promise<void> {
   if (ctx.manager.hooks.command?.user) {
@@ -8,12 +7,9 @@ export async function handleUserCommand(ctx: UserCommandContext): Promise<void> 
     if (result === true) return;
   }
 
-  const command = ctx.manager.commands.get(ctx.name, ApplicationCommandType.User) as UserCommandBuilder | undefined;
+  const command = ctx.manager.commands.user.get(ctx.name);
 
   if (!command) return ctx.reply(SimpleError("Command not found."));
-
-  if (command.guildOnly && ctx.isDM)
-    return ctx.reply(SimpleError("This command can only be used within a Discord server.", "Server Required"));
 
   return command.handler(ctx);
 }

@@ -1,4 +1,4 @@
-import { HandledSelectMenuBuilder } from "../../builders";
+import { SelectMenu } from "../../app";
 import { SelectMenuContext } from "../../contexts";
 import { SimpleError } from "../../util";
 
@@ -15,8 +15,7 @@ export async function handleSelectMenu(ctx: SelectMenuContext): Promise<void> {
 
   const selectMenu = ctx.manager.components.get(ctx.id);
 
-  if (!selectMenu || !(selectMenu instanceof HandledSelectMenuBuilder))
-    return ctx.reply(SimpleError("Select menu not found."));
+  if (!selectMenu || !(selectMenu instanceof SelectMenu)) return ctx.reply(SimpleError("Select menu not found."));
 
   return selectMenu.handler(ctx);
 }

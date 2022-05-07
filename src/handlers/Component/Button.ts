@@ -1,4 +1,4 @@
-import { HandledButtonBuilder } from "../../builders";
+import { Button } from "../../app";
 import { ButtonContext } from "../../contexts";
 import { SimpleError } from "../../util";
 
@@ -15,7 +15,7 @@ export async function handleButton(ctx: ButtonContext): Promise<void> {
 
   const button = ctx.manager.components.get(ctx.id);
 
-  if (!button || !(button instanceof HandledButtonBuilder)) return ctx.reply(SimpleError("Button not found."));
+  if (!button || !(button instanceof Button)) return ctx.reply(SimpleError("Button not found."));
 
   return button.handler(ctx);
 }

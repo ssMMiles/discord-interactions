@@ -10,6 +10,7 @@ import {
   InteractionType
 } from "discord-api-types/v10";
 import { UnknownApplicationCommandType, UnknownInteractionType } from "..";
+import { DiscordApplication, ResponseCallback } from "../app";
 import {
   AutocompleteContext,
   ButtonContext,
@@ -20,7 +21,6 @@ import {
   UserCommandContext
 } from "../contexts";
 import { PingContext } from "../contexts/PingContext";
-import { DiscordApplication, ResponseCallback } from "../structs";
 import { handleAutocomplete, handleMessageCommand, handleSlashCommand, handleUserCommand } from "./ApplicationCommand";
 import { handleButton, handleSelectMenu } from "./Component";
 

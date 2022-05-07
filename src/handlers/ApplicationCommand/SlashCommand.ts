@@ -1,4 +1,4 @@
-import { SimpleError, SlashCommandBuilder, SlashCommandContext } from "../..";
+import { SimpleError, SlashCommandContext } from "../..";
 
 export async function handleSlashCommand(ctx: SlashCommandContext): Promise<void> {
   if (ctx.manager.hooks.command?.slash) {
@@ -7,12 +7,9 @@ export async function handleSlashCommand(ctx: SlashCommandContext): Promise<void
     if (result === true) return;
   }
 
-  const command = ctx.manager.commands.get(ctx.name) as SlashCommandBuilder | undefined;
+  const command = ctx.manager.commands.slash.get(ctx.name);
 
   if (!command) return ctx.reply(SimpleError("Command not found."));
-
-  if (command.guildOnly && ctx.isDM)
-    return ctx.reply(SimpleError("This command can only be used within a Discord server.", "Server Required"));
 
   return command.handler(ctx);
 }
