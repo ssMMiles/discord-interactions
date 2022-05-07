@@ -12,13 +12,27 @@ import {
   UserCommandBuilder,
   UserCommandContext
 } from "../..";
+import { Component } from "../components";
 import { HandledInteraction } from "../HandledInteraction";
 
-export class SlashCommand extends HandledInteraction<
-  RESTPostAPIChatInputApplicationCommandsJSONBody,
-  SlashCommandBuilder,
-  SlashCommandContext
-> {
+export interface ICommandBase<Builder, Context> {
+  builder: Builder;
+
+  handler: (ctx: Context) => Promise<void>;
+
+  components: Component[];
+}
+
+export interface ISlashCommand extends ICommandBase<SlashCommandBuilder, SlashCommandContext> {
+  autocompleteHandler?: (ctx: AutocompleteContext) => Promise<void>;
+}
+
+export class SlashCommand
+  extends HandledInteraction<RESTPostAPIChatInputApplicationCommandsJSONBody, SlashCommandBuilder, SlashCommandContext>
+  implements ISlashCommand
+{
+  public components: Component[] = [];
+
   constructor(
     builder: SlashCommandBuilder,
     handler: (ctx: SlashCommandContext) => Promise<void> = async (ctx: SlashCommandContext) => {
@@ -26,9 +40,10 @@ export class SlashCommand extends HandledInteraction<
     },
     public autocompleteHandler: (ctx: AutocompleteContext) => Promise<void> = async (ctx: AutocompleteContext) => {
       ctx.reply([]);
-    }
+    },
+    components: Component[]
   ) {
-    super(builder, handler);
+    super(builder, handler, components);
 
     this.autocompleteHandler = autocompleteHandler;
   }
@@ -38,7 +53,21 @@ export class SlashCommand extends HandledInteraction<
 
     return this;
   }
+
+  public setComponents(components: Component[]): this {
+    this.components = components;
+
+    return this;
+  }
+
+  public addComponents(...components: Component[]): this {
+    this.components.push(...components);
+
+    return this;
+  }
 }
+
+export type IUserCommand = ICommandBase<UserCommandBuilder, UserCommandContext>;
 
 export class UserCommand extends HandledInteraction<
   RESTPostAPIContextMenuApplicationCommandsJSONBody & { type: ApplicationCommandType.User },
@@ -50,6 +79,8 @@ export class UserCommand extends HandledInteraction<
   };
 }
 
+export type IMessageCommand = ICommandBase<MessageCommandBuilder, MessageCommandContext>;
+
 export class MessageCommand extends HandledInteraction<
   RESTPostAPIContextMenuApplicationCommandsJSONBody & { type: ApplicationCommandType.Message },
   MessageCommandBuilder,
@@ -60,4 +91,5 @@ export class MessageCommand extends HandledInteraction<
   };
 }
 
+export type ICommand = ISlashCommand | IUserCommand | IMessageCommand;
 export type Command = SlashCommand | UserCommand | MessageCommand;

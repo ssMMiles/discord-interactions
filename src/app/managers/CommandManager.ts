@@ -4,7 +4,8 @@ import {
   RESTPostAPIApplicationCommandsJSONBody,
   Routes
 } from "discord-api-types/v10";
-import { Command, DiscordApplication, MessageCommand, SlashCommand, UserCommand } from "../..";
+import { DiscordApplication, MessageCommand, SlashCommand, UserCommand } from "../..";
+import { ICommand, IMessageCommand, ISlashCommand, IUserCommand } from "../commands";
 import {
   RegisteredCommand,
   RegisteredMessageCommand,
@@ -36,6 +37,9 @@ export interface ParsedCommands {
   message: Map<string, APIApplicationMessageCommand>;
 }
 
+/**
+ * Manager for your application's commands. Lets you register fully handled commands as well as exposes methods for managing your commands on the API side.
+ */
 export class CommandManager {
   public slash: Map<string, RegisteredSlashCommand> = new Map();
   public user: Map<string, RegisteredUserCommand> = new Map();
@@ -98,14 +102,30 @@ export class CommandManager {
     return parsed;
   }
 
+  /**
+   * Check whether a command is registered
+   * @param name Command name
+   * @param type Command type
+   */
   has(name: string, type: ApplicationCommandType = ApplicationCommandType.ChatInput): boolean {
     return this._commands(type).has(name);
   }
 
+  /**
+   * Fetch a registered command
+   * @param name Command name
+   * @param type Command type
+   */
   get(name: string, type: ApplicationCommandType = ApplicationCommandType.ChatInput): RegisteredCommand | undefined {
     return this._commands(type).get(name);
   }
 
+  /**
+   * Rename a registered command
+   * @param oldName Old name
+   * @param newName New Name
+   * @param type Command type
+   */
   rename(oldName: string, newName: string, type: ApplicationCommandType = ApplicationCommandType.ChatInput): void {
     const command = this.get(oldName, type);
 
@@ -115,71 +135,68 @@ export class CommandManager {
     this._commands(type).set(newName, command);
   }
 
-  async register(commands: Command[], sync = true, overwrite = true): Promise<RegisteredCommand[]> {
-    const remoteCommands = this.parse(await this.getCommands());
+  /**
+   * Register a new command to be handled. This will also create the command on Discord if it doesn't exist, or overwrite it if it does.
+   * @param commands An array of Commands
+   * @param overwrite Whether to overwrite existing commands when syncing with Discord (default: false)
+   */
+  async register(commands: ICommand[], overwrite = true): Promise<RegisteredCommand[]> {
+    const remoteCommands = this.parse(await this.getAPICommands());
     const registeredCommands: RegisteredCommand[] = [];
 
     for (const command of commands) {
-      if (command instanceof SlashCommand) {
+      for (const component of command.components) {
+        this.manager.components.register([component]);
+      }
+
+      if (command.builder.type === ApplicationCommandType.ChatInput) {
         let result: APIApplicationSlashCommand;
 
-        if (remoteCommands.slash.has(command.data.name) && overwrite) {
-          result = remoteCommands.slash.get(command.data.name) as APIApplicationSlashCommand;
+        if (remoteCommands.slash.has(command.builder.name)) {
+          result = remoteCommands.slash.get(command.builder.name) as APIApplicationSlashCommand;
 
-          result = await this.updateCommand(command.data, result.id);
-        } else if (sync) {
-          result = await this.putCommand(command.data);
+          if (overwrite) result = await this.updateAPICommand(command.builder.toJSON(), result.id);
         } else {
-          throw new Error(
-            `Sync must be enabled when registering new commands. Your "${command.data.name}" command does not exist.`
-          );
+          result = await this.putAPICommand(command.builder.toJSON());
         }
 
-        const registeredCommand = new RegisteredSlashCommand(this, command, result.id);
+        const registeredCommand = new RegisteredSlashCommand(this, command as ISlashCommand, result.id);
 
-        this.slash.set(command.data.name, registeredCommand);
+        this.slash.set(command.builder.name, registeredCommand);
         registeredCommands.push(registeredCommand);
       }
 
-      if (command instanceof UserCommand) {
+      if (command.builder.type === ApplicationCommandType.User) {
         let result: APIApplicationUserCommand;
 
-        if (remoteCommands.user.has(command.data.name) && overwrite) {
-          result = remoteCommands.user.get(command.data.name) as APIApplicationUserCommand;
+        if (remoteCommands.user.has(command.builder.name)) {
+          result = remoteCommands.user.get(command.builder.name) as APIApplicationUserCommand;
 
-          result = await this.updateCommand(command.data, result.id);
-        } else if (sync) {
-          result = await this.putCommand(command.data);
+          if (overwrite) result = await this.updateAPICommand(command.builder.toJSON(), result.id);
         } else {
-          throw new Error(
-            `Sync must be enabled when registering new commands. Your "${command.data.name}" command does not exist.`
-          );
+          result = await this.putAPICommand(command.builder.toJSON());
         }
 
-        const registeredCommand = new RegisteredUserCommand(this, command, result.id);
+        const registeredCommand = new RegisteredUserCommand(this, command as IUserCommand, result.id);
 
-        this.user.set(command.data.name, registeredCommand);
+        this.user.set(command.builder.name, registeredCommand);
         registeredCommands.push(registeredCommand);
       }
 
-      if (command instanceof MessageCommand) {
+      if (command.builder.type === ApplicationCommandType.Message) {
         let result: APIApplicationMessageCommand;
 
-        if (remoteCommands.message.has(command.data.name) && overwrite) {
-          result = remoteCommands.message.get(command.data.name) as APIApplicationMessageCommand;
+        if (remoteCommands.message.has(command.builder.name)) {
+          result = remoteCommands.message.get(command.builder.name) as APIApplicationMessageCommand;
 
-          result = await this.updateCommand(command.data, result.id);
-        } else if (sync) {
-          result = await this.putCommand(command.data);
+          if (overwrite) result = await this.updateAPICommand(command.builder.toJSON(), result.id);
         } else {
-          throw new Error(
-            `Sync must be enabled when registering new commands. Your "${command.data.name}" command does not exist.`
-          );
+          result = await this.putAPICommand(command.builder.toJSON());
         }
 
-        const registeredCommand = new RegisteredMessageCommand(this, command, result.id);
+        const registeredCommand = new RegisteredMessageCommand(this, command as IMessageCommand, result.id);
 
-        this.message.set(command.data.name, registeredCommand);
+        this.message.set(command.builder.name, registeredCommand);
         registeredCommands.push(registeredCommand);
       }
     }
@@ -187,6 +204,12 @@ export class CommandManager {
     return registeredCommands;
   }
 
+  /**
+   * Unregister a command from this client
+   * @param name Command name
+   * @param type Command type
+   * @param deleteCommand Whether to also delete this command from Discord (default: false)
+   */
   async unregister(
     name: string,
     type: ApplicationCommandType = ApplicationCommandType.ChatInput,
@@ -196,27 +219,30 @@ export class CommandManager {
     if (!command) throw new Error("Command isn't registered.");
 
     this._commands(type).delete(name);
-    if (deleteCommand) await this.deleteCommand(command.id);
+    if (deleteCommand) await this.deleteAPICommand(command.id);
   }
 
-  /** Removes remote commands that aren't registered with this command manager */
-  async removeUnregistered() {
-    const remoteCommands = this.parse(await this.getCommands());
+  /** Deletes remote commands that aren't registered with this command manager */
+  async deleteUnregistered() {
+    const remoteCommands = this.parse(await this.getAPICommands());
 
     for (const [name, command] of remoteCommands.slash) {
-      if (!this.slash.has(name)) await this.deleteCommand(command.id);
+      if (!this.slash.has(name)) await this.deleteAPICommand(command.id);
     }
 
     for (const [name, command] of remoteCommands.user) {
-      if (!this.user.has(name)) await this.deleteCommand(command.id);
+      if (!this.user.has(name)) await this.deleteAPICommand(command.id);
     }
 
     for (const [name, command] of remoteCommands.user) {
-      if (!this.message.has(name)) await this.deleteCommand(command.id);
+      if (!this.message.has(name)) await this.deleteAPICommand(command.id);
     }
   }
 
-  toJSON(): RESTPostAPIApplicationCommandsJSONBody[] {
+  /**
+   * Get an array of API command objects for all registered commands
+   */
+  toAPICommands(): RESTPostAPIApplicationCommandsJSONBody[] {
     const commandData = [];
 
     for (const command of [...this.slash.values(), ...this.user.values(), ...this.message.values()]) {
@@ -226,25 +252,41 @@ export class CommandManager {
     return commandData;
   }
 
-  getCommands(): Promise<APIApplicationCommand[]> {
+  /**
+   * Fetch your application's commands
+   * @param withLocalizations Whether to include full localization dictionaries (name_localizations and description_localizations) in the returned objects, instead of the name_localized and description_localized fields. Default false.
+   */
+  getAPICommands(withLocalizations = true): Promise<APIApplicationCommand[]> {
     return this.manager.rest.get(this.route(), {
-      query: new URLSearchParams(`with_localizations=true`)
+      query: new URLSearchParams(`with_localizations=${withLocalizations ? "true" : "false"}`)
     }) as Promise<APIApplicationCommand[]>;
   }
 
-  putCommands(data: RESTPostAPIApplicationCommandsJSONBody[]): Promise<APIApplicationCommand[]> {
+  /**
+   * Bulk update your application's commands
+   */
+  putAPICommands(data: RESTPostAPIApplicationCommandsJSONBody[]): Promise<APIApplicationCommand[]> {
     return this.manager.rest.put(this.route(), {
       body: data
     }) as Promise<APIApplicationCommand[]>;
   }
 
-  putCommand<T extends APIApplicationCommand>(data: RESTPostAPIApplicationCommandsJSONBody): Promise<T> {
+  /**
+   * Create or Update an Application Command
+   */
+  putAPICommand<T extends APIApplicationCommand>(data: RESTPostAPIApplicationCommandsJSONBody): Promise<T> {
     return this.manager.rest.post(this.route(), {
       body: data
     }) as Promise<T>;
   }
 
-  updateCommand<T extends APIApplicationCommand>(data: RESTPostAPIApplicationCommandsJSONBody, id: string): Promise<T> {
+  /**
+   * Update an Application Command
+   */
+  updateAPICommand<T extends APIApplicationCommand>(
+    data: RESTPostAPIApplicationCommandsJSONBody,
+    id: string
+  ): Promise<T> {
     delete data.type;
 
     return this.manager.rest.patch(this.commandRoute(id), {
@@ -252,7 +294,10 @@ export class CommandManager {
     }) as Promise<T>;
   }
 
-  async deleteCommand(id: string): Promise<void> {
+  /**
+   * Delete an Application Command
+   */
+  async deleteAPICommand(id: string): Promise<void> {
     await this.manager.rest.delete(this.commandRoute(id));
 
     return;

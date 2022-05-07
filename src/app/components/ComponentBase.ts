@@ -29,7 +29,7 @@ export abstract class ComponentBase<
   }
 
   /** Set whether component execution should continue when state data has expired */
-  allowExpiredState(value: boolean) {
+  setAllowExpired(value: boolean) {
     this.allowExpired = value;
     return this;
   }

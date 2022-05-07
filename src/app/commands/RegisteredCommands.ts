@@ -29,10 +29,17 @@ export abstract class RegisteredCommandBase<
     this.lastSync = this.builder.toJSON();
   }
 
+  /**
+   * Update this command's handler function
+   * @param handler New command handler
+   */
   setHandler(handler: (ctx: Context) => Promise<void>): void {
     this.handler = handler;
   }
 
+  /**
+   * Sync this command's builder with the API
+   */
   async sync(): Promise<void> {
     const data = this.builder.toJSON();
 
@@ -40,13 +47,21 @@ export abstract class RegisteredCommandBase<
       this.manager.rename(this.lastSync.name, data.name);
     }
 
-    await this.manager.updateCommand(data, this.id);
+    await this.manager.updateAPICommand(data, this.id);
 
     this.lastSync = data;
   }
 
+  /** Unregister this command */
+  async unregister(): Promise<void> {
+    await this.manager.unregister(this.builder.name, this.builder.type);
+  }
+
+  /**
+   * Delete and unregister this command
+   */
   async delete(): Promise<void> {
-    await this.manager.deleteCommand(this.id);
+    await this.manager.unregister(this.builder.name, this.builder.type, true);
   }
 }
 

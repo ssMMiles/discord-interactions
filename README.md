@@ -75,7 +75,7 @@ const components = [
 
       return ctx.reply(new MessageBuilder().addEmbed(new UnsafeEmbedBuilder().setTitle(word)));
     }
-  ).allowExpiredState(true)
+  ).setAllowExpired(true)
 ]
 
 app.components.register(components);

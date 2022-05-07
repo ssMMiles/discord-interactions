@@ -52,7 +52,6 @@ export class SelectMenuOptionBuilder {
   }
 
   public toJSON(): APISelectMenuOption {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
     return {
       ...this.data
     } as APISelectMenuOption;

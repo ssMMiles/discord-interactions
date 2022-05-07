@@ -22,7 +22,7 @@ export class ActionRowBuilder<T extends AnyComponentBuilder> extends ComponentBu
    */
   public readonly components: T[];
 
-  public constructor(components: T[]) {
+  public constructor(components: T[] = []) {
     super({ type: ComponentType.ActionRow });
     this.components = components;
   }
@@ -32,7 +32,7 @@ export class ActionRowBuilder<T extends AnyComponentBuilder> extends ComponentBu
    * @param components The components to add to this action row.
    * @returns
    */
-  public addComponents(components: T[]) {
+  public addComponents(...components: T[]) {
     this.components.push(...components);
     return this;
   }
