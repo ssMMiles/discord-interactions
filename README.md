@@ -55,6 +55,17 @@ This will create a global `/ping` command on your application. If one is already
 
 ---------------------------------------------------------------------------------------------------------------------
 
+## Registering a guild-specific command
+
+```typescript
+
+const guild = new CommandManager(app, guildId);
+
+guild.register(commands);
+```
+
+---------------------------------------------------------------------------------------------------------------------
+
 Components must be registered similarly before they can be used. You can then create instances of your components and use them in your commands with an arbitrary state object to be passed through. 
 
 This state is stored in the `custom_id` property by default, which will constrain the size of your data. To avoid this, an external cache can be configured.
@@ -93,6 +104,8 @@ app.commands.register([
 ]);
 
 ```
+
+---------------------------------------------------------------------------------------------------------------------
 
 ## Using Redis for caching
 

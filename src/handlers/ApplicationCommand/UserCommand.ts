@@ -7,7 +7,10 @@ export async function handleUserCommand(ctx: UserCommandContext): Promise<void> 
     if (result === true) return;
   }
 
-  const command = ctx.manager.commands.user.get(ctx.name);
+  const command = ctx.interaction.guild_id
+    ? ctx.manager.guildCommands?.get(ctx.interaction.guild_id)?.user?.get(ctx.name) ??
+      ctx.manager.commands.user.get(ctx.name)
+    : ctx.manager.commands.user.get(ctx.name);
 
   if (!command) return ctx.reply(SimpleError("Command not found."));
 

@@ -7,7 +7,10 @@ export async function handleSlashCommand(ctx: SlashCommandContext): Promise<void
     if (result === true) return;
   }
 
-  const command = ctx.manager.commands.slash.get(ctx.name);
+  const command = ctx.interaction.guild_id
+    ? ctx.manager.guildCommands?.get(ctx.interaction.guild_id)?.slash?.get(ctx.name) ??
+      ctx.manager.commands.slash.get(ctx.name)
+    : ctx.manager.commands.slash.get(ctx.name);
 
   if (!command) return ctx.reply(SimpleError("Command not found."));
 

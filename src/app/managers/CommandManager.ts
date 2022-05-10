@@ -47,22 +47,25 @@ export class CommandManager {
 
   private manager: DiscordApplication;
 
-  private guildId: string | null;
+  private guildId?: string;
 
-  constructor(manager: DiscordApplication, guildId: string | null = null) {
+  constructor(manager: DiscordApplication, guildId?: string) {
     this.manager = manager;
 
-    this.guildId = guildId;
+    if (guildId !== undefined) {
+      this.guildId = guildId;
+      this.manager.guildCommands.set(this.guildId, this);
+    }
   }
 
   private route() {
-    return this.guildId === null
+    return this.guildId === undefined
       ? Routes.applicationCommands(this.manager.clientId)
       : Routes.applicationGuildCommands(this.manager.clientId, this.guildId);
   }
 
   private commandRoute(id: string) {
-    return this.guildId === null
+    return this.guildId === undefined
       ? Routes.applicationCommand(this.manager.clientId, id)
       : Routes.applicationGuildCommand(this.manager.clientId, this.guildId, id);
   }

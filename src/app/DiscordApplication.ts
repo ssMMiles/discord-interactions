@@ -86,6 +86,8 @@ export class DiscordApplication {
   public commands: CommandManager;
   public components: ComponentManager;
 
+  public guildCommands: Map<Snowflake, CommandManager>;
+
   public timeout = 2500;
   public hooks: InteractionHooks = {};
 
@@ -99,8 +101,10 @@ export class DiscordApplication {
 
     this.cache = options.cache;
 
-    this.commands = new CommandManager(this, null);
+    this.commands = new CommandManager(this);
     this.components = new ComponentManager(this.cache);
+
+    this.guildCommands = new Map();
 
     if (options.timeout) this.timeout = options.timeout;
     if (options.hooks) this.hooks = options.hooks;
