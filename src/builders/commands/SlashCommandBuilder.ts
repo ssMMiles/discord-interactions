@@ -39,7 +39,7 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
    *
    * @param description The description
    */
-  public setDescription(description: string) {
+  public setDescription(description: string): this {
     this.description = description;
 
     return this;
@@ -48,7 +48,7 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
   /**
    * Set a dictionary of localized descriptions
    */
-  public setDescriptionLocalizations(localizations: LocalizationMap) {
+  public setDescriptionLocalizations(localizations: LocalizationMap): this {
     this.description_localizations = localizations;
 
     return this;
@@ -57,8 +57,9 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
   /**
    * Set a single locale's description
    */
-  public setLocalizedDescription(locale: keyof LocalizationMap, description: string) {
+  public setLocalizedDescription(locale: keyof LocalizationMap, description: string): this {
     this.description_localizations[locale] = description;
+    return this;
   }
 
   /**
@@ -76,7 +77,7 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
    *
    * @param input A function that returns an option builder, or an already built builder
    */
-  public addUserOption(input: SlashCommandUserOption) {
+  public addUserOption(input: SlashCommandUserOption): this {
     this.options.push(input);
     return this;
   }
@@ -86,7 +87,7 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
    *
    * @param input A function that returns an option builder, or an already built builder
    */
-  public addChannelOption(input: SlashCommandChannelOption) {
+  public addChannelOption(input: SlashCommandChannelOption): this {
     this.options.push(input);
     return this;
   }
@@ -96,7 +97,7 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
    *
    * @param input A function that returns an option builder, or an already built builder
    */
-  public addRoleOption(input: SlashCommandRoleOption) {
+  public addRoleOption(input: SlashCommandRoleOption): this {
     this.options.push(input);
     return this;
   }
@@ -106,7 +107,7 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
    *
    * @param input A function that returns an option builder, or an already built builder
    */
-  public addAttachmentOption(input: SlashCommandAttachmentOption) {
+  public addAttachmentOption(input: SlashCommandAttachmentOption): this {
     this.options.push(input);
     return this;
   }
@@ -116,7 +117,7 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
    *
    * @param input A function that returns an option builder, or an already built builder
    */
-  public addMentionableOption(input: SlashCommandMentionableOption) {
+  public addMentionableOption(input: SlashCommandMentionableOption): this {
     this.options.push(input);
     return this;
   }
@@ -131,7 +132,7 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
       | SlashCommandStringOption
       | Omit<SlashCommandStringOption, "setAutocomplete">
       | Omit<SlashCommandStringOption, "addChoices">
-  ) {
+  ): this {
     this.options.push(input);
     return this;
   }
@@ -146,7 +147,7 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
       | SlashCommandIntegerOption
       | Omit<SlashCommandIntegerOption, "setAutocomplete">
       | Omit<SlashCommandIntegerOption, "addChoices">
-  ) {
+  ): this {
     this.options.push(input);
     return this;
   }
@@ -161,7 +162,7 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
       | SlashCommandNumberOption
       | Omit<SlashCommandNumberOption, "setAutocomplete">
       | Omit<SlashCommandNumberOption, "addChoices">
-  ) {
+  ): this {
     this.options.push(input);
     return this;
   }

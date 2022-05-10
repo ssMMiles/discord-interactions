@@ -21,7 +21,7 @@ export class SelectMenuBuilder extends ComponentBuilderBase<APISelectMenuCompone
    * Sets the placeholder for this select menu
    * @param placeholder The placeholder to use for this select menu
    */
-  public setPlaceholder(placeholder: string) {
+  public setPlaceholder(placeholder: string): this {
     this.data.placeholder = placeholder;
     return this;
   }
@@ -30,7 +30,7 @@ export class SelectMenuBuilder extends ComponentBuilderBase<APISelectMenuCompone
    * Sets the minimum values that must be selected in the select menu
    * @param minValues The minimum values that must be selected
    */
-  public setMinValues(minValues: number) {
+  public setMinValues(minValues: number): this {
     this.data.min_values = minValues;
     return this;
   }
@@ -39,7 +39,7 @@ export class SelectMenuBuilder extends ComponentBuilderBase<APISelectMenuCompone
    * Sets the maximum values that must be selected in the select menu
    * @param minValues The maximum values that must be selected
    */
-  public setMaxValues(maxValues: number) {
+  public setMaxValues(maxValues: number): this {
     this.data.max_values = maxValues;
     return this;
   }
@@ -48,7 +48,7 @@ export class SelectMenuBuilder extends ComponentBuilderBase<APISelectMenuCompone
    * Sets the custom Id for this select menu
    * @param customId The custom id to use for this select menu
    */
-  public setCustomId(customId: string) {
+  public setCustomId(customId: string): this {
     this.data.custom_id = customId;
     return this;
   }
@@ -57,7 +57,7 @@ export class SelectMenuBuilder extends ComponentBuilderBase<APISelectMenuCompone
    * Sets whether or not this select menu is disabled
    * @param disabled Whether or not this select menu is disabled
    */
-  public setDisabled(disabled = true) {
+  public setDisabled(disabled = true): this {
     this.data.disabled = disabled;
     return this;
   }
@@ -67,7 +67,7 @@ export class SelectMenuBuilder extends ComponentBuilderBase<APISelectMenuCompone
    * @param options The options to add to this select menu
    * @returns
    */
-  public addOptions(options: (SelectMenuOptionBuilder | APISelectMenuOption)[]) {
+  public addOptions(options: (SelectMenuOptionBuilder | APISelectMenuOption)[]): this {
     this.options.push(
       ...options.map((option) =>
         option instanceof SelectMenuOptionBuilder ? option : new SelectMenuOptionBuilder(option)
@@ -80,7 +80,7 @@ export class SelectMenuBuilder extends ComponentBuilderBase<APISelectMenuCompone
    * Sets the options on this select menu
    * @param options The options to set on this select menu
    */
-  public setOptions(options: (SelectMenuOptionBuilder | APISelectMenuOption)[]) {
+  public setOptions(options: (SelectMenuOptionBuilder | APISelectMenuOption)[]): this {
     this.options.splice(
       0,
       this.options.length,

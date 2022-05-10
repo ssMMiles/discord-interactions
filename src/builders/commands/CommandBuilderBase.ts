@@ -37,7 +37,7 @@ export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommands
   /**
    * Set the name
    */
-  public setName(name: string) {
+  public setName(name: string): this {
     this.name = name;
 
     return this;
@@ -46,7 +46,7 @@ export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommands
   /**
    * Set a dictionary of localized names
    */
-  public setNameLocalizations(localizations: LocalizationMap) {
+  public setNameLocalizations(localizations: LocalizationMap): this {
     this.name_localizations = localizations;
 
     return this;
@@ -55,15 +55,19 @@ export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommands
   /**
    * Set a single locale's name
    */
-  public setLocalizedName(locale: keyof LocalizationMap, name: string) {
+  public setLocalizedName(locale: keyof LocalizationMap, name: string): this {
     this.name_localizations[locale] = name;
+
+    return this;
   }
 
   /**
    * Set whether this command will be visible in DMs - Only applicable to Global commands.
    */
-  setDMEnabled(value: boolean) {
+  setDMEnabled(value: boolean): this {
     this.dm_permission = value;
+
+    return this;
   }
 
   /**

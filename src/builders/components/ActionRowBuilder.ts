@@ -32,7 +32,7 @@ export class ActionRowBuilder<T extends AnyComponentBuilder> extends ComponentBu
    * @param components The components to add to this action row.
    * @returns
    */
-  public addComponents(...components: T[]) {
+  public addComponents(...components: T[]): this {
     this.components.push(...components);
     return this;
   }
@@ -41,7 +41,7 @@ export class ActionRowBuilder<T extends AnyComponentBuilder> extends ComponentBu
    * Sets the components in this action row
    * @param components The components to set this row to
    */
-  public setComponents(components: T[]) {
+  public setComponents(components: T[]): this {
     this.components.splice(0, this.components.length, ...components);
     return this;
   }

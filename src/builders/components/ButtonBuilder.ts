@@ -24,7 +24,7 @@ abstract class ButtonBuilderBase extends ComponentBuilderBase<APIButtonComponent
    * Sets the style of this button
    * @param style The style of the button
    */
-  public setStyle(style: ButtonStyle) {
+  public setStyle(style: ButtonStyle): this {
     this.data.style = style;
     return this;
   }
@@ -33,7 +33,7 @@ abstract class ButtonBuilderBase extends ComponentBuilderBase<APIButtonComponent
    * Sets the emoji to display on this button
    * @param emoji The emoji to display on this button
    */
-  public setEmoji(emoji: APIMessageComponentEmoji) {
+  public setEmoji(emoji: APIMessageComponentEmoji): this {
     this.data.emoji = emoji;
     return this;
   }
@@ -42,7 +42,7 @@ abstract class ButtonBuilderBase extends ComponentBuilderBase<APIButtonComponent
    * Sets whether this button is disable or not
    * @param disabled Whether or not to disable this button or not
    */
-  public setDisabled(disabled = true) {
+  public setDisabled(disabled = true): this {
     this.data.disabled = disabled;
     return this;
   }
@@ -51,7 +51,7 @@ abstract class ButtonBuilderBase extends ComponentBuilderBase<APIButtonComponent
    * Sets the label for this button
    * @param label The label to display on this button
    */
-  public setLabel(label: string) {
+  public setLabel(label: string): this {
     this.data.label = label;
     return this;
   }
@@ -72,7 +72,7 @@ export class ButtonBuilder extends ButtonBuilderBase {
    * Sets the custom Id for this button
    * @param customId The custom id to use for this button
    */
-  public setCustomId(customId: string) {
+  public setCustomId(customId: string): this {
     (this.data as APIButtonComponentWithCustomId).custom_id = customId;
     return this;
   }
@@ -89,7 +89,7 @@ export class LinkButtonBuilder extends ButtonBuilderBase {
    * Sets the URL for this button
    * @param url The URL to open when this button is clicked
    */
-  public setURL(url: string) {
+  public setURL(url: string): this {
     (this.data as APIButtonComponentWithURL).url = url;
     return this;
   }
