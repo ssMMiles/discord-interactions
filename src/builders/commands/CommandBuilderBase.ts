@@ -1,4 +1,5 @@
 import { ApplicationCommandType, LocalizationMap, RESTPostAPIApplicationCommandsJSONBody } from "discord-api-types/v10";
+import { Bitfield } from "./permissions/Bitfield";
 
 export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommandsJSONBody> {
   /**
@@ -20,6 +21,11 @@ export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommands
    * Whether the command is visible in DMs
    */
   public dm_permission = true;
+
+  /**
+   * Default member permissions required to use the command
+   */
+  public default_member_permissions?: Bitfield;
 
   constructor(data: Data | string) {
     if (typeof data === "string") {
@@ -66,6 +72,28 @@ export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommands
    */
   setDMEnabled(value: boolean): this {
     this.dm_permission = value;
+
+    return this;
+  }
+
+  setDefaultMemberPermissions(permissions: Bitfield | undefined): this {
+    this.default_member_permissions = permissions;
+
+    return this;
+  }
+
+  addDefaultMemberPermissions(...permissions: bigint[]): this {
+    if (!this.default_member_permissions) {
+      this.default_member_permissions = new Bitfield();
+    }
+
+    this.default_member_permissions.add(...permissions);
+
+    return this;
+  }
+
+  removeDefaultMemberPermissions(...permissions: bigint[]): this {
+    if (this.default_member_permissions) this.default_member_permissions.remove(...permissions);
 
     return this;
   }
