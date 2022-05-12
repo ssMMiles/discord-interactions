@@ -1,5 +1,5 @@
 import { ApplicationCommandType, LocalizationMap, RESTPostAPIApplicationCommandsJSONBody } from "discord-api-types/v10";
-import { Bitfield } from "./Bitfield";
+import { Bitfield } from "../..";
 
 export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommandsJSONBody> {
   /**
