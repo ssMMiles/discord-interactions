@@ -1,7 +1,7 @@
 {
   "name": "interactions.ts",
   "description": "A full command framework for Discord interactions based on @discordjs/builders.",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
@@ -21,7 +21,8 @@
   "dependencies": {
     "@discordjs/rest": "^0.3.0",
     "tweetnacl": "^1.0.3",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "discord-api-types": "^0.32.1"
   },
   "devDependencies": {
     "@types/chai": "^4.3.0",
@@ -36,7 +37,6 @@
     "chai": "^4.3.6",
     "chai-as-promised": "^7.1.1",
     "deep-equal": "^2.0.5",
-    "discord-api-types": "^0.32.1",
     "dotenv": "^13.0.0",
     "eslint": "^8.14.0",
     "fastify": "^3.27.4",
