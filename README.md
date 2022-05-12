@@ -3,8 +3,6 @@ A simple command framework for Discord's HTTP interactions.
 
 Easily create and manage your application's commands with helpers based on [@discord.js/builders](https://github.com/discordjs/discord.js/tree/main/packages/builders/), then just pass along incoming requests from your webserver of choice to start responding to them.
 
-Maintaining state information in the `custom_id` field of components is supported, as well as an external cache (Redis recommended) to store larger data.
-
 **Still a work in progress.**
 
 <div align="center">
@@ -17,10 +15,6 @@ Maintaining state information in the `custom_id` field of components is supporte
   </p>
 </div>
 
-### To-Do:
- - Modal Support
- - Better Tests
-
 ### Install
 
 `npm install interactions.ts`
@@ -30,6 +24,10 @@ Maintaining state information in the `custom_id` field of components is supporte
  - #### [Documentation](https://interactions-ts.pages.dev/)
  - #### [Github](https://github.com/ssMMiles/interactions.ts)
  - #### [NPM](https://www.npmjs.com/package/interactions.ts)
+
+### To-Do:
+ - Modal Support
+ - Better Tests
 
 # Example Usage
 
