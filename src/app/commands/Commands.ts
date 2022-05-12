@@ -14,6 +14,7 @@ import {
 } from "../..";
 import { Component } from "../components";
 import { HandledInteraction } from "../HandledInteraction";
+import { CommandGroup, ICommandGroup } from "./CommandGroup";
 
 export interface ICommandBase<Builder, Context> {
   builder: Builder;
@@ -31,17 +32,17 @@ export class SlashCommand
   extends HandledInteraction<RESTPostAPIChatInputApplicationCommandsJSONBody, SlashCommandBuilder, SlashCommandContext>
   implements ISlashCommand
 {
-  public components: Component[] = [];
+  public autocompleteHandler: (ctx: AutocompleteContext) => Promise<void>;
 
   constructor(
     builder: SlashCommandBuilder,
     handler: (ctx: SlashCommandContext) => Promise<void> = async (ctx: SlashCommandContext) => {
       ctx.reply("No command handler has been defined.");
     },
-    public autocompleteHandler: (ctx: AutocompleteContext) => Promise<void> = async (ctx: AutocompleteContext) => {
+    components: Component[] = [],
+    autocompleteHandler: (ctx: AutocompleteContext) => Promise<void> = async (ctx: AutocompleteContext) => {
       ctx.reply([]);
-    },
-    components: Component[] = []
+    }
   ) {
     super(builder, handler, components);
 
@@ -91,5 +92,5 @@ export class MessageCommand extends HandledInteraction<
   };
 }
 
-export type ICommand = ISlashCommand | IUserCommand | IMessageCommand;
-export type Command = SlashCommand | UserCommand | MessageCommand;
+export type ICommand = ISlashCommand | IUserCommand | IMessageCommand | ICommandGroup;
+export type Command = SlashCommand | UserCommand | MessageCommand | CommandGroup;

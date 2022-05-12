@@ -5,13 +5,18 @@ import {
   Routes
 } from "discord-api-types/v10";
 import { DiscordApplication, MessageCommand, SlashCommand, UserCommand } from "../..";
-import { ICommand, IMessageCommand, ISlashCommand, IUserCommand } from "../commands";
 import {
+  ICommand,
+  IMessageCommand,
+  isCommandGroup,
+  ISlashCommand,
+  IUserCommand,
   RegisteredCommand,
+  RegisteredCommandGroup,
   RegisteredMessageCommand,
   RegisteredSlashCommand,
   RegisteredUserCommand
-} from "../commands/RegisteredCommands";
+} from "../commands";
 
 export interface APIApplicationSlashCommand extends APIApplicationCommand {
   type: ApplicationCommandType.ChatInput;
@@ -41,7 +46,7 @@ export interface ParsedCommands {
  * Manager for your application's commands. Lets you register fully handled commands as well as exposes methods for managing your commands on the API side.
  */
 export class CommandManager {
-  public slash: Map<string, RegisteredSlashCommand> = new Map();
+  public slash: Map<string, RegisteredCommandGroup | RegisteredSlashCommand> = new Map();
   public user: Map<string, RegisteredUserCommand> = new Map();
   public message: Map<string, RegisteredMessageCommand> = new Map();
 
@@ -163,7 +168,9 @@ export class CommandManager {
           result = await this.putAPICommand(command.builder.toJSON());
         }
 
-        const registeredCommand = new RegisteredSlashCommand(this, command as ISlashCommand, result.id);
+        const registeredCommand = isCommandGroup(command)
+          ? new RegisteredCommandGroup(this, command, result.id)
+          : new RegisteredSlashCommand(this, command as ISlashCommand, result.id);
 
         this.slash.set(command.builder.name, registeredCommand);
         registeredCommands.push(registeredCommand);

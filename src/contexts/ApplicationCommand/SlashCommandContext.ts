@@ -9,6 +9,16 @@ import { BaseCommandContext } from "./BaseCommandContext";
 export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicationCommandInteraction> {
   public options: Map<string, APIApplicationCommandInteractionDataBasicOption> = new Map();
 
+  /**
+   * The parent command, if this is a subcommand.
+   */
+  public parentCommand?: string;
+
+  /**
+   * The subcommand group
+   */
+  public group?: string;
+
   constructor(
     manager: DiscordApplication,
     interaction: APIChatInputApplicationCommandInteraction,
@@ -18,15 +28,21 @@ export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicat
 
     const rootOption = this.interaction.data.options?.[0];
 
+    this.parentCommand = this.name;
+
     switch (rootOption?.type) {
       case ApplicationCommandOptionType.SubcommandGroup:
-        this.name += `${rootOption.name}.${rootOption.options[0].name}`;
+        this.group = rootOption.name;
+
+        this.name = rootOption.options[0].name;
         this.parseOptions(rootOption.options[0].options);
+
         break;
 
       case ApplicationCommandOptionType.Subcommand:
-        this.name += `.${rootOption.name}`;
+        this.name = rootOption.name;
         this.parseOptions(rootOption.options);
+
         break;
 
       default:

@@ -7,13 +7,17 @@ import {
   Button,
   ButtonBuilder,
   ButtonContext,
+  CommandGroup,
   DiscordApplication,
   DiscordApplicationOptions,
   MessageBuilder,
+  RegisteredCommandGroup,
   RegisteredSlashCommand,
   SlashCommand,
-  SlashCommandBuilder
+  SlashCommandBuilder,
+  SubcommandOption
 } from "../src";
+import { CommandGroupBuilder } from "../src/builders/commands/CommandGroupBuilder";
 import { buttonInteraction, testCommandInteraction } from "./data";
 
 use(chaiAsPromised);
@@ -71,6 +75,35 @@ describe("Discord Application", () => {
 
           done();
         });
+    }).timeout(3000);
+
+    it("Creating Slash Command Group", async () => {
+      await app.commands.register(
+        [
+          new CommandGroup(
+            new CommandGroupBuilder("config", "A simple config command.")
+              .addSubcommand(new SubcommandOption("get", "Get a config value."))
+              .addSubcommand(new SubcommandOption("set", "Set a config value.")),
+            {
+              get: {
+                handler: async (context) => {
+                  const value = "x";
+                  context.reply(new MessageBuilder().setContent(`Config value: ${value}!`));
+                }
+              },
+              set: {
+                handler: async (context) => {
+                  context.reply(new MessageBuilder().setContent("Config value set!"));
+                }
+              }
+            }
+          )
+        ],
+        true
+      );
+
+      app.commands.has("config").should.be.true;
+      app.commands.get("config")?.should.be.instanceOf(RegisteredCommandGroup);
     }).timeout(3000);
   });
 

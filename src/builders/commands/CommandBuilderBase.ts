@@ -18,14 +18,14 @@ export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommands
   public abstract type: ApplicationCommandType;
 
   /**
-   * Whether the command is visible in DMs
+   * Whether the command is visible in DMs - Only available for global commands and defaults to true.
    */
-  public dm_permission = true;
+  public dm_permission?: boolean;
 
   /**
    * Default member permissions required to use the command
    */
-  public default_member_permissions?: Bitfield;
+  public default_member_permissions: Bitfield = new Bitfield();
 
   constructor(data: Data | string) {
     if (typeof data === "string") {
@@ -76,24 +76,32 @@ export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommands
     return this;
   }
 
-  setDefaultMemberPermissions(permissions: Bitfield | undefined): this {
+  setRequiredPermissions(permissions: Bitfield): this {
     this.default_member_permissions = permissions;
 
     return this;
   }
 
-  addDefaultMemberPermissions(...permissions: bigint[]): this {
-    if (!this.default_member_permissions) {
-      this.default_member_permissions = new Bitfield();
-    }
-
+  addRequiredPermissions(...permissions: bigint[]): this {
     this.default_member_permissions.add(...permissions);
 
     return this;
   }
 
-  removeDefaultMemberPermissions(...permissions: bigint[]): this {
-    if (this.default_member_permissions) this.default_member_permissions.remove(...permissions);
+  removeRequiredPermissions(...permissions: bigint[]): this {
+    this.default_member_permissions.remove(...permissions);
+
+    return this;
+  }
+
+  clearRequiredPermissions(): this {
+    this.default_member_permissions.allowAll();
+
+    return this;
+  }
+
+  disallowAllPermissions(): this {
+    this.default_member_permissions.disallowAll();
 
     return this;
   }

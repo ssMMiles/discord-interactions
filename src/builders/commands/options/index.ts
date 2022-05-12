@@ -6,4 +6,6 @@ export * from "./mentionable";
 export * from "./number";
 export * from "./role";
 export * from "./string";
+export * from "./subcommand";
+export * from "./subcommand-group";
 export * from "./user";

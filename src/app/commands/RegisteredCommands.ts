@@ -1,6 +1,7 @@
 import { MessageCommandBuilder, SlashCommandBuilder, UserCommandBuilder } from "../../builders/commands";
 import { AutocompleteContext, MessageCommandContext, SlashCommandContext, UserCommandContext } from "../../contexts";
 import { CommandManager } from "../managers/CommandManager";
+import { RegisteredCommandGroup } from "./CommandGroup";
 
 export abstract class RegisteredCommandBase<
   Builder extends SlashCommandBuilder | UserCommandBuilder | MessageCommandBuilder,
@@ -81,4 +82,8 @@ export class RegisteredUserCommand extends RegisteredCommandBase<UserCommandBuil
 
 export class RegisteredMessageCommand extends RegisteredCommandBase<MessageCommandBuilder, MessageCommandContext> {}
 
-export type RegisteredCommand = RegisteredSlashCommand | RegisteredUserCommand | RegisteredMessageCommand;
+export type RegisteredCommand =
+  | RegisteredSlashCommand
+  | RegisteredUserCommand
+  | RegisteredMessageCommand
+  | RegisteredCommandGroup;

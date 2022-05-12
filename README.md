@@ -48,10 +48,39 @@ const commands = [
   })
 ]
 
-app.commands.register(commands);
+await app.commands.register(commands);
 ```
 
 This will create a global `/ping` command on your application. If one is already registered, it will be overwritten.
+
+---------------------------------------------------------------------------------------------------------------------
+
+## Command Groups
+
+Command groups, subcommand groups and subcommands can all easily be defined as well:
+
+```typescript
+await app.register([
+  new CommandGroup(
+    new CommandGroupBuilder("config", "A simple config command.")
+      .addSubcommand(new SubcommandOption("get", "Get a config value."))
+      .addSubcommand(new SubcommandOption("set", "Set a config value.")),
+    {
+      get: {
+        handler: async (context) => {
+          const value = "x";
+          context.reply(new MessageBuilder().setContent(`Config value: ${value}!`));
+        }
+      },
+      set: {
+        handler: async (context) => {
+          context.reply(new MessageBuilder().setContent("Config value set!"));
+        }
+      }
+    }
+  )
+]);
+```
 
 ---------------------------------------------------------------------------------------------------------------------
 
@@ -61,16 +90,16 @@ This will create a global `/ping` command on your application. If one is already
 
 const guild = new CommandManager(app, guildId);
 
-guild.register(commands);
+await guild.register(commands);
 ```
 
 ---------------------------------------------------------------------------------------------------------------------
 
+## Command using Components
+
 Components must be registered similarly before they can be used. You can then create instances of your components and use them in your commands with an arbitrary state object to be passed through. 
 
 This state is stored in the `custom_id` property by default, which will constrain the size of your data. To avoid this, an external cache can be configured.
-
-## Command using Components
 
 ```typescript
 type TestButtonState = {

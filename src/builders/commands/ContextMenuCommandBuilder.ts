@@ -9,7 +9,10 @@ export abstract class UserCommandBuilder extends CommandBuilder<
   public toJSON() {
     return {
       name: this.name,
-      type: this.type
+      type: this.type,
+
+      dm_permission: this.dm_permission,
+      default_member_permissions: this.default_member_permissions.toJSON()
     };
   }
 }
@@ -22,7 +25,10 @@ export abstract class MessageCommandBuilder extends CommandBuilder<
   public toJSON() {
     return {
       name: this.name,
-      type: this.type
+      type: this.type,
+
+      dm_permission: this.dm_permission,
+      default_member_permissions: this.default_member_permissions.toJSON()
     };
   }
 }

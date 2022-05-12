@@ -1,8 +1,4 @@
-import type {
-  APIApplicationCommandBasicOption,
-  ApplicationCommandOptionType,
-  LocalizationMap
-} from "discord-api-types/v10";
+import type { APIApplicationCommandOption, ApplicationCommandOptionType, LocalizationMap } from "discord-api-types/v10";
 
 export abstract class SlashCommandOptionBase {
   public abstract readonly type: ApplicationCommandOptionType;
@@ -47,5 +43,22 @@ export abstract class SlashCommandOptionBase {
     this.name_localizations[locale] = name;
   }
 
-  public abstract toJSON(): APIApplicationCommandBasicOption;
+  /**
+   * Set a dictionary of localized descriptions
+   */
+  public setDescriptionLocalizations(localizations: LocalizationMap): this {
+    this.description_localizations = localizations;
+
+    return this;
+  }
+
+  /**
+   * Set a single locale's description
+   */
+  public setLocalizedDescription(locale: keyof LocalizationMap, description: string): this {
+    this.description_localizations[locale] = description;
+    return this;
+  }
+
+  public abstract toJSON(): APIApplicationCommandOption;
 }

@@ -1,5 +1,5 @@
 import {
-  APIApplicationCommandOption,
+  APIApplicationCommandBasicOption,
   ApplicationCommandType,
   LocalizationMap,
   RESTPostAPIChatInputApplicationCommandsJSONBody
@@ -18,7 +18,7 @@ import {
 } from "./options";
 
 export interface ToAPIApplicationCommandOptions {
-  toJSON: () => APIApplicationCommandOption;
+  toJSON: () => APIApplicationCommandBasicOption;
 }
 
 export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputApplicationCommandsJSONBody> {
@@ -34,6 +34,7 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
 
     this.description = description;
   }
+
   /**
    * Set the description
    *
@@ -177,7 +178,10 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
       description: this.description,
       description_localizations: this.description_localizations,
 
-      options: this.options.map((option) => option.toJSON())
+      options: this.options.map((option) => option.toJSON()),
+
+      dm_permission: this.dm_permission,
+      default_member_permissions: this.default_member_permissions.toJSON()
     };
   }
 }

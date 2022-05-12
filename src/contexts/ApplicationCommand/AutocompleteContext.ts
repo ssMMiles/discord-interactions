@@ -22,6 +22,16 @@ export class AutocompleteContext extends BaseInteractionContext<
   public name: string;
   public option: AutocompleteSupportedOptions;
 
+  /**
+   * The parent command, if this is a subcommand.
+   */
+  public parentCommand?: string;
+
+  /**
+   * The subcommand group
+   */
+  public group?: string;
+
   constructor(
     manager: DiscordApplication,
     interaction: APIApplicationCommandAutocompleteInteraction,
@@ -31,21 +41,24 @@ export class AutocompleteContext extends BaseInteractionContext<
 
     this.name = this.interaction.data.name;
 
-    const rootOption = this.interaction.data.options[0];
+    const rootOption = this.interaction.data.options?.[0];
 
-    switch (rootOption.type) {
+    this.parentCommand = this.name;
+
+    switch (rootOption?.type) {
       case ApplicationCommandOptionType.SubcommandGroup:
-        this.name += `.${rootOption.name}.${rootOption.options[0].name}`;
+        this.group = rootOption.name;
 
+        this.name += `.${rootOption.name}.${rootOption.options[0].name}`;
         this.option = rootOption.options[0].options?.[0] as AutocompleteSupportedOptions;
+
         break;
 
       case ApplicationCommandOptionType.Subcommand:
         this.name += `.${rootOption.name}`;
-
         this.option = rootOption.options?.[0] as AutocompleteSupportedOptions;
-        break;
 
+        break;
       default:
         this.option = this.interaction.data.options?.[0] as AutocompleteSupportedOptions;
     }

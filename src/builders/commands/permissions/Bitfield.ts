@@ -2,27 +2,29 @@
  * Data structure that makes it easy to interact with a bitfield.
  */
 export class Bitfield {
-  public bitfield = 0n;
+  public bitfield?: bigint;
 
   constructor(...bits: bigint[]) {
-    this.add(...bits);
+    if (bits.length > 0) this.add(...bits);
   }
 
   /**
-   * Checks whether the bitfield has a bit, or multiple bits.
-   * @param {BitFieldResolvable} bit Bit(s) to check for
-   * @returns {boolean}
+   * Checks whether the bitfield has a bit
+   * @param {bigint} bit Bit to check for
    */
-  has(bit: bigint) {
+  has(bit: bigint): boolean {
+    if (!this.bitfield) return false;
+
     return (this.bitfield & bit) === bit;
   }
 
   /**
    * Adds bits to these ones.
-   * @param {...BitFieldResolvable} [bits] Bits to add
-   * @returns {BitField} These bits or new BitField if the instance is frozen.
+   * @param {...bigint} [bits] Bits to add
    */
   add(...bits: bigint[]) {
+    if (!this.bitfield) this.bitfield = 0n;
+
     for (const bit of bits) {
       this.bitfield |= bit;
     }
@@ -36,6 +38,8 @@ export class Bitfield {
    * @returns {BitField} These bits or new BitField if the instance is frozen.
    */
   remove(...bits: bigint[]) {
+    if (!this.bitfield) this.bitfield = 0n;
+
     for (const bit of bits) {
       this.bitfield &= bit;
     }
@@ -43,7 +47,15 @@ export class Bitfield {
     return this;
   }
 
-  toJSON() {
-    return typeof this.bitfield === "number" ? this.bitfield : this.bitfield.toString();
+  disallowAll() {
+    this.bitfield = 0n;
+  }
+
+  allowAll() {
+    delete this.bitfield;
+  }
+
+  toJSON(): string | null {
+    return this.bitfield !== undefined ? this.bitfield.toString() : null;
   }
 }
