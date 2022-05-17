@@ -1,4 +1,4 @@
-const PermissionBits = {
+export const PermissionBits = {
   CREATE_INSTANT_INVITE: 1n << 0n,
   KICK_MEMBERS: 1n << 1n,
   BAN_MEMBERS: 1n << 2n,
@@ -41,5 +41,3 @@ const PermissionBits = {
   START_EMBEDDED_ACTIVITIES: 1n << 39n,
   MODERATE_MEMBERS: 1n << 40n
 };
-
-export default PermissionBits;
