@@ -1,7 +1,7 @@
 import { ApplicationCommandType, RESTPostAPIContextMenuApplicationCommandsJSONBody } from "discord-api-types/v10";
 import { CommandBuilder } from "./CommandBuilderBase";
 
-export abstract class UserCommandBuilder extends CommandBuilder<
+export class UserCommandBuilder extends CommandBuilder<
   RESTPostAPIContextMenuApplicationCommandsJSONBody & { type: ApplicationCommandType.User }
 > {
   public type: ApplicationCommandType.User = ApplicationCommandType.User;
@@ -17,7 +17,7 @@ export abstract class UserCommandBuilder extends CommandBuilder<
   }
 }
 
-export abstract class MessageCommandBuilder extends CommandBuilder<
+export class MessageCommandBuilder extends CommandBuilder<
   RESTPostAPIContextMenuApplicationCommandsJSONBody & { type: ApplicationCommandType.Message }
 > {
   public type: ApplicationCommandType.Message = ApplicationCommandType.Message;

@@ -8,8 +8,6 @@ export async function handleSlashCommand(ctx: SlashCommandContext): Promise<void
     if (result === true) return;
   }
 
-  console.log(ctx);
-
   const parentName = ctx.parentCommand ?? ctx.name;
 
   const command = ctx.interaction.guild_id
