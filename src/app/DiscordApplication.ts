@@ -1,6 +1,6 @@
 import { REST } from "@discordjs/rest";
 import { APIInteraction, APIInteractionResponse, Snowflake } from "discord-api-types/v10";
-import { sign } from "tweetnacl";
+import { createPublicKey, verify } from "node:crypto";
 import {
   AutocompleteContext,
   ButtonContext,
@@ -127,7 +127,16 @@ export class DiscordApplication {
     const message = Buffer.from(timestamp + body, "utf-8");
     const signatureBuffer = Buffer.from(signature, "hex");
 
-    return sign.detached.verify(message, signatureBuffer, publicKey);
+    return verify(
+      null,
+      message,
+      createPublicKey({
+        key: Buffer.concat([Buffer.from("MCowBQYDK2VwAyEA", "base64"), publicKey]),
+        format: "der",
+        type: "spki"
+      }),
+      signatureBuffer
+    );
   }
 
   /**
