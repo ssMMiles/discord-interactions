@@ -2,19 +2,20 @@ import { APIActionRowComponent, APIMessageActionRowComponent, ComponentType } fr
 import { ButtonBuilder } from "./ButtonBuilder";
 import { ComponentBuilderBase } from "./ComponentBuilderBase";
 import { SelectMenuBuilder } from "./SelectMenuBuilder";
+import { TextInputBuilder } from "./TextInputBuilder";
 
-export type MessageComponentBuilder =
-  | MessageActionRowComponentBuilder
-  | ActionRowBuilder<MessageActionRowComponentBuilder>;
-//export type ModalComponentBuilder = ModalActionRowComponentBuilder | ActionRowBuilder<ModalActionRowComponentBuilder>;
-export type MessageActionRowComponentBuilder = ButtonBuilder | SelectMenuBuilder;
-//export type ModalActionRowComponentBuilder = TextInputBuilder;
-export type AnyComponentBuilder = MessageActionRowComponentBuilder /* | ModalActionRowComponentBuilder */;
+export type MessageActionRowComponentBuilders = ButtonBuilder | SelectMenuBuilder;
+export type ModalActionRowComponentBuilders = TextInputBuilder;
+
+export type ComponentBuilders = MessageActionRowComponentBuilders | ModalActionRowComponentBuilders;
+
+export type MessageActionRowBuilder = ActionRowBuilder<MessageActionRowComponentBuilders>;
+export type ModalActionRowBuilder = ActionRowBuilder<ModalActionRowComponentBuilders>;
 
 /**
  * Represents an action row component
  */
-export class ActionRowBuilder<T extends AnyComponentBuilder> extends ComponentBuilderBase<
+export class ActionRowBuilder<T extends ComponentBuilders> extends ComponentBuilderBase<
   APIActionRowComponent<APIMessageActionRowComponent /* | APIModalActionRowComponent*/>
 > {
   /**
