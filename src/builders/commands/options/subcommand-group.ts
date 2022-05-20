@@ -18,8 +18,11 @@ export class SubcommandGroupOption extends SlashCommandOptionBase {
   /**
    * Adds a subcommand
    */
-  public addSubcommand(input: SubcommandOption): this {
-    this.options.push(input);
+  public addSubcommands(...subcommands: SubcommandOption[]): this {
+    for (const subcommand of subcommands) {
+      this.options.push(subcommand);
+    }
+
     return this;
   }
 

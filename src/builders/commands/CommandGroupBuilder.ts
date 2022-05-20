@@ -60,18 +60,22 @@ export class CommandGroupBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
    *
    * @param input A function that returns an option builder, or an already built builder
    */
-  public addSubcommandGroup(input: SubcommandGroupOption): this {
-    this.options.push(input);
+  public addSubcommandGroups(...subcommandGroups: SubcommandGroupOption[]): this {
+    for (const subcommandGroup of subcommandGroups) {
+      this.options.push(subcommandGroup);
+    }
+
     return this;
   }
 
   /**
-   * Adds a number option
-   *
-   * @param input A function that returns an option builder, or an already built builder
+   * Adds a subcommand
    */
-  public addSubcommand(input: SubcommandOption): this {
-    this.options.push(input);
+  public addSubcommands(...subcommands: SubcommandOption[]): this {
+    for (const subcommand of subcommands) {
+      this.options.push(subcommand);
+    }
+
     return this;
   }
 

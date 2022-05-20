@@ -67,12 +67,11 @@ export class SelectMenuBuilder extends ComponentBuilderBase<APISelectMenuCompone
    * @param options The options to add to this select menu
    * @returns
    */
-  public addOptions(options: (SelectMenuOptionBuilder | APISelectMenuOption)[]): this {
-    this.options.push(
-      ...options.map((option) =>
-        option instanceof SelectMenuOptionBuilder ? option : new SelectMenuOptionBuilder(option)
-      )
-    );
+  public addOptions(...options: SelectMenuOptionBuilder[]): this {
+    for (const option of options) {
+      this.options.push(option);
+    }
+
     return this;
   }
 

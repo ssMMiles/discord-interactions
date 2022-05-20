@@ -44,9 +44,12 @@ export class EmbedBuilder {
    *
    * @param fields The fields to add
    */
-  public addFields(fields: APIEmbedField[]): this {
-    if (this.data.fields) this.data.fields.push(...fields);
-    else this.data.fields = fields;
+  public addFields(...fields: APIEmbedField[]): this {
+    if (!this.data.fields) this.data.fields = [];
+
+    for (const field of fields) {
+      this.data.fields.push(field);
+    }
     return this;
   }
 
