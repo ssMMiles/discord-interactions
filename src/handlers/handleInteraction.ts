@@ -20,9 +20,11 @@ import {
   SlashCommandContext,
   UserCommandContext
 } from "../contexts";
+import { ModalSubmitContext } from "../contexts/ModalSubmitContext";
 import { PingContext } from "../contexts/PingContext";
 import { handleAutocomplete, handleMessageCommand, handleSlashCommand, handleUserCommand } from "./ApplicationCommand";
 import { handleButton, handleSelectMenu } from "./Component";
+import { handleModalSubmit } from "./ModalSubmit";
 
 export async function _handleInteraction(
   this: DiscordApplication,
@@ -116,6 +118,14 @@ export async function _handleInteraction(
         default:
           throw new UnknownInteractionType(interaction);
       }
+
+      break;
+    case InteractionType.ModalSubmit:
+      context = new ModalSubmitContext(this, interaction, responseCallback);
+
+      if (globalHook) await globalHook(context);
+
+      await handleModalSubmit(context);
 
       break;
     default:

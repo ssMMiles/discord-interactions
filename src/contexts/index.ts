@@ -7,6 +7,7 @@ import {
   SlashCommandContext,
   UserCommandContext
 } from "..";
+import { ModalSubmitContext } from "./ModalSubmitContext";
 
 export * from "./ApplicationCommand";
 export * from "./BaseInteractionContext";
@@ -20,4 +21,5 @@ export type InteractionContext =
   | MessageCommandContext
   | AutocompleteContext
   | ButtonContext
-  | SelectMenuContext;
+  | SelectMenuContext
+  | ModalSubmitContext;

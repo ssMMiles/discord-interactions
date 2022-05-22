@@ -2,31 +2,24 @@ import {
   APIApplicationCommandInteraction,
   APIInteractionResponseChannelMessageWithSource,
   APIMessage,
+  APIModalInteractionResponse,
   InteractionResponseType
 } from "discord-api-types/v10";
-import {
-  ChannelMessageResponse,
-  DiscordApplication,
-  InteractionResponseAlreadySent,
-  InteractionWebhook,
-  MessageBuilder,
-  ResponseCallback,
-  SimpleEmbed
-} from "../..";
+import { DiscordApplication, ResponseCallback } from "../../app";
+import { MessageBuilder } from "../../builders";
+import { ModalBuilder } from "../../builders/ModalBuilder";
+import { ChannelMessageResponse, InteractionResponseAlreadySent, SimpleEmbed } from "../../util";
 import { BaseInteractionContext } from "../BaseInteractionContext";
 
 export class BaseCommandContext<
   T extends APIApplicationCommandInteraction = APIApplicationCommandInteraction
 > extends BaseInteractionContext<T, ChannelMessageResponse> {
   public name: string;
-  private followup: InteractionWebhook;
 
   constructor(manager: DiscordApplication, interaction: T, responseCallback: ResponseCallback<ChannelMessageResponse>) {
     super(manager, interaction, responseCallback);
 
     this.name = this.interaction.data.name;
-
-    this.followup = new InteractionWebhook(this.interaction.application_id, this.interaction.token);
   }
 
   defer(): Promise<void> {
@@ -37,7 +30,14 @@ export class BaseCommandContext<
     });
   }
 
-  reply(message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource): Promise<void> {
+  reply(
+    message:
+      | string
+      | MessageBuilder
+      | APIInteractionResponseChannelMessageWithSource
+      | ModalBuilder
+      | APIModalInteractionResponse
+  ): Promise<void> {
     if (typeof message === "string") message = SimpleEmbed(message);
 
     if (message instanceof MessageBuilder)
@@ -45,6 +45,13 @@ export class BaseCommandContext<
         type: InteractionResponseType.ChannelMessageWithSource,
         data: message.toJSON()
       };
+
+    if (message instanceof ModalBuilder) {
+      message = {
+        type: InteractionResponseType.Modal,
+        data: message.toJSON()
+      };
+    }
 
     return this._reply(message);
   }

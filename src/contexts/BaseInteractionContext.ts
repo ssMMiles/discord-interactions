@@ -1,5 +1,5 @@
 import { APIInteraction, APIInteractionResponse, APIUser } from "discord-api-types/v10";
-import { DiscordApplication, InteractionResponseAlreadySent, ResponseCallback } from "..";
+import { DiscordApplication, InteractionResponseAlreadySent, InteractionWebhook, ResponseCallback } from "..";
 
 // lasts 15 minutes, 5s buffer to be safe
 const InteractionTokenExpiryTime = 15 * 60 * 1000 - 5000;
@@ -20,6 +20,8 @@ export class BaseInteractionContext<
   public manager: DiscordApplication;
 
   public interaction: T;
+  protected followup: InteractionWebhook;
+
   public user: APIUser;
 
   public isDM: boolean;
@@ -29,6 +31,8 @@ export class BaseInteractionContext<
 
     this.manager = manager;
     this.interaction = interaction;
+
+    this.followup = new InteractionWebhook(this.interaction.application_id, this.interaction.token);
 
     this.isDM = this.interaction.user !== undefined;
     this.user = (this.isDM ? this.interaction.user : this.interaction?.member?.user) as APIUser;

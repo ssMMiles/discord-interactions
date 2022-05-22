@@ -15,6 +15,7 @@ import {
   UnauthorizedInteraction,
   UserCommandContext
 } from "..";
+import { ModalSubmitContext } from "../contexts/ModalSubmitContext";
 import { _handleInteraction } from "../handlers/handleInteraction";
 
 /**
@@ -45,6 +46,8 @@ export interface InteractionHooks {
     button?: (ctx: ButtonContext) => Promise<void | true>;
     selectMenu?: (ctx: SelectMenuContext) => Promise<void | true>;
   };
+
+  modal?: (ctx: ModalSubmitContext) => Promise<void | true>;
 }
 
 /** Component state cache for when it is too large for the `custom_id` field. TTL Defaults to 900 */

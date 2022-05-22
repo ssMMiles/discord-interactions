@@ -4,24 +4,24 @@ import {
   APIMessageComponentButtonInteraction,
   APIMessageComponentInteraction,
   APIMessageComponentSelectMenuInteraction,
+  APIModalInteractionResponse,
   InteractionResponseType
 } from "discord-api-types/v10";
 import {
   DiscordApplication,
   InteractionResponseAlreadySent,
-  InteractionWebhook,
   MessageBuilder,
   MessageUpdateResponse,
   ResponseCallback,
   SimpleEmbed
 } from "..";
+import { ModalBuilder } from "../builders/ModalBuilder";
 import { BaseInteractionContext } from "./BaseInteractionContext";
 
 class BaseComponentContext<
   S,
   T extends APIMessageComponentInteraction = APIMessageComponentInteraction
 > extends BaseInteractionContext<T, MessageUpdateResponse> {
-  private followup: InteractionWebhook;
   public allowExpired = false;
 
   public id: string;
@@ -30,7 +30,6 @@ class BaseComponentContext<
   constructor(manager: DiscordApplication, interaction: T, responseCallback: ResponseCallback<MessageUpdateResponse>) {
     super(manager, interaction, responseCallback);
 
-    this.followup = new InteractionWebhook(this.interaction.application_id, this.interaction.token);
     this.id = this.interaction.data.custom_id.split("|")[0];
 
     const builder = manager.components.get(this.id);
@@ -63,7 +62,9 @@ class BaseComponentContext<
     });
   }
 
-  reply(message: string | MessageBuilder | APIInteractionResponseUpdateMessage): Promise<void> {
+  reply(
+    message: string | MessageBuilder | APIInteractionResponseUpdateMessage | ModalBuilder | APIModalInteractionResponse
+  ): Promise<void> {
     if (this.replied) throw new InteractionResponseAlreadySent(this.interaction);
 
     if (typeof message === "string") message = SimpleEmbed(message);
@@ -73,6 +74,13 @@ class BaseComponentContext<
         type: InteractionResponseType.UpdateMessage,
         data: message.toJSON()
       };
+
+    if (message instanceof ModalBuilder) {
+      message = {
+        type: InteractionResponseType.Modal,
+        data: message.toJSON()
+      };
+    }
 
     return this._reply(message);
   }

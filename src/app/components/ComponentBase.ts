@@ -1,8 +1,8 @@
-import { APIActionRowComponentTypes } from "discord-api-types/v10";
+import { APIActionRowComponentTypes, APIModalInteractionResponseCallbackData } from "discord-api-types/v10";
 import { HandledInteraction } from "../HandledInteraction";
 
 export abstract class ComponentBase<
-  Data extends APIActionRowComponentTypes,
+  Data extends APIActionRowComponentTypes | APIModalInteractionResponseCallbackData,
   Builder extends { toJSON: () => Data },
   Context
 > extends HandledInteraction<Data, Builder, Context> {

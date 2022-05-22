@@ -10,8 +10,14 @@ export enum TextInputStyle {
  * Represents a non-validated text input component
  */
 export class TextInputBuilder extends ComponentBuilderBase<APITextInputComponent> {
-  public constructor(data: Partial<APITextInputComponent> = {}) {
-    super({ type: ComponentType.TextInput, ...data });
+  public constructor(id: string, label: string, style: TextInputStyle) {
+    super({
+      type: ComponentType.TextInput,
+
+      custom_id: id,
+      label,
+      style
+    });
   }
 
   /**

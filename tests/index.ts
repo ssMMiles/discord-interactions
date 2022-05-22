@@ -1,4 +1,4 @@
-import { should, use } from "chai";
+import { expect, should, use } from "chai";
 import chaiAsPromised from "chai-as-promised";
 import equal from "deep-equal";
 import { ButtonStyle, InteractionResponseType } from "discord-api-types/v10";
@@ -59,9 +59,9 @@ describe("Discord Application", () => {
   const app = new DiscordApplication(options);
 
   describe("Managing Application", () => {
-    it("Creating Slash Command", (done) => {
-      app.commands
-        .register(
+    it("Creating Slash Command", async () => {
+      expect(
+        await app.commands.register(
           [
             new SlashCommand(new SlashCommandBuilder("test", "A simple testing command!"), async (context) => {
               context.reply(new MessageBuilder().setContent("Test command executed!"));
@@ -69,37 +69,38 @@ describe("Discord Application", () => {
           ],
           false
         )
-        .then(async () => {
-          app.commands.has("test").should.be.true;
-          app.commands.get("test")?.should.be.instanceOf(RegisteredSlashCommand);
+      );
 
-          done();
-        });
+      app.commands.has("test").should.be.true;
+      app.commands.get("test")?.should.be.instanceOf(RegisteredSlashCommand);
     }).timeout(3000);
 
     it("Creating Slash Command Group", async () => {
-      await app.commands.register(
-        [
-          new CommandGroup(
-            new CommandGroupBuilder("config", "A simple config command.")
-              .addSubcommand(new SubcommandOption("get", "Get a config value."))
-              .addSubcommand(new SubcommandOption("set", "Set a config value.")),
-            {
-              get: {
-                handler: async (context) => {
-                  const value = "x";
-                  context.reply(new MessageBuilder().setContent(`Config value: ${value}!`));
-                }
-              },
-              set: {
-                handler: async (context) => {
-                  context.reply(new MessageBuilder().setContent("Config value set!"));
+      expect(
+        await app.commands.register(
+          [
+            new CommandGroup(
+              new CommandGroupBuilder("config", "A simple config command.").addSubcommands(
+                new SubcommandOption("get", "Get a config value."),
+                new SubcommandOption("set", "Set a config value.")
+              ),
+              {
+                get: {
+                  handler: async (context) => {
+                    const value = "x";
+                    context.reply(new MessageBuilder(`Config value: ${value}!`));
+                  }
+                },
+                set: {
+                  handler: async (context) => {
+                    context.reply(new MessageBuilder("Config value set!"));
+                  }
                 }
               }
-            }
-          )
-        ],
-        true
+            )
+          ],
+          true
+        )
       );
 
       app.commands.has("config").should.be.true;
@@ -112,12 +113,14 @@ describe("Discord Application", () => {
       app.handleInteraction(
         async (response) => {
           // If test is timing out this is just not equal, it don't fail properly
-          equal(response, {
-            type: InteractionResponseType.ChannelMessageWithSource,
-            data: {
-              content: "Test command executed!"
-            }
-          }).should.be.true;
+          expect(
+            equal(response, {
+              type: InteractionResponseType.ChannelMessageWithSource,
+              data: {
+                content: "Test command executed!"
+              }
+            }).should.be.true
+          );
 
           done();
         },

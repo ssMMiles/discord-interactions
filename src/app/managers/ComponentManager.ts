@@ -1,9 +1,11 @@
 import { v4 as uuidv4 } from "uuid";
 import { Component, GenericCache } from "../..";
+import { ModalBuilder } from "../../builders/ModalBuilder";
 import { ButtonBuilder, SelectMenuBuilder } from "../components";
+import { Modal } from "../Modal";
 
 export class ComponentManager {
-  private _components: Map<string, Component> = new Map();
+  private _components: Map<string, Component | Modal> = new Map();
 
   /**
    * Create a new component manager, with an optional cache.
@@ -18,11 +20,11 @@ export class ComponentManager {
     return this._components.has(name);
   }
 
-  get(name: string): Component | undefined {
+  get(name: string): (Component | Modal) | undefined {
     return this._components.get(name);
   }
 
-  register(components: Component[] = []) {
+  register(components: (Component | Modal)[] = []) {
     for (const component of components) {
       this._components.set(component.id, component);
     }
@@ -32,11 +34,9 @@ export class ComponentManager {
     this._components.delete(id);
   }
 
-  async createInstance(
-    name: string,
-    data: object = {},
-    ttl = this.cache?.ttl ?? 900
-  ): Promise<ButtonBuilder | SelectMenuBuilder> {
+  async createInstance<
+    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+  >(name: string, data: object = {}, ttl = this.cache?.ttl ?? 900): Promise<Builder> {
     const component = this.get(name);
 
     if (!component) throw new Error(`Component ${name} does not exist.`);
@@ -53,6 +53,6 @@ export class ComponentManager {
       dataStr = uuid;
     }
 
-    return component.createInstance(dataStr);
+    return component.createInstance(dataStr) as Builder;
   }
 }
