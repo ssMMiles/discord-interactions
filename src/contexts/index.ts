@@ -12,6 +12,7 @@ import { ModalSubmitContext } from "./ModalSubmitContext";
 export * from "./ApplicationCommand";
 export * from "./BaseInteractionContext";
 export * from "./ComponentContext";
+export * from "./ModalSubmitContext";
 export * from "./PingContext";
 
 export type InteractionContext =
