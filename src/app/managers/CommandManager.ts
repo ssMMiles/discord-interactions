@@ -155,7 +155,7 @@ export class CommandManager {
     for (const command of commands) {
       if (command.components) {
         for (const component of command.components) {
-          component.setId(`${command}.${component.id}`);
+          component.setId(`${command.builder.name}.${component.id}`);
         }
 
         this.manager.components.register(command.components);

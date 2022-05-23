@@ -22,13 +22,13 @@ export class BaseCommandContext<
     this.name = this.interaction.data.name;
   }
 
-  async createComponent<
+  async createGlobalComponent<
     Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
     return this.manager.components.createInstance(name, state, ttl);
   }
 
-  async createLocalComponent<
+  async createComponent<
     Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
     return this.manager.components.createInstance(`${this.name}.${name}`, state, ttl);
