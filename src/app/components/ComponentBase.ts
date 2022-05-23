@@ -9,6 +9,8 @@ export abstract class ComponentBase<
   public id: string;
   public allowExpired = false;
 
+  public parentCommand?: string;
+
   constructor(id: string, builder: Builder, handler: (ctx: Context) => Promise<void>) {
     super(builder, handler);
 

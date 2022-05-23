@@ -15,9 +15,9 @@ export type ModalActionRowBuilder = ActionRowBuilder<ModalActionRowComponentBuil
 /**
  * Represents an action row component
  */
-export class ActionRowBuilder<T extends ComponentBuilders> extends ComponentBuilderBase<
-  APIActionRowComponent<APIMessageActionRowComponent /* | APIModalActionRowComponent*/>
-> {
+export class ActionRowBuilder<
+  T extends ComponentBuilders = MessageActionRowComponentBuilders
+> extends ComponentBuilderBase<APIActionRowComponent<APIMessageActionRowComponent /* | APIModalActionRowComponent*/>> {
   /**
    * The components within this action row
    */

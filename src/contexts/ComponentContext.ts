@@ -8,11 +8,13 @@ import {
   InteractionResponseType
 } from "discord-api-types/v10";
 import {
+  ButtonBuilder,
   DiscordApplication,
   InteractionResponseAlreadySent,
   MessageBuilder,
   MessageUpdateResponse,
   ResponseCallback,
+  SelectMenuBuilder,
   SimpleEmbed
 } from "..";
 import { ModalBuilder } from "../builders/ModalBuilder";
@@ -27,13 +29,17 @@ class BaseComponentContext<
   public id: string;
   public state?: S;
 
+  public parentCommand?: string;
+
   constructor(manager: DiscordApplication, interaction: T, responseCallback: ResponseCallback<MessageUpdateResponse>) {
     super(manager, interaction, responseCallback);
 
     this.id = this.interaction.data.custom_id.split("|")[0];
 
-    const builder = manager.components.get(this.id);
-    if (builder) this.allowExpired = builder.allowExpired;
+    const component = manager.components.get(this.id);
+    if (component) this.allowExpired = component.allowExpired;
+
+    if (component && component.parentCommand) this.parentCommand = component.parentCommand;
   }
 
   async _fetchState(): Promise<void> {
@@ -52,6 +58,16 @@ class BaseComponentContext<
     } catch (err) {
       throw err;
     }
+  }
+
+  async createComponent<
+    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+  >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
+    return this.manager.components.createInstance(
+      this.parentCommand ? `${this.parentCommand}.${name}` : name,
+      state,
+      ttl
+    );
   }
 
   defer(): Promise<void> {
