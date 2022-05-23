@@ -25,7 +25,13 @@ export class BaseCommandContext<
   async createComponent<
     Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
-    return this.manager.components.createInstance(`${this.name}.name`, state, ttl);
+    return this.manager.components.createInstance(name, state, ttl);
+  }
+
+  async createLocalComponent<
+    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+  >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
+    return this.manager.components.createInstance(`${this.name}.${name}`, state, ttl);
   }
 
   defer(): Promise<void> {

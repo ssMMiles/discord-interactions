@@ -1,4 +1,4 @@
-import { Component } from "..";
+import { Component, Modal } from "..";
 
 export abstract class HandledInteraction<Data, Builder extends { toJSON: () => Data }, Context> {
   public builder: Builder;
@@ -8,9 +8,9 @@ export abstract class HandledInteraction<Data, Builder extends { toJSON: () => D
 
   public handler: (ctx: Context) => Promise<void>;
 
-  public components: Component[];
+  public components: (Component | Modal)[];
 
-  constructor(builder: Builder, handler: (ctx: Context) => Promise<void>, components: Component[] = []) {
+  constructor(builder: Builder, handler: (ctx: Context) => Promise<void>, components: (Component | Modal)[] = []) {
     this.builder = builder;
     this.handler = handler;
 

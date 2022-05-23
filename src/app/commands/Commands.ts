@@ -7,6 +7,7 @@ import {
   AutocompleteContext,
   MessageCommandBuilder,
   MessageCommandContext,
+  Modal,
   SlashCommandBuilder,
   SlashCommandContext,
   UserCommandBuilder,
@@ -21,7 +22,7 @@ export interface ICommandBase<Builder, Context> {
 
   handler: (ctx: Context) => Promise<void>;
 
-  components?: Component[];
+  components?: (Component | Modal)[];
 }
 
 export interface ISlashCommand extends ICommandBase<SlashCommandBuilder, SlashCommandContext> {
@@ -55,13 +56,13 @@ export class SlashCommand
     return this;
   }
 
-  public setComponents(components: Component[]): this {
+  public setComponents(components: (Component | Modal)[]): this {
     this.components = components;
 
     return this;
   }
 
-  public addComponents(...components: Component[]): this {
+  public addComponents(...components: (Component | Modal)[]): this {
     this.components.push(...components);
 
     return this;
