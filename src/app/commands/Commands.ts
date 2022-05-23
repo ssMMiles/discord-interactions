@@ -21,7 +21,7 @@ export interface ICommandBase<Builder, Context> {
 
   handler: (ctx: Context) => Promise<void>;
 
-  components: Component[];
+  components?: Component[];
 }
 
 export interface ISlashCommand extends ICommandBase<SlashCommandBuilder, SlashCommandContext> {

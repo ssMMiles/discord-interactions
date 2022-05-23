@@ -16,8 +16,17 @@ export enum ButtonStyle {
 }
 
 abstract class ButtonBuilderBase extends ComponentBuilderBase<APIButtonComponent> {
-  public constructor(data?: Partial<APIButtonComponent>) {
-    super({ type: ComponentType.Button, ...data });
+  public constructor(data?: Partial<APIButtonComponent> | ButtonStyle, label?: string) {
+    if (typeof data === "number") {
+      super({ type: ComponentType.Button });
+
+      this.setStyle(data);
+      if (label) this.setLabel(label);
+
+      return;
+    }
+
+    super({ type: ComponentType.Button, label, ...data });
   }
 
   /**

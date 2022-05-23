@@ -1,5 +1,13 @@
 import { APIInteraction, APIInteractionResponse, APIUser } from "discord-api-types/v10";
-import { DiscordApplication, InteractionResponseAlreadySent, InteractionWebhook, ResponseCallback } from "..";
+import {
+  ButtonBuilder,
+  DiscordApplication,
+  InteractionResponseAlreadySent,
+  InteractionWebhook,
+  ModalBuilder,
+  ResponseCallback,
+  SelectMenuBuilder
+} from "..";
 
 // lasts 15 minutes, 5s buffer to be safe
 const InteractionTokenExpiryTime = 15 * 60 * 1000 - 5000;
@@ -56,5 +64,11 @@ export class BaseInteractionContext<
     data[key] = value;
 
     Object.assign(this, data);
+  }
+
+  async createComponent<
+    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+  >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
+    return this.manager.components.createInstance(name, state, ttl);
   }
 }

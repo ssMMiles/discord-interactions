@@ -17,7 +17,7 @@ export interface ICommandGroup {
   builder: CommandGroupBuilder;
   handlers: ISubcommandHandlers;
 
-  components: Component[];
+  components?: Component[];
 }
 
 export class CommandGroup implements ICommandGroup {

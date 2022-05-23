@@ -153,8 +153,12 @@ export class CommandManager {
     const registeredCommands: RegisteredCommand[] = [];
 
     for (const command of commands) {
-      for (const component of command.components) {
-        this.manager.components.register([component]);
+      if (command.components) {
+        for (const component of command.components) {
+          component.setId(`${command}.${component.id}`);
+        }
+
+        this.manager.components.register(command.components);
       }
 
       if (command.builder.type === ApplicationCommandType.ChatInput) {

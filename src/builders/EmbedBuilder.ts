@@ -34,8 +34,17 @@ export interface EmbedImageData extends Omit<APIEmbedImage, "proxy_url"> {
 export class EmbedBuilder {
   public readonly data: APIEmbed;
 
-  public constructor(data: APIEmbed = {}) {
-    this.data = { ...data };
+  public constructor(data: string | APIEmbed = {}, description?: string) {
+    if (typeof data === "string") {
+      this.data = {};
+
+      this.setTitle(data);
+      if (description) this.setDescription(description);
+
+      return;
+    }
+
+    this.data = { description, ...data };
     if (data.timestamp) this.data.timestamp = new Date(data.timestamp).toISOString();
   }
 

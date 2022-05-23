@@ -7,10 +7,14 @@ import { ActionRowBuilder } from "..";
 import { ModalActionRowComponentBuilders } from "./components";
 
 export class ModalBuilder {
-  public data: Partial<APIModalInteractionResponseCallbackData> = {};
+  public data: Partial<APIModalInteractionResponseCallbackData> = { components: [] };
 
-  public constructor(data?: APIModalInteractionResponseCallbackData) {
-    if (data) this.data = data;
+  public constructor(data?: APIModalInteractionResponseCallbackData | string) {
+    if (data) {
+      if (typeof data === "string") return this.setTitle(data);
+
+      this.data = data;
+    }
   }
 
   public setTitle(title: string): this {

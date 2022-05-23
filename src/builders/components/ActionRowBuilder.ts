@@ -21,11 +21,11 @@ export class ActionRowBuilder<T extends ComponentBuilders> extends ComponentBuil
   /**
    * The components within this action row
    */
-  public readonly components: T[];
+  public readonly components: T[] = [];
 
-  public constructor(components: T[] = []) {
+  public constructor(components?: T[]) {
     super({ type: ComponentType.ActionRow });
-    this.components = components;
+    if (components) this.components.push(...components);
   }
 
   /**

@@ -12,7 +12,7 @@ import { EmbedBuilder } from "./EmbedBuilder";
 export class MessageBuilder {
   public data: APIInteractionResponseCallbackData = {};
 
-  public constructor(data?: EmbedBuilder | string | APIInteractionResponseCallbackData) {
+  public constructor(data?: string | EmbedBuilder | APIInteractionResponseCallbackData) {
     if (data instanceof EmbedBuilder) return this.addEmbeds(data);
     if (typeof data === "string") return this.setContent(data);
 

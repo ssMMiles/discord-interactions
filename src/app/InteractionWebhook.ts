@@ -15,10 +15,11 @@ export class InteractionWebhook {
     this.rest = new REST();
   }
 
-  send(message: string | MessageBuilder): Promise<APIMessage> {
+  send(message: string | MessageBuilder, wait = true): Promise<APIMessage> {
     if (typeof message === "string") message = SimpleEmbed(message);
 
     return this.rest.post(Routes.webhook(this.id, this.token), {
+      query: new URLSearchParams(`wait=${wait ? "true" : "false"}`),
       body: message.toJSON(),
       auth: false
     }) as Promise<APIMessage>;

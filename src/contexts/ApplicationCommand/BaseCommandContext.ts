@@ -6,7 +6,7 @@ import {
   InteractionResponseType
 } from "discord-api-types/v10";
 import { DiscordApplication, ResponseCallback } from "../../app";
-import { MessageBuilder } from "../../builders";
+import { ButtonBuilder, MessageBuilder, SelectMenuBuilder } from "../../builders";
 import { ModalBuilder } from "../../builders/ModalBuilder";
 import { ChannelMessageResponse, InteractionResponseAlreadySent, SimpleEmbed } from "../../util";
 import { BaseInteractionContext } from "../BaseInteractionContext";
@@ -20,6 +20,12 @@ export class BaseCommandContext<
     super(manager, interaction, responseCallback);
 
     this.name = this.interaction.data.name;
+  }
+
+  async createComponent<
+    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+  >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
+    return this.manager.components.createInstance(`${this.name}.name`, state, ttl);
   }
 
   defer(): Promise<void> {

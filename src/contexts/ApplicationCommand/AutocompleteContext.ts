@@ -72,4 +72,25 @@ export class AutocompleteContext extends BaseInteractionContext<
       }
     });
   }
+
+  public getStringOption(name: string): APIApplicationCommandInteractionDataStringOption {
+    const option = this.option as APIApplicationCommandInteractionDataStringOption | undefined;
+    if (option === undefined) throw new Error(`${name} | Option does not exist.`);
+
+    return option;
+  }
+
+  public getIntegerOption(name: string): APIApplicationCommandInteractionDataNumberOption {
+    const option = this.option as APIApplicationCommandInteractionDataNumberOption | undefined;
+    if (option === undefined) throw new Error(`${name} | Option does not exist.`);
+
+    return option;
+  }
+
+  public getNumberOption(name: string): APIApplicationCommandInteractionDataNumberOption {
+    const option = this.option as APIApplicationCommandInteractionDataNumberOption | undefined;
+    if (option === undefined) throw new Error(`${name} | Option does not exist.`);
+
+    return option;
+  }
 }
