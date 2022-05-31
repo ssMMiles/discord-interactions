@@ -8,7 +8,7 @@ import {
   ApplicationCommandOptionType,
   InteractionResponseType
 } from "discord-api-types/v10";
-import { DiscordApplication, ResponseCallback } from "../..";
+import { ButtonBuilder, DiscordApplication, ModalBuilder, ResponseCallback, SelectMenuBuilder } from "../..";
 import { BaseInteractionContext } from "../BaseInteractionContext";
 export type AutocompleteSupportedOptions =
   | APIApplicationCommandInteractionDataStringOption
@@ -62,6 +62,16 @@ export class AutocompleteContext extends BaseInteractionContext<
       default:
         this.option = this.interaction.data.options?.[0] as AutocompleteSupportedOptions;
     }
+  }
+
+  async createComponent<
+    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+  >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
+    return super.createGlobalComponent(
+      `${this.parentCommand ? `${this.parentCommand}.` : ""}${this.name}.${name}`,
+      state,
+      ttl
+    );
   }
 
   public reply(choices: APIApplicationCommandOptionChoice[]): Promise<void> {

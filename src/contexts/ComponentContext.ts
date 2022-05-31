@@ -64,7 +64,7 @@ class BaseComponentContext<
     Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
     return this.manager.components.createInstance(
-      this.parentCommand ? `${this.parentCommand}.${name}` : name,
+      `${this.parentCommand ? `${this.parentCommand}.` : ""}${name}`,
       state,
       ttl
     );

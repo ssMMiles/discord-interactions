@@ -16,7 +16,14 @@ import {
   APIUser,
   ApplicationCommandOptionType
 } from "discord-api-types/v10";
-import { ChannelMessageResponse, DiscordApplication, ResponseCallback } from "../..";
+import {
+  ButtonBuilder,
+  ChannelMessageResponse,
+  DiscordApplication,
+  ModalBuilder,
+  ResponseCallback,
+  SelectMenuBuilder
+} from "../..";
 import { BaseCommandContext } from "./BaseCommandContext";
 
 export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicationCommandInteraction> {
@@ -69,6 +76,16 @@ export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicat
     for (const option of options) {
       this.options.set(option.name, option);
     }
+  }
+
+  async createComponent<
+    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+  >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
+    return super.createGlobalComponent(
+      `${this.parentCommand ? `${this.parentCommand}.` : ""}${this.name}.${name}`,
+      state,
+      ttl
+    );
   }
 
   public hasOption(name: string): boolean {

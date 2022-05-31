@@ -6,7 +6,7 @@ import {
   ModalSubmitComponent
 } from "discord-api-types/v10";
 import { DiscordApplication, ResponseCallback } from "../app";
-import { MessageBuilder } from "../builders";
+import { ButtonBuilder, MessageBuilder, ModalBuilder, SelectMenuBuilder } from "../builders";
 import { InteractionResponseAlreadySent, ModalSubmitResponse, SimpleEmbed } from "../util";
 import { BaseInteractionContext } from "./BaseInteractionContext";
 
@@ -20,6 +20,8 @@ export class ModalSubmitContext<State = never> extends BaseInteractionContext<
   public state?: State;
 
   public components: Map<string, ModalSubmitComponent> = new Map();
+
+  public parentCommand?: string;
 
   constructor(
     manager: DiscordApplication,
@@ -58,6 +60,16 @@ export class ModalSubmitContext<State = never> extends BaseInteractionContext<
     } catch (err) {
       throw err;
     }
+  }
+
+  async createComponent<
+    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+  >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
+    return this.manager.components.createInstance(
+      this.parentCommand ? `${this.parentCommand}.${name}` : name,
+      state,
+      ttl
+    );
   }
 
   defer(): Promise<void> {

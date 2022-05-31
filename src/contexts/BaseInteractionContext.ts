@@ -66,7 +66,7 @@ export class BaseInteractionContext<
     Object.assign(this, data);
   }
 
-  async createComponent<
+  async createGlobalComponent<
     Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
     return this.manager.components.createInstance(name, state, ttl);
