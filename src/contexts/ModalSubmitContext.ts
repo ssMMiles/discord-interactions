@@ -42,6 +42,8 @@ export class ModalSubmitContext<State = never> extends BaseInteractionContext<
 
     const builder = manager.components.get(this.id);
     if (builder) this.allowExpired = builder.allowExpired;
+
+    if (builder && builder.parentCommand) this.parentCommand = builder.parentCommand;
   }
 
   async _fetchState(): Promise<void> {

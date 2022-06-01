@@ -67,11 +67,7 @@ export class AutocompleteContext extends BaseInteractionContext<
   async createComponent<
     Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
-    return super.createGlobalComponent(
-      `${this.parentCommand ? `${this.parentCommand}.` : ""}${this.name}.${name}`,
-      state,
-      ttl
-    );
+    return super.createGlobalComponent(`${this.parentCommand ?? this.name}.${name}`, state, ttl);
   }
 
   public reply(choices: APIApplicationCommandOptionChoice[]): Promise<void> {

@@ -81,11 +81,7 @@ export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicat
   async createComponent<
     Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
-    return super.createGlobalComponent(
-      `${this.parentCommand ? `${this.parentCommand}.` : ""}${this.name}.${name}`,
-      state,
-      ttl
-    );
+    return super.createGlobalComponent(`${this.parentCommand ?? this.name}.${name}`, state, ttl);
   }
 
   public hasOption(name: string): boolean {
