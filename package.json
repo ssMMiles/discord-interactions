@@ -1,7 +1,7 @@
 {
   "name": "interactions.ts",
   "description": "A full command framework for Discord interactions based on @discordjs/builders.",
-  "version": "1.0.39",
+  "version": "1.0.40",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "repository": {
