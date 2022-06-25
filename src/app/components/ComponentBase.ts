@@ -1,5 +1,5 @@
 import { APIActionRowComponentTypes, APIModalInteractionResponseCallbackData } from "discord-api-types/v10";
-import { HandledInteraction } from "../HandledInteraction";
+import { HandledInteraction } from "../handlers/HandledInteraction";
 
 export abstract class ComponentBase<
   Data extends APIActionRowComponentTypes | APIModalInteractionResponseCallbackData,

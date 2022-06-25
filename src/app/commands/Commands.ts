@@ -14,7 +14,7 @@ import {
   UserCommandContext
 } from "../..";
 import { Component } from "../components";
-import { HandledInteraction } from "../HandledInteraction";
+import { HandledInteraction } from "../handlers/HandledInteraction";
 import { CommandGroup, ICommandGroup } from "./CommandGroup";
 
 export interface ICommandBase<Builder, Context> {

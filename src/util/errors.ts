@@ -55,3 +55,9 @@ export class InteractionHandlerTimedOut extends InteractionError {
     super(`Interaction Handler Timed Out`, interaction);
   }
 }
+
+export class InteractionHandlerNotFound extends InteractionError {
+  constructor(interaction: APIInteraction) {
+    super(`Interaction Handler Not Found`, interaction);
+  }
+}

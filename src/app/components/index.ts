@@ -1,2 +1,2 @@
-export * from "../../builders/components";
 export * from "./Components";
+export * from "./Modal";

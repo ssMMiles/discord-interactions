@@ -1,22 +1,10 @@
 import { REST } from "@discordjs/rest";
 import { APIInteraction, APIInteractionResponse, Snowflake } from "discord-api-types/v10";
 import { createPublicKey, verify } from "node:crypto";
-import {
-  AutocompleteContext,
-  ButtonContext,
-  CommandManager,
-  ComponentManager,
-  InteractionContext,
-  InteractionHandlerTimedOut,
-  MessageCommandContext,
-  PingContext,
-  SelectMenuContext,
-  SlashCommandContext,
-  UnauthorizedInteraction,
-  UserCommandContext
-} from "..";
-import { ModalSubmitContext } from "../contexts/ModalSubmitContext";
-import { _handleInteraction } from "../handlers/handleInteraction";
+import { InteractionHandlerTimedOut, UnauthorizedInteraction } from "../util";
+import { ContextMap, InteractionHooks, _handleInteraction } from "./handlers";
+import { CommandManager } from "./managers/CommandManager";
+import { ComponentManager } from "./managers/ComponentManager";
 
 /**
  * Callback to be executed with the result of an interaction.
@@ -24,31 +12,6 @@ import { _handleInteraction } from "../handlers/handleInteraction";
 export type ResponseCallback<T extends APIInteractionResponse = APIInteractionResponse> = (
   response: T
 ) => Promise<void>;
-
-/**
- * Hooks to be executed on receiving an interaction. These are executed before command handlers, and will abort further handling the interaction on returning true;
- */
-export interface InteractionHooks {
-  /** Pings */
-  ping?: (context: PingContext) => Promise<void | true>;
-
-  /** This hook will run first on all incoming interactions. */
-  interaction?: (ctx: InteractionContext) => Promise<void | true>;
-
-  command?: {
-    slash?: (ctx: SlashCommandContext) => Promise<void | true>;
-    autocomplete?: (ctx: AutocompleteContext) => Promise<void | true>;
-    user?: (ctx: UserCommandContext) => Promise<void | true>;
-    message?: (ctx: MessageCommandContext) => Promise<void | true>;
-  };
-
-  component?: {
-    button?: (ctx: ButtonContext) => Promise<void | true>;
-    selectMenu?: (ctx: SelectMenuContext) => Promise<void | true>;
-  };
-
-  modal?: (ctx: ModalSubmitContext) => Promise<void | true>;
-}
 
 /** Component state cache for when it is too large for the `custom_id` field. TTL Defaults to 900 */
 export interface GenericCache {
@@ -68,7 +31,7 @@ export interface DiscordApplicationOptions {
   token: string;
 
   /** Custom hooks to be executed on interactions */
-  hooks?: InteractionHooks;
+  hooks?: Partial<InteractionHooks>;
 
   /** Cache to store additional component state */
   cache?: GenericCache;
@@ -92,7 +55,21 @@ export class DiscordApplication {
   public guildCommands: Map<Snowflake, CommandManager>;
 
   public timeout = 2500;
-  public hooks: InteractionHooks = {};
+  public hooks: InteractionHooks = {
+    ping: [],
+
+    interaction: [],
+
+    "command.slash": [],
+    "command.autocomplete": [],
+    "command.user": [],
+    "command.message": [],
+
+    "component.button": [],
+    "component.selectMenu": [],
+
+    modal: []
+  };
 
   public rest: REST;
 
@@ -110,7 +87,10 @@ export class DiscordApplication {
     this.guildCommands = new Map();
 
     if (options.timeout) this.timeout = options.timeout;
-    if (options.hooks) this.hooks = options.hooks;
+
+    if (options.hooks) {
+      Object.assign(this.hooks, options.hooks);
+    }
   }
 
   /**
@@ -181,4 +161,11 @@ export class DiscordApplication {
   }
 
   private _handleInteraction = _handleInteraction;
+
+  public addHook<T extends keyof InteractionHooks>(
+    hook: T,
+    handler: (ctx: ContextMap[T]) => Promise<void | true>
+  ): void {
+    (this.hooks[hook] as ((ctx: ContextMap[T]) => Promise<void | true>)[]).push(handler);
+  }
 }
