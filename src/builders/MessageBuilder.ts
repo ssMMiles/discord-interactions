@@ -37,16 +37,24 @@ export class MessageBuilder {
     return this;
   }
 
-  public setEphemeral(ephemeral: boolean) {
+  private setMessageFlag(flag: MessageFlags, value: boolean) {
     if (this.data.flags === undefined) this.data.flags = 0;
 
-    if (ephemeral) {
-      this.data.flags |= MessageFlags.Ephemeral;
+    if (value) {
+      this.data.flags |= flag;
     } else {
-      this.data.flags &= ~MessageFlags.Ephemeral;
+      this.data.flags &= ~flag;
     }
 
     return this;
+  }
+
+  public suppressEmbeds(value: boolean) {
+    return this.setMessageFlag(MessageFlags.SuppressEmbeds, value);
+  }
+
+  public setEphemeral(value: boolean) {
+    return this.setMessageFlag(MessageFlags.Ephemeral, value);
   }
 
   public addEmbeds(...embeds: EmbedBuilder[]) {
