@@ -239,18 +239,18 @@ export class CommandManager {
 
   /** Deletes remote commands that aren't registered with this command manager */
   async deleteUnregistered() {
-    const remoteCommands = this.parse(await this.getAPICommands());
+    const commands = this.parse(await this.getAPICommands());
 
-    for (const [name, command] of remoteCommands.slash) {
-      if (!this.slash.has(name)) await this.deleteAPICommand(command.id);
-    }
-
-    for (const [name, command] of remoteCommands.user) {
-      if (!this.user.has(name)) await this.deleteAPICommand(command.id);
-    }
-
-    for (const [name, command] of remoteCommands.user) {
-      if (!this.message.has(name)) await this.deleteAPICommand(command.id);
+    for (const [localCommands, remoteCommands] of [
+      [this.slash, commands.slash],
+      [this.user, commands.user],
+      [this.message, commands.message]
+    ]) {
+      for (const [name, command] of remoteCommands) {
+        if (!localCommands.has(name)) {
+          await this.deleteAPICommand(command.id);
+        }
+      }
     }
   }
 
