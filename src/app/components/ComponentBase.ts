@@ -19,7 +19,7 @@ export abstract class ComponentBase<
 
   protected getInstanceData(state: string): Data {
     return {
-      ...this.data,
+      ...JSON.parse(JSON.stringify(this.data)),
       custom_id: `${this.id}|${state}`
     };
   }

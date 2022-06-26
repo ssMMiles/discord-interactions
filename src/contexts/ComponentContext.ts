@@ -33,10 +33,14 @@ class BaseComponentContext<
 
   public parentCommand?: string;
 
+  public message: APIMessage;
+
   constructor(manager: DiscordApplication, interaction: T, responseCallback: ResponseCallback<MessageUpdateResponse>) {
     super(manager, interaction, responseCallback);
 
     this.id = this.interaction.data.custom_id.split("|")[0];
+
+    this.message = this.interaction.message;
 
     const component = manager.components.get(this.id);
     this.allowExpired = component?.allowExpired ?? false;
