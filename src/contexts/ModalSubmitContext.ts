@@ -5,6 +5,7 @@ import {
   InteractionResponseType,
   ModalSubmitComponent
 } from "discord-api-types/v10";
+import FormData from "form-data";
 import { DiscordApplication, ResponseCallback } from "../app";
 import { ButtonBuilder, MessageBuilder, ModalBuilder, SelectMenuBuilder } from "../builders";
 import { InteractionResponseAlreadySent, ModalSubmitResponse, SimpleEmbed } from "../util";
@@ -46,7 +47,7 @@ export class ModalSubmitContext<State = never> extends BaseInteractionContext<
     if (builder && builder.parentCommand) this.parentCommand = builder.parentCommand;
   }
 
-  async _fetchState(): Promise<void> {
+  async fetchState(): Promise<void> {
     this.state = undefined;
     let dataStr = this.interaction.data.custom_id.split("|")[1];
 
@@ -82,14 +83,11 @@ export class ModalSubmitContext<State = never> extends BaseInteractionContext<
     });
   }
 
-  reply(message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource): Promise<void> {
+  reply(message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource | FormData): Promise<void> {
     if (typeof message === "string") message = SimpleEmbed(message);
 
     if (message instanceof MessageBuilder)
-      message = {
-        type: InteractionResponseType.ChannelMessageWithSource,
-        data: message.toJSON()
-      };
+      message = message.toInteractionResponse(InteractionResponseType.ChannelMessageWithSource);
 
     return this._reply(message);
   }

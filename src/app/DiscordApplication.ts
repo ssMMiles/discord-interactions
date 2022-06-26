@@ -1,20 +1,27 @@
 import { REST } from "@discordjs/rest";
 import { APIInteraction, APIInteractionResponse, Snowflake } from "discord-api-types/v10";
+import FormData from "form-data";
 import { createPublicKey, verify } from "node:crypto";
-import { InteractionHandlerTimedOut, UnauthorizedInteraction } from "../util";
-import { ContextMap, InteractionHooks, _handleInteraction } from "./handlers";
-import { CommandManager } from "./managers/CommandManager";
-import { ComponentManager } from "./managers/ComponentManager";
+import {
+  CommandManager,
+  ComponentManager,
+  ContextMap,
+  InteractionHandlerTimedOut,
+  InteractionHooks,
+  UnauthorizedInteraction
+} from "..";
+import { _handleInteraction } from "./handlers";
 
 /**
  * Callback to be executed with the result of an interaction.
  */
-export type ResponseCallback<T extends APIInteractionResponse = APIInteractionResponse> = (
+export type ResponseCallback<T extends APIInteractionResponse | FormData = APIInteractionResponse | FormData> = (
   response: T
 ) => Promise<void>;
 
-/** Component state cache for when it is too large for the `custom_id` field. TTL Defaults to 900 */
+/** Cache used to store component states. Redis is recommended. */
 export interface GenericCache {
+  /** Default Time To Live for cache entries, defaults to 900. */
   ttl?: number;
 
   get: (key: string) => Promise<string | null>;
@@ -22,21 +29,22 @@ export interface GenericCache {
 }
 
 export interface DiscordApplicationOptions {
-  /** Discord Client ID */
+  /** Application Client ID */
   clientId: Snowflake;
-  /** Application's Public Key */
+
+  /** Application Public Key */
   publicKey: string | Buffer;
 
-  /** Application's Bot Token */
+  /** Application Bot Token */
   token: string;
 
-  /** Custom hooks to be executed on interactions */
+  /** Hooks to perform additional processing on certain interactions before passing to their handlers. Upon returning true, all further execution is halted. */
   hooks?: Partial<InteractionHooks>;
 
-  /** Cache to store additional component state */
+  /** Component State Cache */
   cache?: GenericCache;
 
-  /** Timeout(ms) after which InteractionHandlerTimedOut is thrown - Default: 2500ms */
+  /** Timeout after which InteractionHandlerTimedOut is thrown - Default: 2500ms */
   timeout?: number;
 }
 
@@ -154,7 +162,12 @@ export class DiscordApplication {
         return responseCallback(response);
       };
 
-      await this._handleInteraction(interaction, responseCallbackWithTimeout);
+      try {
+        await this._handleInteraction(interaction, responseCallbackWithTimeout);
+      } catch (e) {
+        clearTimeout(timeout);
+        reject(e);
+      }
 
       resolve();
     });

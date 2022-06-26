@@ -27,12 +27,13 @@ export type ContextMap = {
 };
 
 /**
- * Hooks to be executed on receiving an interaction. These are executed before command handlers, and will abort further handling the interaction upon returning true;
+ * Hooks to be executed on receiving an interaction. These are executed before command handlers, and will abort further handling the interaction upon returning true.
  */
 export type InteractionHooks = {
-  ping: ((context: PingContext) => Promise<void | true>)[];
-
+  /** This hook runs first for all types of interaction. */
   interaction: ((ctx: InteractionContext) => Promise<void | true>)[];
+
+  ping: ((context: PingContext) => Promise<void | true>)[];
 
   "command.slash": ((ctx: SlashCommandContext) => Promise<void | true>)[];
   "command.autocomplete": ((ctx: AutocompleteContext) => Promise<void | true>)[];

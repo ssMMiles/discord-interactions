@@ -5,6 +5,7 @@ import {
   APIModalInteractionResponse,
   InteractionResponseType
 } from "discord-api-types/v10";
+import FormData from "form-data";
 import { DiscordApplication, ResponseCallback } from "../../app";
 import { ButtonBuilder, MessageBuilder, SelectMenuBuilder } from "../../builders";
 import { ModalBuilder } from "../../builders/ModalBuilder";
@@ -43,14 +44,12 @@ export class BaseCommandContext<
       | APIInteractionResponseChannelMessageWithSource
       | ModalBuilder
       | APIModalInteractionResponse
+      | FormData
   ): Promise<void> {
     if (typeof message === "string") message = SimpleEmbed(message);
 
     if (message instanceof MessageBuilder)
-      message = {
-        type: InteractionResponseType.ChannelMessageWithSource,
-        data: message.toJSON()
-      };
+      message = message.toInteractionResponse(InteractionResponseType.ChannelMessageWithSource);
 
     if (message instanceof ModalBuilder) {
       message = {

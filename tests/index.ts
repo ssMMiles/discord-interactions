@@ -58,7 +58,7 @@ describe("Discord Application", () => {
 
   const app = new DiscordApplication(options);
 
-  describe("Managing Application", () => {
+  describe("Managing Application Commands", () => {
     it("Creating Slash Command", async () => {
       expect(
         await app.commands.register(

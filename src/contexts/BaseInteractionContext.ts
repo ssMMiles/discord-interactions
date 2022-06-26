@@ -1,12 +1,13 @@
 import { APIInteraction, APIInteractionResponse, APIUser } from "discord-api-types/v10";
+import FormData from "form-data";
 import {
   ButtonBuilder,
   DiscordApplication,
   InteractionResponseAlreadySent,
-  InteractionWebhook,
   ModalBuilder,
   ResponseCallback,
-  SelectMenuBuilder
+  SelectMenuBuilder,
+  WebhookClient
 } from "..";
 
 // lasts 15 minutes, 5s buffer to be safe
@@ -14,7 +15,7 @@ const InteractionTokenExpiryTime = 15 * 60 * 1000 - 5000;
 
 export class BaseInteractionContext<
   T extends APIInteraction = APIInteraction,
-  R extends APIInteractionResponse = APIInteractionResponse
+  R extends APIInteractionResponse | FormData = APIInteractionResponse
 > {
   private responseCallback: ResponseCallback<R>;
   protected replied = false;
@@ -28,7 +29,7 @@ export class BaseInteractionContext<
   public manager: DiscordApplication;
 
   public interaction: T;
-  protected followup: InteractionWebhook;
+  protected followup: WebhookClient;
 
   public user: APIUser;
 
@@ -40,7 +41,7 @@ export class BaseInteractionContext<
     this.manager = manager;
     this.interaction = interaction;
 
-    this.followup = new InteractionWebhook(this.interaction.application_id, this.interaction.token);
+    this.followup = new WebhookClient(this.interaction.application_id, this.interaction.token, this.manager.rest);
 
     this.isDM = this.interaction.user !== undefined;
     this.user = (this.isDM ? this.interaction.user : this.interaction?.member?.user) as APIUser;

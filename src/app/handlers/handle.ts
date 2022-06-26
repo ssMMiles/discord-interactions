@@ -17,7 +17,13 @@ import {
   RegisteredUserCommand,
   ResponseCallback
 } from "..";
-import { InteractionHandlerNotFound, UnknownApplicationCommandType, UnknownInteractionType } from "../..";
+import {
+  InteractionHandlerError,
+  InteractionHandlerNotFound,
+  InteractionStateExpired,
+  UnknownApplicationCommandType,
+  UnknownInteractionType
+} from "../..";
 import {
   AutocompleteContext,
   ButtonContext,
@@ -185,7 +191,11 @@ export async function _handleInteraction(
 
       if (!handler) throw new InteractionHandlerNotFound(context.interaction);
 
-      await handler(context);
+      try {
+        await handler(context);
+      } catch (err: unknown) {
+        throw new InteractionHandlerError(context.interaction, err);
+      }
 
       break;
     }
@@ -204,7 +214,11 @@ export async function _handleInteraction(
 
       if (!command) throw new InteractionHandlerNotFound(context.interaction);
 
-      await command.handler(context as UserCommandContext & MessageCommandContext);
+      try {
+        await command.handler(context as UserCommandContext & MessageCommandContext);
+      } catch (err: unknown) {
+        throw new InteractionHandlerError(context.interaction, err);
+      }
 
       break;
     }
@@ -213,13 +227,25 @@ export async function _handleInteraction(
     case ModalSubmitContext: {
       context = context as ButtonContext<never> & SelectMenuContext<never> & ModalSubmitContext<never>;
 
-      await context._fetchState();
+      try {
+        await context.fetchState();
+      } catch (e) {
+        if (e instanceof InteractionStateExpired) {
+          if (!context.allowExpired) throw e;
+        } else {
+          console.error("Unknown error fetching interaction state: ", e);
+        }
+      }
 
       const component = context.manager.components.get(context.id);
 
       if (!component) throw new InteractionHandlerNotFound(context.interaction);
 
-      await component.handler(context as ButtonContext<never> & SelectMenuContext<never> & ModalSubmitContext<never>);
+      try {
+        await component.handler(context as ButtonContext<never> & SelectMenuContext<never> & ModalSubmitContext<never>);
+      } catch (err: unknown) {
+        throw new InteractionHandlerError(context.interaction, err);
+      }
 
       break;
     }

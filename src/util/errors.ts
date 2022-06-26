@@ -61,3 +61,30 @@ export class InteractionHandlerNotFound extends InteractionError {
     super(`Interaction Handler Not Found`, interaction);
   }
 }
+
+export class InteractionStateExpired extends InteractionError {
+  constructor(interaction: APIInteraction) {
+    super(`Interaction State Expired`, interaction);
+  }
+}
+
+export class InteractionHandlerError extends InteractionError {
+  public cause: unknown;
+
+  constructor(interaction: APIInteraction, error: unknown) {
+    super(`Interaction Handler Error`, interaction);
+
+    this.cause = error;
+  }
+}
+
+export type PossibleInteractionErrors =
+  | UnauthorizedInteraction
+  | UnknownInteractionType
+  | UnknownApplicationCommandType
+  | UnknownComponentType
+  | InteractionResponseAlreadySent
+  | InteractionTokenExpired
+  | InteractionHandlerTimedOut
+  | InteractionHandlerNotFound
+  | InteractionStateExpired;
