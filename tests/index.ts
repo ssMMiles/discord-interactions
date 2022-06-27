@@ -62,12 +62,9 @@ describe("Discord Application", () => {
     it("Creating Slash Command", async () => {
       expect(
         await app.commands.register(
-          [
-            new SlashCommand(new SlashCommandBuilder("test", "A simple testing command!"), async (context) => {
-              context.reply(new MessageBuilder().setContent("Test command executed!"));
-            })
-          ],
-          false
+          new SlashCommand(new SlashCommandBuilder("test", "A simple testing command!"), async (context) => {
+            context.reply(new MessageBuilder().setContent("Test command executed!"));
+          })
         )
       );
 
@@ -78,28 +75,25 @@ describe("Discord Application", () => {
     it("Creating Slash Command Group", async () => {
       expect(
         await app.commands.register(
-          [
-            new CommandGroup(
-              new CommandGroupBuilder("config", "A simple config command.").addSubcommands(
-                new SubcommandOption("get", "Get a config value."),
-                new SubcommandOption("set", "Set a config value.")
-              ),
-              {
-                get: {
-                  handler: async (context) => {
-                    const value = "x";
-                    context.reply(new MessageBuilder(`Config value: ${value}!`));
-                  }
-                },
-                set: {
-                  handler: async (context) => {
-                    context.reply(new MessageBuilder("Config value set!"));
-                  }
+          new CommandGroup(
+            new CommandGroupBuilder("config", "A simple config command.").addSubcommands(
+              new SubcommandOption("get", "Get a config value."),
+              new SubcommandOption("set", "Set a config value.")
+            ),
+            {
+              get: {
+                handler: async (context) => {
+                  const value = "x";
+                  context.reply(new MessageBuilder(`Config value: ${value}!`));
+                }
+              },
+              set: {
+                handler: async (context) => {
+                  context.reply(new MessageBuilder("Config value set!"));
                 }
               }
-            )
-          ],
-          true
+            }
+          )
         )
       );
 
@@ -127,7 +121,7 @@ describe("Discord Application", () => {
     });
 
     it("Button", (done) => {
-      app.components.register([
+      app.components.register(
         new Button(
           "testButton",
           new ButtonBuilder().setLabel("Test Button").setStyle(ButtonStyle.Primary),
@@ -135,7 +129,7 @@ describe("Discord Application", () => {
             context.reply(new MessageBuilder().setContent("Test button executed!"));
           }
         )
-      ]);
+      );
 
       const [response] = app.handleInteraction(JSON.stringify(buttonInteraction), false);
 
