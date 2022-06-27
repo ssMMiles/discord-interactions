@@ -144,11 +144,9 @@ export class CommandManager {
   }
 
   /**
-   * Register a new command to be handled. This will also create the command on Discord if it doesn't exist, or overwrite it if it does.
-   * @param commands An array of Commands
-   * @param overwrite Whether to overwrite remote command if a change is deteced. (default: true)
+   * Register a new command to be handled. This will create the command on Discord if it doesn't exist, or overwrite it if the existing remote version differs.
    */
-  async register(commands: ICommand[], overwrite = true): Promise<RegisteredCommand[]> {
+  async register(...commands: ICommand[]): Promise<RegisteredCommand[]> {
     const remoteCommands = this.parse(await this.getAPICommands());
     const registeredCommands: RegisteredCommand[] = [];
 
@@ -159,7 +157,7 @@ export class CommandManager {
           component.setId(`${component.parentCommand}.${component.id}`);
         }
 
-        this.manager.components.register(command.components);
+        this.manager.components.register(...command.components);
       }
 
       if (command.builder.type === ApplicationCommandType.ChatInput) {
@@ -168,7 +166,7 @@ export class CommandManager {
         if (remoteCommands.slash.has(command.builder.name)) {
           result = remoteCommands.slash.get(command.builder.name) as APIApplicationSlashCommand;
 
-          if (overwrite && !command.builder.equals(result)) {
+          if (!command.builder.equals(result)) {
             result = await this.updateAPICommand(command.builder.toJSON(), result.id);
           }
         } else {
@@ -189,7 +187,8 @@ export class CommandManager {
         if (remoteCommands.user.has(command.builder.name)) {
           result = remoteCommands.user.get(command.builder.name) as APIApplicationUserCommand;
 
-          if (overwrite) result = await this.updateAPICommand(command.builder.toJSON(), result.id);
+          if (!command.builder.equals(result))
+            result = await this.updateAPICommand(command.builder.toJSON(), result.id);
         } else {
           result = await this.putAPICommand(command.builder.toJSON());
         }
@@ -206,7 +205,8 @@ export class CommandManager {
         if (remoteCommands.message.has(command.builder.name)) {
           result = remoteCommands.message.get(command.builder.name) as APIApplicationMessageCommand;
 
-          if (overwrite) result = await this.updateAPICommand(command.builder.toJSON(), result.id);
+          if (!command.builder.equals(result))
+            result = await this.updateAPICommand(command.builder.toJSON(), result.id);
         } else {
           result = await this.putAPICommand(command.builder.toJSON());
         }

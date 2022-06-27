@@ -21,7 +21,7 @@ export class ComponentManager {
     return this._components.get(name);
   }
 
-  register(components: (Component | Modal)[] = []) {
+  register(...components: (Component | Modal)[]) {
     for (const component of components) {
       this._components.set(component.id, component);
     }
