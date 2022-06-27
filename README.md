@@ -64,7 +64,7 @@ server.post("/", async (request, reply) => {
 
 # Registering a Slash Command
 
-This will create a global `/ping` command on your application. If one is already registered, it will be overwritten.
+This will create a global `/ping` command on your application. If one is already registered and differs from the provided data, it will be overwritten.
 
 ```typescript
 const app = new DiscordApplication({
