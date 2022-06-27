@@ -1,4 +1,5 @@
 import { ApplicationCommandType, RESTPostAPIContextMenuApplicationCommandsJSONBody } from "discord-api-types/v10";
+import { APIApplicationMessageCommand, APIApplicationUserCommand } from "../../app";
 import { CommandBuilder } from "./CommandBuilderBase";
 
 export class UserCommandBuilder extends CommandBuilder<
@@ -6,7 +7,7 @@ export class UserCommandBuilder extends CommandBuilder<
 > {
   public type: ApplicationCommandType.User = ApplicationCommandType.User;
 
-  public toJSON() {
+  public toJSON(): Omit<APIApplicationUserCommand, "id" | "application_id" | "guild_id" | "version" | "description"> {
     return {
       name: this.name,
       type: this.type,
@@ -22,7 +23,10 @@ export class MessageCommandBuilder extends CommandBuilder<
 > {
   public type: ApplicationCommandType.Message = ApplicationCommandType.Message;
 
-  public toJSON() {
+  public toJSON(): Omit<
+    APIApplicationMessageCommand,
+    "id" | "application_id" | "guild_id" | "version" | "description"
+  > {
     return {
       name: this.name,
       type: this.type,

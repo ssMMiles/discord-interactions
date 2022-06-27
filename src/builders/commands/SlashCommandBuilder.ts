@@ -1,9 +1,13 @@
 import {
   APIApplicationCommandBasicOption,
+  APIApplicationCommandOption,
+  ApplicationCommandOptionType,
   ApplicationCommandType,
   LocalizationMap,
   RESTPostAPIChatInputApplicationCommandsJSONBody
 } from "discord-api-types/v10";
+import { APIApplicationSlashCommand } from "../../app";
+import { shallowEquals } from "../../util/shallow-equals";
 import { CommandBuilder } from "./CommandBuilderBase";
 import {
   SlashCommandAttachmentOption,
@@ -168,7 +172,81 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
     return this;
   }
 
-  public toJSON() {
+  equals(remote: APIApplicationSlashCommand): boolean {
+    if (!super.equals(remote)) return false;
+
+    if (this.description !== remote.description) return false;
+    if (!shallowEquals(this.description_localizations ?? {}, remote.description_localizations ?? {})) return false;
+
+    if (
+      this.options &&
+      remote.options &&
+      (this.options.length !== remote.options.length ||
+        this.options.length < remote.options.length ||
+        this.options.some((option, i) => {
+          if (remote.options?.[i] === undefined) return true;
+          return !isEqualOption(option.toJSON(), remote.options[i]);
+        }))
+    )
+      return false;
+
+    function isEqualOption(localOption: APIApplicationCommandOption, remoteOption: APIApplicationCommandOption) {
+      if (localOption.type !== remoteOption.type) return false;
+
+      if (localOption.name !== remoteOption.name) return false;
+      if (!shallowEquals(localOption.name_localizations ?? {}, remoteOption.name_localizations ?? {})) return false;
+
+      if (localOption.description !== remoteOption.description) return false;
+      if (!shallowEquals(localOption.description_localizations ?? {}, remoteOption.description_localizations ?? {}))
+        return false;
+
+      if (localOption.required !== remoteOption.required) return false;
+
+      if (
+        (localOption.type === ApplicationCommandOptionType.Subcommand ||
+          localOption.type === ApplicationCommandOptionType.SubcommandGroup) &&
+        (remoteOption.type === ApplicationCommandOptionType.Subcommand ||
+          remoteOption.type === ApplicationCommandOptionType.SubcommandGroup)
+      ) {
+        if (
+          localOption.options &&
+          remoteOption.options &&
+          (localOption.options.length !== remoteOption.options.length ||
+            localOption.options.length < remoteOption.options.length ||
+            localOption.options.some((option, i) => {
+              if (remoteOption.options?.[i] === undefined) return true;
+              return !isEqualOption(option, remoteOption.options[i]);
+            }))
+        )
+          return false;
+      }
+
+      if (
+        localOption.type === ApplicationCommandOptionType.String &&
+        remoteOption.type === ApplicationCommandOptionType.String
+      ) {
+        if (localOption.autocomplete !== remoteOption.autocomplete) return false;
+      }
+
+      if (
+        (localOption.type === ApplicationCommandOptionType.Integer ||
+          localOption.type === ApplicationCommandOptionType.Number) &&
+        (remoteOption.type === ApplicationCommandOptionType.Integer ||
+          remoteOption.type === ApplicationCommandOptionType.Number)
+      ) {
+        if (localOption.min_value !== remoteOption.min_value) return false;
+        if (localOption.max_value !== remoteOption.max_value) return false;
+
+        if (localOption.autocomplete !== remoteOption.autocomplete) return false;
+      }
+
+      return true;
+    }
+
+    return true;
+  }
+
+  public toJSON(): Omit<APIApplicationSlashCommand, "id" | "application_id" | "guild_id" | "version"> {
     return {
       type: this.type,
 

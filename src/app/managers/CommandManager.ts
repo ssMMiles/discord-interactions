@@ -146,7 +146,7 @@ export class CommandManager {
   /**
    * Register a new command to be handled. This will also create the command on Discord if it doesn't exist, or overwrite it if it does.
    * @param commands An array of Commands
-   * @param overwrite Whether to overwrite existing commands when syncing with Discord (default: false)
+   * @param overwrite Whether to overwrite remote command if a change is deteced. (default: true)
    */
   async register(commands: ICommand[], overwrite = true): Promise<RegisteredCommand[]> {
     const remoteCommands = this.parse(await this.getAPICommands());
@@ -168,7 +168,11 @@ export class CommandManager {
         if (remoteCommands.slash.has(command.builder.name)) {
           result = remoteCommands.slash.get(command.builder.name) as APIApplicationSlashCommand;
 
-          if (overwrite) result = await this.updateAPICommand(command.builder.toJSON(), result.id);
+          if (overwrite && !command.builder.equals(result)) {
+            console.log("differing command, overwriting");
+            console.dir(command.builder.toJSON());
+            result = await this.updateAPICommand(command.builder.toJSON(), result.id);
+          }
         } else {
           result = await this.putAPICommand(command.builder.toJSON());
         }

@@ -1,5 +1,11 @@
-import { ApplicationCommandType, LocalizationMap, RESTPostAPIApplicationCommandsJSONBody } from "discord-api-types/v10";
+import {
+  APIApplicationCommand,
+  ApplicationCommandType,
+  LocalizationMap,
+  RESTPostAPIApplicationCommandsJSONBody
+} from "discord-api-types/v10";
 import { Bitfield } from "../..";
+import { shallowEquals } from "../../util/shallow-equals";
 
 export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommandsJSONBody> {
   /**
@@ -104,6 +110,15 @@ export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommands
     this.default_member_permissions.disallowAll();
 
     return this;
+  }
+
+  equals(remote: APIApplicationCommand): boolean {
+    if (this.type !== remote.type) return false;
+
+    if (this.name !== remote.name) return false;
+    if (!shallowEquals(this.name_localizations ?? {}, remote.name_localizations ?? {})) return false;
+
+    return true;
   }
 
   /**
