@@ -17,7 +17,7 @@ import { _handleInteraction } from "./handlers";
  */
 export type ResponseCallback<T extends APIInteractionResponse | FormData = APIInteractionResponse | FormData> = (
   response: T
-) => Promise<void>;
+) => void;
 
 /** Cache used to store component states. Redis is recommended. */
 export interface GenericCache {
@@ -138,12 +138,15 @@ export class DiscordApplication {
    * @returns Array containing the interaction response, and a callback to be called after you have sent the response
    */
   public handleInteraction(
-    responseCallback: ResponseCallback,
     body: string,
     signature: string | false,
     timestamp?: string
-  ): Promise<void> {
-    return new Promise(async (resolve, reject) => {
+  ): [Promise<APIInteractionResponse | FormData>, Promise<void>] {
+    let responseCallbackWithTimeout: (response: APIInteractionResponse | FormData) => void,
+      interaction: APIInteraction,
+      timeout: NodeJS.Timeout;
+
+    const response = new Promise<APIInteractionResponse | FormData>((resolve, reject) => {
       if (
         signature !== false &&
         (!timestamp || !DiscordApplication.verifyInteractionSignature(this.publicKey, signature, timestamp, body))
@@ -151,17 +154,21 @@ export class DiscordApplication {
         return reject(new UnauthorizedInteraction(body));
       }
 
-      const interaction = JSON.parse(body) as APIInteraction;
+      interaction = JSON.parse(body) as APIInteraction;
 
-      const timeout = setTimeout(() => {
+      timeout = setTimeout(() => {
         reject(new InteractionHandlerTimedOut(interaction));
       }, this.timeout);
 
-      const responseCallbackWithTimeout: ResponseCallback = (response) => {
+      const responseCallback = resolve;
+
+      responseCallbackWithTimeout = (response: APIInteractionResponse | FormData) => {
         clearTimeout(timeout);
         return responseCallback(response);
       };
+    });
 
+    const handling = new Promise<void>(async (resolve, reject) => {
       try {
         await this._handleInteraction(interaction, responseCallbackWithTimeout);
       } catch (e) {
@@ -171,6 +178,8 @@ export class DiscordApplication {
 
       resolve();
     });
+
+    return [response, handling];
   }
 
   private _handleInteraction = _handleInteraction;
