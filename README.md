@@ -136,7 +136,7 @@ app.commands.register(
     async (context) => {
       context.reply(
         new MessageBuilder("Press the button to see a surprise...").addComponents(
-          new ActionRowBuilder().addComponents(await context.createComponent("testButton", { word: "Surprise!" }))
+          new ActionRowBuilder().addComponents(await context.createComponent("example", { word: "Surprise!" }))
         )
       );
     },
