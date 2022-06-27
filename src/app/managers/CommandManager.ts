@@ -169,8 +169,6 @@ export class CommandManager {
           result = remoteCommands.slash.get(command.builder.name) as APIApplicationSlashCommand;
 
           if (overwrite && !command.builder.equals(result)) {
-            console.log("differing command, overwriting");
-            console.dir(command.builder.toJSON());
             result = await this.updateAPICommand(command.builder.toJSON(), result.id);
           }
         } else {

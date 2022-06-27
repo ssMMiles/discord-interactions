@@ -110,23 +110,20 @@ describe("Discord Application", () => {
 
   describe("Handling Interactions", () => {
     it("Slash Command", (done) => {
-      app.handleInteraction(
-        async (response) => {
-          // If test is timing out this is just not equal, it don't fail properly
-          expect(
-            equal(response, {
-              type: InteractionResponseType.ChannelMessageWithSource,
-              data: {
-                content: "Test command executed!"
-              }
-            }).should.be.true
-          );
+      const [response] = app.handleInteraction(JSON.stringify(testCommandInteraction), false);
 
-          done();
-        },
-        JSON.stringify(testCommandInteraction),
-        false
-      );
+      response.then((response) => {
+        expect(
+          equal(response, {
+            type: InteractionResponseType.ChannelMessageWithSource,
+            data: {
+              content: "Test command executed!"
+            }
+          }).should.be.true
+        );
+
+        done();
+      });
     });
 
     it("Button", (done) => {
@@ -140,22 +137,20 @@ describe("Discord Application", () => {
         )
       ]);
 
-      app.handleInteraction(
-        async (response) => {
-          const data = {
-            type: InteractionResponseType.UpdateMessage,
-            data: {
-              content: "Test button executed!"
-            }
-          };
+      const [response] = app.handleInteraction(JSON.stringify(buttonInteraction), false);
 
-          equal(response, data, { strict: true }).should.be.true;
+      response.then((response) => {
+        const data = {
+          type: InteractionResponseType.UpdateMessage,
+          data: {
+            content: "Test button executed!"
+          }
+        };
 
-          done();
-        },
-        JSON.stringify(buttonInteraction),
-        false
-      );
+        equal(response, data, { strict: true }).should.be.true;
+
+        done();
+      });
     });
   });
 });
