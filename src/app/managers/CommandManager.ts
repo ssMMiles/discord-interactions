@@ -4,7 +4,7 @@ import {
   RESTPostAPIApplicationCommandsJSONBody,
   Routes
 } from "discord-api-types/v10";
-import { DiscordApplication, MessageCommand, SlashCommand, UserCommand } from "../..";
+import { DiscordApplication } from "../..";
 import {
   ICommand,
   IMessageCommand,
@@ -30,25 +30,25 @@ export interface APIApplicationMessageCommand extends APIApplicationCommand {
   type: ApplicationCommandType.Message;
 }
 
-export type MappedCommandTypes = {
-  [ApplicationCommandType.ChatInput]: SlashCommand;
-  [ApplicationCommandType.Message]: MessageCommand;
-  [ApplicationCommandType.User]: UserCommand;
-};
-
 export interface ParsedCommands {
-  slash: Map<string, APIApplicationSlashCommand>;
-  user: Map<string, APIApplicationUserCommand>;
-  message: Map<string, APIApplicationMessageCommand>;
+  [ApplicationCommandType.ChatInput]: Map<string, APIApplicationSlashCommand>;
+  [ApplicationCommandType.Message]: Map<string, APIApplicationUserCommand>;
+  [ApplicationCommandType.User]: Map<string, APIApplicationMessageCommand>;
 }
+
+export type MappedCommandTypes = {
+  [ApplicationCommandType.ChatInput]: RegisteredSlashCommand | RegisteredCommandGroup;
+  [ApplicationCommandType.Message]: RegisteredMessageCommand;
+  [ApplicationCommandType.User]: RegisteredUserCommand;
+};
 
 /**
  * Manager for your application's commands. Lets you register fully handled commands as well as exposes methods for managing your commands on the API side.
  */
 export class CommandManager {
-  public slash: Map<string, RegisteredCommandGroup | RegisteredSlashCommand> = new Map();
-  public user: Map<string, RegisteredUserCommand> = new Map();
-  public message: Map<string, RegisteredMessageCommand> = new Map();
+  public [ApplicationCommandType.ChatInput]: Map<string, RegisteredSlashCommand | RegisteredCommandGroup> = new Map();
+  public [ApplicationCommandType.User]: Map<string, RegisteredUserCommand> = new Map();
+  public [ApplicationCommandType.Message]: Map<string, RegisteredMessageCommand> = new Map();
 
   private manager: DiscordApplication;
 
@@ -75,37 +75,14 @@ export class CommandManager {
       : Routes.applicationGuildCommand(this.manager.clientId, this.guildId, id);
   }
 
-  private _commands(type: ApplicationCommandType): Map<string, RegisteredCommand> {
-    switch (type) {
-      case ApplicationCommandType.ChatInput:
-        return this.slash;
-      case ApplicationCommandType.User:
-        return this.user;
-      case ApplicationCommandType.Message:
-        return this.message;
-    }
-  }
-
   private parse(commands: APIApplicationCommand[]): ParsedCommands {
     const parsed = {
-      slash: new Map(),
-      user: new Map(),
-      message: new Map()
+      [ApplicationCommandType.ChatInput]: new Map(),
+      [ApplicationCommandType.User]: new Map(),
+      [ApplicationCommandType.Message]: new Map()
     };
 
-    for (const command of commands) {
-      switch (command.type) {
-        case ApplicationCommandType.ChatInput:
-          parsed.slash.set(command.name, command);
-          break;
-        case ApplicationCommandType.User:
-          parsed.user.set(command.name, command);
-          break;
-        case ApplicationCommandType.Message:
-          parsed.message.set(command.name, command);
-          break;
-      }
-    }
+    commands.map((command) => parsed[command.type].set(command.name, command));
 
     return parsed;
   }
@@ -116,7 +93,7 @@ export class CommandManager {
    * @param type Command type
    */
   has(name: string, type: ApplicationCommandType = ApplicationCommandType.ChatInput): boolean {
-    return this._commands(type).has(name);
+    return this[type].has(name);
   }
 
   /**
@@ -125,7 +102,11 @@ export class CommandManager {
    * @param type Command type
    */
   get(name: string, type: ApplicationCommandType = ApplicationCommandType.ChatInput): RegisteredCommand | undefined {
-    return this._commands(type).get(name);
+    return this[type].get(name);
+  }
+
+  set(name: string, type: ApplicationCommandType = ApplicationCommandType.ChatInput, command: RegisteredCommand): void {
+    this[type].set(name, command as never);
   }
 
   /**
@@ -134,13 +115,13 @@ export class CommandManager {
    * @param newName New Name
    * @param type Command type
    */
-  rename(oldName: string, newName: string, type: ApplicationCommandType = ApplicationCommandType.ChatInput): void {
-    const command = this.get(oldName, type);
+  rename(oldName: string, newName: string, type: ApplicationCommandType): void {
+    const command = this[type].get(oldName);
 
     if (!command) throw new Error(`Command ${oldName} does not exist`);
 
-    this._commands(type).delete(oldName);
-    this._commands(type).set(newName, command);
+    this[type].delete(oldName);
+    this[type].set(newName, command as never);
   }
 
   /**
@@ -160,62 +141,40 @@ export class CommandManager {
         this.manager.components.register(...command.components);
       }
 
-      if (command.builder.type === ApplicationCommandType.ChatInput) {
-        let result: APIApplicationSlashCommand;
+      let result = remoteCommands[command.builder.type].get(command.builder.name);
 
-        if (remoteCommands.slash.has(command.builder.name)) {
-          result = remoteCommands.slash.get(command.builder.name) as APIApplicationSlashCommand;
+      if (result !== undefined) {
+        if (!command.builder.equals(result as never)) {
+          result = await this.updateAPICommand(command.builder.toJSON(), result.id);
 
-          if (!command.builder.equals(result)) {
-            result = await this.updateAPICommand(command.builder.toJSON(), result.id);
-          }
-        } else {
-          result = await this.putAPICommand(command.builder.toJSON());
+          if (!result) throw new Error("Command failed to register. (Was Overwriting)");
         }
+      } else {
+        result = await this.putAPICommand(command.builder.toJSON());
 
-        const registeredCommand = isCommandGroup(command)
-          ? new RegisteredCommandGroup(this, command, result.id)
-          : new RegisteredSlashCommand(this, command as ISlashCommand, result.id);
-
-        this.slash.set(command.builder.name, registeredCommand);
-        registeredCommands.push(registeredCommand);
+        if (!result) throw new Error("Command failed to register.");
       }
 
-      if (command.builder.type === ApplicationCommandType.User) {
-        let result: APIApplicationUserCommand;
+      let registeredCommand;
 
-        if (remoteCommands.user.has(command.builder.name)) {
-          result = remoteCommands.user.get(command.builder.name) as APIApplicationUserCommand;
-
-          if (!command.builder.equals(result))
-            result = await this.updateAPICommand(command.builder.toJSON(), result.id);
-        } else {
-          result = await this.putAPICommand(command.builder.toJSON());
-        }
-
-        const registeredCommand = new RegisteredUserCommand(this, command as IUserCommand, result.id);
-
-        this.user.set(command.builder.name, registeredCommand);
-        registeredCommands.push(registeredCommand);
+      switch (command.builder.type) {
+        case ApplicationCommandType.ChatInput:
+          registeredCommand = isCommandGroup(command)
+            ? new RegisteredCommandGroup(this, command, result.id)
+            : new RegisteredSlashCommand(this, command as ISlashCommand, result.id);
+          break;
+        case ApplicationCommandType.User:
+          registeredCommand = new RegisteredUserCommand(this, command as IUserCommand, result.id);
+          break;
+        case ApplicationCommandType.Message:
+          registeredCommand = new RegisteredMessageCommand(this, command as IMessageCommand, result.id);
+          break;
+        default:
+          throw new Error(`Unknown command type.`);
       }
 
-      if (command.builder.type === ApplicationCommandType.Message) {
-        let result: APIApplicationMessageCommand;
-
-        if (remoteCommands.message.has(command.builder.name)) {
-          result = remoteCommands.message.get(command.builder.name) as APIApplicationMessageCommand;
-
-          if (!command.builder.equals(result))
-            result = await this.updateAPICommand(command.builder.toJSON(), result.id);
-        } else {
-          result = await this.putAPICommand(command.builder.toJSON());
-        }
-
-        const registeredCommand = new RegisteredMessageCommand(this, command as IMessageCommand, result.id);
-
-        this.message.set(command.builder.name, registeredCommand);
-        registeredCommands.push(registeredCommand);
-      }
+      this[command.builder.type].set(command.builder.name, registeredCommand as never);
+      registeredCommands.push(registeredCommand);
     }
 
     return registeredCommands;
@@ -235,7 +194,7 @@ export class CommandManager {
     const command = this.get(name, type);
     if (!command) throw new Error("Command isn't registered.");
 
-    this._commands(type).delete(name);
+    this[type].delete(name);
     if (deleteCommand) await this.deleteAPICommand(command.id);
   }
 
@@ -244,9 +203,9 @@ export class CommandManager {
     const commands = this.parse(await this.getAPICommands());
 
     for (const [localCommands, remoteCommands] of [
-      [this.slash, commands.slash],
-      [this.user, commands.user],
-      [this.message, commands.message]
+      [this[ApplicationCommandType.ChatInput], commands[ApplicationCommandType.ChatInput]],
+      [this[ApplicationCommandType.User], commands[ApplicationCommandType.User]],
+      [this[ApplicationCommandType.Message], commands[ApplicationCommandType.Message]]
     ]) {
       for (const [name, command] of remoteCommands) {
         if (!localCommands.has(name)) {
@@ -262,7 +221,11 @@ export class CommandManager {
   toAPICommands(): RESTPostAPIApplicationCommandsJSONBody[] {
     const commandData = [];
 
-    for (const command of [...this.slash.values(), ...this.user.values(), ...this.message.values()]) {
+    for (const command of [
+      ...this[ApplicationCommandType.ChatInput].values(),
+      ...this[ApplicationCommandType.User].values(),
+      ...this[ApplicationCommandType.Message].values()
+    ]) {
       commandData.push(command.builder.toJSON());
     }
 

@@ -147,14 +147,16 @@ export async function _handleInteraction(
 
       const parentName = context.parentCommand ?? context.name;
 
-      let command = context.manager.commands.slash.get(parentName);
+      let command = context.manager.commands[ApplicationCommandType.ChatInput].get(parentName);
 
       if (!command) {
         throw new InteractionHandlerNotFound(context.interaction);
       }
 
       if (context.interaction.guild_id) {
-        const guildCommand = context.manager.guildCommands?.get(context.interaction.guild_id)?.slash?.get(parentName);
+        const guildCommand = context.manager.guildCommands
+          ?.get(context.interaction.guild_id)
+          ?.[ApplicationCommandType.ChatInput]?.get(parentName);
 
         if (guildCommand?.id === context.interaction.data.id) {
           command = guildCommand;
@@ -208,8 +210,8 @@ export async function _handleInteraction(
           ? context.manager.guildCommands
               ?.get(context.interaction.guild_id)
               ?.get(context.name, context.interaction.data.type) ??
-            context.manager.commands.get(context.name, context.interaction.data.type)
-          : context.manager.commands.get(context.name, context.interaction.data.type)
+            context.manager.commands[context.interaction.data.type].get(context.name)
+          : context.manager.commands[context.interaction.data.type].get(context.name)
       ) as RegisteredMessageCommand | RegisteredUserCommand | undefined;
 
       if (!command) throw new InteractionHandlerNotFound(context.interaction);

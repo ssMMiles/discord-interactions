@@ -79,7 +79,7 @@ export class RegisteredCommandGroup {
     const data = this.builder.toJSON();
 
     if (data.name !== this.lastSync.name) {
-      this.manager.rename(this.lastSync.name, data.name);
+      this.manager.rename(this.lastSync.name, data.name, this.builder.type);
     }
 
     await this.manager.updateAPICommand(data, this.id);

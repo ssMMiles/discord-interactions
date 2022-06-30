@@ -16,6 +16,10 @@ export class UserCommandBuilder extends CommandBuilder<
       default_member_permissions: this.default_member_permissions.toJSON()
     };
   }
+
+  public equals(other: APIApplicationUserCommand) {
+    return super.equals(other);
+  }
 }
 
 export class MessageCommandBuilder extends CommandBuilder<
@@ -34,5 +38,9 @@ export class MessageCommandBuilder extends CommandBuilder<
       dm_permission: this.dm_permission,
       default_member_permissions: this.default_member_permissions.toJSON()
     };
+  }
+
+  public equals(other: APIApplicationMessageCommand) {
+    return super.equals(other);
   }
 }
