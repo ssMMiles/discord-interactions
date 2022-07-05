@@ -10,16 +10,15 @@ import {
   RESTPostAPIWebhookWithTokenJSONBody
 } from "discord-api-types/v10";
 import FormData from "form-data";
-import fs from "node:fs";
-import path from "node:path";
 import { ActionRowBuilder } from "..";
 import { MessageActionRowComponentBuilders } from "./components";
 import { EmbedBuilder } from "./EmbedBuilder";
 
 export interface AttachedFile {
-  name: string;
-  path: string;
+  name?: string;
   description?: string;
+
+  data: Buffer | string;
 }
 
 export class MessageBuilder {
@@ -101,29 +100,19 @@ export class MessageBuilder {
     return this;
   }
 
-  public addAttachments(...files: ((Omit<AttachedFile, "name"> & Partial<Pick<AttachedFile, "name">>) | string)[]) {
+  public addAttachments(...files: AttachedFile[]) {
     if (!this.files) this.files = [];
     if (!this.data.attachments) this.data.attachments = [];
 
-    for (let file of files) {
-      if (typeof file === "string") {
-        file = {
-          path: file
-        };
-      }
+    for (const file of files) {
+      const id = this.files.length.toString();
 
-      if (file.name === undefined) {
-        file.name = path.parse(file.path).base;
-      }
+      if (!file.name) file.name = `file${id}`;
 
-      try {
-        fs.accessSync(file.path, fs.constants.R_OK);
-      } catch (e) {
-        throw new Error(`File ${file.path} cannot be read.`);
-      }
+      this.files.push(file as AttachedFile);
 
       this.data.attachments.push({
-        id: (this.files.push(file as AttachedFile) - 1) as unknown as string,
+        id,
         filename: file.name,
         description: file.description
       });
@@ -132,7 +121,7 @@ export class MessageBuilder {
     return this;
   }
 
-  public setAttachments(...files: (AttachedFile | string)[]) {
+  public setAttachments(...files: AttachedFile[]) {
     this.files = [];
     this.data.attachments = [];
 
@@ -151,7 +140,7 @@ export class MessageBuilder {
     for (let i = 0; i < (this.files?.length ?? 0); i++) {
       const file = this?.files?.[i] as AttachedFile;
 
-      form.append(`files[${i}]`, fs.createReadStream(file.path), {
+      form.append(`files[${i}]`, file.data, {
         filename: file.name,
         contentType: "image/png"
       });
