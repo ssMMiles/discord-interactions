@@ -8,19 +8,15 @@ import {
   InteractionResponseType
 } from "discord-api-types/v10";
 import FormData from "form-data";
+import { ButtonBuilder, MessageBuilder, ModalBuilder, SelectMenuBuilder } from "../../builders";
 import {
-  ButtonBuilder,
-  DiscordApplication,
   InteractionResponseAlreadySent,
   InteractionStateExpired,
-  MessageBuilder,
   MessageUpdateResponse,
-  ResponseCallback,
-  SelectMenuBuilder,
   SimpleEmbed
-} from "..";
-import { ModalBuilder } from "../builders/ModalBuilder";
-import { BaseInteractionContext } from "./BaseInteractionContext";
+} from "../../util";
+import { DiscordApplication, ResponseCallback } from "../DiscordApplication";
+import { BaseInteractionContext } from "./Base";
 
 class BaseComponentContext<
   S,

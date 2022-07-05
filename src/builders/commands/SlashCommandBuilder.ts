@@ -1,4 +1,5 @@
 import {
+  APIApplicationCommand,
   APIApplicationCommandBasicOption,
   APIApplicationCommandOption,
   ApplicationCommandOptionType,
@@ -6,8 +7,7 @@ import {
   LocalizationMap,
   RESTPostAPIChatInputApplicationCommandsJSONBody
 } from "discord-api-types/v10";
-import { APIApplicationSlashCommand } from "../../app";
-import { shallowEquals } from "../../util/shallow-equals";
+import { shallowEquals } from "../shallow-equals";
 import { CommandBuilder } from "./CommandBuilderBase";
 import {
   SlashCommandAttachmentOption,
@@ -172,7 +172,11 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
     return this;
   }
 
-  equals(remote: APIApplicationSlashCommand): boolean {
+  equals(
+    remote: APIApplicationCommand & {
+      type: ApplicationCommandType.ChatInput;
+    }
+  ): boolean {
     if (!super.equals(remote)) return false;
 
     if (this.description !== remote.description) return false;
@@ -246,7 +250,12 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
     return true;
   }
 
-  public toJSON(): Omit<APIApplicationSlashCommand, "id" | "application_id" | "guild_id" | "version"> {
+  public toJSON(): Omit<
+    APIApplicationCommand & {
+      type: ApplicationCommandType.ChatInput;
+    },
+    "id" | "application_id" | "guild_id" | "version"
+  > {
     return {
       type: this.type,
 

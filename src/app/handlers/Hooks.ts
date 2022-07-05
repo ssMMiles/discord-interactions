@@ -8,7 +8,7 @@ import {
   SelectMenuContext,
   SlashCommandContext,
   UserCommandContext
-} from "../../contexts";
+} from "../contexts";
 
 export type ContextMap = {
   ping: PingContext;

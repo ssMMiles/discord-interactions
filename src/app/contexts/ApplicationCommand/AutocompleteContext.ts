@@ -8,8 +8,10 @@ import {
   ApplicationCommandOptionType,
   InteractionResponseType
 } from "discord-api-types/v10";
-import { ButtonBuilder, DiscordApplication, ModalBuilder, ResponseCallback, SelectMenuBuilder } from "../..";
-import { BaseInteractionContext } from "../BaseInteractionContext";
+import { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "../../../builders";
+import { DiscordApplication, ResponseCallback } from "../../DiscordApplication";
+import { BaseInteractionContext } from "../Base";
+
 export type AutocompleteSupportedOptions =
   | APIApplicationCommandInteractionDataStringOption
   | APIApplicationCommandInteractionDataIntegerOption

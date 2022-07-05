@@ -1,6 +1,7 @@
 import { APIMessage, APIMessageApplicationCommandInteraction } from "discord-api-types/v10";
-import { ChannelMessageResponse, DiscordApplication, ResponseCallback } from "../..";
-import { BaseCommandContext } from "./BaseCommandContext";
+import { ChannelMessageResponse } from "../../../util";
+import { DiscordApplication, ResponseCallback } from "../../DiscordApplication";
+import { BaseCommandContext } from "./Base";
 
 export class MessageCommandContext extends BaseCommandContext<APIMessageApplicationCommandInteraction> {
   public message: APIMessage;

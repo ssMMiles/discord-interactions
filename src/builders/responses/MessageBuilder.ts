@@ -10,8 +10,7 @@ import {
   RESTPostAPIWebhookWithTokenJSONBody
 } from "discord-api-types/v10";
 import FormData from "form-data";
-import { ActionRowBuilder } from "..";
-import { MessageActionRowComponentBuilders } from "./components";
+import { ActionRowBuilder, MessageActionRowComponentBuilders } from "../components";
 import { EmbedBuilder } from "./EmbedBuilder";
 
 export interface AttachedFile {

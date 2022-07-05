@@ -1,7 +1,15 @@
-import { MessageCommandBuilder, SlashCommandBuilder, UserCommandBuilder } from "../../builders/commands";
-import { AutocompleteContext, MessageCommandContext, SlashCommandContext, UserCommandContext } from "../../contexts";
-import { CommandManager } from "../managers/CommandManager";
-import { RegisteredCommandGroup } from "./CommandGroup";
+import { MessageCommandBuilder, SlashCommandBuilder, UserCommandBuilder } from "../../builders";
+import { Component, Modal } from "../components";
+import { MessageCommandContext, SlashCommandContext, UserCommandContext } from "../contexts";
+import { CommandManager } from "../managers";
+
+export interface ICommandBase<Builder, Context> {
+  builder: Builder;
+
+  handler: (ctx: Context) => Promise<void>;
+
+  components?: (Component | Modal)[];
+}
 
 export abstract class RegisteredCommandBase<
   Builder extends SlashCommandBuilder | UserCommandBuilder | MessageCommandBuilder,
@@ -65,25 +73,3 @@ export abstract class RegisteredCommandBase<
     await this.manager.unregister(this.builder.name, this.builder.type, true);
   }
 }
-
-export class RegisteredSlashCommand extends RegisteredCommandBase<SlashCommandBuilder, SlashCommandContext> {
-  public autocompleteHandler = async (ctx: AutocompleteContext) => {
-    ctx.reply([]);
-  };
-
-  public setAutocompleteHandler(handler: (ctx: AutocompleteContext) => Promise<void>) {
-    this.autocompleteHandler = handler;
-
-    return this;
-  }
-}
-
-export class RegisteredUserCommand extends RegisteredCommandBase<UserCommandBuilder, UserCommandContext> {}
-
-export class RegisteredMessageCommand extends RegisteredCommandBase<MessageCommandBuilder, MessageCommandContext> {}
-
-export type RegisteredCommand =
-  | RegisteredSlashCommand
-  | RegisteredUserCommand
-  | RegisteredMessageCommand
-  | RegisteredCommandGroup;

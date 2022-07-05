@@ -12,13 +12,6 @@ import {
 } from "..";
 import { _handleInteraction } from "./handlers";
 
-/**
- * Callback to be executed with the result of an interaction.
- */
-export type ResponseCallback<T extends APIInteractionResponse | FormData = APIInteractionResponse | FormData> = (
-  response: T
-) => void;
-
 /** Cache used to store component states. Redis is recommended. */
 export interface GenericCache {
   /** Default Time To Live for cache entries, defaults to 900. */
@@ -47,6 +40,10 @@ export interface DiscordApplicationOptions {
   /** Timeout after which InteractionHandlerTimedOut is thrown - Default: 2500ms */
   timeout?: number;
 }
+
+export type ResponseCallback<T extends APIInteractionResponse | FormData = APIInteractionResponse | FormData> = (
+  response: T
+) => void;
 
 /**
  * Main class for managing a Discord Application's commands and handling interactions.

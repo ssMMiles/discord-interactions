@@ -4,7 +4,6 @@ import {
   RESTPostAPIApplicationCommandsJSONBody,
   Routes
 } from "discord-api-types/v10";
-import { DiscordApplication } from "../..";
 import {
   ICommand,
   IMessageCommand,
@@ -17,6 +16,7 @@ import {
   RegisteredSlashCommand,
   RegisteredUserCommand
 } from "../commands";
+import { DiscordApplication } from "../DiscordApplication";
 
 export interface APIApplicationSlashCommand extends APIApplicationCommand {
   type: ApplicationCommandType.ChatInput;

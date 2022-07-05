@@ -6,11 +6,10 @@ import {
   InteractionResponseType
 } from "discord-api-types/v10";
 import FormData from "form-data";
-import { DiscordApplication, ResponseCallback } from "../../app";
-import { ButtonBuilder, MessageBuilder, SelectMenuBuilder } from "../../builders";
-import { ModalBuilder } from "../../builders/ModalBuilder";
-import { ChannelMessageResponse, InteractionResponseAlreadySent, SimpleEmbed } from "../../util";
-import { BaseInteractionContext } from "../BaseInteractionContext";
+import { ButtonBuilder, MessageBuilder, ModalBuilder, SelectMenuBuilder } from "../../../builders";
+import { ChannelMessageResponse, InteractionResponseAlreadySent, SimpleEmbed } from "../../../util";
+import { DiscordApplication, ResponseCallback } from "../../DiscordApplication";
+import { BaseInteractionContext } from "../Base";
 
 export class BaseCommandContext<
   T extends APIApplicationCommandInteraction = APIApplicationCommandInteraction

@@ -10,12 +10,21 @@ import {
   InteractionType
 } from "discord-api-types/v10";
 import {
+  AutocompleteContext,
+  ButtonContext,
   DiscordApplication,
+  InteractionContext,
   ISubcommandGroup,
   ISubcommandHandler,
+  MessageCommandContext,
+  ModalSubmitContext,
+  PingContext,
   RegisteredMessageCommand,
   RegisteredUserCommand,
-  ResponseCallback
+  ResponseCallback,
+  SelectMenuContext,
+  SlashCommandContext,
+  UserCommandContext
 } from "..";
 import {
   InteractionHandlerError,
@@ -24,17 +33,6 @@ import {
   UnknownApplicationCommandType,
   UnknownInteractionType
 } from "../..";
-import {
-  AutocompleteContext,
-  ButtonContext,
-  InteractionContext,
-  MessageCommandContext,
-  SelectMenuContext,
-  SlashCommandContext,
-  UserCommandContext
-} from "../../contexts";
-import { ModalSubmitContext } from "../../contexts/ModalSubmitContext";
-import { PingContext } from "../../contexts/PingContext";
 import { InteractionHooks } from "./Hooks";
 
 function getExecutionContext(

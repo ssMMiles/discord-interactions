@@ -16,15 +16,10 @@ import {
   APIUser,
   ApplicationCommandOptionType
 } from "discord-api-types/v10";
-import {
-  ButtonBuilder,
-  ChannelMessageResponse,
-  DiscordApplication,
-  ModalBuilder,
-  ResponseCallback,
-  SelectMenuBuilder
-} from "../..";
-import { BaseCommandContext } from "./BaseCommandContext";
+import { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "../../../builders";
+import { ChannelMessageResponse } from "../../../util";
+import { DiscordApplication, ResponseCallback } from "../../DiscordApplication";
+import { BaseCommandContext } from "./Base";
 
 export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicationCommandInteraction> {
   private options: Map<string, APIApplicationCommandInteractionDataBasicOption> = new Map();

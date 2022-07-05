@@ -4,8 +4,8 @@ import {
   LocalizationMap,
   RESTPostAPIApplicationCommandsJSONBody
 } from "discord-api-types/v10";
-import { Bitfield } from "../..";
-import { shallowEquals } from "../../util/shallow-equals";
+import { shallowEquals } from "../shallow-equals";
+import { Bitfield } from "./permissions";
 
 export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommandsJSONBody> {
   /**
