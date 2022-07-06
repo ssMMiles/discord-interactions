@@ -1,27 +1,27 @@
-import {
+import type {
   APIChatInputApplicationCommandInteraction,
   APIInteraction,
   APIMessageApplicationCommandInteraction,
   APIMessageComponentButtonInteraction,
   APIMessageComponentSelectMenuInteraction,
-  APIUserApplicationCommandInteraction,
-  ApplicationCommandType,
-  ComponentType,
-  InteractionType
+  APIUserApplicationCommandInteraction
 } from "discord-api-types/v10";
-import {
-  AutocompleteContext,
-  ButtonContext,
+import { ApplicationCommandType, ComponentType, InteractionType } from "discord-api-types/v10";
+import type {
   DiscordApplication,
   InteractionContext,
   ISubcommandGroup,
   ISubcommandHandler,
+  RegisteredMessageCommand,
+  RegisteredUserCommand,
+  ResponseCallback
+} from "..";
+import {
+  AutocompleteContext,
+  ButtonContext,
   MessageCommandContext,
   ModalSubmitContext,
   PingContext,
-  RegisteredMessageCommand,
-  RegisteredUserCommand,
-  ResponseCallback,
   SelectMenuContext,
   SlashCommandContext,
   UserCommandContext
@@ -33,7 +33,7 @@ import {
   UnknownApplicationCommandType,
   UnknownInteractionType
 } from "../..";
-import { InteractionHooks } from "./Hooks";
+import type { InteractionHooks } from "./Hooks";
 
 function getExecutionContext(
   app: DiscordApplication,

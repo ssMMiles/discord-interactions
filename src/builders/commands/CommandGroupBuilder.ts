@@ -1,13 +1,13 @@
-import {
+import type {
   APIApplicationCommandSubcommandGroupOption,
   APIApplicationCommandSubcommandOption,
-  ApplicationCommandType,
   LocalizationMap,
   RESTPostAPIChatInputApplicationCommandsJSONBody
 } from "discord-api-types/v10";
+import { ApplicationCommandType } from "discord-api-types/v10";
 import { CommandBuilder } from "./CommandBuilderBase";
-import { SubcommandOption } from "./options/subcommand";
-import { SubcommandGroupOption } from "./options/subcommand-group";
+import type { SubcommandOption } from "./options/subcommand";
+import type { SubcommandGroupOption } from "./options/subcommand-group";
 
 export interface ToAPIApplicationCommandGroupOptions {
   toJSON: () => APIApplicationCommandSubcommandGroupOption | APIApplicationCommandSubcommandOption;

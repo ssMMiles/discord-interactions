@@ -1,8 +1,5 @@
-import {
-  APIApplicationCommand,
-  ApplicationCommandType,
-  RESTPostAPIContextMenuApplicationCommandsJSONBody
-} from "discord-api-types/v10";
+import type { APIApplicationCommand, RESTPostAPIContextMenuApplicationCommandsJSONBody } from "discord-api-types/v10";
+import { ApplicationCommandType } from "discord-api-types/v10";
 import { CommandBuilder } from "./CommandBuilderBase";
 
 export class UserCommandBuilder extends CommandBuilder<

@@ -1,15 +1,16 @@
-import { APIApplicationCommandSubcommandOption, ApplicationCommandOptionType } from "discord-api-types/v10";
-import { ToAPIApplicationCommandOptions } from "../SlashCommandBuilder";
-import { SlashCommandAttachmentOption } from "./attachment";
-import { SlashCommandBooleanOption } from "./boolean";
-import { SlashCommandChannelOption } from "./channel";
-import { SlashCommandIntegerOption } from "./integer";
-import { SlashCommandMentionableOption } from "./mentionable";
-import { SlashCommandNumberOption } from "./number";
-import { SlashCommandRoleOption } from "./role";
+import type { APIApplicationCommandSubcommandOption } from "discord-api-types/v10";
+import { ApplicationCommandOptionType } from "discord-api-types/v10";
+import type { ToAPIApplicationCommandOptions } from "../SlashCommandBuilder";
+import type { SlashCommandAttachmentOption } from "./attachment";
+import type { SlashCommandBooleanOption } from "./boolean";
+import type { SlashCommandChannelOption } from "./channel";
+import type { SlashCommandIntegerOption } from "./integer";
+import type { SlashCommandMentionableOption } from "./mentionable";
+import type { SlashCommandNumberOption } from "./number";
+import type { SlashCommandRoleOption } from "./role";
 import { SlashCommandOptionBase } from "./SlashCommandOptionBase";
-import { SlashCommandStringOption } from "./string";
-import { SlashCommandUserOption } from "./user";
+import type { SlashCommandStringOption } from "./string";
+import type { SlashCommandUserOption } from "./user";
 
 export class SubcommandOption extends SlashCommandOptionBase {
   public type = ApplicationCommandOptionType.Subcommand as const;

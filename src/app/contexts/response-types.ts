@@ -1,4 +1,4 @@
-import {
+import type {
   APIApplicationCommandAutocompleteResponse,
   APIInteractionResponseChannelMessageWithSource,
   APIInteractionResponseDeferredChannelMessageWithSource,
@@ -6,7 +6,7 @@ import {
   APIInteractionResponseUpdateMessage,
   APIModalInteractionResponse
 } from "discord-api-types/v10";
-import FormData from "form-data";
+import type FormData from "form-data";
 
 export type MessageUpdateResponse =
   | APIModalInteractionResponse

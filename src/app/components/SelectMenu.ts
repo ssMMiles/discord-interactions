@@ -1,6 +1,6 @@
-import { APISelectMenuComponent } from "discord-api-types/v10";
+import type { APISelectMenuComponent } from "discord-api-types/v10";
 import { SelectMenuBuilder } from "../../builders";
-import { SelectMenuContext } from "../contexts";
+import type { SelectMenuContext } from "../contexts";
 import { ComponentBase } from "./Base";
 
 export class SelectMenu extends ComponentBase<APISelectMenuComponent, SelectMenuBuilder, SelectMenuContext> {

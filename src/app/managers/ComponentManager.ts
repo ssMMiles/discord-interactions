@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { ButtonBuilder, Component, GenericCache, Modal, ModalBuilder, SelectMenuBuilder } from "../..";
+import type { ButtonBuilder, Component, GenericCache, Modal, ModalBuilder, SelectMenuBuilder } from "../..";
 
 export class ComponentManager {
   private _components: Map<string, Component | Modal> = new Map();

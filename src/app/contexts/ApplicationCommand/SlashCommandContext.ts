@@ -1,4 +1,4 @@
-import {
+import type {
   APIApplicationCommandInteractionDataAttachmentOption,
   APIApplicationCommandInteractionDataBasicOption,
   APIApplicationCommandInteractionDataBooleanOption,
@@ -13,12 +13,12 @@ import {
   APIInteractionDataResolvedChannel,
   APIInteractionDataResolvedGuildMember,
   APIRole,
-  APIUser,
-  ApplicationCommandOptionType
+  APIUser
 } from "discord-api-types/v10";
-import { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "../../../builders";
-import { ChannelMessageResponse } from "../../../util";
-import { DiscordApplication, ResponseCallback } from "../../DiscordApplication";
+import { ApplicationCommandOptionType } from "discord-api-types/v10";
+import type { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "../../../builders";
+import type { ChannelMessageResponse } from "../../../util";
+import type { DiscordApplication, ResponseCallback } from "../../DiscordApplication";
 import { BaseCommandContext } from "./Base";
 
 export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicationCommandInteraction> {

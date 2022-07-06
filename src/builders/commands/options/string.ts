@@ -1,8 +1,5 @@
-import {
-  APIApplicationCommandOptionChoice,
-  APIApplicationCommandStringOption,
-  ApplicationCommandOptionType
-} from "discord-api-types/v10";
+import type { APIApplicationCommandOptionChoice, APIApplicationCommandStringOption } from "discord-api-types/v10";
+import { ApplicationCommandOptionType } from "discord-api-types/v10";
 import { SlashCommandOptionBase } from "./SlashCommandOptionBase";
 
 export class SlashCommandStringOption extends SlashCommandOptionBase {

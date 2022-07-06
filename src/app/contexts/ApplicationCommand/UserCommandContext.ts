@@ -1,10 +1,10 @@
-import {
+import type {
   APIInteractionDataResolvedGuildMember,
   APIUser,
   APIUserApplicationCommandInteraction
 } from "discord-api-types/v10";
-import { ChannelMessageResponse } from "../../../util";
-import { DiscordApplication, ResponseCallback } from "../../DiscordApplication";
+import type { ChannelMessageResponse } from "../../../util";
+import type { DiscordApplication, ResponseCallback } from "../../DiscordApplication";
 import { BaseCommandContext } from "./Base";
 
 export class UserCommandContext extends BaseCommandContext<APIUserApplicationCommandInteraction> {

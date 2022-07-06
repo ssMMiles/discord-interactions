@@ -1,4 +1,5 @@
-import { APITextInputComponent, ComponentType } from "discord-api-types/v10";
+import type { APITextInputComponent } from "discord-api-types/v10";
+import { ComponentType } from "discord-api-types/v10";
 import { ComponentBuilderBase } from "./ComponentBuilderBase";
 
 export enum TextInputStyle {

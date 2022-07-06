@@ -3,6 +3,9 @@
     "plugin:@typescript-eslint/recommended" // Uses the recommended rules from the @typescript-eslint/eslint-plugin
   ],
 
+  "rules": {
+    "@typescript-eslint/consistent-type-imports": "error"
+  },
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": 2021,

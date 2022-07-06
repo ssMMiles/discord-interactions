@@ -1,4 +1,4 @@
-import { APIInteraction } from "discord-api-types/v10";
+import type { APIInteraction } from "discord-api-types/v10";
 
 export class UnauthorizedInteraction extends Error {
   public body: string;

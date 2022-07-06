@@ -1,4 +1,4 @@
-import { APIMessageComponentEmoji, APISelectMenuOption } from "discord-api-types/v10";
+import type { APIMessageComponentEmoji, APISelectMenuOption } from "discord-api-types/v10";
 
 /**
  * Represents a non-validated option within a select menu component

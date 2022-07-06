@@ -1,4 +1,4 @@
-import {
+import type {
   APIActionRowComponent,
   APIAllowedMentions,
   APIInteractionResponseCallbackData,
@@ -6,11 +6,11 @@ import {
   APIInteractionResponseUpdateMessage,
   APIMessageActionRowComponent,
   InteractionResponseType,
-  MessageFlags,
   RESTPostAPIWebhookWithTokenJSONBody
 } from "discord-api-types/v10";
+import { MessageFlags } from "discord-api-types/v10";
 import FormData from "form-data";
-import { ActionRowBuilder, MessageActionRowComponentBuilders } from "../components";
+import type { ActionRowBuilder, MessageActionRowComponentBuilders } from "../components";
 import { EmbedBuilder } from "./EmbedBuilder";
 
 export interface AttachedFile {

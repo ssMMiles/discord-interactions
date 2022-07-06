@@ -1,10 +1,10 @@
-import {
+import type {
   APIApplicationCommandSubcommandGroupOption,
-  APIApplicationCommandSubcommandOption,
-  ApplicationCommandOptionType
+  APIApplicationCommandSubcommandOption
 } from "discord-api-types/v10";
+import { ApplicationCommandOptionType } from "discord-api-types/v10";
 import { SlashCommandOptionBase } from "./SlashCommandOptionBase";
-import { SubcommandOption } from "./subcommand";
+import type { SubcommandOption } from "./subcommand";
 
 export interface ToAPIApplicationCommandSubcommandOption {
   toJSON: () => APIApplicationCommandSubcommandOption;

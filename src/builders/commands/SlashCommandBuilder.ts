@@ -1,15 +1,14 @@
-import {
+import type {
   APIApplicationCommand,
   APIApplicationCommandBasicOption,
   APIApplicationCommandOption,
-  ApplicationCommandOptionType,
-  ApplicationCommandType,
   LocalizationMap,
   RESTPostAPIChatInputApplicationCommandsJSONBody
 } from "discord-api-types/v10";
+import { ApplicationCommandOptionType, ApplicationCommandType } from "discord-api-types/v10";
 import { shallowEquals } from "../shallow-equals";
 import { CommandBuilder } from "./CommandBuilderBase";
-import {
+import type {
   SlashCommandAttachmentOption,
   SlashCommandBooleanOption,
   SlashCommandChannelOption,

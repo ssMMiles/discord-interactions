@@ -1,9 +1,9 @@
-import {
+import type {
   APIActionRowComponent,
   APIModalActionRowComponent,
   APIModalInteractionResponseCallbackData
 } from "discord-api-types/v10";
-import { ActionRowBuilder, ModalActionRowComponentBuilders } from "../components";
+import type { ActionRowBuilder, ModalActionRowComponentBuilders } from "../components";
 
 export class ModalBuilder {
   public data: Partial<APIModalInteractionResponseCallbackData> = { components: [] };

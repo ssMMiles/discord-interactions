@@ -1,10 +1,10 @@
-import {
+import type {
   APIButtonComponent,
   APIButtonComponentWithCustomId,
   APIButtonComponentWithURL,
-  APIMessageComponentEmoji,
-  ComponentType
+  APIMessageComponentEmoji
 } from "discord-api-types/v10";
+import { ComponentType } from "discord-api-types/v10";
 import { ComponentBuilderBase } from "./ComponentBuilderBase";
 
 export enum ButtonStyle {

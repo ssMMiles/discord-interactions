@@ -1,7 +1,9 @@
 import { REST } from "@discordjs/rest";
-import { APIMessage, Routes } from "discord-api-types/v10";
+import type { APIMessage } from "discord-api-types/v10";
+import { Routes } from "discord-api-types/v10";
 import FormData from "form-data";
-import { MessageBuilder, SimpleEmbed } from "..";
+import type { MessageBuilder } from "..";
+import { SimpleEmbed } from "..";
 
 export class WebhookClient {
   private id: string;

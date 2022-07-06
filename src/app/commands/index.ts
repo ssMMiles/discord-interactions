@@ -1,7 +1,7 @@
-import { CommandGroup, ICommandGroup, RegisteredCommandGroup } from "./CommandGroup";
-import { IMessageCommand, MessageCommand, RegisteredMessageCommand } from "./MessageCommand";
-import { ISlashCommand, RegisteredSlashCommand, SlashCommand } from "./SlashCommand";
-import { IUserCommand, RegisteredUserCommand, UserCommand } from "./UserCommand";
+import type { CommandGroup, ICommandGroup, RegisteredCommandGroup } from "./CommandGroup";
+import type { IMessageCommand, MessageCommand, RegisteredMessageCommand } from "./MessageCommand";
+import type { ISlashCommand, RegisteredSlashCommand, SlashCommand } from "./SlashCommand";
+import type { IUserCommand, RegisteredUserCommand, UserCommand } from "./UserCommand";
 
 export * from "./CommandGroup";
 export * from "./MessageCommand";

@@ -1,15 +1,9 @@
 import { REST } from "@discordjs/rest";
-import { APIInteraction, APIInteractionResponse, Snowflake } from "discord-api-types/v10";
-import FormData from "form-data";
+import type { APIInteraction, APIInteractionResponse, Snowflake } from "discord-api-types/v10";
+import type FormData from "form-data";
 import { createPublicKey, verify } from "node:crypto";
-import {
-  CommandManager,
-  ComponentManager,
-  ContextMap,
-  InteractionHandlerTimedOut,
-  InteractionHooks,
-  UnauthorizedInteraction
-} from "..";
+import type { ContextMap, InteractionHooks } from "..";
+import { CommandManager, ComponentManager, InteractionHandlerTimedOut, UnauthorizedInteraction } from "..";
 import { _handleInteraction } from "./handlers";
 
 /** Cache used to store component states. Redis is recommended. */

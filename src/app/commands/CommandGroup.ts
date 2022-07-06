@@ -1,8 +1,8 @@
-import { ICommand } from ".";
-import { CommandGroupBuilder } from "../../builders";
-import { Component } from "../components";
-import { AutocompleteContext, SlashCommandContext } from "../contexts";
-import { CommandManager } from "../managers";
+import type { ICommand } from ".";
+import type { CommandGroupBuilder } from "../../builders";
+import type { Component } from "../components";
+import type { AutocompleteContext, SlashCommandContext } from "../contexts";
+import type { CommandManager } from "../managers";
 
 export interface ISubcommandHandler {
   handler: (ctx: SlashCommandContext) => Promise<void>;

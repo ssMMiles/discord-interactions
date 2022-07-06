@@ -1,12 +1,12 @@
-import {
+import type {
   AutocompleteContext,
   MessageCommandContext,
   SlashCommandContext,
   UserCommandContext
 } from "./ApplicationCommand";
-import { ButtonContext, SelectMenuContext } from "./ComponentContext";
-import { ModalSubmitContext } from "./ModalSubmitContext";
-import { PingContext } from "./PingContext";
+import type { ButtonContext, SelectMenuContext } from "./ComponentContext";
+import type { ModalSubmitContext } from "./ModalSubmitContext";
+import type { PingContext } from "./PingContext";
 
 export * from "./ApplicationCommand";
 export * from "./Base";

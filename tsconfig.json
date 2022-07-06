@@ -1,8 +1,9 @@
 {
   "compilerOptions": {
     "strict": true,
-
-    "lib": ["es2021"],
+    "lib": [
+      "es2021"
+    ],
     "target": "es2021",
 
     "moduleResolution": "node",
@@ -11,8 +12,12 @@
     "outDir": "dist",
     "declaration": true,
     "sourceMap": true,
-
+    
     "esModuleInterop": true,
     "resolveJsonModule": true,
-  }
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": [
+    "src/**/*"
+  ]
 }

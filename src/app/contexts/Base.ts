@@ -1,8 +1,8 @@
-import { APIInteraction, APIInteractionResponse, APIUser } from "discord-api-types/v10";
-import FormData from "form-data";
-import { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "../../builders";
+import type { APIInteraction, APIInteractionResponse, APIUser } from "discord-api-types/v10";
+import type FormData from "form-data";
+import type { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "../../builders";
 import { InteractionResponseAlreadySent } from "../../util";
-import { DiscordApplication, ResponseCallback } from "../DiscordApplication";
+import type { DiscordApplication, ResponseCallback } from "../DiscordApplication";
 import { WebhookClient } from "../WebhookClient";
 
 // lasts 15 minutes, 5s buffer to be safe

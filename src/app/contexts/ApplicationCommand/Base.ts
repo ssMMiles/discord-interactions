@@ -1,14 +1,16 @@
-import {
+import type {
   APIApplicationCommandInteraction,
   APIInteractionResponseChannelMessageWithSource,
   APIMessage,
-  APIModalInteractionResponse,
-  InteractionResponseType
+  APIModalInteractionResponse
 } from "discord-api-types/v10";
-import FormData from "form-data";
-import { ButtonBuilder, MessageBuilder, ModalBuilder, SelectMenuBuilder } from "../../../builders";
-import { ChannelMessageResponse, InteractionResponseAlreadySent, SimpleEmbed } from "../../../util";
-import { DiscordApplication, ResponseCallback } from "../../DiscordApplication";
+import { InteractionResponseType } from "discord-api-types/v10";
+import type FormData from "form-data";
+import type { ButtonBuilder, SelectMenuBuilder } from "../../../builders";
+import { MessageBuilder, ModalBuilder } from "../../../builders";
+import type { ChannelMessageResponse } from "../../../util";
+import { InteractionResponseAlreadySent, SimpleEmbed } from "../../../util";
+import type { DiscordApplication, ResponseCallback } from "../../DiscordApplication";
 import { BaseInteractionContext } from "../Base";
 
 export class BaseCommandContext<

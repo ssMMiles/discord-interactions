@@ -4,14 +4,13 @@
   "version": "1.0.44",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/ssMMiles/interactions.ts.git"
   },
   "scripts": {
     "format": "prettier --write src",
-    "lint": "eslint src/**/*.ts",
+    "lint": "eslint src",
     "build": "yarn format & yarn lint && tsc -p tsconfig.json",
     "test": "mocha -r ts-node/register 'tests/**/*.ts'",
     "docs": "npx typedoc",

@@ -1,7 +1,7 @@
-import { MessageCommandBuilder, SlashCommandBuilder, UserCommandBuilder } from "../../builders";
-import { Component, Modal } from "../components";
-import { MessageCommandContext, SlashCommandContext, UserCommandContext } from "../contexts";
-import { CommandManager } from "../managers";
+import type { MessageCommandBuilder, SlashCommandBuilder, UserCommandBuilder } from "../../builders";
+import type { Component, Modal } from "../components";
+import type { MessageCommandContext, SlashCommandContext, UserCommandContext } from "../contexts";
+import type { CommandManager } from "../managers";
 
 export interface ICommandBase<Builder, Context> {
   builder: Builder;

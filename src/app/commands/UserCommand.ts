@@ -1,8 +1,9 @@
-import { ApplicationCommandType, RESTPostAPIContextMenuApplicationCommandsJSONBody } from "discord-api-types/v10";
-import { UserCommandBuilder } from "../../builders";
-import { UserCommandContext } from "../contexts";
+import type { ApplicationCommandType, RESTPostAPIContextMenuApplicationCommandsJSONBody } from "discord-api-types/v10";
+import type { UserCommandBuilder } from "../../builders";
+import type { UserCommandContext } from "../contexts";
 import { HandledInteraction } from "../handlers";
-import { ICommandBase, RegisteredCommandBase } from "./Base";
+import type { ICommandBase } from "./Base";
+import { RegisteredCommandBase } from "./Base";
 
 export type IUserCommand = ICommandBase<UserCommandBuilder, UserCommandContext>;
 

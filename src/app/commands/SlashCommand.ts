@@ -1,9 +1,10 @@
-import { RESTPostAPIChatInputApplicationCommandsJSONBody } from "discord-api-types/v10";
-import { SlashCommandBuilder } from "../../builders";
-import { Component, Modal } from "../components";
-import { AutocompleteContext, SlashCommandContext } from "../contexts";
+import type { RESTPostAPIChatInputApplicationCommandsJSONBody } from "discord-api-types/v10";
+import type { SlashCommandBuilder } from "../../builders";
+import type { Component, Modal } from "../components";
+import type { AutocompleteContext, SlashCommandContext } from "../contexts";
 import { HandledInteraction } from "../handlers";
-import { ICommandBase, RegisteredCommandBase } from "./Base";
+import type { ICommandBase } from "./Base";
+import { RegisteredCommandBase } from "./Base";
 
 export interface ISlashCommand extends ICommandBase<SlashCommandBuilder, SlashCommandContext> {
   autocompleteHandler?: (ctx: AutocompleteContext) => Promise<void>;
