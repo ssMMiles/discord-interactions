@@ -1,0 +1,1 @@
+Authentication module using Web Crypto APIs.
