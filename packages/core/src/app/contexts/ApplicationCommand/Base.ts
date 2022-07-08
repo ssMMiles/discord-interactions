@@ -1,17 +1,17 @@
-import type {
+import { ButtonBuilder, MessageBuilder, ModalBuilder, SelectMenuBuilder } from "@discord-interactions/builders";
+import {
   APIApplicationCommandInteraction,
   APIInteractionResponseChannelMessageWithSource,
   APIMessage,
-  APIModalInteractionResponse
+  APIModalInteractionResponse,
+  InteractionResponseType
 } from "discord-api-types/v10";
-import { InteractionResponseType } from "discord-api-types/v10";
-import type FormData from "form-data";
-import type { ButtonBuilder, SelectMenuBuilder } from "../../../builders";
-import { MessageBuilder, ModalBuilder } from "../../../builders";
-import type { ChannelMessageResponse } from "../../../util";
-import { InteractionResponseAlreadySent, SimpleEmbed } from "../../../util";
-import type { DiscordApplication, ResponseCallback } from "../../DiscordApplication";
-import { BaseInteractionContext } from "../Base";
+import { FormData } from "formdata-node";
+import { InteractionResponseAlreadySent } from "../../../util/errors.js";
+import { SimpleEmbed } from "../../../util/simple-responses.js";
+import { DiscordApplication, ResponseCallback } from "../../DiscordApplication.js";
+import { BaseInteractionContext } from "../Base.js";
+import { ChannelMessageResponse } from "../response-types.js";
 
 export class BaseCommandContext<
   T extends APIApplicationCommandInteraction = APIApplicationCommandInteraction

@@ -7,33 +7,30 @@ import type {
   APIUserApplicationCommandInteraction
 } from "discord-api-types/v10";
 import { ApplicationCommandType, ComponentType, InteractionType } from "discord-api-types/v10";
-import type {
-  DiscordApplication,
-  InteractionContext,
-  ISubcommandGroup,
-  ISubcommandHandler,
-  RegisteredMessageCommand,
-  RegisteredUserCommand,
-  ResponseCallback
-} from "..";
-import {
-  AutocompleteContext,
-  ButtonContext,
-  MessageCommandContext,
-  ModalSubmitContext,
-  PingContext,
-  SelectMenuContext,
-  SlashCommandContext,
-  UserCommandContext
-} from "..";
 import {
   InteractionHandlerError,
   InteractionHandlerNotFound,
   InteractionStateExpired,
   UnknownApplicationCommandType,
   UnknownInteractionType
-} from "../..";
-import type { InteractionHooks } from "./Hooks";
+} from "../../util/errors.js";
+import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
+import {
+  AutocompleteContext,
+  ButtonContext,
+  InteractionContext,
+  ISubcommandGroup,
+  ISubcommandHandler,
+  MessageCommandContext,
+  ModalSubmitContext,
+  PingContext,
+  RegisteredMessageCommand,
+  RegisteredUserCommand,
+  SelectMenuContext,
+  SlashCommandContext,
+  UserCommandContext
+} from "../index.js";
+import { InteractionHooks } from "./Hooks.js";
 
 function getExecutionContext(
   app: DiscordApplication,

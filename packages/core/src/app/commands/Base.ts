@@ -1,7 +1,6 @@
-import type { MessageCommandBuilder, SlashCommandBuilder, UserCommandBuilder } from "../../builders";
-import type { Component, Modal } from "../components";
-import type { MessageCommandContext, SlashCommandContext, UserCommandContext } from "../contexts";
-import type { CommandManager } from "../managers";
+import { MessageCommandBuilder, SlashCommandBuilder, UserCommandBuilder } from "@discord-interactions/builders";
+import { Component, MessageCommandContext, Modal, SlashCommandContext, UserCommandContext } from "../index.js";
+import { CommandManager } from "../managers/CommandManager.js";
 
 export interface ICommandBase<Builder, Context> {
   builder: Builder;

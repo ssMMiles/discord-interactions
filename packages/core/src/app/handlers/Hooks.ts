@@ -1,4 +1,4 @@
-import type {
+import {
   AutocompleteContext,
   ButtonContext,
   InteractionContext,
@@ -8,7 +8,7 @@ import type {
   SelectMenuContext,
   SlashCommandContext,
   UserCommandContext
-} from "../contexts";
+} from "../index.js";
 
 export type ContextMap = {
   ping: PingContext;

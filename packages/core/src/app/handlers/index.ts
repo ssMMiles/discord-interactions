@@ -1,3 +1,2 @@
-export * from "./handle";
-export * from "./HandledInteraction";
-export * from "./Hooks";
+export * from "./handle.js";
+export * from "./Hooks.js";

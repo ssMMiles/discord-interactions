@@ -1,2 +1,2 @@
-export * from "./CommandManager";
-export * from "./ComponentManager";
+export * from "./CommandManager.js";
+export * from "./ComponentManager.js";

@@ -2,8 +2,7 @@
  * nicely coloured error/info embeds
  */
 
-import { MessageBuilder } from "..";
-import { EmbedBuilder } from "../builders";
+import { EmbedBuilder, MessageBuilder } from "@discord-interactions/builders";
 
 export function SimpleError(message: string, title?: string): MessageBuilder {
   const embed = new EmbedBuilder().setColor(0xba251a).setDescription(message);

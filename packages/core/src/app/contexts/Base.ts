@@ -1,9 +1,9 @@
+import { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "@discord-interactions/builders";
 import type { APIInteraction, APIInteractionResponse, APIUser } from "discord-api-types/v10";
-import type FormData from "form-data";
-import type { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "../../builders";
-import { InteractionResponseAlreadySent } from "../../util";
-import type { DiscordApplication, ResponseCallback } from "../DiscordApplication";
-import { WebhookClient } from "../WebhookClient";
+import type { FormData } from "formdata-node";
+import { InteractionResponseAlreadySent } from "../../util/errors.js";
+import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
+import { WebhookClient } from "../WebhookClient.js";
 
 // lasts 15 minutes, 5s buffer to be safe
 const InteractionTokenExpiryTime = 15 * 60 * 1000 - 5000;

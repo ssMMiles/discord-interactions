@@ -1,8 +1,7 @@
-import type { ICommand } from ".";
-import type { CommandGroupBuilder } from "../../builders";
-import type { Component } from "../components";
-import type { AutocompleteContext, SlashCommandContext } from "../contexts";
-import type { CommandManager } from "../managers";
+import { CommandGroupBuilder } from "@discord-interactions/builders";
+import { AutocompleteContext, Component, SlashCommandContext } from "../index.js";
+import { CommandManager } from "../managers/CommandManager.js";
+import { ICommand } from "./index.js";
 
 export interface ISubcommandHandler {
   handler: (ctx: SlashCommandContext) => Promise<void>;

@@ -1,7 +1,7 @@
+import { ModalBuilder } from "@discord-interactions/builders";
 import type { APIModalInteractionResponseCallbackData } from "discord-api-types/v10";
-import { ModalBuilder } from "../../builders";
-import type { ModalSubmitContext } from "../contexts";
-import { ComponentBase } from "./Base";
+import type { ModalSubmitContext } from "../contexts/index.js";
+import { ComponentBase } from "./Base.js";
 
 export class Modal extends ComponentBase<APIModalInteractionResponseCallbackData, ModalBuilder, ModalSubmitContext> {
   constructor(

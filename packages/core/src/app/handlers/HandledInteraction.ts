@@ -1,4 +1,4 @@
-import type { Component, Modal } from "../..";
+import { Component, Modal } from "../index.js";
 
 export abstract class HandledInteraction<Data, Builder extends { toJSON: () => Data }, Context> {
   public builder: Builder;

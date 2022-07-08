@@ -1,5 +1,5 @@
 import { InteractionResponseType } from "discord-api-types/v10";
-import type { ResponseCallback } from "../DiscordApplication";
+import { ResponseCallback } from "../DiscordApplication.js";
 
 export class PingContext {
   constructor(public responseCallback: ResponseCallback) {

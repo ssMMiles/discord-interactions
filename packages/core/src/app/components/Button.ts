@@ -1,7 +1,7 @@
+import { ButtonBuilder } from "@discord-interactions/builders";
 import type { APIButtonComponentWithCustomId } from "discord-api-types/v10";
-import { ButtonBuilder } from "../../builders";
-import type { ButtonContext } from "../contexts";
-import { ComponentBase } from "./Base";
+import { ButtonContext } from "../index.js";
+import { ComponentBase } from "./Base.js";
 
 export class Button extends ComponentBase<APIButtonComponentWithCustomId, ButtonBuilder, ButtonContext> {
   constructor(

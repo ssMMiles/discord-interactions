@@ -1,0 +1,134 @@
+import {
+  ButtonBuilder,
+  CommandGroupBuilder,
+  MessageBuilder,
+  SlashCommandBuilder,
+  SubcommandOption
+} from "@discord-interactions/builders";
+import { ButtonStyle, InteractionResponseType } from "discord-api-types/v10";
+import "dotenv/config";
+import {
+  Button,
+  ButtonContext,
+  CommandGroup,
+  DiscordApplication,
+  DiscordApplicationOptions,
+  SlashCommand
+} from "../dist/index.js";
+import data from "./data.json";
+
+const { testCommandInteraction, buttonInteraction } = data;
+
+if (
+  typeof process.env.CLIENT_ID !== "string" ||
+  typeof process.env.TOKEN !== "string" ||
+  typeof process.env.PUBLIC_KEY !== "string"
+) {
+  console.error("Please set the CLIENT_ID, TOKEN, and PUBLIC_KEY environment variables.");
+  process.exit(1);
+}
+
+const options: DiscordApplicationOptions = {
+  clientId: process.env.CLIENT_ID,
+  token: process.env.TOKEN,
+  publicKey: process.env.PUBLIC_KEY
+};
+
+describe("Discord Application", () => {
+  describe("Authentication", () => {
+    const publicKey = Buffer.from("67d3b5eaf0c0bf6b5a602d359daecc86a7a74053490ec37ae08e71360587c870", "hex");
+
+    const signature =
+        "dbd6c2a5df02e85cdd1779f7ff3ee14d51e56c7f7d9b30d12253ccdd9e84949327db7e1b41e636975b16103316a144f8b98a290112b19e8148bbafa6f4e04209",
+      invalidSignature = signature.replace("1", "2"),
+      timestamp = "",
+      body = "Oh no!";
+    it("Valid Signature Is Accepted", () => {
+      expect(DiscordApplication.verifyInteractionSignature(publicKey, timestamp, signature, body)).toBe(true);
+    });
+
+    it("Invalid Signature Is Denied", () => {
+      expect(DiscordApplication.verifyInteractionSignature(publicKey, timestamp, invalidSignature, body)).toBe(false);
+    });
+  });
+
+  const app = new DiscordApplication(options);
+
+  describe("Managing Application Commands", () => {
+    it("Creating Slash Command", async () => {
+      expect(
+        await app.commands.register(
+          new SlashCommand(new SlashCommandBuilder("test", "A simple testing command!"), async (context) => {
+            context.reply(new MessageBuilder().setContent("Test command executed!"));
+          })
+        )
+      );
+
+      expect(app.commands.has("test")).toBe(true);
+      expect(app.commands.get("test")?.constructor.name).toBe("RegisteredSlashCommand");
+    });
+
+    it("Creating Slash Command Group", async () => {
+      expect(
+        await app.commands.register(
+          new CommandGroup(
+            new CommandGroupBuilder("config", "A simple config command.").addSubcommands(
+              new SubcommandOption("get", "Get a config value."),
+              new SubcommandOption("set", "Set a config value.")
+            ),
+            {
+              get: {
+                handler: async (context) => {
+                  const value = "x";
+                  context.reply(new MessageBuilder(`Config value: ${value}!`));
+                }
+              },
+              set: {
+                handler: async (context) => {
+                  context.reply(new MessageBuilder("Config value set!"));
+                }
+              }
+            }
+          )
+        )
+      );
+
+      expect(app.commands.has("config")).toBe(true);
+      expect(app.commands.get("config")?.constructor.name).toBe("RegisteredCommandGroup");
+    });
+  });
+
+  describe("Handling Interactions", () => {
+    it("Slash Command", async () => {
+      const [getResponse] = app.handleInteraction(JSON.stringify(testCommandInteraction), false);
+
+      expect(await getResponse).toEqual({
+        type: InteractionResponseType.ChannelMessageWithSource,
+        data: {
+          content: "Test command executed!"
+        }
+      });
+    });
+
+    it("Button", async () => {
+      app.components.register(
+        new Button(
+          "testButton",
+          new ButtonBuilder().setLabel("Test Button").setStyle(ButtonStyle.Primary),
+          async (context: ButtonContext) => {
+            context.reply(new MessageBuilder().setContent("Test button executed!"));
+          }
+        )
+      );
+
+      const [getResponse] = app.handleInteraction(JSON.stringify(buttonInteraction), false);
+
+      expect(await getResponse).toEqual({
+        type: InteractionResponseType.UpdateMessage,
+        data: {
+          content: "Test button executed!"
+        }
+      });
+    });
+  });
+});

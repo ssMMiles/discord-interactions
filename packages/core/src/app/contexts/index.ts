@@ -3,16 +3,15 @@ import type {
   MessageCommandContext,
   SlashCommandContext,
   UserCommandContext
-} from "./ApplicationCommand";
-import type { ButtonContext, SelectMenuContext } from "./ComponentContext";
-import type { ModalSubmitContext } from "./ModalSubmitContext";
-import type { PingContext } from "./PingContext";
+} from "./ApplicationCommand/index.js";
+import type { ButtonContext, SelectMenuContext } from "./ComponentContext.js";
+import type { ModalSubmitContext } from "./ModalSubmitContext.js";
+import type { PingContext } from "./PingContext.js";
 
-export * from "./ApplicationCommand";
-export * from "./Base";
-export * from "./ComponentContext";
-export * from "./ModalSubmitContext";
-export * from "./PingContext";
+export * from "./ApplicationCommand/index.js";
+export * from "./ComponentContext.js";
+export * from "./ModalSubmitContext.js";
+export * from "./PingContext.js";
 
 export type InteractionContext =
   | PingContext

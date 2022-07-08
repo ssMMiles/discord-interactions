@@ -1,9 +1,11 @@
+import { MessageBuilder } from "@discord-interactions/builders";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { REST } from "@discordjs/rest";
 import type { APIMessage } from "discord-api-types/v10";
 import { Routes } from "discord-api-types/v10";
-import FormData from "form-data";
-import type { MessageBuilder } from "..";
-import { SimpleEmbed } from "..";
+import { FormData } from "formdata-node";
+import { SimpleEmbed } from "../index.js";
 
 export class WebhookClient {
   private id: string;

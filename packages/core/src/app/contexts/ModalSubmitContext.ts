@@ -1,3 +1,4 @@
+import { ButtonBuilder, MessageBuilder, ModalBuilder, SelectMenuBuilder } from "@discord-interactions/builders";
 import type {
   APIInteractionResponseChannelMessageWithSource,
   APIMessage,
@@ -5,13 +6,11 @@ import type {
   ModalSubmitComponent
 } from "discord-api-types/v10";
 import { InteractionResponseType } from "discord-api-types/v10";
-import type FormData from "form-data";
-import type { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "../../builders";
-import { MessageBuilder } from "../../builders";
-import type { ModalSubmitResponse } from "../../util";
-import { InteractionResponseAlreadySent, SimpleEmbed } from "../../util";
-import type { DiscordApplication, ResponseCallback } from "../DiscordApplication";
-import { BaseInteractionContext } from "./Base";
+import { FormData } from "formdata-node";
+import { InteractionResponseAlreadySent, SimpleEmbed } from "../../index.js";
+import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
+import { BaseInteractionContext } from "./Base.js";
+import { ModalSubmitResponse } from "./response-types.js";
 
 export class ModalSubmitContext<State = never> extends BaseInteractionContext<
   APIModalSubmitInteraction,

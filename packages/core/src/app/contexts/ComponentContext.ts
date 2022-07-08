@@ -1,3 +1,4 @@
+import { ButtonBuilder, MessageBuilder, ModalBuilder, SelectMenuBuilder } from "@discord-interactions/builders";
 import type {
   APIInteractionResponseUpdateMessage,
   APIMessage,
@@ -7,13 +8,11 @@ import type {
   APIModalInteractionResponse
 } from "discord-api-types/v10";
 import { InteractionResponseType } from "discord-api-types/v10";
-import type FormData from "form-data";
-import type { ButtonBuilder, SelectMenuBuilder } from "../../builders";
-import { MessageBuilder, ModalBuilder } from "../../builders";
-import type { MessageUpdateResponse } from "../../util";
-import { InteractionResponseAlreadySent, InteractionStateExpired, SimpleEmbed } from "../../util";
-import type { DiscordApplication, ResponseCallback } from "../DiscordApplication";
-import { BaseInteractionContext } from "./Base";
+import type { FormData } from "formdata-node";
+import { InteractionResponseAlreadySent, InteractionStateExpired, SimpleEmbed } from "../../index.js";
+import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
+import { BaseInteractionContext } from "./Base.js";
+import { MessageUpdateResponse } from "./response-types.js";
 
 class BaseComponentContext<
   S,

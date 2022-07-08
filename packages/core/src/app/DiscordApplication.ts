@@ -1,10 +1,13 @@
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import { REST } from "@discordjs/rest";
 import type { APIInteraction, APIInteractionResponse, Snowflake } from "discord-api-types/v10";
-import type FormData from "form-data";
+import type { FormData } from "formdata-node";
 import { createPublicKey, verify } from "node:crypto";
-import type { ContextMap, InteractionHooks } from "..";
-import { CommandManager, ComponentManager, InteractionHandlerTimedOut, UnauthorizedInteraction } from "..";
-import { _handleInteraction } from "./handlers";
+import { InteractionHandlerTimedOut, UnauthorizedInteraction } from "../util/errors.js";
+import { ContextMap, InteractionHooks, _handleInteraction } from "./index.js";
+import { CommandManager } from "./managers/CommandManager.js";
+import { ComponentManager } from "./managers/ComponentManager.js";
 
 /** Cache used to store component states. Redis is recommended. */
 export interface GenericCache {

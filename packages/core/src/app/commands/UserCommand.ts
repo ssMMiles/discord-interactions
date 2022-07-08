@@ -1,9 +1,9 @@
+import { UserCommandBuilder } from "@discord-interactions/builders";
 import type { ApplicationCommandType, RESTPostAPIContextMenuApplicationCommandsJSONBody } from "discord-api-types/v10";
-import type { UserCommandBuilder } from "../../builders";
-import type { UserCommandContext } from "../contexts";
-import { HandledInteraction } from "../handlers";
-import type { ICommandBase } from "./Base";
-import { RegisteredCommandBase } from "./Base";
+import { HandledInteraction } from "../handlers/HandledInteraction.js";
+import { UserCommandContext } from "../index.js";
+
+import { ICommandBase, RegisteredCommandBase } from "./Base.js";
 
 export type IUserCommand = ICommandBase<UserCommandBuilder, UserCommandContext>;
 

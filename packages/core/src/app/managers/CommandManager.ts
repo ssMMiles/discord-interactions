@@ -1,14 +1,18 @@
 import type { APIApplicationCommand, RESTPostAPIApplicationCommandsJSONBody } from "discord-api-types/v10";
 import { ApplicationCommandType, Routes } from "discord-api-types/v10";
-import type { ICommand, IMessageCommand, ISlashCommand, IUserCommand, RegisteredCommand } from "../commands";
+import { DiscordApplication } from "../DiscordApplication.js";
 import {
+  ICommand,
+  IMessageCommand,
   isCommandGroup,
+  ISlashCommand,
+  IUserCommand,
+  RegisteredCommand,
   RegisteredCommandGroup,
   RegisteredMessageCommand,
   RegisteredSlashCommand,
   RegisteredUserCommand
-} from "../commands";
-import type { DiscordApplication } from "../DiscordApplication";
+} from "../index.js";
 
 export interface APIApplicationSlashCommand extends APIApplicationCommand {
   type: ApplicationCommandType.ChatInput;

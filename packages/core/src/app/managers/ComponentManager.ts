@@ -1,5 +1,7 @@
+import { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "@discord-interactions/builders";
 import { v4 as uuidv4 } from "uuid";
-import type { ButtonBuilder, Component, GenericCache, Modal, ModalBuilder, SelectMenuBuilder } from "../..";
+import { GenericCache } from "../DiscordApplication.js";
+import { Component, Modal } from "../index.js";
 
 export class ComponentManager {
   private _components: Map<string, Component | Modal> = new Map();

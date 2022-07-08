@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "strict": true,
+
+    "lib": [
+      "es2021"
+    ],
+    "target": "es2021",
+
+    "moduleResolution": "nodenext",
+    "module": "esnext",
+
+    "outDir": "dist",
+
+    "declaration": true,
+    "sourceMap": true,
+
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "noFallthroughCasesInSwitch": true
+  }
+}

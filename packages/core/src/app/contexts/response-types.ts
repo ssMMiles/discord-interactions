@@ -6,7 +6,7 @@ import type {
   APIInteractionResponseUpdateMessage,
   APIModalInteractionResponse
 } from "discord-api-types/v10";
-import type FormData from "form-data";
+import { FormData } from "formdata-node";
 
 export type MessageUpdateResponse =
   | APIModalInteractionResponse

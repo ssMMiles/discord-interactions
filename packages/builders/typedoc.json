@@ -1,0 +1,11 @@
+{
+  "name": "@discord-interactions/builders",
+
+  "excludePrivate": true,
+  "excludeProtected": true,
+
+  "entryPoints": ["src/index.ts"],
+  "out": "docs/typedoc",
+
+  "plugin": "typedoc-plugin-markdown"
+}

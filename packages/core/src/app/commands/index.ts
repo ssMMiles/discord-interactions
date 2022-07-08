@@ -1,12 +1,12 @@
-import type { CommandGroup, ICommandGroup, RegisteredCommandGroup } from "./CommandGroup";
-import type { IMessageCommand, MessageCommand, RegisteredMessageCommand } from "./MessageCommand";
-import type { ISlashCommand, RegisteredSlashCommand, SlashCommand } from "./SlashCommand";
-import type { IUserCommand, RegisteredUserCommand, UserCommand } from "./UserCommand";
+import type { CommandGroup, ICommandGroup, RegisteredCommandGroup } from "./CommandGroup.js";
+import type { IMessageCommand, MessageCommand, RegisteredMessageCommand } from "./MessageCommand.js";
+import type { ISlashCommand, RegisteredSlashCommand, SlashCommand } from "./SlashCommand.js";
+import type { IUserCommand, RegisteredUserCommand, UserCommand } from "./UserCommand.js";
 
-export * from "./CommandGroup";
-export * from "./MessageCommand";
-export * from "./SlashCommand";
-export * from "./UserCommand";
+export * from "./CommandGroup.js";
+export * from "./MessageCommand.js";
+export * from "./SlashCommand.js";
+export * from "./UserCommand.js";
 
 export type ICommand = ISlashCommand | IUserCommand | IMessageCommand | ICommandGroup;
 export type Command = SlashCommand | UserCommand | MessageCommand | CommandGroup;

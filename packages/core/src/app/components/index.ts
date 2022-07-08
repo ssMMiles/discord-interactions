@@ -1,8 +1,8 @@
-import type { Button } from "./Button";
-import type { SelectMenu } from "./SelectMenu";
+import type { Button } from "./Button.js";
+import type { SelectMenu } from "./SelectMenu.js";
 
-export * from "./Button";
-export * from "./Modal";
-export * from "./SelectMenu";
+export * from "./Button.js";
+export * from "./Modal.js";
+export * from "./SelectMenu.js";
 
 export type Component = Button | SelectMenu;

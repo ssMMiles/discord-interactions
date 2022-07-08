@@ -1,10 +1,8 @@
-import type { RESTPostAPIChatInputApplicationCommandsJSONBody } from "discord-api-types/v10";
-import type { SlashCommandBuilder } from "../../builders";
-import type { Component, Modal } from "../components";
-import type { AutocompleteContext, SlashCommandContext } from "../contexts";
-import { HandledInteraction } from "../handlers";
-import type { ICommandBase } from "./Base";
-import { RegisteredCommandBase } from "./Base";
+import { SlashCommandBuilder } from "@discord-interactions/builders";
+import { RESTPostAPIChatInputApplicationCommandsJSONBody } from "discord-api-types/v10";
+import { HandledInteraction } from "../handlers/HandledInteraction.js";
+import { AutocompleteContext, Component, Modal, SlashCommandContext } from "../index.js";
+import { ICommandBase, RegisteredCommandBase } from "./Base.js";
 
 export interface ISlashCommand extends ICommandBase<SlashCommandBuilder, SlashCommandContext> {
   autocompleteHandler?: (ctx: AutocompleteContext) => Promise<void>;
