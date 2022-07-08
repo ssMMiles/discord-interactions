@@ -15,8 +15,10 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
-      - name: Install and run tests
+      - name: Install
         run: yarn install
+      - name: Run Tests
+        run: yarn test
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
