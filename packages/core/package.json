@@ -9,7 +9,7 @@
     "@discord-interactions/builders": "^0.0.1",
     "@discordjs/rest": "^0.3.0",
     "@types/jest": "^28.1.4",
-    "discord-api-types": "^0.35.0",
+    "discord-api-types": "^0.36.1",
     "formdata-node": "^4.3.3",
     "jest": "^28.1.2",
     "ts-jest": "^28.0.5",

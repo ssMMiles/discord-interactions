@@ -43,6 +43,7 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
   "dependencies": {
-    "@discord-interactions/core": "^0.0.1"
+    "@discord-interactions/core": "^0.0.1",
+    "discord-api-types": "^0.36.1"
   }
 }

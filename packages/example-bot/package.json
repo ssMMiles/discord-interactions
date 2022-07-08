@@ -8,6 +8,7 @@
   "dependencies": {
     "@discord-interactions/core": "^0.0.1",
     "@discord-interactions/verify-node": "^0.0.1",
+    "discord-api-types": "^0.36.1",
     "fastify": "^4.2.0",
     "fastify-raw-body": "^4.0.0",
     "redis": "^4.2.0"
