@@ -1,7 +1,7 @@
-import { DiscordApplication } from "@discord-interactions/core";
+import * as core from "@discord-interactions/core";
 import { createPublicKey, verify } from "node:crypto";
 
-DiscordApplication.verifyInteractionSignature = async function verifyInteractionSignature(
+async function verifyInteractionSignature(
   publicKey: string,
   timestamp: string,
   signature: string,
@@ -20,4 +20,8 @@ DiscordApplication.verifyInteractionSignature = async function verifyInteraction
     }),
     signatureBuffer
   );
-};
+}
+
+export function register() {
+  core.DiscordApplication.verifyInteractionSignature = verifyInteractionSignature;
+}
