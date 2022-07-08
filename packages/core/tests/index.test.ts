@@ -5,7 +5,6 @@ import {
   SlashCommandBuilder,
   SubcommandOption
 } from "@discord-interactions/builders";
-import "@discord-interactions/verify-node";
 import { ButtonStyle, InteractionResponseType } from "discord-api-types/v10";
 import "dotenv/config";
 import {

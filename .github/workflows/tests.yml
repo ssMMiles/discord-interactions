@@ -19,6 +19,10 @@ jobs:
         run: yarn install
       - name: Bootstrap
         run: yarn bootstrap
+      - name: Build
+        run: yarn build
+      - name: Tests
+        run: yarn test
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
