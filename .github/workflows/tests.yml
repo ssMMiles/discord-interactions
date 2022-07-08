@@ -17,10 +17,8 @@ jobs:
           node-version: '16'
       - name: Install
         run: yarn install
-      - name: Build
-        run: yarn build
-      - name: Test
-        run: yarn test
+      - name: Bootstrap
+        run: yarn bootstrap
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
