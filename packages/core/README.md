@@ -1,33 +1,30 @@
 # @discord-interactions/core
 <div align="center">
-  <img src="https://cdn.discordapp.com/attachments/972730353267671070/991107120449724466/interactions.png" alt="Logo" />
-  <br />
   <p>
     <a href="https://discord.gg/BTXJmW4Bh7"><img src="https://img.shields.io/discord/395423304112013334?logo=discord&logoColor=white" alt="Discord server" /></a>
-    <a href="https://www.npmjs.com/package/interactions.ts"><img src="https://img.shields.io/npm/v/interactions.ts.svg?maxAge=3600" alt="npm version" /></a>
+    <a href="https://www.npmjs.com/package/@discord-interactions/core"><img src="https://img.shields.io/npm/v/interactions.ts.svg?maxAge=3600" alt="npm version" /></a>
     <a href="https://www.npmjs.com/package/@discord-interactions/core"><img src="https://img.shields.io/npm/dt/interactions.ts.svg?maxAge=3600" alt="npm downloads" /></a>
-    <a href="https://github.com/ssMMiles/interactions.ts/actions"><img src="https://github.com/ssMMiles/interactions.ts/actions/workflows/tests.yml/badge.svg" alt="Tests status" /></a>
+    <a href="https://github.com/ssMMiles/discord-interactions/actions"><img src="https://github.com/ssMMiles/interactions.ts/actions/workflows/tests.yml/badge.svg" alt="Tests status" /></a>
   </p>
 </div>
 
-A lightweight but powerful framework for [Discord's Interactions](https://discord.com/developers/docs/interactions/receiving-and-responding). Designed for scalability and simplicity.
+*Our core framework for handling and verifying incoming Discord interactions.*
 
 # Getting Started
 
-An example bot using the framework is available [here](https://github.com/ssMMiles/bot-template). Additional code snippets can be found below.
+An example bot using the framework is available [here](../example-bot/README.md). Additional code snippets can be found below.
 
 ## Install
 
-`npm install interactions.ts`
+`npm install @discord-interactions/core`
 
-## Links
- - #### [Documentation](https://interactions-ts.pages.dev/)
- - #### [Github](https://github.com/ssMMiles/interactions.ts)
- - #### [NPM](https://www.npmjs.com/package/interactions.ts)
+### Signature Verification
+
+You must also install and import one of [`verify`(Web APIs - CF Workers, Vercel Edge Functions, etc)](../verify/README.md)/[`verify-node`(Node.JS)](../verify-node/README.md) to enable signature verification.
 
 # Receiving Interactions
 
-Interactions.TS is designed to work with any webserver, with it only taking the raw request body and the `X-Signature-Ed25519`/`X-Signature-Timestamp` headers for authorization. The headers are optional, and can be left out if you're handling authorization at an earlier stage.
+Our framework is designed to work with any webserver, with it only taking the raw request body and the `X-Signature-Ed25519`/`X-Signature-Timestamp` headers for authorization. The headers are optional, and can be left out if you're handling authorization at an earlier stage.
 
 For this example, we're using Fastify:
 
