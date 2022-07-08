@@ -17,7 +17,9 @@ jobs:
           node-version: '16'
       - name: Install
         run: yarn install
-      - name: Run Tests
+      - name: Build
+        run: yarn build
+      - name: Test
         run: yarn test
         env:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
