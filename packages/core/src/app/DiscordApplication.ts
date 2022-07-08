@@ -106,9 +106,9 @@ export class DiscordApplication {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     publicKey: string,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    timestamp: string,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     signature: string,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    timestamp: string,
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     body: string
   ): Promise<boolean> {
@@ -124,38 +124,52 @@ export class DiscordApplication {
    * @param timestamp Request's "X-Signature-Timestamp" header
    * @returns Array containing the interaction response, and a callback to be called after you have sent the response
    */
-  public handleInteraction(
+  public async handleInteraction(
     body: string,
     signature: string | false,
     timestamp?: string
-  ): [Promise<APIInteractionResponse | FormData>, Promise<void>] {
-    let responseCallbackWithTimeout: (response: APIInteractionResponse | FormData) => void,
-      interaction: APIInteraction,
-      timeout: NodeJS.Timeout;
+  ): Promise<[Promise<APIInteractionResponse | FormData>, Promise<void>]> {
+    let isValidSignature = false;
 
-    const response = new Promise<APIInteractionResponse | FormData>((resolve, reject) => {
-      if (
-        signature !== false &&
-        (!timestamp || !DiscordApplication.verifyInteractionSignature(this.publicKey, signature, timestamp, body))
-      ) {
-        return reject(new UnauthorizedInteraction(body));
-      }
+    if (signature === false) {
+      isValidSignature = true;
+    } else if (typeof timestamp === "string") {
+      isValidSignature = await DiscordApplication.verifyInteractionSignature(
+        this.publicKey,
+        signature,
+        timestamp,
+        body
+      );
+    }
 
-      interaction = JSON.parse(body) as APIInteraction;
+    if (!isValidSignature) {
+      const err = new UnauthorizedInteraction(body);
 
-      timeout = setTimeout(() => {
-        reject(new InteractionHandlerTimedOut(interaction));
-      }, this.timeout);
+      throw err;
+    }
 
-      const responseCallback = resolve;
+    let responseCallbackWithTimeout: (response: APIInteractionResponse | FormData) => void, timeout: NodeJS.Timeout;
 
-      responseCallbackWithTimeout = (response: APIInteractionResponse | FormData) => {
-        clearTimeout(timeout);
-        return responseCallback(response);
-      };
-    });
+    let response;
 
     const handling = new Promise<void>(async (resolve, reject) => {
+      const interaction = JSON.parse(body) as APIInteraction;
+
+      response = new Promise<APIInteractionResponse | FormData>((resolve, reject) => {
+        if (!isValidSignature) {
+          return reject(new UnauthorizedInteraction(body));
+        }
+
+        timeout = setTimeout(() => {
+          reject(new InteractionHandlerTimedOut(interaction));
+        }, this.timeout);
+
+        responseCallbackWithTimeout = (response: APIInteractionResponse | FormData) => {
+          clearTimeout(timeout);
+          return resolve(response);
+        };
+      });
+
       try {
         await this._handleInteraction(interaction, responseCallbackWithTimeout);
       } catch (e) {

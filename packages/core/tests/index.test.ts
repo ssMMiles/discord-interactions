@@ -83,7 +83,7 @@ describe("Discord Application", () => {
 
   describe("Handling Interactions", () => {
     it("Slash Command", async () => {
-      const [getResponse] = app.handleInteraction(JSON.stringify(testCommandInteraction), false);
+      const [getResponse] = await app.handleInteraction(JSON.stringify(testCommandInteraction), false);
 
       expect(await getResponse).toEqual({
         type: InteractionResponseType.ChannelMessageWithSource,
@@ -104,7 +104,7 @@ describe("Discord Application", () => {
         )
       );
 
-      const [getResponse] = app.handleInteraction(JSON.stringify(buttonInteraction), false);
+      const [getResponse] = await app.handleInteraction(JSON.stringify(buttonInteraction), false);
 
       expect(await getResponse).toEqual({
         type: InteractionResponseType.UpdateMessage,

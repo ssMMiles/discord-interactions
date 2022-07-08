@@ -3,8 +3,8 @@ import { createPublicKey, verify } from "node:crypto";
 
 async function verifyInteractionSignature(
   publicKey: string,
-  timestamp: string,
   signature: string,
+  timestamp: string,
   body: string
 ): Promise<boolean> {
   const message = Buffer.from(timestamp + body, "utf-8");

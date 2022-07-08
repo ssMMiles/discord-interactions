@@ -39,8 +39,8 @@ async function getCryptoKey(publicKey: string) {
 
 DiscordApplication.verifyInteractionSignature = async function verifyInteractionSignature(
   publicKey: string,
-  timestamp: string,
   signature: string,
+  timestamp: string,
   body: string
 ): Promise<boolean> {
   const key = await getCryptoKey(publicKey);

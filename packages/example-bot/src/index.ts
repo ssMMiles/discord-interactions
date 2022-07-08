@@ -7,6 +7,7 @@ import {
   UnknownComponentType,
   UnknownInteractionType
 } from "@discord-interactions/core";
+import "@discord-interactions/verify-node";
 import "dotenv/config";
 import { fastify } from "fastify";
 import { default as rawBody } from "fastify-raw-body";
@@ -38,7 +39,7 @@ if (missing.length !== 0) {
   });
 
   const server = fastify();
-  server.register(rawBody);
+  await server.register(rawBody);
 
   server.post("/", async (req, res) => {
     const signature = req.headers["x-signature-ed25519"];
@@ -51,15 +52,18 @@ if (missing.length !== 0) {
     }
 
     try {
-      const [getResponse] = app.handleInteraction(req.rawBody, timestamp, signature);
-      const response = await getResponse;
+      const [getResponse, handling] = await app.handleInteraction(req.rawBody, signature, timestamp);
 
-      if (response.constructor.name === "FormData") {
-        res.send(response);
-        return;
-      }
+      getResponse.then((response) => {
+        if (response.constructor.name === "FormData") {
+          res.send(response);
+          return;
+        }
 
-      res.code(200).send(response);
+        res.code(200).send(response);
+      });
+
+      await handling;
     } catch (err) {
       if (err instanceof UnauthorizedInteraction) {
         console.error("Unauthorized Interaction");
@@ -94,9 +98,8 @@ if (missing.length !== 0) {
     }
   });
 
-  const address = "0.0.0.0";
-  const port = process.env.PORT as string;
+  const host = "0.0.0.0";
 
-  server.listen(port, address);
-  console.log(`Listening for interactions on ${address}:${port}.`);
+  server.listen({ port: Number(process.env.PORT), host });
+  console.log(`Listening for interactions on ${host}:${process.env.PORT}.`);
 })();
