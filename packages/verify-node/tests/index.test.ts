@@ -1,6 +1,5 @@
 import { DiscordApplication } from "@discord-interactions/core";
 import "@discord-interactions/verify-node";
-import "dotenv/config";
 
 import data from "./data.json";
 const { PUBLIC_KEY, SIGNATURE } = data;
