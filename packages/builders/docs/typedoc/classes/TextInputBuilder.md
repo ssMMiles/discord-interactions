@@ -50,7 +50,7 @@ ComponentBuilderBase&lt;APITextInputComponent\&gt;.constructor
 
 #### Defined in
 
-[src/components/TextInputBuilder.ts:13](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/TextInputBuilder.ts#L13)
+[src/components/TextInputBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L13)
 
 ## Properties
 
@@ -64,7 +64,7 @@ ComponentBuilderBase.data
 
 #### Defined in
 
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ComponentBuilderBase.ts#L19)
 
 ## Methods
 
@@ -84,7 +84,7 @@ ComponentBuilderBase.data
 
 #### Defined in
 
-[src/components/TextInputBuilder.ts:81](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/TextInputBuilder.ts#L81)
+[src/components/TextInputBuilder.ts:81](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L81)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/components/TextInputBuilder.ts:45](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/TextInputBuilder.ts#L45)
+[src/components/TextInputBuilder.ts:45](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L45)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[src/components/TextInputBuilder.ts:72](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/TextInputBuilder.ts#L72)
+[src/components/TextInputBuilder.ts:72](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L72)
 
 ___
 
@@ -144,7 +144,7 @@ ___
 
 #### Defined in
 
-[src/components/TextInputBuilder.ts:63](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/TextInputBuilder.ts#L63)
+[src/components/TextInputBuilder.ts:63](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L63)
 
 ___
 
@@ -164,7 +164,7 @@ ___
 
 #### Defined in
 
-[src/components/TextInputBuilder.ts:27](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/TextInputBuilder.ts#L27)
+[src/components/TextInputBuilder.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L27)
 
 ___
 
@@ -184,7 +184,7 @@ ___
 
 #### Defined in
 
-[src/components/TextInputBuilder.ts:90](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/TextInputBuilder.ts#L90)
+[src/components/TextInputBuilder.ts:90](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L90)
 
 ___
 
@@ -204,7 +204,7 @@ ___
 
 #### Defined in
 
-[src/components/TextInputBuilder.ts:54](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/TextInputBuilder.ts#L54)
+[src/components/TextInputBuilder.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L54)
 
 ___
 
@@ -224,7 +224,7 @@ ___
 
 #### Defined in
 
-[src/components/TextInputBuilder.ts:36](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/TextInputBuilder.ts#L36)
+[src/components/TextInputBuilder.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L36)
 
 ___
 
@@ -242,4 +242,4 @@ ComponentBuilderBase.toJSON
 
 #### Defined in
 
-[src/components/TextInputBuilder.ts:95](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/TextInputBuilder.ts#L95)
+[src/components/TextInputBuilder.ts:95](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L95)

@@ -5,15 +5,20 @@ import type {
   RESTPostAPIChatInputApplicationCommandsJSONBody
 } from "discord-api-types/v10";
 import { ApplicationCommandType } from "discord-api-types/v10";
-import { CommandBuilder } from "./CommandBuilderBase.js";
+import { CommandBuilderBase, CommandDataBase } from "./CommandBuilderBase.js";
 import type { SubcommandGroupOption } from "./options/subcommand-group.js";
 import type { SubcommandOption } from "./options/subcommand.js";
+
+export type CommandGroupData = CommandDataBase & {
+  type: ApplicationCommandType.ChatInput;
+  options: (APIApplicationCommandSubcommandGroupOption | APIApplicationCommandSubcommandOption)[];
+};
 
 export interface ToAPIApplicationCommandGroupOptions {
   toJSON: () => APIApplicationCommandSubcommandGroupOption | APIApplicationCommandSubcommandOption;
 }
 
-export class CommandGroupBuilder extends CommandBuilder<RESTPostAPIChatInputApplicationCommandsJSONBody> {
+export class CommandGroupBuilder extends CommandBuilderBase<RESTPostAPIChatInputApplicationCommandsJSONBody> {
   public type: ApplicationCommandType.ChatInput = ApplicationCommandType.ChatInput;
 
   public description: string;
@@ -79,7 +84,7 @@ export class CommandGroupBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
     return this;
   }
 
-  public toJSON() {
+  public toJSON(): CommandGroupData {
     return {
       type: this.type,
 

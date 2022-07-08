@@ -52,7 +52,7 @@ HandledInteraction<
 
 #### Defined in
 
-[core/src/app/handlers/HandledInteraction.ts:13](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/handlers/HandledInteraction.ts#L13)
+[app/handlers/HandledInteraction.ts:13](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L13)
 
 ## Properties
 
@@ -66,7 +66,7 @@ HandledInteraction.builder
 
 #### Defined in
 
-[core/src/app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/handlers/HandledInteraction.ts#L4)
+[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 ___
 
@@ -80,7 +80,7 @@ HandledInteraction.components
 
 #### Defined in
 
-[core/src/app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/handlers/HandledInteraction.ts#L11)
+[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 ## Accessors
 
@@ -98,7 +98,7 @@ HandledInteraction.data
 
 #### Defined in
 
-[core/src/app/handlers/HandledInteraction.ts:5](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/handlers/HandledInteraction.ts#L5)
+[app/handlers/HandledInteraction.ts:5](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L5)
 
 ## Methods
 
@@ -122,7 +122,7 @@ HandledInteraction.handler
 
 #### Defined in
 
-[core/src/app/commands/UserCommand.ts:15](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/UserCommand.ts#L15)
+[app/commands/UserCommand.ts:15](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/UserCommand.ts#L15)
 
 ___
 
@@ -146,4 +146,4 @@ HandledInteraction.setHandler
 
 #### Defined in
 
-[core/src/app/handlers/HandledInteraction.ts:20](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/handlers/HandledInteraction.ts#L20)
+[app/handlers/HandledInteraction.ts:20](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L20)

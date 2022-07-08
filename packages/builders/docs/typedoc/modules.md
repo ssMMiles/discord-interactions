@@ -49,17 +49,24 @@
 ### Type Aliases
 
 - [ApplicationCommandOptionAllowedChannelTypes](modules.md#applicationcommandoptionallowedchanneltypes)
+- [CommandBuilder](modules.md#commandbuilder)
+- [CommandData](modules.md#commanddata)
+- [CommandGroupData](modules.md#commandgroupdata)
 - [ComponentBuilders](modules.md#componentbuilders)
+- [ContextCommandData](modules.md#contextcommanddata)
 - [EmbedAuthorData](modules.md#embedauthordata)
 - [EmbedAuthorOptions](modules.md#embedauthoroptions)
 - [EmbedFooterData](modules.md#embedfooterdata)
 - [EmbedFooterOptions](modules.md#embedfooteroptions)
 - [MessageActionRowBuilder](modules.md#messageactionrowbuilder)
 - [MessageActionRowComponentBuilders](modules.md#messageactionrowcomponentbuilders)
+- [MessageCommandData](modules.md#messagecommanddata)
 - [ModalActionRowBuilder](modules.md#modalactionrowbuilder)
 - [ModalActionRowComponentBuilders](modules.md#modalactionrowcomponentbuilders)
 - [RGBTuple](modules.md#rgbtuple)
 - [ResponseMap](modules.md#responsemap)
+- [SlashCommandData](modules.md#slashcommanddata)
+- [UserCommandData](modules.md#usercommanddata)
 
 ### Variables
 
@@ -74,7 +81,37 @@
 
 #### Defined in
 
-[src/commands/options/channel.ts:15](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/channel.ts#L15)
+[src/commands/options/channel.ts:15](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/channel.ts#L15)
+
+___
+
+### CommandBuilder
+
+Ƭ **CommandBuilder**: [`SlashCommandBuilder`](classes/SlashCommandBuilder.md) \| [`CommandGroupBuilder`](classes/CommandGroupBuilder.md) \| [`UserCommandBuilder`](classes/UserCommandBuilder.md) \| [`MessageCommandBuilder`](classes/MessageCommandBuilder.md)
+
+#### Defined in
+
+[src/commands/index.ts:17](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/index.ts#L17)
+
+___
+
+### CommandData
+
+Ƭ **CommandData**: [`SlashCommandData`](modules.md#slashcommanddata) \| [`CommandGroupData`](modules.md#commandgroupdata) \| [`UserCommandData`](modules.md#usercommanddata) \| [`MessageCommandData`](modules.md#messagecommanddata)
+
+#### Defined in
+
+[src/commands/index.ts:16](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/index.ts#L16)
+
+___
+
+### CommandGroupData
+
+Ƭ **CommandGroupData**: `CommandDataBase` & { `options`: (`APIApplicationCommandSubcommandGroupOption` \| `APIApplicationCommandSubcommandOption`)[] ; `type`: `ApplicationCommandType.ChatInput`  }
+
+#### Defined in
+
+[src/commands/CommandGroupBuilder.ts:12](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L12)
 
 ___
 
@@ -84,7 +121,17 @@ ___
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:10](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ActionRowBuilder.ts#L10)
+[src/components/ActionRowBuilder.ts:10](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L10)
+
+___
+
+### ContextCommandData
+
+Ƭ **ContextCommandData**: `Omit`<`CommandDataBase`, ``"description"``\>
+
+#### Defined in
+
+[src/commands/ContextMenuCommandBuilder.ts:5](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L5)
 
 ___
 
@@ -94,7 +141,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:16](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L16)
+[src/responses/EmbedBuilder.ts:16](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L16)
 
 ___
 
@@ -104,7 +151,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:18](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L18)
+[src/responses/EmbedBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L18)
 
 ___
 
@@ -114,7 +161,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:20](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L20)
+[src/responses/EmbedBuilder.ts:20](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L20)
 
 ___
 
@@ -124,7 +171,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:22](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L22)
+[src/responses/EmbedBuilder.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L22)
 
 ___
 
@@ -134,7 +181,7 @@ ___
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:12](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ActionRowBuilder.ts#L12)
+[src/components/ActionRowBuilder.ts:12](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L12)
 
 ___
 
@@ -144,7 +191,17 @@ ___
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:7](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ActionRowBuilder.ts#L7)
+[src/components/ActionRowBuilder.ts:7](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L7)
+
+___
+
+### MessageCommandData
+
+Ƭ **MessageCommandData**: [`ContextCommandData`](modules.md#contextcommanddata) & { `type`: `ApplicationCommandType.Message`  }
+
+#### Defined in
+
+[src/commands/ContextMenuCommandBuilder.ts:11](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L11)
 
 ___
 
@@ -154,7 +211,7 @@ ___
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:13](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ActionRowBuilder.ts#L13)
+[src/components/ActionRowBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L13)
 
 ___
 
@@ -164,7 +221,7 @@ ___
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:8](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ActionRowBuilder.ts#L8)
+[src/components/ActionRowBuilder.ts:8](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L8)
 
 ___
 
@@ -174,7 +231,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:3](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L3)
+[src/responses/EmbedBuilder.ts:3](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L3)
 
 ___
 
@@ -191,7 +248,27 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:256](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L256)
+[src/responses/MessageBuilder.ts:256](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L256)
+
+___
+
+### SlashCommandData
+
+Ƭ **SlashCommandData**: `CommandDataBase` & { `options`: `APIApplicationCommandBasicOption`[] ; `type`: `ApplicationCommandType.ChatInput`  }
+
+#### Defined in
+
+[src/commands/SlashCommandBuilder.ts:21](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L21)
+
+___
+
+### UserCommandData
+
+Ƭ **UserCommandData**: [`ContextCommandData`](modules.md#contextcommanddata) & { `type`: `ApplicationCommandType.User`  }
+
+#### Defined in
+
+[src/commands/ContextMenuCommandBuilder.ts:7](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L7)
 
 ## Variables
 
@@ -201,7 +278,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/channel.ts:4](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/channel.ts#L4)
+[src/commands/options/channel.ts:4](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/channel.ts#L4)
 
 ___
 
@@ -257,4 +334,4 @@ ___
 
 #### Defined in
 
-[src/commands/permissions/PermissionBits.ts:1](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/permissions/PermissionBits.ts#L1)
+[src/commands/permissions/PermissionBits.ts:1](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/PermissionBits.ts#L1)

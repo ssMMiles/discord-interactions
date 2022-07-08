@@ -4,7 +4,7 @@
 
 ## Hierarchy
 
-- `CommandBuilder`<`RESTPostAPIContextMenuApplicationCommandsJSONBody` & { `type`: `ApplicationCommandType.User`  }\>
+- `CommandBuilderBase`<`RESTPostAPIContextMenuApplicationCommandsJSONBody` & { `type`: `ApplicationCommandType.User`  }\>
 
   ↳ **`UserCommandBuilder`**
 
@@ -50,13 +50,13 @@
 
 #### Inherited from
 
-CommandBuilder<
+CommandBuilderBase<
   RESTPostAPIContextMenuApplicationCommandsJSONBody & { type: ApplicationCommandType.User }
 \>.constructor
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:39](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L39)
+[src/commands/CommandBuilderBase.ts:44](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L44)
 
 ## Properties
 
@@ -66,11 +66,11 @@ CommandBuilder<
 
 #### Inherited from
 
-CommandBuilder.default\_member\_permissions
+CommandBuilderBase.default\_member\_permissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:37](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L37)
+[src/commands/CommandBuilderBase.ts:42](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L42)
 
 ___
 
@@ -80,11 +80,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.dm\_permission
+CommandBuilderBase.dm\_permission
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:32](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L32)
+[src/commands/CommandBuilderBase.ts:37](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L37)
 
 ___
 
@@ -94,11 +94,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.name
+CommandBuilderBase.name
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:17](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L17)
+[src/commands/CommandBuilderBase.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L22)
 
 ___
 
@@ -108,11 +108,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.name\_localizations
+CommandBuilderBase.name\_localizations
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:22](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L22)
+[src/commands/CommandBuilderBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L27)
 
 ___
 
@@ -122,11 +122,11 @@ ___
 
 #### Overrides
 
-CommandBuilder.type
+CommandBuilderBase.type
 
 #### Defined in
 
-[src/commands/ContextMenuCommandBuilder.ts:8](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L8)
+[src/commands/ContextMenuCommandBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L18)
 
 ## Methods
 
@@ -146,11 +146,11 @@ CommandBuilder.type
 
 #### Inherited from
 
-CommandBuilder.addRequiredPermissions
+CommandBuilderBase.addRequiredPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:94](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L94)
+[src/commands/CommandBuilderBase.ts:99](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L99)
 
 ___
 
@@ -164,11 +164,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.clearRequiredPermissions
+CommandBuilderBase.clearRequiredPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:106](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L106)
+[src/commands/CommandBuilderBase.ts:111](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L111)
 
 ___
 
@@ -182,11 +182,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.disallowAllPermissions
+CommandBuilderBase.disallowAllPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:112](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L112)
+[src/commands/CommandBuilderBase.ts:117](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L117)
 
 ___
 
@@ -206,11 +206,11 @@ ___
 
 #### Overrides
 
-CommandBuilder.equals
+CommandBuilderBase.equals
 
 #### Defined in
 
-[src/commands/ContextMenuCommandBuilder.ts:25](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L25)
+[src/commands/ContextMenuCommandBuilder.ts:30](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L30)
 
 ___
 
@@ -230,11 +230,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.removeRequiredPermissions
+CommandBuilderBase.removeRequiredPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:100](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L100)
+[src/commands/CommandBuilderBase.ts:105](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L105)
 
 ___
 
@@ -254,11 +254,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setDMEnabled
+CommandBuilderBase.setDMEnabled
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:82](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L82)
+[src/commands/CommandBuilderBase.ts:87](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L87)
 
 ___
 
@@ -279,11 +279,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setLocalizedName
+CommandBuilderBase.setLocalizedName
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:73](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L73)
+[src/commands/CommandBuilderBase.ts:78](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L78)
 
 ___
 
@@ -303,11 +303,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setName
+CommandBuilderBase.setName
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:55](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L55)
+[src/commands/CommandBuilderBase.ts:60](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L60)
 
 ___
 
@@ -327,11 +327,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setNameLocalizations
+CommandBuilderBase.setNameLocalizations
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:64](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L64)
+[src/commands/CommandBuilderBase.ts:69](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L69)
 
 ___
 
@@ -351,26 +351,26 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setRequiredPermissions
+CommandBuilderBase.setRequiredPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:88](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L88)
+[src/commands/CommandBuilderBase.ts:93](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L93)
 
 ___
 
 ### toJSON
 
-▸ **toJSON**(): `Omit`<`APIApplicationCommand` & { `type`: `User`  }, ``"description"`` \| ``"id"`` \| ``"guild_id"`` \| ``"application_id"`` \| ``"version"``\>
+▸ **toJSON**(): [`UserCommandData`](../modules.md#usercommanddata)
 
 #### Returns
 
-`Omit`<`APIApplicationCommand` & { `type`: `User`  }, ``"description"`` \| ``"id"`` \| ``"guild_id"`` \| ``"application_id"`` \| ``"version"``\>
+[`UserCommandData`](../modules.md#usercommanddata)
 
 #### Overrides
 
-CommandBuilder.toJSON
+CommandBuilderBase.toJSON
 
 #### Defined in
 
-[src/commands/ContextMenuCommandBuilder.ts:10](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L10)
+[src/commands/ContextMenuCommandBuilder.ts:20](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L20)

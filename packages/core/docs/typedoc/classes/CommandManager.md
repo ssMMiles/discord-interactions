@@ -45,7 +45,7 @@
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:53](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L53)
+[app/managers/CommandManager.ts:53](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L53)
 
 ## Properties
 
@@ -55,7 +55,7 @@
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:45](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L45)
+[app/managers/CommandManager.ts:45](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L45)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:46](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L46)
+[app/managers/CommandManager.ts:46](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L46)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:47](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L47)
+[app/managers/CommandManager.ts:47](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L47)
 
 ## Methods
 
@@ -95,7 +95,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:276](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L276)
+[app/managers/CommandManager.ts:276](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L276)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:198](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L198)
+[app/managers/CommandManager.ts:198](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L198)
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:100](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L100)
+[app/managers/CommandManager.ts:100](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L100)
 
 ___
 
@@ -150,7 +150,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:235](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L235)
+[app/managers/CommandManager.ts:235](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L235)
 
 ___
 
@@ -171,7 +171,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:91](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L91)
+[app/managers/CommandManager.ts:91](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L91)
 
 ___
 
@@ -197,7 +197,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:253](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L253)
+[app/managers/CommandManager.ts:253](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L253)
 
 ___
 
@@ -217,7 +217,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:244](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L244)
+[app/managers/CommandManager.ts:244](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L244)
 
 ___
 
@@ -237,7 +237,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:126](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L126)
+[app/managers/CommandManager.ts:126](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L126)
 
 ___
 
@@ -259,7 +259,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:114](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L114)
+[app/managers/CommandManager.ts:114](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L114)
 
 ___
 
@@ -281,7 +281,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:104](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L104)
+[app/managers/CommandManager.ts:104](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L104)
 
 ___
 
@@ -295,7 +295,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:217](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L217)
+[app/managers/CommandManager.ts:217](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L217)
 
 ___
 
@@ -317,7 +317,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:185](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L185)
+[app/managers/CommandManager.ts:185](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L185)
 
 ___
 
@@ -344,4 +344,4 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:262](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L262)
+[app/managers/CommandManager.ts:262](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L262)

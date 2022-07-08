@@ -55,7 +55,7 @@ Error.constructor
 
 #### Defined in
 
-[core/src/util/errors.ts:16](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/util/errors.ts#L16)
+[util/errors.ts:16](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/util/errors.ts#L16)
 
 ## Properties
 
@@ -65,4 +65,4 @@ Error.constructor
 
 #### Defined in
 
-[core/src/util/errors.ts:14](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/util/errors.ts#L14)
+[util/errors.ts:14](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/util/errors.ts#L14)

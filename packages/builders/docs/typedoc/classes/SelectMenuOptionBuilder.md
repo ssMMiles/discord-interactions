@@ -35,7 +35,7 @@
 
 #### Defined in
 
-[src/components/SelectMenuOptionBuilder.ts:7](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuOptionBuilder.ts#L7)
+[src/components/SelectMenuOptionBuilder.ts:7](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L7)
 
 ## Properties
 
@@ -61,7 +61,7 @@
 
 #### Defined in
 
-[src/components/SelectMenuOptionBuilder.ts:40](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuOptionBuilder.ts#L40)
+[src/components/SelectMenuOptionBuilder.ts:40](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L40)
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuOptionBuilder.ts:31](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuOptionBuilder.ts#L31)
+[src/components/SelectMenuOptionBuilder.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L31)
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuOptionBuilder.ts:49](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuOptionBuilder.ts#L49)
+[src/components/SelectMenuOptionBuilder.ts:49](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L49)
 
 ___
 
@@ -121,7 +121,7 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuOptionBuilder.ts:13](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuOptionBuilder.ts#L13)
+[src/components/SelectMenuOptionBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L13)
 
 ___
 
@@ -141,7 +141,7 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuOptionBuilder.ts:22](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuOptionBuilder.ts#L22)
+[src/components/SelectMenuOptionBuilder.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L22)
 
 ___
 
@@ -155,4 +155,4 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuOptionBuilder.ts:54](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuOptionBuilder.ts#L54)
+[src/components/SelectMenuOptionBuilder.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L54)

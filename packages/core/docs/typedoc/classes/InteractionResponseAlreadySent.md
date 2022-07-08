@@ -36,7 +36,7 @@
 
 #### Defined in
 
-[core/src/util/errors.ts:42](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/util/errors.ts#L42)
+[util/errors.ts:42](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/util/errors.ts#L42)
 
 ## Properties
 
@@ -50,4 +50,4 @@
 
 #### Defined in
 
-[core/src/util/errors.ts:14](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/util/errors.ts#L14)
+[util/errors.ts:14](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/util/errors.ts#L14)

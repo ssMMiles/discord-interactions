@@ -1,8 +1,24 @@
 {
-  "name": "root",
-  "private": true,
+  "name": "@discord-interactions/discord-interactions",
+  "scripts": {
+    "clean": "turbo run clean",
+    "build": "turbo run build",
+    "typecheck": "turbo run typecheck",
+    "prettier": "turbo run prettier",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "version": "npx lerna version --no-push && git commit -am \"Version Bump\" npm i"
+  },
   "devDependencies": {
     "lerna": "^5.1.8",
     "nx": "^14.4.2"
+  },
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "packageManager": "^yarn@1.22.19",
+  "engines": {
+    "node": ">=16"
   }
 }

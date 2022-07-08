@@ -1,7 +1,7 @@
 node_modules
-dist
 
 .env
 
-# Yarn errors
+# Build artifacts
+dist
 yarn-error.log

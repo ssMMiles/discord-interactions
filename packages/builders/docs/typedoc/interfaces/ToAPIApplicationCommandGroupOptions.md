@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:13](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandGroupBuilder.ts#L13)
+[src/commands/CommandGroupBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L18)

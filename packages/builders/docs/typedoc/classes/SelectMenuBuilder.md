@@ -48,7 +48,7 @@ ComponentBuilderBase&lt;APISelectMenuComponent\&gt;.constructor
 
 #### Defined in
 
-[src/components/SelectMenuBuilder.ts:14](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuBuilder.ts#L14)
+[src/components/SelectMenuBuilder.ts:14](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L14)
 
 ## Properties
 
@@ -62,7 +62,7 @@ ComponentBuilderBase.data
 
 #### Defined in
 
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ComponentBuilderBase.ts#L19)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuBuilder.ts:12](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuBuilder.ts#L12)
+[src/components/SelectMenuBuilder.ts:12](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L12)
 
 ## Methods
 
@@ -92,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuBuilder.ts:71](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuBuilder.ts#L71)
+[src/components/SelectMenuBuilder.ts:71](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L71)
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuBuilder.ts:52](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuBuilder.ts#L52)
+[src/components/SelectMenuBuilder.ts:52](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L52)
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuBuilder.ts:61](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuBuilder.ts#L61)
+[src/components/SelectMenuBuilder.ts:61](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L61)
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuBuilder.ts:43](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuBuilder.ts#L43)
+[src/components/SelectMenuBuilder.ts:43](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L43)
 
 ___
 
@@ -172,7 +172,7 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuBuilder.ts:34](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuBuilder.ts#L34)
+[src/components/SelectMenuBuilder.ts:34](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L34)
 
 ___
 
@@ -192,7 +192,7 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuBuilder.ts:83](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuBuilder.ts#L83)
+[src/components/SelectMenuBuilder.ts:83](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L83)
 
 ___
 
@@ -212,7 +212,7 @@ ___
 
 #### Defined in
 
-[src/components/SelectMenuBuilder.ts:25](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuBuilder.ts#L25)
+[src/components/SelectMenuBuilder.ts:25](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L25)
 
 ___
 
@@ -230,4 +230,4 @@ ComponentBuilderBase.toJSON
 
 #### Defined in
 
-[src/components/SelectMenuBuilder.ts:94](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/SelectMenuBuilder.ts#L94)
+[src/components/SelectMenuBuilder.ts:94](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L94)

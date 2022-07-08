@@ -10,7 +10,12 @@ import { Bitfield } from "./permissions/Bitfield.js";
 /**
  * @hidden
  */
-export abstract class CommandBuilder<Data extends RESTPostAPIApplicationCommandsJSONBody> {
+export type CommandDataBase = Omit<APIApplicationCommand, "id" | "application_id" | "guild_id" | "version">;
+
+/**
+ * @hidden
+ */
+export abstract class CommandBuilderBase<Data extends RESTPostAPIApplicationCommandsJSONBody> {
   /**
    * The name of this context menu command
    */

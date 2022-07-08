@@ -39,7 +39,7 @@
 
 #### Defined in
 
-[core/src/app/commands/CommandGroup.ts:51](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/CommandGroup.ts#L51)
+[app/commands/CommandGroup.ts:51](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L51)
 
 ## Properties
 
@@ -49,7 +49,7 @@
 
 #### Defined in
 
-[core/src/app/commands/CommandGroup.ts:46](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/CommandGroup.ts#L46)
+[app/commands/CommandGroup.ts:46](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L46)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[core/src/app/commands/CommandGroup.ts:47](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/CommandGroup.ts#L47)
+[app/commands/CommandGroup.ts:47](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L47)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[core/src/app/commands/CommandGroup.ts:49](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/CommandGroup.ts#L49)
+[app/commands/CommandGroup.ts:49](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L49)
 
 ## Methods
 
@@ -83,7 +83,7 @@ ___
 
 #### Defined in
 
-[core/src/app/commands/CommandGroup.ts:97](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/CommandGroup.ts#L97)
+[app/commands/CommandGroup.ts:97](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L97)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[core/src/app/commands/CommandGroup.ts:70](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/CommandGroup.ts#L70)
+[app/commands/CommandGroup.ts:70](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L70)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 #### Defined in
 
-[core/src/app/commands/CommandGroup.ts:77](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/CommandGroup.ts#L77)
+[app/commands/CommandGroup.ts:77](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L77)
 
 ___
 
@@ -131,4 +131,4 @@ ___
 
 #### Defined in
 
-[core/src/app/commands/CommandGroup.ts:90](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/CommandGroup.ts#L90)
+[app/commands/CommandGroup.ts:90](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L90)

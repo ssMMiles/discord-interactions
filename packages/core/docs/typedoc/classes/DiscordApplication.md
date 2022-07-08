@@ -40,7 +40,7 @@
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:78](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L78)
+[app/DiscordApplication.ts:77](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L77)
 
 ## Properties
 
@@ -50,7 +50,7 @@
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:52](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L52)
+[app/DiscordApplication.ts:51](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L51)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:50](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L50)
+[app/DiscordApplication.ts:49](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L49)
 
 ___
 
@@ -70,7 +70,7 @@ ___
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:54](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L54)
+[app/DiscordApplication.ts:53](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L53)
 
 ___
 
@@ -80,7 +80,7 @@ ___
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:55](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L55)
+[app/DiscordApplication.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L54)
 
 ___
 
@@ -90,7 +90,7 @@ ___
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:57](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L57)
+[app/DiscordApplication.ts:56](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L56)
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:60](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L60)
+[app/DiscordApplication.ts:59](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L59)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:49](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L49)
+[app/DiscordApplication.ts:48](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L48)
 
 ___
 
@@ -120,7 +120,7 @@ ___
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:76](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L76)
+[app/DiscordApplication.ts:75](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L75)
 
 ___
 
@@ -130,7 +130,7 @@ ___
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:59](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L59)
+[app/DiscordApplication.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L58)
 
 ## Methods
 
@@ -157,7 +157,7 @@ ___
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:181](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L181)
+[app/DiscordApplication.ts:170](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L170)
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:134](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L134)
+[app/DiscordApplication.ts:123](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L123)
 
 ___
 
@@ -202,4 +202,4 @@ ___
 
 #### Defined in
 
-[core/src/app/DiscordApplication.ts:106](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/DiscordApplication.ts#L106)
+[app/DiscordApplication.ts:105](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L105)

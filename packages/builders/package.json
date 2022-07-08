@@ -1,14 +1,19 @@
 {
   "name": "@discord-interactions/builders",
-  "version": "0.0.1",
   "description": "Simple builder classes for Discord interaction responses (Messages/Modals), Components and Commands.",
+  "version": "0.0.1",
   "main": "dist/index.js",
+  "types": [
+    "dist/index.d.ts",
+    "dist/types.d.ts"
+  ],
   "type": "module",
   "scripts": {
+    "clean": "rimraf dist",
     "format": "prettier --write src",
     "lint": "eslint src",
-    "build": "yarn format & yarn lint && tsc -p tsconfig.json",
-    "docs": "npx typedoc",
+    "build": "tsc",
+    "docs": "typedoc",
     "start": "node dist/index.js",
     "dev": "yarn build && yarn start",
     "prepublish": "yarn build && yarn test && yarn docs",
@@ -17,8 +22,7 @@
   "dependencies": {
     "cross-blob": "^3.0.1",
     "discord-api-types": "^0.36.1",
-    "formdata-node": "^4.3.3",
-    "typedoc-plugin-markdown": "^3.13.3"
+    "formdata-node": "^4.3.3"
   },
   "devDependencies": {
     "@types/jest": "^28.1.4",
@@ -28,18 +32,13 @@
     "eslint": "^8.19.0",
     "jest": "^28.1.2",
     "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
     "ts-jest": "^28.0.5",
     "typedoc": "^0.22.13",
     "typedoc-plugin-merge-modules": "^3.1.0",
+    "typedoc-plugin-markdown": "^3.13.3",
     "typescript": "^4.5.4"
   },
-  "repository": "https://github.com/ssMMiles/interactions.ts",
-  "author": "ssMMiles",
-  "license": "MIT",
-  "files": [
-    "dist",
-    "src"
-  ],
   "engines": {
     "node": ">=16"
   }

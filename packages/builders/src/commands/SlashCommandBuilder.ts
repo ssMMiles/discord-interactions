@@ -7,7 +7,7 @@ import type {
 } from "discord-api-types/v10";
 import { ApplicationCommandOptionType, ApplicationCommandType } from "discord-api-types/v10";
 import { shallowEquals } from "../util/shallow-equals.js";
-import { CommandBuilder } from "./CommandBuilderBase.js";
+import { CommandBuilderBase, CommandDataBase } from "./CommandBuilderBase.js";
 import type { SlashCommandAttachmentOption } from "./options/attachment.js";
 import type { SlashCommandBooleanOption } from "./options/boolean.js";
 import type { SlashCommandChannelOption } from "./options/channel.js";
@@ -18,11 +18,16 @@ import type { SlashCommandRoleOption } from "./options/role.js";
 import type { SlashCommandStringOption } from "./options/string.js";
 import type { SlashCommandUserOption } from "./options/user.js";
 
+export type SlashCommandData = CommandDataBase & {
+  type: ApplicationCommandType.ChatInput;
+  options: APIApplicationCommandBasicOption[];
+};
+
 export interface ToAPIApplicationCommandOptions {
   toJSON: () => APIApplicationCommandBasicOption;
 }
 
-export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputApplicationCommandsJSONBody> {
+export class SlashCommandBuilder extends CommandBuilderBase<RESTPostAPIChatInputApplicationCommandsJSONBody> {
   public type: ApplicationCommandType.ChatInput = ApplicationCommandType.ChatInput;
 
   public description: string;
@@ -247,12 +252,7 @@ export class SlashCommandBuilder extends CommandBuilder<RESTPostAPIChatInputAppl
     return true;
   }
 
-  public toJSON(): Omit<
-    APIApplicationCommand & {
-      type: ApplicationCommandType.ChatInput;
-    },
-    "id" | "application_id" | "guild_id" | "version"
-  > {
+  public toJSON(): SlashCommandData {
     return {
       type: this.type,
 

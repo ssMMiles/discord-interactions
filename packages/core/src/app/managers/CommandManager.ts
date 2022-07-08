@@ -215,7 +215,7 @@ export class CommandManager {
    * Get an array of API command objects for all registered commands
    */
   toAPICommands(): RESTPostAPIApplicationCommandsJSONBody[] {
-    const commandData = [];
+    const commandData: RESTPostAPIApplicationCommandsJSONBody[] = [];
 
     for (const command of [
       ...this[ApplicationCommandType.ChatInput].values(),

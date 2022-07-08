@@ -27,7 +27,7 @@
 
 #### Defined in
 
-[core/src/app/commands/CommandGroup.ts:8](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/CommandGroup.ts#L8)
+[app/commands/CommandGroup.ts:8](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L8)
 
 ___
 
@@ -47,4 +47,4 @@ ___
 
 #### Defined in
 
-[core/src/app/commands/CommandGroup.ts:7](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/CommandGroup.ts#L7)
+[app/commands/CommandGroup.ts:7](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L7)

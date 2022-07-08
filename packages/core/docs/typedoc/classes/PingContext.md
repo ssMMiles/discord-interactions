@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[core/src/app/contexts/PingContext.ts:5](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/PingContext.ts#L5)
+[app/contexts/PingContext.ts:5](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/PingContext.ts#L5)
 
 ## Properties
 
@@ -50,4 +50,4 @@
 
 #### Defined in
 
-[core/src/app/contexts/PingContext.ts:9](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/PingContext.ts#L9)
+[app/contexts/PingContext.ts:9](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/PingContext.ts#L9)

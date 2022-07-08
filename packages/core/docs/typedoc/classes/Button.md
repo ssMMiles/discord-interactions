@@ -54,7 +54,7 @@ ComponentBase&lt;APIButtonComponentWithCustomId, ButtonBuilder, ButtonContext\&g
 
 #### Defined in
 
-[core/src/app/components/Button.ts:7](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/components/Button.ts#L7)
+[app/components/Button.ts:7](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Button.ts#L7)
 
 ## Properties
 
@@ -68,7 +68,7 @@ ComponentBase.allowExpired
 
 #### Defined in
 
-[core/src/app/components/Base.ts:10](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/components/Base.ts#L10)
+[app/components/Base.ts:10](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Base.ts#L10)
 
 ___
 
@@ -82,7 +82,7 @@ ComponentBase.builder
 
 #### Defined in
 
-[core/src/app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/handlers/HandledInteraction.ts#L4)
+[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 ___
 
@@ -96,7 +96,7 @@ ComponentBase.components
 
 #### Defined in
 
-[core/src/app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/handlers/HandledInteraction.ts#L11)
+[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 ___
 
@@ -124,7 +124,7 @@ ComponentBase.handler
 
 #### Defined in
 
-[core/src/app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/handlers/HandledInteraction.ts#L9)
+[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L9)
 
 ___
 
@@ -138,7 +138,7 @@ ComponentBase.id
 
 #### Defined in
 
-[core/src/app/components/Base.ts:9](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/components/Base.ts#L9)
+[app/components/Base.ts:9](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Base.ts#L9)
 
 ___
 
@@ -152,7 +152,7 @@ ComponentBase.parentCommand
 
 #### Defined in
 
-[core/src/app/components/Base.ts:12](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/components/Base.ts#L12)
+[app/components/Base.ts:12](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Base.ts#L12)
 
 ## Accessors
 
@@ -170,7 +170,7 @@ ComponentBase.data
 
 #### Defined in
 
-[core/src/app/handlers/HandledInteraction.ts:5](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/handlers/HandledInteraction.ts#L5)
+[app/handlers/HandledInteraction.ts:5](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L5)
 
 ## Methods
 
@@ -190,7 +190,7 @@ ComponentBase.data
 
 #### Defined in
 
-[core/src/app/components/Button.ts:17](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/components/Button.ts#L17)
+[app/components/Button.ts:17](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Button.ts#L17)
 
 ___
 
@@ -214,7 +214,7 @@ ComponentBase.setAllowExpired
 
 #### Defined in
 
-[core/src/app/components/Base.ts:34](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/components/Base.ts#L34)
+[app/components/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Base.ts#L34)
 
 ___
 
@@ -238,7 +238,7 @@ ComponentBase.setHandler
 
 #### Defined in
 
-[core/src/app/handlers/HandledInteraction.ts:20](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/handlers/HandledInteraction.ts#L20)
+[app/handlers/HandledInteraction.ts:20](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L20)
 
 ___
 
@@ -262,4 +262,4 @@ ComponentBase.setId
 
 #### Defined in
 
-[core/src/app/components/Base.ts:28](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/components/Base.ts#L28)
+[app/components/Base.ts:28](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Base.ts#L28)

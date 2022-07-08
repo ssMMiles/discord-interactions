@@ -1,18 +1,23 @@
 import type { APIApplicationCommand, RESTPostAPIContextMenuApplicationCommandsJSONBody } from "discord-api-types/v10";
 import { ApplicationCommandType } from "discord-api-types/v10";
-import { CommandBuilder } from "./CommandBuilderBase.js";
+import { CommandBuilderBase, CommandDataBase } from "./CommandBuilderBase.js";
 
-export class UserCommandBuilder extends CommandBuilder<
+export type ContextCommandData = Omit<CommandDataBase, "description">;
+
+export type UserCommandData = ContextCommandData & {
+  type: ApplicationCommandType.User;
+};
+
+export type MessageCommandData = ContextCommandData & {
+  type: ApplicationCommandType.Message;
+};
+
+export class UserCommandBuilder extends CommandBuilderBase<
   RESTPostAPIContextMenuApplicationCommandsJSONBody & { type: ApplicationCommandType.User }
 > {
   public type: ApplicationCommandType.User = ApplicationCommandType.User;
 
-  public toJSON(): Omit<
-    APIApplicationCommand & {
-      type: ApplicationCommandType.User;
-    },
-    "id" | "application_id" | "guild_id" | "version" | "description"
-  > {
+  public toJSON(): UserCommandData {
     return {
       name: this.name,
       type: this.type,
@@ -31,17 +36,12 @@ export class UserCommandBuilder extends CommandBuilder<
   }
 }
 
-export class MessageCommandBuilder extends CommandBuilder<
+export class MessageCommandBuilder extends CommandBuilderBase<
   RESTPostAPIContextMenuApplicationCommandsJSONBody & { type: ApplicationCommandType.Message }
 > {
   public type: ApplicationCommandType.Message = ApplicationCommandType.Message;
 
-  public toJSON(): Omit<
-    APIApplicationCommand & {
-      type: ApplicationCommandType.Message;
-    },
-    "id" | "application_id" | "guild_id" | "version" | "description"
-  > {
+  public toJSON(): MessageCommandData {
     return {
       name: this.name,
       type: this.type,

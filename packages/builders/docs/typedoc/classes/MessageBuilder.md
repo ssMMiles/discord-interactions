@@ -45,7 +45,7 @@
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:28](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L28)
+[src/responses/MessageBuilder.ts:28](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L28)
 
 ## Properties
 
@@ -55,7 +55,7 @@
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:25](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L25)
+[src/responses/MessageBuilder.ts:25](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L25)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:26](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L26)
+[src/responses/MessageBuilder.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L26)
 
 ## Methods
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:153](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L153)
+[src/responses/MessageBuilder.ts:153](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L153)
 
 ___
 
@@ -105,7 +105,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:129](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L129)
+[src/responses/MessageBuilder.ts:129](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L129)
 
 ___
 
@@ -125,7 +125,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:103](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L103)
+[src/responses/MessageBuilder.ts:103](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L103)
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:62](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L62)
+[src/responses/MessageBuilder.ts:62](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L62)
 
 ___
 
@@ -165,7 +165,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:179](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L179)
+[src/responses/MessageBuilder.ts:179](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L179)
 
 ___
 
@@ -185,7 +185,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:142](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L142)
+[src/responses/MessageBuilder.ts:142](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L142)
 
 ___
 
@@ -205,7 +205,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:40](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L40)
+[src/responses/MessageBuilder.ts:40](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L40)
 
 ___
 
@@ -225,7 +225,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:118](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L118)
+[src/responses/MessageBuilder.ts:118](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L118)
 
 ___
 
@@ -245,7 +245,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:94](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L94)
+[src/responses/MessageBuilder.ts:94](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L94)
 
 ___
 
@@ -265,7 +265,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:51](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L51)
+[src/responses/MessageBuilder.ts:51](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L51)
 
 ___
 
@@ -285,7 +285,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:85](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L85)
+[src/responses/MessageBuilder.ts:85](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L85)
 
 ___
 
@@ -311,7 +311,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:214](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L214)
+[src/responses/MessageBuilder.ts:214](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L214)
 
 ___
 
@@ -337,7 +337,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:228](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L228)
+[src/responses/MessageBuilder.ts:228](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L228)
 
 ___
 
@@ -351,7 +351,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:239](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L239)
+[src/responses/MessageBuilder.ts:239](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L239)
 
 ___
 
@@ -372,4 +372,4 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:243](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/MessageBuilder.ts#L243)
+[src/responses/MessageBuilder.ts:243](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L243)

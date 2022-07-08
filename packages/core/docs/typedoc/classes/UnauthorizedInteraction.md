@@ -36,7 +36,7 @@ Error.constructor
 
 #### Defined in
 
-[core/src/util/errors.ts:6](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/util/errors.ts#L6)
+[util/errors.ts:6](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/util/errors.ts#L6)
 
 ## Properties
 
@@ -46,4 +46,4 @@ Error.constructor
 
 #### Defined in
 
-[core/src/util/errors.ts:4](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/util/errors.ts#L4)
+[util/errors.ts:4](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/util/errors.ts#L4)

@@ -78,7 +78,7 @@ BaseInteractionContext&lt;
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:28](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L28)
+[app/contexts/ModalSubmitContext.ts:28](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L28)
 
 ## Properties
 
@@ -88,7 +88,7 @@ BaseInteractionContext&lt;
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:19](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L19)
+[app/contexts/ModalSubmitContext.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L19)
 
 ___
 
@@ -98,7 +98,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:24](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L24)
+[app/contexts/ModalSubmitContext.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L24)
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:21](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L21)
+[app/contexts/ModalSubmitContext.ts:21](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L21)
 
 ___
 
@@ -122,7 +122,7 @@ BaseInteractionContext.interaction
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:26](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L26)
+[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L26)
 
 ___
 
@@ -136,7 +136,7 @@ BaseInteractionContext.isDM
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:31](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L31)
+[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L31)
 
 ___
 
@@ -150,7 +150,7 @@ BaseInteractionContext.manager
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:24](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L24)
+[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L24)
 
 ___
 
@@ -160,7 +160,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:26](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L26)
+[app/contexts/ModalSubmitContext.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L26)
 
 ___
 
@@ -170,7 +170,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:22](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L22)
+[app/contexts/ModalSubmitContext.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L22)
 
 ___
 
@@ -184,7 +184,7 @@ BaseInteractionContext.user
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:29](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L29)
+[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L29)
 
 ## Accessors
 
@@ -202,7 +202,7 @@ BaseInteractionContext.expired
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:19](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L19)
+[app/contexts/Base.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L19)
 
 ## Methods
 
@@ -230,7 +230,7 @@ BaseInteractionContext.expired
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:69](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L69)
+[app/contexts/ModalSubmitContext.ts:69](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L69)
 
 ___
 
@@ -262,7 +262,7 @@ BaseInteractionContext.createGlobalComponent
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:65](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L65)
+[app/contexts/Base.ts:65](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L65)
 
 ___
 
@@ -287,7 +287,7 @@ BaseInteractionContext.decorate
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:58](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L58)
+[app/contexts/Base.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L58)
 
 ___
 
@@ -301,7 +301,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:79](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L79)
+[app/contexts/ModalSubmitContext.ts:79](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L79)
 
 ___
 
@@ -315,7 +315,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:104](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L104)
+[app/contexts/ModalSubmitContext.ts:104](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L104)
 
 ___
 
@@ -335,7 +335,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:100](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L100)
+[app/contexts/ModalSubmitContext.ts:100](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L100)
 
 ___
 
@@ -349,7 +349,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:51](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L51)
+[app/contexts/ModalSubmitContext.ts:51](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L51)
 
 ___
 
@@ -373,7 +373,7 @@ BaseInteractionContext.rawReply
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:54](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L54)
+[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L54)
 
 ___
 
@@ -393,7 +393,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:87](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L87)
+[app/contexts/ModalSubmitContext.ts:87](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L87)
 
 ___
 
@@ -413,4 +413,4 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ModalSubmitContext.ts:96](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ModalSubmitContext.ts#L96)
+[app/contexts/ModalSubmitContext.ts:96](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L96)

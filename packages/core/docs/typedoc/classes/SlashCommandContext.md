@@ -70,7 +70,7 @@ BaseCommandContext&lt;APIChatInputApplicationCommandInteraction\&gt;.constructor
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:37](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L37)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:37](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L37)
 
 ## Properties
 
@@ -80,7 +80,7 @@ BaseCommandContext&lt;APIChatInputApplicationCommandInteraction\&gt;.constructor
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:35](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L35)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:35](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L35)
 
 ___
 
@@ -94,7 +94,7 @@ BaseCommandContext.interaction
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:26](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L26)
+[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L26)
 
 ___
 
@@ -108,7 +108,7 @@ BaseCommandContext.isDM
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:31](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L31)
+[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L31)
 
 ___
 
@@ -122,7 +122,7 @@ BaseCommandContext.manager
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:24](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L24)
+[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L24)
 
 ___
 
@@ -136,7 +136,7 @@ BaseCommandContext.name
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/Base.ts:19](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L19)
+[app/contexts/ApplicationCommand/Base.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L19)
 
 ___
 
@@ -146,7 +146,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:30](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L30)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:30](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L30)
 
 ___
 
@@ -160,7 +160,7 @@ BaseCommandContext.user
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:29](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L29)
+[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L29)
 
 ## Accessors
 
@@ -178,7 +178,7 @@ BaseCommandContext.expired
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:19](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L19)
+[app/contexts/Base.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L19)
 
 ## Methods
 
@@ -210,7 +210,7 @@ BaseCommandContext.createComponent
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:76](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L76)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:76](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L76)
 
 ___
 
@@ -242,7 +242,7 @@ BaseCommandContext.createGlobalComponent
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:65](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L65)
+[app/contexts/Base.ts:65](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L65)
 
 ___
 
@@ -267,7 +267,7 @@ BaseCommandContext.decorate
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:58](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L58)
+[app/contexts/Base.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L58)
 
 ___
 
@@ -285,7 +285,7 @@ BaseCommandContext.defer
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/Base.ts:33](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L33)
+[app/contexts/ApplicationCommand/Base.ts:33](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L33)
 
 ___
 
@@ -303,7 +303,7 @@ BaseCommandContext.delete
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/Base.ts:73](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L73)
+[app/contexts/ApplicationCommand/Base.ts:73](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L73)
 
 ___
 
@@ -327,7 +327,7 @@ BaseCommandContext.edit
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/Base.ts:69](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L69)
+[app/contexts/ApplicationCommand/Base.ts:69](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L69)
 
 ___
 
@@ -347,7 +347,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:163](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L163)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:163](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L163)
 
 ___
 
@@ -367,7 +367,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:100](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L100)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:100](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L100)
 
 ___
 
@@ -387,7 +387,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:122](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L122)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:122](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L122)
 
 ___
 
@@ -407,7 +407,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:93](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L93)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:93](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L93)
 
 ___
 
@@ -427,7 +427,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:144](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L144)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:144](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L144)
 
 ___
 
@@ -447,7 +447,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:156](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L156)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:156](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L156)
 
 ___
 
@@ -467,7 +467,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:134](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L134)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:134](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L134)
 
 ___
 
@@ -487,7 +487,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:86](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L86)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:86](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L86)
 
 ___
 
@@ -507,7 +507,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:107](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L107)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:107](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L107)
 
 ___
 
@@ -527,7 +527,7 @@ ___
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts:82](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L82)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:82](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L82)
 
 ___
 
@@ -551,7 +551,7 @@ BaseCommandContext.rawReply
 
 #### Defined in
 
-[core/src/app/contexts/Base.ts:54](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/Base.ts#L54)
+[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L54)
 
 ___
 
@@ -575,7 +575,7 @@ BaseCommandContext.reply
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/Base.ts:41](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L41)
+[app/contexts/ApplicationCommand/Base.ts:41](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L41)
 
 ___
 
@@ -599,4 +599,4 @@ BaseCommandContext.send
 
 #### Defined in
 
-[core/src/app/contexts/ApplicationCommand/Base.ts:65](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L65)
+[app/contexts/ApplicationCommand/Base.ts:65](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L65)

@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[core/src/app/WebhookClient.ts:16](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/WebhookClient.ts#L16)
+[app/WebhookClient.ts:16](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/WebhookClient.ts#L16)
 
 ## Methods
 
@@ -50,7 +50,7 @@
 
 #### Defined in
 
-[core/src/app/WebhookClient.ts:46](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/WebhookClient.ts#L46)
+[app/WebhookClient.ts:46](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/WebhookClient.ts#L46)
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 #### Defined in
 
-[core/src/app/WebhookClient.ts:35](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/WebhookClient.ts#L35)
+[app/WebhookClient.ts:35](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/WebhookClient.ts#L35)
 
 ___
 
@@ -92,4 +92,4 @@ ___
 
 #### Defined in
 
-[core/src/app/WebhookClient.ts:23](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/WebhookClient.ts#L23)
+[app/WebhookClient.ts:23](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/WebhookClient.ts#L23)

@@ -33,7 +33,7 @@
 
 #### Defined in
 
-[src/responses/ModalBuilder.ts:11](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/ModalBuilder.ts#L11)
+[src/responses/ModalBuilder.ts:11](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/ModalBuilder.ts#L11)
 
 ## Properties
 
@@ -43,7 +43,7 @@
 
 #### Defined in
 
-[src/responses/ModalBuilder.ts:9](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/ModalBuilder.ts#L9)
+[src/responses/ModalBuilder.ts:9](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/ModalBuilder.ts#L9)
 
 ## Methods
 
@@ -63,7 +63,7 @@
 
 #### Defined in
 
-[src/responses/ModalBuilder.ts:24](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/ModalBuilder.ts#L24)
+[src/responses/ModalBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/ModalBuilder.ts#L24)
 
 ___
 
@@ -83,7 +83,7 @@ ___
 
 #### Defined in
 
-[src/responses/ModalBuilder.ts:32](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/ModalBuilder.ts#L32)
+[src/responses/ModalBuilder.ts:32](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/ModalBuilder.ts#L32)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[src/responses/ModalBuilder.ts:19](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/ModalBuilder.ts#L19)
+[src/responses/ModalBuilder.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/ModalBuilder.ts#L19)
 
 ___
 
@@ -117,4 +117,4 @@ ___
 
 #### Defined in
 
-[src/responses/ModalBuilder.ts:40](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/ModalBuilder.ts#L40)
+[src/responses/ModalBuilder.ts:40](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/ModalBuilder.ts#L40)

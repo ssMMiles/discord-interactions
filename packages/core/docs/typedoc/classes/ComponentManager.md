@@ -34,7 +34,7 @@
 
 #### Defined in
 
-[core/src/app/managers/ComponentManager.ts:14](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/ComponentManager.ts#L14)
+[app/managers/ComponentManager.ts:14](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/ComponentManager.ts#L14)
 
 ## Properties
 
@@ -68,7 +68,7 @@
 
 #### Defined in
 
-[core/src/app/managers/ComponentManager.ts:36](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/ComponentManager.ts#L36)
+[app/managers/ComponentManager.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/ComponentManager.ts#L36)
 
 ___
 
@@ -88,7 +88,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/ComponentManager.ts:22](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/ComponentManager.ts#L22)
+[app/managers/ComponentManager.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/ComponentManager.ts#L22)
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/ComponentManager.ts:18](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/ComponentManager.ts#L18)
+[app/managers/ComponentManager.ts:18](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/ComponentManager.ts#L18)
 
 ___
 
@@ -128,7 +128,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/ComponentManager.ts:26](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/ComponentManager.ts#L26)
+[app/managers/ComponentManager.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/ComponentManager.ts#L26)
 
 ___
 
@@ -148,4 +148,4 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/ComponentManager.ts:32](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/ComponentManager.ts#L32)
+[app/managers/ComponentManager.ts:32](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/ComponentManager.ts#L32)

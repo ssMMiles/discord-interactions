@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[src/commands/options/subcommand-group.ts:10](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand-group.ts#L10)
+[src/commands/options/subcommand-group.ts:10](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand-group.ts#L10)

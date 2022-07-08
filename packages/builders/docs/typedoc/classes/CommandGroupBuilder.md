@@ -4,7 +4,7 @@
 
 ## Hierarchy
 
-- `CommandBuilder`<`RESTPostAPIChatInputApplicationCommandsJSONBody`\>
+- `CommandBuilderBase`<`RESTPostAPIChatInputApplicationCommandsJSONBody`\>
 
   ↳ **`CommandGroupBuilder`**
 
@@ -59,11 +59,11 @@
 
 #### Overrides
 
-CommandBuilder&lt;RESTPostAPIChatInputApplicationCommandsJSONBody\&gt;.constructor
+CommandBuilderBase&lt;RESTPostAPIChatInputApplicationCommandsJSONBody\&gt;.constructor
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:24](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandGroupBuilder.ts#L24)
+[src/commands/CommandGroupBuilder.ts:29](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L29)
 
 ## Properties
 
@@ -73,11 +73,11 @@ CommandBuilder&lt;RESTPostAPIChatInputApplicationCommandsJSONBody\&gt;.construct
 
 #### Inherited from
 
-CommandBuilder.default\_member\_permissions
+CommandBuilderBase.default\_member\_permissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:37](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L37)
+[src/commands/CommandBuilderBase.ts:42](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L42)
 
 ___
 
@@ -87,7 +87,7 @@ ___
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:19](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandGroupBuilder.ts#L19)
+[src/commands/CommandGroupBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L24)
 
 ___
 
@@ -97,7 +97,7 @@ ___
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:20](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandGroupBuilder.ts#L20)
+[src/commands/CommandGroupBuilder.ts:25](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L25)
 
 ___
 
@@ -107,11 +107,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.dm\_permission
+CommandBuilderBase.dm\_permission
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:32](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L32)
+[src/commands/CommandBuilderBase.ts:37](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L37)
 
 ___
 
@@ -121,11 +121,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.name
+CommandBuilderBase.name
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:17](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L17)
+[src/commands/CommandBuilderBase.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L22)
 
 ___
 
@@ -135,11 +135,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.name\_localizations
+CommandBuilderBase.name\_localizations
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:22](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L22)
+[src/commands/CommandBuilderBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L27)
 
 ___
 
@@ -149,7 +149,7 @@ ___
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:22](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandGroupBuilder.ts#L22)
+[src/commands/CommandGroupBuilder.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L27)
 
 ___
 
@@ -159,11 +159,11 @@ ___
 
 #### Overrides
 
-CommandBuilder.type
+CommandBuilderBase.type
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:17](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandGroupBuilder.ts#L17)
+[src/commands/CommandGroupBuilder.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L22)
 
 ## Methods
 
@@ -183,11 +183,11 @@ CommandBuilder.type
 
 #### Inherited from
 
-CommandBuilder.addRequiredPermissions
+CommandBuilderBase.addRequiredPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:94](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L94)
+[src/commands/CommandBuilderBase.ts:99](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L99)
 
 ___
 
@@ -207,7 +207,7 @@ ___
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:63](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandGroupBuilder.ts#L63)
+[src/commands/CommandGroupBuilder.ts:68](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L68)
 
 ___
 
@@ -227,7 +227,7 @@ ___
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:74](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandGroupBuilder.ts#L74)
+[src/commands/CommandGroupBuilder.ts:79](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L79)
 
 ___
 
@@ -241,11 +241,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.clearRequiredPermissions
+CommandBuilderBase.clearRequiredPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:106](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L106)
+[src/commands/CommandBuilderBase.ts:111](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L111)
 
 ___
 
@@ -259,11 +259,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.disallowAllPermissions
+CommandBuilderBase.disallowAllPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:112](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L112)
+[src/commands/CommandBuilderBase.ts:117](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L117)
 
 ___
 
@@ -283,11 +283,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.equals
+CommandBuilderBase.equals
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:118](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L118)
+[src/commands/CommandBuilderBase.ts:123](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L123)
 
 ___
 
@@ -307,11 +307,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.removeRequiredPermissions
+CommandBuilderBase.removeRequiredPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:100](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L100)
+[src/commands/CommandBuilderBase.ts:105](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L105)
 
 ___
 
@@ -331,11 +331,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setDMEnabled
+CommandBuilderBase.setDMEnabled
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:82](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L82)
+[src/commands/CommandBuilderBase.ts:87](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L87)
 
 ___
 
@@ -355,7 +355,7 @@ ___
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:35](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandGroupBuilder.ts#L35)
+[src/commands/CommandGroupBuilder.ts:40](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L40)
 
 ___
 
@@ -375,7 +375,7 @@ ___
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:44](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandGroupBuilder.ts#L44)
+[src/commands/CommandGroupBuilder.ts:49](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L49)
 
 ___
 
@@ -396,7 +396,7 @@ ___
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:53](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandGroupBuilder.ts#L53)
+[src/commands/CommandGroupBuilder.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L58)
 
 ___
 
@@ -417,11 +417,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setLocalizedName
+CommandBuilderBase.setLocalizedName
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:73](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L73)
+[src/commands/CommandBuilderBase.ts:78](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L78)
 
 ___
 
@@ -441,11 +441,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setName
+CommandBuilderBase.setName
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:55](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L55)
+[src/commands/CommandBuilderBase.ts:60](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L60)
 
 ___
 
@@ -465,11 +465,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setNameLocalizations
+CommandBuilderBase.setNameLocalizations
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:64](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L64)
+[src/commands/CommandBuilderBase.ts:69](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L69)
 
 ___
 
@@ -489,37 +489,26 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setRequiredPermissions
+CommandBuilderBase.setRequiredPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:88](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L88)
+[src/commands/CommandBuilderBase.ts:93](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L93)
 
 ___
 
 ### toJSON
 
-▸ **toJSON**(): `Object`
+▸ **toJSON**(): [`CommandGroupData`](../modules.md#commandgroupdata)
 
 #### Returns
 
-`Object`
-
-| Name | Type |
-| :------ | :------ |
-| `default_member_permissions` | ``null`` \| `string` |
-| `description` | `string` |
-| `description_localizations` | `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> |
-| `dm_permission` | `undefined` \| `boolean` |
-| `name` | `string` |
-| `name_localizations` | `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> |
-| `options` | (`APIApplicationCommandSubcommandOption` \| `APIApplicationCommandSubcommandGroupOption`)[] |
-| `type` | `ChatInput` |
+[`CommandGroupData`](../modules.md#commandgroupdata)
 
 #### Overrides
 
-CommandBuilder.toJSON
+CommandBuilderBase.toJSON
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:82](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandGroupBuilder.ts#L82)
+[src/commands/CommandGroupBuilder.ts:87](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L87)

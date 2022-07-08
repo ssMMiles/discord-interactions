@@ -35,7 +35,7 @@
 
 #### Defined in
 
-[src/commands/permissions/Bitfield.ts:7](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/permissions/Bitfield.ts#L7)
+[src/commands/permissions/Bitfield.ts:7](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L7)
 
 ## Properties
 
@@ -45,7 +45,7 @@
 
 #### Defined in
 
-[src/commands/permissions/Bitfield.ts:5](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/permissions/Bitfield.ts#L5)
+[src/commands/permissions/Bitfield.ts:5](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L5)
 
 ## Methods
 
@@ -65,7 +65,7 @@
 
 #### Defined in
 
-[src/commands/permissions/Bitfield.ts:25](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/permissions/Bitfield.ts#L25)
+[src/commands/permissions/Bitfield.ts:25](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L25)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[src/commands/permissions/Bitfield.ts:54](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/permissions/Bitfield.ts#L54)
+[src/commands/permissions/Bitfield.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L54)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/commands/permissions/Bitfield.ts:50](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/permissions/Bitfield.ts#L50)
+[src/commands/permissions/Bitfield.ts:50](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L50)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[src/commands/permissions/Bitfield.ts:15](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/permissions/Bitfield.ts#L15)
+[src/commands/permissions/Bitfield.ts:15](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L15)
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 #### Defined in
 
-[src/commands/permissions/Bitfield.ts:40](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/permissions/Bitfield.ts#L40)
+[src/commands/permissions/Bitfield.ts:40](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L40)
 
 ___
 
@@ -147,4 +147,4 @@ ___
 
 #### Defined in
 
-[src/commands/permissions/Bitfield.ts:58](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/permissions/Bitfield.ts#L58)
+[src/commands/permissions/Bitfield.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L58)

@@ -20,4 +20,4 @@
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:22](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L22)
+[src/commands/SlashCommandBuilder.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L27)

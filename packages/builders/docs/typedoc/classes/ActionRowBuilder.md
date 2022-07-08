@@ -55,7 +55,7 @@ ComponentBuilderBase&lt;APIActionRowComponent&lt;APIMessageActionRowComponent /*
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:26](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ActionRowBuilder.ts#L26)
+[src/components/ActionRowBuilder.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L26)
 
 ## Properties
 
@@ -65,7 +65,7 @@ ComponentBuilderBase&lt;APIActionRowComponent&lt;APIMessageActionRowComponent /*
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:24](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ActionRowBuilder.ts#L24)
+[src/components/ActionRowBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L24)
 
 ___
 
@@ -79,7 +79,7 @@ ComponentBuilderBase.data
 
 #### Defined in
 
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ComponentBuilderBase.ts#L19)
 
 ## Methods
 
@@ -99,7 +99,7 @@ ComponentBuilderBase.data
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:36](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ActionRowBuilder.ts#L36)
+[src/components/ActionRowBuilder.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L36)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:45](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ActionRowBuilder.ts#L45)
+[src/components/ActionRowBuilder.ts:45](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L45)
 
 ___
 
@@ -137,4 +137,4 @@ ComponentBuilderBase.toJSON
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:50](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/components/ActionRowBuilder.ts#L50)
+[src/components/ActionRowBuilder.ts:50](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L50)

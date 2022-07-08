@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:30](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L30)
+[app/managers/CommandManager.ts:30](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L30)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:32](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L32)
+[app/managers/CommandManager.ts:32](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L32)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[core/src/app/managers/CommandManager.ts:31](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/managers/CommandManager.ts#L31)
+[app/managers/CommandManager.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L31)

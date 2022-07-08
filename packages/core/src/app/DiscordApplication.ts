@@ -3,7 +3,6 @@
 import { REST } from "@discordjs/rest";
 import type { APIInteraction, APIInteractionResponse, Snowflake } from "discord-api-types/v10";
 import type { FormData } from "formdata-node";
-import { createPublicKey, verify } from "node:crypto";
 import { InteractionHandlerTimedOut, UnauthorizedInteraction } from "../util/errors.js";
 import { ContextMap, InteractionHooks, _handleInteraction } from "./index.js";
 import { CommandManager } from "./managers/CommandManager.js";
@@ -109,18 +108,8 @@ export class DiscordApplication {
     signature: string,
     body: string
   ): boolean {
-    const message = Buffer.from(timestamp + body, "utf-8");
-    const signatureBuffer = Buffer.from(signature, "hex");
-
-    return verify(
-      null,
-      message,
-      createPublicKey({
-        key: Buffer.concat([Buffer.from("MCowBQYDK2VwAyEA", "base64"), publicKey]),
-        format: "der",
-        type: "spki"
-      }),
-      signatureBuffer
+    throw new Error(
+      "Unimplemented. Please import one of `@discord-interactions/verify`/`@discord-interactions/verify-node`."
     );
   }
 

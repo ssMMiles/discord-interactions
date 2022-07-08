@@ -61,7 +61,7 @@ SlashCommandOptionBase.constructor
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:17](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L17)
+[src/commands/options/SlashCommandOptionBase.ts:17](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L17)
 
 ## Properties
 
@@ -75,7 +75,7 @@ SlashCommandOptionBase.description
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
+[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
 
 ___
 
@@ -89,7 +89,7 @@ SlashCommandOptionBase.description\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
+[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
 
 ___
 
@@ -103,7 +103,7 @@ SlashCommandOptionBase.name
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
+[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
 
 ___
 
@@ -117,7 +117,7 @@ SlashCommandOptionBase.name\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
+[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
 
 ___
 
@@ -127,7 +127,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:17](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand.ts#L17)
+[src/commands/options/subcommand.ts:17](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L17)
 
 ___
 
@@ -141,7 +141,7 @@ SlashCommandOptionBase.required
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
+[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
 
 ___
 
@@ -155,7 +155,7 @@ SlashCommandOptionBase.type
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:15](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand.ts#L15)
+[src/commands/options/subcommand.ts:15](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L15)
 
 ## Methods
 
@@ -175,7 +175,7 @@ SlashCommandOptionBase.type
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:64](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand.ts#L64)
+[src/commands/options/subcommand.ts:64](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L64)
 
 ___
 
@@ -195,7 +195,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:24](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand.ts#L24)
+[src/commands/options/subcommand.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L24)
 
 ___
 
@@ -215,7 +215,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:44](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand.ts#L44)
+[src/commands/options/subcommand.ts:44](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L44)
 
 ___
 
@@ -235,7 +235,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:99](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand.ts#L99)
+[src/commands/options/subcommand.ts:99](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L99)
 
 ___
 
@@ -255,7 +255,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:74](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand.ts#L74)
+[src/commands/options/subcommand.ts:74](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L74)
 
 ___
 
@@ -275,7 +275,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:114](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand.ts#L114)
+[src/commands/options/subcommand.ts:114](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L114)
 
 ___
 
@@ -295,7 +295,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:54](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand.ts#L54)
+[src/commands/options/subcommand.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L54)
 
 ___
 
@@ -315,7 +315,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:84](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand.ts#L84)
+[src/commands/options/subcommand.ts:84](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L84)
 
 ___
 
@@ -335,7 +335,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:34](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand.ts#L34)
+[src/commands/options/subcommand.ts:34](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L34)
 
 ___
 
@@ -359,7 +359,7 @@ SlashCommandOptionBase.setDescriptionLocalizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:52](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L52)
+[src/commands/options/SlashCommandOptionBase.ts:52](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L52)
 
 ___
 
@@ -384,7 +384,7 @@ SlashCommandOptionBase.setLocalizedDescription
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:61](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L61)
+[src/commands/options/SlashCommandOptionBase.ts:61](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L61)
 
 ___
 
@@ -409,7 +409,7 @@ SlashCommandOptionBase.setLocalizedName
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:45](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L45)
+[src/commands/options/SlashCommandOptionBase.ts:45](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L45)
 
 ___
 
@@ -433,7 +433,7 @@ SlashCommandOptionBase.setNameLocalizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:36](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L36)
+[src/commands/options/SlashCommandOptionBase.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L36)
 
 ___
 
@@ -457,7 +457,7 @@ SlashCommandOptionBase.setRequired
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:27](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L27)
+[src/commands/options/SlashCommandOptionBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L27)
 
 ___
 
@@ -475,4 +475,4 @@ SlashCommandOptionBase.toJSON
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:124](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/options/subcommand.ts#L124)
+[src/commands/options/subcommand.ts:124](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L124)

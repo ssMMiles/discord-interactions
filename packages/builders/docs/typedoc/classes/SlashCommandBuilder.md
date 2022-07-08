@@ -4,7 +4,7 @@
 
 ## Hierarchy
 
-- `CommandBuilder`<`RESTPostAPIChatInputApplicationCommandsJSONBody`\>
+- `CommandBuilderBase`<`RESTPostAPIChatInputApplicationCommandsJSONBody`\>
 
   ↳ **`SlashCommandBuilder`**
 
@@ -66,11 +66,11 @@
 
 #### Overrides
 
-CommandBuilder&lt;RESTPostAPIChatInputApplicationCommandsJSONBody\&gt;.constructor
+CommandBuilderBase&lt;RESTPostAPIChatInputApplicationCommandsJSONBody\&gt;.constructor
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:33](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L33)
+[src/commands/SlashCommandBuilder.ts:38](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L38)
 
 ## Properties
 
@@ -80,11 +80,11 @@ CommandBuilder&lt;RESTPostAPIChatInputApplicationCommandsJSONBody\&gt;.construct
 
 #### Inherited from
 
-CommandBuilder.default\_member\_permissions
+CommandBuilderBase.default\_member\_permissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:37](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L37)
+[src/commands/CommandBuilderBase.ts:42](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L42)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:28](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L28)
+[src/commands/SlashCommandBuilder.ts:33](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L33)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:29](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L29)
+[src/commands/SlashCommandBuilder.ts:34](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L34)
 
 ___
 
@@ -114,11 +114,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.dm\_permission
+CommandBuilderBase.dm\_permission
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:32](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L32)
+[src/commands/CommandBuilderBase.ts:37](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L37)
 
 ___
 
@@ -128,11 +128,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.name
+CommandBuilderBase.name
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:17](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L17)
+[src/commands/CommandBuilderBase.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L22)
 
 ___
 
@@ -142,11 +142,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.name\_localizations
+CommandBuilderBase.name\_localizations
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:22](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L22)
+[src/commands/CommandBuilderBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L27)
 
 ___
 
@@ -156,7 +156,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:31](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L31)
+[src/commands/SlashCommandBuilder.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L36)
 
 ___
 
@@ -166,11 +166,11 @@ ___
 
 #### Overrides
 
-CommandBuilder.type
+CommandBuilderBase.type
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:26](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L26)
+[src/commands/SlashCommandBuilder.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L31)
 
 ## Methods
 
@@ -190,7 +190,7 @@ CommandBuilder.type
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:112](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L112)
+[src/commands/SlashCommandBuilder.ts:117](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L117)
 
 ___
 
@@ -210,7 +210,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:72](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L72)
+[src/commands/SlashCommandBuilder.ts:77](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L77)
 
 ___
 
@@ -230,7 +230,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:92](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L92)
+[src/commands/SlashCommandBuilder.ts:97](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L97)
 
 ___
 
@@ -250,7 +250,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:147](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L147)
+[src/commands/SlashCommandBuilder.ts:152](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L152)
 
 ___
 
@@ -270,7 +270,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:122](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L122)
+[src/commands/SlashCommandBuilder.ts:127](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L127)
 
 ___
 
@@ -290,7 +290,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:162](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L162)
+[src/commands/SlashCommandBuilder.ts:167](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L167)
 
 ___
 
@@ -310,11 +310,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.addRequiredPermissions
+CommandBuilderBase.addRequiredPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:94](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L94)
+[src/commands/CommandBuilderBase.ts:99](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L99)
 
 ___
 
@@ -334,7 +334,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:102](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L102)
+[src/commands/SlashCommandBuilder.ts:107](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L107)
 
 ___
 
@@ -354,7 +354,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:132](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L132)
+[src/commands/SlashCommandBuilder.ts:137](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L137)
 
 ___
 
@@ -374,7 +374,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:82](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L82)
+[src/commands/SlashCommandBuilder.ts:87](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L87)
 
 ___
 
@@ -388,11 +388,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.clearRequiredPermissions
+CommandBuilderBase.clearRequiredPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:106](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L106)
+[src/commands/CommandBuilderBase.ts:111](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L111)
 
 ___
 
@@ -406,11 +406,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.disallowAllPermissions
+CommandBuilderBase.disallowAllPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:112](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L112)
+[src/commands/CommandBuilderBase.ts:117](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L117)
 
 ___
 
@@ -430,11 +430,11 @@ ___
 
 #### Overrides
 
-CommandBuilder.equals
+CommandBuilderBase.equals
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:172](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L172)
+[src/commands/SlashCommandBuilder.ts:177](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L177)
 
 ___
 
@@ -454,11 +454,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.removeRequiredPermissions
+CommandBuilderBase.removeRequiredPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:100](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L100)
+[src/commands/CommandBuilderBase.ts:105](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L105)
 
 ___
 
@@ -478,11 +478,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setDMEnabled
+CommandBuilderBase.setDMEnabled
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:82](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L82)
+[src/commands/CommandBuilderBase.ts:87](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L87)
 
 ___
 
@@ -502,7 +502,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:44](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L44)
+[src/commands/SlashCommandBuilder.ts:49](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L49)
 
 ___
 
@@ -522,7 +522,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:53](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L53)
+[src/commands/SlashCommandBuilder.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L58)
 
 ___
 
@@ -543,7 +543,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:62](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L62)
+[src/commands/SlashCommandBuilder.ts:67](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L67)
 
 ___
 
@@ -564,11 +564,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setLocalizedName
+CommandBuilderBase.setLocalizedName
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:73](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L73)
+[src/commands/CommandBuilderBase.ts:78](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L78)
 
 ___
 
@@ -588,11 +588,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setName
+CommandBuilderBase.setName
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:55](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L55)
+[src/commands/CommandBuilderBase.ts:60](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L60)
 
 ___
 
@@ -612,11 +612,11 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setNameLocalizations
+CommandBuilderBase.setNameLocalizations
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:64](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L64)
+[src/commands/CommandBuilderBase.ts:69](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L69)
 
 ___
 
@@ -636,26 +636,26 @@ ___
 
 #### Inherited from
 
-CommandBuilder.setRequiredPermissions
+CommandBuilderBase.setRequiredPermissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:88](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/CommandBuilderBase.ts#L88)
+[src/commands/CommandBuilderBase.ts:93](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L93)
 
 ___
 
 ### toJSON
 
-▸ **toJSON**(): `Omit`<`APIApplicationCommand` & { `type`: `ChatInput`  }, ``"id"`` \| ``"guild_id"`` \| ``"application_id"`` \| ``"version"``\>
+▸ **toJSON**(): [`SlashCommandData`](../modules.md#slashcommanddata)
 
 #### Returns
 
-`Omit`<`APIApplicationCommand` & { `type`: `ChatInput`  }, ``"id"`` \| ``"guild_id"`` \| ``"application_id"`` \| ``"version"``\>
+[`SlashCommandData`](../modules.md#slashcommanddata)
 
 #### Overrides
 
-CommandBuilder.toJSON
+CommandBuilderBase.toJSON
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:250](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/commands/SlashCommandBuilder.ts#L250)
+[src/commands/SlashCommandBuilder.ts:255](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L255)

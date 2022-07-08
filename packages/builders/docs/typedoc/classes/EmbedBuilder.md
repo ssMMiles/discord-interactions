@@ -43,7 +43,7 @@
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:37](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L37)
+[src/responses/EmbedBuilder.ts:37](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L37)
 
 ## Properties
 
@@ -53,7 +53,7 @@
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:35](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L35)
+[src/responses/EmbedBuilder.ts:35](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L35)
 
 ## Methods
 
@@ -73,7 +73,7 @@
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:56](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L56)
+[src/responses/EmbedBuilder.ts:56](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L56)
 
 ___
 
@@ -93,7 +93,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:92](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L92)
+[src/responses/EmbedBuilder.ts:92](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L92)
 
 ___
 
@@ -113,7 +113,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:107](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L107)
+[src/responses/EmbedBuilder.ts:107](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L107)
 
 ___
 
@@ -133,7 +133,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:122](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L122)
+[src/responses/EmbedBuilder.ts:122](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L122)
 
 ___
 
@@ -153,7 +153,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:82](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L82)
+[src/responses/EmbedBuilder.ts:82](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L82)
 
 ___
 
@@ -173,7 +173,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:132](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L132)
+[src/responses/EmbedBuilder.ts:132](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L132)
 
 ___
 
@@ -193,7 +193,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:147](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L147)
+[src/responses/EmbedBuilder.ts:147](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L147)
 
 ___
 
@@ -213,7 +213,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:157](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L157)
+[src/responses/EmbedBuilder.ts:157](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L157)
 
 ___
 
@@ -233,7 +233,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:167](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L167)
+[src/responses/EmbedBuilder.ts:167](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L167)
 
 ___
 
@@ -253,7 +253,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:177](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L177)
+[src/responses/EmbedBuilder.ts:177](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L177)
 
 ___
 
@@ -273,7 +273,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:187](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L187)
+[src/responses/EmbedBuilder.ts:187](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L187)
 
 ___
 
@@ -295,7 +295,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:72](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L72)
+[src/responses/EmbedBuilder.ts:72](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L72)
 
 ___
 
@@ -309,4 +309,4 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:195](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/builders/src/responses/EmbedBuilder.ts#L195)
+[src/responses/EmbedBuilder.ts:195](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L195)

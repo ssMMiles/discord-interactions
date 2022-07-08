@@ -49,7 +49,7 @@ RegisteredCommandBase<MessageCommandBuilder, MessageCommandContext\>.constructor
 
 #### Defined in
 
-[core/src/app/commands/Base.ts:25](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/Base.ts#L25)
+[app/commands/Base.ts:25](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L25)
 
 ## Properties
 
@@ -63,7 +63,7 @@ RegisteredCommandBase.builder
 
 #### Defined in
 
-[core/src/app/commands/Base.ts:20](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/Base.ts#L20)
+[app/commands/Base.ts:20](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L20)
 
 ___
 
@@ -91,7 +91,7 @@ RegisteredCommandBase.handler
 
 #### Defined in
 
-[core/src/app/commands/Base.ts:21](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/Base.ts#L21)
+[app/commands/Base.ts:21](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L21)
 
 ___
 
@@ -105,7 +105,7 @@ RegisteredCommandBase.id
 
 #### Defined in
 
-[core/src/app/commands/Base.ts:23](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/Base.ts#L23)
+[app/commands/Base.ts:23](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L23)
 
 ## Methods
 
@@ -123,7 +123,7 @@ RegisteredCommandBase.delete
 
 #### Defined in
 
-[core/src/app/commands/Base.ts:71](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/Base.ts#L71)
+[app/commands/Base.ts:71](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L71)
 
 ___
 
@@ -147,7 +147,7 @@ RegisteredCommandBase.setHandler
 
 #### Defined in
 
-[core/src/app/commands/Base.ts:44](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/Base.ts#L44)
+[app/commands/Base.ts:44](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L44)
 
 ___
 
@@ -165,7 +165,7 @@ RegisteredCommandBase.sync
 
 #### Defined in
 
-[core/src/app/commands/Base.ts:51](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/Base.ts#L51)
+[app/commands/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L51)
 
 ___
 
@@ -183,4 +183,4 @@ RegisteredCommandBase.unregister
 
 #### Defined in
 
-[core/src/app/commands/Base.ts:64](https://github.com/ssMMiles/interactions.ts/blob/df1cc9e/packages/core/src/app/commands/Base.ts#L64)
+[app/commands/Base.ts:64](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L64)
