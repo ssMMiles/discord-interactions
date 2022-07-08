@@ -1,7 +1,5 @@
 import { DiscordApplication } from "@discord-interactions/core";
-import { register } from "@discord-interactions/verify-node";
-
-register();
+import "../dist/index.js";
 
 import data from "./data.json";
 const { PUBLIC_KEY, SIGNATURE } = data;
