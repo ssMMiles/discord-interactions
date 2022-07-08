@@ -2,6 +2,8 @@
 
 # Class: DiscordApplication
 
+Main class for managing a Discord Application's commands and handling interactions.
+
 ## Table of contents
 
 ### Constructors
@@ -38,10 +40,6 @@
 | :------ | :------ |
 | `options` | [`DiscordApplicationOptions`](../interfaces/DiscordApplicationOptions.md) |
 
-#### Defined in
-
-[app/DiscordApplication.ts:77](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L77)
-
 ## Properties
 
 ### cache
@@ -50,7 +48,7 @@
 
 #### Defined in
 
-[app/DiscordApplication.ts:51](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L51)
+[app/DiscordApplication.ts:51](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L51)
 
 ___
 
@@ -60,7 +58,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:49](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L49)
+[app/DiscordApplication.ts:49](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L49)
 
 ___
 
@@ -70,7 +68,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:53](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L53)
+[app/DiscordApplication.ts:53](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L53)
 
 ___
 
@@ -80,7 +78,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L54)
+[app/DiscordApplication.ts:54](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L54)
 
 ___
 
@@ -90,7 +88,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:56](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L56)
+[app/DiscordApplication.ts:56](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L56)
 
 ___
 
@@ -100,17 +98,17 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:59](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L59)
+[app/DiscordApplication.ts:59](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L59)
 
 ___
 
 ### publicKey
 
-• **publicKey**: `Buffer`
+• **publicKey**: `string`
 
 #### Defined in
 
-[app/DiscordApplication.ts:48](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L48)
+[app/DiscordApplication.ts:48](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L48)
 
 ___
 
@@ -120,7 +118,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:75](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L75)
+[app/DiscordApplication.ts:75](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L75)
 
 ___
 
@@ -130,7 +128,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L58)
+[app/DiscordApplication.ts:58](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L58)
 
 ## Methods
 
@@ -155,51 +153,47 @@ ___
 
 `void`
 
-#### Defined in
-
-[app/DiscordApplication.ts:170](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L170)
-
 ___
 
 ### handleInteraction
 
 ▸ **handleInteraction**(`body`, `signature`, `timestamp?`): [`Promise`<`FormData` \| `APIInteractionResponse`\>, `Promise`<`void`\>]
 
+Handle an incoming interaction request
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `body` | `string` |  |
-| `signature` | `string` \| ``false`` |  |
-| `timestamp?` | `string` |  |
+| `body` | `string` | Raw interaction body |
+| `signature` | `string` \| ``false`` | Request's "X-Signature-Ed25519" header or false to skip signature verification |
+| `timestamp?` | `string` | Request's "X-Signature-Timestamp" header |
 
 #### Returns
 
 [`Promise`<`FormData` \| `APIInteractionResponse`\>, `Promise`<`void`\>]
 
-#### Defined in
-
-[app/DiscordApplication.ts:123](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L123)
+Array containing the interaction response, and a callback to be called after you have sent the response
 
 ___
 
 ### verifyInteractionSignature
 
-▸ `Static` **verifyInteractionSignature**(`publicKey`, `timestamp`, `signature`, `body`): `boolean`
+▸ `Static` **verifyInteractionSignature**(`publicKey`, `timestamp`, `signature`, `body`): `Promise`<`boolean`\>
+
+Verify an incoming interaction's signature. This method is not implemented in `core`, please import either `@discord-interactions/verify` or `@discord-interactions/verify-node`.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `publicKey` | `Buffer` |  |
-| `timestamp` | `string` |  |
-| `signature` | `string` |  |
-| `body` | `string` |  |
+| `publicKey` | `string` | Your application's public key |
+| `timestamp` | `string` | Interaction's "X-Signature-Timestamp" header |
+| `signature` | `string` | Interaction's "X-Signature-Ed25519" header |
+| `body` | `string` | Raw interaction body |
 
 #### Returns
 
-`boolean`
+`Promise`<`boolean`\>
 
-#### Defined in
-
-[app/DiscordApplication.ts:105](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L105)
+Whether or not the signature is valid

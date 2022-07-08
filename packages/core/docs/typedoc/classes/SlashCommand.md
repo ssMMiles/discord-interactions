@@ -55,10 +55,6 @@
 
 HandledInteraction&lt;RESTPostAPIChatInputApplicationCommandsJSONBody, SlashCommandBuilder, SlashCommandContext\&gt;.constructor
 
-#### Defined in
-
-[app/commands/SlashCommand.ts:17](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/SlashCommand.ts#L17)
-
 ## Properties
 
 ### autocompleteHandler
@@ -85,7 +81,7 @@ HandledInteraction&lt;RESTPostAPIChatInputApplicationCommandsJSONBody, SlashComm
 
 #### Defined in
 
-[app/commands/SlashCommand.ts:15](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/SlashCommand.ts#L15)
+[app/commands/SlashCommand.ts:15](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/SlashCommand.ts#L15)
 
 ___
 
@@ -103,7 +99,7 @@ HandledInteraction.builder
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L4)
+[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 ___
 
@@ -121,7 +117,7 @@ HandledInteraction.components
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L11)
+[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 ___
 
@@ -153,7 +149,7 @@ HandledInteraction.handler
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L9)
+[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L9)
 
 ## Accessors
 
@@ -168,10 +164,6 @@ HandledInteraction.handler
 #### Inherited from
 
 HandledInteraction.data
-
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:5](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L5)
 
 ## Methods
 
@@ -189,10 +181,6 @@ HandledInteraction.data
 
 [`SlashCommand`](SlashCommand.md)
 
-#### Defined in
-
-[app/commands/SlashCommand.ts:44](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/SlashCommand.ts#L44)
-
 ___
 
 ### setAutocompleteHandler
@@ -209,10 +197,6 @@ ___
 
 [`SlashCommand`](SlashCommand.md)
 
-#### Defined in
-
-[app/commands/SlashCommand.ts:32](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/SlashCommand.ts#L32)
-
 ___
 
 ### setComponents
@@ -228,10 +212,6 @@ ___
 #### Returns
 
 [`SlashCommand`](SlashCommand.md)
-
-#### Defined in
-
-[app/commands/SlashCommand.ts:38](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/SlashCommand.ts#L38)
 
 ___
 
@@ -252,7 +232,3 @@ ___
 #### Inherited from
 
 HandledInteraction.setHandler
-
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:20](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L20)

@@ -44,15 +44,13 @@
 
 ButtonBuilderBase.constructor
 
-#### Defined in
-
-[src/components/ButtonBuilder.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L19)
-
 ## Properties
 
 ### data
 
 • `Readonly` **data**: `Partial`<`APIButtonComponent`\>
+
+The API data associated with this component
 
 #### Inherited from
 
@@ -60,7 +58,7 @@ ButtonBuilderBase.data
 
 #### Defined in
 
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/components/ComponentBuilderBase.ts#L19)
 
 ## Methods
 
@@ -68,11 +66,13 @@ ButtonBuilderBase.data
 
 ▸ **setDisabled**(`disabled?`): [`LinkButtonBuilder`](LinkButtonBuilder.md)
 
+Sets whether this button is disable or not
+
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `disabled` | `boolean` | `true` |  |
+| `disabled` | `boolean` | `true` | Whether or not to disable this button or not |
 
 #### Returns
 
@@ -82,21 +82,19 @@ ButtonBuilderBase.data
 
 ButtonBuilderBase.setDisabled
 
-#### Defined in
-
-[src/components/ButtonBuilder.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L54)
-
 ___
 
 ### setEmoji
 
 ▸ **setEmoji**(`emoji`): [`LinkButtonBuilder`](LinkButtonBuilder.md)
 
+Sets the emoji to display on this button
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `emoji` | `APIMessageComponentEmoji` |  |
+| `emoji` | `APIMessageComponentEmoji` | The emoji to display on this button |
 
 #### Returns
 
@@ -106,21 +104,19 @@ ___
 
 ButtonBuilderBase.setEmoji
 
-#### Defined in
-
-[src/components/ButtonBuilder.ts:45](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L45)
-
 ___
 
 ### setLabel
 
 ▸ **setLabel**(`label`): [`LinkButtonBuilder`](LinkButtonBuilder.md)
 
+Sets the label for this button
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `label` | `string` |  |
+| `label` | `string` | The label to display on this button |
 
 #### Returns
 
@@ -130,21 +126,19 @@ ___
 
 ButtonBuilderBase.setLabel
 
-#### Defined in
-
-[src/components/ButtonBuilder.ts:63](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L63)
-
 ___
 
 ### setStyle
 
 ▸ **setStyle**(`style`): [`LinkButtonBuilder`](LinkButtonBuilder.md)
 
+Sets the style of this button
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `style` | [`ButtonStyle`](../enums/ButtonStyle.md) |  |
+| `style` | [`ButtonStyle`](../enums/ButtonStyle.md) | The style of the button |
 
 #### Returns
 
@@ -154,29 +148,23 @@ ___
 
 ButtonBuilderBase.setStyle
 
-#### Defined in
-
-[src/components/ButtonBuilder.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L36)
-
 ___
 
 ### setURL
 
 ▸ **setURL**(`url`): [`LinkButtonBuilder`](LinkButtonBuilder.md)
 
+Sets the URL for this button
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `url` | `string` |  |
+| `url` | `string` | The URL to open when this button is clicked |
 
 #### Returns
 
 [`LinkButtonBuilder`](LinkButtonBuilder.md)
-
-#### Defined in
-
-[src/components/ButtonBuilder.ts:101](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L101)
 
 ___
 
@@ -191,7 +179,3 @@ ___
 #### Overrides
 
 ButtonBuilderBase.toJSON
-
-#### Defined in
-
-[src/components/ButtonBuilder.ts:106](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L106)

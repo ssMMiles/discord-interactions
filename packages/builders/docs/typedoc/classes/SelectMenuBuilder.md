@@ -2,6 +2,8 @@
 
 # Class: SelectMenuBuilder
 
+Represents a non-validated select menu component
+
 ## Hierarchy
 
 - `ComponentBuilderBase`<`APISelectMenuComponent`\>
@@ -46,15 +48,13 @@
 
 ComponentBuilderBase&lt;APISelectMenuComponent\&gt;.constructor
 
-#### Defined in
-
-[src/components/SelectMenuBuilder.ts:14](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L14)
-
 ## Properties
 
 ### data
 
 • `Readonly` **data**: `Partial`<`APISelectMenuComponent`\>
+
+The API data associated with this component
 
 #### Inherited from
 
@@ -62,7 +62,7 @@ ComponentBuilderBase.data
 
 #### Defined in
 
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/components/ComponentBuilderBase.ts#L19)
 
 ___
 
@@ -70,9 +70,11 @@ ___
 
 • `Readonly` **options**: [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)[]
 
+The options within this select menu
+
 #### Defined in
 
-[src/components/SelectMenuBuilder.ts:12](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L12)
+[src/components/SelectMenuBuilder.ts:12](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/components/SelectMenuBuilder.ts#L12)
 
 ## Methods
 
@@ -80,19 +82,17 @@ ___
 
 ▸ **addOptions**(...`options`): [`SelectMenuBuilder`](SelectMenuBuilder.md)
 
+Adds options to this select menu
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `...options` | [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)[] |  |
+| `...options` | [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)[] | The options to add to this select menu |
 
 #### Returns
 
 [`SelectMenuBuilder`](SelectMenuBuilder.md)
-
-#### Defined in
-
-[src/components/SelectMenuBuilder.ts:71](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L71)
 
 ___
 
@@ -100,19 +100,17 @@ ___
 
 ▸ **setCustomId**(`customId`): [`SelectMenuBuilder`](SelectMenuBuilder.md)
 
+Sets the custom Id for this select menu
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `customId` | `string` |  |
+| `customId` | `string` | The custom id to use for this select menu |
 
 #### Returns
 
 [`SelectMenuBuilder`](SelectMenuBuilder.md)
-
-#### Defined in
-
-[src/components/SelectMenuBuilder.ts:52](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L52)
 
 ___
 
@@ -120,25 +118,25 @@ ___
 
 ▸ **setDisabled**(`disabled?`): [`SelectMenuBuilder`](SelectMenuBuilder.md)
 
+Sets whether or not this select menu is disabled
+
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `disabled` | `boolean` | `true` |  |
+| `disabled` | `boolean` | `true` | Whether or not this select menu is disabled |
 
 #### Returns
 
 [`SelectMenuBuilder`](SelectMenuBuilder.md)
-
-#### Defined in
-
-[src/components/SelectMenuBuilder.ts:61](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L61)
 
 ___
 
 ### setMaxValues
 
 ▸ **setMaxValues**(`maxValues`): [`SelectMenuBuilder`](SelectMenuBuilder.md)
+
+Sets the maximum values that must be selected in the select menu
 
 #### Parameters
 
@@ -150,29 +148,23 @@ ___
 
 [`SelectMenuBuilder`](SelectMenuBuilder.md)
 
-#### Defined in
-
-[src/components/SelectMenuBuilder.ts:43](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L43)
-
 ___
 
 ### setMinValues
 
 ▸ **setMinValues**(`minValues`): [`SelectMenuBuilder`](SelectMenuBuilder.md)
 
+Sets the minimum values that must be selected in the select menu
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `minValues` | `number` |  |
+| `minValues` | `number` | The minimum values that must be selected |
 
 #### Returns
 
 [`SelectMenuBuilder`](SelectMenuBuilder.md)
-
-#### Defined in
-
-[src/components/SelectMenuBuilder.ts:34](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L34)
 
 ___
 
@@ -180,19 +172,17 @@ ___
 
 ▸ **setOptions**(`options`): [`SelectMenuBuilder`](SelectMenuBuilder.md)
 
+Sets the options on this select menu
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `options` | (`APISelectMenuOption` \| [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md))[] |  |
+| `options` | (`APISelectMenuOption` \| [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md))[] | The options to set on this select menu |
 
 #### Returns
 
 [`SelectMenuBuilder`](SelectMenuBuilder.md)
-
-#### Defined in
-
-[src/components/SelectMenuBuilder.ts:83](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L83)
 
 ___
 
@@ -200,19 +190,17 @@ ___
 
 ▸ **setPlaceholder**(`placeholder`): [`SelectMenuBuilder`](SelectMenuBuilder.md)
 
+Sets the placeholder for this select menu
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `placeholder` | `string` |  |
+| `placeholder` | `string` | The placeholder to use for this select menu |
 
 #### Returns
 
 [`SelectMenuBuilder`](SelectMenuBuilder.md)
-
-#### Defined in
-
-[src/components/SelectMenuBuilder.ts:25](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L25)
 
 ___
 
@@ -227,7 +215,3 @@ ___
 #### Overrides
 
 ComponentBuilderBase.toJSON
-
-#### Defined in
-
-[src/components/SelectMenuBuilder.ts:94](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuBuilder.ts#L94)

@@ -50,10 +50,6 @@ HandledInteraction<
   UserCommandContext
 \>.constructor
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:13](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L13)
-
 ## Properties
 
 ### builder
@@ -66,7 +62,7 @@ HandledInteraction.builder
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L4)
+[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 ___
 
@@ -80,7 +76,7 @@ HandledInteraction.components
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L11)
+[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 ## Accessors
 
@@ -95,10 +91,6 @@ HandledInteraction.components
 #### Inherited from
 
 HandledInteraction.data
-
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:5](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L5)
 
 ## Methods
 
@@ -120,10 +112,6 @@ HandledInteraction.data
 
 HandledInteraction.handler
 
-#### Defined in
-
-[app/commands/UserCommand.ts:15](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/UserCommand.ts#L15)
-
 ___
 
 ### setHandler
@@ -143,7 +131,3 @@ ___
 #### Inherited from
 
 HandledInteraction.setHandler
-
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:20](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L20)

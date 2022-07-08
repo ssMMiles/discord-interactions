@@ -51,10 +51,6 @@
 
 SlashCommandOptionBase.constructor
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:17](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L17)
-
 ## Properties
 
 ### channel\_types
@@ -63,7 +59,7 @@ SlashCommandOptionBase.constructor
 
 #### Defined in
 
-[src/commands/options/channel.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/channel.ts#L19)
+[src/commands/options/channel.ts:19](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/channel.ts#L19)
 
 ___
 
@@ -77,7 +73,7 @@ SlashCommandOptionBase.description
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
+[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
 
 ___
 
@@ -91,7 +87,7 @@ SlashCommandOptionBase.description\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
+[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
 
 ___
 
@@ -105,7 +101,7 @@ SlashCommandOptionBase.name
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
+[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
 
 ___
 
@@ -119,7 +115,7 @@ SlashCommandOptionBase.name\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
+[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
 
 ___
 
@@ -133,7 +129,7 @@ SlashCommandOptionBase.required
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
+[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
 
 ___
 
@@ -147,7 +143,7 @@ SlashCommandOptionBase.type
 
 #### Defined in
 
-[src/commands/options/channel.ts:18](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/channel.ts#L18)
+[src/commands/options/channel.ts:18](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/channel.ts#L18)
 
 ## Methods
 
@@ -155,25 +151,25 @@ SlashCommandOptionBase.type
 
 ▸ **addChannelTypes**(...`channelTypes`): [`SlashCommandChannelOption`](SlashCommandChannelOption.md)
 
+Adds channel types to this option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `...channelTypes` | (`GuildText` \| `GuildVoice` \| `GuildCategory` \| `GuildNews` \| `GuildNewsThread` \| `GuildPublicThread` \| `GuildPrivateThread` \| `GuildStageVoice`)[] |  |
+| `...channelTypes` | (`GuildText` \| `GuildVoice` \| `GuildCategory` \| `GuildNews` \| `GuildNewsThread` \| `GuildPublicThread` \| `GuildPrivateThread` \| `GuildStageVoice`)[] | The channel types to add |
 
 #### Returns
 
 [`SlashCommandChannelOption`](SlashCommandChannelOption.md)
-
-#### Defined in
-
-[src/commands/options/channel.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/channel.ts#L26)
 
 ___
 
 ### setDescriptionLocalizations
 
 ▸ **setDescriptionLocalizations**(`localizations`): [`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+
+Set a dictionary of localized descriptions
 
 #### Parameters
 
@@ -189,15 +185,13 @@ ___
 
 SlashCommandOptionBase.setDescriptionLocalizations
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:52](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L52)
-
 ___
 
 ### setLocalizedDescription
 
 ▸ **setLocalizedDescription**(`locale`, `description`): [`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+
+Set a single locale's description
 
 #### Parameters
 
@@ -214,15 +208,13 @@ ___
 
 SlashCommandOptionBase.setLocalizedDescription
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:61](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L61)
-
 ___
 
 ### setLocalizedName
 
 ▸ **setLocalizedName**(`locale`, `name`): `void`
+
+Set a single locale's name
 
 #### Parameters
 
@@ -239,15 +231,13 @@ ___
 
 SlashCommandOptionBase.setLocalizedName
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:45](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L45)
-
 ___
 
 ### setNameLocalizations
 
 ▸ **setNameLocalizations**(`localizations`): [`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+
+Set a dictionary of localized names
 
 #### Parameters
 
@@ -263,21 +253,19 @@ ___
 
 SlashCommandOptionBase.setNameLocalizations
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L36)
-
 ___
 
 ### setRequired
 
 ▸ **setRequired**(`required`): [`SlashCommandChannelOption`](SlashCommandChannelOption.md)
 
+Marks the option as required
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `required` | `boolean` |  |
+| `required` | `boolean` | If this option should be required |
 
 #### Returns
 
@@ -286,10 +274,6 @@ ___
 #### Inherited from
 
 SlashCommandOptionBase.setRequired
-
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L27)
 
 ___
 
@@ -304,7 +288,3 @@ ___
 #### Overrides
 
 SlashCommandOptionBase.toJSON
-
-#### Defined in
-
-[src/commands/options/channel.ts:34](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/channel.ts#L34)

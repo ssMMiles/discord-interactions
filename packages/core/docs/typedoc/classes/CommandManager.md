@@ -2,6 +2,8 @@
 
 # Class: CommandManager
 
+Manager for your application's commands. Lets you register fully handled commands as well as exposes methods for managing your commands on the API side.
+
 ## Table of contents
 
 ### Constructors
@@ -43,10 +45,6 @@
 | `manager` | [`DiscordApplication`](DiscordApplication.md) |
 | `guildId?` | `string` |
 
-#### Defined in
-
-[app/managers/CommandManager.ts:53](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L53)
-
 ## Properties
 
 ### 1
@@ -55,7 +53,7 @@
 
 #### Defined in
 
-[app/managers/CommandManager.ts:45](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L45)
+[app/managers/CommandManager.ts:45](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/managers/CommandManager.ts#L45)
 
 ___
 
@@ -65,7 +63,7 @@ ___
 
 #### Defined in
 
-[app/managers/CommandManager.ts:46](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L46)
+[app/managers/CommandManager.ts:46](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/managers/CommandManager.ts#L46)
 
 ___
 
@@ -75,13 +73,15 @@ ___
 
 #### Defined in
 
-[app/managers/CommandManager.ts:47](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L47)
+[app/managers/CommandManager.ts:47](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/managers/CommandManager.ts#L47)
 
 ## Methods
 
 ### deleteAPICommand
 
 ▸ **deleteAPICommand**(`id`): `Promise`<`void`\>
+
+Delete an Application Command
 
 #### Parameters
 
@@ -93,23 +93,17 @@ ___
 
 `Promise`<`void`\>
 
-#### Defined in
-
-[app/managers/CommandManager.ts:276](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L276)
-
 ___
 
 ### deleteUnregistered
 
 ▸ **deleteUnregistered**(): `Promise`<`void`\>
 
+Deletes remote commands that aren't registered with this command manager
+
 #### Returns
 
 `Promise`<`void`\>
-
-#### Defined in
-
-[app/managers/CommandManager.ts:198](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L198)
 
 ___
 
@@ -117,20 +111,18 @@ ___
 
 ▸ **get**(`name`, `type?`): `undefined` \| [`RegisteredCommand`](../modules.md#registeredcommand)
 
+Fetch a registered command
+
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `name` | `string` | `undefined` |  |
-| `type` | `ApplicationCommandType` | `ApplicationCommandType.ChatInput` |  |
+| `name` | `string` | `undefined` | Command name |
+| `type` | `ApplicationCommandType` | `ApplicationCommandType.ChatInput` | Command type |
 
 #### Returns
 
 `undefined` \| [`RegisteredCommand`](../modules.md#registeredcommand)
-
-#### Defined in
-
-[app/managers/CommandManager.ts:100](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L100)
 
 ___
 
@@ -138,19 +130,17 @@ ___
 
 ▸ **getAPICommands**(`withLocalizations?`): `Promise`<`APIApplicationCommand`[]\>
 
+Fetch your application's commands
+
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `withLocalizations` | `boolean` | `true` |  |
+| `withLocalizations` | `boolean` | `true` | Whether to include full localization dictionaries (name_localizations and description_localizations) in the returned objects, instead of the name_localized and description_localized fields. Default false. |
 
 #### Returns
 
 `Promise`<`APIApplicationCommand`[]\>
-
-#### Defined in
-
-[app/managers/CommandManager.ts:235](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L235)
 
 ___
 
@@ -158,26 +148,26 @@ ___
 
 ▸ **has**(`name`, `type?`): `boolean`
 
+Check whether a command is registered
+
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `name` | `string` | `undefined` |  |
-| `type` | `ApplicationCommandType` | `ApplicationCommandType.ChatInput` |  |
+| `name` | `string` | `undefined` | Command name |
+| `type` | `ApplicationCommandType` | `ApplicationCommandType.ChatInput` | Command type |
 
 #### Returns
 
 `boolean`
-
-#### Defined in
-
-[app/managers/CommandManager.ts:91](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L91)
 
 ___
 
 ### putAPICommand
 
 ▸ **putAPICommand**<`T`\>(`data`): `Promise`<`T`\>
+
+Create or Update an Application Command
 
 #### Type parameters
 
@@ -195,15 +185,13 @@ ___
 
 `Promise`<`T`\>
 
-#### Defined in
-
-[app/managers/CommandManager.ts:253](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L253)
-
 ___
 
 ### putAPICommands
 
 ▸ **putAPICommands**(`data`): `Promise`<`APIApplicationCommand`[]\>
+
+Bulk update your application's commands
 
 #### Parameters
 
@@ -215,15 +203,13 @@ ___
 
 `Promise`<`APIApplicationCommand`[]\>
 
-#### Defined in
-
-[app/managers/CommandManager.ts:244](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L244)
-
 ___
 
 ### register
 
 ▸ **register**(...`commands`): `Promise`<[`RegisteredCommand`](../modules.md#registeredcommand)[]\>
+
+Register a new command to be handled. This will create the command on Discord if it doesn't exist, or overwrite it if the existing remote version differs.
 
 #### Parameters
 
@@ -235,31 +221,25 @@ ___
 
 `Promise`<[`RegisteredCommand`](../modules.md#registeredcommand)[]\>
 
-#### Defined in
-
-[app/managers/CommandManager.ts:126](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L126)
-
 ___
 
 ### rename
 
 ▸ **rename**(`oldName`, `newName`, `type`): `void`
 
+Rename a registered command
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `oldName` | `string` |  |
-| `newName` | `string` |  |
-| `type` | `ApplicationCommandType` |  |
+| `oldName` | `string` | Old name |
+| `newName` | `string` | New Name |
+| `type` | `ApplicationCommandType` | Command type |
 
 #### Returns
 
 `void`
-
-#### Defined in
-
-[app/managers/CommandManager.ts:114](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L114)
 
 ___
 
@@ -279,23 +259,17 @@ ___
 
 `void`
 
-#### Defined in
-
-[app/managers/CommandManager.ts:104](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L104)
-
 ___
 
 ### toAPICommands
 
 ▸ **toAPICommands**(): `RESTPostAPIApplicationCommandsJSONBody`[]
 
+Get an array of API command objects for all registered commands
+
 #### Returns
 
 `RESTPostAPIApplicationCommandsJSONBody`[]
-
-#### Defined in
-
-[app/managers/CommandManager.ts:217](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L217)
 
 ___
 
@@ -303,27 +277,27 @@ ___
 
 ▸ **unregister**(`name`, `type?`, `deleteCommand?`): `Promise`<`void`\>
 
+Unregister a command from this client
+
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `name` | `string` | `undefined` |  |
-| `type` | `ApplicationCommandType` | `ApplicationCommandType.ChatInput` |  |
-| `deleteCommand` | `boolean` | `false` |  |
+| `name` | `string` | `undefined` | Command name |
+| `type` | `ApplicationCommandType` | `ApplicationCommandType.ChatInput` | Command type |
+| `deleteCommand` | `boolean` | `false` | Whether to also delete this command from Discord (default: false) |
 
 #### Returns
 
 `Promise`<`void`\>
-
-#### Defined in
-
-[app/managers/CommandManager.ts:185](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L185)
 
 ___
 
 ### updateAPICommand
 
 ▸ **updateAPICommand**<`T`\>(`data`, `id`): `Promise`<`T`\>
+
+Update an Application Command
 
 #### Type parameters
 
@@ -341,7 +315,3 @@ ___
 #### Returns
 
 `Promise`<`T`\>
-
-#### Defined in
-
-[app/managers/CommandManager.ts:262](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/CommandManager.ts#L262)

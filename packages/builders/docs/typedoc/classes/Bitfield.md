@@ -2,6 +2,8 @@
 
 # Class: Bitfield
 
+Data structure that makes it easy to interact with a bitfield.
+
 ## Table of contents
 
 ### Constructors
@@ -33,10 +35,6 @@
 | :------ | :------ |
 | `...bits` | `bigint`[] |
 
-#### Defined in
-
-[src/commands/permissions/Bitfield.ts:7](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L7)
-
 ## Properties
 
 ### bitfield
@@ -45,27 +43,25 @@
 
 #### Defined in
 
-[src/commands/permissions/Bitfield.ts:5](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L5)
+[src/commands/permissions/Bitfield.ts:5](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/permissions/Bitfield.ts#L5)
 
 ## Methods
 
 ### add
 
-▸ **add**(...`bits`): [`Bitfield`](Bitfield.md)
+▸ **add**(...`bits?`): [`Bitfield`](Bitfield.md)
+
+Adds bits to these ones.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...bits` | `bigint`[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `...bits?` | `bigint`[] | Bits to add |
 
 #### Returns
 
 [`Bitfield`](Bitfield.md)
-
-#### Defined in
-
-[src/commands/permissions/Bitfield.ts:25](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L25)
 
 ___
 
@@ -77,10 +73,6 @@ ___
 
 `void`
 
-#### Defined in
-
-[src/commands/permissions/Bitfield.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L54)
-
 ___
 
 ### disallowAll
@@ -91,49 +83,43 @@ ___
 
 `void`
 
-#### Defined in
-
-[src/commands/permissions/Bitfield.ts:50](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L50)
-
 ___
 
 ### has
 
 ▸ **has**(`bit`): `boolean`
 
+Checks whether the bitfield has a bit
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `bit` | `bigint` |  |
+| `bit` | `bigint` | Bit to check for |
 
 #### Returns
 
 `boolean`
 
-#### Defined in
-
-[src/commands/permissions/Bitfield.ts:15](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L15)
-
 ___
 
 ### remove
 
-▸ **remove**(...`bits`): [`Bitfield`](Bitfield.md)
+▸ **remove**(...`bits?`): [`Bitfield`](Bitfield.md)
+
+Removes bits from these.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...bits` | `bigint`[] |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `...bits?` | `bigint`[] | Bits to remove |
 
 #### Returns
 
 [`Bitfield`](Bitfield.md)
 
-#### Defined in
-
-[src/commands/permissions/Bitfield.ts:40](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L40)
+These bits or new BitField if the instance is frozen.
 
 ___
 
@@ -144,7 +130,3 @@ ___
 #### Returns
 
 ``null`` \| `string`
-
-#### Defined in
-
-[src/commands/permissions/Bitfield.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/permissions/Bitfield.ts#L58)

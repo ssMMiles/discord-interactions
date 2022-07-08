@@ -4,20 +4,24 @@
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [toJSON](ToAPIApplicationCommandGroupOptions.md#tojson)
 
-## Methods
+## Properties
 
 ### toJSON
 
-▸ **toJSON**(): `APIApplicationCommandSubcommandOption` \| `APIApplicationCommandSubcommandGroupOption`
+• **toJSON**: () => `APIApplicationCommandSubcommandOption` \| `APIApplicationCommandSubcommandGroupOption`
 
-#### Returns
+#### Type declaration
+
+▸ (): `APIApplicationCommandSubcommandOption` \| `APIApplicationCommandSubcommandGroupOption`
+
+##### Returns
 
 `APIApplicationCommandSubcommandOption` \| `APIApplicationCommandSubcommandGroupOption`
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandGroupBuilder.ts#L18)
+[src/commands/CommandGroupBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandGroupBuilder.ts#L18)

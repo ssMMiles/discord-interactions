@@ -22,7 +22,7 @@ export interface DiscordApplicationOptions {
   clientId: Snowflake;
 
   /** Application Public Key */
-  publicKey: string | Buffer;
+  publicKey: string;
 
   /** Application Bot Token */
   token: string;
@@ -45,7 +45,7 @@ export type ResponseCallback<T extends APIInteractionResponse | FormData = APIIn
  * Main class for managing a Discord Application's commands and handling interactions.
  */
 export class DiscordApplication {
-  public publicKey: Buffer;
+  public publicKey: string;
   public clientId: Snowflake;
 
   public cache?: GenericCache;
@@ -76,7 +76,7 @@ export class DiscordApplication {
 
   constructor(options: DiscordApplicationOptions) {
     this.clientId = options.clientId;
-    this.publicKey = Buffer.isBuffer(options.publicKey) ? options.publicKey : Buffer.from(options.publicKey, "hex");
+    this.publicKey = options.publicKey;
 
     this.rest = new REST().setToken(options.token);
 
@@ -95,19 +95,23 @@ export class DiscordApplication {
   }
 
   /**
-   * Verify an incoming interaction's signature
+   * Verify an incoming interaction's signature. This method is not implemented in `core`, please import either `@discord-interactions/verify` or `@discord-interactions/verify-node`.
    * @param publicKey Your application's public key
    * @param timestamp Interaction's "X-Signature-Timestamp" header
    * @param signature Interaction's "X-Signature-Ed25519" header
    * @param body Raw interaction body
    * @returns Whether or not the signature is valid
    */
-  public static verifyInteractionSignature(
-    publicKey: Buffer,
+  public static async verifyInteractionSignature(
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    publicKey: string,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     timestamp: string,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     signature: string,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     body: string
-  ): boolean {
+  ): Promise<boolean> {
     throw new Error(
       "Unimplemented. Please import one of `@discord-interactions/verify`/`@discord-interactions/verify-node`."
     );

@@ -31,10 +31,6 @@
 | :------ | :------ |
 | `data?` | `string` \| `APIModalInteractionResponseCallbackData` |
 
-#### Defined in
-
-[src/responses/ModalBuilder.ts:11](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/ModalBuilder.ts#L11)
-
 ## Properties
 
 ### data
@@ -43,7 +39,7 @@
 
 #### Defined in
 
-[src/responses/ModalBuilder.ts:9](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/ModalBuilder.ts#L9)
+[src/responses/ModalBuilder.ts:9](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/responses/ModalBuilder.ts#L9)
 
 ## Methods
 
@@ -61,10 +57,6 @@
 
 [`ModalBuilder`](ModalBuilder.md)
 
-#### Defined in
-
-[src/responses/ModalBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/ModalBuilder.ts#L24)
-
 ___
 
 ### setComponents
@@ -80,10 +72,6 @@ ___
 #### Returns
 
 [`ModalBuilder`](ModalBuilder.md)
-
-#### Defined in
-
-[src/responses/ModalBuilder.ts:32](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/ModalBuilder.ts#L32)
 
 ___
 
@@ -101,10 +89,6 @@ ___
 
 [`ModalBuilder`](ModalBuilder.md)
 
-#### Defined in
-
-[src/responses/ModalBuilder.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/ModalBuilder.ts#L19)
-
 ___
 
 ### toJSON
@@ -114,7 +98,3 @@ ___
 #### Returns
 
 `APIModalInteractionResponseCallbackData`
-
-#### Defined in
-
-[src/responses/ModalBuilder.ts:40](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/ModalBuilder.ts#L40)

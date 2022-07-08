@@ -16,15 +16,36 @@
 
 ### Properties
 
+- [autocompleteHandler](ISlashCommand.md#autocompletehandler)
 - [builder](ISlashCommand.md#builder)
 - [components](ISlashCommand.md#components)
-
-### Methods
-
-- [autocompleteHandler](ISlashCommand.md#autocompletehandler)
 - [handler](ISlashCommand.md#handler)
 
 ## Properties
+
+### autocompleteHandler
+
+• `Optional` **autocompleteHandler**: (`ctx`: [`AutocompleteContext`](../classes/AutocompleteContext.md)) => `Promise`<`void`\>
+
+#### Type declaration
+
+▸ (`ctx`): `Promise`<`void`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `ctx` | [`AutocompleteContext`](../classes/AutocompleteContext.md) |
+
+##### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[app/commands/SlashCommand.ts:8](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/SlashCommand.ts#L8)
+
+___
 
 ### builder
 
@@ -36,7 +57,7 @@ ICommandBase.builder
 
 #### Defined in
 
-[app/commands/Base.ts:6](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L6)
+[app/commands/Base.ts:6](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/Base.ts#L6)
 
 ___
 
@@ -50,41 +71,25 @@ ICommandBase.components
 
 #### Defined in
 
-[app/commands/Base.ts:10](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L10)
-
-## Methods
-
-### autocompleteHandler
-
-▸ `Optional` **autocompleteHandler**(`ctx`): `Promise`<`void`\>
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`AutocompleteContext`](../classes/AutocompleteContext.md) |
-
-#### Returns
-
-`Promise`<`void`\>
-
-#### Defined in
-
-[app/commands/SlashCommand.ts:8](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/SlashCommand.ts#L8)
+[app/commands/Base.ts:10](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/Base.ts#L10)
 
 ___
 
 ### handler
 
-▸ **handler**(`ctx`): `Promise`<`void`\>
+• **handler**: (`ctx`: [`SlashCommandContext`](../classes/SlashCommandContext.md)) => `Promise`<`void`\>
 
-#### Parameters
+#### Type declaration
+
+▸ (`ctx`): `Promise`<`void`\>
+
+##### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `ctx` | `Context` |
+| `ctx` | [`SlashCommandContext`](../classes/SlashCommandContext.md) |
 
-#### Returns
+##### Returns
 
 `Promise`<`void`\>
 
@@ -94,4 +99,4 @@ ICommandBase.handler
 
 #### Defined in
 
-[app/commands/Base.ts:8](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L8)
+[app/commands/Base.ts:8](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/Base.ts#L8)

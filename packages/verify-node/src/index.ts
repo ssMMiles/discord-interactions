@@ -1,12 +1,12 @@
 import { DiscordApplication } from "@discord-interactions/core";
 import { createPublicKey, verify } from "node:crypto";
 
-DiscordApplication.verifyInteractionSignature = function verifyInteractionSignature(
-  publicKey: Buffer,
+DiscordApplication.verifyInteractionSignature = async function verifyInteractionSignature(
+  publicKey: string,
   timestamp: string,
   signature: string,
   body: string
-): boolean {
+): Promise<boolean> {
   const message = Buffer.from(timestamp + body, "utf-8");
   const signatureBuffer = Buffer.from(signature, "hex");
 
@@ -14,7 +14,7 @@ DiscordApplication.verifyInteractionSignature = function verifyInteractionSignat
     null,
     message,
     createPublicKey({
-      key: Buffer.concat([Buffer.from("MCowBQYDK2VwAyEA", "base64"), publicKey]),
+      key: Buffer.concat([Buffer.from("MCowBQYDK2VwAyEA", "base64"), Buffer.from(publicKey, "hex")]),
       format: "der",
       type: "spki"
     }),

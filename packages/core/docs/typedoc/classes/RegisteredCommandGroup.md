@@ -37,10 +37,6 @@
 | `command.handlers` | [`ISubcommandHandlers`](../modules.md#isubcommandhandlers) |
 | `id` | `string` |
 
-#### Defined in
-
-[app/commands/CommandGroup.ts:51](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L51)
-
 ## Properties
 
 ### builder
@@ -49,7 +45,7 @@
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:46](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L46)
+[app/commands/CommandGroup.ts:46](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L46)
 
 ___
 
@@ -59,7 +55,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:47](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L47)
+[app/commands/CommandGroup.ts:47](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L47)
 
 ___
 
@@ -69,7 +65,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:49](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L49)
+[app/commands/CommandGroup.ts:49](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L49)
 
 ## Methods
 
@@ -77,13 +73,11 @@ ___
 
 ▸ **delete**(): `Promise`<`void`\>
 
+Delete and unregister this command
+
 #### Returns
 
 `Promise`<`void`\>
-
-#### Defined in
-
-[app/commands/CommandGroup.ts:97](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L97)
 
 ___
 
@@ -91,19 +85,17 @@ ___
 
 ▸ **setHandlers**(`handler`): `void`
 
+Update this command's handler function
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `handler` | [`ISubcommandHandlers`](../modules.md#isubcommandhandlers) |  |
+| `handler` | [`ISubcommandHandlers`](../modules.md#isubcommandhandlers) | New command handler |
 
 #### Returns
 
 `void`
-
-#### Defined in
-
-[app/commands/CommandGroup.ts:70](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L70)
 
 ___
 
@@ -111,13 +103,11 @@ ___
 
 ▸ **sync**(): `Promise`<`void`\>
 
+Sync this command's builder with the API
+
 #### Returns
 
 `Promise`<`void`\>
-
-#### Defined in
-
-[app/commands/CommandGroup.ts:77](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L77)
 
 ___
 
@@ -125,10 +115,8 @@ ___
 
 ▸ **unregister**(): `Promise`<`void`\>
 
+Unregister this command
+
 #### Returns
 
 `Promise`<`void`\>
-
-#### Defined in
-
-[app/commands/CommandGroup.ts:90](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L90)

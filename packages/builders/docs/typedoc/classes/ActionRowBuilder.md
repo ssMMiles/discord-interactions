@@ -2,6 +2,8 @@
 
 # Class: ActionRowBuilder<T\>
 
+Represents an action row component
+
 ## Type parameters
 
 | Name | Type |
@@ -53,19 +55,17 @@
 
 ComponentBuilderBase&lt;APIActionRowComponent&lt;APIMessageActionRowComponent /* \| APIModalActionRowComponent*/\&gt;\&gt;.constructor
 
-#### Defined in
-
-[src/components/ActionRowBuilder.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L26)
-
 ## Properties
 
 ### components
 
 • `Readonly` **components**: `T`[] = `[]`
 
+The components within this action row
+
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L24)
+[src/components/ActionRowBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/components/ActionRowBuilder.ts#L24)
 
 ___
 
@@ -73,13 +73,15 @@ ___
 
 • `Readonly` **data**: `Partial`<`APIActionRowComponent`<`APIMessageActionRowComponent`\>\>
 
+The API data associated with this component
+
 #### Inherited from
 
 ComponentBuilderBase.data
 
 #### Defined in
 
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/components/ComponentBuilderBase.ts#L19)
 
 ## Methods
 
@@ -87,19 +89,17 @@ ComponentBuilderBase.data
 
 ▸ **addComponents**(...`components`): [`ActionRowBuilder`](ActionRowBuilder.md)<`T`\>
 
+Adds components to this action row.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `...components` | `T`[] |  |
+| `...components` | `T`[] | The components to add to this action row. |
 
 #### Returns
 
 [`ActionRowBuilder`](ActionRowBuilder.md)<`T`\>
-
-#### Defined in
-
-[src/components/ActionRowBuilder.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L36)
 
 ___
 
@@ -107,19 +107,17 @@ ___
 
 ▸ **setComponents**(`components`): [`ActionRowBuilder`](ActionRowBuilder.md)<`T`\>
 
+Sets the components in this action row
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `components` | `T`[] |  |
+| `components` | `T`[] | The components to set this row to |
 
 #### Returns
 
 [`ActionRowBuilder`](ActionRowBuilder.md)<`T`\>
-
-#### Defined in
-
-[src/components/ActionRowBuilder.ts:45](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L45)
 
 ___
 
@@ -134,7 +132,3 @@ ___
 #### Overrides
 
 ComponentBuilderBase.toJSON
-
-#### Defined in
-
-[src/components/ActionRowBuilder.ts:50](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ActionRowBuilder.ts#L50)

@@ -1,4 +1,5 @@
 import { DiscordApplication } from "@discord-interactions/core";
+import "@discord-interactions/verify-node";
 import "dotenv/config";
 
 import data from "./data.json";
@@ -6,7 +7,6 @@ const { PUBLIC_KEY, SIGNATURE } = data;
 
 describe("Discord Application", () => {
   describe("Authentication", () => {
-    const publicKey = Buffer.from(PUBLIC_KEY, "hex");
     const signature = SIGNATURE;
 
     const invalidSignature = signature.replace("1", "2");
@@ -14,12 +14,14 @@ describe("Discord Application", () => {
     const timestamp = "";
     const body = "Oh no!";
 
-    it("Valid Signature Is Accepted", () => {
-      expect(DiscordApplication.verifyInteractionSignature(publicKey, timestamp, signature, body)).toBe(true);
+    it("Valid Signature Is Accepted", async () => {
+      expect(await DiscordApplication.verifyInteractionSignature(PUBLIC_KEY, timestamp, signature, body)).toBe(true);
     });
 
-    it("Invalid Signature Is Denied", () => {
-      expect(DiscordApplication.verifyInteractionSignature(publicKey, timestamp, invalidSignature, body)).toBe(false);
+    it("Invalid Signature Is Denied", async () => {
+      expect(await DiscordApplication.verifyInteractionSignature(PUBLIC_KEY, timestamp, invalidSignature, body)).toBe(
+        false
+      );
     });
   });
 });

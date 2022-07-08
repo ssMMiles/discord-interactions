@@ -23,6 +23,8 @@
 
 • `Optional` **height**: `number`
 
+Height of image
+
 #### Inherited from
 
 Omit.height
@@ -37,15 +39,19 @@ ___
 
 • `Optional` **proxyURL**: `string`
 
+The proxy URL for the image
+
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:28](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/EmbedBuilder.ts#L28)
+[src/responses/EmbedBuilder.ts:28](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/responses/EmbedBuilder.ts#L28)
 
 ___
 
 ### url
 
 • **url**: `string`
+
+Source url of image (only supports http(s) and attachments)
 
 #### Inherited from
 
@@ -60,6 +66,8 @@ ___
 ### width
 
 • `Optional` **width**: `number`
+
+Width of image
 
 #### Inherited from
 

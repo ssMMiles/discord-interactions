@@ -61,19 +61,17 @@ BaseInteractionContext&lt;
   APIApplicationCommandAutocompleteResponse
 \&gt;.constructor
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L36)
-
 ## Properties
 
 ### group
 
 • `Optional` **group**: `string`
 
+The subcommand group
+
 #### Defined in
 
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:34](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L34)
+[app/contexts/ApplicationCommand/AutocompleteContext.ts:34](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L34)
 
 ___
 
@@ -87,7 +85,7 @@ BaseInteractionContext.interaction
 
 #### Defined in
 
-[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L26)
+[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L26)
 
 ___
 
@@ -101,7 +99,7 @@ BaseInteractionContext.isDM
 
 #### Defined in
 
-[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L31)
+[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L31)
 
 ___
 
@@ -115,7 +113,7 @@ BaseInteractionContext.manager
 
 #### Defined in
 
-[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L24)
+[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L24)
 
 ___
 
@@ -125,7 +123,7 @@ ___
 
 #### Defined in
 
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:23](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L23)
+[app/contexts/ApplicationCommand/AutocompleteContext.ts:23](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L23)
 
 ___
 
@@ -135,7 +133,7 @@ ___
 
 #### Defined in
 
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L24)
+[app/contexts/ApplicationCommand/AutocompleteContext.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L24)
 
 ___
 
@@ -143,9 +141,11 @@ ___
 
 • `Optional` **parentCommand**: `string`
 
+The parent command, if this is a subcommand.
+
 #### Defined in
 
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:29](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L29)
+[app/contexts/ApplicationCommand/AutocompleteContext.ts:29](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L29)
 
 ___
 
@@ -159,7 +159,7 @@ BaseInteractionContext.user
 
 #### Defined in
 
-[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L29)
+[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L29)
 
 ## Accessors
 
@@ -174,10 +174,6 @@ BaseInteractionContext.user
 #### Inherited from
 
 BaseInteractionContext.expired
-
-#### Defined in
-
-[app/contexts/Base.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L19)
 
 ## Methods
 
@@ -202,10 +198,6 @@ BaseInteractionContext.expired
 #### Returns
 
 `Promise`<`Builder`\>
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:68](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L68)
 
 ___
 
@@ -235,10 +227,6 @@ ___
 
 BaseInteractionContext.createGlobalComponent
 
-#### Defined in
-
-[app/contexts/Base.ts:65](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L65)
-
 ___
 
 ### decorate
@@ -260,10 +248,6 @@ ___
 
 BaseInteractionContext.decorate
 
-#### Defined in
-
-[app/contexts/Base.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L58)
-
 ___
 
 ### getIntegerOption
@@ -279,10 +263,6 @@ ___
 #### Returns
 
 `APIApplicationCommandInteractionDataNumberOption`
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:90](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L90)
 
 ___
 
@@ -300,10 +280,6 @@ ___
 
 `APIApplicationCommandInteractionDataNumberOption`
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:97](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L97)
-
 ___
 
 ### getStringOption
@@ -319,10 +295,6 @@ ___
 #### Returns
 
 `APIApplicationCommandInteractionDataStringOption`
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:83](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L83)
 
 ___
 
@@ -344,10 +316,6 @@ ___
 
 BaseInteractionContext.rawReply
 
-#### Defined in
-
-[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L54)
-
 ___
 
 ### reply
@@ -363,7 +331,3 @@ ___
 #### Returns
 
 `Promise`<`void`\>
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:74](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L74)

@@ -59,10 +59,6 @@
 
 SlashCommandOptionBase.constructor
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:17](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L17)
-
 ## Properties
 
 ### description
@@ -75,7 +71,7 @@ SlashCommandOptionBase.description
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
+[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
 
 ___
 
@@ -89,7 +85,7 @@ SlashCommandOptionBase.description\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
+[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
 
 ___
 
@@ -103,7 +99,7 @@ SlashCommandOptionBase.name
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
+[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
 
 ___
 
@@ -117,7 +113,7 @@ SlashCommandOptionBase.name\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
+[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
 
 ___
 
@@ -127,7 +123,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:17](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L17)
+[src/commands/options/subcommand.ts:17](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/subcommand.ts#L17)
 
 ___
 
@@ -141,7 +137,7 @@ SlashCommandOptionBase.required
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
+[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
 
 ___
 
@@ -155,7 +151,7 @@ SlashCommandOptionBase.type
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:15](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L15)
+[src/commands/options/subcommand.ts:15](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/subcommand.ts#L15)
 
 ## Methods
 
@@ -163,19 +159,17 @@ SlashCommandOptionBase.type
 
 ▸ **addAttachmentOption**(`input`): [`SubcommandOption`](SubcommandOption.md)
 
+Adds an attachment option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandAttachmentOption`](SlashCommandAttachmentOption.md) |  |
+| `input` | [`SlashCommandAttachmentOption`](SlashCommandAttachmentOption.md) | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SubcommandOption`](SubcommandOption.md)
-
-#### Defined in
-
-[src/commands/options/subcommand.ts:64](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L64)
 
 ___
 
@@ -183,19 +177,17 @@ ___
 
 ▸ **addBooleanOption**(`input`): [`SubcommandOption`](SubcommandOption.md)
 
+Adds a boolean option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandBooleanOption`](SlashCommandBooleanOption.md) |  |
+| `input` | [`SlashCommandBooleanOption`](SlashCommandBooleanOption.md) | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SubcommandOption`](SubcommandOption.md)
-
-#### Defined in
-
-[src/commands/options/subcommand.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L24)
 
 ___
 
@@ -203,19 +195,17 @@ ___
 
 ▸ **addChannelOption**(`input`): [`SubcommandOption`](SubcommandOption.md)
 
+Adds a channel option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandChannelOption`](SlashCommandChannelOption.md) |  |
+| `input` | [`SlashCommandChannelOption`](SlashCommandChannelOption.md) | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SubcommandOption`](SubcommandOption.md)
-
-#### Defined in
-
-[src/commands/options/subcommand.ts:44](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L44)
 
 ___
 
@@ -223,19 +213,17 @@ ___
 
 ▸ **addIntegerOption**(`input`): [`SubcommandOption`](SubcommandOption.md)
 
+Adds an integer option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandIntegerOption`](SlashCommandIntegerOption.md) \| `Omit`<[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md), ``"addChoices"``\> |  |
+| `input` | [`SlashCommandIntegerOption`](SlashCommandIntegerOption.md) \| `Omit`<[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md), ``"addChoices"``\> | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SubcommandOption`](SubcommandOption.md)
-
-#### Defined in
-
-[src/commands/options/subcommand.ts:99](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L99)
 
 ___
 
@@ -243,19 +231,17 @@ ___
 
 ▸ **addMentionableOption**(`input`): [`SubcommandOption`](SubcommandOption.md)
 
+Adds a mentionable option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandMentionableOption`](SlashCommandMentionableOption.md) |  |
+| `input` | [`SlashCommandMentionableOption`](SlashCommandMentionableOption.md) | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SubcommandOption`](SubcommandOption.md)
-
-#### Defined in
-
-[src/commands/options/subcommand.ts:74](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L74)
 
 ___
 
@@ -263,19 +249,17 @@ ___
 
 ▸ **addNumberOption**(`input`): [`SubcommandOption`](SubcommandOption.md)
 
+Adds a number option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandNumberOption`](SlashCommandNumberOption.md) \| `Omit`<[`SlashCommandNumberOption`](SlashCommandNumberOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandNumberOption`](SlashCommandNumberOption.md), ``"addChoices"``\> |  |
+| `input` | [`SlashCommandNumberOption`](SlashCommandNumberOption.md) \| `Omit`<[`SlashCommandNumberOption`](SlashCommandNumberOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandNumberOption`](SlashCommandNumberOption.md), ``"addChoices"``\> | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SubcommandOption`](SubcommandOption.md)
-
-#### Defined in
-
-[src/commands/options/subcommand.ts:114](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L114)
 
 ___
 
@@ -283,19 +267,17 @@ ___
 
 ▸ **addRoleOption**(`input`): [`SubcommandOption`](SubcommandOption.md)
 
+Adds a role option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandRoleOption`](SlashCommandRoleOption.md) |  |
+| `input` | [`SlashCommandRoleOption`](SlashCommandRoleOption.md) | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SubcommandOption`](SubcommandOption.md)
-
-#### Defined in
-
-[src/commands/options/subcommand.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L54)
 
 ___
 
@@ -303,19 +285,17 @@ ___
 
 ▸ **addStringOption**(`input`): [`SubcommandOption`](SubcommandOption.md)
 
+Adds a string option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandStringOption`](SlashCommandStringOption.md) \| `Omit`<[`SlashCommandStringOption`](SlashCommandStringOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandStringOption`](SlashCommandStringOption.md), ``"addChoices"``\> |  |
+| `input` | [`SlashCommandStringOption`](SlashCommandStringOption.md) \| `Omit`<[`SlashCommandStringOption`](SlashCommandStringOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandStringOption`](SlashCommandStringOption.md), ``"addChoices"``\> | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SubcommandOption`](SubcommandOption.md)
-
-#### Defined in
-
-[src/commands/options/subcommand.ts:84](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L84)
 
 ___
 
@@ -323,25 +303,25 @@ ___
 
 ▸ **addUserOption**(`input`): [`SubcommandOption`](SubcommandOption.md)
 
+Adds a user option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandUserOption`](SlashCommandUserOption.md) |  |
+| `input` | [`SlashCommandUserOption`](SlashCommandUserOption.md) | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SubcommandOption`](SubcommandOption.md)
-
-#### Defined in
-
-[src/commands/options/subcommand.ts:34](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L34)
 
 ___
 
 ### setDescriptionLocalizations
 
 ▸ **setDescriptionLocalizations**(`localizations`): [`SubcommandOption`](SubcommandOption.md)
+
+Set a dictionary of localized descriptions
 
 #### Parameters
 
@@ -357,15 +337,13 @@ ___
 
 SlashCommandOptionBase.setDescriptionLocalizations
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:52](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L52)
-
 ___
 
 ### setLocalizedDescription
 
 ▸ **setLocalizedDescription**(`locale`, `description`): [`SubcommandOption`](SubcommandOption.md)
+
+Set a single locale's description
 
 #### Parameters
 
@@ -382,15 +360,13 @@ ___
 
 SlashCommandOptionBase.setLocalizedDescription
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:61](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L61)
-
 ___
 
 ### setLocalizedName
 
 ▸ **setLocalizedName**(`locale`, `name`): `void`
+
+Set a single locale's name
 
 #### Parameters
 
@@ -407,15 +383,13 @@ ___
 
 SlashCommandOptionBase.setLocalizedName
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:45](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L45)
-
 ___
 
 ### setNameLocalizations
 
 ▸ **setNameLocalizations**(`localizations`): [`SubcommandOption`](SubcommandOption.md)
+
+Set a dictionary of localized names
 
 #### Parameters
 
@@ -431,21 +405,19 @@ ___
 
 SlashCommandOptionBase.setNameLocalizations
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L36)
-
 ___
 
 ### setRequired
 
 ▸ **setRequired**(`required`): [`SubcommandOption`](SubcommandOption.md)
 
+Marks the option as required
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `required` | `boolean` |  |
+| `required` | `boolean` | If this option should be required |
 
 #### Returns
 
@@ -454,10 +426,6 @@ ___
 #### Inherited from
 
 SlashCommandOptionBase.setRequired
-
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L27)
 
 ___
 
@@ -472,7 +440,3 @@ ___
 #### Overrides
 
 SlashCommandOptionBase.toJSON
-
-#### Defined in
-
-[src/commands/options/subcommand.ts:124](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/options/subcommand.ts#L124)

@@ -28,15 +28,15 @@
 | :------ | :------ |
 | `responseCallback` | [`ResponseCallback`](../modules.md#responsecallback)<`FormData` \| `APIInteractionResponse`\> |
 
-#### Defined in
-
-[app/contexts/PingContext.ts:5](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/PingContext.ts#L5)
-
 ## Properties
 
 ### responseCallback
 
 • **responseCallback**: [`ResponseCallback`](../modules.md#responsecallback)<`FormData` \| `APIInteractionResponse`\>
+
+#### Defined in
+
+[app/contexts/PingContext.ts:5](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/PingContext.ts#L5)
 
 ## Methods
 
@@ -47,7 +47,3 @@
 #### Returns
 
 `void`
-
-#### Defined in
-
-[app/contexts/PingContext.ts:9](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/PingContext.ts#L9)

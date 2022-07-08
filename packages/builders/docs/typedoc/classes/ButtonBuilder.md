@@ -2,6 +2,8 @@
 
 # Class: ButtonBuilder
 
+Represents a non-validated button component
+
 ## Hierarchy
 
 - `ButtonBuilderBase`
@@ -44,15 +46,13 @@
 
 ButtonBuilderBase.constructor
 
-#### Defined in
-
-[src/components/ButtonBuilder.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L19)
-
 ## Properties
 
 ### data
 
 • `Readonly` **data**: `Partial`<`APIButtonComponent`\>
+
+The API data associated with this component
 
 #### Inherited from
 
@@ -60,7 +60,7 @@ ButtonBuilderBase.data
 
 #### Defined in
 
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/components/ComponentBuilderBase.ts#L19)
 
 ## Methods
 
@@ -68,19 +68,17 @@ ButtonBuilderBase.data
 
 ▸ **setCustomId**(`customId`): [`ButtonBuilder`](ButtonBuilder.md)
 
+Sets the custom Id for this button
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `customId` | `string` |  |
+| `customId` | `string` | The custom id to use for this button |
 
 #### Returns
 
 [`ButtonBuilder`](ButtonBuilder.md)
-
-#### Defined in
-
-[src/components/ButtonBuilder.ts:84](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L84)
 
 ___
 
@@ -88,11 +86,13 @@ ___
 
 ▸ **setDisabled**(`disabled?`): [`ButtonBuilder`](ButtonBuilder.md)
 
+Sets whether this button is disable or not
+
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `disabled` | `boolean` | `true` |  |
+| `disabled` | `boolean` | `true` | Whether or not to disable this button or not |
 
 #### Returns
 
@@ -102,21 +102,19 @@ ___
 
 ButtonBuilderBase.setDisabled
 
-#### Defined in
-
-[src/components/ButtonBuilder.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L54)
-
 ___
 
 ### setEmoji
 
 ▸ **setEmoji**(`emoji`): [`ButtonBuilder`](ButtonBuilder.md)
 
+Sets the emoji to display on this button
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `emoji` | `APIMessageComponentEmoji` |  |
+| `emoji` | `APIMessageComponentEmoji` | The emoji to display on this button |
 
 #### Returns
 
@@ -126,21 +124,19 @@ ___
 
 ButtonBuilderBase.setEmoji
 
-#### Defined in
-
-[src/components/ButtonBuilder.ts:45](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L45)
-
 ___
 
 ### setLabel
 
 ▸ **setLabel**(`label`): [`ButtonBuilder`](ButtonBuilder.md)
 
+Sets the label for this button
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `label` | `string` |  |
+| `label` | `string` | The label to display on this button |
 
 #### Returns
 
@@ -150,21 +146,19 @@ ___
 
 ButtonBuilderBase.setLabel
 
-#### Defined in
-
-[src/components/ButtonBuilder.ts:63](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L63)
-
 ___
 
 ### setStyle
 
 ▸ **setStyle**(`style`): [`ButtonBuilder`](ButtonBuilder.md)
 
+Sets the style of this button
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `style` | [`ButtonStyle`](../enums/ButtonStyle.md) |  |
+| `style` | [`ButtonStyle`](../enums/ButtonStyle.md) | The style of the button |
 
 #### Returns
 
@@ -173,10 +167,6 @@ ___
 #### Inherited from
 
 ButtonBuilderBase.setStyle
-
-#### Defined in
-
-[src/components/ButtonBuilder.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L36)
 
 ___
 
@@ -191,7 +181,3 @@ ___
 #### Overrides
 
 ButtonBuilderBase.toJSON
-
-#### Defined in
-
-[src/components/ButtonBuilder.ts:89](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ButtonBuilder.ts#L89)

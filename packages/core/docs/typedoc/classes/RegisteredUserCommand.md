@@ -40,16 +40,12 @@
 | `manager` | [`CommandManager`](CommandManager.md) |
 | `command` | `Object` |
 | `command.builder` | `UserCommandBuilder` |
-| `command.handler` | (`ctx`: `Context`) => `Promise`<`void`\> |
+| `command.handler` | (`ctx`: [`UserCommandContext`](UserCommandContext.md)) => `Promise`<`void`\> |
 | `id` | `string` |
 
 #### Inherited from
 
 RegisteredCommandBase<UserCommandBuilder, UserCommandContext\>.constructor
-
-#### Defined in
-
-[app/commands/Base.ts:25](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L25)
 
 ## Properties
 
@@ -63,7 +59,7 @@ RegisteredCommandBase.builder
 
 #### Defined in
 
-[app/commands/Base.ts:20](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L20)
+[app/commands/Base.ts:20](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/Base.ts#L20)
 
 ___
 
@@ -91,7 +87,7 @@ RegisteredCommandBase.handler
 
 #### Defined in
 
-[app/commands/Base.ts:21](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L21)
+[app/commands/Base.ts:21](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/Base.ts#L21)
 
 ___
 
@@ -105,13 +101,15 @@ RegisteredCommandBase.id
 
 #### Defined in
 
-[app/commands/Base.ts:23](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L23)
+[app/commands/Base.ts:23](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/Base.ts#L23)
 
 ## Methods
 
 ### delete
 
 ▸ **delete**(): `Promise`<`void`\>
+
+Delete and unregister this command
 
 #### Returns
 
@@ -121,21 +119,19 @@ RegisteredCommandBase.id
 
 RegisteredCommandBase.delete
 
-#### Defined in
-
-[app/commands/Base.ts:71](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L71)
-
 ___
 
 ### setHandler
 
 ▸ **setHandler**(`handler`): `void`
 
+Update this command's handler function
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `handler` | (`ctx`: [`UserCommandContext`](UserCommandContext.md)) => `Promise`<`void`\> |  |
+| `handler` | (`ctx`: [`UserCommandContext`](UserCommandContext.md)) => `Promise`<`void`\> | New command handler |
 
 #### Returns
 
@@ -145,15 +141,13 @@ ___
 
 RegisteredCommandBase.setHandler
 
-#### Defined in
-
-[app/commands/Base.ts:44](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L44)
-
 ___
 
 ### sync
 
 ▸ **sync**(): `Promise`<`void`\>
+
+Sync this command's builder with the API
 
 #### Returns
 
@@ -163,15 +157,13 @@ ___
 
 RegisteredCommandBase.sync
 
-#### Defined in
-
-[app/commands/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L51)
-
 ___
 
 ### unregister
 
 ▸ **unregister**(): `Promise`<`void`\>
+
+Unregister this command
 
 #### Returns
 
@@ -180,7 +172,3 @@ ___
 #### Inherited from
 
 RegisteredCommandBase.unregister
-
-#### Defined in
-
-[app/commands/Base.ts:64](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/Base.ts#L64)

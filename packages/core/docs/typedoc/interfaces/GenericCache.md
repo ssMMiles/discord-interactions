@@ -2,54 +2,51 @@
 
 # Interface: GenericCache
 
+Cache used to store component states. Redis is recommended.
+
 ## Table of contents
 
 ### Properties
 
-- [ttl](GenericCache.md#ttl)
-
-### Methods
-
 - [get](GenericCache.md#get)
 - [set](GenericCache.md#set)
+- [ttl](GenericCache.md#ttl)
 
 ## Properties
 
-### ttl
-
-• `Optional` **ttl**: `number`
-
-#### Defined in
-
-[app/DiscordApplication.ts:14](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L14)
-
-## Methods
-
 ### get
 
-▸ **get**(`key`): `Promise`<``null`` \| `string`\>
+• **get**: (`key`: `string`) => `Promise`<``null`` \| `string`\>
 
-#### Parameters
+#### Type declaration
+
+▸ (`key`): `Promise`<``null`` \| `string`\>
+
+##### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `key` | `string` |
 
-#### Returns
+##### Returns
 
 `Promise`<``null`` \| `string`\>
 
 #### Defined in
 
-[app/DiscordApplication.ts:16](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L16)
+[app/DiscordApplication.ts:16](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L16)
 
 ___
 
 ### set
 
-▸ **set**(`key`, `ttl`, `value`): `Promise`<`string` \| `void`\>
+• **set**: (`key`: `string`, `ttl`: `number`, `value`: `string`) => `Promise`<`string` \| `void`\>
 
-#### Parameters
+#### Type declaration
+
+▸ (`key`, `ttl`, `value`): `Promise`<`string` \| `void`\>
+
+##### Parameters
 
 | Name | Type |
 | :------ | :------ |
@@ -57,10 +54,22 @@ ___
 | `ttl` | `number` |
 | `value` | `string` |
 
-#### Returns
+##### Returns
 
 `Promise`<`string` \| `void`\>
 
 #### Defined in
 
-[app/DiscordApplication.ts:17](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L17)
+[app/DiscordApplication.ts:17](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L17)
+
+___
+
+### ttl
+
+• `Optional` **ttl**: `number`
+
+Default Time To Live for cache entries, defaults to 900.
+
+#### Defined in
+
+[app/DiscordApplication.ts:14](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L14)

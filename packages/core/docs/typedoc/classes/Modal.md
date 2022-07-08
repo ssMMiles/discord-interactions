@@ -52,10 +52,6 @@
 
 ComponentBase&lt;APIModalInteractionResponseCallbackData, ModalBuilder, ModalSubmitContext\&gt;.constructor
 
-#### Defined in
-
-[app/components/Modal.ts:7](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Modal.ts#L7)
-
 ## Properties
 
 ### allowExpired
@@ -68,7 +64,7 @@ ComponentBase.allowExpired
 
 #### Defined in
 
-[app/components/Base.ts:10](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Base.ts#L10)
+[app/components/Base.ts:10](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/components/Base.ts#L10)
 
 ___
 
@@ -82,7 +78,7 @@ ComponentBase.builder
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L4)
+[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 ___
 
@@ -96,7 +92,7 @@ ComponentBase.components
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L11)
+[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 ___
 
@@ -124,7 +120,7 @@ ComponentBase.handler
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L9)
+[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L9)
 
 ___
 
@@ -138,7 +134,7 @@ ComponentBase.id
 
 #### Defined in
 
-[app/components/Base.ts:9](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Base.ts#L9)
+[app/components/Base.ts:9](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/components/Base.ts#L9)
 
 ___
 
@@ -152,7 +148,7 @@ ComponentBase.parentCommand
 
 #### Defined in
 
-[app/components/Base.ts:12](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Base.ts#L12)
+[app/components/Base.ts:12](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/components/Base.ts#L12)
 
 ## Accessors
 
@@ -167,10 +163,6 @@ ComponentBase.parentCommand
 #### Inherited from
 
 ComponentBase.data
-
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:5](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L5)
 
 ## Methods
 
@@ -188,15 +180,13 @@ ComponentBase.data
 
 `ModalBuilder`
 
-#### Defined in
-
-[app/components/Modal.ts:17](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Modal.ts#L17)
-
 ___
 
 ### setAllowExpired
 
 ▸ **setAllowExpired**(`value`): [`Modal`](Modal.md)
+
+Set whether component execution should continue when state data has expired
 
 #### Parameters
 
@@ -211,10 +201,6 @@ ___
 #### Inherited from
 
 ComponentBase.setAllowExpired
-
-#### Defined in
-
-[app/components/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Base.ts#L34)
 
 ___
 
@@ -236,15 +222,13 @@ ___
 
 ComponentBase.setHandler
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:20](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/handlers/HandledInteraction.ts#L20)
-
 ___
 
 ### setId
 
 ▸ **setId**(`id`): [`Modal`](Modal.md)
+
+Set the component ID
 
 #### Parameters
 
@@ -259,7 +243,3 @@ ___
 #### Inherited from
 
 ComponentBase.setId
-
-#### Defined in
-
-[app/components/Base.ts:28](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/components/Base.ts#L28)

@@ -2,6 +2,8 @@
 
 # Class: SelectMenuOptionBuilder
 
+Represents a non-validated option within a select menu component
+
 ## Table of contents
 
 ### Constructors
@@ -33,15 +35,15 @@
 | :------ | :------ |
 | `data` | `Partial`<`APISelectMenuOption`\> |
 
-#### Defined in
-
-[src/components/SelectMenuOptionBuilder.ts:7](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L7)
-
 ## Properties
 
 ### data
 
 • **data**: `Partial`<`APISelectMenuOption`\> = `{}`
+
+#### Defined in
+
+[src/components/SelectMenuOptionBuilder.ts:7](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/components/SelectMenuOptionBuilder.ts#L7)
 
 ## Methods
 
@@ -49,19 +51,17 @@
 
 ▸ **setDefault**(`isDefault?`): [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)
 
+Sets whether this option is selected by default
+
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `isDefault` | `boolean` | `true` |  |
+| `isDefault` | `boolean` | `true` | Whether this option is selected by default |
 
 #### Returns
 
 [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)
-
-#### Defined in
-
-[src/components/SelectMenuOptionBuilder.ts:40](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L40)
 
 ___
 
@@ -69,19 +69,17 @@ ___
 
 ▸ **setDescription**(`description`): [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)
 
+Sets the description of this option.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `description` | `string` |  |
+| `description` | `string` | The description of this option |
 
 #### Returns
 
 [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)
-
-#### Defined in
-
-[src/components/SelectMenuOptionBuilder.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L31)
 
 ___
 
@@ -89,19 +87,17 @@ ___
 
 ▸ **setEmoji**(`emoji`): [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)
 
+Sets the emoji to display on this option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `emoji` | `APIMessageComponentEmoji` |  |
+| `emoji` | `APIMessageComponentEmoji` | The emoji to display on this option |
 
 #### Returns
 
 [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)
-
-#### Defined in
-
-[src/components/SelectMenuOptionBuilder.ts:49](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L49)
 
 ___
 
@@ -109,19 +105,17 @@ ___
 
 ▸ **setLabel**(`label`): [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)
 
+Sets the label of this option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `label` | `string` |  |
+| `label` | `string` | The label to show on this option |
 
 #### Returns
 
 [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)
-
-#### Defined in
-
-[src/components/SelectMenuOptionBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L13)
 
 ___
 
@@ -129,19 +123,17 @@ ___
 
 ▸ **setValue**(`value`): [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)
 
+Sets the value of this option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `value` | `string` |  |
+| `value` | `string` | The value of this option |
 
 #### Returns
 
 [`SelectMenuOptionBuilder`](SelectMenuOptionBuilder.md)
-
-#### Defined in
-
-[src/components/SelectMenuOptionBuilder.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L22)
 
 ___
 
@@ -152,7 +144,3 @@ ___
 #### Returns
 
 `APISelectMenuOption`
-
-#### Defined in
-
-[src/components/SelectMenuOptionBuilder.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/SelectMenuOptionBuilder.ts#L54)

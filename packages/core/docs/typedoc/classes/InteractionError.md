@@ -53,10 +53,6 @@
 
 Error.constructor
 
-#### Defined in
-
-[util/errors.ts:16](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/util/errors.ts#L16)
-
 ## Properties
 
 ### interaction
@@ -65,4 +61,4 @@ Error.constructor
 
 #### Defined in
 
-[util/errors.ts:14](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/util/errors.ts#L14)
+[util/errors.ts:14](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/util/errors.ts#L14)

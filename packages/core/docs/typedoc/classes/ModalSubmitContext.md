@@ -76,10 +76,6 @@ BaseInteractionContext&lt;
   ModalSubmitResponse
 \&gt;.constructor
 
-#### Defined in
-
-[app/contexts/ModalSubmitContext.ts:28](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L28)
-
 ## Properties
 
 ### allowExpired
@@ -88,7 +84,7 @@ BaseInteractionContext&lt;
 
 #### Defined in
 
-[app/contexts/ModalSubmitContext.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L19)
+[app/contexts/ModalSubmitContext.ts:19](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ModalSubmitContext.ts#L19)
 
 ___
 
@@ -98,7 +94,7 @@ ___
 
 #### Defined in
 
-[app/contexts/ModalSubmitContext.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L24)
+[app/contexts/ModalSubmitContext.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ModalSubmitContext.ts#L24)
 
 ___
 
@@ -108,7 +104,7 @@ ___
 
 #### Defined in
 
-[app/contexts/ModalSubmitContext.ts:21](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L21)
+[app/contexts/ModalSubmitContext.ts:21](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ModalSubmitContext.ts#L21)
 
 ___
 
@@ -122,7 +118,7 @@ BaseInteractionContext.interaction
 
 #### Defined in
 
-[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L26)
+[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L26)
 
 ___
 
@@ -136,7 +132,7 @@ BaseInteractionContext.isDM
 
 #### Defined in
 
-[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L31)
+[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L31)
 
 ___
 
@@ -150,7 +146,7 @@ BaseInteractionContext.manager
 
 #### Defined in
 
-[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L24)
+[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L24)
 
 ___
 
@@ -160,7 +156,7 @@ ___
 
 #### Defined in
 
-[app/contexts/ModalSubmitContext.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L26)
+[app/contexts/ModalSubmitContext.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ModalSubmitContext.ts#L26)
 
 ___
 
@@ -170,7 +166,7 @@ ___
 
 #### Defined in
 
-[app/contexts/ModalSubmitContext.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L22)
+[app/contexts/ModalSubmitContext.ts:22](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ModalSubmitContext.ts#L22)
 
 ___
 
@@ -184,7 +180,7 @@ BaseInteractionContext.user
 
 #### Defined in
 
-[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L29)
+[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L29)
 
 ## Accessors
 
@@ -199,10 +195,6 @@ BaseInteractionContext.user
 #### Inherited from
 
 BaseInteractionContext.expired
-
-#### Defined in
-
-[app/contexts/Base.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L19)
 
 ## Methods
 
@@ -227,10 +219,6 @@ BaseInteractionContext.expired
 #### Returns
 
 `Promise`<`Builder`\>
-
-#### Defined in
-
-[app/contexts/ModalSubmitContext.ts:69](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L69)
 
 ___
 
@@ -260,10 +248,6 @@ ___
 
 BaseInteractionContext.createGlobalComponent
 
-#### Defined in
-
-[app/contexts/Base.ts:65](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L65)
-
 ___
 
 ### decorate
@@ -285,10 +269,6 @@ ___
 
 BaseInteractionContext.decorate
 
-#### Defined in
-
-[app/contexts/Base.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L58)
-
 ___
 
 ### defer
@@ -299,10 +279,6 @@ ___
 
 `Promise`<`void`\>
 
-#### Defined in
-
-[app/contexts/ModalSubmitContext.ts:79](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L79)
-
 ___
 
 ### delete
@@ -312,10 +288,6 @@ ___
 #### Returns
 
 `Promise`<`void`\>
-
-#### Defined in
-
-[app/contexts/ModalSubmitContext.ts:104](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L104)
 
 ___
 
@@ -333,10 +305,6 @@ ___
 
 `Promise`<`APIMessage`\>
 
-#### Defined in
-
-[app/contexts/ModalSubmitContext.ts:100](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L100)
-
 ___
 
 ### fetchState
@@ -346,10 +314,6 @@ ___
 #### Returns
 
 `Promise`<`void`\>
-
-#### Defined in
-
-[app/contexts/ModalSubmitContext.ts:51](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L51)
 
 ___
 
@@ -371,10 +335,6 @@ ___
 
 BaseInteractionContext.rawReply
 
-#### Defined in
-
-[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L54)
-
 ___
 
 ### reply
@@ -391,10 +351,6 @@ ___
 
 `Promise`<`void`\>
 
-#### Defined in
-
-[app/contexts/ModalSubmitContext.ts:87](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L87)
-
 ___
 
 ### send
@@ -410,7 +366,3 @@ ___
 #### Returns
 
 `Promise`<`APIMessage`\>
-
-#### Defined in
-
-[app/contexts/ModalSubmitContext.ts:96](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ModalSubmitContext.ts#L96)

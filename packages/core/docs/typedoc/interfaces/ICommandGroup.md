@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:16](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L16)
+[app/commands/CommandGroup.ts:16](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L16)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L19)
+[app/commands/CommandGroup.ts:19](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L19)
 
 ___
 
@@ -42,4 +42,4 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:17](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L17)
+[app/commands/CommandGroup.ts:17](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L17)

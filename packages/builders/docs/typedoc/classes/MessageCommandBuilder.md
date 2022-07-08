@@ -54,15 +54,13 @@ CommandBuilderBase<
   RESTPostAPIContextMenuApplicationCommandsJSONBody & { type: ApplicationCommandType.Message }
 \>.constructor
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:44](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L44)
-
 ## Properties
 
 ### default\_member\_permissions
 
 • **default\_member\_permissions**: [`Bitfield`](Bitfield.md)
+
+Default member permissions required to use the command
 
 #### Inherited from
 
@@ -70,7 +68,7 @@ CommandBuilderBase.default\_member\_permissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:42](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L42)
+[src/commands/CommandBuilderBase.ts:42](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L42)
 
 ___
 
@@ -78,13 +76,15 @@ ___
 
 • `Optional` **dm\_permission**: `boolean`
 
+Whether the command is visible in DMs - Only available for global commands and defaults to true.
+
 #### Inherited from
 
 CommandBuilderBase.dm\_permission
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:37](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L37)
+[src/commands/CommandBuilderBase.ts:37](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L37)
 
 ___
 
@@ -92,13 +92,15 @@ ___
 
 • **name**: `string`
 
+The name of this context menu command
+
 #### Inherited from
 
 CommandBuilderBase.name
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L22)
+[src/commands/CommandBuilderBase.ts:22](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L22)
 
 ___
 
@@ -106,13 +108,15 @@ ___
 
 • **name\_localizations**: `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> = `{}`
 
+The localized names for this command
+
 #### Inherited from
 
 CommandBuilderBase.name\_localizations
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L27)
+[src/commands/CommandBuilderBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L27)
 
 ___
 
@@ -126,7 +130,7 @@ CommandBuilderBase.type
 
 #### Defined in
 
-[src/commands/ContextMenuCommandBuilder.ts:42](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L42)
+[src/commands/ContextMenuCommandBuilder.ts:42](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L42)
 
 ## Methods
 
@@ -148,10 +152,6 @@ CommandBuilderBase.type
 
 CommandBuilderBase.addRequiredPermissions
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:99](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L99)
-
 ___
 
 ### clearRequiredPermissions
@@ -166,10 +166,6 @@ ___
 
 CommandBuilderBase.clearRequiredPermissions
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:111](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L111)
-
 ___
 
 ### disallowAllPermissions
@@ -183,10 +179,6 @@ ___
 #### Inherited from
 
 CommandBuilderBase.disallowAllPermissions
-
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:117](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L117)
 
 ___
 
@@ -208,10 +200,6 @@ ___
 
 CommandBuilderBase.equals
 
-#### Defined in
-
-[src/commands/ContextMenuCommandBuilder.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L54)
-
 ___
 
 ### removeRequiredPermissions
@@ -232,15 +220,13 @@ ___
 
 CommandBuilderBase.removeRequiredPermissions
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:105](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L105)
-
 ___
 
 ### setDMEnabled
 
 ▸ **setDMEnabled**(`value`): [`MessageCommandBuilder`](MessageCommandBuilder.md)
+
+Set whether this command will be visible in DMs - Only applicable to Global commands.
 
 #### Parameters
 
@@ -256,15 +242,13 @@ ___
 
 CommandBuilderBase.setDMEnabled
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:87](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L87)
-
 ___
 
 ### setLocalizedName
 
 ▸ **setLocalizedName**(`locale`, `name`): [`MessageCommandBuilder`](MessageCommandBuilder.md)
+
+Set a single locale's name
 
 #### Parameters
 
@@ -281,15 +265,13 @@ ___
 
 CommandBuilderBase.setLocalizedName
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:78](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L78)
-
 ___
 
 ### setName
 
 ▸ **setName**(`name`): [`MessageCommandBuilder`](MessageCommandBuilder.md)
+
+Set the name
 
 #### Parameters
 
@@ -305,15 +287,13 @@ ___
 
 CommandBuilderBase.setName
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:60](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L60)
-
 ___
 
 ### setNameLocalizations
 
 ▸ **setNameLocalizations**(`localizations`): [`MessageCommandBuilder`](MessageCommandBuilder.md)
+
+Set a dictionary of localized names
 
 #### Parameters
 
@@ -328,10 +308,6 @@ ___
 #### Inherited from
 
 CommandBuilderBase.setNameLocalizations
-
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:69](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L69)
 
 ___
 
@@ -353,10 +329,6 @@ ___
 
 CommandBuilderBase.setRequiredPermissions
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:93](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L93)
-
 ___
 
 ### toJSON
@@ -370,7 +342,3 @@ ___
 #### Overrides
 
 CommandBuilderBase.toJSON
-
-#### Defined in
-
-[src/commands/ContextMenuCommandBuilder.ts:44](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L44)

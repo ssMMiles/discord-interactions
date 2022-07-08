@@ -43,10 +43,6 @@
 | :------ | :------ |
 | `data?` | `string` \| `APIInteractionResponseCallbackData` \| [`EmbedBuilder`](EmbedBuilder.md) |
 
-#### Defined in
-
-[src/responses/MessageBuilder.ts:28](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L28)
-
 ## Properties
 
 ### data
@@ -55,7 +51,7 @@
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:25](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L25)
+[src/responses/MessageBuilder.ts:25](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/responses/MessageBuilder.ts#L25)
 
 ___
 
@@ -65,7 +61,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L26)
+[src/responses/MessageBuilder.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/responses/MessageBuilder.ts#L26)
 
 ## Methods
 
@@ -73,19 +69,17 @@ ___
 
 ▸ **addAttachments**(...`files`): [`MessageBuilder`](MessageBuilder.md)
 
+Add one or more files to this message.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `...files` | [`AttachedFile`](../interfaces/AttachedFile.md)[] |  |
+| `...files` | [`AttachedFile`](../interfaces/AttachedFile.md)[] | Files to attach to this message. |
 
 #### Returns
 
 [`MessageBuilder`](MessageBuilder.md)
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:153](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L153)
 
 ___
 
@@ -93,19 +87,17 @@ ___
 
 ▸ **addComponents**(...`components`): [`MessageBuilder`](MessageBuilder.md)
 
+Add one or more Action Rows to the message. Maximum of 5.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `...components` | [`ActionRowBuilder`](ActionRowBuilder.md)<[`MessageActionRowComponentBuilders`](../modules.md#messageactionrowcomponentbuilders)\>[] |  |
+| `...components` | [`ActionRowBuilder`](ActionRowBuilder.md)<[`MessageActionRowComponentBuilders`](../modules.md#messageactionrowcomponentbuilders)\>[] | Action Rows to add to this message. |
 
 #### Returns
 
 [`MessageBuilder`](MessageBuilder.md)
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:129](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L129)
 
 ___
 
@@ -113,19 +105,17 @@ ___
 
 ▸ **addEmbeds**(...`embeds`): [`MessageBuilder`](MessageBuilder.md)
 
+Add one or more embeds to this message. Maximum of 10.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `...embeds` | [`EmbedBuilder`](EmbedBuilder.md)[] |  |
+| `...embeds` | [`EmbedBuilder`](EmbedBuilder.md)[] | Embeds to add to this message. |
 
 #### Returns
 
 [`MessageBuilder`](MessageBuilder.md)
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:103](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L103)
 
 ___
 
@@ -133,19 +123,17 @@ ___
 
 ▸ **setAllowedMentions**(`allowedMentions`): [`MessageBuilder`](MessageBuilder.md)
 
+Set which mentions will be allowed in this message.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `allowedMentions` | `APIAllowedMentions` |  |
+| `allowedMentions` | `APIAllowedMentions` | Allowed mentions for this message. https://discord.com/developers/docs/resources/channel#allowed-mentions-object-allowed-mentions-structure - TODO: Builder for this |
 
 #### Returns
 
 [`MessageBuilder`](MessageBuilder.md)
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:62](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L62)
 
 ___
 
@@ -153,19 +141,17 @@ ___
 
 ▸ **setAttachments**(...`files`): [`MessageBuilder`](MessageBuilder.md)
 
+Set an array of files to be sent with this message.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `...files` | [`AttachedFile`](../interfaces/AttachedFile.md)[] |  |
+| `...files` | [`AttachedFile`](../interfaces/AttachedFile.md)[] | Array of files to be sent. |
 
 #### Returns
 
 [`MessageBuilder`](MessageBuilder.md)
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:179](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L179)
 
 ___
 
@@ -173,19 +159,17 @@ ___
 
 ▸ **setComponents**(`components?`): [`MessageBuilder`](MessageBuilder.md)
 
+Set an array of Action Rows to be sent with this message.
+
 #### Parameters
 
 | Name | Type | Default value | Description |
 | :------ | :------ | :------ | :------ |
-| `components` | `APIActionRowComponent`<`APIMessageActionRowComponent`\>[] | `[]` |  |
+| `components` | `APIActionRowComponent`<`APIMessageActionRowComponent`\>[] | `[]` | Array of Action Rows to be sent. |
 
 #### Returns
 
 [`MessageBuilder`](MessageBuilder.md)
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:142](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L142)
 
 ___
 
@@ -193,19 +177,17 @@ ___
 
 ▸ **setContent**(`content`): [`MessageBuilder`](MessageBuilder.md)
 
+Sets the content of the message.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `content` | `string` |  |
+| `content` | `string` | Text content for your message. |
 
 #### Returns
 
 [`MessageBuilder`](MessageBuilder.md)
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:40](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L40)
 
 ___
 
@@ -213,19 +195,17 @@ ___
 
 ▸ **setEmbeds**(...`embeds`): [`MessageBuilder`](MessageBuilder.md)
 
+Set an array of embeds to be sent with this message.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `...embeds` | [`EmbedBuilder`](EmbedBuilder.md)[] |  |
+| `...embeds` | [`EmbedBuilder`](EmbedBuilder.md)[] | Array of embeds to be sent. |
 
 #### Returns
 
 [`MessageBuilder`](MessageBuilder.md)
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:118](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L118)
 
 ___
 
@@ -233,19 +213,17 @@ ___
 
 ▸ **setEphemeral**(`value`): [`MessageBuilder`](MessageBuilder.md)
 
+Set the Ephemeral flag on this message. https://discord.com/developers/docs/tutorials/upgrading-to-application-commands#responding-to-a-command
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `value` | `boolean` |  |
+| `value` | `boolean` | Whether or not the message should be ephemeral. |
 
 #### Returns
 
 [`MessageBuilder`](MessageBuilder.md)
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:94](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L94)
 
 ___
 
@@ -253,19 +231,17 @@ ___
 
 ▸ **setTts**(`tts`): [`MessageBuilder`](MessageBuilder.md)
 
+Set whether to enable TTS for this message.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `tts` | `boolean` |  |
+| `tts` | `boolean` | Whether or not the message should be read aloud. |
 
 #### Returns
 
 [`MessageBuilder`](MessageBuilder.md)
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:51](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L51)
 
 ___
 
@@ -273,19 +249,17 @@ ___
 
 ▸ **suppressEmbeds**(`value`): [`MessageBuilder`](MessageBuilder.md)
 
+Set the SuppressEmbeds flag on this messgae.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `value` | `boolean` |  |
+| `value` | `boolean` | Whether or not embeds in this message should be suppressed (hidden). |
 
 #### Returns
 
 [`MessageBuilder`](MessageBuilder.md)
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:85](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L85)
 
 ___
 
@@ -293,6 +267,8 @@ ___
 
 ▸ **toInteractionJSON**<`T`\>(`responseType`): [`ResponseMap`](../modules.md#responsemap)[`T`]
 
+Fetch this message's data as an HTTP interaction response.
+
 #### Type parameters
 
 | Name | Type |
@@ -303,15 +279,11 @@ ___
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `responseType` | `T` |  |
+| `responseType` | `T` | The interaction response type, depending on whether this is a response to a message or a reaction. |
 
 #### Returns
 
 [`ResponseMap`](../modules.md#responsemap)[`T`]
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:214](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L214)
 
 ___
 
@@ -319,6 +291,8 @@ ___
 
 ▸ **toInteractionResponse**<`T`\>(`responseType`): `FormData` \| [`ResponseMap`](../modules.md#responsemap)[`T`]
 
+Fetch this message and its files as an HTTP interaction response.
+
 #### Type parameters
 
 | Name | Type |
@@ -329,15 +303,11 @@ ___
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `responseType` | `T` |  |
+| `responseType` | `T` | The interaction response type, depending on whether this is a response to a message or a reaction. |
 
 #### Returns
 
 `FormData` \| [`ResponseMap`](../modules.md#responsemap)[`T`]
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:228](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L228)
 
 ___
 
@@ -345,13 +315,11 @@ ___
 
 ▸ **toJSON**(): `APIInteractionResponseCallbackData`
 
+Fetch this message's data as an object.
+
 #### Returns
 
 `APIInteractionResponseCallbackData`
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:239](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L239)
 
 ___
 
@@ -369,7 +337,3 @@ ___
 #### Returns
 
 `AddUndefinedToPossiblyUndefinedPropertiesOfInterface`<{ `allowed_mentions?`: `APIAllowedMentions` ; `attachments?`: `Pick`<`APIAttachment`, ``"description"`` \| ``"id"``\> & `Partial`<`Pick`<`APIAttachment`, ``"filename"``\>\>[] ; `avatar_url?`: `string` ; `components?`: `APIActionRowComponent`<`APIMessageActionRowComponent`\>[] ; `content?`: `string` ; `embeds?`: `APIEmbed`[] ; `flags?`: `MessageFlags` ; `thread_name?`: `string` ; `tts?`: `boolean` ; `username?`: `string`  }\> \| `FormData`
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:243](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/responses/MessageBuilder.ts#L243)

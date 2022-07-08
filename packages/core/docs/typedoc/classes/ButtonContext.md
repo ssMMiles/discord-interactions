@@ -73,10 +73,6 @@
 
 BaseComponentContext<S, APIMessageComponentButtonInteraction\>.constructor
 
-#### Defined in
-
-[app/contexts/ComponentContext.ts:30](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L30)
-
 ## Properties
 
 ### allowExpired
@@ -89,7 +85,7 @@ BaseComponentContext.allowExpired
 
 #### Defined in
 
-[app/contexts/ComponentContext.ts:21](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L21)
+[app/contexts/ComponentContext.ts:21](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ComponentContext.ts#L21)
 
 ___
 
@@ -103,7 +99,7 @@ BaseComponentContext.id
 
 #### Defined in
 
-[app/contexts/ComponentContext.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L24)
+[app/contexts/ComponentContext.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ComponentContext.ts#L24)
 
 ___
 
@@ -117,7 +113,7 @@ BaseComponentContext.interaction
 
 #### Defined in
 
-[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L26)
+[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L26)
 
 ___
 
@@ -131,7 +127,7 @@ BaseComponentContext.isDM
 
 #### Defined in
 
-[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L31)
+[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L31)
 
 ___
 
@@ -145,7 +141,7 @@ BaseComponentContext.manager
 
 #### Defined in
 
-[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L24)
+[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L24)
 
 ___
 
@@ -159,7 +155,7 @@ BaseComponentContext.message
 
 #### Defined in
 
-[app/contexts/ComponentContext.ts:28](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L28)
+[app/contexts/ComponentContext.ts:28](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ComponentContext.ts#L28)
 
 ___
 
@@ -173,7 +169,7 @@ BaseComponentContext.parentCommand
 
 #### Defined in
 
-[app/contexts/ComponentContext.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L26)
+[app/contexts/ComponentContext.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ComponentContext.ts#L26)
 
 ___
 
@@ -187,7 +183,7 @@ BaseComponentContext.state
 
 #### Defined in
 
-[app/contexts/ComponentContext.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L22)
+[app/contexts/ComponentContext.ts:22](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ComponentContext.ts#L22)
 
 ___
 
@@ -201,7 +197,7 @@ BaseComponentContext.user
 
 #### Defined in
 
-[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L29)
+[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L29)
 
 ## Accessors
 
@@ -216,10 +212,6 @@ BaseComponentContext.user
 #### Inherited from
 
 BaseComponentContext.expired
-
-#### Defined in
-
-[app/contexts/Base.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L19)
 
 ## Methods
 
@@ -249,10 +241,6 @@ BaseComponentContext.expired
 
 BaseComponentContext.createComponent
 
-#### Defined in
-
-[app/contexts/ComponentContext.ts:60](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L60)
-
 ___
 
 ### createGlobalComponent
@@ -281,10 +269,6 @@ ___
 
 BaseComponentContext.createGlobalComponent
 
-#### Defined in
-
-[app/contexts/Base.ts:65](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L65)
-
 ___
 
 ### decorate
@@ -306,10 +290,6 @@ ___
 
 BaseComponentContext.decorate
 
-#### Defined in
-
-[app/contexts/Base.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L58)
-
 ___
 
 ### defer
@@ -324,10 +304,6 @@ ___
 
 BaseComponentContext.defer
 
-#### Defined in
-
-[app/contexts/ComponentContext.ts:70](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L70)
-
 ___
 
 ### delete
@@ -341,10 +317,6 @@ ___
 #### Inherited from
 
 BaseComponentContext.delete
-
-#### Defined in
-
-[app/contexts/ComponentContext.ts:112](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L112)
 
 ___
 
@@ -366,10 +338,6 @@ ___
 
 BaseComponentContext.edit
 
-#### Defined in
-
-[app/contexts/ComponentContext.ts:108](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L108)
-
 ___
 
 ### fetchState
@@ -383,10 +351,6 @@ ___
 #### Inherited from
 
 BaseComponentContext.fetchState
-
-#### Defined in
-
-[app/contexts/ComponentContext.ts:43](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L43)
 
 ___
 
@@ -408,10 +372,6 @@ ___
 
 BaseComponentContext.rawReply
 
-#### Defined in
-
-[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L54)
-
 ___
 
 ### reply
@@ -432,10 +392,6 @@ ___
 
 BaseComponentContext.reply
 
-#### Defined in
-
-[app/contexts/ComponentContext.ts:78](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L78)
-
 ___
 
 ### send
@@ -455,7 +411,3 @@ ___
 #### Inherited from
 
 BaseComponentContext.send
-
-#### Defined in
-
-[app/contexts/ComponentContext.ts:104](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ComponentContext.ts#L104)

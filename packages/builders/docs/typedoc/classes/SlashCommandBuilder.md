@@ -68,15 +68,13 @@
 
 CommandBuilderBase&lt;RESTPostAPIChatInputApplicationCommandsJSONBody\&gt;.constructor
 
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:38](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L38)
-
 ## Properties
 
 ### default\_member\_permissions
 
 • **default\_member\_permissions**: [`Bitfield`](Bitfield.md)
+
+Default member permissions required to use the command
 
 #### Inherited from
 
@@ -84,7 +82,7 @@ CommandBuilderBase.default\_member\_permissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:42](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L42)
+[src/commands/CommandBuilderBase.ts:42](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L42)
 
 ___
 
@@ -94,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:33](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L33)
+[src/commands/SlashCommandBuilder.ts:33](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/SlashCommandBuilder.ts#L33)
 
 ___
 
@@ -104,7 +102,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:34](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L34)
+[src/commands/SlashCommandBuilder.ts:34](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/SlashCommandBuilder.ts#L34)
 
 ___
 
@@ -112,13 +110,15 @@ ___
 
 • `Optional` **dm\_permission**: `boolean`
 
+Whether the command is visible in DMs - Only available for global commands and defaults to true.
+
 #### Inherited from
 
 CommandBuilderBase.dm\_permission
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:37](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L37)
+[src/commands/CommandBuilderBase.ts:37](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L37)
 
 ___
 
@@ -126,13 +126,15 @@ ___
 
 • **name**: `string`
 
+The name of this context menu command
+
 #### Inherited from
 
 CommandBuilderBase.name
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L22)
+[src/commands/CommandBuilderBase.ts:22](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L22)
 
 ___
 
@@ -140,13 +142,15 @@ ___
 
 • **name\_localizations**: `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> = `{}`
 
+The localized names for this command
+
 #### Inherited from
 
 CommandBuilderBase.name\_localizations
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L27)
+[src/commands/CommandBuilderBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L27)
 
 ___
 
@@ -156,7 +160,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L36)
+[src/commands/SlashCommandBuilder.ts:36](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/SlashCommandBuilder.ts#L36)
 
 ___
 
@@ -170,7 +174,7 @@ CommandBuilderBase.type
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L31)
+[src/commands/SlashCommandBuilder.ts:31](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/SlashCommandBuilder.ts#L31)
 
 ## Methods
 
@@ -178,19 +182,17 @@ CommandBuilderBase.type
 
 ▸ **addAttachmentOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
 
+Adds an attachment option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandAttachmentOption`](SlashCommandAttachmentOption.md) |  |
+| `input` | [`SlashCommandAttachmentOption`](SlashCommandAttachmentOption.md) | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SlashCommandBuilder`](SlashCommandBuilder.md)
-
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:117](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L117)
 
 ___
 
@@ -198,19 +200,17 @@ ___
 
 ▸ **addBooleanOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
 
+Adds a boolean option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandBooleanOption`](SlashCommandBooleanOption.md) |  |
+| `input` | [`SlashCommandBooleanOption`](SlashCommandBooleanOption.md) | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SlashCommandBuilder`](SlashCommandBuilder.md)
-
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:77](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L77)
 
 ___
 
@@ -218,19 +218,17 @@ ___
 
 ▸ **addChannelOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
 
+Adds a channel option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandChannelOption`](SlashCommandChannelOption.md) |  |
+| `input` | [`SlashCommandChannelOption`](SlashCommandChannelOption.md) | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SlashCommandBuilder`](SlashCommandBuilder.md)
-
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:97](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L97)
 
 ___
 
@@ -238,19 +236,17 @@ ___
 
 ▸ **addIntegerOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
 
+Adds an integer option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandIntegerOption`](SlashCommandIntegerOption.md) \| `Omit`<[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md), ``"addChoices"``\> |  |
+| `input` | [`SlashCommandIntegerOption`](SlashCommandIntegerOption.md) \| `Omit`<[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md), ``"addChoices"``\> | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SlashCommandBuilder`](SlashCommandBuilder.md)
-
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:152](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L152)
 
 ___
 
@@ -258,19 +254,17 @@ ___
 
 ▸ **addMentionableOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
 
+Adds a mentionable option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandMentionableOption`](SlashCommandMentionableOption.md) |  |
+| `input` | [`SlashCommandMentionableOption`](SlashCommandMentionableOption.md) | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SlashCommandBuilder`](SlashCommandBuilder.md)
-
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:127](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L127)
 
 ___
 
@@ -278,19 +272,17 @@ ___
 
 ▸ **addNumberOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
 
+Adds a number option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandNumberOption`](SlashCommandNumberOption.md) \| `Omit`<[`SlashCommandNumberOption`](SlashCommandNumberOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandNumberOption`](SlashCommandNumberOption.md), ``"addChoices"``\> |  |
+| `input` | [`SlashCommandNumberOption`](SlashCommandNumberOption.md) \| `Omit`<[`SlashCommandNumberOption`](SlashCommandNumberOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandNumberOption`](SlashCommandNumberOption.md), ``"addChoices"``\> | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SlashCommandBuilder`](SlashCommandBuilder.md)
-
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:167](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L167)
 
 ___
 
@@ -312,29 +304,23 @@ ___
 
 CommandBuilderBase.addRequiredPermissions
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:99](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L99)
-
 ___
 
 ### addRoleOption
 
 ▸ **addRoleOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
 
+Adds a role option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandRoleOption`](SlashCommandRoleOption.md) |  |
+| `input` | [`SlashCommandRoleOption`](SlashCommandRoleOption.md) | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SlashCommandBuilder`](SlashCommandBuilder.md)
-
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:107](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L107)
 
 ___
 
@@ -342,19 +328,17 @@ ___
 
 ▸ **addStringOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
 
+Adds a string option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandStringOption`](SlashCommandStringOption.md) \| `Omit`<[`SlashCommandStringOption`](SlashCommandStringOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandStringOption`](SlashCommandStringOption.md), ``"addChoices"``\> |  |
+| `input` | [`SlashCommandStringOption`](SlashCommandStringOption.md) \| `Omit`<[`SlashCommandStringOption`](SlashCommandStringOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandStringOption`](SlashCommandStringOption.md), ``"addChoices"``\> | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SlashCommandBuilder`](SlashCommandBuilder.md)
-
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:137](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L137)
 
 ___
 
@@ -362,19 +346,17 @@ ___
 
 ▸ **addUserOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
 
+Adds a user option
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `input` | [`SlashCommandUserOption`](SlashCommandUserOption.md) |  |
+| `input` | [`SlashCommandUserOption`](SlashCommandUserOption.md) | A function that returns an option builder, or an already built builder |
 
 #### Returns
 
 [`SlashCommandBuilder`](SlashCommandBuilder.md)
-
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:87](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L87)
 
 ___
 
@@ -390,10 +372,6 @@ ___
 
 CommandBuilderBase.clearRequiredPermissions
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:111](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L111)
-
 ___
 
 ### disallowAllPermissions
@@ -407,10 +385,6 @@ ___
 #### Inherited from
 
 CommandBuilderBase.disallowAllPermissions
-
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:117](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L117)
 
 ___
 
@@ -432,10 +406,6 @@ ___
 
 CommandBuilderBase.equals
 
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:177](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L177)
-
 ___
 
 ### removeRequiredPermissions
@@ -456,15 +426,13 @@ ___
 
 CommandBuilderBase.removeRequiredPermissions
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:105](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L105)
-
 ___
 
 ### setDMEnabled
 
 ▸ **setDMEnabled**(`value`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+
+Set whether this command will be visible in DMs - Only applicable to Global commands.
 
 #### Parameters
 
@@ -480,35 +448,31 @@ ___
 
 CommandBuilderBase.setDMEnabled
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:87](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L87)
-
 ___
 
 ### setDescription
 
 ▸ **setDescription**(`description`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
 
+Set the description
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `description` | `string` |  |
+| `description` | `string` | The description |
 
 #### Returns
 
 [`SlashCommandBuilder`](SlashCommandBuilder.md)
-
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:49](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L49)
 
 ___
 
 ### setDescriptionLocalizations
 
 ▸ **setDescriptionLocalizations**(`localizations`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+
+Set a dictionary of localized descriptions
 
 #### Parameters
 
@@ -520,15 +484,13 @@ ___
 
 [`SlashCommandBuilder`](SlashCommandBuilder.md)
 
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L58)
-
 ___
 
 ### setLocalizedDescription
 
 ▸ **setLocalizedDescription**(`locale`, `description`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+
+Set a single locale's description
 
 #### Parameters
 
@@ -541,15 +503,13 @@ ___
 
 [`SlashCommandBuilder`](SlashCommandBuilder.md)
 
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:67](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L67)
-
 ___
 
 ### setLocalizedName
 
 ▸ **setLocalizedName**(`locale`, `name`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+
+Set a single locale's name
 
 #### Parameters
 
@@ -566,15 +526,13 @@ ___
 
 CommandBuilderBase.setLocalizedName
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:78](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L78)
-
 ___
 
 ### setName
 
 ▸ **setName**(`name`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+
+Set the name
 
 #### Parameters
 
@@ -590,15 +548,13 @@ ___
 
 CommandBuilderBase.setName
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:60](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L60)
-
 ___
 
 ### setNameLocalizations
 
 ▸ **setNameLocalizations**(`localizations`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+
+Set a dictionary of localized names
 
 #### Parameters
 
@@ -613,10 +569,6 @@ ___
 #### Inherited from
 
 CommandBuilderBase.setNameLocalizations
-
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:69](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L69)
 
 ___
 
@@ -638,10 +590,6 @@ ___
 
 CommandBuilderBase.setRequiredPermissions
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:93](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/CommandBuilderBase.ts#L93)
-
 ___
 
 ### toJSON
@@ -655,7 +603,3 @@ ___
 #### Overrides
 
 CommandBuilderBase.toJSON
-
-#### Defined in
-
-[src/commands/SlashCommandBuilder.ts:255](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L255)

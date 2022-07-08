@@ -19,9 +19,11 @@
 
 • `Optional` **cache**: [`GenericCache`](GenericCache.md)
 
+Component State Cache
+
 #### Defined in
 
-[app/DiscordApplication.ts:34](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L34)
+[app/DiscordApplication.ts:34](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L34)
 
 ___
 
@@ -29,9 +31,11 @@ ___
 
 • **clientId**: `string`
 
+Application Client ID
+
 #### Defined in
 
-[app/DiscordApplication.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L22)
+[app/DiscordApplication.ts:22](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L22)
 
 ___
 
@@ -39,19 +43,23 @@ ___
 
 • `Optional` **hooks**: `Partial`<[`InteractionHooks`](../modules.md#interactionhooks)\>
 
+Hooks to perform additional processing on certain interactions before passing to their handlers. Upon returning true, all further execution is halted.
+
 #### Defined in
 
-[app/DiscordApplication.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L31)
+[app/DiscordApplication.ts:31](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L31)
 
 ___
 
 ### publicKey
 
-• **publicKey**: `string` \| `Buffer`
+• **publicKey**: `string`
+
+Application Public Key
 
 #### Defined in
 
-[app/DiscordApplication.ts:25](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L25)
+[app/DiscordApplication.ts:25](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L25)
 
 ___
 
@@ -59,9 +67,11 @@ ___
 
 • `Optional` **timeout**: `number`
 
+Timeout after which InteractionHandlerTimedOut is thrown - Default: 2500ms
+
 #### Defined in
 
-[app/DiscordApplication.ts:37](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L37)
+[app/DiscordApplication.ts:37](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L37)
 
 ___
 
@@ -69,6 +79,8 @@ ___
 
 • **token**: `string`
 
+Application Bot Token
+
 #### Defined in
 
-[app/DiscordApplication.ts:28](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/DiscordApplication.ts#L28)
+[app/DiscordApplication.ts:28](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L28)

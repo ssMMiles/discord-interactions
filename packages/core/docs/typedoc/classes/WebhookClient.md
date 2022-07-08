@@ -28,10 +28,6 @@
 | `token` | `string` |
 | `rest?` | `any` |
 
-#### Defined in
-
-[app/WebhookClient.ts:16](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/WebhookClient.ts#L16)
-
 ## Methods
 
 ### delete
@@ -47,10 +43,6 @@
 #### Returns
 
 `Promise`<`void`\>
-
-#### Defined in
-
-[app/WebhookClient.ts:46](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/WebhookClient.ts#L46)
 
 ___
 
@@ -69,10 +61,6 @@ ___
 
 `Promise`<`APIMessage`\>
 
-#### Defined in
-
-[app/WebhookClient.ts:35](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/WebhookClient.ts#L35)
-
 ___
 
 ### send
@@ -89,7 +77,3 @@ ___
 #### Returns
 
 `Promise`<`APIMessage`\>
-
-#### Defined in
-
-[app/WebhookClient.ts:23](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/WebhookClient.ts#L23)

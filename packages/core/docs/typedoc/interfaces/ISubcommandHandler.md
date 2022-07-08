@@ -4,47 +4,55 @@
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [autocompleteHandler](ISubcommandHandler.md#autocompletehandler)
 - [handler](ISubcommandHandler.md#handler)
 
-## Methods
+## Properties
 
 ### autocompleteHandler
 
-▸ `Optional` **autocompleteHandler**(`ctx`): `Promise`<`void`\>
+• `Optional` **autocompleteHandler**: (`ctx`: [`AutocompleteContext`](../classes/AutocompleteContext.md)) => `Promise`<`void`\>
 
-#### Parameters
+#### Type declaration
+
+▸ (`ctx`): `Promise`<`void`\>
+
+##### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `ctx` | [`AutocompleteContext`](../classes/AutocompleteContext.md) |
 
-#### Returns
+##### Returns
 
 `Promise`<`void`\>
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:8](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L8)
+[app/commands/CommandGroup.ts:8](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L8)
 
 ___
 
 ### handler
 
-▸ **handler**(`ctx`): `Promise`<`void`\>
+• **handler**: (`ctx`: [`SlashCommandContext`](../classes/SlashCommandContext.md)) => `Promise`<`void`\>
 
-#### Parameters
+#### Type declaration
+
+▸ (`ctx`): `Promise`<`void`\>
+
+##### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `ctx` | [`SlashCommandContext`](../classes/SlashCommandContext.md) |
 
-#### Returns
+##### Returns
 
 `Promise`<`void`\>
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:7](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/commands/CommandGroup.ts#L7)
+[app/commands/CommandGroup.ts:7](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L7)

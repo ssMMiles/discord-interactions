@@ -68,19 +68,17 @@
 
 BaseCommandContext&lt;APIChatInputApplicationCommandInteraction\&gt;.constructor
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:37](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L37)
-
 ## Properties
 
 ### group
 
 • `Optional` **group**: `string`
 
+The subcommand group
+
 #### Defined in
 
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:35](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L35)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:35](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L35)
 
 ___
 
@@ -94,7 +92,7 @@ BaseCommandContext.interaction
 
 #### Defined in
 
-[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L26)
+[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L26)
 
 ___
 
@@ -108,7 +106,7 @@ BaseCommandContext.isDM
 
 #### Defined in
 
-[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L31)
+[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L31)
 
 ___
 
@@ -122,7 +120,7 @@ BaseCommandContext.manager
 
 #### Defined in
 
-[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L24)
+[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L24)
 
 ___
 
@@ -136,7 +134,7 @@ BaseCommandContext.name
 
 #### Defined in
 
-[app/contexts/ApplicationCommand/Base.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L19)
+[app/contexts/ApplicationCommand/Base.ts:19](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L19)
 
 ___
 
@@ -144,9 +142,11 @@ ___
 
 • `Optional` **parentCommand**: `string`
 
+The parent command, if this is a subcommand.
+
 #### Defined in
 
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:30](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L30)
+[app/contexts/ApplicationCommand/SlashCommandContext.ts:30](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L30)
 
 ___
 
@@ -160,7 +160,7 @@ BaseCommandContext.user
 
 #### Defined in
 
-[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L29)
+[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L29)
 
 ## Accessors
 
@@ -175,10 +175,6 @@ BaseCommandContext.user
 #### Inherited from
 
 BaseCommandContext.expired
-
-#### Defined in
-
-[app/contexts/Base.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L19)
 
 ## Methods
 
@@ -208,10 +204,6 @@ BaseCommandContext.expired
 
 BaseCommandContext.createComponent
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:76](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L76)
-
 ___
 
 ### createGlobalComponent
@@ -240,10 +232,6 @@ ___
 
 BaseCommandContext.createGlobalComponent
 
-#### Defined in
-
-[app/contexts/Base.ts:65](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L65)
-
 ___
 
 ### decorate
@@ -265,10 +253,6 @@ ___
 
 BaseCommandContext.decorate
 
-#### Defined in
-
-[app/contexts/Base.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L58)
-
 ___
 
 ### defer
@@ -283,10 +267,6 @@ ___
 
 BaseCommandContext.defer
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/Base.ts:33](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L33)
-
 ___
 
 ### delete
@@ -300,10 +280,6 @@ ___
 #### Inherited from
 
 BaseCommandContext.delete
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/Base.ts:73](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L73)
 
 ___
 
@@ -325,10 +301,6 @@ ___
 
 BaseCommandContext.edit
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/Base.ts:69](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L69)
-
 ___
 
 ### getAttachmentOption
@@ -344,10 +316,6 @@ ___
 #### Returns
 
 `APIApplicationCommandInteractionDataAttachmentOption` & { `attachment`: `APIAttachment`  }
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:163](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L163)
 
 ___
 
@@ -365,10 +333,6 @@ ___
 
 `APIApplicationCommandInteractionDataBooleanOption`
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:100](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L100)
-
 ___
 
 ### getChannelOption
@@ -384,10 +348,6 @@ ___
 #### Returns
 
 `APIApplicationCommandInteractionDataChannelOption` & { `channel`: `APIInteractionDataResolvedChannel`  }
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:122](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L122)
 
 ___
 
@@ -405,10 +365,6 @@ ___
 
 `APIApplicationCommandInteractionDataNumberOption`
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:93](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L93)
-
 ___
 
 ### getMentionableOption
@@ -424,10 +380,6 @@ ___
 #### Returns
 
 `APIApplicationCommandInteractionDataMentionableOption` & { `role?`: `APIRole` ; `user?`: `APIUser`  }
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:144](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L144)
 
 ___
 
@@ -445,10 +397,6 @@ ___
 
 `APIApplicationCommandInteractionDataNumberOption`
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:156](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L156)
-
 ___
 
 ### getRoleOption
@@ -464,10 +412,6 @@ ___
 #### Returns
 
 `APIApplicationCommandInteractionDataRoleOption` & { `role`: `APIRole`  }
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:134](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L134)
 
 ___
 
@@ -485,10 +429,6 @@ ___
 
 `APIApplicationCommandInteractionDataStringOption`
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:86](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L86)
-
 ___
 
 ### getUserOption
@@ -505,10 +445,6 @@ ___
 
 `APIApplicationCommandInteractionDataUserOption` & { `member?`: `APIInteractionDataResolvedGuildMember` ; `user`: `APIUser`  }
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:107](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L107)
-
 ___
 
 ### hasOption
@@ -524,10 +460,6 @@ ___
 #### Returns
 
 `boolean`
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/SlashCommandContext.ts:82](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/SlashCommandContext.ts#L82)
 
 ___
 
@@ -549,10 +481,6 @@ ___
 
 BaseCommandContext.rawReply
 
-#### Defined in
-
-[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L54)
-
 ___
 
 ### reply
@@ -573,10 +501,6 @@ ___
 
 BaseCommandContext.reply
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/Base.ts:41](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L41)
-
 ___
 
 ### send
@@ -596,7 +520,3 @@ ___
 #### Inherited from
 
 BaseCommandContext.send
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/Base.ts:65](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L65)

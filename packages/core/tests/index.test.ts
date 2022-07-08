@@ -36,23 +36,6 @@ const options: DiscordApplicationOptions = {
 };
 
 describe("Discord Application", () => {
-  describe("Authentication", () => {
-    const publicKey = Buffer.from("67d3b5eaf0c0bf6b5a602d359daecc86a7a74053490ec37ae08e71360587c870", "hex");
-
-    const signature =
-        "dbd6c2a5df02e85cdd1779f7ff3ee14d51e56c7f7d9b30d12253ccdd9e84949327db7e1b41e636975b16103316a144f8b98a290112b19e8148bbafa6f4e04209",
-      invalidSignature = signature.replace("1", "2"),
-      timestamp = "",
-      body = "Oh no!";
-    it("Valid Signature Is Accepted", () => {
-      expect(DiscordApplication.verifyInteractionSignature(publicKey, timestamp, signature, body)).toBe(true);
-    });
-
-    it("Invalid Signature Is Denied", () => {
-      expect(DiscordApplication.verifyInteractionSignature(publicKey, timestamp, invalidSignature, body)).toBe(false);
-    });
-  });
-
   const app = new DiscordApplication(options);
 
   describe("Managing Application Commands", () => {

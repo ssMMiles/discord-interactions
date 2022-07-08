@@ -26,21 +26,23 @@
 
 • **new ComponentManager**(`cache?`)
 
+Create a new component manager, with an optional cache.
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `cache?` | [`GenericCache`](../interfaces/GenericCache.md) |  |
-
-#### Defined in
-
-[app/managers/ComponentManager.ts:14](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/ComponentManager.ts#L14)
+| `cache?` | [`GenericCache`](../interfaces/GenericCache.md) | Cache to use for storing large state objects |
 
 ## Properties
 
 ### cache
 
 • `Optional` **cache**: [`GenericCache`](../interfaces/GenericCache.md)
+
+#### Defined in
+
+[app/managers/ComponentManager.ts:14](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/managers/ComponentManager.ts#L14)
 
 ## Methods
 
@@ -66,10 +68,6 @@
 
 `Promise`<`Builder`\>
 
-#### Defined in
-
-[app/managers/ComponentManager.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/ComponentManager.ts#L36)
-
 ___
 
 ### get
@@ -85,10 +83,6 @@ ___
 #### Returns
 
 `undefined` \| [`Component`](../modules.md#component) \| [`Modal`](Modal.md)
-
-#### Defined in
-
-[app/managers/ComponentManager.ts:22](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/ComponentManager.ts#L22)
 
 ___
 
@@ -106,10 +100,6 @@ ___
 
 `boolean`
 
-#### Defined in
-
-[app/managers/ComponentManager.ts:18](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/ComponentManager.ts#L18)
-
 ___
 
 ### register
@@ -126,10 +116,6 @@ ___
 
 `void`
 
-#### Defined in
-
-[app/managers/ComponentManager.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/ComponentManager.ts#L26)
-
 ___
 
 ### unregister
@@ -145,7 +131,3 @@ ___
 #### Returns
 
 `void`
-
-#### Defined in
-
-[app/managers/ComponentManager.ts:32](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/managers/ComponentManager.ts#L32)

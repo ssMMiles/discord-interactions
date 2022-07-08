@@ -4,20 +4,24 @@
 
 ## Table of contents
 
-### Methods
+### Properties
 
 - [toJSON](ToAPIApplicationCommandOptions.md#tojson)
 
-## Methods
+## Properties
 
 ### toJSON
 
-▸ **toJSON**(): `APIApplicationCommandBasicOption`
+• **toJSON**: () => `APIApplicationCommandBasicOption`
 
-#### Returns
+#### Type declaration
+
+▸ (): `APIApplicationCommandBasicOption`
+
+##### Returns
 
 `APIApplicationCommandBasicOption`
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/commands/SlashCommandBuilder.ts#L27)
+[src/commands/SlashCommandBuilder.ts:27](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/SlashCommandBuilder.ts#L27)

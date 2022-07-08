@@ -2,6 +2,8 @@
 
 # Class: TextInputBuilder
 
+Represents a non-validated text input component
+
 ## Hierarchy
 
 - `ComponentBuilderBase`<`APITextInputComponent`\>
@@ -48,15 +50,13 @@
 
 ComponentBuilderBase&lt;APITextInputComponent\&gt;.constructor
 
-#### Defined in
-
-[src/components/TextInputBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L13)
-
 ## Properties
 
 ### data
 
 • `Readonly` **data**: `Partial`<`APITextInputComponent`\>
+
+The API data associated with this component
 
 #### Inherited from
 
@@ -64,7 +64,7 @@ ComponentBuilderBase.data
 
 #### Defined in
 
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/components/ComponentBuilderBase.ts#L19)
 
 ## Methods
 
@@ -72,19 +72,17 @@ ComponentBuilderBase.data
 
 ▸ **setCustomId**(`customId`): [`TextInputBuilder`](TextInputBuilder.md)
 
+Sets the custom Id for this text input
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `customId` | `string` |  |
+| `customId` | `string` | The custom id to use for this text input |
 
 #### Returns
 
 [`TextInputBuilder`](TextInputBuilder.md)
-
-#### Defined in
-
-[src/components/TextInputBuilder.ts:81](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L81)
 
 ___
 
@@ -92,25 +90,25 @@ ___
 
 ▸ **setLabel**(`label`): [`TextInputBuilder`](TextInputBuilder.md)
 
+Sets the label for this button
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `label` | `string` |  |
+| `label` | `string` | The label to display on this button |
 
 #### Returns
 
 [`TextInputBuilder`](TextInputBuilder.md)
-
-#### Defined in
-
-[src/components/TextInputBuilder.ts:45](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L45)
 
 ___
 
 ### setMaxLength
 
 ▸ **setMaxLength**(`maxLength`): [`TextInputBuilder`](TextInputBuilder.md)
+
+Sets the maximum values that must be selected in the text input
 
 #### Parameters
 
@@ -122,15 +120,13 @@ ___
 
 [`TextInputBuilder`](TextInputBuilder.md)
 
-#### Defined in
-
-[src/components/TextInputBuilder.ts:72](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L72)
-
 ___
 
 ### setMinLength
 
 ▸ **setMinLength**(`minLength`): [`TextInputBuilder`](TextInputBuilder.md)
+
+Sets the minimum values that must be selected in the text input
 
 #### Parameters
 
@@ -142,35 +138,31 @@ ___
 
 [`TextInputBuilder`](TextInputBuilder.md)
 
-#### Defined in
-
-[src/components/TextInputBuilder.ts:63](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L63)
-
 ___
 
 ### setPlaceholder
 
 ▸ **setPlaceholder**(`placeholder`): [`TextInputBuilder`](TextInputBuilder.md)
 
+Sets the placeholder for this text input
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `placeholder` | `string` |  |
+| `placeholder` | `string` | The placeholder to use for this text input |
 
 #### Returns
 
 [`TextInputBuilder`](TextInputBuilder.md)
-
-#### Defined in
-
-[src/components/TextInputBuilder.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L27)
 
 ___
 
 ### setRequired
 
 ▸ **setRequired**(`required?`): [`TextInputBuilder`](TextInputBuilder.md)
+
+Sets whether or not this text input is required
 
 #### Parameters
 
@@ -182,29 +174,23 @@ ___
 
 [`TextInputBuilder`](TextInputBuilder.md)
 
-#### Defined in
-
-[src/components/TextInputBuilder.ts:90](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L90)
-
 ___
 
 ### setStyle
 
 ▸ **setStyle**(`style`): [`TextInputBuilder`](TextInputBuilder.md)
 
+Sets the style of this button
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `style` | [`TextInputStyle`](../enums/TextInputStyle.md) |  |
+| `style` | [`TextInputStyle`](../enums/TextInputStyle.md) | The style of the button |
 
 #### Returns
 
 [`TextInputBuilder`](TextInputBuilder.md)
-
-#### Defined in
-
-[src/components/TextInputBuilder.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L54)
 
 ___
 
@@ -212,19 +198,17 @@ ___
 
 ▸ **setValue**(`value`): [`TextInputBuilder`](TextInputBuilder.md)
 
+Sets a prefilled value for the text input
+
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `value` | `string` |  |
+| `value` | `string` | Text to fill with |
 
 #### Returns
 
 [`TextInputBuilder`](TextInputBuilder.md)
-
-#### Defined in
-
-[src/components/TextInputBuilder.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L36)
 
 ___
 
@@ -239,7 +223,3 @@ ___
 #### Overrides
 
 ComponentBuilderBase.toJSON
-
-#### Defined in
-
-[src/components/TextInputBuilder.ts:95](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/builders/src/components/TextInputBuilder.ts#L95)

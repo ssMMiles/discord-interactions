@@ -34,10 +34,6 @@
 
 [InteractionError](InteractionError.md).[constructor](InteractionError.md#constructor)
 
-#### Defined in
-
-[util/errors.ts:36](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/util/errors.ts#L36)
-
 ## Properties
 
 ### interaction
@@ -50,4 +46,4 @@
 
 #### Defined in
 
-[util/errors.ts:14](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/util/errors.ts#L14)
+[util/errors.ts:14](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/util/errors.ts#L14)

@@ -57,10 +57,6 @@
 
 BaseCommandContext&lt;APIUserApplicationCommandInteraction\&gt;.constructor
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/UserCommandContext.ts:16](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/UserCommandContext.ts#L16)
-
 ## Properties
 
 ### interaction
@@ -73,7 +69,7 @@ BaseCommandContext.interaction
 
 #### Defined in
 
-[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L26)
+[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L26)
 
 ___
 
@@ -87,7 +83,7 @@ BaseCommandContext.isDM
 
 #### Defined in
 
-[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L31)
+[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L31)
 
 ___
 
@@ -101,7 +97,7 @@ BaseCommandContext.manager
 
 #### Defined in
 
-[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L24)
+[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L24)
 
 ___
 
@@ -115,7 +111,7 @@ BaseCommandContext.name
 
 #### Defined in
 
-[app/contexts/ApplicationCommand/Base.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L19)
+[app/contexts/ApplicationCommand/Base.ts:19](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L19)
 
 ___
 
@@ -132,7 +128,7 @@ ___
 
 #### Defined in
 
-[app/contexts/ApplicationCommand/UserCommandContext.ts:11](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/UserCommandContext.ts#L11)
+[app/contexts/ApplicationCommand/UserCommandContext.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/UserCommandContext.ts#L11)
 
 ___
 
@@ -146,7 +142,7 @@ BaseCommandContext.user
 
 #### Defined in
 
-[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L29)
+[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L29)
 
 ## Accessors
 
@@ -161,10 +157,6 @@ BaseCommandContext.user
 #### Inherited from
 
 BaseCommandContext.expired
-
-#### Defined in
-
-[app/contexts/Base.ts:19](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L19)
 
 ## Methods
 
@@ -194,10 +186,6 @@ BaseCommandContext.expired
 
 BaseCommandContext.createComponent
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/Base.ts:27](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L27)
-
 ___
 
 ### createGlobalComponent
@@ -226,10 +214,6 @@ ___
 
 BaseCommandContext.createGlobalComponent
 
-#### Defined in
-
-[app/contexts/Base.ts:65](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L65)
-
 ___
 
 ### decorate
@@ -251,10 +235,6 @@ ___
 
 BaseCommandContext.decorate
 
-#### Defined in
-
-[app/contexts/Base.ts:58](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L58)
-
 ___
 
 ### defer
@@ -269,10 +249,6 @@ ___
 
 BaseCommandContext.defer
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/Base.ts:33](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L33)
-
 ___
 
 ### delete
@@ -286,10 +262,6 @@ ___
 #### Inherited from
 
 BaseCommandContext.delete
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/Base.ts:73](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L73)
 
 ___
 
@@ -311,10 +283,6 @@ ___
 
 BaseCommandContext.edit
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/Base.ts:69](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L69)
-
 ___
 
 ### rawReply
@@ -334,10 +302,6 @@ ___
 #### Inherited from
 
 BaseCommandContext.rawReply
-
-#### Defined in
-
-[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/Base.ts#L54)
 
 ___
 
@@ -359,10 +323,6 @@ ___
 
 BaseCommandContext.reply
 
-#### Defined in
-
-[app/contexts/ApplicationCommand/Base.ts:41](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L41)
-
 ___
 
 ### send
@@ -382,7 +342,3 @@ ___
 #### Inherited from
 
 BaseCommandContext.send
-
-#### Defined in
-
-[app/contexts/ApplicationCommand/Base.ts:65](https://github.com/ssMMiles/discord-interactions/blob/ef474ab/packages/core/src/app/contexts/ApplicationCommand/Base.ts#L65)
