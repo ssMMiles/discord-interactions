@@ -1,4 +1,4 @@
-name: Tests
+name: Actions
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  Test:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,3 +27,4 @@ jobs:
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
           TOKEN: ${{ secrets.TOKEN }}
+          PORT: 8080
