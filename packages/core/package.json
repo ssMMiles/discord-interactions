@@ -52,5 +52,9 @@
     "start": "node dist/index.js",
     "dev": "yarn build && yarn start",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
-  }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "e68f3353bcfcbfd13a5850261e07da9775daf88c"
 }
