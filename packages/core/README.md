@@ -2,9 +2,9 @@
 <div align="center">
   <p>
     <a href="https://discord.gg/BTXJmW4Bh7"><img src="https://img.shields.io/discord/395423304112013334?logo=discord&logoColor=white" alt="Discord server" /></a>
-    <a href="https://www.npmjs.com/package/@discord-interactions/core"><img src="https://img.shields.io/npm/v/interactions.ts.svg?maxAge=3600" alt="npm version" /></a>
-    <a href="https://www.npmjs.com/package/@discord-interactions/core"><img src="https://img.shields.io/npm/dt/interactions.ts.svg?maxAge=3600" alt="npm downloads" /></a>
-    <a href="https://github.com/ssMMiles/discord-interactions/actions"><img src="https://github.com/ssMMiles/interactions.ts/actions/workflows/tests.yml/badge.svg" alt="Tests status" /></a>
+    <a href="https://www.npmjs.com/package/@discord-interactions/core"><img src="https://img.shields.io/npm/v/@discord-interactions/core.svg?maxAge=3600" alt="npm version" /></a>
+    <a href="https://www.npmjs.com/package/@discord-interactions/core"><img src="https://img.shields.io/npm/dt/@discord-interactions/core.svg?maxAge=3600" alt="npm downloads" /></a>
+    <a href="https://github.com/ssMMiles/discord-interactions/actions"><img src="https://github.com/ssMMiles/discord-interactions/actions/workflows/tests.yml/badge.svg" alt="Tests status" /></a>
   </p>
 </div>
 
@@ -12,7 +12,7 @@
 
 # Getting Started
 
-An example bot using the framework is available [here](../example-bot/README.md). Additional code snippets can be found below.
+An example bot using the framework is available [here](../example-bot). Additional code snippets can be found below.
 
 ## Install
 
@@ -20,7 +20,7 @@ An example bot using the framework is available [here](../example-bot/README.md)
 
 ### Signature Verification
 
-You must also install and import one of [`verify`(Web APIs - CF Workers, Vercel Edge Functions, etc)](../verify/README.md)/[`verify-node`(Node.JS)](../verify-node/README.md) to enable signature verification.
+You must also install and import one of [`verify`(Web APIs - CF Workers, Vercel Edge Functions, etc)](../verify)/[`verify-node`(Node.JS)](../verify-node) to enable signature verification.
 
 # Receiving Interactions
 
@@ -37,7 +37,7 @@ server.post("/", async (request, reply) => {
   const timestamp = request.headers["x-signature-timestamp"];
 
   try {
-    const [onResponse, finished] = app.handleInteraction(
+    const [onResponse, finished] = await app.handleInteraction(
       request.rawBody,
       timestamp,
       signature

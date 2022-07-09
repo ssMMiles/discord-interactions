@@ -1,1 +1,1 @@
-Handles rate limiting, typing of all routes in the Discord API and parsing of possible errors. Provides an interface for an external request manager module: `@interactions.ts/request`/`@interactions.ts/request-node`
+Handles rate limiting, typing of all routes in the Discord API and parsing of possible errors. Provides an interface for an external request manager module: `@discord-interactions/request`/`@discord-interactions/request-node`
