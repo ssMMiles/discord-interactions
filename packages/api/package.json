@@ -27,10 +27,7 @@
     "node": ">=16"
   },
   "dependencies": {
-    "@discord-interactions/request": "^0.2.3",
-    "debug": "^4.3.4",
-    "discord-api-types": "^0.36.1",
-    "isomorphic-fetch-ponyfill": "^0.2.3"
+    "@discord-interactions/request": "^0.2.3"
   },
   "devDependencies": {
     "@types/jest": "^28.1.4",
