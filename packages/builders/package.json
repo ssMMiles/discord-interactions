@@ -7,7 +7,6 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "cross-blob": "^3.0.1",
     "discord-api-types": "^0.36.1",
     "formdata-node": "^4.3.3"
   },

@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import Blob from "cross-blob";
 import type {
   APIActionRowComponent,
   APIAllowedMentions,
