@@ -10,6 +10,7 @@
 
 import {
   DiscordApplication,
+  InteractionHandlerError,
   InteractionHandlerNotFound,
   InteractionHandlerTimedOut,
   UnauthorizedInteraction,
@@ -18,6 +19,7 @@ import {
   UnknownInteractionType
 } from "@discord-interactions/core";
 import "@discord-interactions/verify";
+import { Ping } from "./commands/Ping.js";
 
 export interface Env {
   CLIENT_ID: string;
@@ -44,6 +46,8 @@ export default {
       }
     });
 
+    await app.commands.register(new Ping());
+
     const signature = request.headers.get("x-signature-ed25519");
     const timestamp = request.headers.get("x-signature-timestamp");
 
@@ -54,8 +58,9 @@ export default {
     }
 
     try {
-      const [getResponse] = await app.handleInteraction(body, signature, timestamp);
+      const [getResponse, handling] = await app.handleInteraction(body, signature, timestamp);
 
+      ctx.waitUntil(handling);
       const response = await getResponse;
 
       if (response instanceof FormData) {
@@ -83,7 +88,7 @@ export default {
       if (err instanceof InteractionHandlerTimedOut) {
         console.error("Interaction Handler Timed Out");
 
-        new Response("Invalid request", { status: 408 });
+        new Response("Timed Out", { status: 408 });
       }
 
       if (
@@ -94,7 +99,14 @@ export default {
         console.error("Unknown Interaction - Library may be out of date.");
         console.dir(err.interaction);
 
-        new Response("Invalid request", { status: 400 });
+        new Response("Server Error", { status: 500 });
+      }
+
+      if (err instanceof InteractionHandlerError) {
+        console.error("Interaction Handler Error");
+        console.error(err.cause);
+
+        new Response("Server Error", { status: 500 });
       }
 
       console.error(err);
