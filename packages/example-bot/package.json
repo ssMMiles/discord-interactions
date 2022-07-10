@@ -17,6 +17,7 @@
     "redis": "^4.2.0"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.4",
     "@types/node": "^18.0.3",
     "@types/node-fetch": "^2.6.1",
     "@types/uuid": "^8.3.4",

@@ -24,6 +24,11 @@ describe("Responses", () => {
     });
 
     it("Attached Files", async () => {
+      if (typeof Blob === "undefined") {
+        expect(true).toBe(true);
+        return;
+      }
+
       const file = readFileSync("./tests/attachment");
       const form = new MessageBuilder("Example")
         .addAttachments({

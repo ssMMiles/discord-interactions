@@ -1,8 +1,10 @@
 {
   "name": "@discord-interactions/example-bot-worker",
   "version": "0.2.3",
+  "type": "module",
   "devDependencies": {
     "@cloudflare/workers-types": "^3.14.0",
+    "@types/jest": "^28.1.4",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
     "dotenv": "^13.0.0",
@@ -24,8 +26,7 @@
     "lint": "eslint src",
     "docs": "typedoc",
     "proxy": "ssh -R 443:localhost:8787 tunnel.us.ngrok.com http",
-    "dev": "wrangler dev & yarn proxy",
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
+    "dev": "wrangler dev & yarn proxy"
   },
   "dependencies": {
     "@discord-interactions/builders": "^0.2.3",
