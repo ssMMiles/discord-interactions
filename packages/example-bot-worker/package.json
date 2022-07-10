@@ -1,0 +1,35 @@
+{
+  "name": "@discord-interactions/example-bot-worker",
+  "version": "0.0.1",
+  "devDependencies": {
+    "@cloudflare/workers-types": "^3.14.0",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "dotenv": "^13.0.0",
+    "jest": "^28.1.2",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^28.0.5",
+    "ts-node": "^10.4.0",
+    "typedoc": "^0.23.6",
+    "typedoc-plugin-markdown": "^3.13.3",
+    "typescript": "^4.7.4",
+    "wrangler": "2.0.16"
+  },
+  "private": true,
+  "scripts": {
+    "deploy": "wrangler publish",
+    "clean": "rimraf dist",
+    "format": "prettier --write src",
+    "lint": "eslint src",
+    "docs": "typedoc",
+    "proxy": "ssh -R 443:localhost:8787 tunnel.us.ngrok.com http",
+    "dev": "wrangler dev & yarn proxy",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
+  },
+  "dependencies": {
+    "@discord-interactions/builders": "^0.2.1",
+    "@discord-interactions/core": "^0.2.2",
+    "@discord-interactions/verify": "^0.2.2"
+  }
+}

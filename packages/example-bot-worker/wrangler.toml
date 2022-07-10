@@ -1,0 +1,7 @@
+name = "bot-worker-template"
+main = "src/index.ts"
+compatibility_date = "2022-07-06"
+
+[[rules]]
+type = "ESModule"
+globs = [ "**/*.ts" ]
