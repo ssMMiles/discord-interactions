@@ -33,3 +33,4 @@ if (global !== undefined) {
 
 export { fetch, Headers, Request, Response };
 export type { ResponseInit, HeadersInit, BodyInit };
+export default fetch;
