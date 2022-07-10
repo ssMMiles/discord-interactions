@@ -1,7 +1,7 @@
 {
   "name": "isomorphic-fetch-ponyfill",
   "description": "An isorchonous ponyfill for the fetch API. Works across the browser, Node, React Native, ",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "main": "dist/node-ponyfill.js",
   "browser": "dist/browser-ponyfill.js",
   "react-native": "dist/react-native-ponyfill.js",
