@@ -1,0 +1,38 @@
+{
+  "name": "@discord-interactions/api",
+  "version": "0.0.1",
+  "author": "ssMMiles",
+  "description": "A Discord HTTP client that handles global and resource rate limits automatically",
+  "license": "Apache-2.0",
+  "homepage": "https://github.com/ianmitchell/interaction-kit/tree/main/packages/discord-request",
+  "exports": "./dist/src/index.js",
+  "main": "./dist/src/index.js",
+  "typings": "dist/src/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "prettier": "prettier src/**/*.ts --check",
+    "lint": "eslint ./src/**/*.ts",
+    "test": "vitest run"
+  },
+  "files": [
+    "dist",
+    "src",
+    "package.json"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "@discord-interactions/request": "^0.0.1",
+    "debug": "^4.3.4",
+    "discord-api-types": "^0.36.1",
+    "isomorphic-fetch-ponyfill": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.3",
+    "typescript": "^4.7.4"
+  }
+}
