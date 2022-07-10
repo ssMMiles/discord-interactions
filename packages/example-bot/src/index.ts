@@ -12,6 +12,7 @@ import "dotenv/config";
 import { fastify } from "fastify";
 import { default as rawBody } from "fastify-raw-body";
 import { createClient } from "redis";
+import { Ping } from "./Ping.js";
 
 const keys = ["CLIENT_ID", "TOKEN", "PUBLIC_KEY", "PORT"];
 
@@ -37,6 +38,8 @@ if (missing.length !== 0) {
       set: (key: string, ttl: number, value: string) => redisClient.setEx(key, ttl, value)
     }
   });
+
+  await app.commands.register(new Ping());
 
   const server = fastify();
   await server.register(rawBody);

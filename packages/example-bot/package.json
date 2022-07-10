@@ -7,6 +7,8 @@
   "type": "module",
   "private": true,
   "dependencies": {
+    "@discord-interactions/api": "^0.0.1",
+    "@discord-interactions/builders": "^0.1.1",
     "@discord-interactions/core": "^0.1.2",
     "@discord-interactions/verify-node": "^0.1.2",
     "discord-api-types": "^0.36.1",
@@ -15,7 +17,7 @@
     "redis": "^4.2.0"
   },
   "devDependencies": {
-    "@types/node": "^14.18.3",
+    "@types/node": "^18.0.3",
     "@types/node-fetch": "^2.6.1",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
@@ -48,7 +50,8 @@
     "build": "tsc",
     "docs": "typedoc",
     "start": "node dist/index.js",
-    "dev": "yarn build && yarn start",
+    "proxy": "ssh -R 443:localhost:8080 tunnel.us.ngrok.com http",
+    "dev": "yarn start & yarn proxy",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   }
 }
