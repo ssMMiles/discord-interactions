@@ -6,3 +6,17 @@
   </p>
 </div>
 *An example Discord bot made using `@discord-interactions`.*
+
+To experiment, simply clone the repository and run `yarn install`.
+
+Create a `.env` file:
+```
+CLIENT_ID=<your client id>
+TOKEN=<your token>
+PUBLIC_KEY=<your public key>
+
+PORT=8080
+```
+
+Then run `yarn build && yarn start` to run the bot locally, or ``yarn build && yarn dev`` to also open an SSH tunnel to Ngrok.
+```

@@ -13,15 +13,13 @@ A complete framework for [Discord's Interactions](https://discord.com/developers
 *Although this is still a work in progress, the [previous stable version](https://www.npmjs.com/package/interactions.ts) is still available and exposes a similar API. Work is currently being done to split the library into packages and remove dependencies on Node.js APIs/primitives for use in environments like CF Workers and Vercel's Edge Functions.*
 
 ### To-Do:
- - Implement a `rest` module based on `@discordjs/rest`, with typed routes, Discord error parsing, support for external ratelimit relays ([Twilight](https://github.com/twilight-rs/http-proxy), [Nirn](https://github.com/germanoeich/nirn-proxy)). The `request` and `request-node` packages will provide the implementations for actually sending requests, using Web/Node APIs respectively.
  - Better documentation and more tests.
- - Credits/Licenses - code originates from @discordjs for the builders and interaction-kit for the api client
 
 ## Packages
  - [@discord-interactions/core](./packages/core) - *Our core framework for handling and verifying incoming Discord interactions.*
  - [@discord-interactions/builders](./packages/builders) - *Easy builder classes for interaction responses (Messages/Modals), Components and Commands.*
- - [@discord-interactions/rest](./packages/rest) - Unimplemented
- - [@discord-interactions/request](./packages/request) - Unimplemented
- - [@interacitonts.ts/request-node](./packages/request-node) - Unimplemented
+ - [@discord-interactions/api](./packages/api) - *A simple, typed wrapper around the Discord API.*
+ - [@discord-interactions/request](./packages/request) - *A low level Discord HTTP client that handles global and resource rate limits.*
  - [@discord-interactions/verify](./packages/verify) - *Verification module for `@discord-interactions/core`. Implements signature verification using the Web SubtleCrypto API.*
  - [@discord-interactions/verify-node](./packages/verify-node) - *Verification module for `@discord-interactions/core`. Implements signature verification using the Node.JS (todo libsodium?) Crypto API.*
+ - [isomorphic-fetch-polyfill](./packages/isomorphic-fetch-polyfill) - *A fetch ponyfill that supports Node.JS, Service Workers, anything?*

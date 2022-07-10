@@ -11,11 +11,12 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf dist",
+    "format": "prettier --write src",
+    "lint": "eslint src",
     "build": "tsc",
-    "typecheck": "tsc --noEmit",
-    "prettier": "prettier src/**/*.ts --check",
-    "lint": "eslint ./src/**/*.ts",
-    "test": "vitest run"
+    "docs": "typedoc",
+    "start": "node dist/index.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
   "files": [
     "dist",
