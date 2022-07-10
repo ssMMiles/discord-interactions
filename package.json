@@ -7,7 +7,8 @@
     "build": "lerna run build",
     "format": "lerna run format",
     "lint": "lerna run lint",
-    "test": "lerna run test"
+    "test": "lerna run test",
+    "example": "yarn build && lerna run dev --scope=@discord-interactions/example-bot"
   },
   "devDependencies": {
     "lerna": "^5.1.8",
