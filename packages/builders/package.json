@@ -2,6 +2,7 @@
   "name": "@discord-interactions/builders",
   "description": "Simple builder classes for Discord interaction responses (Messages/Modals), Components and Commands.",
   "version": "0.2.0",
+  "license": "Apache-2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -36,5 +37,5 @@
   "publishConfig": {
     "access": "public"
   },
-  "gitHead": "e68f3353bcfcbfd13a5850261e07da9775daf88c"
+  "gitHead": "08d6267bbef4658266bf16db4af68e87a1aa4ad7"
 }
