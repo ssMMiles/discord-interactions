@@ -1,0 +1,59 @@
+{
+  "name": "isomorphic-fetch-ponyfill",
+  "description": "An isorchonous ponyfill for the fetch API. Works across the browser, Node, React Native, ",
+  "version": "0.0.1",
+  "main": "dist/node-ponyfill.js",
+  "browser": "dist/browser-ponyfill.js",
+  "react-native": "dist/react-native-ponyfill.js",
+  "exports": {
+    ".": {
+      "require": "./dist/node.js",
+      "browser": "./dist/browser.js",
+      "default": "./dist/node.js",
+      "react-native": "./dist/react-native.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "dependencies": {
+    "undici": "^5.6.1",
+    "whatwg-fetch": "^3.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.17.0",
+    "@typescript-eslint/parser": "^5.17.0",
+    "eslint": "^8.14.0",
+    "prettier": "^2.6.2",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "typedoc": "^0.23.6",
+    "typedoc-plugin-markdown": "^3.13.3",
+    "typescript": "^4.5.4"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "keywords": [
+    "discord",
+    "interactions",
+    "slash commands",
+    "framework",
+    "api",
+    "wrapper"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "format": "prettier --write src",
+    "lint": "eslint src",
+    "build": "tsc",
+    "docs": "typedoc",
+    "start": "node dist/index.js",
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "e68f3353bcfcbfd13a5850261e07da9775daf88c"
+}
