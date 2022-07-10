@@ -44,7 +44,7 @@ server.post("/", async (request, reply) => {
     );
 
     onResponse.then((response) => {
-      if ("getHeaders" in response) {
+      if (response.constructor.name === "FormData") {
         res.headers(response.getHeaders()).code(200).send(response);
         return;
       }

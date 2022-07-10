@@ -1,6 +1,6 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
-import { REST } from "@discordjs/rest";
+import { DiscordApiClient } from "@discord-interactions/api";
 import type { APIInteraction, APIInteractionResponse, Snowflake } from "discord-api-types/v10";
 import type { FormData } from "formdata-node";
 import { InteractionHandlerTimedOut, UnauthorizedInteraction } from "../util/errors.js";
@@ -45,6 +45,8 @@ export type ResponseCallback<T extends APIInteractionResponse | FormData = APIIn
  * Main class for managing a Discord Application's commands and handling interactions.
  */
 export class DiscordApplication {
+  private token: string;
+
   public publicKey: string;
   public clientId: Snowflake;
 
@@ -72,13 +74,14 @@ export class DiscordApplication {
     modal: []
   };
 
-  public rest: REST;
+  public rest!: DiscordApiClient;
 
   constructor(options: DiscordApplicationOptions) {
     this.clientId = options.clientId;
     this.publicKey = options.publicKey;
 
-    this.rest = new REST().setToken(options.token);
+    this.token = options.token;
+    this.rest = new DiscordApiClient().setToken(this.token);
 
     this.cache = options.cache;
 
@@ -92,6 +95,10 @@ export class DiscordApplication {
     if (options.hooks) {
       Object.assign(this.hooks, options.hooks);
     }
+  }
+
+  public setAPIClient(client: DiscordApiClient): void {
+    this.rest = client.setToken(this.token);
   }
 
   /**

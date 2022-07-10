@@ -7,7 +7,7 @@
   "type": "module",
   "dependencies": {
     "@discord-interactions/builders": "^0.1.1",
-    "@discordjs/rest": "^0.3.0",
+    "@discord-interactions/api": "^0.0.1",
     "@types/jest": "^28.1.4",
     "discord-api-types": "^0.36.1",
     "formdata-node": "^4.3.3",
@@ -16,7 +16,7 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "@types/node": "^14.18.3",
+    "@types/node": "^18.0.3",
     "@types/node-fetch": "^2.6.1",
     "@types/uuid": "^8.3.4",
     "@typescript-eslint/eslint-plugin": "^5.17.0",
@@ -50,7 +50,6 @@
     "build": "tsc",
     "docs": "typedoc",
     "start": "node dist/index.js",
-    "dev": "yarn build && yarn start",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
   "publishConfig": {

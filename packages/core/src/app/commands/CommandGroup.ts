@@ -81,7 +81,7 @@ export class RegisteredCommandGroup {
       this.manager.rename(this.lastSync.name, data.name, this.builder.type);
     }
 
-    await this.manager.updateAPICommand(data, this.id);
+    await this.manager.manager.rest.patchApplicationCommand(this.manager.clientId, this.id, data);
 
     this.lastSync = data;
   }

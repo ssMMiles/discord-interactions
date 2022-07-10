@@ -46,12 +46,14 @@ export class CommandManager {
   public [ApplicationCommandType.User]: Map<string, RegisteredUserCommand> = new Map();
   public [ApplicationCommandType.Message]: Map<string, RegisteredMessageCommand> = new Map();
 
-  private manager: DiscordApplication;
+  public manager: DiscordApplication;
 
-  private guildId?: string;
+  public clientId: string;
+  public guildId?: string;
 
   constructor(manager: DiscordApplication, guildId?: string) {
     this.manager = manager;
+    this.clientId = manager.clientId;
 
     if (guildId !== undefined) {
       this.guildId = guildId;
@@ -61,14 +63,14 @@ export class CommandManager {
 
   private route() {
     return this.guildId === undefined
-      ? Routes.applicationCommands(this.manager.clientId)
-      : Routes.applicationGuildCommands(this.manager.clientId, this.guildId);
+      ? Routes.applicationCommands(this.clientId)
+      : Routes.applicationGuildCommands(this.clientId, this.guildId);
   }
 
   private commandRoute(id: string) {
     return this.guildId === undefined
-      ? Routes.applicationCommand(this.manager.clientId, id)
-      : Routes.applicationGuildCommand(this.manager.clientId, this.guildId, id);
+      ? Routes.applicationCommand(this.clientId, id)
+      : Routes.applicationGuildCommand(this.clientId, this.guildId, id);
   }
 
   private parse(commands: APIApplicationCommand[]): ParsedCommands {
@@ -124,7 +126,7 @@ export class CommandManager {
    * Register a new command to be handled. This will create the command on Discord if it doesn't exist, or overwrite it if the existing remote version differs.
    */
   async register(...commands: ICommand[]): Promise<RegisteredCommand[]> {
-    const remoteCommands = this.parse(await this.getAPICommands());
+    const remoteCommands = this.parse(await this.manager.rest.getApplicationCommands(this.clientId));
     const registeredCommands: RegisteredCommand[] = [];
 
     for (const command of commands) {
@@ -141,12 +143,12 @@ export class CommandManager {
 
       if (result !== undefined) {
         if (!command.builder.equals(result as never)) {
-          result = await this.updateAPICommand(command.builder.toJSON(), result.id);
+          result = await this.manager.rest.patchApplicationCommand(this.clientId, result.id, command.builder.toJSON());
 
           if (!result) throw new Error("Command failed to register. (Was Overwriting)");
         }
       } else {
-        result = await this.putAPICommand(command.builder.toJSON());
+        result = await this.manager.rest.postApplicationCommand(this.clientId, command.builder.toJSON());
 
         if (!result) throw new Error("Command failed to register.");
       }
@@ -191,12 +193,12 @@ export class CommandManager {
     if (!command) throw new Error("Command isn't registered.");
 
     this[type].delete(name);
-    if (deleteCommand) await this.deleteAPICommand(command.id);
+    if (deleteCommand) await this.manager.rest.deleteApplicationCommand(this.clientId, command.id);
   }
 
   /** Deletes remote commands that aren't registered with this command manager */
   async deleteUnregistered() {
-    const commands = this.parse(await this.getAPICommands());
+    const commands = this.parse(await this.manager.rest.getApplicationCommands(this.clientId));
 
     for (const [localCommands, remoteCommands] of [
       [this[ApplicationCommandType.ChatInput], commands[ApplicationCommandType.ChatInput]],
@@ -205,7 +207,7 @@ export class CommandManager {
     ]) {
       for (const [name, command] of remoteCommands) {
         if (!localCommands.has(name)) {
-          await this.deleteAPICommand(command.id);
+          await this.manager.rest.deleteApplicationCommand(this.clientId, command.id);
         }
       }
     }
@@ -226,56 +228,5 @@ export class CommandManager {
     }
 
     return commandData;
-  }
-
-  /**
-   * Fetch your application's commands
-   * @param withLocalizations Whether to include full localization dictionaries (name_localizations and description_localizations) in the returned objects, instead of the name_localized and description_localized fields. Default false.
-   */
-  getAPICommands(withLocalizations = true): Promise<APIApplicationCommand[]> {
-    return this.manager.rest.get(this.route(), {
-      query: new URLSearchParams(`with_localizations=${withLocalizations ? "true" : "false"}`)
-    }) as Promise<APIApplicationCommand[]>;
-  }
-
-  /**
-   * Bulk update your application's commands
-   */
-  putAPICommands(data: RESTPostAPIApplicationCommandsJSONBody[]): Promise<APIApplicationCommand[]> {
-    return this.manager.rest.put(this.route(), {
-      body: data
-    }) as Promise<APIApplicationCommand[]>;
-  }
-
-  /**
-   * Create or Update an Application Command
-   */
-  putAPICommand<T extends APIApplicationCommand>(data: RESTPostAPIApplicationCommandsJSONBody): Promise<T> {
-    return this.manager.rest.post(this.route(), {
-      body: data
-    }) as Promise<T>;
-  }
-
-  /**
-   * Update an Application Command
-   */
-  updateAPICommand<T extends APIApplicationCommand>(
-    data: RESTPostAPIApplicationCommandsJSONBody,
-    id: string
-  ): Promise<T> {
-    delete data.type;
-
-    return this.manager.rest.patch(this.commandRoute(id), {
-      body: data
-    }) as Promise<T>;
-  }
-
-  /**
-   * Delete an Application Command
-   */
-  async deleteAPICommand(id: string): Promise<void> {
-    await this.manager.rest.delete(this.commandRoute(id));
-
-    return;
   }
 }

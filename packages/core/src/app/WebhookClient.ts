@@ -1,7 +1,5 @@
+import { DiscordApiClient } from "@discord-interactions/api";
 import { MessageBuilder } from "@discord-interactions/builders";
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-ignore
-import { REST } from "@discordjs/rest";
 import type { APIMessage } from "discord-api-types/v10";
 import { Routes } from "discord-api-types/v10";
 import { FormData } from "formdata-node";
@@ -11,13 +9,13 @@ export class WebhookClient {
   private id: string;
   private token: string;
 
-  private rest: REST;
+  private rest: DiscordApiClient;
 
-  constructor(id: string, token: string, rest?: REST) {
+  constructor(id: string, token: string, rest?: DiscordApiClient) {
     this.id = id;
     this.token = token;
 
-    this.rest = rest ?? new REST();
+    this.rest = rest ?? new DiscordApiClient();
   }
 
   send(message: string | MessageBuilder, wait = true): Promise<APIMessage> {
@@ -27,7 +25,7 @@ export class WebhookClient {
     return this.rest.post(Routes.webhook(this.id, this.token), {
       query: new URLSearchParams(`wait=${wait ? "true" : "false"}`),
       body: data,
-      passThroughBody: data instanceof FormData,
+      rawBody: data instanceof FormData,
       auth: false
     }) as Promise<APIMessage>;
   }
@@ -38,7 +36,7 @@ export class WebhookClient {
 
     return this.rest.patch(Routes.webhookMessage(this.id, this.token, id), {
       body: data,
-      passThroughBody: data instanceof FormData,
+      rawBody: data instanceof FormData,
       auth: false
     }) as Promise<APIMessage>;
   }
