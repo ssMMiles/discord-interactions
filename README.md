@@ -22,4 +22,4 @@ The project is for the most part runtime independent, meaning you can run your b
  - [@discord-interactions/request](./packages/request) - *A low level Discord HTTP client that handles global and resource rate limits.*
  - [@discord-interactions/verify](./packages/verify) - *Verification module for `@discord-interactions/core`. Implements signature verification using the Web SubtleCrypto API.*
  - [@discord-interactions/verify-node](./packages/verify-node) - *Verification module for `@discord-interactions/core`. Implements signature verification using the Node.JS (todo libsodium?) Crypto API.*
- - [isomorphic-fetch-polyfill](./packages/isomorphic-fetch-polyfill) - *A fetch ponyfill that supports Node.JS, Service Workers, anything?*
+ - [isomorphic-fetch-ponyfill](./packages/isomorphic-fetch-ponyfill) - *A fetch ponyfill that supports Node.JS, Service Workers, anything?*
