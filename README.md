@@ -12,8 +12,11 @@ A complete framework for [Discord's Interactions](https://discord.com/developers
 
 The project is for the most part runtime independent, meaning you can run your bots in both classic Node.JS as well as CF Workers/Vercel's Edge Functions, etc. The only current limitation is that you must import the correct verification module for your runtime yourself.
 
-### To-Do:
- - Better documentation and more tests.
+
+### Template Bot
+A template repository to deploy a bot on Cloudflare Workers is available [here](https://github.com/ssMMiles/discord-interactions-worker).
+
+[![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ssMMiles/discord-interactions-worker)
 
 ## Packages
  - [@discord-interactions/core](./packages/core) - *Our core framework for handling and verifying incoming Discord interactions.*
@@ -23,3 +26,7 @@ The project is for the most part runtime independent, meaning you can run your b
  - [@discord-interactions/verify](./packages/verify) - *Verification module for `@discord-interactions/core`. Implements signature verification using the Web SubtleCrypto API.*
  - [@discord-interactions/verify-node](./packages/verify-node) - *Verification module for `@discord-interactions/core`. Implements signature verification using the Node.JS (todo libsodium?) Crypto API.*
  - [isomorphic-fetch-ponyfill](./packages/isomorphic-fetch-ponyfill) - *A fetch ponyfill that supports Node.JS, Service Workers, anything?*
+
+
+### To-Do:
+ - Better documentation and more tests.
