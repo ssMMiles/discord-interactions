@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-let fetch, Headers, Request, Response;
-
 import type { BodyInit, HeadersInit, ResponseInit } from "whatwg-fetch";
 import {
   fetch as fetchPolyfill,
@@ -9,13 +7,15 @@ import {
   Response as ResponsePolyfill
 } from "whatwg-fetch";
 
-if (global !== undefined) {
+let fetch, Headers, Request, Response;
+
+if (typeof global === "object") {
   fetch = global.fetch;
   Headers = global.Headers;
   Request = global.Request;
   Response = global.Response;
   // @ts-ignore
-} else if (self !== undefined && self.fetch !== undefined) {
+} else if (typeof self === "object" && self.fetch !== "function") {
   // @ts-ignore
   fetch = self.fetch;
   // @ts-ignore
