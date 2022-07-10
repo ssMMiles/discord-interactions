@@ -10,7 +10,7 @@
 
 A complete framework for [Discord's Interactions](https://discord.com/developers/docs/interactions/receiving-and-responding), allowing you to build new Slash Command based bots with ease.
 
-*Although this is still a work in progress, the [previous stable version](https://www.npmjs.com/package/interactions.ts) is still available and exposes a similar API. Work is currently being done to split the library into packages and remove dependencies on Node.js APIs/primitives for use in environments like CF Workers and Vercel's Edge Functions.*
+The project is for the most part runtime independent, meaning you can run your bots in both classic Node.JS as well as CF Workers/Vercel's Edge Functions, etc. The only current limitation is that you must import the correct verification module for your runtime yourself.
 
 ### To-Do:
  - Better documentation and more tests.
