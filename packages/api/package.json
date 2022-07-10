@@ -1,6 +1,6 @@
 {
   "name": "@discord-interactions/api",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "author": "ssMMiles",
   "description": "A Discord HTTP client that handles global and resource rate limits automatically",
   "license": "Apache-2.0",
@@ -27,10 +27,10 @@
     "node": ">=16"
   },
   "dependencies": {
-    "@discord-interactions/request": "^0.0.1",
+    "@discord-interactions/request": "^0.2.0",
     "debug": "^4.3.4",
     "discord-api-types": "^0.36.1",
-    "isomorphic-fetch-ponyfill": "^0.0.1"
+    "isomorphic-fetch-ponyfill": "^0.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.0.3",
