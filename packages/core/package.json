@@ -9,6 +9,7 @@
     "@discord-interactions/api": "^0.2.4",
     "@discord-interactions/builders": "^0.2.4",
     "discord-api-types": "^0.36.1",
+    "formdata-node": "^4.3.3",
     "uuid": "^8.3.2"
   },
   "devDependencies": {

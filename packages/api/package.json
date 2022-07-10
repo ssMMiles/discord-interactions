@@ -27,7 +27,8 @@
     "node": ">=16"
   },
   "dependencies": {
-    "@discord-interactions/request": "^0.2.4"
+    "@discord-interactions/request": "^0.2.4",
+    "discord-api-types": "^0.36.1"
   },
   "devDependencies": {
     "@types/jest": "^28.1.4",
