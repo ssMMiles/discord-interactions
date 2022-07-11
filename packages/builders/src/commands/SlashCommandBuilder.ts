@@ -120,4 +120,21 @@ export class SlashCommandBuilder extends ChatInputCommandBuilderBase<APIApplicat
     this.options.push(input);
     return this;
   }
+
+  public toJSON(): SlashCommandData {
+    return {
+      type: this.type,
+
+      name: this.name,
+      name_localizations: this.name_localizations,
+
+      description: this.description,
+      description_localizations: this.description_localizations,
+
+      options: this.options.map((option) => option.toJSON()),
+
+      dm_permission: this.dm_permission,
+      default_member_permissions: this.default_member_permissions.toJSON()
+    };
+  }
 }

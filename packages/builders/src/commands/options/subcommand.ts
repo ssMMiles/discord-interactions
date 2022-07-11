@@ -1,5 +1,10 @@
-import { APIApplicationCommandSubcommandOption, ApplicationCommandOptionType } from "discord-api-types/v10";
-import type { ToAPIApplicationCommandOptions } from "../SlashCommandBuilder.js";
+import {
+  APIApplicationCommandBasicOption,
+  APIApplicationCommandSubcommandOption,
+  ApplicationCommandOptionType
+} from "discord-api-types/v10";
+import { ToAPIApplicationCommandOptions } from "../CommandBuilderBase.js";
+
 import type { SlashCommandAttachmentOption } from "./attachment.js";
 import type { SlashCommandBooleanOption } from "./boolean.js";
 import type { SlashCommandChannelOption } from "./channel.js";
@@ -14,7 +19,7 @@ import type { SlashCommandUserOption } from "./user.js";
 export class SubcommandOption extends SlashCommandOptionBase {
   public type = ApplicationCommandOptionType.Subcommand as const;
 
-  public options: ToAPIApplicationCommandOptions[] = [];
+  public options: ToAPIApplicationCommandOptions<APIApplicationCommandBasicOption>[] = [];
 
   /**
    * Adds a boolean option
