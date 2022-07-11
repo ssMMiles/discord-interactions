@@ -40,7 +40,7 @@ export class BaseInteractionContext<
   T extends APIInteraction = APIInteraction,
   R extends APIInteractionResponse | FormData = APIInteractionResponse
 > {
-  private readonly responseCallback: ResponseCallback<R>;
+  private responseCallback: ResponseCallback<R>;
   protected replied = false;
 
   private repliedAt: number | undefined;
@@ -49,24 +49,24 @@ export class BaseInteractionContext<
     return (this.repliedAt as number) + InteractionTokenExpiryTime < Date.now();
   }
 
-  public readonly app: DiscordApplication;
+  public app: DiscordApplication;
 
-  public readonly raw?: T;
-  public readonly interactionId: Snowflake;
+  public raw?: T;
+  public interactionId: Snowflake;
 
-  protected readonly followup: WebhookClient;
-  public readonly app_permissions: Bitfield;
+  protected followup: WebhookClient;
+  public app_permissions: Bitfield;
 
-  public readonly isDM: boolean;
+  public isDM: boolean;
 
-  public readonly guildId?: Snowflake;
-  public readonly channelId?: Snowflake;
+  public guildId?: Snowflake;
+  public channelId?: Snowflake;
 
-  public readonly user: APIUser;
-  public readonly member?: APIGuildMember;
+  public user: APIUser;
+  public member?: APIGuildMember;
 
-  public readonly locale: LocaleString;
-  public readonly guildLocale?: LocaleString;
+  public locale: LocaleString;
+  public guildLocale?: LocaleString;
 
   constructor(app: DiscordApplication, interaction: T, responseCallback: ResponseCallback<R>) {
     this.responseCallback = responseCallback;
@@ -121,13 +121,13 @@ export class BaseStatefulInteractionContext<
   T extends APIMessageComponentInteraction | APIModalSubmitInteraction = APIMessageComponentInteraction,
   R extends APIInteractionResponse | FormData = APIInteractionResponse
 > extends BaseInteractionContext<T, R> {
-  public readonly id: string;
-  private readonly stateRef: string;
+  public id: string;
+  private stateRef: string;
 
-  public readonly state: S = {} as S;
+  public state: S = {} as S;
 
-  public readonly allowExpired: boolean = false;
-  public readonly parentCommand?: string;
+  public allowExpired: boolean = false;
+  public parentCommand?: string;
 
   constructor(app: DiscordApplication, interaction: T, responseCallback: ResponseCallback<R>) {
     super(app, interaction, responseCallback);
@@ -159,10 +159,8 @@ export class BaseStatefulInteractionContext<
       dataStr = result;
     }
 
-    // Disgusting
-    const mutableThis = this as unknown as Mutable<BaseStatefulInteractionContext>;
     try {
-      mutableThis.state = JSON.parse(dataStr) as never;
+      this.state = JSON.parse(dataStr) as never;
     } catch (err) {
       throw err;
     }

@@ -45,19 +45,17 @@ export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicat
 
     this.parentCommand = this.name;
 
-    // https://stackoverflow.com/questions/46634876/how-can-i-change-a-readonly-property-in-typescript
-    const mutableThis = this as Mutable<SlashCommandContext>;
     switch (rootOption?.type) {
       case ApplicationCommandOptionType.SubcommandGroup:
         this.group = rootOption.name;
 
-        mutableThis.name = rootOption.options[0].name;
+        this.name = rootOption.options[0].name;
         this.parseOptions(rootOption.options[0].options);
 
         break;
 
       case ApplicationCommandOptionType.Subcommand:
-        mutableThis.name = rootOption.name;
+        this.name = rootOption.name;
         this.parseOptions(rootOption.options);
 
         break;

@@ -42,13 +42,13 @@ export class ResolvedData {
 export class BaseCommandContext<
   T extends APIApplicationCommandInteraction = APIApplicationCommandInteraction
 > extends BaseInteractionContext<T, ChannelMessageResponse> {
-  public readonly name: string;
-  public readonly id: Snowflake;
+  public name: string;
+  public id: Snowflake;
 
   // Duplicate data, but Discord includes it for some reason
-  public readonly commandGuildId?: Snowflake;
+  public commandGuildId?: Snowflake;
 
-  public readonly resolved: ResolvedData;
+  public resolved: ResolvedData;
 
   constructor(manager: DiscordApplication, interaction: T, responseCallback: ResponseCallback<ChannelMessageResponse>) {
     super(manager, interaction, responseCallback);
