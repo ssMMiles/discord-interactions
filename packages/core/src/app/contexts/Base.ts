@@ -18,24 +18,6 @@ import { WebhookClient } from "../WebhookClient.js";
 // lasts 15 minutes, 5s buffer to be safe
 const InteractionTokenExpiryTime = 15 * 60 * 1000 - 5000;
 
-export class ClientPermissions extends Bitfield {
-  add(): this {
-    throw new Error("ClientPermissions is read-only");
-  }
-
-  remove(): this {
-    throw new Error("ClientPermissions is read-only");
-  }
-
-  allowAll(): this {
-    throw new Error("ClientPermissions is read-only");
-  }
-
-  disallowAll(): this {
-    throw new Error("ClientPermissions is read-only");
-  }
-}
-
 export class BaseInteractionContext<
   T extends APIInteraction = APIInteraction,
   R extends APIInteractionResponse | FormData = APIInteractionResponse
@@ -77,7 +59,7 @@ export class BaseInteractionContext<
     this.interactionId = interaction.id;
 
     this.followup = new WebhookClient(interaction.application_id, interaction.token, this.app.rest);
-    this.app_permissions = new ClientPermissions(BigInt(interaction.app_permissions ?? "0"));
+    this.app_permissions = new Bitfield(BigInt(interaction.app_permissions ?? "0"));
 
     this.isDM = interaction.user !== undefined;
 
@@ -126,7 +108,7 @@ export class BaseStatefulInteractionContext<
 
   public state: S = {} as S;
 
-  public allowExpired: boolean = false;
+  public allowExpired = false;
   public parentCommand?: string;
 
   constructor(app: DiscordApplication, interaction: T, responseCallback: ResponseCallback<R>) {
