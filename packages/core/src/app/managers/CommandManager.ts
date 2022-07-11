@@ -1,6 +1,7 @@
+import { CommandData } from "@discord-interactions/builders";
 import type { APIApplicationCommand, RESTPostAPIApplicationCommandsJSONBody, Snowflake } from "discord-api-types/v10";
-import { ApplicationCommandType, Routes } from "discord-api-types/v10";
-import { DiscordApplication } from "../DiscordApplication.js";
+import { ApplicationCommandType } from "discord-api-types/v10";
+import { DiscordApplication, SyncMode } from "../DiscordApplication.js";
 import {
   ICommand,
   IMessageCommand,
@@ -46,35 +47,31 @@ export class CommandManager {
   public [ApplicationCommandType.User]: Map<string, RegisteredUserCommand> = new Map();
   public [ApplicationCommandType.Message]: Map<string, RegisteredMessageCommand> = new Map();
 
-  public manager: DiscordApplication;
+  public app: DiscordApplication;
+  public syncMode: SyncMode;
 
-  public clientId: Snowflake;
   public guildId?: Snowflake;
 
-  public syncRemote: boolean;
-
-  constructor(manager: DiscordApplication, syncRemote: boolean, guildId?: Snowflake) {
-    this.manager = manager;
-    this.syncRemote = syncRemote;
-
-    this.clientId = manager.clientId;
+  constructor(app: DiscordApplication, guildId?: Snowflake, syncMode: SyncMode = SyncMode.Enabled) {
+    this.app = app;
+    this.syncMode = syncMode;
 
     if (guildId !== undefined) {
       this.guildId = guildId;
-      this.manager.guildCommands.set(this.guildId, this);
+      this.app.guildCommands.set(this.guildId, this);
     }
   }
 
-  private route() {
-    return this.guildId === undefined
-      ? Routes.applicationCommands(this.clientId)
-      : Routes.applicationGuildCommands(this.clientId, this.guildId);
+  public postCommand(data: CommandData): Promise<APIApplicationCommand> {
+    return this.app.rest.postApplicationCommand(this.app.clientId, data, this.guildId);
   }
 
-  private commandRoute(id: Snowflake) {
-    return this.guildId === undefined
-      ? Routes.applicationCommand(this.clientId, id)
-      : Routes.applicationGuildCommand(this.clientId, this.guildId, id);
+  public patchCommand(id: Snowflake, data: CommandData): Promise<APIApplicationCommand> {
+    return this.app.rest.patchApplicationCommand(this.app.clientId, id, data, this.guildId);
+  }
+
+  public deleteCommand(id: Snowflake): Promise<unknown> {
+    return this.app.rest.deleteApplicationCommand(this.app.clientId, id, this.guildId);
   }
 
   private parse(commands: APIApplicationCommand[]): ParsedCommands {
@@ -130,9 +127,15 @@ export class CommandManager {
    * Register a new command to be handled. This will create the command on Discord if it doesn't exist, or overwrite it if the existing remote version differs.
    */
   async register(...commands: ICommand[]): Promise<RegisteredCommand[]> {
-    const remoteCommands = this.syncRemote
-      ? this.parse(await this.manager.rest.getApplicationCommands(this.clientId))
-      : [];
+    const remoteCommands =
+      this.syncMode !== SyncMode.Disabled
+        ? this.parse(await this.app.rest.getApplicationCommands(this.app.clientId))
+        : {
+            [ApplicationCommandType.ChatInput]: new Map(),
+            [ApplicationCommandType.User]: new Map(),
+            [ApplicationCommandType.Message]: new Map()
+          };
+
     const registeredCommands: RegisteredCommand[] = [];
 
     for (const command of commands) {
@@ -142,44 +145,37 @@ export class CommandManager {
           component.setId(`${component.parentCommand}.${component.id}`);
         }
 
-        this.manager.components.register(...command.components);
+        this.app.components.register(...command.components);
       }
 
-      let result = remoteCommands[command.builder.type].get(command.builder.name);
-
-      if (result !== undefined && !command.builder.equals(result as never)) {
-        result = await this.manager.rest.patchApplicationCommand(this.clientId, result.id, command.builder.toJSON());
-      } else if (this.syncRemote) {
-        result = await this.manager.rest.postApplicationCommand(this.clientId, command.builder.toJSON());
-      } else {
-        result = {
-          id: "0",
-          ...command.builder.toJSON()
-        } as APIApplicationCommand;
-      }
-
-      if (!result) throw new Error("Command failed to register.");
-
-      let registeredCommand;
+      let registeredCommand: RegisteredCommand;
 
       switch (command.builder.type) {
         case ApplicationCommandType.ChatInput:
           registeredCommand = isCommandGroup(command)
-            ? new RegisteredCommandGroup(this, command, result.id)
-            : new RegisteredSlashCommand(this, command as ISlashCommand, result.id);
+            ? new RegisteredCommandGroup(this, command)
+            : new RegisteredSlashCommand(this, command as ISlashCommand);
           break;
         case ApplicationCommandType.User:
-          registeredCommand = new RegisteredUserCommand(this, command as IUserCommand, result.id);
+          registeredCommand = new RegisteredUserCommand(this, command as IUserCommand);
           break;
         case ApplicationCommandType.Message:
-          registeredCommand = new RegisteredMessageCommand(this, command as IMessageCommand, result.id);
+          registeredCommand = new RegisteredMessageCommand(this, command as IMessageCommand);
           break;
         default:
           throw new Error(`Unknown command type.`);
       }
 
+      if (this.syncMode !== SyncMode.Disabled) {
+        await registeredCommand.sync(remoteCommands[command.builder.type].get(command.builder.name));
+      }
+
       this[command.builder.type].set(command.builder.name, registeredCommand as never);
       registeredCommands.push(registeredCommand);
+    }
+
+    if (this.syncMode === SyncMode.Strict) {
+      await this.deleteUnregistered();
     }
 
     return registeredCommands;
@@ -200,12 +196,37 @@ export class CommandManager {
     if (!command) throw new Error("Command isn't registered.");
 
     this[type].delete(name);
-    if (deleteCommand) await this.manager.rest.deleteApplicationCommand(this.clientId, command.id);
+    if (deleteCommand) await this.app.rest.deleteApplicationCommand(this.app.clientId, command.id);
+  }
+
+  async sync(syncMode?: SyncMode): Promise<void> {
+    if (syncMode === undefined) syncMode = this.syncMode;
+    const remoteCommands =
+      syncMode !== SyncMode.Disabled
+        ? this.parse(await this.app.rest.getApplicationCommands(this.app.clientId))
+        : {
+            [ApplicationCommandType.ChatInput]: new Map(),
+            [ApplicationCommandType.User]: new Map(),
+            [ApplicationCommandType.Message]: new Map()
+          };
+
+    for (const command of [
+      ...this[ApplicationCommandType.ChatInput].values(),
+      ...this[ApplicationCommandType.User].values(),
+      ...this[ApplicationCommandType.Message].values()
+    ]) {
+      await command.sync(remoteCommands[command.builder.type].get(command.builder.name));
+    }
+
+    if (this.syncMode === SyncMode.Strict) {
+      await this.deleteUnregistered();
+    }
   }
 
   /** Deletes remote commands that aren't registered with this command manager */
   async deleteUnregistered() {
-    const commands = this.parse(await this.manager.rest.getApplicationCommands(this.clientId));
+    const commands = this.parse(await this.app.rest.getApplicationCommands(this.app.clientId));
+    // console.log"Purging Non-Local Commands");
 
     for (const [localCommands, remoteCommands] of [
       [this[ApplicationCommandType.ChatInput], commands[ApplicationCommandType.ChatInput]],
@@ -214,7 +235,8 @@ export class CommandManager {
     ]) {
       for (const [name, command] of remoteCommands) {
         if (!localCommands.has(name)) {
-          await this.manager.rest.deleteApplicationCommand(this.clientId, command.id);
+          // console.log`Deleting Remote Command: ${name}`);
+          await this.app.rest.deleteApplicationCommand(this.app.clientId, command.id);
         }
       }
     }

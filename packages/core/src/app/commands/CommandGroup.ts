@@ -1,7 +1,7 @@
 import { CommandGroupBuilder } from "@discord-interactions/builders";
-import { Snowflake } from "discord-api-types/globals";
-import { AutocompleteContext, Component, SlashCommandContext } from "../index.js";
+import { AutocompleteContext, Component, Modal, SlashCommandContext } from "../index.js";
 import { CommandManager } from "../managers/CommandManager.js";
+import { RegisteredDiscordCommand } from "./Base.js";
 import { ICommand } from "./index.js";
 
 export interface ISubcommandHandler {
@@ -17,7 +17,7 @@ export interface ICommandGroup {
   builder: CommandGroupBuilder;
   handlers: ISubcommandHandlers;
 
-  components?: Component[];
+  components?: (Component | Modal)[];
 }
 
 export class CommandGroup implements ICommandGroup {
@@ -31,7 +31,7 @@ export class CommandGroup implements ICommandGroup {
     this.components = components;
   }
 
-  public components: Component[];
+  public components: (Component | Modal)[];
 
   setHandlers(handlers: ISubcommandHandlers): this {
     this.handlers = handlers;
@@ -40,28 +40,12 @@ export class CommandGroup implements ICommandGroup {
   }
 }
 
-export class RegisteredCommandGroup {
-  private manager: CommandManager;
-  private lastSync: ReturnType<typeof this.builder.toJSON>;
-
-  public builder: CommandGroupBuilder;
+export class RegisteredCommandGroup extends RegisteredDiscordCommand<CommandGroupBuilder> {
   public handlers: Record<string, ISubcommandHandler | ISubcommandGroup>;
+  constructor(manager: CommandManager, command: { builder: CommandGroupBuilder; handlers: ISubcommandHandlers }) {
+    super(manager, command);
 
-  public id: Snowflake;
-
-  constructor(
-    manager: CommandManager,
-    command: { builder: CommandGroupBuilder; handlers: ISubcommandHandlers },
-    id: Snowflake
-  ) {
-    this.manager = manager;
-
-    this.builder = command.builder;
     this.handlers = command.handlers;
-
-    this.id = id;
-
-    this.lastSync = this.builder.toJSON();
   }
 
   /**
@@ -70,33 +54,6 @@ export class RegisteredCommandGroup {
    */
   setHandlers(handler: ISubcommandHandlers): void {
     this.handlers = handler;
-  }
-
-  /**
-   * Sync this command's builder with the API
-   */
-  async sync(): Promise<void> {
-    const data = this.builder.toJSON();
-
-    if (data.name !== this.lastSync.name) {
-      this.manager.rename(this.lastSync.name, data.name, this.builder.type);
-    }
-
-    await this.manager.manager.rest.patchApplicationCommand(this.manager.clientId, this.id, data);
-
-    this.lastSync = data;
-  }
-
-  /** Unregister this command */
-  async unregister(): Promise<void> {
-    await this.manager.unregister(this.builder.name, this.builder.type);
-  }
-
-  /**
-   * Delete and unregister this command
-   */
-  async delete(): Promise<void> {
-    await this.manager.unregister(this.builder.name, this.builder.type, true);
   }
 }
 

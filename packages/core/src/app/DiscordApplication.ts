@@ -33,8 +33,8 @@ export interface DiscordApplicationOptions {
   /** Component State Cache */
   cache?: GenericCache;
 
-  /** Whether to sync global commands with the Discord API on .register(). Command IDs will be set to 0 if false. - Default: true */
-  syncRemote?: boolean;
+  /** What mode to use for syncing the global command manager. */
+  syncMode?: SyncMode;
 
   /** Whether to preserve the raw interaction object in contexts under ctx.raw - Default: false */
   preserveRaw?: boolean;
@@ -46,6 +46,12 @@ export interface DiscordApplicationOptions {
 export type ResponseCallback<T extends APIInteractionResponse | FormData = APIInteractionResponse | FormData> = (
   response: T
 ) => void;
+
+export enum SyncMode {
+  Disabled = "off",
+  Enabled = "on",
+  Strict = "strict"
+}
 
 /**
  * Main class for managing a Discord Application's commands and handling interactions.
@@ -59,11 +65,11 @@ export class DiscordApplication {
   public cache?: GenericCache;
 
   public commands: CommandManager;
-  public components: ComponentManager;
-
   public guildCommands: Map<Snowflake, CommandManager>;
 
-  public preserveRaw = false;
+  public components: ComponentManager;
+
+  public preserveRaw: boolean;
   public timeout = 2500;
 
   public hooks: InteractionHooks = {
@@ -92,10 +98,9 @@ export class DiscordApplication {
     this.rest = new DiscordApiClient().setToken(this.token);
 
     this.cache = options.cache;
+    this.preserveRaw = options.preserveRaw === undefined ? false : options.preserveRaw;
 
-    if (options.preserveRaw) this.preserveRaw = options.preserveRaw;
-
-    this.commands = new CommandManager(this, options.syncRemote ?? true);
+    this.commands = new CommandManager(this, undefined, options.syncMode);
     this.components = new ComponentManager(this.cache);
 
     this.guildCommands = new Map();
@@ -105,6 +110,12 @@ export class DiscordApplication {
     if (options.hooks) {
       Object.assign(this.hooks, options.hooks);
     }
+  }
+
+  public createGuildCommandManager(guildId: Snowflake, syncMode?: SyncMode): CommandManager {
+    const manager = new CommandManager(this, guildId, syncMode);
+
+    return manager;
   }
 
   public setAPIClient(client: DiscordApiClient): void {
