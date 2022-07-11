@@ -13,8 +13,6 @@ export class MessageCommandContext extends BaseCommandContext<APIMessageApplicat
   ) {
     super(manager, interaction, responseCallback);
 
-    const messageId = Object.keys(this.interaction.data.resolved.messages)[0];
-
-    this.message = this.interaction.data.resolved.messages[messageId];
+    this.message = interaction.data.resolved.messages[interaction.data.target_id];
   }
 }

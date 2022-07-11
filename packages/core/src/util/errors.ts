@@ -1,4 +1,5 @@
-import type { APIInteraction } from "discord-api-types/v10";
+import type { APIInteraction, APIInteractionResponse } from "discord-api-types/v10";
+import { BaseInteractionContext } from "../app/contexts/Base.js";
 
 export class UnauthorizedInteraction extends Error {
   public body: string;
@@ -20,6 +21,16 @@ export class InteractionError extends Error {
   }
 }
 
+export class InteractionContextError extends Error {
+  public context: BaseInteractionContext<APIInteraction, APIInteractionResponse>;
+
+  constructor(message: string, context: BaseInteractionContext<APIInteraction, APIInteractionResponse>) {
+    super(message);
+
+    this.context = context;
+  }
+}
+
 export class UnknownInteractionType extends InteractionError {
   constructor(interaction: APIInteraction) {
     super(`Unknown Interaction Type: ${interaction.type}`, interaction);
@@ -38,9 +49,9 @@ export class UnknownComponentType extends InteractionError {
   }
 }
 
-export class InteractionResponseAlreadySent extends InteractionError {
-  constructor(interaction: APIInteraction) {
-    super(`Interaction Response Already Sent`, interaction);
+export class InteractionResponseAlreadySent extends Error {
+  constructor() {
+    super(`Interaction Response Already Sent`);
   }
 }
 
@@ -62,9 +73,9 @@ export class InteractionHandlerNotFound extends InteractionError {
   }
 }
 
-export class InteractionStateExpired extends InteractionError {
-  constructor(interaction: APIInteraction) {
-    super(`Interaction State Expired`, interaction);
+export class InteractionStateExpired extends Error {
+  constructor() {
+    super(`Interaction State Expired`);
   }
 }
 

@@ -33,6 +33,9 @@ export interface DiscordApplicationOptions {
   /** Component State Cache */
   cache?: GenericCache;
 
+  /** Whether to preserve the raw interaction object in contexts under ctx.raw - Default: false */
+  preserveRaw?: boolean;
+
   /** Timeout after which InteractionHandlerTimedOut is thrown - Default: 2500ms */
   timeout?: number;
 }
@@ -57,7 +60,9 @@ export class DiscordApplication {
 
   public guildCommands: Map<Snowflake, CommandManager>;
 
+  public preserveRaw = false;
   public timeout = 2500;
+
   public hooks: InteractionHooks = {
     ping: [],
 

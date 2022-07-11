@@ -1,4 +1,4 @@
-import type { APIApplicationCommand, RESTPostAPIApplicationCommandsJSONBody } from "discord-api-types/v10";
+import type { APIApplicationCommand, RESTPostAPIApplicationCommandsJSONBody, Snowflake } from "discord-api-types/v10";
 import { ApplicationCommandType, Routes } from "discord-api-types/v10";
 import { DiscordApplication } from "../DiscordApplication.js";
 import {
@@ -48,10 +48,10 @@ export class CommandManager {
 
   public manager: DiscordApplication;
 
-  public clientId: string;
-  public guildId?: string;
+  public clientId: Snowflake;
+  public guildId?: Snowflake;
 
-  constructor(manager: DiscordApplication, guildId?: string) {
+  constructor(manager: DiscordApplication, guildId?: Snowflake) {
     this.manager = manager;
     this.clientId = manager.clientId;
 
@@ -67,7 +67,7 @@ export class CommandManager {
       : Routes.applicationGuildCommands(this.clientId, this.guildId);
   }
 
-  private commandRoute(id: string) {
+  private commandRoute(id: Snowflake) {
     return this.guildId === undefined
       ? Routes.applicationCommand(this.clientId, id)
       : Routes.applicationGuildCommand(this.clientId, this.guildId, id);

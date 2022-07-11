@@ -1,4 +1,5 @@
 import { CommandGroupBuilder } from "@discord-interactions/builders";
+import { Snowflake } from "discord-api-types/globals";
 import { AutocompleteContext, Component, SlashCommandContext } from "../index.js";
 import { CommandManager } from "../managers/CommandManager.js";
 import { ICommand } from "./index.js";
@@ -46,12 +47,12 @@ export class RegisteredCommandGroup {
   public builder: CommandGroupBuilder;
   public handlers: Record<string, ISubcommandHandler | ISubcommandGroup>;
 
-  public id: string;
+  public id: Snowflake;
 
   constructor(
     manager: CommandManager,
     command: { builder: CommandGroupBuilder; handlers: ISubcommandHandlers },
-    id: string
+    id: Snowflake
   ) {
     this.manager = manager;
 

@@ -839,3 +839,7 @@ declare module "web-streams-polyfill" {
     }
   }
 }
+
+type Mutable<T> = {
+  -readonly [k in keyof T]: T[k];
+};

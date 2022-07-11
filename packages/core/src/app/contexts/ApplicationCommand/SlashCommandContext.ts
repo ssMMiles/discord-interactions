@@ -41,27 +41,29 @@ export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicat
   ) {
     super(manager, interaction, responseCallback);
 
-    const rootOption = this.interaction.data.options?.[0];
+    const rootOption = interaction.data.options?.[0];
 
     this.parentCommand = this.name;
 
+    // https://stackoverflow.com/questions/46634876/how-can-i-change-a-readonly-property-in-typescript
+    const mutableThis = this as Mutable<SlashCommandContext>;
     switch (rootOption?.type) {
       case ApplicationCommandOptionType.SubcommandGroup:
         this.group = rootOption.name;
 
-        this.name = rootOption.options[0].name;
+        mutableThis.name = rootOption.options[0].name;
         this.parseOptions(rootOption.options[0].options);
 
         break;
 
       case ApplicationCommandOptionType.Subcommand:
-        this.name = rootOption.name;
+        mutableThis.name = rootOption.name;
         this.parseOptions(rootOption.options);
 
         break;
 
       default:
-        this.parseOptions(this.interaction.data.options as APIApplicationCommandInteractionDataBasicOption[]);
+        this.parseOptions(interaction.data.options as APIApplicationCommandInteractionDataBasicOption[]);
     }
   }
 
@@ -111,10 +113,10 @@ export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicat
     const option = this.options.get(name) as APIApplicationCommandInteractionDataUserOption | undefined;
     if (option === undefined) throw new Error(`${name} | Option does not exist.`);
 
-    const user = this.interaction.data.resolved?.users?.[option.value];
+    const user = this.resolved?.users?.get(option.value);
     if (user === undefined) throw new Error(`Resolved user not found.`);
 
-    const member = this.interaction.data.resolved?.members?.[option.value];
+    const member = this.resolved?.members?.[option.value];
 
     return { user, member, ...option };
   }
@@ -125,7 +127,7 @@ export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicat
     const option = this.options.get(name) as APIApplicationCommandInteractionDataChannelOption | undefined;
     if (option === undefined) throw new Error(`${name} | Option does not exist.`);
 
-    const channel = this.interaction.data.resolved?.channels?.[option.value];
+    const channel = this.resolved?.channels?.[option.value];
     if (channel === undefined) throw new Error(`Resolved channel not found.`);
 
     return { channel, ...option };
@@ -135,7 +137,7 @@ export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicat
     const option = this.options.get(name) as APIApplicationCommandInteractionDataRoleOption | undefined;
     if (option === undefined) throw new Error(`${name} | Option does not exist.`);
 
-    const role = this.interaction.data.resolved?.roles?.[option.value];
+    const role = this.resolved?.roles?.get(option.value);
     if (role === undefined) throw new Error(`Resolved role not found.`);
 
     return { role, ...option };
@@ -147,8 +149,8 @@ export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicat
     const option = this.options.get(name) as APIApplicationCommandInteractionDataMentionableOption | undefined;
     if (option === undefined) throw new Error(`${name} | Option does not exist.`);
 
-    const user = this.interaction.data.resolved?.users?.[option.value];
-    const role = this.interaction.data.resolved?.roles?.[option.value];
+    const user = this.resolved?.users?.get(option.value);
+    const role = this.resolved?.roles?.get(option.value);
 
     return { user, role, ...option };
   }
@@ -166,7 +168,7 @@ export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicat
     const option = this.options.get(name) as APIApplicationCommandInteractionDataAttachmentOption | undefined;
     if (option === undefined) throw new Error(`${name} | Option does not exist.`);
 
-    const attachment = this.interaction.data.resolved?.attachments?.[option.value];
+    const attachment = this.resolved?.attachments?.get(option.value);
     if (attachment === undefined) throw new Error(`Resolved attachment not found.`);
 
     return { attachment, ...option };

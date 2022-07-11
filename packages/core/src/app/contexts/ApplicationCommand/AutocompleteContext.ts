@@ -5,11 +5,13 @@ import type {
   APIApplicationCommandInteractionDataIntegerOption,
   APIApplicationCommandInteractionDataNumberOption,
   APIApplicationCommandInteractionDataStringOption,
-  APIApplicationCommandOptionChoice
+  APIApplicationCommandOptionChoice,
+  Snowflake
 } from "discord-api-types/v10";
 import { ApplicationCommandOptionType, InteractionResponseType } from "discord-api-types/v10";
 import { DiscordApplication, ResponseCallback } from "../../DiscordApplication.js";
 import { BaseInteractionContext } from "../Base.js";
+import { ResolvedData } from "./Base.js";
 
 export type AutocompleteSupportedOptions =
   | APIApplicationCommandInteractionDataStringOption
@@ -21,6 +23,13 @@ export class AutocompleteContext extends BaseInteractionContext<
   APIApplicationCommandAutocompleteResponse
 > {
   public name: string;
+  public readonly id: Snowflake;
+
+  // Duplicate data, but Discord includes it for some reason
+  public readonly commandGuildId?: Snowflake;
+
+  public readonly resolved: ResolvedData;
+
   public option: AutocompleteSupportedOptions;
 
   /**
@@ -40,9 +49,14 @@ export class AutocompleteContext extends BaseInteractionContext<
   ) {
     super(manager, interaction, responseCallback);
 
-    this.name = this.interaction.data.name;
+    this.name = interaction.data.name;
+    this.id = interaction.data.id;
 
-    const rootOption = this.interaction.data.options?.[0];
+    this.commandGuildId = interaction.data.guild_id;
+
+    this.resolved = new ResolvedData();
+
+    const rootOption = interaction.data.options?.[0];
 
     this.parentCommand = this.name;
 
@@ -61,7 +75,7 @@ export class AutocompleteContext extends BaseInteractionContext<
 
         break;
       default:
-        this.option = this.interaction.data.options?.[0] as AutocompleteSupportedOptions;
+        this.option = interaction.data.options?.[0] as AutocompleteSupportedOptions;
     }
   }
 

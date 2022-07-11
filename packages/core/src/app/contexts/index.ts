@@ -9,6 +9,7 @@ import type { ModalSubmitContext } from "./ModalSubmitContext.js";
 import type { PingContext } from "./PingContext.js";
 
 export * from "./ApplicationCommand/index.js";
+export type { ClientPermissions } from "./Base.js";
 export * from "./ComponentContext.js";
 export * from "./ModalSubmitContext.js";
 export * from "./PingContext.js";

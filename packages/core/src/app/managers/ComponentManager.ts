@@ -29,8 +29,8 @@ export class ComponentManager {
     }
   }
 
-  unregister(id: string) {
-    this._components.delete(id);
+  unregister(name: string) {
+    this._components.delete(name);
   }
 
   async createInstance<

@@ -1,4 +1,5 @@
 import { MessageCommandBuilder, SlashCommandBuilder, UserCommandBuilder } from "@discord-interactions/builders";
+import { Snowflake } from "discord-api-types/globals";
 import { Component, MessageCommandContext, Modal, SlashCommandContext, UserCommandContext } from "../index.js";
 import { CommandManager } from "../managers/CommandManager.js";
 
@@ -20,12 +21,12 @@ export abstract class RegisteredCommandBase<
   public builder: Builder;
   public handler: (ctx: Context) => Promise<void>;
 
-  public id: string;
+  public id: Snowflake;
 
   constructor(
     manager: CommandManager,
     command: { builder: Builder; handler: (ctx: Context) => Promise<void> },
-    id: string
+    id: Snowflake
   ) {
     this.manager = manager;
 

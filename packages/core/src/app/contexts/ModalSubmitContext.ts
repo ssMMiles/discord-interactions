@@ -1,4 +1,4 @@
-import { ButtonBuilder, MessageBuilder, ModalBuilder, SelectMenuBuilder } from "@discord-interactions/builders";
+import { MessageBuilder } from "@discord-interactions/builders";
 import type {
   APIInteractionResponseChannelMessageWithSource,
   APIMessage,
@@ -9,18 +9,14 @@ import { InteractionResponseType } from "discord-api-types/v10";
 import { FormData } from "formdata-node";
 import { InteractionResponseAlreadySent, SimpleEmbed } from "../../index.js";
 import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
-import { BaseInteractionContext } from "./Base.js";
+import { BaseStatefulInteractionContext } from "./Base.js";
 import { ModalSubmitResponse } from "./response-types.js";
 
-export class ModalSubmitContext<State = never> extends BaseInteractionContext<
+export class ModalSubmitContext<State = never> extends BaseStatefulInteractionContext<
+  State,
   APIModalSubmitInteraction,
   ModalSubmitResponse
 > {
-  public allowExpired = false;
-
-  public id: string;
-  public state?: State;
-
   public components: Map<string, ModalSubmitComponent> = new Map();
 
   public parentCommand?: string;
@@ -32,52 +28,17 @@ export class ModalSubmitContext<State = never> extends BaseInteractionContext<
   ) {
     super(manager, interaction, responseCallback);
 
-    if (this.interaction.data.components) {
-      this.interaction.data.components?.map((actionRow) => {
+    if (interaction.data.components) {
+      interaction.data.components?.map((actionRow) => {
         for (const component of actionRow.components) {
           this.components.set(component.custom_id.split("|")[0], component);
         }
       });
     }
-
-    this.id = this.interaction.data.custom_id.split("|")[0];
-
-    const builder = manager.components.get(this.id);
-    if (builder) this.allowExpired = builder.allowExpired;
-
-    if (builder && builder.parentCommand) this.parentCommand = builder.parentCommand;
-  }
-
-  async fetchState(): Promise<void> {
-    this.state = undefined;
-    let dataStr = this.interaction.data.custom_id.split("|")[1];
-
-    if (!dataStr.startsWith("{") && this.manager.components.cache) {
-      const result = await this.manager.components.cache.get(dataStr);
-      if (!result) return;
-
-      dataStr = result;
-    }
-
-    try {
-      this.state = JSON.parse(dataStr);
-    } catch (err) {
-      throw err;
-    }
-  }
-
-  async createComponent<
-    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
-  >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
-    return this.manager.components.createInstance(
-      this.parentCommand ? `${this.parentCommand}.${name}` : name,
-      state,
-      ttl
-    );
   }
 
   defer(): Promise<void> {
-    if (this.replied) throw new InteractionResponseAlreadySent(this.interaction);
+    if (this.replied) throw new InteractionResponseAlreadySent();
 
     return this._reply({
       type: InteractionResponseType.DeferredChannelMessageWithSource

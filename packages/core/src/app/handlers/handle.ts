@@ -142,18 +142,18 @@ export async function _handleInteraction(
 
       const parentName = context.parentCommand ?? context.name;
 
-      let command = context.manager.commands[ApplicationCommandType.ChatInput].get(parentName);
+      let command = this.commands[ApplicationCommandType.ChatInput].get(parentName);
 
       if (!command) {
-        throw new InteractionHandlerNotFound(context.interaction);
+        throw new InteractionHandlerNotFound(interaction);
       }
 
-      if (context.interaction.guild_id) {
-        const guildCommand = context.manager.guildCommands
-          ?.get(context.interaction.guild_id)
+      if (context.commandGuildId) {
+        const guildCommand = this.guildCommands
+          ?.get(context.commandGuildId)
           ?.[ApplicationCommandType.ChatInput]?.get(parentName);
 
-        if (guildCommand?.id === context.interaction.data.id) {
+        if (guildCommand !== undefined && guildCommand.id === context.commandGuildId) {
           command = guildCommand;
         }
       }
@@ -171,7 +171,7 @@ export async function _handleInteraction(
           handlers = command.handlers[context.name] as ISubcommandHandler | undefined;
         }
 
-        if (!handlers) throw new InteractionHandlerNotFound(context.interaction);
+        if (!handlers) throw new InteractionHandlerNotFound(interaction);
 
         handler = (
           context instanceof AutocompleteContext && handlers.autocompleteHandler !== undefined
@@ -186,12 +186,12 @@ export async function _handleInteraction(
         ) as (ctx: SlashCommandContext | AutocompleteContext) => Promise<void>;
       }
 
-      if (!handler) throw new InteractionHandlerNotFound(context.interaction);
+      if (!handler) throw new InteractionHandlerNotFound(interaction);
 
       try {
         await handler(context);
       } catch (err: unknown) {
-        throw new InteractionHandlerError(context.interaction, err);
+        throw new InteractionHandlerError(interaction, err);
       }
 
       break;
@@ -199,22 +199,21 @@ export async function _handleInteraction(
     case UserCommandContext:
     case MessageCommandContext: {
       context = context as UserCommandContext | MessageCommandContext;
+      interaction = interaction as APIUserApplicationCommandInteraction | APIMessageApplicationCommandInteraction;
 
       const command = (
-        context.interaction.guild_id
-          ? context.manager.guildCommands
-              ?.get(context.interaction.guild_id)
-              ?.get(context.name, context.interaction.data.type) ??
-            context.manager.commands[context.interaction.data.type].get(context.name)
-          : context.manager.commands[context.interaction.data.type].get(context.name)
+        interaction.guild_id
+          ? this.guildCommands?.get(interaction.guild_id)?.get(context.name, interaction.data.type) ??
+            this.commands[interaction.data.type].get(context.name)
+          : this.commands[interaction.data.type].get(context.name)
       ) as RegisteredMessageCommand | RegisteredUserCommand | undefined;
 
-      if (!command) throw new InteractionHandlerNotFound(context.interaction);
+      if (!command) throw new InteractionHandlerNotFound(interaction);
 
       try {
         await command.handler(context as UserCommandContext & MessageCommandContext);
       } catch (err: unknown) {
-        throw new InteractionHandlerError(context.interaction, err);
+        throw new InteractionHandlerError(interaction, err);
       }
 
       break;
@@ -234,14 +233,14 @@ export async function _handleInteraction(
         }
       }
 
-      const component = context.manager.components.get(context.id);
+      const component = this.components.get(context.id);
 
-      if (!component) throw new InteractionHandlerNotFound(context.interaction);
+      if (!component) throw new InteractionHandlerNotFound(interaction);
 
       try {
         await component.handler(context as ButtonContext<never> & SelectMenuContext<never> & ModalSubmitContext<never>);
       } catch (err: unknown) {
-        throw new InteractionHandlerError(context.interaction, err);
+        throw new InteractionHandlerError(interaction, err);
       }
 
       break;

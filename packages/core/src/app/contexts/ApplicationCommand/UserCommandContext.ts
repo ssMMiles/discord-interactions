@@ -20,11 +20,9 @@ export class UserCommandContext extends BaseCommandContext<APIUserApplicationCom
   ) {
     super(manager, interaction, responseCallback);
 
-    const userId = Object.keys(this.interaction.data.resolved.users)[0];
-
     this.target = {
-      user: this.interaction.data.resolved.users[userId],
-      member: this.interaction.data.resolved.members?.[userId]
+      user: this.resolved.users?.get(interaction.data.target_id) as APIUser,
+      member: this.resolved.members?.get(interaction.data.target_id)
     };
   }
 }
