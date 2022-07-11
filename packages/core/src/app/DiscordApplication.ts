@@ -33,6 +33,9 @@ export interface DiscordApplicationOptions {
   /** Component State Cache */
   cache?: GenericCache;
 
+  /** Whether to sync global commands with the Discord API on .register(). Command IDs will be set to 0 if false. - Default: true */
+  syncRemote?: boolean;
+
   /** Whether to preserve the raw interaction object in contexts under ctx.raw - Default: false */
   preserveRaw?: boolean;
 
@@ -90,7 +93,9 @@ export class DiscordApplication {
 
     this.cache = options.cache;
 
-    this.commands = new CommandManager(this);
+    if (options.preserveRaw) this.preserveRaw = options.preserveRaw;
+
+    this.commands = new CommandManager(this, options.syncRemote ?? true);
     this.components = new ComponentManager(this.cache);
 
     this.guildCommands = new Map();

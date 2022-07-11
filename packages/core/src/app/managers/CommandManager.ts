@@ -51,8 +51,12 @@ export class CommandManager {
   public clientId: Snowflake;
   public guildId?: Snowflake;
 
-  constructor(manager: DiscordApplication, guildId?: Snowflake) {
+  public syncRemote: boolean;
+
+  constructor(manager: DiscordApplication, syncRemote: boolean, guildId?: Snowflake) {
     this.manager = manager;
+    this.syncRemote = syncRemote;
+
     this.clientId = manager.clientId;
 
     if (guildId !== undefined) {
@@ -126,7 +130,9 @@ export class CommandManager {
    * Register a new command to be handled. This will create the command on Discord if it doesn't exist, or overwrite it if the existing remote version differs.
    */
   async register(...commands: ICommand[]): Promise<RegisteredCommand[]> {
-    const remoteCommands = this.parse(await this.manager.rest.getApplicationCommands(this.clientId));
+    const remoteCommands = this.syncRemote
+      ? this.parse(await this.manager.rest.getApplicationCommands(this.clientId))
+      : [];
     const registeredCommands: RegisteredCommand[] = [];
 
     for (const command of commands) {
@@ -141,17 +147,18 @@ export class CommandManager {
 
       let result = remoteCommands[command.builder.type].get(command.builder.name);
 
-      if (result !== undefined) {
-        if (!command.builder.equals(result as never)) {
-          result = await this.manager.rest.patchApplicationCommand(this.clientId, result.id, command.builder.toJSON());
-
-          if (!result) throw new Error("Command failed to register. (Was Overwriting)");
-        }
-      } else {
+      if (result !== undefined && !command.builder.equals(result as never)) {
+        result = await this.manager.rest.patchApplicationCommand(this.clientId, result.id, command.builder.toJSON());
+      } else if (this.syncRemote) {
         result = await this.manager.rest.postApplicationCommand(this.clientId, command.builder.toJSON());
-
-        if (!result) throw new Error("Command failed to register.");
+      } else {
+        result = {
+          id: "0",
+          ...command.builder.toJSON()
+        } as APIApplicationCommand;
       }
+
+      if (!result) throw new Error("Command failed to register.");
 
       let registeredCommand;
 
