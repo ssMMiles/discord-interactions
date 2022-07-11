@@ -1,11 +1,9 @@
-import type {
+import {
   APIApplicationCommandSubcommandGroupOption,
   APIApplicationCommandSubcommandOption,
-  LocalizationMap,
-  RESTPostAPIChatInputApplicationCommandsJSONBody
+  ApplicationCommandType
 } from "discord-api-types/v10";
-import { ApplicationCommandType } from "discord-api-types/v10";
-import { CommandBuilderBase, CommandDataBase } from "./CommandBuilderBase.js";
+import { ChatInputCommandBuilderBase, CommandDataBase } from "./CommandBuilderBase.js";
 import type { SubcommandGroupOption } from "./options/subcommand-group.js";
 import type { SubcommandOption } from "./options/subcommand.js";
 
@@ -14,52 +12,9 @@ export type CommandGroupData = CommandDataBase & {
   options: (APIApplicationCommandSubcommandGroupOption | APIApplicationCommandSubcommandOption)[];
 };
 
-export interface ToAPIApplicationCommandGroupOptions {
-  toJSON: () => APIApplicationCommandSubcommandGroupOption | APIApplicationCommandSubcommandOption;
-}
-
-export class CommandGroupBuilder extends CommandBuilderBase<RESTPostAPIChatInputApplicationCommandsJSONBody> {
-  public type: ApplicationCommandType.ChatInput = ApplicationCommandType.ChatInput;
-
-  public description: string;
-  public description_localizations: LocalizationMap = {};
-
-  public options: ToAPIApplicationCommandGroupOptions[] = [];
-
-  constructor(name: string, description: string) {
-    super(name);
-
-    this.description = description;
-  }
-
-  /**
-   * Set the description
-   *
-   * @param description The description
-   */
-  public setDescription(description: string): this {
-    this.description = description;
-
-    return this;
-  }
-
-  /**
-   * Set a dictionary of localized descriptions
-   */
-  public setDescriptionLocalizations(localizations: LocalizationMap): this {
-    this.description_localizations = localizations;
-
-    return this;
-  }
-
-  /**
-   * Set a single locale's description
-   */
-  public setLocalizedDescription(locale: keyof LocalizationMap, description: string): this {
-    this.description_localizations[locale] = description;
-    return this;
-  }
-
+export class CommandGroupBuilder extends ChatInputCommandBuilderBase<
+  APIApplicationCommandSubcommandGroupOption | APIApplicationCommandSubcommandOption
+> {
   /**
    * Adds an integer option
    *
@@ -82,22 +37,5 @@ export class CommandGroupBuilder extends CommandBuilderBase<RESTPostAPIChatInput
     }
 
     return this;
-  }
-
-  public toJSON(): CommandGroupData {
-    return {
-      type: this.type,
-
-      name: this.name,
-      name_localizations: this.name_localizations,
-
-      description: this.description,
-      description_localizations: this.description_localizations,
-
-      options: this.options.map((option) => option.toJSON()),
-
-      dm_permission: this.dm_permission,
-      default_member_permissions: this.default_member_permissions.toJSON()
-    };
   }
 }
