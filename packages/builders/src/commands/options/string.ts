@@ -11,6 +11,9 @@ export class SlashCommandStringOption extends SlashCommandOptionBase {
   public choices?: APIApplicationCommandOptionChoice<string>[];
   public autocomplete?: boolean;
 
+  public min_length?: number;
+  public max_length?: number;
+
   /**
    * Adds multiple choices for this option
    *
@@ -48,6 +51,18 @@ export class SlashCommandStringOption extends SlashCommandOptionBase {
    */
   public setAutocomplete(autocomplete: boolean): this {
     this.autocomplete = autocomplete;
+
+    return this;
+  }
+
+  public setMinLength(minLength: number): this {
+    this.min_length = minLength;
+
+    return this;
+  }
+
+  public setMaxLength(maxLength: number): this {
+    this.max_length = maxLength;
 
     return this;
   }
