@@ -34,4 +34,4 @@ try {
 ```
 
 # Credits
-This code is derived from @IanMitchell's [Interaction Kit](https://github.com/IanMitchell/interaction-kit) and distributed under the Apache 2 license.
+This code is derived from @IanMitchell's [Interaction Kit: discord-api](https://github.com/IanMitchell/interaction-kit/packages/discord-api) and distributed under the Apache 2 license. It was changed to use [`@discord-interactions/request`](../request).

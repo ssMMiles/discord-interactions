@@ -10,4 +10,4 @@
 
 *A fetch ponyfill that supports Node.JS, Service Workers, anything?*
 
-https://github.com/lquixada/cross-fetch was broken, so this is a working version.
+https://github.com/lquixada/cross-fetch was broken, so I made this.

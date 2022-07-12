@@ -85,4 +85,4 @@ Runs when a rate limit is encountered. Returns information about the rate limit.
 Runs when a request is sent to the Discord API. Returns information used to send the request.
 
 # Credits
-This code is derived from @IanMitchell's [Interaction Kit](https://github.com/IanMitchell/interaction-kit) and distributed under the Apache 2 license.
+This code is derived from @IanMitchell's [Interaction Kit: discord-request & discord-error](https://github.com/IanMitchell/interaction-kit) and distributed under the Apache 2 license. It was changed to merge these packages together.
