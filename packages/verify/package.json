@@ -1,7 +1,7 @@
 {
   "name": "@discord-interactions/verify",
   "description": "A verification module using the Web SubtleCrypto API.",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -42,7 +42,7 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
   "dependencies": {
-    "@discord-interactions/core": "^0.2.5",
+    "@discord-interactions/core": "^0.2.6",
     "discord-api-types": "^0.36.1"
   },
   "publishConfig": {
