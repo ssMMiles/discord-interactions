@@ -1,13 +1,13 @@
 {
   "name": "@discord-interactions/core",
   "description": "A full command framework for Discord interactions.",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "dependencies": {
     "@discord-interactions/api": "^0.2.6",
-    "@discord-interactions/builders": "^0.2.6",
+    "@discord-interactions/builders": "^0.2.7",
     "discord-api-types": "^0.36.1",
     "formdata-node": "^4.3.3",
     "uuid": "^8.3.2"
