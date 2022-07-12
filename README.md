@@ -10,7 +10,11 @@
 
 A complete framework for [Discord's Interactions](https://discord.com/developers/docs/interactions/receiving-and-responding), allowing you to build new Slash Command based bots with ease.
 
+Even if you don't need a full framework, you might still find some use in our [builders](./packages/builders/) or [api](./packages/api/) packages for your own applications.
+
 The project is for the most part runtime independent, meaning you can run your bots in both classic Node.JS as well as CF Workers/Vercel's Edge Functions, etc. The only current limitation is that you must import the correct verification module for your runtime yourself.
+
+**Note: Node.JS support is currently limited to 18.x and above, due to a lack of global `Blob` before this. I'll get this fixed soon.**
 
 
 ### Template Bot
@@ -19,7 +23,7 @@ A template repository to deploy a bot on Cloudflare Workers is available [here](
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ssMMiles/discord-interactions-worker)
 
 ## Packages
- - [@discord-interactions/core](./packages/core) - *Our core framework for handling and verifying incoming Discord interactions.*
+ - [@discord-interactions/core](./packages/core) - *Core framework for handling and verifying incoming Discord interactions.*
  - [@discord-interactions/builders](./packages/builders) - *Easy builder classes for interaction responses (Messages/Modals), Components and Commands.*
  - [@discord-interactions/api](./packages/api) - *A simple, typed wrapper around the Discord API.*
  - [@discord-interactions/request](./packages/request) - *A low level Discord HTTP client that handles global and resource rate limits.*

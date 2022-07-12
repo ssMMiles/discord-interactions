@@ -8,7 +8,7 @@
   </p>
 </div>
 
-*Our core framework for handling and verifying incoming Discord interactions.*
+*Core framework for handling and verifying incoming Discord interactions.*
 
 # Getting Started
 
@@ -44,10 +44,11 @@ server.post("/", async (request, reply) => {
     );
 
     onResponse.then((response) => {
-      if (response.constructor.name === "FormData") {
-        res.headers(response.getHeaders()).code(200).send(response);
-        return;
-      }
+      // Broken - For attachments, you can leave this out if you're not sending any. TODO: Needs smth like https://www.npmjs.com/package/form-data-encoder, or maybe to be returned as a readablestream instead of formdata. Won't work on Node.JS for now.
+      // if (response.constructor.name === "FormData") {
+      //   res.headers(response.getHeaders()).code(200).send(response);
+      //   return;
+      // }
 
       res.code(200).send(response);
     });
