@@ -20,7 +20,9 @@ An example bot using the framework is available [here](../example-bot). Addition
 
 ### Signature Verification
 
-You must also install and import one of [`verify`(Web APIs - CF Workers, Vercel Edge Functions, etc)](../verify)/[`verify-node`(Node.JS)](../verify-node) to enable signature verification.
+You must also install and import one of the following verification modules to enable signature verification:
+ - [`@discord-interactions/verify`(Web APIs - CF Workers, Vercel Edge Functions, etc)](../verify)
+ - [`@discord-interactions/verify-node`(Node.JS)](../verify-node)
 
 # Receiving Interactions
 
