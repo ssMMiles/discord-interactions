@@ -35,11 +35,12 @@ export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicat
   public group?: string;
 
   constructor(
-    manager: DiscordApplication,
+    app: DiscordApplication,
     interaction: APIChatInputApplicationCommandInteraction,
+    timestamps: { signature: Date; received: Date },
     responseCallback: ResponseCallback<ChannelMessageResponse>
   ) {
-    super(manager, interaction, responseCallback);
+    super(app, interaction, timestamps, responseCallback);
 
     const rootOption = interaction.data.options?.[0];
 

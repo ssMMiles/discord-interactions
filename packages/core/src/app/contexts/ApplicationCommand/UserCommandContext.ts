@@ -14,11 +14,12 @@ export class UserCommandContext extends BaseCommandContext<APIUserApplicationCom
   };
 
   constructor(
-    manager: DiscordApplication,
+    app: DiscordApplication,
     interaction: APIUserApplicationCommandInteraction,
+    timestamps: { signature: Date; received: Date },
     responseCallback: ResponseCallback<ChannelMessageResponse>
   ) {
-    super(manager, interaction, responseCallback);
+    super(app, interaction, timestamps, responseCallback);
 
     this.target = {
       user: this.resolved.users?.get(interaction.data.target_id) as APIUser,

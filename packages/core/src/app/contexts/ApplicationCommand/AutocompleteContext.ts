@@ -43,11 +43,12 @@ export class AutocompleteContext extends BaseInteractionContext<
   public group?: string;
 
   constructor(
-    manager: DiscordApplication,
+    app: DiscordApplication,
     interaction: APIApplicationCommandAutocompleteInteraction,
+    timestamps: { signature: Date; received: Date },
     responseCallback: ResponseCallback<APIApplicationCommandAutocompleteResponse>
   ) {
-    super(manager, interaction, responseCallback);
+    super(app, interaction, timestamps, responseCallback);
 
     this.name = interaction.data.name;
     this.id = interaction.data.id;

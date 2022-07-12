@@ -20,8 +20,13 @@ class BaseComponentContext<
 > extends BaseStatefulInteractionContext<State, T, MessageUpdateResponse> {
   public message: APIMessage;
 
-  constructor(manager: DiscordApplication, interaction: T, responseCallback: ResponseCallback<MessageUpdateResponse>) {
-    super(manager, interaction, responseCallback);
+  constructor(
+    manager: DiscordApplication,
+    interaction: T,
+    timestamps: { signature: Date; received: Date },
+    responseCallback: ResponseCallback<MessageUpdateResponse>
+  ) {
+    super(manager, interaction, timestamps, responseCallback);
 
     this.message = interaction.message;
   }
@@ -81,9 +86,10 @@ export class SelectMenuContext<S = never> extends BaseComponentContext<S, APIMes
   constructor(
     manager: DiscordApplication,
     interaction: APIMessageComponentSelectMenuInteraction,
+    timestamps: { signature: Date; received: Date },
     responseCallback: ResponseCallback<MessageUpdateResponse>
   ) {
-    super(manager, interaction, responseCallback);
+    super(manager, interaction, timestamps, responseCallback);
 
     this.values = interaction.data.values;
   }

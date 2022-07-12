@@ -33,6 +33,9 @@ export class BaseInteractionContext<
 
   public app: DiscordApplication;
 
+  public signedAt: Date;
+  public receivedAt: Date;
+
   public raw?: T;
   public interactionId: Snowflake;
 
@@ -50,13 +53,21 @@ export class BaseInteractionContext<
   public locale: LocaleString;
   public guildLocale?: LocaleString;
 
-  constructor(app: DiscordApplication, interaction: T, responseCallback: ResponseCallback<R>) {
+  constructor(
+    app: DiscordApplication,
+    interaction: T,
+    timestamps: { signature: Date; received: Date },
+    responseCallback: ResponseCallback<R>
+  ) {
     this.responseCallback = responseCallback;
 
     this.app = app;
     if (this.app.preserveRaw) this.raw = interaction;
 
     this.interactionId = interaction.id;
+
+    this.signedAt = timestamps.signature;
+    this.receivedAt = timestamps.received;
 
     this.followup = new WebhookClient(interaction.application_id, interaction.token, this.app.rest);
     this.app_permissions = new Bitfield(BigInt(interaction.app_permissions ?? "0"));
@@ -111,8 +122,13 @@ export class BaseStatefulInteractionContext<
   public allowExpired = false;
   public parentCommand?: string;
 
-  constructor(app: DiscordApplication, interaction: T, responseCallback: ResponseCallback<R>) {
-    super(app, interaction, responseCallback);
+  constructor(
+    app: DiscordApplication,
+    interaction: T,
+    timestamps: { signature: Date; received: Date },
+    responseCallback: ResponseCallback<R>
+  ) {
+    super(app, interaction, timestamps, responseCallback);
 
     const custom_id = interaction.data.custom_id.split("|");
 

@@ -7,11 +7,12 @@ export class MessageCommandContext extends BaseCommandContext<APIMessageApplicat
   public message: APIMessage;
 
   constructor(
-    manager: DiscordApplication,
+    app: DiscordApplication,
     interaction: APIMessageApplicationCommandInteraction,
+    timestamps: { signature: Date; received: Date },
     responseCallback: ResponseCallback<ChannelMessageResponse>
   ) {
-    super(manager, interaction, responseCallback);
+    super(app, interaction, timestamps, responseCallback);
 
     this.message = interaction.data.resolved.messages[interaction.data.target_id];
   }

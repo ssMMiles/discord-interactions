@@ -24,9 +24,10 @@ export class ModalSubmitContext<State = never> extends BaseStatefulInteractionCo
   constructor(
     manager: DiscordApplication,
     interaction: APIModalSubmitInteraction,
+    timestamps: { signature: Date; received: Date },
     responseCallback: ResponseCallback<ModalSubmitResponse>
   ) {
-    super(manager, interaction, responseCallback);
+    super(manager, interaction, timestamps, responseCallback);
 
     if (interaction.data.components) {
       interaction.data.components?.map((actionRow) => {

@@ -35,13 +35,14 @@ import { InteractionHooks } from "./Hooks.js";
 function getExecutionContext(
   app: DiscordApplication,
   interaction: APIInteraction,
+  timestamps: { signature: Date; received: Date },
   responseCallback: ResponseCallback
 ): [InteractionContext, ((context: InteractionContext) => Promise<void | true>)[]] {
   let context, hook;
 
   switch (interaction.type) {
     case InteractionType.Ping:
-      context = new PingContext(responseCallback);
+      context = new PingContext(timestamps, responseCallback);
       hook = "ping";
 
       break;
@@ -51,13 +52,19 @@ function getExecutionContext(
           context = new SlashCommandContext(
             app,
             interaction as APIChatInputApplicationCommandInteraction,
+            timestamps,
             responseCallback
           );
           hook = "command.slash";
 
           break;
         case ApplicationCommandType.User:
-          context = new UserCommandContext(app, interaction as APIUserApplicationCommandInteraction, responseCallback);
+          context = new UserCommandContext(
+            app,
+            interaction as APIUserApplicationCommandInteraction,
+            timestamps,
+            responseCallback
+          );
           hook = "command.user";
 
           break;
@@ -65,6 +72,7 @@ function getExecutionContext(
           context = new MessageCommandContext(
             app,
             interaction as APIMessageApplicationCommandInteraction,
+            timestamps,
             responseCallback
           );
           hook = "command.message";
@@ -76,14 +84,19 @@ function getExecutionContext(
 
       break;
     case InteractionType.ApplicationCommandAutocomplete:
-      context = new AutocompleteContext(app, interaction, responseCallback);
+      context = new AutocompleteContext(app, interaction, timestamps, responseCallback);
       hook = "command.autocomplete";
 
       break;
     case InteractionType.MessageComponent:
       switch (interaction.data.component_type) {
         case ComponentType.Button:
-          context = new ButtonContext(app, interaction as APIMessageComponentButtonInteraction, responseCallback);
+          context = new ButtonContext(
+            app,
+            interaction as APIMessageComponentButtonInteraction,
+            timestamps,
+            responseCallback
+          );
           hook = "component.button";
 
           break;
@@ -91,6 +104,7 @@ function getExecutionContext(
           context = new SelectMenuContext(
             app,
             interaction as APIMessageComponentSelectMenuInteraction,
+            timestamps,
             responseCallback
           );
           hook = "component.selectMenu";
@@ -102,7 +116,7 @@ function getExecutionContext(
 
       break;
     case InteractionType.ModalSubmit:
-      context = new ModalSubmitContext(app, interaction, responseCallback);
+      context = new ModalSubmitContext(app, interaction, timestamps, responseCallback);
       hook = "modal";
 
       break;
@@ -119,9 +133,10 @@ function getExecutionContext(
 export async function _handleInteraction(
   this: DiscordApplication,
   interaction: APIInteraction,
+  timestamps: { signature: Date; received: Date },
   responseCallback: ResponseCallback
 ): Promise<InteractionContext> {
-  const executionContext = getExecutionContext(this, interaction, responseCallback);
+  const executionContext = getExecutionContext(this, interaction, timestamps, responseCallback);
 
   // eslint-disable-next-line prefer-const
   let [context, hooks] = executionContext;

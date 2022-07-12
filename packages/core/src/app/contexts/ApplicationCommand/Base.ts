@@ -50,8 +50,13 @@ export class BaseCommandContext<
 
   public resolved: ResolvedData;
 
-  constructor(manager: DiscordApplication, interaction: T, responseCallback: ResponseCallback<ChannelMessageResponse>) {
-    super(manager, interaction, responseCallback);
+  constructor(
+    app: DiscordApplication,
+    interaction: T,
+    timestamps: { signature: Date; received: Date },
+    responseCallback: ResponseCallback<ChannelMessageResponse>
+  ) {
+    super(app, interaction, timestamps, responseCallback);
 
     this.name = interaction.data.name;
     this.id = interaction.data.id;

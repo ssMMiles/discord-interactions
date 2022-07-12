@@ -159,6 +159,11 @@ export class DiscordApplication {
   ): Promise<[Promise<APIInteractionResponse | FormData>, Promise<void>]> {
     let isValidSignature = false;
 
+    const timestamps = {
+      signature: new Date(Number(timestamp as string) * 1000),
+      received: new Date()
+    };
+
     if (signature === false) {
       isValidSignature = true;
     } else if (typeof timestamp === "string") {
@@ -199,7 +204,7 @@ export class DiscordApplication {
       });
 
       try {
-        await this._handleInteraction(interaction, responseCallbackWithTimeout);
+        await this._handleInteraction(interaction, timestamps, responseCallbackWithTimeout);
       } catch (e) {
         clearTimeout(timeout);
         reject(e);
