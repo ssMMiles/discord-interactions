@@ -9,7 +9,7 @@ import type {
   RESTPostAPIWebhookWithTokenJSONBody
 } from "discord-api-types/v10";
 import { InteractionResponseType, MessageFlags } from "discord-api-types/v10";
-import { FormData } from "formdata-node";
+import { Blob, FormData } from "formdata-node";
 import type { ActionRowBuilder, MessageActionRowComponentBuilders } from "../components/ActionRowBuilder.js";
 import { EmbedBuilder } from "./EmbedBuilder.js";
 

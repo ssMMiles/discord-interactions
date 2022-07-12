@@ -14,9 +14,6 @@ Even if you don't need a full framework, you might still find some use in our [b
 
 The project is for the most part runtime independent, meaning you can run your bots in both classic Node.JS as well as CF Workers/Vercel's Edge Functions, etc. The only current limitation is that you must import the correct verification module for your runtime yourself.
 
-**Note: Node.JS support is currently limited to 18.x and above, due to a lack of global `Blob` before this. I'll get this fixed soon.**
-
-
 ### Template Bot
 A template repository to deploy a bot on Cloudflare Workers is available [here](https://github.com/ssMMiles/discord-interactions-worker).
 
