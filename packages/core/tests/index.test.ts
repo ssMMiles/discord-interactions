@@ -15,9 +15,13 @@ import {
   DiscordApplicationOptions,
   SlashCommand
 } from "../dist/index.js";
-import data from "./data.json";
 
+import data from "./data.json";
 const { testCommandInteraction, buttonInteraction } = data;
+
+import data2 from "./data2.json";
+const { PUBLIC_KEY, BODY_INVALID, SIGNATURE_INVALID, TIMESTAMP_INVALID, BODY_VALID, SIGNATURE_VALID, TIMESTAMP_VALID } =
+  data2;
 
 if (
   typeof process.env.CLIENT_ID !== "string" ||
@@ -78,6 +82,46 @@ describe("Discord Application", () => {
 
       expect(app.commands.has("config")).toBe(true);
       expect(app.commands.get("config")?.constructor.name).toBe("RegisteredCommandGroup");
+    });
+  });
+
+  describe("Signature Verification", () => {
+    const app = new DiscordApplication({
+      clientId: "123456789",
+      token: "abcd",
+      publicKey: PUBLIC_KEY
+    });
+
+    it("Valid Signature Is Accepted", async () => {
+      try {
+        const [_getResponse, handling] = await app.handleInteraction(BODY_VALID, SIGNATURE_VALID, TIMESTAMP_VALID);
+
+        await handling;
+        expect(true).toBe(true);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (err: any) {
+        console.error(err);
+        expect(err.constructor.name).toBe(null);
+      }
+    });
+
+    it("Invalid Signature Is Denied", async () => {
+      try {
+        const [_getResponse, handling] = await app.handleInteraction(
+          BODY_INVALID,
+          SIGNATURE_INVALID,
+          TIMESTAMP_INVALID
+        );
+
+        await handling;
+
+        expect(false).toBe(true);
+
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (err: any) {
+        console.error(err);
+        expect(err.constructor.name).toBe("UnauthorizedInteraction");
+      }
     });
   });
 

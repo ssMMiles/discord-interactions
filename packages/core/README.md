@@ -18,12 +18,6 @@ An example bot using the framework is available [here](../example-bot). Addition
 
 `npm install @discord-interactions/core`
 
-### Signature Verification
-
-You must also install and import one of the following verification modules to enable signature verification:
- - [`@discord-interactions/verify`(Web APIs - CF Workers, Vercel Edge Functions, etc)](../verify)
- - [`@discord-interactions/verify-node`(Node.JS)](../verify-node)
-
 # Receiving Interactions
 
 Our framework is designed to work with any webserver, with it only taking the raw request body and the `X-Signature-Ed25519`/`X-Signature-Timestamp` headers for authorization. The headers are optional, and can be left out if you're handling authorization at an earlier stage.
@@ -46,7 +40,7 @@ server.post("/", async (request, reply) => {
     );
 
     onResponse.then((response) => {
-      // Broken - For attachments, you can leave this out if you're not sending any. TODO: Needs smth like https://www.npmjs.com/package/form-data-encoder, or maybe to be returned as a readablestream instead of formdata. Won't work on Node.JS for now.
+      // Broken - For attachments, you can leave this out if you're not sending any. TODO: Needs smth like https://www.npmjs.com/package/form-data-encoder, or maybe to be returned as a readablestream instead of formdata. Won't work in Node.js for now.
       // if (response.constructor.name === "FormData") {
       //   res.headers(response.getHeaders()).code(200).send(response);
       //   return;

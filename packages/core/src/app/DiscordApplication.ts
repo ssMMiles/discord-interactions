@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { DiscordApiClient } from "@discord-interactions/api";
+import _verifyInteractionSignature from "@discord-interactions/verify";
 import type { APIInteraction, APIInteractionResponse, Snowflake } from "discord-api-types/v10";
 import type { FormData } from "formdata-node";
 import { InteractionHandlerTimedOut, UnauthorizedInteraction } from "../util/errors.js";
@@ -112,6 +113,17 @@ export class DiscordApplication {
     }
   }
 
+  /**
+   * Verify an incoming interaction's signature.
+   * @param timestamp Interaction Request's "X-Signature-Timestamp" Header
+   * @param signature Interaction Request's "X-Signature-Ed25519" Header
+   * @param body Raw Interaction Request Body - If you parse this as JSON beforehand, verification will fail for certain interactions.
+   * @returns Whether or not the request signature is valid.
+   */
+  public verifyInteractionSignature(signature: string, timestamp: string, body: string) {
+    return _verifyInteractionSignature(this.publicKey, signature, timestamp, body);
+  }
+
   public createGuildCommandManager(guildId: Snowflake, syncMode?: SyncMode): CommandManager {
     const manager = new CommandManager(this, guildId, syncMode);
 
@@ -123,36 +135,13 @@ export class DiscordApplication {
   }
 
   /**
-   * Verify an incoming interaction's signature. This method is not implemented in `core`, please import either `@discord-interactions/verify` or `@discord-interactions/verify-node`.
-   * @param publicKey Your application's public key
-   * @param timestamp Interaction's "X-Signature-Timestamp" header
-   * @param signature Interaction's "X-Signature-Ed25519" header
-   * @param body Raw interaction body
-   * @returns Whether or not the signature is valid
-   */
-  public static async verifyInteractionSignature(
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    publicKey: string,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    signature: string,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    timestamp: string,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    body: string
-  ): Promise<boolean> {
-    throw new Error(
-      "Unimplemented. Please import one of `@discord-interactions/verify`/`@discord-interactions/verify-node`."
-    );
-  }
-
-  /**
    * Handle an incoming interaction request
    * @param body Raw interaction body
    * @param signature Request's "X-Signature-Ed25519" header or false to skip signature verification
    * @param timestamp Request's "X-Signature-Timestamp" header
    * @returns Array containing the interaction response, and a callback to be called after you have sent the response
    */
-  public async handleInteraction(
+  async handleInteraction(
     body: string,
     signature: string | false,
     timestamp?: string
@@ -167,12 +156,7 @@ export class DiscordApplication {
     if (signature === false) {
       isValidSignature = true;
     } else if (typeof timestamp === "string") {
-      isValidSignature = await DiscordApplication.verifyInteractionSignature(
-        this.publicKey,
-        signature,
-        timestamp,
-        body
-      );
+      isValidSignature = await this.verifyInteractionSignature(signature, timestamp, body);
     }
 
     if (!isValidSignature) {
