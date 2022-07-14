@@ -18,7 +18,6 @@ import {
   UnknownComponentType,
   UnknownInteractionType
 } from "@discord-interactions/core";
-import "@discord-interactions/verify";
 import { Ping } from "./commands/Ping.js";
 
 export interface Env {

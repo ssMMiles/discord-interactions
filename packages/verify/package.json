@@ -47,11 +47,13 @@
     "lint": "eslint src",
     "build": "tsc",
     "docs": "typedoc",
-    "start": "node dist/index.js",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
   "dependencies": {
     "discord-api-types": "^0.36.1"
+  },
+  "engines": {
+    "node": ">=16"
   },
   "publishConfig": {
     "access": "public"

@@ -7,7 +7,6 @@ import {
   UnknownComponentType,
   UnknownInteractionType
 } from "@discord-interactions/core";
-import "@discord-interactions/verify-node";
 import "dotenv/config";
 import { fastify } from "fastify";
 import { default as rawBody } from "fastify-raw-body";

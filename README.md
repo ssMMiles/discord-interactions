@@ -8,26 +8,24 @@
   </p>
 </div>
 
-A complete framework for [Discord's Interactions](https://discord.com/developers/docs/interactions/receiving-and-responding), allowing you to build new Slash Command based bots with ease.
+A complete framework for [Discord's Interactions](https://discord.com/developers/docs/interactions/receiving-and-responding), allowing you to build new Slash Command based bots with ease. If you don't need the framework, our [verify](./packages/verify/), [builders](./packages/builders/) or [api](./packages/api/) packages are fully independent and might be of use in your own applications.
 
-Even if you don't need a full framework, you might still find some use in our [builders](./packages/builders/) or [api](./packages/api/) packages for your own applications.
+**Supports Node.JS 16+ as well as Service Worker based runtimes such as Cloudflare Workers.**
 
-The project is for the most part runtime independent, meaning you can run your bots in both classic Node.JS as well as CF Workers/Vercel's Edge Functions, etc. The only current limitation is that you must import the correct verification module for your runtime yourself.
-
-### Template Bot
-A template repository to deploy a bot on Cloudflare Workers is available [here](https://github.com/ssMMiles/discord-interactions-worker).
+### Templates
+ - [Node.js](https://github.com/ssMMiles/discord-interactions-node)
+ - [Cloudflare Workers](https://github.com/ssMMiles/discord-interactions-worker)
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ssMMiles/discord-interactions-worker)
 
 ## Packages
  - [@discord-interactions/core](./packages/core) - *Core framework for handling and verifying incoming Discord interactions.*
+ - [@discord-interactions/verify](./packages/verify) - *Verify discord interactions using either Node.js' Crypto or the Web SubtleCrypto API.*
  - [@discord-interactions/builders](./packages/builders) - *Easy builder classes for interaction responses (Messages/Modals), Components and Commands.*
  - [@discord-interactions/api](./packages/api) - *A simple, typed wrapper around the Discord API.*
  - [@discord-interactions/request](./packages/request) - *A low level Discord HTTP client that handles global and resource rate limits.*
- - [@discord-interactions/verify](./packages/verify) - *Verification module for `@discord-interactions/core`. Implements signature verification using the Web SubtleCrypto API.*
- - [@discord-interactions/verify-node](./packages/verify-node) - *Verification module for `@discord-interactions/core`. Implements signature verification using the Node.JS (todo libsodium?) Crypto API.*
- - [isomorphic-fetch-ponyfill](./packages/isomorphic-fetch-ponyfill) - *A fetch ponyfill that supports Node.JS, Service Workers, anything?*
-
+ - [isomorphic-fetch-ponyfill](./packages/isomorphic-fetch-ponyfill) - *A fetch ponyfill that supports Node.js, Cloudflare Workers, Service Workers + Browsers?.*
 
 ### To-Do:
- - Better documentation and more tests.
+ - More Tests
+ - Documentation

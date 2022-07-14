@@ -8,6 +8,6 @@
   </p>
 </div>
 
-*A fetch ponyfill that supports Node.JS, Service Workers, anything?*
+*A fetch ponyfill that supports Node.js, Cloudflare Workers, Service Workers + Browsers?.*
 
-https://github.com/lquixada/cross-fetch was broken, so I made this.
+I wanted something like https://github.com/lquixada/cross-fetch that worked in Cloudflare workers, so this is a more straightforward but working (in Node.js and CF Workers at least) version.
