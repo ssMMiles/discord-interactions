@@ -9,3 +9,10 @@
 </div>
 
 *Verification module for `@discord-interactions/core`. Implements signature verification using the Web SubtleCrypto API.*
+
+This package exports a single method:
+```ts
+import verifyInteractionSignature from "@discord-interactions/verify";
+
+verifyInteractionSignature(publicKey, timestamp, signature, body);
+```

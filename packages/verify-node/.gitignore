@@ -1,7 +1,0 @@
-node_modules
-
-.env
-
-# Build artifacts
-dist
-yarn-error.log

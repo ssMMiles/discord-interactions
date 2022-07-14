@@ -1,29 +1,9 @@
-import "dotenv/config";
-
-// import data from "./data.json";
-// const { PUBLIC_KEY, SIGNATURE } = data;
-
-describe("Discord Application", () => {
-  describe("Authentication", () => {
-    it("Can't be tested in Node.JS", async () => {
-      expect(true).toBe(true);
-    });
-
-    // const signature = SIGNATURE;
-
-    // const invalidSignature = signature.replace("1", "2");
-
-    // const timestamp = "";
-    // const body = "Oh no!";
-
-    // it("Valid Signature Is Accepted", async () => {
-    //   expect(await DiscordApplication.verifyInteractionSignature(PUBLIC_KEY, timestamp, signature, body)).toBe(true);
-    // });
-
-    // it("Invalid Signature Is Denied", async () => {
-    //   expect(await DiscordApplication.verifyInteractionSignature(PUBLIC_KEY, timestamp, invalidSignature, body)).toBe(
-    //     false
-    //   );
-    // });
+describe("Should Have Tests Here", () => {
+  it("Really Should", () => {
+    expect(true).toBe(true);
   });
 });
+
+// If anyone knows how to get this to work with importing the correct version, please lmk
+// jest wants to import stuff from ./dist directly
+// not sure how to do this with different versions for node/web

@@ -1,9 +1,0 @@
-{
-  "PUBLIC_KEY": "c5568d0facd66bddee281dcb9c8ac02e169c5c20741b215b2539a96bb183c5d6",
-  "BODY_INVALID": "{\"application_id\":\"827290144020496384\",\"id\":\"995105663481028771\",\"token\":\"aW50ZXJhY3Rpb246OTk1MTA1NjYzNDgxMDI4NzcxOmhRWEJ1SWlIRWNHTTVaYmFUc2pGRzR5SlZxM1hCSW9wMkxhald2anZ1ZDhaSWhQY3ZIM1d1NGJTNWRZbWs1SzQ4YzdpajEzd2ZkQVRDWEJuamxVN1A1TFhWRVoxWDVIMGV4MkhKSTRyN0ZyQ3JtWEYyem83UXZEV001VENiVUhJ\",\"type\":1,\"user\":{\"avatar\":\"27aeb42cc902f7d8712aa64ff15bfb7d\",\"avatar_decoration\":null,\"discriminator\":\"6969\",\"id\":\"170531778354741248\",\"public_flags\":576,\"username\":\"miles\"},\"version\":1}",
-  "SIGNATURE_INVALID": "f740b665fd82b37a379626543cb10f9f1cd36b910be2bf3210bb70b5de11e096878c7e2b60a92931269ed49d58f249f32558853049a38fc6d66a831574ab7408",
-  "TIMESTAMP_INVALID": "1657322079",
-  "BODY_VALID": "{\"application_id\":\"827290144020496384\",\"id\":\"995105663481028770\",\"token\":\"aW50ZXJhY3Rpb246OTk1MTA1NjYzNDgxMDI4NzcwOmlReEtWOXNxMTJWYXF4UlRkc2RyVEp0MDdDMlVyem1na0FTT21xNTZQNHR0MUlORDU1bmNCUTZZdTI5akJkb3FycjBuUDltNVp3VVVJbnA0UUkzMG13cVBGWE5qZFQyb1dkZEpqVVFEdmZEcGE2UHV5dFAyTE5rS2c2a2lZNDlx\",\"type\":1,\"user\":{\"avatar\":\"27aeb42cc902f7d8712aa64ff15bfb7d\",\"avatar_decoration\":null,\"discriminator\":\"6969\",\"id\":\"170531778354741248\",\"public_flags\":576,\"username\":\"miles\"},\"version\":1}",
-  "SIGNATURE_VALID": "28b4ab5f09cce30c7f7f4ab4b47c311f0ce83dd8fec06d34e402c44d64223be5016f95339e64bdabcbd395e9147afe3f8cd024868330ab41014ae51b5573a009",
-  "TIMESTAMP_VALID": "1657322078"
-}
