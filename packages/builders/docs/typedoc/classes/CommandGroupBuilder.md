@@ -4,7 +4,7 @@
 
 ## Hierarchy
 
-- `CommandBuilderBase`<`RESTPostAPIChatInputApplicationCommandsJSONBody`\>
+- `ChatInputCommandBuilderBase`<`APIApplicationCommandSubcommandGroupOption` \| `APIApplicationCommandSubcommandOption`\>
 
   ↳ **`CommandGroupBuilder`**
 
@@ -57,9 +57,11 @@
 | `name` | `string` |
 | `description` | `string` |
 
-#### Overrides
+#### Inherited from
 
-CommandBuilderBase&lt;RESTPostAPIChatInputApplicationCommandsJSONBody\&gt;.constructor
+ChatInputCommandBuilderBase<
+  APIApplicationCommandSubcommandGroupOption \| APIApplicationCommandSubcommandOption
+\>.constructor
 
 ## Properties
 
@@ -71,11 +73,11 @@ Default member permissions required to use the command
 
 #### Inherited from
 
-CommandBuilderBase.default\_member\_permissions
+ChatInputCommandBuilderBase.default\_member\_permissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:42](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L42)
+[src/commands/CommandBuilderBase.ts:48](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandBuilderBase.ts#L48)
 
 ___
 
@@ -83,9 +85,13 @@ ___
 
 • **description**: `string`
 
+#### Inherited from
+
+ChatInputCommandBuilderBase.description
+
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandGroupBuilder.ts#L24)
+[src/commands/CommandBuilderBase.ts:161](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandBuilderBase.ts#L161)
 
 ___
 
@@ -93,9 +99,13 @@ ___
 
 • **description\_localizations**: `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> = `{}`
 
+#### Inherited from
+
+ChatInputCommandBuilderBase.description\_localizations
+
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:25](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandGroupBuilder.ts#L25)
+[src/commands/CommandBuilderBase.ts:162](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandBuilderBase.ts#L162)
 
 ___
 
@@ -107,11 +117,11 @@ Whether the command is visible in DMs - Only available for global commands and d
 
 #### Inherited from
 
-CommandBuilderBase.dm\_permission
+ChatInputCommandBuilderBase.dm\_permission
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:37](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L37)
+[src/commands/CommandBuilderBase.ts:43](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandBuilderBase.ts#L43)
 
 ___
 
@@ -123,11 +133,11 @@ The name of this context menu command
 
 #### Inherited from
 
-CommandBuilderBase.name
+ChatInputCommandBuilderBase.name
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:22](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L22)
+[src/commands/CommandBuilderBase.ts:28](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandBuilderBase.ts#L28)
 
 ___
 
@@ -139,21 +149,25 @@ The localized names for this command
 
 #### Inherited from
 
-CommandBuilderBase.name\_localizations
+ChatInputCommandBuilderBase.name\_localizations
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L27)
+[src/commands/CommandBuilderBase.ts:33](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandBuilderBase.ts#L33)
 
 ___
 
 ### options
 
-• **options**: [`ToAPIApplicationCommandGroupOptions`](../interfaces/ToAPIApplicationCommandGroupOptions.md)[] = `[]`
+• **options**: `ToAPIApplicationCommandOptions`<`APIApplicationCommandSubcommandOption` \| `APIApplicationCommandSubcommandGroupOption`\>[] = `[]`
+
+#### Inherited from
+
+ChatInputCommandBuilderBase.options
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:27](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandGroupBuilder.ts#L27)
+[src/commands/CommandBuilderBase.ts:164](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandBuilderBase.ts#L164)
 
 ___
 
@@ -161,13 +175,13 @@ ___
 
 • **type**: `ChatInput` = `ApplicationCommandType.ChatInput`
 
-#### Overrides
+#### Inherited from
 
-CommandBuilderBase.type
+ChatInputCommandBuilderBase.type
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:22](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandGroupBuilder.ts#L22)
+[src/commands/CommandBuilderBase.ts:159](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandBuilderBase.ts#L159)
 
 ## Methods
 
@@ -187,7 +201,7 @@ CommandBuilderBase.type
 
 #### Inherited from
 
-CommandBuilderBase.addRequiredPermissions
+ChatInputCommandBuilderBase.addRequiredPermissions
 
 ___
 
@@ -237,7 +251,7 @@ ___
 
 #### Inherited from
 
-CommandBuilderBase.clearRequiredPermissions
+ChatInputCommandBuilderBase.clearRequiredPermissions
 
 ___
 
@@ -251,7 +265,7 @@ ___
 
 #### Inherited from
 
-CommandBuilderBase.disallowAllPermissions
+ChatInputCommandBuilderBase.disallowAllPermissions
 
 ___
 
@@ -263,7 +277,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `remote` | `APIApplicationCommand` |
+| `remote` | `APIApplicationCommand` & { `type`: `ChatInput`  } |
 
 #### Returns
 
@@ -271,7 +285,7 @@ ___
 
 #### Inherited from
 
-CommandBuilderBase.equals
+ChatInputCommandBuilderBase.equals
 
 ___
 
@@ -291,7 +305,7 @@ ___
 
 #### Inherited from
 
-CommandBuilderBase.removeRequiredPermissions
+ChatInputCommandBuilderBase.removeRequiredPermissions
 
 ___
 
@@ -313,7 +327,7 @@ Set whether this command will be visible in DMs - Only applicable to Global comm
 
 #### Inherited from
 
-CommandBuilderBase.setDMEnabled
+ChatInputCommandBuilderBase.setDMEnabled
 
 ___
 
@@ -333,6 +347,10 @@ Set the description
 
 [`CommandGroupBuilder`](CommandGroupBuilder.md)
 
+#### Inherited from
+
+ChatInputCommandBuilderBase.setDescription
+
 ___
 
 ### setDescriptionLocalizations
@@ -350,6 +368,10 @@ Set a dictionary of localized descriptions
 #### Returns
 
 [`CommandGroupBuilder`](CommandGroupBuilder.md)
+
+#### Inherited from
+
+ChatInputCommandBuilderBase.setDescriptionLocalizations
 
 ___
 
@@ -369,6 +391,10 @@ Set a single locale's description
 #### Returns
 
 [`CommandGroupBuilder`](CommandGroupBuilder.md)
+
+#### Inherited from
+
+ChatInputCommandBuilderBase.setLocalizedDescription
 
 ___
 
@@ -391,7 +417,7 @@ Set a single locale's name
 
 #### Inherited from
 
-CommandBuilderBase.setLocalizedName
+ChatInputCommandBuilderBase.setLocalizedName
 
 ___
 
@@ -413,7 +439,7 @@ Set the name
 
 #### Inherited from
 
-CommandBuilderBase.setName
+ChatInputCommandBuilderBase.setName
 
 ___
 
@@ -435,7 +461,7 @@ Set a dictionary of localized names
 
 #### Inherited from
 
-CommandBuilderBase.setNameLocalizations
+ChatInputCommandBuilderBase.setNameLocalizations
 
 ___
 
@@ -455,7 +481,7 @@ ___
 
 #### Inherited from
 
-CommandBuilderBase.setRequiredPermissions
+ChatInputCommandBuilderBase.setRequiredPermissions
 
 ___
 
@@ -469,4 +495,4 @@ ___
 
 #### Overrides
 
-CommandBuilderBase.toJSON
+ChatInputCommandBuilderBase.toJSON

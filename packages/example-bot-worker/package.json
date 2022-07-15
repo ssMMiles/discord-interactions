@@ -24,7 +24,6 @@
     "clean": "rimraf dist",
     "format": "prettier --write src",
     "lint": "eslint src",
-    "docs": "typedoc",
     "proxy": "ssh -R 443:localhost:8787 tunnel.us.ngrok.com http",
     "dev": "wrangler dev & yarn proxy"
   },

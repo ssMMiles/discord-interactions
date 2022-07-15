@@ -2,6 +2,12 @@
 
 # Class: RegisteredCommandGroup
 
+## Hierarchy
+
+- `RegisteredDiscordCommand`<`CommandGroupBuilder`\>
+
+  ↳ **`RegisteredCommandGroup`**
+
 ## Table of contents
 
 ### Constructors
@@ -11,21 +17,24 @@
 ### Properties
 
 - [builder](RegisteredCommandGroup.md#builder)
+- [components](RegisteredCommandGroup.md#components)
 - [handlers](RegisteredCommandGroup.md#handlers)
 - [id](RegisteredCommandGroup.md#id)
+- [lastSyncedAt](RegisteredCommandGroup.md#lastsyncedat)
 
 ### Methods
 
+- [create](RegisteredCommandGroup.md#create)
 - [delete](RegisteredCommandGroup.md#delete)
 - [setHandlers](RegisteredCommandGroup.md#sethandlers)
 - [sync](RegisteredCommandGroup.md#sync)
-- [unregister](RegisteredCommandGroup.md#unregister)
+- [update](RegisteredCommandGroup.md#update)
 
 ## Constructors
 
 ### constructor
 
-• **new RegisteredCommandGroup**(`manager`, `command`, `id`)
+• **new RegisteredCommandGroup**(`manager`, `command`)
 
 #### Parameters
 
@@ -35,7 +44,10 @@
 | `command` | `Object` |
 | `command.builder` | `CommandGroupBuilder` |
 | `command.handlers` | [`ISubcommandHandlers`](../modules.md#isubcommandhandlers) |
-| `id` | `string` |
+
+#### Overrides
+
+RegisteredDiscordCommand&lt;CommandGroupBuilder\&gt;.constructor
 
 ## Properties
 
@@ -43,9 +55,27 @@
 
 • **builder**: `CommandGroupBuilder`
 
+#### Inherited from
+
+RegisteredDiscordCommand.builder
+
 #### Defined in
 
-[app/commands/CommandGroup.ts:46](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L46)
+[app/commands/Base.ts:28](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L28)
+
+___
+
+### components
+
+• `Optional` **components**: ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[]
+
+#### Inherited from
+
+RegisteredDiscordCommand.components
+
+#### Defined in
+
+[app/commands/Base.ts:30](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L30)
 
 ___
 
@@ -55,29 +85,73 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:47](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L47)
+[app/commands/CommandGroup.ts:44](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/CommandGroup.ts#L44)
 
 ___
 
 ### id
 
-• **id**: `string`
+• **id**: `string` = `"0"`
+
+#### Inherited from
+
+RegisteredDiscordCommand.id
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:49](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L49)
+[app/commands/Base.ts:32](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L32)
+
+___
+
+### lastSyncedAt
+
+• `Optional` **lastSyncedAt**: `Date`
+
+#### Inherited from
+
+RegisteredDiscordCommand.lastSyncedAt
+
+#### Defined in
+
+[app/commands/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L26)
 
 ## Methods
 
-### delete
+### create
 
-▸ **delete**(): `Promise`<`void`\>
+▸ **create**(): `Promise`<`void`\>
 
-Delete and unregister this command
+Create this command in Discord
 
 #### Returns
 
 `Promise`<`void`\>
+
+#### Inherited from
+
+RegisteredDiscordCommand.create
+
+___
+
+### delete
+
+▸ **delete**(`id?`): `Promise`<`void`\>
+
+Delete this command from Discord
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id?` | `string` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Inherited from
+
+RegisteredDiscordCommand.delete
 
 ___
 
@@ -101,22 +175,40 @@ ___
 
 ### sync
 
-▸ **sync**(): `Promise`<`void`\>
+▸ **sync**(`remoteCommand?`): `Promise`<`void`\>
 
-Sync this command's builder with the API
+Sync this command with Discord
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `remoteCommand?` | `APIApplicationCommand` |
 
 #### Returns
 
 `Promise`<`void`\>
+
+#### Inherited from
+
+RegisteredDiscordCommand.sync
 
 ___
 
-### unregister
+### update
 
-▸ **unregister**(): `Promise`<`void`\>
+▸ **update**(`id?`): `Promise`<`void`\>
 
-Unregister this command
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id?` | `string` |
 
 #### Returns
 
 `Promise`<`void`\>
+
+#### Inherited from
+
+RegisteredDiscordCommand.update

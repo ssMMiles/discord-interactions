@@ -15,35 +15,38 @@ Manager for your application's commands. Lets you register fully handled command
 - [1](CommandManager.md#1)
 - [2](CommandManager.md#2)
 - [3](CommandManager.md#3)
+- [app](CommandManager.md#app)
+- [guildId](CommandManager.md#guildid)
+- [syncMode](CommandManager.md#syncmode)
 
 ### Methods
 
-- [deleteAPICommand](CommandManager.md#deleteapicommand)
+- [deleteCommand](CommandManager.md#deletecommand)
 - [deleteUnregistered](CommandManager.md#deleteunregistered)
 - [get](CommandManager.md#get)
-- [getAPICommands](CommandManager.md#getapicommands)
 - [has](CommandManager.md#has)
-- [putAPICommand](CommandManager.md#putapicommand)
-- [putAPICommands](CommandManager.md#putapicommands)
+- [patchCommand](CommandManager.md#patchcommand)
+- [postCommand](CommandManager.md#postcommand)
 - [register](CommandManager.md#register)
 - [rename](CommandManager.md#rename)
 - [set](CommandManager.md#set)
+- [sync](CommandManager.md#sync)
 - [toAPICommands](CommandManager.md#toapicommands)
 - [unregister](CommandManager.md#unregister)
-- [updateAPICommand](CommandManager.md#updateapicommand)
 
 ## Constructors
 
 ### constructor
 
-• **new CommandManager**(`manager`, `guildId?`)
+• **new CommandManager**(`app`, `guildId?`, `syncMode?`)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `manager` | [`DiscordApplication`](DiscordApplication.md) |
-| `guildId?` | `string` |
+| Name | Type | Default value |
+| :------ | :------ | :------ |
+| `app` | [`DiscordApplication`](DiscordApplication.md) | `undefined` |
+| `guildId?` | `string` | `undefined` |
+| `syncMode` | [`SyncMode`](../enums/SyncMode.md) | `SyncMode.Enabled` |
 
 ## Properties
 
@@ -53,7 +56,7 @@ Manager for your application's commands. Lets you register fully handled command
 
 #### Defined in
 
-[app/managers/CommandManager.ts:45](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/managers/CommandManager.ts#L45)
+[app/managers/CommandManager.ts:46](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/managers/CommandManager.ts#L46)
 
 ___
 
@@ -63,7 +66,7 @@ ___
 
 #### Defined in
 
-[app/managers/CommandManager.ts:46](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/managers/CommandManager.ts#L46)
+[app/managers/CommandManager.ts:47](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/managers/CommandManager.ts#L47)
 
 ___
 
@@ -73,15 +76,43 @@ ___
 
 #### Defined in
 
-[app/managers/CommandManager.ts:47](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/managers/CommandManager.ts#L47)
+[app/managers/CommandManager.ts:48](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/managers/CommandManager.ts#L48)
+
+___
+
+### app
+
+• **app**: [`DiscordApplication`](DiscordApplication.md)
+
+#### Defined in
+
+[app/managers/CommandManager.ts:50](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/managers/CommandManager.ts#L50)
+
+___
+
+### guildId
+
+• `Optional` **guildId**: `string`
+
+#### Defined in
+
+[app/managers/CommandManager.ts:53](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/managers/CommandManager.ts#L53)
+
+___
+
+### syncMode
+
+• **syncMode**: [`SyncMode`](../enums/SyncMode.md)
+
+#### Defined in
+
+[app/managers/CommandManager.ts:51](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/managers/CommandManager.ts#L51)
 
 ## Methods
 
-### deleteAPICommand
+### deleteCommand
 
-▸ **deleteAPICommand**(`id`): `Promise`<`void`\>
-
-Delete an Application Command
+▸ **deleteCommand**(`id`): `Promise`<`unknown`\>
 
 #### Parameters
 
@@ -91,7 +122,7 @@ Delete an Application Command
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`<`unknown`\>
 
 ___
 
@@ -126,24 +157,6 @@ Fetch a registered command
 
 ___
 
-### getAPICommands
-
-▸ **getAPICommands**(`withLocalizations?`): `Promise`<`APIApplicationCommand`[]\>
-
-Fetch your application's commands
-
-#### Parameters
-
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `withLocalizations` | `boolean` | `true` | Whether to include full localization dictionaries (name_localizations and description_localizations) in the returned objects, instead of the name_localized and description_localized fields. Default false. |
-
-#### Returns
-
-`Promise`<`APIApplicationCommand`[]\>
-
-___
-
 ### has
 
 ▸ **has**(`name`, `type?`): `boolean`
@@ -163,45 +176,36 @@ Check whether a command is registered
 
 ___
 
-### putAPICommand
+### patchCommand
 
-▸ **putAPICommand**<`T`\>(`data`): `Promise`<`T`\>
-
-Create or Update an Application Command
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `APIApplicationCommand` |
+▸ **patchCommand**(`id`, `data`): `Promise`<`APIApplicationCommand`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `data` | `RESTPostAPIApplicationCommandsJSONBody` |
+| `id` | `string` |
+| `data` | `CommandData` |
 
 #### Returns
 
-`Promise`<`T`\>
+`Promise`<`APIApplicationCommand`\>
 
 ___
 
-### putAPICommands
+### postCommand
 
-▸ **putAPICommands**(`data`): `Promise`<`APIApplicationCommand`[]\>
-
-Bulk update your application's commands
+▸ **postCommand**(`data`): `Promise`<`APIApplicationCommand`\>
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `data` | `RESTPostAPIApplicationCommandsJSONBody`[] |
+| `data` | `CommandData` |
 
 #### Returns
 
-`Promise`<`APIApplicationCommand`[]\>
+`Promise`<`APIApplicationCommand`\>
 
 ___
 
@@ -261,6 +265,22 @@ ___
 
 ___
 
+### sync
+
+▸ **sync**(`syncMode?`): `Promise`<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `syncMode?` | [`SyncMode`](../enums/SyncMode.md) |
+
+#### Returns
+
+`Promise`<`void`\>
+
+___
+
 ### toAPICommands
 
 ▸ **toAPICommands**(): `RESTPostAPIApplicationCommandsJSONBody`[]
@@ -290,28 +310,3 @@ Unregister a command from this client
 #### Returns
 
 `Promise`<`void`\>
-
-___
-
-### updateAPICommand
-
-▸ **updateAPICommand**<`T`\>(`data`, `id`): `Promise`<`T`\>
-
-Update an Application Command
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `APIApplicationCommand` |
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `data` | `RESTPostAPIApplicationCommandsJSONBody` |
-| `id` | `string` |
-
-#### Returns
-
-`Promise`<`T`\>

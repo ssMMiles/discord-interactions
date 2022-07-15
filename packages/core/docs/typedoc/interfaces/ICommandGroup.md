@@ -22,17 +22,17 @@
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:16](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L16)
+[app/commands/CommandGroup.ts:17](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/CommandGroup.ts#L17)
 
 ___
 
 ### components
 
-• `Optional` **components**: [`Component`](../modules.md#component)[]
+• `Optional` **components**: ([`Component`](../modules.md#component) \| [`Modal`](../classes/Modal.md))[]
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:19](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L19)
+[app/commands/CommandGroup.ts:20](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/CommandGroup.ts#L20)
 
 ___
 
@@ -42,4 +42,4 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:17](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L17)
+[app/commands/CommandGroup.ts:18](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/CommandGroup.ts#L18)

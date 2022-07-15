@@ -9,7 +9,9 @@
 - [cache](DiscordApplicationOptions.md#cache)
 - [clientId](DiscordApplicationOptions.md#clientid)
 - [hooks](DiscordApplicationOptions.md#hooks)
+- [preserveRaw](DiscordApplicationOptions.md#preserveraw)
 - [publicKey](DiscordApplicationOptions.md#publickey)
+- [syncMode](DiscordApplicationOptions.md#syncmode)
 - [timeout](DiscordApplicationOptions.md#timeout)
 - [token](DiscordApplicationOptions.md#token)
 
@@ -23,7 +25,7 @@ Component State Cache
 
 #### Defined in
 
-[app/DiscordApplication.ts:34](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L34)
+[app/DiscordApplication.ts:35](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L35)
 
 ___
 
@@ -35,7 +37,7 @@ Application Client ID
 
 #### Defined in
 
-[app/DiscordApplication.ts:22](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L22)
+[app/DiscordApplication.ts:23](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L23)
 
 ___
 
@@ -47,7 +49,19 @@ Hooks to perform additional processing on certain interactions before passing to
 
 #### Defined in
 
-[app/DiscordApplication.ts:31](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L31)
+[app/DiscordApplication.ts:32](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L32)
+
+___
+
+### preserveRaw
+
+• `Optional` **preserveRaw**: `boolean`
+
+Whether to preserve the raw interaction object in contexts under ctx.raw - Default: false
+
+#### Defined in
+
+[app/DiscordApplication.ts:41](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L41)
 
 ___
 
@@ -59,7 +73,19 @@ Application Public Key
 
 #### Defined in
 
-[app/DiscordApplication.ts:25](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L25)
+[app/DiscordApplication.ts:26](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L26)
+
+___
+
+### syncMode
+
+• `Optional` **syncMode**: [`SyncMode`](../enums/SyncMode.md)
+
+What mode to use for syncing the global command manager.
+
+#### Defined in
+
+[app/DiscordApplication.ts:38](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L38)
 
 ___
 
@@ -71,7 +97,7 @@ Timeout after which InteractionHandlerTimedOut is thrown - Default: 2500ms
 
 #### Defined in
 
-[app/DiscordApplication.ts:37](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L37)
+[app/DiscordApplication.ts:44](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L44)
 
 ___
 
@@ -83,4 +109,4 @@ Application Bot Token
 
 #### Defined in
 
-[app/DiscordApplication.ts:28](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L28)
+[app/DiscordApplication.ts:29](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L29)

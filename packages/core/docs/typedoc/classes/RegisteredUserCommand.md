@@ -17,21 +17,24 @@
 ### Properties
 
 - [builder](RegisteredUserCommand.md#builder)
+- [components](RegisteredUserCommand.md#components)
 - [handler](RegisteredUserCommand.md#handler)
 - [id](RegisteredUserCommand.md#id)
+- [lastSyncedAt](RegisteredUserCommand.md#lastsyncedat)
 
 ### Methods
 
+- [create](RegisteredUserCommand.md#create)
 - [delete](RegisteredUserCommand.md#delete)
 - [setHandler](RegisteredUserCommand.md#sethandler)
 - [sync](RegisteredUserCommand.md#sync)
-- [unregister](RegisteredUserCommand.md#unregister)
+- [update](RegisteredUserCommand.md#update)
 
 ## Constructors
 
 ### constructor
 
-• **new RegisteredUserCommand**(`manager`, `command`, `id`)
+• **new RegisteredUserCommand**(`manager`, `command`)
 
 #### Parameters
 
@@ -41,7 +44,6 @@
 | `command` | `Object` |
 | `command.builder` | `UserCommandBuilder` |
 | `command.handler` | (`ctx`: [`UserCommandContext`](UserCommandContext.md)) => `Promise`<`void`\> |
-| `id` | `string` |
 
 #### Inherited from
 
@@ -59,7 +61,21 @@ RegisteredCommandBase.builder
 
 #### Defined in
 
-[app/commands/Base.ts:20](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/Base.ts#L20)
+[app/commands/Base.ts:28](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L28)
+
+___
+
+### components
+
+• `Optional` **components**: ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[]
+
+#### Inherited from
+
+RegisteredCommandBase.components
+
+#### Defined in
+
+[app/commands/Base.ts:30](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L30)
 
 ___
 
@@ -87,13 +103,13 @@ RegisteredCommandBase.handler
 
 #### Defined in
 
-[app/commands/Base.ts:21](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/Base.ts#L21)
+[app/commands/Base.ts:153](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L153)
 
 ___
 
 ### id
 
-• **id**: `string`
+• **id**: `string` = `"0"`
 
 #### Inherited from
 
@@ -101,15 +117,51 @@ RegisteredCommandBase.id
 
 #### Defined in
 
-[app/commands/Base.ts:23](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/Base.ts#L23)
+[app/commands/Base.ts:32](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L32)
+
+___
+
+### lastSyncedAt
+
+• `Optional` **lastSyncedAt**: `Date`
+
+#### Inherited from
+
+RegisteredCommandBase.lastSyncedAt
+
+#### Defined in
+
+[app/commands/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L26)
 
 ## Methods
 
+### create
+
+▸ **create**(): `Promise`<`void`\>
+
+Create this command in Discord
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Inherited from
+
+RegisteredCommandBase.create
+
+___
+
 ### delete
 
-▸ **delete**(): `Promise`<`void`\>
+▸ **delete**(`id?`): `Promise`<`void`\>
 
-Delete and unregister this command
+Delete this command from Discord
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id?` | `string` |
 
 #### Returns
 
@@ -145,9 +197,15 @@ ___
 
 ### sync
 
-▸ **sync**(): `Promise`<`void`\>
+▸ **sync**(`remoteCommand?`): `Promise`<`void`\>
 
-Sync this command's builder with the API
+Sync this command with Discord
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `remoteCommand?` | `APIApplicationCommand` |
 
 #### Returns
 
@@ -159,11 +217,15 @@ RegisteredCommandBase.sync
 
 ___
 
-### unregister
+### update
 
-▸ **unregister**(): `Promise`<`void`\>
+▸ **update**(`id?`): `Promise`<`void`\>
 
-Unregister this command
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id?` | `string` |
 
 #### Returns
 
@@ -171,4 +233,4 @@ Unregister this command
 
 #### Inherited from
 
-RegisteredCommandBase.unregister
+RegisteredCommandBase.update

@@ -17,7 +17,7 @@
 
 #### Defined in
 
-[src/components/TextInputBuilder.ts:6](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/components/TextInputBuilder.ts#L6)
+[src/components/TextInputBuilder.ts:6](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/components/TextInputBuilder.ts#L6)
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 #### Defined in
 
-[src/components/TextInputBuilder.ts:5](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/components/TextInputBuilder.ts#L5)
+[src/components/TextInputBuilder.ts:5](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/components/TextInputBuilder.ts#L5)

@@ -26,7 +26,7 @@
 | :------ | :------ |
 | `id` | `string` |
 | `token` | `string` |
-| `rest?` | `any` |
+| `rest?` | `DiscordApiClient` |
 
 ## Methods
 

@@ -71,7 +71,7 @@ SlashCommandOptionBase.description
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
+[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
 
 ___
 
@@ -85,7 +85,7 @@ SlashCommandOptionBase.description\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
+[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
 
 ___
 
@@ -99,7 +99,7 @@ SlashCommandOptionBase.name
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
+[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
 
 ___
 
@@ -113,17 +113,17 @@ SlashCommandOptionBase.name\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
+[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
 
 ___
 
 ### options
 
-• **options**: [`ToAPIApplicationCommandOptions`](../interfaces/ToAPIApplicationCommandOptions.md)[] = `[]`
+• **options**: `ToAPIApplicationCommandOptions`<`APIApplicationCommandBasicOption`\>[] = `[]`
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:17](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/subcommand.ts#L17)
+[src/commands/options/subcommand.ts:22](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/subcommand.ts#L22)
 
 ___
 
@@ -137,7 +137,7 @@ SlashCommandOptionBase.required
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
+[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
 
 ___
 
@@ -151,7 +151,7 @@ SlashCommandOptionBase.type
 
 #### Defined in
 
-[src/commands/options/subcommand.ts:15](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/subcommand.ts#L15)
+[src/commands/options/subcommand.ts:20](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/subcommand.ts#L20)
 
 ## Methods
 

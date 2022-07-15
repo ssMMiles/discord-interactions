@@ -43,7 +43,7 @@ Represents a non-validated option within a select menu component
 
 #### Defined in
 
-[src/components/SelectMenuOptionBuilder.ts:7](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/components/SelectMenuOptionBuilder.ts#L7)
+[src/components/SelectMenuOptionBuilder.ts:7](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/components/SelectMenuOptionBuilder.ts#L7)
 
 ## Methods
 

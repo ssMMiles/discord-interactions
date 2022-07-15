@@ -48,13 +48,13 @@
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:23](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L23)
+[app/commands/CommandGroup.ts:24](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/CommandGroup.ts#L24)
 
 ___
 
 ### components
 
-• **components**: [`Component`](../modules.md#component)[]
+• **components**: ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[]
 
 #### Implementation of
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:33](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L33)
+[app/commands/CommandGroup.ts:34](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/CommandGroup.ts#L34)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L24)
+[app/commands/CommandGroup.ts:25](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/CommandGroup.ts#L25)
 
 ## Methods
 

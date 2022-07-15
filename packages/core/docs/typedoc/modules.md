@@ -4,6 +4,10 @@
 
 ## Table of contents
 
+### Enumerations
+
+- [SyncMode](enums/SyncMode.md)
+
 ### Classes
 
 - [AutocompleteContext](classes/AutocompleteContext.md)
@@ -13,6 +17,7 @@
 - [CommandManager](classes/CommandManager.md)
 - [ComponentManager](classes/ComponentManager.md)
 - [DiscordApplication](classes/DiscordApplication.md)
+- [InteractionContextError](classes/InteractionContextError.md)
 - [InteractionError](classes/InteractionError.md)
 - [InteractionHandlerError](classes/InteractionHandlerError.md)
 - [InteractionHandlerNotFound](classes/InteractionHandlerNotFound.md)
@@ -91,7 +96,7 @@
 
 #### Defined in
 
-[app/contexts/response-types.ts:23](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/response-types.ts#L23)
+[app/contexts/response-types.ts:23](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/response-types.ts#L23)
 
 ___
 
@@ -101,7 +106,7 @@ ___
 
 #### Defined in
 
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:14](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L14)
+[app/contexts/ApplicationCommand/AutocompleteContext.ts:16](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L16)
 
 ___
 
@@ -111,7 +116,7 @@ ___
 
 #### Defined in
 
-[app/contexts/response-types.ts:17](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/response-types.ts#L17)
+[app/contexts/response-types.ts:17](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/response-types.ts#L17)
 
 ___
 
@@ -121,7 +126,7 @@ ___
 
 #### Defined in
 
-[app/commands/index.ts:12](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/index.ts#L12)
+[app/commands/index.ts:12](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/index.ts#L12)
 
 ___
 
@@ -131,7 +136,7 @@ ___
 
 #### Defined in
 
-[app/components/index.ts:8](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/components/index.ts#L8)
+[app/components/index.ts:8](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/components/index.ts#L8)
 
 ___
 
@@ -141,7 +146,7 @@ ___
 
 #### Defined in
 
-[app/contexts/ComponentContext.ts:133](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ComponentContext.ts#L133)
+[app/contexts/ComponentContext.ts:98](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ComponentContext.ts#L98)
 
 ___
 
@@ -165,7 +170,7 @@ ___
 
 #### Defined in
 
-[app/handlers/Hooks.ts:13](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/Hooks.ts#L13)
+[app/handlers/Hooks.ts:13](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/handlers/Hooks.ts#L13)
 
 ___
 
@@ -175,7 +180,7 @@ ___
 
 #### Defined in
 
-[app/commands/index.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/index.ts#L11)
+[app/commands/index.ts:11](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/index.ts#L11)
 
 ___
 
@@ -185,7 +190,7 @@ ___
 
 #### Defined in
 
-[app/commands/MessageCommand.ts:7](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/MessageCommand.ts#L7)
+[app/commands/MessageCommand.ts:7](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/MessageCommand.ts#L7)
 
 ___
 
@@ -195,7 +200,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L11)
+[app/commands/CommandGroup.ts:12](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/CommandGroup.ts#L12)
 
 ___
 
@@ -205,7 +210,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:13](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/CommandGroup.ts#L13)
+[app/commands/CommandGroup.ts:14](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/CommandGroup.ts#L14)
 
 ___
 
@@ -215,7 +220,7 @@ ___
 
 #### Defined in
 
-[app/commands/UserCommand.ts:8](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/UserCommand.ts#L8)
+[app/commands/UserCommand.ts:8](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/UserCommand.ts#L8)
 
 ___
 
@@ -225,7 +230,7 @@ ___
 
 #### Defined in
 
-[app/contexts/index.ts:16](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/index.ts#L16)
+[app/contexts/index.ts:16](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/index.ts#L16)
 
 ___
 
@@ -251,7 +256,7 @@ Hooks to be executed on receiving an interaction. These are executed before comm
 
 #### Defined in
 
-[app/handlers/Hooks.ts:32](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/Hooks.ts#L32)
+[app/handlers/Hooks.ts:32](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/handlers/Hooks.ts#L32)
 
 ___
 
@@ -269,7 +274,7 @@ ___
 
 #### Defined in
 
-[app/managers/CommandManager.ts:35](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/managers/CommandManager.ts#L35)
+[app/managers/CommandManager.ts:36](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/managers/CommandManager.ts#L36)
 
 ___
 
@@ -279,7 +284,7 @@ ___
 
 #### Defined in
 
-[app/contexts/response-types.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/response-types.ts#L11)
+[app/contexts/response-types.ts:11](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/response-types.ts#L11)
 
 ___
 
@@ -289,7 +294,7 @@ ___
 
 #### Defined in
 
-[app/contexts/response-types.ts:25](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/response-types.ts#L25)
+[app/contexts/response-types.ts:25](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/response-types.ts#L25)
 
 ___
 
@@ -299,7 +304,7 @@ ___
 
 #### Defined in
 
-[util/errors.ts:81](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/util/errors.ts#L81)
+[util/errors.ts:92](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/util/errors.ts#L92)
 
 ___
 
@@ -309,7 +314,7 @@ ___
 
 #### Defined in
 
-[app/commands/index.ts:14](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/index.ts#L14)
+[app/commands/index.ts:14](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/index.ts#L14)
 
 ___
 
@@ -339,7 +344,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:40](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L40)
+[app/DiscordApplication.ts:47](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L47)
 
 ## Functions
 
@@ -379,7 +384,7 @@ ___
 
 ### \_handleInteraction
 
-▸ **_handleInteraction**(`this`, `interaction`, `responseCallback`): `Promise`<[`InteractionContext`](modules.md#interactioncontext)\>
+▸ **_handleInteraction**(`this`, `interaction`, `timestamps`, `responseCallback`): `Promise`<[`InteractionContext`](modules.md#interactioncontext)\>
 
 #### Parameters
 
@@ -387,7 +392,10 @@ ___
 | :------ | :------ |
 | `this` | [`DiscordApplication`](classes/DiscordApplication.md) |
 | `interaction` | `APIInteraction` |
-| `responseCallback` | [`ResponseCallback`](modules.md#responsecallback)<`FormData` \| `APIInteractionResponse`\> |
+| `timestamps` | `Object` |
+| `timestamps.received` | `Date` |
+| `timestamps.signature` | `Date` |
+| `responseCallback` | [`ResponseCallback`](modules.md#responsecallback)<`APIInteractionResponse` \| `FormData`\> |
 
 #### Returns
 

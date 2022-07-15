@@ -8,7 +8,7 @@
   </p>
 </div>
 
-*Core framework for handling and verifying incoming Discord interactions.*
+*Core framework for handling and verifying incoming Discord interactions. [Typedocs](./docs/typedoc/modules.md)* 
 
 # Getting Started
 

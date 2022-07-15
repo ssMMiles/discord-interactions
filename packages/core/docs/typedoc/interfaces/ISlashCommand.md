@@ -43,7 +43,7 @@
 
 #### Defined in
 
-[app/commands/SlashCommand.ts:8](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/SlashCommand.ts#L8)
+[app/commands/SlashCommand.ts:8](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/SlashCommand.ts#L8)
 
 ___
 
@@ -57,7 +57,7 @@ ICommandBase.builder
 
 #### Defined in
 
-[app/commands/Base.ts:6](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/Base.ts#L6)
+[app/commands/Base.ts:13](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L13)
 
 ___
 
@@ -71,7 +71,7 @@ ICommandBase.components
 
 #### Defined in
 
-[app/commands/Base.ts:10](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/Base.ts#L10)
+[app/commands/Base.ts:17](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L17)
 
 ___
 
@@ -99,4 +99,4 @@ ICommandBase.handler
 
 #### Defined in
 
-[app/commands/Base.ts:8](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/commands/Base.ts#L8)
+[app/commands/Base.ts:15](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L15)

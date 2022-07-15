@@ -51,7 +51,7 @@
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:25](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/responses/MessageBuilder.ts#L25)
+[src/responses/MessageBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/responses/MessageBuilder.ts#L24)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/responses/MessageBuilder.ts#L26)
+[src/responses/MessageBuilder.ts:25](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/responses/MessageBuilder.ts#L25)
 
 ## Methods
 

@@ -20,6 +20,8 @@
 - [choices](SlashCommandStringOption.md#choices)
 - [description](SlashCommandStringOption.md#description)
 - [description\_localizations](SlashCommandStringOption.md#description_localizations)
+- [max\_length](SlashCommandStringOption.md#max_length)
+- [min\_length](SlashCommandStringOption.md#min_length)
 - [name](SlashCommandStringOption.md#name)
 - [name\_localizations](SlashCommandStringOption.md#name_localizations)
 - [required](SlashCommandStringOption.md#required)
@@ -33,6 +35,8 @@
 - [setDescriptionLocalizations](SlashCommandStringOption.md#setdescriptionlocalizations)
 - [setLocalizedDescription](SlashCommandStringOption.md#setlocalizeddescription)
 - [setLocalizedName](SlashCommandStringOption.md#setlocalizedname)
+- [setMaxLength](SlashCommandStringOption.md#setmaxlength)
+- [setMinLength](SlashCommandStringOption.md#setminlength)
 - [setNameLocalizations](SlashCommandStringOption.md#setnamelocalizations)
 - [setRequired](SlashCommandStringOption.md#setrequired)
 - [toJSON](SlashCommandStringOption.md#tojson)
@@ -62,7 +66,7 @@ SlashCommandOptionBase.constructor
 
 #### Defined in
 
-[src/commands/options/string.ts:12](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/string.ts#L12)
+[src/commands/options/string.ts:12](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/string.ts#L12)
 
 ___
 
@@ -72,7 +76,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/string.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/string.ts#L11)
+[src/commands/options/string.ts:11](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/string.ts#L11)
 
 ___
 
@@ -86,7 +90,7 @@ SlashCommandOptionBase.description
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
+[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
 
 ___
 
@@ -100,7 +104,27 @@ SlashCommandOptionBase.description\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
+[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
+
+___
+
+### max\_length
+
+• `Optional` **max\_length**: `number`
+
+#### Defined in
+
+[src/commands/options/string.ts:15](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/string.ts#L15)
+
+___
+
+### min\_length
+
+• `Optional` **min\_length**: `number`
+
+#### Defined in
+
+[src/commands/options/string.ts:14](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/string.ts#L14)
 
 ___
 
@@ -114,7 +138,7 @@ SlashCommandOptionBase.name
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
+[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
 
 ___
 
@@ -128,7 +152,7 @@ SlashCommandOptionBase.name\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
+[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
 
 ___
 
@@ -142,7 +166,7 @@ SlashCommandOptionBase.required
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
+[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
 
 ___
 
@@ -156,7 +180,7 @@ SlashCommandOptionBase.type
 
 #### Defined in
 
-[src/commands/options/string.ts:9](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/options/string.ts#L9)
+[src/commands/options/string.ts:9](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/string.ts#L9)
 
 ## Methods
 
@@ -283,6 +307,38 @@ Set a single locale's name
 #### Inherited from
 
 SlashCommandOptionBase.setLocalizedName
+
+___
+
+### setMaxLength
+
+▸ **setMaxLength**(`maxLength`): [`SlashCommandStringOption`](SlashCommandStringOption.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `maxLength` | `number` |
+
+#### Returns
+
+[`SlashCommandStringOption`](SlashCommandStringOption.md)
+
+___
+
+### setMinLength
+
+▸ **setMinLength**(`minLength`): [`SlashCommandStringOption`](SlashCommandStringOption.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `minLength` | `number` |
+
+#### Returns
+
+[`SlashCommandStringOption`](SlashCommandStringOption.md)
 
 ___
 

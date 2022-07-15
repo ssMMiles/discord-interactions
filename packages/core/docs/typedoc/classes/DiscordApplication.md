@@ -18,6 +18,7 @@ Main class for managing a Discord Application's commands and handling interactio
 - [components](DiscordApplication.md#components)
 - [guildCommands](DiscordApplication.md#guildcommands)
 - [hooks](DiscordApplication.md#hooks)
+- [preserveRaw](DiscordApplication.md#preserveraw)
 - [publicKey](DiscordApplication.md#publickey)
 - [rest](DiscordApplication.md#rest)
 - [timeout](DiscordApplication.md#timeout)
@@ -25,7 +26,9 @@ Main class for managing a Discord Application's commands and handling interactio
 ### Methods
 
 - [addHook](DiscordApplication.md#addhook)
+- [createGuildCommandManager](DiscordApplication.md#createguildcommandmanager)
 - [handleInteraction](DiscordApplication.md#handleinteraction)
+- [setAPIClient](DiscordApplication.md#setapiclient)
 - [verifyInteractionSignature](DiscordApplication.md#verifyinteractionsignature)
 
 ## Constructors
@@ -48,7 +51,7 @@ Main class for managing a Discord Application's commands and handling interactio
 
 #### Defined in
 
-[app/DiscordApplication.ts:51](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L51)
+[app/DiscordApplication.ts:66](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L66)
 
 ___
 
@@ -58,7 +61,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:49](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L49)
+[app/DiscordApplication.ts:64](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L64)
 
 ___
 
@@ -68,7 +71,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:53](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L53)
+[app/DiscordApplication.ts:68](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L68)
 
 ___
 
@@ -78,7 +81,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:54](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L54)
+[app/DiscordApplication.ts:71](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L71)
 
 ___
 
@@ -88,7 +91,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:56](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L56)
+[app/DiscordApplication.ts:69](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L69)
 
 ___
 
@@ -98,7 +101,17 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:59](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L59)
+[app/DiscordApplication.ts:76](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L76)
+
+___
+
+### preserveRaw
+
+• **preserveRaw**: `boolean`
+
+#### Defined in
+
+[app/DiscordApplication.ts:73](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L73)
 
 ___
 
@@ -108,17 +121,17 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:48](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L48)
+[app/DiscordApplication.ts:63](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L63)
 
 ___
 
 ### rest
 
-• **rest**: `REST`
+• **rest**: `DiscordApiClient`
 
 #### Defined in
 
-[app/DiscordApplication.ts:75](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L75)
+[app/DiscordApplication.ts:92](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L92)
 
 ___
 
@@ -128,7 +141,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:58](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/DiscordApplication.ts#L58)
+[app/DiscordApplication.ts:74](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L74)
 
 ## Methods
 
@@ -155,9 +168,26 @@ ___
 
 ___
 
+### createGuildCommandManager
+
+▸ **createGuildCommandManager**(`guildId`, `syncMode?`): [`CommandManager`](CommandManager.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `guildId` | `string` |
+| `syncMode?` | [`SyncMode`](../enums/SyncMode.md) |
+
+#### Returns
+
+[`CommandManager`](CommandManager.md)
+
+___
+
 ### handleInteraction
 
-▸ **handleInteraction**(`body`, `signature`, `timestamp?`): [`Promise`<`FormData` \| `APIInteractionResponse`\>, `Promise`<`void`\>]
+▸ **handleInteraction**(`body`, `signature`, `timestamp?`): `Promise`<[`Promise`<`APIInteractionResponse` \| `FormData`\>, `Promise`<`void`\>]\>
 
 Handle an incoming interaction request
 
@@ -171,29 +201,44 @@ Handle an incoming interaction request
 
 #### Returns
 
-[`Promise`<`FormData` \| `APIInteractionResponse`\>, `Promise`<`void`\>]
+`Promise`<[`Promise`<`APIInteractionResponse` \| `FormData`\>, `Promise`<`void`\>]\>
 
 Array containing the interaction response, and a callback to be called after you have sent the response
 
 ___
 
+### setAPIClient
+
+▸ **setAPIClient**(`client`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `client` | `DiscordApiClient` |
+
+#### Returns
+
+`void`
+
+___
+
 ### verifyInteractionSignature
 
-▸ `Static` **verifyInteractionSignature**(`publicKey`, `timestamp`, `signature`, `body`): `Promise`<`boolean`\>
+▸ **verifyInteractionSignature**(`signature`, `timestamp`, `body`): `Promise`<`boolean`\>
 
-Verify an incoming interaction's signature. This method is not implemented in `core`, please import either `@discord-interactions/verify` or `@discord-interactions/verify-node`.
+Verify an incoming interaction's signature.
 
 #### Parameters
 
 | Name | Type | Description |
 | :------ | :------ | :------ |
-| `publicKey` | `string` | Your application's public key |
-| `timestamp` | `string` | Interaction's "X-Signature-Timestamp" header |
-| `signature` | `string` | Interaction's "X-Signature-Ed25519" header |
-| `body` | `string` | Raw interaction body |
+| `signature` | `string` | Interaction Request's "X-Signature-Ed25519" Header |
+| `timestamp` | `string` | Interaction Request's "X-Signature-Timestamp" Header |
+| `body` | `string` | Raw Interaction Request Body - If you parse this as JSON beforehand, verification will fail for certain interactions. |
 
 #### Returns
 
 `Promise`<`boolean`\>
 
-Whether or not the signature is valid
+Whether or not the request signature is valid.

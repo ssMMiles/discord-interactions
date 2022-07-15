@@ -16,13 +16,25 @@
 
 ### Properties
 
+- [app](AutocompleteContext.md#app)
+- [app\_permissions](AutocompleteContext.md#app_permissions)
+- [channelId](AutocompleteContext.md#channelid)
+- [commandGuildId](AutocompleteContext.md#commandguildid)
 - [group](AutocompleteContext.md#group)
-- [interaction](AutocompleteContext.md#interaction)
+- [guildId](AutocompleteContext.md#guildid)
+- [guildLocale](AutocompleteContext.md#guildlocale)
+- [id](AutocompleteContext.md#id)
+- [interactionId](AutocompleteContext.md#interactionid)
 - [isDM](AutocompleteContext.md#isdm)
-- [manager](AutocompleteContext.md#manager)
+- [locale](AutocompleteContext.md#locale)
+- [member](AutocompleteContext.md#member)
 - [name](AutocompleteContext.md#name)
 - [option](AutocompleteContext.md#option)
 - [parentCommand](AutocompleteContext.md#parentcommand)
+- [raw](AutocompleteContext.md#raw)
+- [receivedAt](AutocompleteContext.md#receivedat)
+- [resolved](AutocompleteContext.md#resolved)
+- [signedAt](AutocompleteContext.md#signedat)
 - [user](AutocompleteContext.md#user)
 
 ### Accessors
@@ -44,14 +56,17 @@
 
 ### constructor
 
-• **new AutocompleteContext**(`manager`, `interaction`, `responseCallback`)
+• **new AutocompleteContext**(`app`, `interaction`, `timestamps`, `responseCallback`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `manager` | [`DiscordApplication`](DiscordApplication.md) |
+| `app` | [`DiscordApplication`](DiscordApplication.md) |
 | `interaction` | `APIApplicationCommandAutocompleteInteraction` |
+| `timestamps` | `Object` |
+| `timestamps.received` | `Date` |
+| `timestamps.signature` | `Date` |
 | `responseCallback` | [`ResponseCallback`](../modules.md#responsecallback)<`APIApplicationCommandAutocompleteResponse`\> |
 
 #### Overrides
@@ -63,6 +78,58 @@ BaseInteractionContext&lt;
 
 ## Properties
 
+### app
+
+• **app**: [`DiscordApplication`](DiscordApplication.md)
+
+#### Inherited from
+
+BaseInteractionContext.app
+
+#### Defined in
+
+[app/contexts/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L34)
+
+___
+
+### app\_permissions
+
+• **app\_permissions**: `Bitfield`
+
+#### Inherited from
+
+BaseInteractionContext.app\_permissions
+
+#### Defined in
+
+[app/contexts/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L43)
+
+___
+
+### channelId
+
+• `Optional` **channelId**: `string`
+
+#### Inherited from
+
+BaseInteractionContext.channelId
+
+#### Defined in
+
+[app/contexts/Base.ts:48](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L48)
+
+___
+
+### commandGuildId
+
+• `Optional` **commandGuildId**: `string`
+
+#### Defined in
+
+[app/contexts/ApplicationCommand/AutocompleteContext.ts:29](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L29)
+
+___
+
 ### group
 
 • `Optional` **group**: `string`
@@ -71,21 +138,59 @@ The subcommand group
 
 #### Defined in
 
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:34](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L34)
+[app/contexts/ApplicationCommand/AutocompleteContext.ts:43](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L43)
 
 ___
 
-### interaction
+### guildId
 
-• **interaction**: `APIApplicationCommandAutocompleteInteraction`
+• `Optional` **guildId**: `string`
 
 #### Inherited from
 
-BaseInteractionContext.interaction
+BaseInteractionContext.guildId
 
 #### Defined in
 
-[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L26)
+[app/contexts/Base.ts:47](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L47)
+
+___
+
+### guildLocale
+
+• `Optional` **guildLocale**: ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``
+
+#### Inherited from
+
+BaseInteractionContext.guildLocale
+
+#### Defined in
+
+[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L54)
+
+___
+
+### id
+
+• **id**: `string`
+
+#### Defined in
+
+[app/contexts/ApplicationCommand/AutocompleteContext.ts:26](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L26)
+
+___
+
+### interactionId
+
+• **interactionId**: `string`
+
+#### Inherited from
+
+BaseInteractionContext.interactionId
+
+#### Defined in
+
+[app/contexts/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L40)
 
 ___
 
@@ -99,21 +204,35 @@ BaseInteractionContext.isDM
 
 #### Defined in
 
-[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L31)
+[app/contexts/Base.ts:45](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L45)
 
 ___
 
-### manager
+### locale
 
-• **manager**: [`DiscordApplication`](DiscordApplication.md)
+• **locale**: ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``
 
 #### Inherited from
 
-BaseInteractionContext.manager
+BaseInteractionContext.locale
 
 #### Defined in
 
-[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L24)
+[app/contexts/Base.ts:53](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L53)
+
+___
+
+### member
+
+• `Optional` **member**: `APIGuildMember`
+
+#### Inherited from
+
+BaseInteractionContext.member
+
+#### Defined in
+
+[app/contexts/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L51)
 
 ___
 
@@ -123,7 +242,7 @@ ___
 
 #### Defined in
 
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:23](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L23)
+[app/contexts/ApplicationCommand/AutocompleteContext.ts:25](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L25)
 
 ___
 
@@ -133,7 +252,7 @@ ___
 
 #### Defined in
 
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L24)
+[app/contexts/ApplicationCommand/AutocompleteContext.ts:33](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L33)
 
 ___
 
@@ -145,7 +264,59 @@ The parent command, if this is a subcommand.
 
 #### Defined in
 
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:29](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L29)
+[app/contexts/ApplicationCommand/AutocompleteContext.ts:38](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L38)
+
+___
+
+### raw
+
+• `Optional` **raw**: `APIApplicationCommandAutocompleteInteraction`
+
+#### Inherited from
+
+BaseInteractionContext.raw
+
+#### Defined in
+
+[app/contexts/Base.ts:39](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L39)
+
+___
+
+### receivedAt
+
+• **receivedAt**: `Date`
+
+#### Inherited from
+
+BaseInteractionContext.receivedAt
+
+#### Defined in
+
+[app/contexts/Base.ts:37](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L37)
+
+___
+
+### resolved
+
+• **resolved**: `ResolvedData`
+
+#### Defined in
+
+[app/contexts/ApplicationCommand/AutocompleteContext.ts:31](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L31)
+
+___
+
+### signedAt
+
+• **signedAt**: `Date`
+
+#### Inherited from
+
+BaseInteractionContext.signedAt
+
+#### Defined in
+
+[app/contexts/Base.ts:36](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L36)
 
 ___
 
@@ -159,7 +330,7 @@ BaseInteractionContext.user
 
 #### Defined in
 
-[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L29)
+[app/contexts/Base.ts:50](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L50)
 
 ## Accessors
 

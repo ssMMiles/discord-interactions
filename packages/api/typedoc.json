@@ -1,5 +1,5 @@
 {
-  "name": "@discord-interactions/core",
+  "name": "@discord-interactions/api",
 
   "entryPoints": ["src/index.ts"],
   "out": "docs/typedoc",

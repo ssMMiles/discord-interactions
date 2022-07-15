@@ -10,7 +10,7 @@
 
 ## Hierarchy
 
-- `BaseInteractionContext`<`APIModalSubmitInteraction`, [`ModalSubmitResponse`](../modules.md#modalsubmitresponse)\>
+- `BaseStatefulInteractionContext`<`State`, `APIModalSubmitInteraction`, [`ModalSubmitResponse`](../modules.md#modalsubmitresponse)\>
 
   ↳ **`ModalSubmitContext`**
 
@@ -23,12 +23,21 @@
 ### Properties
 
 - [allowExpired](ModalSubmitContext.md#allowexpired)
+- [app](ModalSubmitContext.md#app)
+- [app\_permissions](ModalSubmitContext.md#app_permissions)
+- [channelId](ModalSubmitContext.md#channelid)
 - [components](ModalSubmitContext.md#components)
+- [guildId](ModalSubmitContext.md#guildid)
+- [guildLocale](ModalSubmitContext.md#guildlocale)
 - [id](ModalSubmitContext.md#id)
-- [interaction](ModalSubmitContext.md#interaction)
+- [interactionId](ModalSubmitContext.md#interactionid)
 - [isDM](ModalSubmitContext.md#isdm)
-- [manager](ModalSubmitContext.md#manager)
+- [locale](ModalSubmitContext.md#locale)
+- [member](ModalSubmitContext.md#member)
 - [parentCommand](ModalSubmitContext.md#parentcommand)
+- [raw](ModalSubmitContext.md#raw)
+- [receivedAt](ModalSubmitContext.md#receivedat)
+- [signedAt](ModalSubmitContext.md#signedat)
 - [state](ModalSubmitContext.md#state)
 - [user](ModalSubmitContext.md#user)
 
@@ -53,7 +62,7 @@
 
 ### constructor
 
-• **new ModalSubmitContext**<`State`\>(`manager`, `interaction`, `responseCallback`)
+• **new ModalSubmitContext**<`State`\>(`manager`, `interaction`, `timestamps`, `responseCallback`)
 
 #### Type parameters
 
@@ -67,11 +76,15 @@
 | :------ | :------ |
 | `manager` | [`DiscordApplication`](DiscordApplication.md) |
 | `interaction` | `APIModalSubmitInteraction` |
+| `timestamps` | `Object` |
+| `timestamps.received` | `Date` |
+| `timestamps.signature` | `Date` |
 | `responseCallback` | [`ResponseCallback`](../modules.md#responsecallback)<[`ModalSubmitResponse`](../modules.md#modalsubmitresponse)\> |
 
 #### Overrides
 
-BaseInteractionContext&lt;
+BaseStatefulInteractionContext&lt;
+  State,
   APIModalSubmitInteraction,
   ModalSubmitResponse
 \&gt;.constructor
@@ -82,9 +95,55 @@ BaseInteractionContext&lt;
 
 • **allowExpired**: `boolean` = `false`
 
+#### Inherited from
+
+BaseStatefulInteractionContext.allowExpired
+
 #### Defined in
 
-[app/contexts/ModalSubmitContext.ts:19](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ModalSubmitContext.ts#L19)
+[app/contexts/Base.ts:122](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L122)
+
+___
+
+### app
+
+• **app**: [`DiscordApplication`](DiscordApplication.md)
+
+#### Inherited from
+
+BaseStatefulInteractionContext.app
+
+#### Defined in
+
+[app/contexts/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L34)
+
+___
+
+### app\_permissions
+
+• **app\_permissions**: `Bitfield`
+
+#### Inherited from
+
+BaseStatefulInteractionContext.app\_permissions
+
+#### Defined in
+
+[app/contexts/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L43)
+
+___
+
+### channelId
+
+• `Optional` **channelId**: `string`
+
+#### Inherited from
+
+BaseStatefulInteractionContext.channelId
+
+#### Defined in
+
+[app/contexts/Base.ts:48](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L48)
 
 ___
 
@@ -94,7 +153,35 @@ ___
 
 #### Defined in
 
-[app/contexts/ModalSubmitContext.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ModalSubmitContext.ts#L24)
+[app/contexts/ModalSubmitContext.ts:20](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ModalSubmitContext.ts#L20)
+
+___
+
+### guildId
+
+• `Optional` **guildId**: `string`
+
+#### Inherited from
+
+BaseStatefulInteractionContext.guildId
+
+#### Defined in
+
+[app/contexts/Base.ts:47](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L47)
+
+___
+
+### guildLocale
+
+• `Optional` **guildLocale**: ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``
+
+#### Inherited from
+
+BaseStatefulInteractionContext.guildLocale
+
+#### Defined in
+
+[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L54)
 
 ___
 
@@ -102,23 +189,27 @@ ___
 
 • **id**: `string`
 
+#### Inherited from
+
+BaseStatefulInteractionContext.id
+
 #### Defined in
 
-[app/contexts/ModalSubmitContext.ts:21](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ModalSubmitContext.ts#L21)
+[app/contexts/Base.ts:117](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L117)
 
 ___
 
-### interaction
+### interactionId
 
-• **interaction**: `APIModalSubmitInteraction`
+• **interactionId**: `string`
 
 #### Inherited from
 
-BaseInteractionContext.interaction
+BaseStatefulInteractionContext.interactionId
 
 #### Defined in
 
-[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L26)
+[app/contexts/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L40)
 
 ___
 
@@ -128,25 +219,39 @@ ___
 
 #### Inherited from
 
-BaseInteractionContext.isDM
+BaseStatefulInteractionContext.isDM
 
 #### Defined in
 
-[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L31)
+[app/contexts/Base.ts:45](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L45)
 
 ___
 
-### manager
+### locale
 
-• **manager**: [`DiscordApplication`](DiscordApplication.md)
+• **locale**: ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``
 
 #### Inherited from
 
-BaseInteractionContext.manager
+BaseStatefulInteractionContext.locale
 
 #### Defined in
 
-[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L24)
+[app/contexts/Base.ts:53](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L53)
+
+___
+
+### member
+
+• `Optional` **member**: `APIGuildMember`
+
+#### Inherited from
+
+BaseStatefulInteractionContext.member
+
+#### Defined in
+
+[app/contexts/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L51)
 
 ___
 
@@ -154,19 +259,69 @@ ___
 
 • `Optional` **parentCommand**: `string`
 
+#### Overrides
+
+BaseStatefulInteractionContext.parentCommand
+
 #### Defined in
 
-[app/contexts/ModalSubmitContext.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ModalSubmitContext.ts#L26)
+[app/contexts/ModalSubmitContext.ts:22](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ModalSubmitContext.ts#L22)
+
+___
+
+### raw
+
+• `Optional` **raw**: `APIModalSubmitInteraction`
+
+#### Inherited from
+
+BaseStatefulInteractionContext.raw
+
+#### Defined in
+
+[app/contexts/Base.ts:39](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L39)
+
+___
+
+### receivedAt
+
+• **receivedAt**: `Date`
+
+#### Inherited from
+
+BaseStatefulInteractionContext.receivedAt
+
+#### Defined in
+
+[app/contexts/Base.ts:37](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L37)
+
+___
+
+### signedAt
+
+• **signedAt**: `Date`
+
+#### Inherited from
+
+BaseStatefulInteractionContext.signedAt
+
+#### Defined in
+
+[app/contexts/Base.ts:36](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L36)
 
 ___
 
 ### state
 
-• `Optional` **state**: `State`
+• **state**: `State`
+
+#### Inherited from
+
+BaseStatefulInteractionContext.state
 
 #### Defined in
 
-[app/contexts/ModalSubmitContext.ts:22](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ModalSubmitContext.ts#L22)
+[app/contexts/Base.ts:120](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L120)
 
 ___
 
@@ -176,11 +331,11 @@ ___
 
 #### Inherited from
 
-BaseInteractionContext.user
+BaseStatefulInteractionContext.user
 
 #### Defined in
 
-[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L29)
+[app/contexts/Base.ts:50](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L50)
 
 ## Accessors
 
@@ -194,7 +349,7 @@ BaseInteractionContext.user
 
 #### Inherited from
 
-BaseInteractionContext.expired
+BaseStatefulInteractionContext.expired
 
 ## Methods
 
@@ -219,6 +374,10 @@ BaseInteractionContext.expired
 #### Returns
 
 `Promise`<`Builder`\>
+
+#### Inherited from
+
+BaseStatefulInteractionContext.createComponent
 
 ___
 
@@ -246,7 +405,7 @@ ___
 
 #### Inherited from
 
-BaseInteractionContext.createGlobalComponent
+BaseStatefulInteractionContext.createGlobalComponent
 
 ___
 
@@ -267,7 +426,7 @@ ___
 
 #### Inherited from
 
-BaseInteractionContext.decorate
+BaseStatefulInteractionContext.decorate
 
 ___
 
@@ -315,6 +474,10 @@ ___
 
 `Promise`<`void`\>
 
+#### Inherited from
+
+BaseStatefulInteractionContext.fetchState
+
 ___
 
 ### rawReply
@@ -333,7 +496,7 @@ ___
 
 #### Inherited from
 
-BaseInteractionContext.rawReply
+BaseStatefulInteractionContext.rawReply
 
 ___
 
@@ -345,7 +508,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `message` | `string` \| `FormData` \| `MessageBuilder` \| `APIInteractionResponseChannelMessageWithSource` |
+| `message` | `string` \| `APIInteractionResponseChannelMessageWithSource` \| `FormData` \| `MessageBuilder` |
 
 #### Returns
 

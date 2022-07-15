@@ -68,7 +68,7 @@ CommandBuilderBase.default\_member\_permissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:42](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L42)
+[src/commands/CommandBuilderBase.ts:48](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandBuilderBase.ts#L48)
 
 ___
 
@@ -84,7 +84,7 @@ CommandBuilderBase.dm\_permission
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:37](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L37)
+[src/commands/CommandBuilderBase.ts:43](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandBuilderBase.ts#L43)
 
 ___
 
@@ -100,7 +100,7 @@ CommandBuilderBase.name
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:22](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L22)
+[src/commands/CommandBuilderBase.ts:28](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandBuilderBase.ts#L28)
 
 ___
 
@@ -116,7 +116,7 @@ CommandBuilderBase.name\_localizations
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/CommandBuilderBase.ts#L27)
+[src/commands/CommandBuilderBase.ts:33](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandBuilderBase.ts#L33)
 
 ___
 
@@ -130,7 +130,7 @@ CommandBuilderBase.type
 
 #### Defined in
 
-[src/commands/ContextMenuCommandBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L18)
+[src/commands/ContextMenuCommandBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L18)
 
 ## Methods
 

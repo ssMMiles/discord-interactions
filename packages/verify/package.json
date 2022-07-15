@@ -46,7 +46,6 @@
     "format": "prettier --write src",
     "lint": "eslint src",
     "build": "tsc",
-    "docs": "typedoc",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
   "dependencies": {

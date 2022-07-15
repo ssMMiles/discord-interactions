@@ -8,7 +8,7 @@
   </p>
 </div>
 
-*Easy builder classes for interaction responses (Messages/Modals), Components and Commands.*
+*Easy builder classes for interaction responses (Messages/Modals), Components and Commands. [Typedocs](./docs/typedoc/modules.md)*
 
 # Credits
 This code is derived from [@discordjs/builders](https://github.com/IanMitchell/interaction-kit/packages/discord-api) and distributed under the Apache 2 license. It has been extended to support more Discord interaction related structures.

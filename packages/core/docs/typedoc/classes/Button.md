@@ -64,7 +64,7 @@ ComponentBase.allowExpired
 
 #### Defined in
 
-[app/components/Base.ts:10](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/components/Base.ts#L10)
+[app/components/Base.ts:10](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/components/Base.ts#L10)
 
 ___
 
@@ -78,7 +78,7 @@ ComponentBase.builder
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L4)
+[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 ___
 
@@ -92,7 +92,7 @@ ComponentBase.components
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L11)
+[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 ___
 
@@ -120,7 +120,7 @@ ComponentBase.handler
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L9)
+[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/handlers/HandledInteraction.ts#L9)
 
 ___
 
@@ -134,7 +134,7 @@ ComponentBase.id
 
 #### Defined in
 
-[app/components/Base.ts:9](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/components/Base.ts#L9)
+[app/components/Base.ts:9](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/components/Base.ts#L9)
 
 ___
 
@@ -148,7 +148,7 @@ ComponentBase.parentCommand
 
 #### Defined in
 
-[app/components/Base.ts:12](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/components/Base.ts#L12)
+[app/components/Base.ts:12](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/components/Base.ts#L12)
 
 ## Accessors
 

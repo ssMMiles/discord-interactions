@@ -10,7 +10,9 @@
 
 ### Properties
 
+- [receivedAt](PingContext.md#receivedat)
 - [responseCallback](PingContext.md#responsecallback)
+- [signedAt](PingContext.md#signedat)
 
 ### Methods
 
@@ -20,23 +22,46 @@
 
 ### constructor
 
-• **new PingContext**(`responseCallback`)
+• **new PingContext**(`timestamps`, `responseCallback`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `responseCallback` | [`ResponseCallback`](../modules.md#responsecallback)<`FormData` \| `APIInteractionResponse`\> |
+| `timestamps` | `Object` |
+| `timestamps.received` | `Date` |
+| `timestamps.signature` | `Date` |
+| `responseCallback` | [`ResponseCallback`](../modules.md#responsecallback)<`APIInteractionResponse` \| `FormData`\> |
 
 ## Properties
 
-### responseCallback
+### receivedAt
 
-• **responseCallback**: [`ResponseCallback`](../modules.md#responsecallback)<`FormData` \| `APIInteractionResponse`\>
+• **receivedAt**: `Date`
 
 #### Defined in
 
-[app/contexts/PingContext.ts:5](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/PingContext.ts#L5)
+[app/contexts/PingContext.ts:6](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/PingContext.ts#L6)
+
+___
+
+### responseCallback
+
+• **responseCallback**: [`ResponseCallback`](../modules.md#responsecallback)<`APIInteractionResponse` \| `FormData`\>
+
+#### Defined in
+
+[app/contexts/PingContext.ts:8](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/PingContext.ts#L8)
+
+___
+
+### signedAt
+
+• **signedAt**: `Date`
+
+#### Defined in
+
+[app/contexts/PingContext.ts:5](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/PingContext.ts#L5)
 
 ## Methods
 

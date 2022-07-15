@@ -14,7 +14,8 @@
     "format": "prettier --write src",
     "lint": "eslint src",
     "build": "tsc",
-    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
+    "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests",
+    "docs": "typedoc"
   },
   "files": [
     "dist",

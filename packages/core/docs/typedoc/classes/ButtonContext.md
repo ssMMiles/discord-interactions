@@ -23,12 +23,21 @@
 ### Properties
 
 - [allowExpired](ButtonContext.md#allowexpired)
+- [app](ButtonContext.md#app)
+- [app\_permissions](ButtonContext.md#app_permissions)
+- [channelId](ButtonContext.md#channelid)
+- [guildId](ButtonContext.md#guildid)
+- [guildLocale](ButtonContext.md#guildlocale)
 - [id](ButtonContext.md#id)
-- [interaction](ButtonContext.md#interaction)
+- [interactionId](ButtonContext.md#interactionid)
 - [isDM](ButtonContext.md#isdm)
-- [manager](ButtonContext.md#manager)
+- [locale](ButtonContext.md#locale)
+- [member](ButtonContext.md#member)
 - [message](ButtonContext.md#message)
 - [parentCommand](ButtonContext.md#parentcommand)
+- [raw](ButtonContext.md#raw)
+- [receivedAt](ButtonContext.md#receivedat)
+- [signedAt](ButtonContext.md#signedat)
 - [state](ButtonContext.md#state)
 - [user](ButtonContext.md#user)
 
@@ -53,7 +62,7 @@
 
 ### constructor
 
-• **new ButtonContext**<`S`\>(`manager`, `interaction`, `responseCallback`)
+• **new ButtonContext**<`S`\>(`manager`, `interaction`, `timestamps`, `responseCallback`)
 
 #### Type parameters
 
@@ -67,6 +76,9 @@
 | :------ | :------ |
 | `manager` | [`DiscordApplication`](DiscordApplication.md) |
 | `interaction` | `APIMessageComponentButtonInteraction` |
+| `timestamps` | `Object` |
+| `timestamps.received` | `Date` |
+| `timestamps.signature` | `Date` |
 | `responseCallback` | [`ResponseCallback`](../modules.md#responsecallback)<[`MessageUpdateResponse`](../modules.md#messageupdateresponse)\> |
 
 #### Inherited from
@@ -77,7 +89,7 @@ BaseComponentContext<S, APIMessageComponentButtonInteraction\>.constructor
 
 ### allowExpired
 
-• **allowExpired**: `boolean`
+• **allowExpired**: `boolean` = `false`
 
 #### Inherited from
 
@@ -85,7 +97,77 @@ BaseComponentContext.allowExpired
 
 #### Defined in
 
-[app/contexts/ComponentContext.ts:21](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ComponentContext.ts#L21)
+[app/contexts/Base.ts:122](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L122)
+
+___
+
+### app
+
+• **app**: [`DiscordApplication`](DiscordApplication.md)
+
+#### Inherited from
+
+BaseComponentContext.app
+
+#### Defined in
+
+[app/contexts/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L34)
+
+___
+
+### app\_permissions
+
+• **app\_permissions**: `Bitfield`
+
+#### Inherited from
+
+BaseComponentContext.app\_permissions
+
+#### Defined in
+
+[app/contexts/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L43)
+
+___
+
+### channelId
+
+• `Optional` **channelId**: `string`
+
+#### Inherited from
+
+BaseComponentContext.channelId
+
+#### Defined in
+
+[app/contexts/Base.ts:48](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L48)
+
+___
+
+### guildId
+
+• `Optional` **guildId**: `string`
+
+#### Inherited from
+
+BaseComponentContext.guildId
+
+#### Defined in
+
+[app/contexts/Base.ts:47](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L47)
+
+___
+
+### guildLocale
+
+• `Optional` **guildLocale**: ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``
+
+#### Inherited from
+
+BaseComponentContext.guildLocale
+
+#### Defined in
+
+[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L54)
 
 ___
 
@@ -99,21 +181,21 @@ BaseComponentContext.id
 
 #### Defined in
 
-[app/contexts/ComponentContext.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ComponentContext.ts#L24)
+[app/contexts/Base.ts:117](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L117)
 
 ___
 
-### interaction
+### interactionId
 
-• **interaction**: `APIMessageComponentButtonInteraction`
+• **interactionId**: `string`
 
 #### Inherited from
 
-BaseComponentContext.interaction
+BaseComponentContext.interactionId
 
 #### Defined in
 
-[app/contexts/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L26)
+[app/contexts/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L40)
 
 ___
 
@@ -127,21 +209,35 @@ BaseComponentContext.isDM
 
 #### Defined in
 
-[app/contexts/Base.ts:31](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L31)
+[app/contexts/Base.ts:45](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L45)
 
 ___
 
-### manager
+### locale
 
-• **manager**: [`DiscordApplication`](DiscordApplication.md)
+• **locale**: ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``
 
 #### Inherited from
 
-BaseComponentContext.manager
+BaseComponentContext.locale
 
 #### Defined in
 
-[app/contexts/Base.ts:24](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L24)
+[app/contexts/Base.ts:53](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L53)
+
+___
+
+### member
+
+• `Optional` **member**: `APIGuildMember`
+
+#### Inherited from
+
+BaseComponentContext.member
+
+#### Defined in
+
+[app/contexts/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L51)
 
 ___
 
@@ -155,7 +251,7 @@ BaseComponentContext.message
 
 #### Defined in
 
-[app/contexts/ComponentContext.ts:28](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ComponentContext.ts#L28)
+[app/contexts/ComponentContext.ts:21](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ComponentContext.ts#L21)
 
 ___
 
@@ -169,7 +265,49 @@ BaseComponentContext.parentCommand
 
 #### Defined in
 
-[app/contexts/ComponentContext.ts:26](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ComponentContext.ts#L26)
+[app/contexts/Base.ts:123](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L123)
+
+___
+
+### raw
+
+• `Optional` **raw**: `APIMessageComponentButtonInteraction`
+
+#### Inherited from
+
+BaseComponentContext.raw
+
+#### Defined in
+
+[app/contexts/Base.ts:39](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L39)
+
+___
+
+### receivedAt
+
+• **receivedAt**: `Date`
+
+#### Inherited from
+
+BaseComponentContext.receivedAt
+
+#### Defined in
+
+[app/contexts/Base.ts:37](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L37)
+
+___
+
+### signedAt
+
+• **signedAt**: `Date`
+
+#### Inherited from
+
+BaseComponentContext.signedAt
+
+#### Defined in
+
+[app/contexts/Base.ts:36](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L36)
 
 ___
 
@@ -183,7 +321,7 @@ BaseComponentContext.state
 
 #### Defined in
 
-[app/contexts/ComponentContext.ts:22](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/ComponentContext.ts#L22)
+[app/contexts/Base.ts:120](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L120)
 
 ___
 
@@ -197,7 +335,7 @@ BaseComponentContext.user
 
 #### Defined in
 
-[app/contexts/Base.ts:29](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/contexts/Base.ts#L29)
+[app/contexts/Base.ts:50](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/Base.ts#L50)
 
 ## Accessors
 
@@ -382,7 +520,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `message` | `string` \| `FormData` \| `MessageBuilder` \| `ModalBuilder` \| `APIInteractionResponseUpdateMessage` \| `APIModalInteractionResponse` |
+| `message` | `string` \| `APIInteractionResponseUpdateMessage` \| `APIModalInteractionResponse` \| `FormData` \| `MessageBuilder` \| `ModalBuilder` |
 
 #### Returns
 

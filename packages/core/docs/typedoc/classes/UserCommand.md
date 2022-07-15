@@ -62,7 +62,7 @@ HandledInteraction.builder
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L4)
+[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 ___
 
@@ -76,7 +76,7 @@ HandledInteraction.components
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/app/handlers/HandledInteraction.ts#L11)
+[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 ## Accessors
 

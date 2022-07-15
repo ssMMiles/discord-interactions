@@ -44,7 +44,7 @@
 
 #### Defined in
 
-[util/errors.ts:72](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/util/errors.ts#L72)
+[util/errors.ts:83](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/util/errors.ts#L83)
 
 ___
 
@@ -58,4 +58,4 @@ ___
 
 #### Defined in
 
-[util/errors.ts:14](https://github.com/ssMMiles/discord-interactions/blob/aef28b7/packages/core/src/util/errors.ts#L14)
+[util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/util/errors.ts#L15)
