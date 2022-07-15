@@ -18,6 +18,8 @@ A complete framework for [Discord's Interactions](https://discord.com/developers
 
 [![Deploy to Cloudflare Workers](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ssMMiles/discord-interactions-worker)
 
+If you're just looking to build your own bot as easily as possible, clone one of the above templates and check out the [`@discord-interactions/core`](./packages/core) package!
+
 ## Packages
  - [@discord-interactions/core](./packages/core) - *Core framework for handling and verifying incoming Discord interactions.*
  - [@discord-interactions/verify](./packages/verify) - *Verify discord interactions using either Node.js' Crypto or the Web SubtleCrypto API.*
