@@ -21,7 +21,7 @@ A complete framework for [Discord's Interactions](https://discord.com/developers
 If you're just looking to build your own bot as easily as possible, clone one of the above templates and check out the [`@discord-interactions/core`](./packages/core) package!
 
 ## Packages
- - [@discord-interactions/core](./packages/core) - *Core framework for handling and verifying incoming Discord interactions.*
+ - [@discord-interactions/core](./packages/core) - *Core framework for Bots using Discord Interactions.*
  - [@discord-interactions/verify](./packages/verify) - *Verify discord interactions using either Node.js' Crypto or the Web SubtleCrypto API.*
  - [@discord-interactions/builders](./packages/builders) - *Easy builder classes for interaction responses (Messages/Modals), Components and Commands.*
  - [@discord-interactions/api](./packages/api) - *A simple, typed wrapper around the Discord API.*

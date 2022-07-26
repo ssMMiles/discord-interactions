@@ -8,7 +8,7 @@
   </p>
 </div>
 
-*Core framework for handling and verifying incoming Discord interactions. [Typedocs](./docs/typedoc/modules.md)* 
+*Core framework for Bots using Discord Interactions - [Typedocs](./docs/typedoc/modules.md)* 
 
 # Getting Started
 
@@ -40,13 +40,7 @@ server.post("/", async (request, reply) => {
     );
 
     onResponse.then((response) => {
-      // Broken - For attachments, you can leave this out if you're not sending any. TODO: Needs smth like https://www.npmjs.com/package/form-data-encoder, or maybe to be returned as a readablestream instead of formdata. Won't work in Node.js for now.
-      // if (response.constructor.name === "FormData") {
-      //   res.headers(response.getHeaders()).code(200).send(response);
-      //   return;
-      // }
-
-      res.code(200).send(response);
+      reply.code(200).send(response);
     });
 
     await finished;
@@ -114,6 +108,17 @@ await guild.register(
   })
 );
 ```
+---------------------------------------------------------------------------------------------------------------------
+
+# Command Sync
+
+By default, the framework's sync mode is `SyncMode.Enabled`. This means that as you register commands, the framework will check them against your commands on Discord's side and create/update them as necessary.
+
+Two other modes are available:
+
+ - `SyncMode.Strict`: This will also check for deleted commands and delete them from Discord.
+
+ - `SyncMode.Disabled`: This disables all automatic syncing.
 
 ---------------------------------------------------------------------------------------------------------------------
 
@@ -124,42 +129,44 @@ Components must be registered in a similar fashion with a unique ID, creating a 
 Registering a ping command again, this time with a button that reveals a word stored in its state:
 
 ```typescript
-app.commands.register(
-  new SlashCommand(
-    new SlashCommandBuilder("ping", "A simple ping command!"),
-    async (context) => {
-      context.reply(
-        new MessageBuilder("Press the button to see a surprise...").addComponents(
-          new ActionRowBuilder().addComponents(await context.createComponent("example", { word: "Surprise!" }))
-        )
-      );
-    },
-    [
-      new Button(
-        "example",
-        new ButtonBuilder(ButtonStyle.Primary, "Example Button"),
-        async (
-          ctx: ButtonContext<{
-            word: string;
-          }>
-        ) => {
-          return ctx.reply(ctx.state.word);
-        }
+type ButtonState = {
+  word: string;
+};
+
+export class Ping implements ISlashCommand {
+  builder = new SlashCommandBuilder("ping", "Simple ping command.");
+
+  handler = async (ctx: SlashCommandContext): Promise<void> => {
+    return ctx.reply(
+      new MessageBuilder("Press the button to see a surprise...").addComponents(
+        new ActionRowBuilder([await ctx.createComponent("example", { word: "Surprise!" })])
       )
-    ]
-  )
-);
+    );
+  };
+
+  components = [
+    new Button(
+      "example",
+      new ButtonBuilder(ButtonStyle.Primary, "Example Button"),
+      async (ctx: ButtonContext<ButtonState>) => {
+        return ctx.reply(ctx.state.word);
+      }
+    )
+  ];
+}
 ```
 
 ## Namespacing
 
-Command interfaces present an additional `components` property, allowing you to tie components to a command. This prefixes the component IDs with the command's name (`<command>.<component>`), and can then only be retrieved within that command using `context.createComponent()`.
+Command interfaces include an optional `components` property, allowing you to tie components to a specific command. This prefixes the component IDs with the command's name (`<command>.<component ID>`), and can then be easily retrieved within that command using `context.createComponent()`. 
+
+If you don't want to use namespacing, you can use `context.createGlobalComponent()` and register your components with `app.components.register()`.
 
 ## State
 
 You can also pass an arbitrary object when creating a component instance, allowing you to store state information inside the component's `custom_id` property. (Later accessible in `context.state`). 
 
-This state is stored in the `custom_id` property by default, which will constrain the size of your data. To avoid this, an external cache such as Redis can be configured:
+This state is stored in the `custom_id` property by default, which will constrain the size of your data. To avoid this, an external cache such as Redis or Cloudflare's KV can be configured:
 
 ```typescript
 const redisClient = createClient();
@@ -174,6 +181,21 @@ const app = new DiscordApplication({
   cache: {
     get: (key) => redisClient.get(key),
     set: (key, ttl, value) => redisClient.setEx(key, ttl, value)
+  }
+});
+```
+
+```typescript
+// CACHE being a Cloudflare KV namespace
+
+const app = new DiscordApplication({
+  clientId: process.env.CLIENT_ID,
+  token: process.env.TOKEN,
+  publicKey: process.env.PUBLIC_KEY,
+
+  cache: {
+    get: (key) => CACHE.get(key),
+    set: (key, ttl, value) => CACHE.put(key, value, { expirationTtl: ttl })
   }
 });
 ```

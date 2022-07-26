@@ -119,7 +119,6 @@ describe("Discord Application", () => {
 
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (err: any) {
-        console.error(err);
         expect(err.constructor.name).toBe("UnauthorizedInteraction");
       }
     });
