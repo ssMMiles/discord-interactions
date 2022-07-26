@@ -201,14 +201,9 @@ export class CommandManager {
 
   async sync(syncMode?: SyncMode): Promise<void> {
     if (syncMode === undefined) syncMode = this.syncMode;
-    const remoteCommands =
-      syncMode !== SyncMode.Disabled
-        ? this.parse(await this.app.rest.getApplicationCommands(this.app.clientId))
-        : {
-            [ApplicationCommandType.ChatInput]: new Map(),
-            [ApplicationCommandType.User]: new Map(),
-            [ApplicationCommandType.Message]: new Map()
-          };
+    if (syncMode === SyncMode.Disabled) return;
+
+    const remoteCommands = this.parse(await this.app.rest.getApplicationCommands(this.app.clientId));
 
     for (const command of [
       ...this[ApplicationCommandType.ChatInput].values(),
