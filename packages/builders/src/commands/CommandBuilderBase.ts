@@ -158,15 +158,15 @@ export abstract class ChatInputCommandBuilderBase<
 > extends CommandBuilderBase<RESTPostAPIChatInputApplicationCommandsJSONBody> {
   public type: ApplicationCommandType.ChatInput = ApplicationCommandType.ChatInput;
 
-  public description: string;
+  public description!: string;
   public description_localizations: LocalizationMap = {};
 
   public options: ToAPIApplicationCommandOptions<OptionType>[] = [];
 
-  constructor(name: string, description: string) {
+  constructor(name: RESTPostAPIChatInputApplicationCommandsJSONBody | string, description?: string) {
     super(name);
 
-    this.description = description;
+    if (description) this.description = description;
   }
 
   /**
