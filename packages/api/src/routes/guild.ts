@@ -1,17 +1,10 @@
-import { RESTGetAPIGuildResult, Routes, Snowflake } from "discord-api-types/v10";
+import { RESTGetAPIGuildQuery, RESTGetAPIGuildResult, Routes, Snowflake } from "discord-api-types/v10";
 import { DiscordApiClient } from "../client.js";
+import { stringifyQuery } from "../query.js";
 
 // TODO: Test, Document
-export async function getGuild(
-  this: DiscordApiClient,
-  id: Snowflake,
-  options: {
-    counts?: boolean;
-  } = {}
-) {
-  const { counts = false } = options;
+export async function getGuild(this: DiscordApiClient, id: Snowflake, query?: RESTGetAPIGuildQuery) {
+  const options = query ? { query: new URLSearchParams(stringifyQuery(query)) } : {};
 
-  return this.get(Routes.guild(id), {
-    query: new URLSearchParams({ with_counts: String(counts) })
-  }) as Promise<RESTGetAPIGuildResult>;
+  return this.get(Routes.guild(id), options) as Promise<RESTGetAPIGuildResult>;
 }
