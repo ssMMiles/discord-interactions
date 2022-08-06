@@ -1,7 +1,7 @@
 {
   "name": "@discord-interactions/core",
   "description": "A full command framework for Discord interactions.",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -14,7 +14,7 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
   "dependencies": {
-    "@discord-interactions/api": "^0.3.2",
+    "@discord-interactions/api": "^0.3.3",
     "@discord-interactions/builders": "^0.3.1",
     "@discord-interactions/verify": "^0.3.1",
     "discord-api-types": "^0.36.1",
