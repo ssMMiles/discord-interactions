@@ -9,6 +9,7 @@ import {
 } from "./routes/commands.js";
 import { getGuild } from "./routes/guild.js";
 import { deleteInteractionFollowup, patchInteractionFollowup, postInteractionFollowup } from "./routes/interactions.js";
+import { getCurrentBotApplication } from "./routes/oauth2.js";
 import {
   createDm,
   getCurrentUser,
@@ -54,4 +55,7 @@ export class DiscordApiClient extends Client {
 
   leaveGuild = leaveGuild;
   createDm = createDm;
+
+  // OAuth2
+  getCurrentBotApplication = getCurrentBotApplication;
 }
