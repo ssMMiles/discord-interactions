@@ -190,10 +190,7 @@ export class MessageBuilder {
   private toFormData(data: RESTPostAPIWebhookWithTokenJSONBody | APIInteractionResponseCallbackData): FormData {
     const form = new FormData();
 
-    //@ts-ignore
-    form.append("payload_json", new Blob([JSON.stringify(data)]), {
-      contentType: "application/json"
-    });
+    form.append("payload_json", JSON.stringify(data));
 
     for (let i = 0; i < (this.files?.length ?? 0); i++) {
       const file = this?.files?.[i] as AttachedFile;
