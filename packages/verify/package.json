@@ -1,7 +1,7 @@
 {
   "name": "@discord-interactions/verify",
   "description": "A verification module using the Web SubtleCrypto API.",
-  "version": "0.3.1",
+  "version": "0.3.5",
   "type": "module",
   "main": "dist/node.js",
   "browser": "dist/web.js",
