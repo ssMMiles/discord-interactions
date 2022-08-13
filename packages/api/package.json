@@ -14,6 +14,7 @@
     "format": "prettier --write src",
     "lint": "eslint src",
     "build": "tsc",
+    "build:types": "./bundle-types.sh",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests",
     "docs": "typedoc"
   },
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@types/jest": "^28.1.4",
     "@types/node": "^18.0.3",
+    "dts-bundle-generator": "^6.12.0",
     "typescript": "^4.7.4"
   },
   "publishConfig": {

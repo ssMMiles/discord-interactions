@@ -10,6 +10,7 @@
     "format": "prettier --write src",
     "lint": "eslint src",
     "build": "tsc",
+    "build:types": "./bundle-types.sh",
     "docs": "typedoc",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
@@ -29,6 +30,7 @@
     "@typescript-eslint/eslint-plugin": "^5.17.0",
     "@typescript-eslint/parser": "^5.17.0",
     "dotenv": "^13.0.0",
+    "dts-bundle-generator": "^6.12.0",
     "eslint": "^8.14.0",
     "fastify": "^3.27.4",
     "fastify-raw-body": "^3.2.0",
