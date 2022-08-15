@@ -14,15 +14,10 @@ if (typeof global === "object") {
   Headers = global.Headers;
   Request = global.Request;
   Response = global.Response;
-  // @ts-ignore
-} else if (typeof self === "object" && self.fetch !== "function") {
-  // @ts-ignore
+} else if (typeof self === "object") {
   fetch = self.fetch;
-  // @ts-ignore
   Headers = self.Headers;
-  // @ts-ignore
   Request = self.Request;
-  // @ts-ignore
   Response = self.Response;
 } else {
   fetch = fetchPolyfill;
