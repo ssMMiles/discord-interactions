@@ -1,4 +1,4 @@
-import type { BodyInit, HeadersInit, RequestInit } from "whatwg-fetch";
+import type { BodyInit, HeadersInit, RequestInit } from "./types.js";
 
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 // @ts-ignore
