@@ -175,6 +175,9 @@
 
    END OF TERMS AND CONDITIONS
 
+   Copyright 2021 Noel Buechler
+   Copyright 2021 Vlad Frangu
+   Copyright 2022 Ian Mitchell
    Copyright 2022 Miles Moonlove
 
    Licensed under the Apache License, Version 2.0 (the "License");
