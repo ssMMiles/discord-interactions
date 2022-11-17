@@ -1,4 +1,4 @@
-import { ButtonBuilder, MessageBuilder, ModalBuilder, SelectMenuBuilder } from "@discord-interactions/builders";
+import { ButtonBuilder, MessageBuilder, ModalBuilder, SelectMenuBuilders } from "@discord-interactions/builders";
 import {
   APIApplicationCommandInteraction,
   APIAttachment,
@@ -74,7 +74,7 @@ export class BaseCommandContext<
   }
 
   async createComponent<
-    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+    Builder extends ButtonBuilder | SelectMenuBuilders | ModalBuilder = ButtonBuilder | SelectMenuBuilders
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
     return super.createGlobalComponent(`${this.name}.${name}`, state, ttl);
   }

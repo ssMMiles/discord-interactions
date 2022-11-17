@@ -2,19 +2,17 @@ import { MessageBuilder, ModalBuilder } from "@discord-interactions/builders";
 import type {
   APIInteractionResponseUpdateMessage,
   APIMessage,
-  APIMessageComponentButtonInteraction,
   APIMessageComponentInteraction,
-  APIMessageComponentSelectMenuInteraction,
   APIModalInteractionResponse
 } from "discord-api-types/v10";
 import { InteractionResponseType } from "discord-api-types/v10";
 import type { FormData } from "formdata-node";
-import { InteractionResponseAlreadySent, SimpleEmbed } from "../../index.js";
-import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
-import { BaseStatefulInteractionContext } from "./Base.js";
-import { MessageUpdateResponse } from "./response-types.js";
+import { InteractionResponseAlreadySent, SimpleEmbed } from "../../../index.js";
+import { DiscordApplication, ResponseCallback } from "../../DiscordApplication.js";
+import { BaseStatefulInteractionContext } from "../Base.js";
+import { MessageUpdateResponse } from "../response-types.js";
 
-class BaseComponentContext<
+export class BaseComponentContext<
   State,
   T extends APIMessageComponentInteraction = APIMessageComponentInteraction
 > extends BaseStatefulInteractionContext<State, T, MessageUpdateResponse> {
@@ -77,22 +75,3 @@ class BaseComponentContext<
     return this.followup.delete("@original");
   }
 }
-
-export class ButtonContext<S = never> extends BaseComponentContext<S, APIMessageComponentButtonInteraction> {}
-
-export class SelectMenuContext<S = never> extends BaseComponentContext<S, APIMessageComponentSelectMenuInteraction> {
-  public values: string[];
-
-  constructor(
-    manager: DiscordApplication,
-    interaction: APIMessageComponentSelectMenuInteraction,
-    timestamps: { signature: Date; received: Date },
-    responseCallback: ResponseCallback<MessageUpdateResponse>
-  ) {
-    super(manager, interaction, timestamps, responseCallback);
-
-    this.values = interaction.data.values;
-  }
-}
-
-export type ComponentContext = ButtonContext | SelectMenuContext;

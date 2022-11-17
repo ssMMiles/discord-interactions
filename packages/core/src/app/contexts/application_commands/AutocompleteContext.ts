@@ -1,4 +1,4 @@
-import { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "@discord-interactions/builders";
+import { ButtonBuilder, ModalBuilder, SelectMenuBuilders } from "@discord-interactions/builders";
 import type {
   APIApplicationCommandAutocompleteInteraction,
   APIApplicationCommandAutocompleteResponse,
@@ -11,7 +11,7 @@ import type {
 import { ApplicationCommandOptionType, InteractionResponseType } from "discord-api-types/v10";
 import { DiscordApplication, ResponseCallback } from "../../DiscordApplication.js";
 import { BaseInteractionContext } from "../Base.js";
-import { ResolvedData } from "./Base.js";
+import { ResolvedData } from "./ApplicationCommandContext.js";
 
 export type AutocompleteSupportedOptions =
   | APIApplicationCommandInteractionDataStringOption
@@ -81,7 +81,7 @@ export class AutocompleteContext extends BaseInteractionContext<
   }
 
   async createComponent<
-    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+    Builder extends ButtonBuilder | SelectMenuBuilders | ModalBuilder = ButtonBuilder | SelectMenuBuilders
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
     return super.createGlobalComponent(`${this.parentCommand ?? this.name}.${name}`, state, ttl);
   }

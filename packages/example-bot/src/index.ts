@@ -2,6 +2,7 @@ import {
   DiscordApplication,
   InteractionHandlerNotFound,
   InteractionHandlerTimedOut,
+  SyncMode,
   UnauthorizedInteraction,
   UnknownApplicationCommandType,
   UnknownComponentType,
@@ -35,7 +36,9 @@ if (missing.length !== 0) {
     cache: {
       get: (key: string) => redisClient.get(key),
       set: (key: string, ttl: number, value: string) => redisClient.setEx(key, ttl, value)
-    }
+    },
+
+    syncMode: SyncMode.Enabled
   });
 
   await app.commands.register(new Ping());

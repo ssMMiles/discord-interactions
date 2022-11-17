@@ -1,4 +1,4 @@
-import { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "@discord-interactions/builders";
+import { ButtonBuilder, ModalBuilder, SelectMenuBuilders } from "@discord-interactions/builders";
 import { v4 as uuidv4 } from "uuid";
 import { GenericCache } from "../DiscordApplication.js";
 import { Component, Modal } from "../index.js";
@@ -34,7 +34,7 @@ export class ComponentManager {
   }
 
   async createInstance<
-    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+    Builder extends ButtonBuilder | SelectMenuBuilders | ModalBuilder = ButtonBuilder | SelectMenuBuilders
   >(name: string, data: object = {}, ttl = this.cache?.ttl ?? 900): Promise<Builder> {
     const component = this.get(name);
 

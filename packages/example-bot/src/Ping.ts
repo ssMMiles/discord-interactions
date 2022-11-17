@@ -3,9 +3,17 @@ import {
   ButtonBuilder,
   EmbedBuilder,
   MessageBuilder,
-  SlashCommandBuilder
+  SlashCommandBuilder,
+  UserSelectMenuBuilder
 } from "@discord-interactions/builders";
-import { Button, ButtonContext, ISlashCommand, SlashCommandContext } from "@discord-interactions/core";
+import {
+  Button,
+  ButtonContext,
+  ISlashCommand,
+  SlashCommandContext,
+  UserSelectMenuContext
+} from "@discord-interactions/core";
+import { UserSelectMenu } from "@discord-interactions/core/dist/app/components/select_menus/UserSelectMenu.js";
 
 type TestButtonState = {
   ping: boolean;
@@ -16,11 +24,10 @@ export class Ping implements ISlashCommand {
 
   public handler = async (ctx: SlashCommandContext): Promise<void> => {
     const button = await ctx.createComponent("pong", { ping: false });
+    const menu = await ctx.createComponent("testSelect");
 
     return ctx.reply(
-      new MessageBuilder(new EmbedBuilder().setTitle("Pong!")).addComponents(
-        new ActionRowBuilder().addComponents(button)
-      )
+      new MessageBuilder(new EmbedBuilder().setTitle("Pong!")).addComponents(new ActionRowBuilder().addComponents(menu))
     );
   };
 
@@ -36,6 +43,13 @@ export class Ping implements ISlashCommand {
             new ActionRowBuilder([await ctx.createComponent("pong", { ping: !ctx.state.ping })])
           )
         );
+      }
+    ),
+    new UserSelectMenu(
+      "testSelect",
+      new UserSelectMenuBuilder().setMaxValues(1).setPlaceholder("Select a user..."),
+      async (ctx: UserSelectMenuContext): Promise<void> => {
+        ctx.reply(new MessageBuilder(`You selected <@${ctx.target.user.id}>`));
       }
     )
   ];

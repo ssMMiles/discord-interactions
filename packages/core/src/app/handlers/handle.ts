@@ -1,12 +1,18 @@
-import type {
+import {
   APIChatInputApplicationCommandInteraction,
   APIInteraction,
   APIMessageApplicationCommandInteraction,
+  APIMessageChannelSelectInteractionData,
   APIMessageComponentButtonInteraction,
-  APIMessageComponentSelectMenuInteraction,
-  APIUserApplicationCommandInteraction
+  APIMessageMentionableSelectInteractionData,
+  APIMessageRoleSelectInteractionData,
+  APIMessageStringSelectInteractionData,
+  APIMessageUserSelectInteractionData,
+  APIUserApplicationCommandInteraction,
+  ApplicationCommandType,
+  ComponentType,
+  InteractionType
 } from "discord-api-types/v10";
-import { ApplicationCommandType, ComponentType, InteractionType } from "discord-api-types/v10";
 import {
   InteractionHandlerError,
   InteractionHandlerNotFound,
@@ -14,21 +20,27 @@ import {
   UnknownApplicationCommandType,
   UnknownInteractionType
 } from "../../util/errors.js";
+import { SelectMenuInteraction } from "../contexts/components/select_menus/BaseSelectMenuContext.js";
 import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
 import {
   AutocompleteContext,
   ButtonContext,
+  ChannelSelectMenuContext,
+  ComponentContext,
   InteractionContext,
   ISubcommandGroup,
   ISubcommandHandler,
+  MentionableSelectMenuContext,
   MessageCommandContext,
   ModalSubmitContext,
   PingContext,
   RegisteredMessageCommand,
   RegisteredUserCommand,
-  SelectMenuContext,
+  RoleSelectMenuContext,
   SlashCommandContext,
-  UserCommandContext
+  StringSelectMenuContext,
+  UserCommandContext,
+  UserSelectMenuContext
 } from "../index.js";
 import { InteractionHooks } from "./Hooks.js";
 
@@ -100,10 +112,50 @@ function getExecutionContext(
           hook = "component.button";
 
           break;
-        case ComponentType.SelectMenu:
-          context = new SelectMenuContext(
+        case ComponentType.StringSelect:
+          context = new StringSelectMenuContext(
             app,
-            interaction as APIMessageComponentSelectMenuInteraction,
+            interaction as SelectMenuInteraction<APIMessageStringSelectInteractionData>,
+            timestamps,
+            responseCallback
+          );
+          hook = "component.selectMenu";
+
+          break;
+        case ComponentType.UserSelect:
+          context = new UserSelectMenuContext(
+            app,
+            interaction as SelectMenuInteraction<APIMessageUserSelectInteractionData>,
+            timestamps,
+            responseCallback
+          );
+          hook = "component.selectMenu";
+
+          break;
+        case ComponentType.RoleSelect:
+          context = new RoleSelectMenuContext(
+            app,
+            interaction as SelectMenuInteraction<APIMessageRoleSelectInteractionData>,
+            timestamps,
+            responseCallback
+          );
+          hook = "component.selectMenu";
+
+          break;
+        case ComponentType.MentionableSelect:
+          context = new MentionableSelectMenuContext(
+            app,
+            interaction as SelectMenuInteraction<APIMessageMentionableSelectInteractionData>,
+            timestamps,
+            responseCallback
+          );
+          hook = "component.selectMenu";
+
+          break;
+        case ComponentType.ChannelSelect:
+          context = new ChannelSelectMenuContext(
+            app,
+            interaction as SelectMenuInteraction<APIMessageChannelSelectInteractionData>,
             timestamps,
             responseCallback
           );
@@ -233,10 +285,15 @@ export async function _handleInteraction(
 
       break;
     }
+
     case ButtonContext:
-    case SelectMenuContext:
+    case StringSelectMenuContext:
+    case UserSelectMenuContext:
+    case RoleSelectMenuContext:
+    case MentionableSelectMenuContext:
+    case ChannelSelectMenuContext:
     case ModalSubmitContext: {
-      context = context as ButtonContext<never> & SelectMenuContext<never> & ModalSubmitContext<never>;
+      context = context as ComponentContext<never>;
 
       try {
         await context.fetchState();
@@ -253,7 +310,7 @@ export async function _handleInteraction(
       if (!component) throw new InteractionHandlerNotFound(interaction);
 
       try {
-        await component.handler(context as ButtonContext<never> & SelectMenuContext<never> & ModalSubmitContext<never>);
+        await component.handler(context as any);
       } catch (err: unknown) {
         throw new InteractionHandlerError(interaction, err);
       }

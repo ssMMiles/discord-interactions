@@ -1,4 +1,4 @@
-import { ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "@discord-interactions/builders";
+import { ButtonBuilder, ModalBuilder, SelectMenuBuilders } from "@discord-interactions/builders";
 import type {
   APIApplicationCommandInteractionDataAttachmentOption,
   APIApplicationCommandInteractionDataBasicOption,
@@ -19,7 +19,7 @@ import type {
 import { ApplicationCommandOptionType } from "discord-api-types/v10";
 import { DiscordApplication, ResponseCallback } from "../../DiscordApplication.js";
 import { ChannelMessageResponse } from "../response-types.js";
-import { BaseCommandContext } from "./Base.js";
+import { BaseCommandContext } from "./ApplicationCommandContext.js";
 
 export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicationCommandInteraction> {
   private options: Map<string, APIApplicationCommandInteractionDataBasicOption> = new Map();
@@ -75,7 +75,7 @@ export class SlashCommandContext extends BaseCommandContext<APIChatInputApplicat
   }
 
   async createComponent<
-    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+    Builder extends ButtonBuilder | SelectMenuBuilders | ModalBuilder = ButtonBuilder | SelectMenuBuilders
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
     return super.createGlobalComponent(`${this.parentCommand ?? this.name}.${name}`, state, ttl);
   }

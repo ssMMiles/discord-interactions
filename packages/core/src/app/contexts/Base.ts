@@ -1,4 +1,4 @@
-import { Bitfield, ButtonBuilder, ModalBuilder, SelectMenuBuilder } from "@discord-interactions/builders";
+import { Bitfield, ButtonBuilder, ModalBuilder, SelectMenuBuilders } from "@discord-interactions/builders";
 import { Snowflake } from "discord-api-types/globals";
 import {
   APIGuildMember,
@@ -103,7 +103,7 @@ export class BaseInteractionContext<
   }
 
   async createGlobalComponent<
-    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+    Builder extends ButtonBuilder | SelectMenuBuilders | ModalBuilder = ButtonBuilder | SelectMenuBuilders
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
     return this.app.components.createInstance(name, state, ttl);
   }
@@ -142,7 +142,7 @@ export class BaseStatefulInteractionContext<
   }
 
   async createComponent<
-    Builder extends ButtonBuilder | SelectMenuBuilder | ModalBuilder = ButtonBuilder | SelectMenuBuilder
+    Builder extends ButtonBuilder | SelectMenuBuilders | ModalBuilder = ButtonBuilder | SelectMenuBuilders
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
     return this.app.components.createInstance(this.parentCommand ? `${this.parentCommand}.${name}` : name, state, ttl);
   }
