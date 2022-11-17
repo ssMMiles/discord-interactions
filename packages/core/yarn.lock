@@ -470,10 +470,10 @@
   dependencies:
     "path-type" "^4.0.0"
 
-"discord-api-types@^0.36.1":
-  "integrity" "sha512-PTDinUU574hXA9Ko9wrftL1iww1raNiRVKjuPIWQ5Li1g7vQPArpZWw9x01kh/IXLPdzSAJ6H8T0eAYzxzFzIg=="
-  "resolved" "https://registry.npmjs.org/discord-api-types/-/discord-api-types-0.36.1.tgz"
-  "version" "0.36.1"
+"discord-api-types@^0.37.18":
+  "integrity" "sha512-mJ+9C8gmG5csssVZPH06Y8IGiJykljFyZc6n6F+T3vKo6yNBI5TtLIbwt6t9hJzsR5f1ITzRZ6cuPrTvRCUxqA=="
+  "resolved" "https://registry.npmjs.org/discord-api-types/-/discord-api-types-0.37.18.tgz"
+  "version" "0.37.18"
 
 "doctrine@^3.0.0":
   "integrity" "sha512-yS+Q5i3hBf7GBkd4KG8a7eBNNWNGLTaEwwYWUijIYM7zrlYDM0BFXHjjPWlWZ1Rg7UaddZeIDmi9jF3HmqiQ2w=="

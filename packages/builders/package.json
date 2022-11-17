@@ -7,7 +7,7 @@
   "types": "dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "discord-api-types": "^0.36.1",
+    "discord-api-types": "^0.37.18",
     "formdata-node": "^4.3.3"
   },
   "devDependencies": {

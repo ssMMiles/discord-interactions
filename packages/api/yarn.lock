@@ -78,10 +78,10 @@
   "resolved" "https://registry.npmjs.org/diff-sequences/-/diff-sequences-28.1.1.tgz"
   "version" "28.1.1"
 
-"discord-api-types@^0.36.1":
-  "integrity" "sha512-PTDinUU574hXA9Ko9wrftL1iww1raNiRVKjuPIWQ5Li1g7vQPArpZWw9x01kh/IXLPdzSAJ6H8T0eAYzxzFzIg=="
-  "resolved" "https://registry.npmjs.org/discord-api-types/-/discord-api-types-0.36.1.tgz"
-  "version" "0.36.1"
+"discord-api-types@^0.37.18":
+  "integrity" "sha512-mJ+9C8gmG5csssVZPH06Y8IGiJykljFyZc6n6F+T3vKo6yNBI5TtLIbwt6t9hJzsR5f1ITzRZ6cuPrTvRCUxqA=="
+  "resolved" "https://registry.npmjs.org/discord-api-types/-/discord-api-types-0.37.18.tgz"
+  "version" "0.37.18"
 
 "dts-bundle-generator@^6.12.0":
   "integrity" "sha512-k/QAvuVaLIdyWRUHduDrWBe4j8PcE6TDt06+f32KHbW7/SmUPbX1O23fFtQgKwUyTBkbIjJFOFtNrF97tJcKug=="
