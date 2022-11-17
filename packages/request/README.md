@@ -11,7 +11,7 @@
 *A Discord HTTP client that handles global and resource rate limits automatically.*
 
 > **Looking for an API Wrapper?**
-> Check out [`@discord-interactions/api`](../api/) instead. This package is low level, and works best in libraries as opposed to applications.
+> Check out [`@discord-interactions/api`](https://github.com/ssMMiles/discord-interactions/blob/main/packages/api/) instead. This package is low level, and works best in libraries as opposed to applications.
 
 ## Usage
 

@@ -8,11 +8,11 @@
   </p>
 </div>
 
-*Core framework for Bots using Discord Interactions - [Typedocs](./docs/typedoc/modules.md)* 
+*Core framework for Bots using Discord Interactions - [Typedocs](https://github.com/ssMMiles/discord-interactions/blob/main/packages/core/docs/typedoc/modules.md)* 
 
 # Getting Started
 
-An example bot using the framework is available [here](../example-bot). Additional code snippets can be found below.
+An example bot using the framework is available [here](https://github.com/ssMMiles/discord-interactions/blob/main/packages/example-bot). Additional code snippets can be found below.
 
 ## Install
 

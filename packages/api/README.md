@@ -10,9 +10,9 @@
 
 *A simple, typed wrapper around the Discord API.*
 
-This package is built on top of [`@discord-interactions/request`](../request) and [`discord-api-types`](https://www.npmjs.com/package/discord-api-types) - it is fully typed and handles rate limits appropriately.
+This package is built on top of [`@discord-interactions/request`](https://github.com/ssMMiles/discord-interactions/blob/main/packages/request) and [`discord-api-types`](https://www.npmjs.com/package/discord-api-types) - it is fully typed and handles rate limits appropriately.
 
-It is used internally within [`@discord-interactions/core`](../core), but can easily be used outside of this context.
+It is used internally within [`@discord-interactions/core`](https://github.com/ssMMiles/discord-interactions/blob/main/packages/core), but can easily be used outside of this context.
 
 ## Installation
 
@@ -34,4 +34,4 @@ try {
 ```
 
 # Credits
-This code is derived from @IanMitchell's [Interaction Kit: discord-api](https://github.com/IanMitchell/interaction-kit/packages/discord-api) and distributed under the Apache 2 license. It was changed to use [`@discord-interactions/request`](../request).
+This code is derived from @IanMitchell's [Interaction Kit: discord-api](https://github.com/IanMitchell/interaction-kit/packages/discord-api) and distributed under the Apache 2 license. It was changed to use [`@discord-interactions/request`](https://github.com/ssMMiles/discord-interactions/blob/main/packages/request).
