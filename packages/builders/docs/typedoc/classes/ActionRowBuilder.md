@@ -65,7 +65,7 @@ The components within this action row
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/components/ActionRowBuilder.ts#L24)
+[src/components/ActionRowBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/components/ActionRowBuilder.ts#L24)
 
 ___
 
@@ -81,7 +81,7 @@ ComponentBuilderBase.data
 
 #### Defined in
 
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/components/ComponentBuilderBase.ts#L19)
 
 ## Methods
 

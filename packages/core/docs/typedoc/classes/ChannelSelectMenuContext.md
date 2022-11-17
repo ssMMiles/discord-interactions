@@ -1,6 +1,6 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / ButtonContext
+[@discord-interactions/core](../README.md) / [Exports](../modules.md) / ChannelSelectMenuContext
 
-# Class: ButtonContext<S\>
+# Class: ChannelSelectMenuContext<S\>
 
 ## Type parameters
 
@@ -10,59 +10,61 @@
 
 ## Hierarchy
 
-- `BaseComponentContext`<`S`, `APIMessageComponentButtonInteraction`\>
+- `BaseSelectMenuContext`<`S`, `SelectMenuDataType`\>
 
-  ↳ **`ButtonContext`**
+  ↳ **`ChannelSelectMenuContext`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](ButtonContext.md#constructor)
+- [constructor](ChannelSelectMenuContext.md#constructor)
 
 ### Properties
 
-- [allowExpired](ButtonContext.md#allowexpired)
-- [app](ButtonContext.md#app)
-- [app\_permissions](ButtonContext.md#app_permissions)
-- [channelId](ButtonContext.md#channelid)
-- [guildId](ButtonContext.md#guildid)
-- [guildLocale](ButtonContext.md#guildlocale)
-- [id](ButtonContext.md#id)
-- [interactionId](ButtonContext.md#interactionid)
-- [isDM](ButtonContext.md#isdm)
-- [locale](ButtonContext.md#locale)
-- [member](ButtonContext.md#member)
-- [message](ButtonContext.md#message)
-- [parentCommand](ButtonContext.md#parentcommand)
-- [raw](ButtonContext.md#raw)
-- [receivedAt](ButtonContext.md#receivedat)
-- [signedAt](ButtonContext.md#signedat)
-- [state](ButtonContext.md#state)
-- [user](ButtonContext.md#user)
+- [allowExpired](ChannelSelectMenuContext.md#allowexpired)
+- [app](ChannelSelectMenuContext.md#app)
+- [app\_permissions](ChannelSelectMenuContext.md#app_permissions)
+- [channelId](ChannelSelectMenuContext.md#channelid)
+- [guildId](ChannelSelectMenuContext.md#guildid)
+- [guildLocale](ChannelSelectMenuContext.md#guildlocale)
+- [id](ChannelSelectMenuContext.md#id)
+- [interactionId](ChannelSelectMenuContext.md#interactionid)
+- [isDM](ChannelSelectMenuContext.md#isdm)
+- [locale](ChannelSelectMenuContext.md#locale)
+- [member](ChannelSelectMenuContext.md#member)
+- [message](ChannelSelectMenuContext.md#message)
+- [parentCommand](ChannelSelectMenuContext.md#parentcommand)
+- [raw](ChannelSelectMenuContext.md#raw)
+- [receivedAt](ChannelSelectMenuContext.md#receivedat)
+- [signedAt](ChannelSelectMenuContext.md#signedat)
+- [state](ChannelSelectMenuContext.md#state)
+- [target](ChannelSelectMenuContext.md#target)
+- [user](ChannelSelectMenuContext.md#user)
+- [values](ChannelSelectMenuContext.md#values)
 
 ### Accessors
 
-- [expired](ButtonContext.md#expired)
+- [expired](ChannelSelectMenuContext.md#expired)
 
 ### Methods
 
-- [createComponent](ButtonContext.md#createcomponent)
-- [createGlobalComponent](ButtonContext.md#createglobalcomponent)
-- [decorate](ButtonContext.md#decorate)
-- [defer](ButtonContext.md#defer)
-- [delete](ButtonContext.md#delete)
-- [edit](ButtonContext.md#edit)
-- [fetchState](ButtonContext.md#fetchstate)
-- [rawReply](ButtonContext.md#rawreply)
-- [reply](ButtonContext.md#reply)
-- [send](ButtonContext.md#send)
+- [createComponent](ChannelSelectMenuContext.md#createcomponent)
+- [createGlobalComponent](ChannelSelectMenuContext.md#createglobalcomponent)
+- [decorate](ChannelSelectMenuContext.md#decorate)
+- [defer](ChannelSelectMenuContext.md#defer)
+- [delete](ChannelSelectMenuContext.md#delete)
+- [edit](ChannelSelectMenuContext.md#edit)
+- [fetchState](ChannelSelectMenuContext.md#fetchstate)
+- [rawReply](ChannelSelectMenuContext.md#rawreply)
+- [reply](ChannelSelectMenuContext.md#reply)
+- [send](ChannelSelectMenuContext.md#send)
 
 ## Constructors
 
 ### constructor
 
-• **new ButtonContext**<`S`\>(`manager`, `interaction`, `timestamps`, `responseCallback`)
+• **new ChannelSelectMenuContext**<`S`\>(`manager`, `interaction`, `timestamps`, `responseCallback`)
 
 #### Type parameters
 
@@ -75,15 +77,15 @@
 | Name | Type |
 | :------ | :------ |
 | `manager` | [`DiscordApplication`](DiscordApplication.md) |
-| `interaction` | `APIMessageComponentButtonInteraction` |
+| `interaction` | `SelectMenuInteraction`<`APIMessageChannelSelectInteractionData`\> |
 | `timestamps` | `Object` |
 | `timestamps.received` | `Date` |
 | `timestamps.signature` | `Date` |
 | `responseCallback` | [`ResponseCallback`](../modules.md#responsecallback)<[`MessageUpdateResponse`](../modules.md#messageupdateresponse)\> |
 
-#### Inherited from
+#### Overrides
 
-BaseComponentContext<S, APIMessageComponentButtonInteraction\>.constructor
+BaseSelectMenuContext&lt;S, SelectMenuDataType\&gt;.constructor
 
 ## Properties
 
@@ -93,7 +95,7 @@ BaseComponentContext<S, APIMessageComponentButtonInteraction\>.constructor
 
 #### Inherited from
 
-BaseComponentContext.allowExpired
+BaseSelectMenuContext.allowExpired
 
 #### Defined in
 
@@ -107,7 +109,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.app
+BaseSelectMenuContext.app
 
 #### Defined in
 
@@ -121,7 +123,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.app\_permissions
+BaseSelectMenuContext.app\_permissions
 
 #### Defined in
 
@@ -135,7 +137,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.channelId
+BaseSelectMenuContext.channelId
 
 #### Defined in
 
@@ -149,7 +151,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.guildId
+BaseSelectMenuContext.guildId
 
 #### Defined in
 
@@ -163,7 +165,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.guildLocale
+BaseSelectMenuContext.guildLocale
 
 #### Defined in
 
@@ -177,7 +179,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.id
+BaseSelectMenuContext.id
 
 #### Defined in
 
@@ -191,7 +193,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.interactionId
+BaseSelectMenuContext.interactionId
 
 #### Defined in
 
@@ -205,7 +207,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.isDM
+BaseSelectMenuContext.isDM
 
 #### Defined in
 
@@ -219,7 +221,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.locale
+BaseSelectMenuContext.locale
 
 #### Defined in
 
@@ -233,7 +235,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.member
+BaseSelectMenuContext.member
 
 #### Defined in
 
@@ -247,7 +249,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.message
+BaseSelectMenuContext.message
 
 #### Defined in
 
@@ -261,7 +263,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.parentCommand
+BaseSelectMenuContext.parentCommand
 
 #### Defined in
 
@@ -271,11 +273,11 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `APIMessageComponentButtonInteraction`
+• `Optional` **raw**: `SelectMenuInteraction`<`APIMessageChannelSelectInteractionData`\>
 
 #### Inherited from
 
-BaseComponentContext.raw
+BaseSelectMenuContext.raw
 
 #### Defined in
 
@@ -289,7 +291,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.receivedAt
+BaseSelectMenuContext.receivedAt
 
 #### Defined in
 
@@ -303,7 +305,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.signedAt
+BaseSelectMenuContext.signedAt
 
 #### Defined in
 
@@ -317,11 +319,27 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.state
+BaseSelectMenuContext.state
 
 #### Defined in
 
 [app/contexts/Base.ts:120](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/Base.ts#L120)
+
+___
+
+### target
+
+• **target**: `Object`
+
+#### Type declaration
+
+| Name | Type |
+| :------ | :------ |
+| `channel` | `APIInteractionDataResolvedChannel` |
+
+#### Defined in
+
+[app/contexts/components/select_menus/ChannelSelectMenuContext.ts:10](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/components/select_menus/ChannelSelectMenuContext.ts#L10)
 
 ___
 
@@ -331,11 +349,25 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.user
+BaseSelectMenuContext.user
 
 #### Defined in
 
 [app/contexts/Base.ts:50](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/Base.ts#L50)
+
+___
+
+### values
+
+• **values**: `string`[]
+
+#### Overrides
+
+BaseSelectMenuContext.values
+
+#### Defined in
+
+[app/contexts/components/select_menus/ChannelSelectMenuContext.ts:8](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/components/select_menus/ChannelSelectMenuContext.ts#L8)
 
 ## Accessors
 
@@ -349,7 +381,7 @@ BaseComponentContext.user
 
 #### Inherited from
 
-BaseComponentContext.expired
+BaseSelectMenuContext.expired
 
 ## Methods
 
@@ -377,7 +409,7 @@ BaseComponentContext.expired
 
 #### Inherited from
 
-BaseComponentContext.createComponent
+BaseSelectMenuContext.createComponent
 
 ___
 
@@ -405,7 +437,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.createGlobalComponent
+BaseSelectMenuContext.createGlobalComponent
 
 ___
 
@@ -426,7 +458,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.decorate
+BaseSelectMenuContext.decorate
 
 ___
 
@@ -440,7 +472,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.defer
+BaseSelectMenuContext.defer
 
 ___
 
@@ -454,7 +486,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.delete
+BaseSelectMenuContext.delete
 
 ___
 
@@ -474,7 +506,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.edit
+BaseSelectMenuContext.edit
 
 ___
 
@@ -488,7 +520,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.fetchState
+BaseSelectMenuContext.fetchState
 
 ___
 
@@ -508,7 +540,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.rawReply
+BaseSelectMenuContext.rawReply
 
 ___
 
@@ -528,7 +560,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.reply
+BaseSelectMenuContext.reply
 
 ___
 
@@ -548,4 +580,4 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.send
+BaseSelectMenuContext.send

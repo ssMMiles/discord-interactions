@@ -26,4 +26,4 @@ APIApplicationCommand.type
 
 #### Defined in
 
-[app/managers/CommandManager.ts:23](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/managers/CommandManager.ts#L23)
+[app/managers/CommandManager.ts:23](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/managers/CommandManager.ts#L23)

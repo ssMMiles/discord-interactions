@@ -1,56 +1,60 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / Modal
+[@discord-interactions/core](../README.md) / [Exports](../modules.md) / StringSelectMenu
 
-# Class: Modal
+# Class: StringSelectMenu
 
 ## Hierarchy
 
-- `ComponentBase`<`APIModalInteractionResponseCallbackData`, `ModalBuilder`, [`ModalSubmitContext`](ModalSubmitContext.md)\>
+- `ComponentBase`<`APIStringSelectComponent`, `StringSelectMenuBuilder`, [`StringSelectMenuContext`](StringSelectMenuContext.md)\>
 
-  ↳ **`Modal`**
+  ↳ **`StringSelectMenu`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](Modal.md#constructor)
+- [constructor](StringSelectMenu.md#constructor)
 
 ### Properties
 
-- [allowExpired](Modal.md#allowexpired)
-- [builder](Modal.md#builder)
-- [components](Modal.md#components)
-- [handler](Modal.md#handler)
-- [id](Modal.md#id)
-- [parentCommand](Modal.md#parentcommand)
+- [allowExpired](StringSelectMenu.md#allowexpired)
+- [builder](StringSelectMenu.md#builder)
+- [components](StringSelectMenu.md#components)
+- [handler](StringSelectMenu.md#handler)
+- [id](StringSelectMenu.md#id)
+- [parentCommand](StringSelectMenu.md#parentcommand)
 
 ### Accessors
 
-- [data](Modal.md#data)
+- [data](StringSelectMenu.md#data)
 
 ### Methods
 
-- [createInstance](Modal.md#createinstance)
-- [setAllowExpired](Modal.md#setallowexpired)
-- [setHandler](Modal.md#sethandler)
-- [setId](Modal.md#setid)
+- [createInstance](StringSelectMenu.md#createinstance)
+- [setAllowExpired](StringSelectMenu.md#setallowexpired)
+- [setHandler](StringSelectMenu.md#sethandler)
+- [setId](StringSelectMenu.md#setid)
 
 ## Constructors
 
 ### constructor
 
-• **new Modal**(`id`, `builder`, `handler?`)
+• **new StringSelectMenu**(`id`, `builder`, `handler?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
 | `id` | `string` |
-| `builder` | `ModalBuilder` |
-| `handler` | (`ctx`: [`ModalSubmitContext`](ModalSubmitContext.md)<`never`\>) => `Promise`<`void`\> |
+| `builder` | `StringSelectMenuBuilder` |
+| `handler` | (`ctx`: [`SelectMenuContext`](../modules.md#selectmenucontext)<`never`\>) => `Promise`<`void`\> |
 
 #### Overrides
 
-ComponentBase&lt;APIModalInteractionResponseCallbackData, ModalBuilder, ModalSubmitContext\&gt;.constructor
+ComponentBase&lt;
+  APIStringSelectComponent,
+  StringSelectMenuBuilder,
+  StringSelectMenuContext
+\&gt;.constructor
 
 ## Properties
 
@@ -70,7 +74,7 @@ ___
 
 ### builder
 
-• **builder**: `ModalBuilder`
+• **builder**: `StringSelectMenuBuilder`
 
 #### Inherited from
 
@@ -98,7 +102,7 @@ ___
 
 ### handler
 
-• **handler**: (`ctx`: [`ModalSubmitContext`](ModalSubmitContext.md)<`never`\>) => `Promise`<`void`\>
+• **handler**: (`ctx`: [`StringSelectMenuContext`](StringSelectMenuContext.md)<`never`\>) => `Promise`<`void`\>
 
 #### Type declaration
 
@@ -108,7 +112,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `ctx` | [`ModalSubmitContext`](ModalSubmitContext.md)<`never`\> |
+| `ctx` | [`StringSelectMenuContext`](StringSelectMenuContext.md)<`never`\> |
 
 ##### Returns
 
@@ -168,7 +172,7 @@ ComponentBase.data
 
 ### createInstance
 
-▸ **createInstance**(`state`): `ModalBuilder`
+▸ **createInstance**(`state`): `StringSelectMenuBuilder`
 
 #### Parameters
 
@@ -178,13 +182,13 @@ ComponentBase.data
 
 #### Returns
 
-`ModalBuilder`
+`StringSelectMenuBuilder`
 
 ___
 
 ### setAllowExpired
 
-▸ **setAllowExpired**(`value`): [`Modal`](Modal.md)
+▸ **setAllowExpired**(`value`): [`StringSelectMenu`](StringSelectMenu.md)
 
 Set whether component execution should continue when state data has expired
 
@@ -196,7 +200,7 @@ Set whether component execution should continue when state data has expired
 
 #### Returns
 
-[`Modal`](Modal.md)
+[`StringSelectMenu`](StringSelectMenu.md)
 
 #### Inherited from
 
@@ -206,17 +210,17 @@ ___
 
 ### setHandler
 
-▸ **setHandler**(`handler`): [`Modal`](Modal.md)
+▸ **setHandler**(`handler`): [`StringSelectMenu`](StringSelectMenu.md)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `handler` | (`ctx`: [`ModalSubmitContext`](ModalSubmitContext.md)<`never`\>) => `Promise`<`void`\> |
+| `handler` | (`ctx`: [`StringSelectMenuContext`](StringSelectMenuContext.md)<`never`\>) => `Promise`<`void`\> |
 
 #### Returns
 
-[`Modal`](Modal.md)
+[`StringSelectMenu`](StringSelectMenu.md)
 
 #### Inherited from
 
@@ -226,7 +230,7 @@ ___
 
 ### setId
 
-▸ **setId**(`id`): [`Modal`](Modal.md)
+▸ **setId**(`id`): [`StringSelectMenu`](StringSelectMenu.md)
 
 Set the component ID
 
@@ -238,7 +242,7 @@ Set the component ID
 
 #### Returns
 
-[`Modal`](Modal.md)
+[`StringSelectMenu`](StringSelectMenu.md)
 
 #### Inherited from
 

@@ -61,7 +61,7 @@ RegisteredDiscordCommand.builder
 
 #### Defined in
 
-[app/commands/Base.ts:28](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L28)
+[app/commands/Base.ts:28](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/Base.ts#L28)
 
 ___
 
@@ -75,7 +75,7 @@ RegisteredDiscordCommand.components
 
 #### Defined in
 
-[app/commands/Base.ts:30](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L30)
+[app/commands/Base.ts:30](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/Base.ts#L30)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:44](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/CommandGroup.ts#L44)
+[app/commands/CommandGroup.ts:44](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/CommandGroup.ts#L44)
 
 ___
 
@@ -99,7 +99,7 @@ RegisteredDiscordCommand.id
 
 #### Defined in
 
-[app/commands/Base.ts:32](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L32)
+[app/commands/Base.ts:32](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/Base.ts#L32)
 
 ___
 
@@ -113,7 +113,7 @@ RegisteredDiscordCommand.lastSyncedAt
 
 #### Defined in
 
-[app/commands/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/Base.ts#L26)
+[app/commands/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/Base.ts#L26)
 
 ## Methods
 

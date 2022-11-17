@@ -16,10 +16,19 @@
 
 ### Properties
 
+- [createDm](DiscordApiClient.md#createdm)
 - [deleteApplicationCommand](DiscordApiClient.md#deleteapplicationcommand)
 - [deleteInteractionFollowup](DiscordApiClient.md#deleteinteractionfollowup)
 - [getApplicationCommands](DiscordApiClient.md#getapplicationcommands)
+- [getCurrentBotApplication](DiscordApiClient.md#getcurrentbotapplication)
+- [getCurrentUser](DiscordApiClient.md#getcurrentuser)
+- [getCurrentUserConnections](DiscordApiClient.md#getcurrentuserconnections)
+- [getCurrentUserGuildMember](DiscordApiClient.md#getcurrentuserguildmember)
+- [getCurrentUserGuilds](DiscordApiClient.md#getcurrentuserguilds)
 - [getGuild](DiscordApiClient.md#getguild)
+- [getUser](DiscordApiClient.md#getuser)
+- [leaveGuild](DiscordApiClient.md#leaveguild)
+- [modifyCurrentUser](DiscordApiClient.md#modifycurrentuser)
 - [patchApplicationCommand](DiscordApiClient.md#patchapplicationcommand)
 - [patchInteractionFollowup](DiscordApiClient.md#patchinteractionfollowup)
 - [postApplicationCommand](DiscordApiClient.md#postapplicationcommand)
@@ -63,6 +72,31 @@ Client.constructor
 
 ## Properties
 
+### createDm
+
+• **createDm**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `userId`: `string`) => `Promise`<`RESTPostAPICurrentUserCreateDMChannelJSONBody`\> = `createDm`
+
+#### Type declaration
+
+▸ (`this`, `userId`): `Promise`<`RESTPostAPICurrentUserCreateDMChannelJSONBody`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
+| `userId` | `string` |
+
+##### Returns
+
+`Promise`<`RESTPostAPICurrentUserCreateDMChannelJSONBody`\>
+
+#### Defined in
+
+[api/src/client.ts:57](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L57)
+
+___
+
 ### deleteApplicationCommand
 
 • **deleteApplicationCommand**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `applicationId`: `string`, `commandId`: `string`, `guildId?`: `string`) => `Promise`<`unknown`\> = `deleteApplicationCommand`
@@ -86,7 +120,7 @@ Client.constructor
 
 #### Defined in
 
-[api/src/client.ts:26](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/api/src/client.ts#L26)
+[api/src/client.ts:37](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L37)
 
 ___
 
@@ -113,7 +147,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:32](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/api/src/client.ts#L32)
+[api/src/client.ts:43](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L43)
 
 ___
 
@@ -139,17 +173,139 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:22](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/api/src/client.ts#L22)
+[api/src/client.ts:33](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L33)
+
+___
+
+### getCurrentBotApplication
+
+• **getCurrentBotApplication**: (`this`: [`DiscordApiClient`](DiscordApiClient.md)) => `Promise`<`APIApplication`\> = `getCurrentBotApplication`
+
+#### Type declaration
+
+▸ (`this`): `Promise`<`APIApplication`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
+
+##### Returns
+
+`Promise`<`APIApplication`\>
+
+#### Defined in
+
+[api/src/client.ts:60](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L60)
+
+___
+
+### getCurrentUser
+
+• **getCurrentUser**: (`this`: [`DiscordApiClient`](DiscordApiClient.md)) => `Promise`<`APIUser`\> = `getCurrentUser`
+
+#### Type declaration
+
+▸ (`this`): `Promise`<`APIUser`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
+
+##### Returns
+
+`Promise`<`APIUser`\>
+
+#### Defined in
+
+[api/src/client.ts:48](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L48)
+
+___
+
+### getCurrentUserConnections
+
+• **getCurrentUserConnections**: (`this`: [`DiscordApiClient`](DiscordApiClient.md)) => `Promise`<`RESTGetAPICurrentUserConnectionsResult`\> = `getCurrentUserConnections`
+
+#### Type declaration
+
+▸ (`this`): `Promise`<`RESTGetAPICurrentUserConnectionsResult`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
+
+##### Returns
+
+`Promise`<`RESTGetAPICurrentUserConnectionsResult`\>
+
+#### Defined in
+
+[api/src/client.ts:51](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L51)
+
+___
+
+### getCurrentUserGuildMember
+
+• **getCurrentUserGuildMember**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `guildId`: `string`) => `Promise`<`APIGuildMember`\> = `getCurrentUserGuildMember`
+
+#### Type declaration
+
+▸ (`this`, `guildId`): `Promise`<`APIGuildMember`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
+| `guildId` | `string` |
+
+##### Returns
+
+`Promise`<`APIGuildMember`\>
+
+#### Defined in
+
+[api/src/client.ts:54](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L54)
+
+___
+
+### getCurrentUserGuilds
+
+• **getCurrentUserGuilds**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `query?`: `RESTGetAPICurrentUserGuildsQuery`) => `Promise`<`RESTGetAPICurrentUserGuildsResult`\> = `getCurrentUserGuilds`
+
+#### Type declaration
+
+▸ (`this`, `query?`): `Promise`<`RESTGetAPICurrentUserGuildsResult`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
+| `query?` | `RESTGetAPICurrentUserGuildsQuery` |
+
+##### Returns
+
+`Promise`<`RESTGetAPICurrentUserGuildsResult`\>
+
+#### Defined in
+
+[api/src/client.ts:53](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L53)
 
 ___
 
 ### getGuild
 
-• **getGuild**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `id`: `string`, `options`: { `counts?`: `boolean`  }) => `Promise`<`APIGuild`\> = `getGuild`
+• **getGuild**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `id`: `string`, `query?`: `RESTGetAPIGuildQuery`) => `Promise`<`APIGuild`\> = `getGuild`
 
 #### Type declaration
 
-▸ (`this`, `id`, `options?`): `Promise`<`APIGuild`\>
+▸ (`this`, `id`, `query?`): `Promise`<`APIGuild`\>
 
 ##### Parameters
 
@@ -157,8 +313,7 @@ ___
 | :------ | :------ |
 | `this` | [`DiscordApiClient`](DiscordApiClient.md) |
 | `id` | `string` |
-| `options` | `Object` |
-| `options.counts?` | `boolean` |
+| `query?` | `RESTGetAPIGuildQuery` |
 
 ##### Returns
 
@@ -166,7 +321,82 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:28](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/api/src/client.ts#L28)
+[api/src/client.ts:39](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L39)
+
+___
+
+### getUser
+
+• **getUser**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `userId?`: `string`) => `Promise`<`APIUser`\> = `getUser`
+
+#### Type declaration
+
+▸ (`this`, `userId?`): `Promise`<`APIUser`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
+| `userId?` | `string` |
+
+##### Returns
+
+`Promise`<`APIUser`\>
+
+#### Defined in
+
+[api/src/client.ts:46](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L46)
+
+___
+
+### leaveGuild
+
+• **leaveGuild**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `guildId`: `string`) => `Promise`<`void`\> = `leaveGuild`
+
+#### Type declaration
+
+▸ (`this`, `guildId`): `Promise`<`void`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
+| `guildId` | `string` |
+
+##### Returns
+
+`Promise`<`void`\>
+
+#### Defined in
+
+[api/src/client.ts:56](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L56)
+
+___
+
+### modifyCurrentUser
+
+• **modifyCurrentUser**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `data`: `AddUndefinedToPossiblyUndefinedPropertiesOfInterface`<{}\>) => `Promise`<`APIUser`\> = `modifyCurrentUser`
+
+#### Type declaration
+
+▸ (`this`, `data`): `Promise`<`APIUser`\>
+
+##### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
+| `data` | `AddUndefinedToPossiblyUndefinedPropertiesOfInterface`<{}\> |
+
+##### Returns
+
+`Promise`<`APIUser`\>
+
+#### Defined in
+
+[api/src/client.ts:49](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L49)
 
 ___
 
@@ -194,7 +424,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:25](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/api/src/client.ts#L25)
+[api/src/client.ts:36](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L36)
 
 ___
 
@@ -222,7 +452,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:31](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/api/src/client.ts#L31)
+[api/src/client.ts:42](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L42)
 
 ___
 
@@ -249,7 +479,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:24](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/api/src/client.ts#L24)
+[api/src/client.ts:35](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L35)
 
 ___
 
@@ -276,7 +506,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:30](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/api/src/client.ts#L30)
+[api/src/client.ts:41](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L41)
 
 ___
 
@@ -303,7 +533,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:23](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/api/src/client.ts#L23)
+[api/src/client.ts:34](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/api/src/client.ts#L34)
 
 ## Accessors
 

@@ -14,14 +14,15 @@
 - [ActionRowBuilder](classes/ActionRowBuilder.md)
 - [Bitfield](classes/Bitfield.md)
 - [ButtonBuilder](classes/ButtonBuilder.md)
+- [ChannelSelectMenuBuilder](classes/ChannelSelectMenuBuilder.md)
 - [CommandGroupBuilder](classes/CommandGroupBuilder.md)
 - [EmbedBuilder](classes/EmbedBuilder.md)
 - [LinkButtonBuilder](classes/LinkButtonBuilder.md)
+- [MentionableSelectMenuBuilder](classes/MentionableSelectMenuBuilder.md)
 - [MessageBuilder](classes/MessageBuilder.md)
 - [MessageCommandBuilder](classes/MessageCommandBuilder.md)
 - [ModalBuilder](classes/ModalBuilder.md)
-- [SelectMenuBuilder](classes/SelectMenuBuilder.md)
-- [SelectMenuOptionBuilder](classes/SelectMenuOptionBuilder.md)
+- [RoleSelectMenuBuilder](classes/RoleSelectMenuBuilder.md)
 - [SlashCommandAttachmentOption](classes/SlashCommandAttachmentOption.md)
 - [SlashCommandBooleanOption](classes/SlashCommandBooleanOption.md)
 - [SlashCommandBuilder](classes/SlashCommandBuilder.md)
@@ -32,10 +33,12 @@
 - [SlashCommandRoleOption](classes/SlashCommandRoleOption.md)
 - [SlashCommandStringOption](classes/SlashCommandStringOption.md)
 - [SlashCommandUserOption](classes/SlashCommandUserOption.md)
+- [StringSelectMenuBuilder](classes/StringSelectMenuBuilder.md)
 - [SubcommandGroupOption](classes/SubcommandGroupOption.md)
 - [SubcommandOption](classes/SubcommandOption.md)
 - [TextInputBuilder](classes/TextInputBuilder.md)
 - [UserCommandBuilder](classes/UserCommandBuilder.md)
+- [UserSelectMenuBuilder](classes/UserSelectMenuBuilder.md)
 
 ### Interfaces
 
@@ -62,6 +65,7 @@
 - [ModalActionRowComponentBuilders](modules.md#modalactionrowcomponentbuilders)
 - [RGBTuple](modules.md#rgbtuple)
 - [ResponseMap](modules.md#responsemap)
+- [SelectMenuBuilders](modules.md#selectmenubuilders)
 - [SlashCommandData](modules.md#slashcommanddata)
 - [UserCommandData](modules.md#usercommanddata)
 
@@ -78,7 +82,7 @@
 
 #### Defined in
 
-[src/commands/options/channel.ts:15](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/channel.ts#L15)
+[src/commands/options/channel.ts:15](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/commands/options/channel.ts#L15)
 
 ___
 
@@ -88,7 +92,7 @@ ___
 
 #### Defined in
 
-[src/commands/index.ts:17](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/index.ts#L17)
+[src/commands/index.ts:17](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/commands/index.ts#L17)
 
 ___
 
@@ -98,7 +102,7 @@ ___
 
 #### Defined in
 
-[src/commands/index.ts:16](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/index.ts#L16)
+[src/commands/index.ts:16](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/commands/index.ts#L16)
 
 ___
 
@@ -108,7 +112,7 @@ ___
 
 #### Defined in
 
-[src/commands/CommandGroupBuilder.ts:10](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/CommandGroupBuilder.ts#L10)
+[src/commands/CommandGroupBuilder.ts:10](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/commands/CommandGroupBuilder.ts#L10)
 
 ___
 
@@ -118,7 +122,7 @@ ___
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:10](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/components/ActionRowBuilder.ts#L10)
+[src/components/ActionRowBuilder.ts:10](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/components/ActionRowBuilder.ts#L10)
 
 ___
 
@@ -128,7 +132,7 @@ ___
 
 #### Defined in
 
-[src/commands/ContextMenuCommandBuilder.ts:5](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L5)
+[src/commands/ContextMenuCommandBuilder.ts:5](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L5)
 
 ___
 
@@ -138,7 +142,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:16](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/responses/EmbedBuilder.ts#L16)
+[src/responses/EmbedBuilder.ts:16](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/responses/EmbedBuilder.ts#L16)
 
 ___
 
@@ -148,7 +152,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/responses/EmbedBuilder.ts#L18)
+[src/responses/EmbedBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/responses/EmbedBuilder.ts#L18)
 
 ___
 
@@ -158,7 +162,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:20](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/responses/EmbedBuilder.ts#L20)
+[src/responses/EmbedBuilder.ts:20](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/responses/EmbedBuilder.ts#L20)
 
 ___
 
@@ -168,7 +172,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:22](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/responses/EmbedBuilder.ts#L22)
+[src/responses/EmbedBuilder.ts:22](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/responses/EmbedBuilder.ts#L22)
 
 ___
 
@@ -178,17 +182,17 @@ ___
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:12](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/components/ActionRowBuilder.ts#L12)
+[src/components/ActionRowBuilder.ts:12](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/components/ActionRowBuilder.ts#L12)
 
 ___
 
 ### MessageActionRowComponentBuilders
 
-Ƭ **MessageActionRowComponentBuilders**: [`ButtonBuilder`](classes/ButtonBuilder.md) \| [`SelectMenuBuilder`](classes/SelectMenuBuilder.md)
+Ƭ **MessageActionRowComponentBuilders**: [`ButtonBuilder`](classes/ButtonBuilder.md) \| [`SelectMenuBuilders`](modules.md#selectmenubuilders)
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:7](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/components/ActionRowBuilder.ts#L7)
+[src/components/ActionRowBuilder.ts:7](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/components/ActionRowBuilder.ts#L7)
 
 ___
 
@@ -198,7 +202,7 @@ ___
 
 #### Defined in
 
-[src/commands/ContextMenuCommandBuilder.ts:11](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L11)
+[src/commands/ContextMenuCommandBuilder.ts:11](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L11)
 
 ___
 
@@ -208,7 +212,7 @@ ___
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/components/ActionRowBuilder.ts#L13)
+[src/components/ActionRowBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/components/ActionRowBuilder.ts#L13)
 
 ___
 
@@ -218,7 +222,7 @@ ___
 
 #### Defined in
 
-[src/components/ActionRowBuilder.ts:8](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/components/ActionRowBuilder.ts#L8)
+[src/components/ActionRowBuilder.ts:8](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/components/ActionRowBuilder.ts#L8)
 
 ___
 
@@ -228,7 +232,7 @@ ___
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:3](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/responses/EmbedBuilder.ts#L3)
+[src/responses/EmbedBuilder.ts:3](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/responses/EmbedBuilder.ts#L3)
 
 ___
 
@@ -245,7 +249,17 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:255](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/responses/MessageBuilder.ts#L255)
+[src/responses/MessageBuilder.ts:252](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/responses/MessageBuilder.ts#L252)
+
+___
+
+### SelectMenuBuilders
+
+Ƭ **SelectMenuBuilders**: [`StringSelectMenuBuilder`](classes/StringSelectMenuBuilder.md) \| [`MentionableSelectMenuBuilder`](classes/MentionableSelectMenuBuilder.md) \| [`RoleSelectMenuBuilder`](classes/RoleSelectMenuBuilder.md) \| [`UserSelectMenuBuilder`](classes/UserSelectMenuBuilder.md) \| [`ChannelSelectMenuBuilder`](classes/ChannelSelectMenuBuilder.md)
+
+#### Defined in
+
+[src/components/select_menus/index.ts:13](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/components/select_menus/index.ts#L13)
 
 ___
 
@@ -255,7 +269,7 @@ ___
 
 #### Defined in
 
-[src/commands/SlashCommandBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/SlashCommandBuilder.ts#L13)
+[src/commands/SlashCommandBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/commands/SlashCommandBuilder.ts#L13)
 
 ___
 
@@ -265,17 +279,17 @@ ___
 
 #### Defined in
 
-[src/commands/ContextMenuCommandBuilder.ts:7](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L7)
+[src/commands/ContextMenuCommandBuilder.ts:7](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L7)
 
 ## Variables
 
 ### AllowedChannelTypes
 
-• `Const` **AllowedChannelTypes**: readonly [`GuildText`, `GuildVoice`, `GuildCategory`, `GuildNews`, `GuildNewsThread`, `GuildPublicThread`, `GuildPrivateThread`, `GuildStageVoice`]
+• `Const` **AllowedChannelTypes**: readonly [`GuildText`, `GuildVoice`, `GuildCategory`, `GuildAnnouncement`, `AnnouncementThread`, `PublicThread`, `PrivateThread`, `GuildStageVoice`]
 
 #### Defined in
 
-[src/commands/options/channel.ts:4](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/options/channel.ts#L4)
+[src/commands/options/channel.ts:4](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/commands/options/channel.ts#L4)
 
 ___
 
@@ -331,4 +345,4 @@ ___
 
 #### Defined in
 
-[src/commands/permissions/PermissionBits.ts:1](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/commands/permissions/PermissionBits.ts#L1)
+[src/commands/permissions/PermissionBits.ts:1](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/commands/permissions/PermissionBits.ts#L1)

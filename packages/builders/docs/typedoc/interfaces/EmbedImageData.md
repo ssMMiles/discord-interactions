@@ -31,7 +31,7 @@ Omit.height
 
 #### Defined in
 
-node_modules/discord-api-types/payloads/v10/channel.d.ts:870
+node_modules/discord-api-types/payloads/v10/channel.d.ts:1020
 
 ___
 
@@ -43,7 +43,7 @@ The proxy URL for the image
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:28](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/builders/src/responses/EmbedBuilder.ts#L28)
+[src/responses/EmbedBuilder.ts:28](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/responses/EmbedBuilder.ts#L28)
 
 ___
 
@@ -59,7 +59,7 @@ Omit.url
 
 #### Defined in
 
-node_modules/discord-api-types/payloads/v10/channel.d.ts:862
+node_modules/discord-api-types/payloads/v10/channel.d.ts:1012
 
 ___
 
@@ -75,4 +75,4 @@ Omit.width
 
 #### Defined in
 
-node_modules/discord-api-types/payloads/v10/channel.d.ts:874
+node_modules/discord-api-types/payloads/v10/channel.d.ts:1024

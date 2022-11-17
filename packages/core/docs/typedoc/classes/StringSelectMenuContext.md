@@ -1,6 +1,6 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / ButtonContext
+[@discord-interactions/core](../README.md) / [Exports](../modules.md) / StringSelectMenuContext
 
-# Class: ButtonContext<S\>
+# Class: StringSelectMenuContext<S\>
 
 ## Type parameters
 
@@ -10,59 +10,60 @@
 
 ## Hierarchy
 
-- `BaseComponentContext`<`S`, `APIMessageComponentButtonInteraction`\>
+- `BaseSelectMenuContext`<`S`, `SelectMenuDataType`\>
 
-  ↳ **`ButtonContext`**
+  ↳ **`StringSelectMenuContext`**
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](ButtonContext.md#constructor)
+- [constructor](StringSelectMenuContext.md#constructor)
 
 ### Properties
 
-- [allowExpired](ButtonContext.md#allowexpired)
-- [app](ButtonContext.md#app)
-- [app\_permissions](ButtonContext.md#app_permissions)
-- [channelId](ButtonContext.md#channelid)
-- [guildId](ButtonContext.md#guildid)
-- [guildLocale](ButtonContext.md#guildlocale)
-- [id](ButtonContext.md#id)
-- [interactionId](ButtonContext.md#interactionid)
-- [isDM](ButtonContext.md#isdm)
-- [locale](ButtonContext.md#locale)
-- [member](ButtonContext.md#member)
-- [message](ButtonContext.md#message)
-- [parentCommand](ButtonContext.md#parentcommand)
-- [raw](ButtonContext.md#raw)
-- [receivedAt](ButtonContext.md#receivedat)
-- [signedAt](ButtonContext.md#signedat)
-- [state](ButtonContext.md#state)
-- [user](ButtonContext.md#user)
+- [allowExpired](StringSelectMenuContext.md#allowexpired)
+- [app](StringSelectMenuContext.md#app)
+- [app\_permissions](StringSelectMenuContext.md#app_permissions)
+- [channelId](StringSelectMenuContext.md#channelid)
+- [guildId](StringSelectMenuContext.md#guildid)
+- [guildLocale](StringSelectMenuContext.md#guildlocale)
+- [id](StringSelectMenuContext.md#id)
+- [interactionId](StringSelectMenuContext.md#interactionid)
+- [isDM](StringSelectMenuContext.md#isdm)
+- [locale](StringSelectMenuContext.md#locale)
+- [member](StringSelectMenuContext.md#member)
+- [message](StringSelectMenuContext.md#message)
+- [parentCommand](StringSelectMenuContext.md#parentcommand)
+- [raw](StringSelectMenuContext.md#raw)
+- [receivedAt](StringSelectMenuContext.md#receivedat)
+- [signedAt](StringSelectMenuContext.md#signedat)
+- [state](StringSelectMenuContext.md#state)
+- [user](StringSelectMenuContext.md#user)
+- [values](StringSelectMenuContext.md#values)
 
 ### Accessors
 
-- [expired](ButtonContext.md#expired)
+- [expired](StringSelectMenuContext.md#expired)
 
 ### Methods
 
-- [createComponent](ButtonContext.md#createcomponent)
-- [createGlobalComponent](ButtonContext.md#createglobalcomponent)
-- [decorate](ButtonContext.md#decorate)
-- [defer](ButtonContext.md#defer)
-- [delete](ButtonContext.md#delete)
-- [edit](ButtonContext.md#edit)
-- [fetchState](ButtonContext.md#fetchstate)
-- [rawReply](ButtonContext.md#rawreply)
-- [reply](ButtonContext.md#reply)
-- [send](ButtonContext.md#send)
+- [createComponent](StringSelectMenuContext.md#createcomponent)
+- [createGlobalComponent](StringSelectMenuContext.md#createglobalcomponent)
+- [decorate](StringSelectMenuContext.md#decorate)
+- [defer](StringSelectMenuContext.md#defer)
+- [delete](StringSelectMenuContext.md#delete)
+- [edit](StringSelectMenuContext.md#edit)
+- [fetchState](StringSelectMenuContext.md#fetchstate)
+- [rawReply](StringSelectMenuContext.md#rawreply)
+- [reply](StringSelectMenuContext.md#reply)
+- [send](StringSelectMenuContext.md#send)
 
 ## Constructors
 
 ### constructor
 
-• **new ButtonContext**<`S`\>(`manager`, `interaction`, `timestamps`, `responseCallback`)
+• **new StringSelectMenuContext**<`S`\>(`manager`, `interaction`, `timestamps`, `responseCallback`)
 
 #### Type parameters
 
@@ -75,15 +76,15 @@
 | Name | Type |
 | :------ | :------ |
 | `manager` | [`DiscordApplication`](DiscordApplication.md) |
-| `interaction` | `APIMessageComponentButtonInteraction` |
+| `interaction` | `SelectMenuInteraction`<`APIMessageStringSelectInteractionData`\> |
 | `timestamps` | `Object` |
 | `timestamps.received` | `Date` |
 | `timestamps.signature` | `Date` |
 | `responseCallback` | [`ResponseCallback`](../modules.md#responsecallback)<[`MessageUpdateResponse`](../modules.md#messageupdateresponse)\> |
 
-#### Inherited from
+#### Overrides
 
-BaseComponentContext<S, APIMessageComponentButtonInteraction\>.constructor
+BaseSelectMenuContext&lt;S, SelectMenuDataType\&gt;.constructor
 
 ## Properties
 
@@ -93,7 +94,7 @@ BaseComponentContext<S, APIMessageComponentButtonInteraction\>.constructor
 
 #### Inherited from
 
-BaseComponentContext.allowExpired
+BaseSelectMenuContext.allowExpired
 
 #### Defined in
 
@@ -107,7 +108,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.app
+BaseSelectMenuContext.app
 
 #### Defined in
 
@@ -121,7 +122,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.app\_permissions
+BaseSelectMenuContext.app\_permissions
 
 #### Defined in
 
@@ -135,7 +136,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.channelId
+BaseSelectMenuContext.channelId
 
 #### Defined in
 
@@ -149,7 +150,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.guildId
+BaseSelectMenuContext.guildId
 
 #### Defined in
 
@@ -163,7 +164,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.guildLocale
+BaseSelectMenuContext.guildLocale
 
 #### Defined in
 
@@ -177,7 +178,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.id
+BaseSelectMenuContext.id
 
 #### Defined in
 
@@ -191,7 +192,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.interactionId
+BaseSelectMenuContext.interactionId
 
 #### Defined in
 
@@ -205,7 +206,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.isDM
+BaseSelectMenuContext.isDM
 
 #### Defined in
 
@@ -219,7 +220,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.locale
+BaseSelectMenuContext.locale
 
 #### Defined in
 
@@ -233,7 +234,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.member
+BaseSelectMenuContext.member
 
 #### Defined in
 
@@ -247,7 +248,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.message
+BaseSelectMenuContext.message
 
 #### Defined in
 
@@ -261,7 +262,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.parentCommand
+BaseSelectMenuContext.parentCommand
 
 #### Defined in
 
@@ -271,11 +272,11 @@ ___
 
 ### raw
 
-• `Optional` **raw**: `APIMessageComponentButtonInteraction`
+• `Optional` **raw**: `SelectMenuInteraction`<`APIMessageStringSelectInteractionData`\>
 
 #### Inherited from
 
-BaseComponentContext.raw
+BaseSelectMenuContext.raw
 
 #### Defined in
 
@@ -289,7 +290,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.receivedAt
+BaseSelectMenuContext.receivedAt
 
 #### Defined in
 
@@ -303,7 +304,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.signedAt
+BaseSelectMenuContext.signedAt
 
 #### Defined in
 
@@ -317,7 +318,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.state
+BaseSelectMenuContext.state
 
 #### Defined in
 
@@ -331,11 +332,25 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.user
+BaseSelectMenuContext.user
 
 #### Defined in
 
 [app/contexts/Base.ts:50](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/Base.ts#L50)
+
+___
+
+### values
+
+• **values**: `string`[]
+
+#### Overrides
+
+BaseSelectMenuContext.values
+
+#### Defined in
+
+[app/contexts/components/select_menus/StringSelectMenuContext.ts:8](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/components/select_menus/StringSelectMenuContext.ts#L8)
 
 ## Accessors
 
@@ -349,7 +364,7 @@ BaseComponentContext.user
 
 #### Inherited from
 
-BaseComponentContext.expired
+BaseSelectMenuContext.expired
 
 ## Methods
 
@@ -377,7 +392,7 @@ BaseComponentContext.expired
 
 #### Inherited from
 
-BaseComponentContext.createComponent
+BaseSelectMenuContext.createComponent
 
 ___
 
@@ -405,7 +420,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.createGlobalComponent
+BaseSelectMenuContext.createGlobalComponent
 
 ___
 
@@ -426,7 +441,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.decorate
+BaseSelectMenuContext.decorate
 
 ___
 
@@ -440,7 +455,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.defer
+BaseSelectMenuContext.defer
 
 ___
 
@@ -454,7 +469,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.delete
+BaseSelectMenuContext.delete
 
 ___
 
@@ -474,7 +489,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.edit
+BaseSelectMenuContext.edit
 
 ___
 
@@ -488,7 +503,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.fetchState
+BaseSelectMenuContext.fetchState
 
 ___
 
@@ -508,7 +523,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.rawReply
+BaseSelectMenuContext.rawReply
 
 ___
 
@@ -528,7 +543,7 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.reply
+BaseSelectMenuContext.reply
 
 ___
 
@@ -548,4 +563,4 @@ ___
 
 #### Inherited from
 
-BaseComponentContext.send
+BaseSelectMenuContext.send

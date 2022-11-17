@@ -13,6 +13,7 @@
 - [AutocompleteContext](classes/AutocompleteContext.md)
 - [Button](classes/Button.md)
 - [ButtonContext](classes/ButtonContext.md)
+- [ChannelSelectMenuContext](classes/ChannelSelectMenuContext.md)
 - [CommandGroup](classes/CommandGroup.md)
 - [CommandManager](classes/CommandManager.md)
 - [ComponentManager](classes/ComponentManager.md)
@@ -25,6 +26,7 @@
 - [InteractionResponseAlreadySent](classes/InteractionResponseAlreadySent.md)
 - [InteractionStateExpired](classes/InteractionStateExpired.md)
 - [InteractionTokenExpired](classes/InteractionTokenExpired.md)
+- [MentionableSelectMenuContext](classes/MentionableSelectMenuContext.md)
 - [MessageCommand](classes/MessageCommand.md)
 - [MessageCommandContext](classes/MessageCommandContext.md)
 - [Modal](classes/Modal.md)
@@ -34,16 +36,18 @@
 - [RegisteredMessageCommand](classes/RegisteredMessageCommand.md)
 - [RegisteredSlashCommand](classes/RegisteredSlashCommand.md)
 - [RegisteredUserCommand](classes/RegisteredUserCommand.md)
-- [SelectMenu](classes/SelectMenu.md)
-- [SelectMenuContext](classes/SelectMenuContext.md)
+- [RoleSelectMenuContext](classes/RoleSelectMenuContext.md)
 - [SlashCommand](classes/SlashCommand.md)
 - [SlashCommandContext](classes/SlashCommandContext.md)
+- [StringSelectMenu](classes/StringSelectMenu.md)
+- [StringSelectMenuContext](classes/StringSelectMenuContext.md)
 - [UnauthorizedInteraction](classes/UnauthorizedInteraction.md)
 - [UnknownApplicationCommandType](classes/UnknownApplicationCommandType.md)
 - [UnknownComponentType](classes/UnknownComponentType.md)
 - [UnknownInteractionType](classes/UnknownInteractionType.md)
 - [UserCommand](classes/UserCommand.md)
 - [UserCommandContext](classes/UserCommandContext.md)
+- [UserSelectMenuContext](classes/UserSelectMenuContext.md)
 - [WebhookClient](classes/WebhookClient.md)
 
 ### Interfaces
@@ -60,6 +64,7 @@
 
 ### Type Aliases
 
+- [ApplicationCommandContext](modules.md#applicationcommandcontext)
 - [AutocompleteResponse](modules.md#autocompleteresponse)
 - [AutocompleteSupportedOptions](modules.md#autocompletesupportedoptions)
 - [ChannelMessageResponse](modules.md#channelmessageresponse)
@@ -80,6 +85,7 @@
 - [PossibleInteractionErrors](modules.md#possibleinteractionerrors)
 - [RegisteredCommand](modules.md#registeredcommand)
 - [ResponseCallback](modules.md#responsecallback)
+- [SelectMenuContext](modules.md#selectmenucontext)
 
 ### Functions
 
@@ -90,13 +96,23 @@
 
 ## Type Aliases
 
+### ApplicationCommandContext
+
+Ƭ **ApplicationCommandContext**: [`SlashCommandContext`](classes/SlashCommandContext.md) \| [`UserCommandContext`](classes/UserCommandContext.md) \| [`MessageCommandContext`](classes/MessageCommandContext.md)
+
+#### Defined in
+
+[app/contexts/index.ts:31](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/index.ts#L31)
+
+___
+
 ### AutocompleteResponse
 
 Ƭ **AutocompleteResponse**: `APIApplicationCommandAutocompleteResponse`
 
 #### Defined in
 
-[app/contexts/response-types.ts:23](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/response-types.ts#L23)
+[app/contexts/response-types.ts:23](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/response-types.ts#L23)
 
 ___
 
@@ -106,7 +122,7 @@ ___
 
 #### Defined in
 
-[app/contexts/ApplicationCommand/AutocompleteContext.ts:16](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ApplicationCommand/AutocompleteContext.ts#L16)
+[app/contexts/application_commands/AutocompleteContext.ts:16](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L16)
 
 ___
 
@@ -116,7 +132,7 @@ ___
 
 #### Defined in
 
-[app/contexts/response-types.ts:17](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/response-types.ts#L17)
+[app/contexts/response-types.ts:17](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/response-types.ts#L17)
 
 ___
 
@@ -126,27 +142,33 @@ ___
 
 #### Defined in
 
-[app/commands/index.ts:12](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/index.ts#L12)
+[app/commands/index.ts:12](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/index.ts#L12)
 
 ___
 
 ### Component
 
-Ƭ **Component**: [`Button`](classes/Button.md) \| [`SelectMenu`](classes/SelectMenu.md)
+Ƭ **Component**: [`Button`](classes/Button.md) \| `SelectMenu`
 
 #### Defined in
 
-[app/components/index.ts:8](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/components/index.ts#L8)
+[app/components/index.ts:8](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/components/index.ts#L8)
 
 ___
 
 ### ComponentContext
 
-Ƭ **ComponentContext**: [`ButtonContext`](classes/ButtonContext.md) \| [`SelectMenuContext`](classes/SelectMenuContext.md)
+Ƭ **ComponentContext**<`S`\>: [`ButtonContext`](classes/ButtonContext.md)<`S`\> \| [`SelectMenuContext`](modules.md#selectmenucontext)<`S`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | `never` |
 
 #### Defined in
 
-[app/contexts/ComponentContext.ts:98](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/ComponentContext.ts#L98)
+[app/contexts/index.ts:33](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/index.ts#L33)
 
 ___
 
@@ -163,14 +185,14 @@ ___
 | `command.slash` | [`SlashCommandContext`](classes/SlashCommandContext.md) |
 | `command.user` | [`UserCommandContext`](classes/UserCommandContext.md) |
 | `component.button` | [`ButtonContext`](classes/ButtonContext.md) |
-| `component.selectMenu` | [`SelectMenuContext`](classes/SelectMenuContext.md) |
+| `component.selectMenu` | [`SelectMenuContext`](modules.md#selectmenucontext) |
 | `interaction` | [`InteractionContext`](modules.md#interactioncontext) |
 | `modal` | [`ModalSubmitContext`](classes/ModalSubmitContext.md) |
 | `ping` | [`PingContext`](classes/PingContext.md) |
 
 #### Defined in
 
-[app/handlers/Hooks.ts:13](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/handlers/Hooks.ts#L13)
+[app/handlers/Hooks.ts:13](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/handlers/Hooks.ts#L13)
 
 ___
 
@@ -180,7 +202,7 @@ ___
 
 #### Defined in
 
-[app/commands/index.ts:11](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/index.ts#L11)
+[app/commands/index.ts:11](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/index.ts#L11)
 
 ___
 
@@ -190,7 +212,7 @@ ___
 
 #### Defined in
 
-[app/commands/MessageCommand.ts:7](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/MessageCommand.ts#L7)
+[app/commands/MessageCommand.ts:7](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/MessageCommand.ts#L7)
 
 ___
 
@@ -200,7 +222,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:12](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/CommandGroup.ts#L12)
+[app/commands/CommandGroup.ts:12](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/CommandGroup.ts#L12)
 
 ___
 
@@ -210,7 +232,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:14](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/CommandGroup.ts#L14)
+[app/commands/CommandGroup.ts:14](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/CommandGroup.ts#L14)
 
 ___
 
@@ -220,17 +242,17 @@ ___
 
 #### Defined in
 
-[app/commands/UserCommand.ts:8](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/UserCommand.ts#L8)
+[app/commands/UserCommand.ts:8](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/UserCommand.ts#L8)
 
 ___
 
 ### InteractionContext
 
-Ƭ **InteractionContext**: [`PingContext`](classes/PingContext.md) \| [`SlashCommandContext`](classes/SlashCommandContext.md) \| [`UserCommandContext`](classes/UserCommandContext.md) \| [`MessageCommandContext`](classes/MessageCommandContext.md) \| [`AutocompleteContext`](classes/AutocompleteContext.md) \| [`ButtonContext`](classes/ButtonContext.md) \| [`SelectMenuContext`](classes/SelectMenuContext.md) \| [`ModalSubmitContext`](classes/ModalSubmitContext.md)
+Ƭ **InteractionContext**: [`ApplicationCommandContext`](modules.md#applicationcommandcontext) \| [`ComponentContext`](modules.md#componentcontext) \| [`AutocompleteContext`](classes/AutocompleteContext.md) \| [`ModalSubmitContext`](classes/ModalSubmitContext.md) \| [`PingContext`](classes/PingContext.md)
 
 #### Defined in
 
-[app/contexts/index.ts:16](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/index.ts#L16)
+[app/contexts/index.ts:24](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/index.ts#L24)
 
 ___
 
@@ -249,14 +271,14 @@ Hooks to be executed on receiving an interaction. These are executed before comm
 | `command.slash` | (`ctx`: [`SlashCommandContext`](classes/SlashCommandContext.md)) => `Promise`<`void` \| ``true``\>[] | - |
 | `command.user` | (`ctx`: [`UserCommandContext`](classes/UserCommandContext.md)) => `Promise`<`void` \| ``true``\>[] | - |
 | `component.button` | (`ctx`: [`ButtonContext`](classes/ButtonContext.md)) => `Promise`<`void` \| ``true``\>[] | - |
-| `component.selectMenu` | (`ctx`: [`SelectMenuContext`](classes/SelectMenuContext.md)) => `Promise`<`void` \| ``true``\>[] | - |
+| `component.selectMenu` | (`ctx`: [`SelectMenuContext`](modules.md#selectmenucontext)) => `Promise`<`void` \| ``true``\>[] | - |
 | `interaction` | (`ctx`: [`InteractionContext`](modules.md#interactioncontext)) => `Promise`<`void` \| ``true``\>[] | This hook runs first for all types of interaction. |
 | `modal` | (`ctx`: [`ModalSubmitContext`](classes/ModalSubmitContext.md)) => `Promise`<`void` \| ``true``\>[] | - |
 | `ping` | (`context`: [`PingContext`](classes/PingContext.md)) => `Promise`<`void` \| ``true``\>[] | - |
 
 #### Defined in
 
-[app/handlers/Hooks.ts:32](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/handlers/Hooks.ts#L32)
+[app/handlers/Hooks.ts:32](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/handlers/Hooks.ts#L32)
 
 ___
 
@@ -274,7 +296,7 @@ ___
 
 #### Defined in
 
-[app/managers/CommandManager.ts:36](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/managers/CommandManager.ts#L36)
+[app/managers/CommandManager.ts:36](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/managers/CommandManager.ts#L36)
 
 ___
 
@@ -284,7 +306,7 @@ ___
 
 #### Defined in
 
-[app/contexts/response-types.ts:11](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/response-types.ts#L11)
+[app/contexts/response-types.ts:11](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/response-types.ts#L11)
 
 ___
 
@@ -294,7 +316,7 @@ ___
 
 #### Defined in
 
-[app/contexts/response-types.ts:25](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/contexts/response-types.ts#L25)
+[app/contexts/response-types.ts:25](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/response-types.ts#L25)
 
 ___
 
@@ -304,7 +326,7 @@ ___
 
 #### Defined in
 
-[util/errors.ts:92](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/util/errors.ts#L92)
+[util/errors.ts:92](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/util/errors.ts#L92)
 
 ___
 
@@ -314,7 +336,7 @@ ___
 
 #### Defined in
 
-[app/commands/index.ts:14](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/commands/index.ts#L14)
+[app/commands/index.ts:14](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/index.ts#L14)
 
 ___
 
@@ -344,7 +366,23 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:47](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/app/DiscordApplication.ts#L47)
+[app/DiscordApplication.ts:47](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/DiscordApplication.ts#L47)
+
+___
+
+### SelectMenuContext
+
+Ƭ **SelectMenuContext**<`S`\>: [`StringSelectMenuContext`](classes/StringSelectMenuContext.md)<`S`\> \| [`UserSelectMenuContext`](classes/UserSelectMenuContext.md)<`S`\> \| [`RoleSelectMenuContext`](classes/RoleSelectMenuContext.md)<`S`\> \| [`ChannelSelectMenuContext`](classes/ChannelSelectMenuContext.md)<`S`\> \| [`MentionableSelectMenuContext`](classes/MentionableSelectMenuContext.md)<`S`\>
+
+#### Type parameters
+
+| Name | Type |
+| :------ | :------ |
+| `S` | `never` |
+
+#### Defined in
+
+[app/contexts/index.ts:34](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/contexts/index.ts#L34)
 
 ## Functions
 

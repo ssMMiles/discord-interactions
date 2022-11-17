@@ -42,4 +42,4 @@ Error.constructor
 
 #### Defined in
 
-[util/errors.ts:5](https://github.com/ssMMiles/discord-interactions/blob/41cab1d/packages/core/src/util/errors.ts#L5)
+[util/errors.ts:5](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/util/errors.ts#L5)
