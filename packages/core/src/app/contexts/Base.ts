@@ -74,6 +74,11 @@ export class BaseInteractionContext<
 
     this.isDM = interaction.user !== undefined;
 
+    if (!this.isDM) {
+      this.guildId = interaction.guild_id;
+      this.channelId = interaction.channel_id;
+    }
+
     this.user = (this.isDM ? interaction.user : interaction?.member?.user) as APIUser;
     this.member = interaction.member;
 
