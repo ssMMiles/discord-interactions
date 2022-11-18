@@ -42,7 +42,7 @@ Create a new component manager, with an optional cache.
 
 #### Defined in
 
-[app/managers/ComponentManager.ts:14](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/managers/ComponentManager.ts#L14)
+[app/managers/ComponentManager.ts:14](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/managers/ComponentManager.ts#L14)
 
 ## Methods
 

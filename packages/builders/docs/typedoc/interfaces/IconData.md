@@ -19,7 +19,7 @@ The URL of the icon
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:9](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/responses/EmbedBuilder.ts#L9)
+[src/responses/EmbedBuilder.ts:9](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/builders/src/responses/EmbedBuilder.ts#L9)
 
 ___
 
@@ -31,4 +31,4 @@ The proxy URL of the icon
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/responses/EmbedBuilder.ts#L13)
+[src/responses/EmbedBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/builders/src/responses/EmbedBuilder.ts#L13)

@@ -57,4 +57,4 @@ Error.constructor
 
 #### Defined in
 
-[util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/util/errors.ts#L15)
+[util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/util/errors.ts#L15)

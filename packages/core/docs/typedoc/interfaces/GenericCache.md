@@ -34,7 +34,7 @@ Cache used to store component states. Redis is recommended.
 
 #### Defined in
 
-[app/DiscordApplication.ts:17](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/DiscordApplication.ts#L17)
+[app/DiscordApplication.ts:17](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/DiscordApplication.ts#L17)
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:18](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/DiscordApplication.ts#L18)
+[app/DiscordApplication.ts:18](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/DiscordApplication.ts#L18)
 
 ___
 
@@ -72,4 +72,4 @@ Default Time To Live for cache entries, defaults to 900.
 
 #### Defined in
 
-[app/DiscordApplication.ts:15](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/DiscordApplication.ts#L15)
+[app/DiscordApplication.ts:15](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/DiscordApplication.ts#L15)

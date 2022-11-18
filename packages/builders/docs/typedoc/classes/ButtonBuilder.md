@@ -60,7 +60,7 @@ ButtonBuilderBase.data
 
 #### Defined in
 
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/builders/src/components/ComponentBuilderBase.ts#L19)
 
 ## Methods
 

@@ -56,7 +56,7 @@ Manager for your application's commands. Lets you register fully handled command
 
 #### Defined in
 
-[app/managers/CommandManager.ts:46](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/managers/CommandManager.ts#L46)
+[app/managers/CommandManager.ts:46](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/managers/CommandManager.ts#L46)
 
 ___
 
@@ -66,7 +66,7 @@ ___
 
 #### Defined in
 
-[app/managers/CommandManager.ts:47](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/managers/CommandManager.ts#L47)
+[app/managers/CommandManager.ts:47](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/managers/CommandManager.ts#L47)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[app/managers/CommandManager.ts:48](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/managers/CommandManager.ts#L48)
+[app/managers/CommandManager.ts:48](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/managers/CommandManager.ts#L48)
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 #### Defined in
 
-[app/managers/CommandManager.ts:50](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/managers/CommandManager.ts#L50)
+[app/managers/CommandManager.ts:50](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/managers/CommandManager.ts#L50)
 
 ___
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-[app/managers/CommandManager.ts:53](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/managers/CommandManager.ts#L53)
+[app/managers/CommandManager.ts:53](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/managers/CommandManager.ts#L53)
 
 ___
 
@@ -106,7 +106,7 @@ ___
 
 #### Defined in
 
-[app/managers/CommandManager.ts:51](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/managers/CommandManager.ts#L51)
+[app/managers/CommandManager.ts:51](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/managers/CommandManager.ts#L51)
 
 ## Methods
 

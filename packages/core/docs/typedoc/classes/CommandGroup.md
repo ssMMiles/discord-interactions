@@ -48,7 +48,7 @@
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:24](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/CommandGroup.ts#L24)
+[app/commands/CommandGroup.ts:24](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/commands/CommandGroup.ts#L24)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:34](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/CommandGroup.ts#L34)
+[app/commands/CommandGroup.ts:34](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/commands/CommandGroup.ts#L34)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:25](https://github.com/ssMMiles/discord-interactions/blob/e15756f/packages/core/src/app/commands/CommandGroup.ts#L25)
+[app/commands/CommandGroup.ts:25](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/commands/CommandGroup.ts#L25)
 
 ## Methods
 
