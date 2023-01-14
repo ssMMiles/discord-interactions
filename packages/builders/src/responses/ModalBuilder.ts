@@ -8,12 +8,17 @@ import type { ActionRowBuilder, ModalActionRowComponentBuilders } from "../compo
 export class ModalBuilder {
   public data: Partial<APIModalInteractionResponseCallbackData> = { components: [] };
 
-  public constructor(data?: APIModalInteractionResponseCallbackData | string) {
-    if (data) {
-      if (typeof data === "string") return this.setTitle(data);
+  public constructor(id: APIModalInteractionResponseCallbackData | string, title?: string);
+  public constructor(data?: APIModalInteractionResponseCallbackData | string, title?: string) {
+    if (typeof data === "string") return this.setCustomId(data);
+    if (data) this.data = data;
 
-      this.data = data;
-    }
+    if (title) this.setTitle(title);
+  }
+
+  public setCustomId(id: string): this {
+    this.data.custom_id = id;
+    return this;
   }
 
   public setTitle(title: string): this {
