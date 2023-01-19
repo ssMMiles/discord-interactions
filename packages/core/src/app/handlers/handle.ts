@@ -178,7 +178,9 @@ function getExecutionContext(
 
   return [
     context,
-    app.hooks[hook as keyof InteractionHooks] as ((context: InteractionContext) => Promise<void | true>)[]
+    [...app.hooks["interaction"], ...app.hooks[hook as keyof InteractionHooks]] as ((
+      context: InteractionContext
+    ) => Promise<void | true>)[]
   ];
 }
 
@@ -188,10 +190,7 @@ export async function _handleInteraction(
   timestamps: { signature: Date; received: Date },
   responseCallback: ResponseCallback
 ): Promise<InteractionContext> {
-  const executionContext = getExecutionContext(this, interaction, timestamps, responseCallback);
-
-  // eslint-disable-next-line prefer-const
-  let [context, hooks] = executionContext;
+  let [context, hooks] = getExecutionContext(this, interaction, timestamps, responseCallback);
 
   for (const hook of hooks) {
     const result = await hook(context);
