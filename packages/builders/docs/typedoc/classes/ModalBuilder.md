@@ -16,6 +16,7 @@
 
 - [addComponents](ModalBuilder.md#addcomponents)
 - [setComponents](ModalBuilder.md#setcomponents)
+- [setCustomId](ModalBuilder.md#setcustomid)
 - [setTitle](ModalBuilder.md#settitle)
 - [toJSON](ModalBuilder.md#tojson)
 
@@ -23,13 +24,14 @@
 
 ### constructor
 
-• **new ModalBuilder**(`data?`)
+• **new ModalBuilder**(`id`, `title?`)
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `data?` | `string` \| `APIModalInteractionResponseCallbackData` |
+| `id` | `string` \| `APIModalInteractionResponseCallbackData` |
+| `title?` | `string` |
 
 ## Properties
 
@@ -39,7 +41,7 @@
 
 #### Defined in
 
-[src/responses/ModalBuilder.ts:9](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/builders/src/responses/ModalBuilder.ts#L9)
+[src/responses/ModalBuilder.ts:9](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/responses/ModalBuilder.ts#L9)
 
 ## Methods
 
@@ -68,6 +70,22 @@ ___
 | Name | Type | Default value |
 | :------ | :------ | :------ |
 | `components` | `APIActionRowComponent`<`APITextInputComponent`\>[] | `[]` |
+
+#### Returns
+
+[`ModalBuilder`](ModalBuilder.md)
+
+___
+
+### setCustomId
+
+▸ **setCustomId**(`id`): [`ModalBuilder`](ModalBuilder.md)
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `id` | `string` |
 
 #### Returns
 

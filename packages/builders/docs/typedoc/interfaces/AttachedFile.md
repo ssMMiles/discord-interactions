@@ -18,7 +18,7 @@
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:20](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/builders/src/responses/MessageBuilder.ts#L20)
+[src/responses/MessageBuilder.ts:20](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/responses/MessageBuilder.ts#L20)
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/builders/src/responses/MessageBuilder.ts#L18)
+[src/responses/MessageBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/responses/MessageBuilder.ts#L18)
 
 ___
 
@@ -38,4 +38,4 @@ ___
 
 #### Defined in
 
-[src/responses/MessageBuilder.ts:17](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/builders/src/responses/MessageBuilder.ts#L17)
+[src/responses/MessageBuilder.ts:17](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/responses/MessageBuilder.ts#L17)

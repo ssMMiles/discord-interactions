@@ -102,7 +102,7 @@
 
 #### Defined in
 
-[app/contexts/index.ts:31](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/contexts/index.ts#L31)
+[app/contexts/index.ts:31](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/index.ts#L31)
 
 ___
 
@@ -112,7 +112,7 @@ ___
 
 #### Defined in
 
-[app/contexts/response-types.ts:23](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/contexts/response-types.ts#L23)
+[app/contexts/response-types.ts:23](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/response-types.ts#L23)
 
 ___
 
@@ -122,7 +122,7 @@ ___
 
 #### Defined in
 
-[app/contexts/application_commands/AutocompleteContext.ts:16](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L16)
+[app/contexts/application_commands/AutocompleteContext.ts:16](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L16)
 
 ___
 
@@ -132,7 +132,7 @@ ___
 
 #### Defined in
 
-[app/contexts/response-types.ts:17](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/contexts/response-types.ts#L17)
+[app/contexts/response-types.ts:17](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/response-types.ts#L17)
 
 ___
 
@@ -142,7 +142,7 @@ ___
 
 #### Defined in
 
-[app/commands/index.ts:12](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/commands/index.ts#L12)
+[app/commands/index.ts:12](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/commands/index.ts#L12)
 
 ___
 
@@ -152,7 +152,7 @@ ___
 
 #### Defined in
 
-[app/components/index.ts:8](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/components/index.ts#L8)
+[app/components/index.ts:8](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/components/index.ts#L8)
 
 ___
 
@@ -168,7 +168,7 @@ ___
 
 #### Defined in
 
-[app/contexts/index.ts:33](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/contexts/index.ts#L33)
+[app/contexts/index.ts:33](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/index.ts#L33)
 
 ___
 
@@ -192,7 +192,7 @@ ___
 
 #### Defined in
 
-[app/handlers/Hooks.ts:13](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/handlers/Hooks.ts#L13)
+[app/handlers/Hooks.ts:13](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/handlers/Hooks.ts#L13)
 
 ___
 
@@ -202,7 +202,7 @@ ___
 
 #### Defined in
 
-[app/commands/index.ts:11](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/commands/index.ts#L11)
+[app/commands/index.ts:11](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/commands/index.ts#L11)
 
 ___
 
@@ -212,7 +212,7 @@ ___
 
 #### Defined in
 
-[app/commands/MessageCommand.ts:7](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/commands/MessageCommand.ts#L7)
+[app/commands/MessageCommand.ts:7](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/commands/MessageCommand.ts#L7)
 
 ___
 
@@ -222,7 +222,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:12](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/commands/CommandGroup.ts#L12)
+[app/commands/CommandGroup.ts:12](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/commands/CommandGroup.ts#L12)
 
 ___
 
@@ -232,7 +232,7 @@ ___
 
 #### Defined in
 
-[app/commands/CommandGroup.ts:14](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/commands/CommandGroup.ts#L14)
+[app/commands/CommandGroup.ts:14](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/commands/CommandGroup.ts#L14)
 
 ___
 
@@ -242,7 +242,7 @@ ___
 
 #### Defined in
 
-[app/commands/UserCommand.ts:8](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/commands/UserCommand.ts#L8)
+[app/commands/UserCommand.ts:8](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/commands/UserCommand.ts#L8)
 
 ___
 
@@ -252,7 +252,7 @@ ___
 
 #### Defined in
 
-[app/contexts/index.ts:24](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/contexts/index.ts#L24)
+[app/contexts/index.ts:24](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/index.ts#L24)
 
 ___
 
@@ -278,7 +278,7 @@ Hooks to be executed on receiving an interaction. These are executed before comm
 
 #### Defined in
 
-[app/handlers/Hooks.ts:32](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/handlers/Hooks.ts#L32)
+[app/handlers/Hooks.ts:32](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/handlers/Hooks.ts#L32)
 
 ___
 
@@ -296,7 +296,7 @@ ___
 
 #### Defined in
 
-[app/managers/CommandManager.ts:36](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/managers/CommandManager.ts#L36)
+[app/managers/CommandManager.ts:36](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/managers/CommandManager.ts#L36)
 
 ___
 
@@ -306,7 +306,7 @@ ___
 
 #### Defined in
 
-[app/contexts/response-types.ts:11](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/contexts/response-types.ts#L11)
+[app/contexts/response-types.ts:11](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/response-types.ts#L11)
 
 ___
 
@@ -316,7 +316,7 @@ ___
 
 #### Defined in
 
-[app/contexts/response-types.ts:25](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/contexts/response-types.ts#L25)
+[app/contexts/response-types.ts:25](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/response-types.ts#L25)
 
 ___
 
@@ -326,7 +326,7 @@ ___
 
 #### Defined in
 
-[util/errors.ts:92](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/util/errors.ts#L92)
+[util/errors.ts:92](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/util/errors.ts#L92)
 
 ___
 
@@ -336,7 +336,7 @@ ___
 
 #### Defined in
 
-[app/commands/index.ts:14](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/commands/index.ts#L14)
+[app/commands/index.ts:14](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/commands/index.ts#L14)
 
 ___
 
@@ -366,7 +366,7 @@ ___
 
 #### Defined in
 
-[app/DiscordApplication.ts:47](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/DiscordApplication.ts#L47)
+[app/DiscordApplication.ts:47](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/DiscordApplication.ts#L47)
 
 ___
 
@@ -382,7 +382,7 @@ ___
 
 #### Defined in
 
-[app/contexts/index.ts:34](https://github.com/ssMMiles/discord-interactions/blob/fae7bc7/packages/core/src/app/contexts/index.ts#L34)
+[app/contexts/index.ts:34](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/index.ts#L34)
 
 ## Functions
 
