@@ -1,10 +1,10 @@
 import { APIActionRowComponent, APIMessageActionRowComponent, ComponentType } from "discord-api-types/v10";
-import type { ButtonBuilder } from "./ButtonBuilder.js";
+import type { ButtonBuilderBase } from "./ButtonBuilder.js";
 import { ComponentBuilderBase } from "./ComponentBuilderBase.js";
 import { SelectMenuBuilders } from "./index.js";
 import type { TextInputBuilder } from "./TextInputBuilder.js";
 
-export type MessageActionRowComponentBuilders = ButtonBuilder | SelectMenuBuilders;
+export type MessageActionRowComponentBuilders = ButtonBuilderBase | SelectMenuBuilders;
 export type ModalActionRowComponentBuilders = TextInputBuilder;
 
 export type ComponentBuilders = MessageActionRowComponentBuilders | ModalActionRowComponentBuilders;

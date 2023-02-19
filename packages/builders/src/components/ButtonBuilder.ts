@@ -15,7 +15,7 @@ export enum ButtonStyle {
   Link = 5
 }
 
-abstract class ButtonBuilderBase extends ComponentBuilderBase<APIButtonComponent> {
+export abstract class ButtonBuilderBase extends ComponentBuilderBase<APIButtonComponent> {
   public constructor(data?: Partial<APIButtonComponent> | ButtonStyle, label?: string) {
     if (typeof data === "number") {
       super({ type: ComponentType.Button });
