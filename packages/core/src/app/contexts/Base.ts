@@ -135,10 +135,11 @@ export class BaseStatefulInteractionContext<
   ) {
     super(app, interaction, timestamps, responseCallback);
 
-    const custom_id = interaction.data.custom_id.split("|");
+    const custom_id = interaction.data.custom_id;
+    const id_border = custom_id.indexOf("|");
 
-    this.id = custom_id[0];
-    this.stateRef = custom_id[1] ?? "{}";
+    this.id = custom_id.substring(0, id_border);
+    this.stateRef = custom_id.substring(id_border + 1) ?? "{}";
 
     const builder = app.components.get(this.id);
     if (builder) this.allowExpired = builder.allowExpired;
