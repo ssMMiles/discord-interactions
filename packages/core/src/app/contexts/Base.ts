@@ -139,7 +139,7 @@ export class BaseStatefulInteractionContext<
     const id_border = custom_id.indexOf("|");
 
     this.id = custom_id.substring(0, id_border);
-    this.stateRef = custom_id.substring(id_border + 1) ?? "{}";
+    this.stateRef = id_border !== -1 ? custom_id.substring(id_border + 1) : "{}";
 
     const builder = app.components.get(this.id);
     if (builder) this.allowExpired = builder.allowExpired;
