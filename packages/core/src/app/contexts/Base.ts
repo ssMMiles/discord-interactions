@@ -138,7 +138,7 @@ export class BaseStatefulInteractionContext<
     const custom_id = interaction.data.custom_id;
     const id_border = custom_id.indexOf("|");
 
-    this.id = custom_id.substring(0, id_border);
+    this.id = id_border !== -1 ? custom_id.substring(0, id_border) : custom_id;
     this.stateRef = id_border !== -1 ? custom_id.substring(id_border + 1) : "{}";
 
     const builder = app.components.get(this.id);
