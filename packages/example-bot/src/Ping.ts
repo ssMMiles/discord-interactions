@@ -40,7 +40,7 @@ export class Ping implements ISlashCommand {
 
         ctx.reply(
           new MessageBuilder(new EmbedBuilder().setTitle(ctx.state.ping ? "Pong!" : "Ping!")).addComponents(
-            new ActionRowBuilder([await ctx.createComponent("pong", { ping: !ctx.state.ping })])
+            new ActionRowBuilder([await ctx.createComponent<ButtonBuilder>("pong", { ping: !ctx.state.ping })])
           )
         );
       }
