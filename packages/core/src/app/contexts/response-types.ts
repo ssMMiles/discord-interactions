@@ -10,6 +10,8 @@ import { FormData } from "formdata-node";
 
 export type MessageUpdateResponse =
   | APIModalInteractionResponse
+  | APIInteractionResponseChannelMessageWithSource
+  | APIInteractionResponseDeferredChannelMessageWithSource
   | APIInteractionResponseUpdateMessage
   | APIInteractionResponseDeferredMessageUpdate
   | FormData;

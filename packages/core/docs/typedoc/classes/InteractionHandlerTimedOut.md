@@ -46,4 +46,4 @@
 
 #### Defined in
 
-[util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/util/errors.ts#L15)
+[util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/util/errors.ts#L15)

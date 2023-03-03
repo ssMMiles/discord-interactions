@@ -62,7 +62,7 @@ SelectMenuBuilderBase.data
 
 #### Defined in
 
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/components/ComponentBuilderBase.ts#L19)
 
 ___
 
@@ -74,7 +74,7 @@ The options within this select menu
 
 #### Defined in
 
-[src/components/select_menus/StringSelectMenuBuilder.ts:12](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/components/select_menus/StringSelectMenuBuilder.ts#L12)
+[src/components/select_menus/StringSelectMenuBuilder.ts:12](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/components/select_menus/StringSelectMenuBuilder.ts#L12)
 
 ## Methods
 

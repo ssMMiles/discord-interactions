@@ -1,11 +1,12 @@
 import { MessageBuilder, ModalBuilder } from "@discord-interactions/builders";
 import type {
+  APIInteractionResponseChannelMessageWithSource,
   APIInteractionResponseUpdateMessage,
   APIMessage,
   APIMessageComponentInteraction,
   APIModalInteractionResponse
 } from "discord-api-types/v10";
-import { InteractionResponseType } from "discord-api-types/v10";
+import { InteractionResponseType, MessageFlags } from "discord-api-types/v10";
 import type { FormData } from "formdata-node";
 import { InteractionResponseAlreadySent, SimpleEmbed } from "../../../index.js";
 import { DiscordApplication, ResponseCallback } from "../../DiscordApplication.js";
@@ -37,7 +38,78 @@ export class BaseComponentContext<
     });
   }
 
+  deferFollowup(flags?: MessageFlags): Promise<void> {
+    if (this.replied) throw new InteractionResponseAlreadySent();
+
+    return this._reply({
+      type: InteractionResponseType.DeferredChannelMessageWithSource,
+      data: flags && {
+        flags
+      }
+    });
+  }
+
+  deferUpdate(): Promise<void> {
+    if (this.replied) throw new InteractionResponseAlreadySent();
+
+    return this._reply({
+      type: InteractionResponseType.DeferredMessageUpdate
+    });
+  }
+
   reply(
+    message:
+      | string
+      | MessageBuilder
+      | APIInteractionResponseUpdateMessage
+      | ModalBuilder
+      | APIModalInteractionResponse
+      | FormData
+  ): Promise<void> {
+    if (this.replied) throw new InteractionResponseAlreadySent();
+
+    if (typeof message === "string") message = SimpleEmbed(message);
+
+    if (message instanceof MessageBuilder)
+      message = message.toInteractionResponse(InteractionResponseType.UpdateMessage);
+
+    if (message instanceof ModalBuilder) {
+      message = {
+        type: InteractionResponseType.Modal,
+        data: message.toJSON()
+      };
+    }
+
+    return this._reply(message);
+  }
+
+  replyFollowup(
+    message:
+      | string
+      | MessageBuilder
+      | APIInteractionResponseChannelMessageWithSource
+      | ModalBuilder
+      | APIModalInteractionResponse
+      | FormData
+  ): Promise<void> {
+    if (this.replied) throw new InteractionResponseAlreadySent();
+
+    if (typeof message === "string") message = SimpleEmbed(message);
+
+    if (message instanceof MessageBuilder)
+      message = message.toInteractionResponse(InteractionResponseType.ChannelMessageWithSource);
+
+    if (message instanceof ModalBuilder) {
+      message = {
+        type: InteractionResponseType.Modal,
+        data: message.toJSON()
+      };
+    }
+
+    return this._reply(message);
+  }
+
+  replyUpdate(
     message:
       | string
       | MessageBuilder

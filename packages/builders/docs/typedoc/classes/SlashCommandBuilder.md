@@ -82,7 +82,7 @@ ChatInputCommandBuilderBase.default\_member\_permissions
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:48](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/CommandBuilderBase.ts#L48)
+[src/commands/CommandBuilderBase.ts:48](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/CommandBuilderBase.ts#L48)
 
 ___
 
@@ -96,7 +96,7 @@ ChatInputCommandBuilderBase.description
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:161](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/CommandBuilderBase.ts#L161)
+[src/commands/CommandBuilderBase.ts:161](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/CommandBuilderBase.ts#L161)
 
 ___
 
@@ -110,7 +110,7 @@ ChatInputCommandBuilderBase.description\_localizations
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:162](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/CommandBuilderBase.ts#L162)
+[src/commands/CommandBuilderBase.ts:162](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/CommandBuilderBase.ts#L162)
 
 ___
 
@@ -126,7 +126,7 @@ ChatInputCommandBuilderBase.dm\_permission
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:43](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/CommandBuilderBase.ts#L43)
+[src/commands/CommandBuilderBase.ts:43](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/CommandBuilderBase.ts#L43)
 
 ___
 
@@ -142,7 +142,7 @@ ChatInputCommandBuilderBase.name
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:28](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/CommandBuilderBase.ts#L28)
+[src/commands/CommandBuilderBase.ts:28](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/CommandBuilderBase.ts#L28)
 
 ___
 
@@ -158,7 +158,7 @@ ChatInputCommandBuilderBase.name\_localizations
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:33](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/CommandBuilderBase.ts#L33)
+[src/commands/CommandBuilderBase.ts:33](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/CommandBuilderBase.ts#L33)
 
 ___
 
@@ -172,7 +172,7 @@ ChatInputCommandBuilderBase.options
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:164](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/CommandBuilderBase.ts#L164)
+[src/commands/CommandBuilderBase.ts:164](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/CommandBuilderBase.ts#L164)
 
 ___
 
@@ -186,7 +186,7 @@ ChatInputCommandBuilderBase.type
 
 #### Defined in
 
-[src/commands/CommandBuilderBase.ts:159](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/CommandBuilderBase.ts#L159)
+[src/commands/CommandBuilderBase.ts:159](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/CommandBuilderBase.ts#L159)
 
 ## Methods
 

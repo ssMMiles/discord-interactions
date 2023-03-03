@@ -66,7 +66,7 @@ SlashCommandOptionBase.constructor
 
 #### Defined in
 
-[src/commands/options/number.ts:15](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/options/number.ts#L15)
+[src/commands/options/number.ts:15](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/number.ts#L15)
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/number.ts:14](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/options/number.ts#L14)
+[src/commands/options/number.ts:14](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/number.ts#L14)
 
 ___
 
@@ -90,7 +90,7 @@ SlashCommandOptionBase.description
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
+[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
 
 ___
 
@@ -104,7 +104,7 @@ SlashCommandOptionBase.description\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
+[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/number.ts:11](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/options/number.ts#L11)
+[src/commands/options/number.ts:11](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/number.ts#L11)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[src/commands/options/number.ts:12](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/options/number.ts#L12)
+[src/commands/options/number.ts:12](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/number.ts#L12)
 
 ___
 
@@ -138,7 +138,7 @@ SlashCommandOptionBase.name
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
+[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
 
 ___
 
@@ -152,7 +152,7 @@ SlashCommandOptionBase.name\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
+[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
 
 ___
 
@@ -166,7 +166,7 @@ SlashCommandOptionBase.required
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
+[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
 
 ___
 
@@ -180,7 +180,7 @@ SlashCommandOptionBase.type
 
 #### Defined in
 
-[src/commands/options/number.ts:9](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/commands/options/number.ts#L9)
+[src/commands/options/number.ts:9](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/number.ts#L9)
 
 ## Methods
 

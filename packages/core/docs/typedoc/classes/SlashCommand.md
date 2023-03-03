@@ -81,7 +81,7 @@ HandledInteraction&lt;RESTPostAPIChatInputApplicationCommandsJSONBody, SlashComm
 
 #### Defined in
 
-[app/commands/SlashCommand.ts:15](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/commands/SlashCommand.ts#L15)
+[app/commands/SlashCommand.ts:15](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/commands/SlashCommand.ts#L15)
 
 ___
 
@@ -99,7 +99,7 @@ HandledInteraction.builder
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/handlers/HandledInteraction.ts#L4)
+[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 ___
 
@@ -117,7 +117,7 @@ HandledInteraction.components
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/handlers/HandledInteraction.ts#L11)
+[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 ___
 
@@ -149,7 +149,7 @@ HandledInteraction.handler
 
 #### Defined in
 
-[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/handlers/HandledInteraction.ts#L9)
+[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/handlers/HandledInteraction.ts#L9)
 
 ## Accessors
 

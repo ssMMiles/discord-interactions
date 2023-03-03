@@ -53,11 +53,15 @@
 - [createGlobalComponent](MentionableSelectMenuContext.md#createglobalcomponent)
 - [decorate](MentionableSelectMenuContext.md#decorate)
 - [defer](MentionableSelectMenuContext.md#defer)
+- [deferFollowup](MentionableSelectMenuContext.md#deferfollowup)
+- [deferUpdate](MentionableSelectMenuContext.md#deferupdate)
 - [delete](MentionableSelectMenuContext.md#delete)
 - [edit](MentionableSelectMenuContext.md#edit)
 - [fetchState](MentionableSelectMenuContext.md#fetchstate)
 - [rawReply](MentionableSelectMenuContext.md#rawreply)
 - [reply](MentionableSelectMenuContext.md#reply)
+- [replyFollowup](MentionableSelectMenuContext.md#replyfollowup)
+- [replyUpdate](MentionableSelectMenuContext.md#replyupdate)
 - [send](MentionableSelectMenuContext.md#send)
 
 ## Constructors
@@ -99,7 +103,7 @@ BaseSelectMenuContext.allowExpired
 
 #### Defined in
 
-[app/contexts/Base.ts:127](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L127)
+[app/contexts/Base.ts:127](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L127)
 
 ___
 
@@ -113,7 +117,7 @@ BaseSelectMenuContext.app
 
 #### Defined in
 
-[app/contexts/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L34)
+[app/contexts/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L34)
 
 ___
 
@@ -127,7 +131,7 @@ BaseSelectMenuContext.app\_permissions
 
 #### Defined in
 
-[app/contexts/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L43)
+[app/contexts/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L43)
 
 ___
 
@@ -141,7 +145,7 @@ BaseSelectMenuContext.channelId
 
 #### Defined in
 
-[app/contexts/Base.ts:48](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L48)
+[app/contexts/Base.ts:48](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L48)
 
 ___
 
@@ -155,7 +159,7 @@ BaseSelectMenuContext.guildId
 
 #### Defined in
 
-[app/contexts/Base.ts:47](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L47)
+[app/contexts/Base.ts:47](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L47)
 
 ___
 
@@ -169,7 +173,7 @@ BaseSelectMenuContext.guildLocale
 
 #### Defined in
 
-[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L54)
+[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L54)
 
 ___
 
@@ -183,7 +187,7 @@ BaseSelectMenuContext.id
 
 #### Defined in
 
-[app/contexts/Base.ts:122](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L122)
+[app/contexts/Base.ts:122](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L122)
 
 ___
 
@@ -197,7 +201,7 @@ BaseSelectMenuContext.interactionId
 
 #### Defined in
 
-[app/contexts/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L40)
+[app/contexts/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L40)
 
 ___
 
@@ -211,7 +215,7 @@ BaseSelectMenuContext.isDM
 
 #### Defined in
 
-[app/contexts/Base.ts:45](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L45)
+[app/contexts/Base.ts:45](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L45)
 
 ___
 
@@ -225,7 +229,7 @@ BaseSelectMenuContext.locale
 
 #### Defined in
 
-[app/contexts/Base.ts:53](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L53)
+[app/contexts/Base.ts:53](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L53)
 
 ___
 
@@ -239,7 +243,7 @@ BaseSelectMenuContext.member
 
 #### Defined in
 
-[app/contexts/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L51)
+[app/contexts/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L51)
 
 ___
 
@@ -253,7 +257,7 @@ BaseSelectMenuContext.message
 
 #### Defined in
 
-[app/contexts/components/ComponentContext.ts:19](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/components/ComponentContext.ts#L19)
+[app/contexts/components/ComponentContext.ts:20](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/components/ComponentContext.ts#L20)
 
 ___
 
@@ -267,7 +271,7 @@ BaseSelectMenuContext.parentCommand
 
 #### Defined in
 
-[app/contexts/Base.ts:128](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L128)
+[app/contexts/Base.ts:128](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L128)
 
 ___
 
@@ -281,7 +285,7 @@ BaseSelectMenuContext.raw
 
 #### Defined in
 
-[app/contexts/Base.ts:39](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L39)
+[app/contexts/Base.ts:39](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L39)
 
 ___
 
@@ -295,7 +299,7 @@ BaseSelectMenuContext.receivedAt
 
 #### Defined in
 
-[app/contexts/Base.ts:37](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L37)
+[app/contexts/Base.ts:37](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L37)
 
 ___
 
@@ -309,7 +313,7 @@ BaseSelectMenuContext.signedAt
 
 #### Defined in
 
-[app/contexts/Base.ts:36](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L36)
+[app/contexts/Base.ts:36](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L36)
 
 ___
 
@@ -323,7 +327,7 @@ BaseSelectMenuContext.state
 
 #### Defined in
 
-[app/contexts/Base.ts:125](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L125)
+[app/contexts/Base.ts:125](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L125)
 
 ___
 
@@ -341,7 +345,7 @@ ___
 
 #### Defined in
 
-[app/contexts/components/select_menus/MentionableSelectMenuContext.ts:15](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/components/select_menus/MentionableSelectMenuContext.ts#L15)
+[app/contexts/components/select_menus/MentionableSelectMenuContext.ts:15](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/components/select_menus/MentionableSelectMenuContext.ts#L15)
 
 ___
 
@@ -355,7 +359,7 @@ BaseSelectMenuContext.user
 
 #### Defined in
 
-[app/contexts/Base.ts:50](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/Base.ts#L50)
+[app/contexts/Base.ts:50](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L50)
 
 ___
 
@@ -369,7 +373,7 @@ BaseSelectMenuContext.values
 
 #### Defined in
 
-[app/contexts/components/select_menus/MentionableSelectMenuContext.ts:13](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/core/src/app/contexts/components/select_menus/MentionableSelectMenuContext.ts#L13)
+[app/contexts/components/select_menus/MentionableSelectMenuContext.ts:13](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/components/select_menus/MentionableSelectMenuContext.ts#L13)
 
 ## Accessors
 
@@ -478,6 +482,40 @@ BaseSelectMenuContext.defer
 
 ___
 
+### deferFollowup
+
+▸ **deferFollowup**(`flags?`): `Promise`<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `flags?` | `MessageFlags` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Inherited from
+
+BaseSelectMenuContext.deferFollowup
+
+___
+
+### deferUpdate
+
+▸ **deferUpdate**(): `Promise`<`void`\>
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Inherited from
+
+BaseSelectMenuContext.deferUpdate
+
+___
+
 ### delete
 
 ▸ **delete**(): `Promise`<`void`\>
@@ -563,6 +601,46 @@ ___
 #### Inherited from
 
 BaseSelectMenuContext.reply
+
+___
+
+### replyFollowup
+
+▸ **replyFollowup**(`message`): `Promise`<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `message` | `string` \| `APIInteractionResponseChannelMessageWithSource` \| `APIModalInteractionResponse` \| `FormData` \| `MessageBuilder` \| `ModalBuilder` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Inherited from
+
+BaseSelectMenuContext.replyFollowup
+
+___
+
+### replyUpdate
+
+▸ **replyUpdate**(`message`): `Promise`<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `message` | `string` \| `APIInteractionResponseUpdateMessage` \| `APIModalInteractionResponse` \| `FormData` \| `MessageBuilder` \| `ModalBuilder` |
+
+#### Returns
+
+`Promise`<`void`\>
+
+#### Inherited from
+
+BaseSelectMenuContext.replyUpdate
 
 ___
 

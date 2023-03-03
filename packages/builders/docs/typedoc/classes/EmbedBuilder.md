@@ -51,7 +51,7 @@ Represents a non-validated embed in a message (image/video preview, rich embed, 
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:35](https://github.com/ssMMiles/discord-interactions/blob/7421ca0/packages/builders/src/responses/EmbedBuilder.ts#L35)
+[src/responses/EmbedBuilder.ts:35](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/responses/EmbedBuilder.ts#L35)
 
 ## Methods
 
