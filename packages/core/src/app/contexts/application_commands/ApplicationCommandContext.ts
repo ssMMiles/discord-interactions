@@ -10,6 +10,7 @@ import {
   APIRole,
   APIUser,
   InteractionResponseType,
+  MessageFlags,
   Snowflake
 } from "discord-api-types/v10";
 import { FormData } from "formdata-node";
@@ -79,11 +80,14 @@ export class BaseCommandContext<
     return super.createGlobalComponent(`${this.name}.${name}`, state, ttl);
   }
 
-  defer(): Promise<void> {
+  defer(flags?: MessageFlags): Promise<void> {
     if (this.replied) throw new InteractionResponseAlreadySent();
 
     return this._reply({
-      type: InteractionResponseType.DeferredChannelMessageWithSource
+      type: InteractionResponseType.DeferredChannelMessageWithSource,
+      data: flags && {
+        flags
+      }
     });
   }
 

@@ -5,7 +5,7 @@ import type {
   APIModalSubmitInteraction,
   ModalSubmitComponent
 } from "discord-api-types/v10";
-import { InteractionResponseType } from "discord-api-types/v10";
+import { InteractionResponseType, MessageFlags } from "discord-api-types/v10";
 import { FormData } from "formdata-node";
 import { InteractionResponseAlreadySent, SimpleEmbed } from "../../index.js";
 import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
@@ -38,11 +38,14 @@ export class ModalSubmitContext<State = never> extends BaseStatefulInteractionCo
     }
   }
 
-  defer(): Promise<void> {
+  defer(flags?: MessageFlags): Promise<void> {
     if (this.replied) throw new InteractionResponseAlreadySent();
 
     return this._reply({
-      type: InteractionResponseType.DeferredChannelMessageWithSource
+      type: InteractionResponseType.DeferredChannelMessageWithSource,
+      data: flags && {
+        flags
+      }
     });
   }
 
