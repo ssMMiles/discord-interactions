@@ -65,7 +65,7 @@ export interface RequestOptions {
   formData?: FormData;
   body?: unknown;
   files?: Attachment[] | undefined;
-  headers?: Map<string, string>;
+  headers?: Record<string, string>;
   rawBody?: boolean;
   query?: URLSearchParams;
   reason?: string;

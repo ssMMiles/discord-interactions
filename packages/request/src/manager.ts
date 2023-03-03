@@ -309,7 +309,7 @@ export class Manager {
   #getRequestHeaders(data: RequestData) {
     const headers = new Headers();
 
-    for (const [key, value] of Object.entries(data.headers ?? [])) {
+    for (const [key, value] of [...Object.entries(this.config.headers), ...Object.entries(data.headers ?? [])]) {
       headers.set(key, value);
     }
 
