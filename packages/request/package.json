@@ -5,15 +5,16 @@
   "description": "A Discord HTTP client that handles global and resource rate limits automatically",
   "license": "Apache-2.0",
   "homepage": "https://github.com/ianmitchell/interaction-kit/tree/main/packages/discord-request",
-  "exports": "./dist/src/client.js",
-  "main": "./dist/src/client.js",
-  "typings": "dist/src/client.d.ts",
+  "exports": "./dist/src/index.js",
+  "main": "./dist/src/index.js",
+  "typings": "dist/src/index.d.ts",
   "type": "module",
   "scripts": {
     "clean": "rimraf dist",
     "format": "prettier --write src",
     "lint": "eslint src",
     "build": "tsc",
+    "rollup": "rollup -c",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
   "files": [
@@ -32,6 +33,8 @@
   "devDependencies": {
     "@types/jest": "^28.1.4",
     "@types/node": "^18.0.3",
+    "rollup": "^3.18.0",
+    "rollup-plugin-dts": "^5.2.0",
     "typescript": "^4.7.4"
   },
   "publishConfig": {

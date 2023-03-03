@@ -24,6 +24,8 @@
     "eslint": "^8.14.0",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
+    "rollup": "^3.18.0",
+    "rollup-plugin-dts": "^5.2.0",
     "ts-jest": "^28.0.5",
     "ts-node": "^10.4.0",
     "typedoc": "^0.23.6",
@@ -46,6 +48,7 @@
     "format": "prettier --write src",
     "lint": "eslint src",
     "build": "tsc",
+    "rollup": "rollup -c",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
   "dependencies": {

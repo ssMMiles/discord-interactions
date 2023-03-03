@@ -11,6 +11,7 @@
     "lint": "eslint src",
     "build": "tsc",
     "build:types": "./bundle-types.sh",
+    "rollup": "rollup -c",
     "docs": "typedoc",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
@@ -36,6 +37,8 @@
     "fastify-raw-body": "^3.2.0",
     "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
+    "rollup": "^3.18.0",
+    "rollup-plugin-dts": "^5.2.0",
     "ts-node": "^10.4.0",
     "typedoc": "^0.23.6",
     "typedoc-plugin-markdown": "^3.13.3",
