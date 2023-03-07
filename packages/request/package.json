@@ -19,7 +19,8 @@
   },
   "files": [
     "dist",
-    "src"
+    "src",
+    "package.json"
   ],
   "engines": {
     "node": ">=16"
