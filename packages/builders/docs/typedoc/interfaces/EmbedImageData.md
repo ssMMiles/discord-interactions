@@ -43,7 +43,7 @@ The proxy URL for the image
 
 #### Defined in
 
-[src/responses/EmbedBuilder.ts:28](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/responses/EmbedBuilder.ts#L28)
+[src/responses/EmbedBuilder.ts:28](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/responses/EmbedBuilder.ts#L28)
 
 ___
 

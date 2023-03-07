@@ -77,6 +77,18 @@
   "resolved" "https://registry.npmjs.org/ansi-styles/-/ansi-styles-5.2.0.tgz"
   "version" "5.2.0"
 
+"balanced-match@^1.0.0":
+  "integrity" "sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw=="
+  "resolved" "https://registry.npmjs.org/balanced-match/-/balanced-match-1.0.2.tgz"
+  "version" "1.0.2"
+
+"brace-expansion@^2.0.1":
+  "integrity" "sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA=="
+  "resolved" "https://registry.npmjs.org/brace-expansion/-/brace-expansion-2.0.1.tgz"
+  "version" "2.0.1"
+  dependencies:
+    "balanced-match" "^1.0.0"
+
 "chalk@^2.0.0":
   "integrity" "sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ=="
   "resolved" "https://registry.npmjs.org/chalk/-/chalk-2.4.2.tgz"
@@ -148,10 +160,25 @@
     "node-domexception" "1.0.0"
     "web-streams-polyfill" "4.0.0-beta.1"
 
+"fs.realpath@^1.0.0":
+  "integrity" "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
+  "resolved" "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
+  "version" "1.0.0"
+
 "fsevents@~2.3.2":
   "integrity" "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA=="
   "resolved" "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
   "version" "2.3.2"
+
+"glob@^9.2.0":
+  "integrity" "sha512-Pxxgq3W0HyA3XUvSXcFhRSs+43Jsx0ddxcFrbjxNGkL2Ak5BAUBxLqI5G6ADDeCHLfzzXFhe0b1yYcctGmytMA=="
+  "resolved" "https://registry.npmjs.org/glob/-/glob-9.2.1.tgz"
+  "version" "9.2.1"
+  dependencies:
+    "fs.realpath" "^1.0.0"
+    "minimatch" "^7.4.1"
+    "minipass" "^4.2.4"
+    "path-scurry" "^1.6.1"
 
 "has-flag@^3.0.0":
   "integrity" "sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw=="
@@ -193,12 +220,29 @@
   "resolved" "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
   "version" "4.0.0"
 
+"lru-cache@^7.14.1":
+  "integrity" "sha512-8/HcIENyQnfUTCDizRu9rrDyG6XG/21M4X7/YEGZeD76ZJilFPAUVb/2zysFf7VVO1LEjCDFyHp8pMMvozIrvg=="
+  "resolved" "https://registry.npmjs.org/lru-cache/-/lru-cache-7.18.1.tgz"
+  "version" "7.18.1"
+
 "magic-string@^0.29.0":
   "integrity" "sha512-WcfidHrDjMY+eLjlU+8OvwREqHwpgCeKVBUpQ3OhYYuvfaYCUgcbuBzappNzZvg/v8onU3oQj+BYpkOJe9Iw4Q=="
   "resolved" "https://registry.npmjs.org/magic-string/-/magic-string-0.29.0.tgz"
   "version" "0.29.0"
   dependencies:
     "@jridgewell/sourcemap-codec" "^1.4.13"
+
+"minimatch@^7.4.1":
+  "integrity" "sha512-xy4q7wou3vUoC9k1xGTXc+awNdGaGVHtFUaey8tiX4H1QRc04DZ/rmDFwNm2EBsuYEhAZ6SgMmYf3InGY6OauA=="
+  "resolved" "https://registry.npmjs.org/minimatch/-/minimatch-7.4.2.tgz"
+  "version" "7.4.2"
+  dependencies:
+    "brace-expansion" "^2.0.1"
+
+"minipass@^4.0.2", "minipass@^4.2.4":
+  "integrity" "sha512-lwycX3cBMTvcejsHITUgYj6Gy6A7Nh4Q6h9NP4sTHY1ccJlC7yKzDmiShEHsJ16Jf1nKGDEaiHxiltsJEvk0nQ=="
+  "resolved" "https://registry.npmjs.org/minipass/-/minipass-4.2.4.tgz"
+  "version" "4.2.4"
 
 "ms@2.1.2":
   "integrity" "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="
@@ -209,6 +253,14 @@
   "integrity" "sha512-/jKZoMpw0F8GRwl4/eLROPA3cfcXtLApP0QzLmUT/HuPCZWyB7IY9ZrMeKw2O/nFIqPQB3PVM9aYm0F312AXDQ=="
   "resolved" "https://registry.npmjs.org/node-domexception/-/node-domexception-1.0.0.tgz"
   "version" "1.0.0"
+
+"path-scurry@^1.6.1":
+  "integrity" "sha512-OW+5s+7cw6253Q4E+8qQ/u1fVvcJQCJo/VFD8pje+dbJCF1n5ZRMV2AEHbGp+5Q7jxQIYJxkHopnj6nzdGeZLA=="
+  "resolved" "https://registry.npmjs.org/path-scurry/-/path-scurry-1.6.1.tgz"
+  "version" "1.6.1"
+  dependencies:
+    "lru-cache" "^7.14.1"
+    "minipass" "^4.0.2"
 
 "pretty-format@^28.0.0", "pretty-format@^28.1.1":
   "integrity" "sha512-wwJbVTGFHeucr5Jw2bQ9P+VYHyLdAqedFLEkdQUVaBF/eiidDwH5OpilINq4mEfhbCjLnirt6HTTDhv1HaTIQw=="
@@ -224,6 +276,13 @@
   "integrity" "sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-18.2.0.tgz"
   "version" "18.2.0"
+
+"rimraf@^4.2.0":
+  "integrity" "sha512-tPt+gLORNVqRCk0NwuJ5SlMEcOGvt4CCU8sUPqgCFtCbnoNCTd9Q6vq7JlBbxQlACiH14OR28y7piA2Bak9Sxw=="
+  "resolved" "https://registry.npmjs.org/rimraf/-/rimraf-4.2.0.tgz"
+  "version" "4.2.0"
+  dependencies:
+    "glob" "^9.2.0"
 
 "rollup-plugin-dts@^5.2.0":
   "integrity" "sha512-B68T/haEu2MKcz4kNUhXB8/h5sq4gpplHAJIYNHbh8cp4ZkvzDvNca/11KQdFrB9ZeKucegQIotzo5T0JUtM8w=="

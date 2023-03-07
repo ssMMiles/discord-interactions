@@ -41,7 +41,7 @@
 
 #### Defined in
 
-[src/responses/ModalBuilder.ts:9](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/responses/ModalBuilder.ts#L9)
+[src/responses/ModalBuilder.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/responses/ModalBuilder.ts#L9)
 
 ## Methods
 

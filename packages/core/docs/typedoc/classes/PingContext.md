@@ -41,7 +41,7 @@
 
 #### Defined in
 
-[app/contexts/PingContext.ts:6](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/PingContext.ts#L6)
+[app/contexts/PingContext.ts:6](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/PingContext.ts#L6)
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 #### Defined in
 
-[app/contexts/PingContext.ts:8](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/PingContext.ts#L8)
+[app/contexts/PingContext.ts:8](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/PingContext.ts#L8)
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 #### Defined in
 
-[app/contexts/PingContext.ts:5](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/PingContext.ts#L5)
+[app/contexts/PingContext.ts:5](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/PingContext.ts#L5)
 
 ## Methods
 

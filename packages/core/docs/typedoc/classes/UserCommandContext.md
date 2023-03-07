@@ -84,7 +84,7 @@ BaseCommandContext.app
 
 #### Defined in
 
-[app/contexts/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L34)
+[app/contexts/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L34)
 
 ___
 
@@ -98,7 +98,7 @@ BaseCommandContext.app\_permissions
 
 #### Defined in
 
-[app/contexts/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L43)
+[app/contexts/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L43)
 
 ___
 
@@ -112,7 +112,7 @@ BaseCommandContext.channelId
 
 #### Defined in
 
-[app/contexts/Base.ts:48](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L48)
+[app/contexts/Base.ts:48](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L48)
 
 ___
 
@@ -126,7 +126,7 @@ BaseCommandContext.commandGuildId
 
 #### Defined in
 
-[app/contexts/application_commands/ApplicationCommandContext.ts:49](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L49)
+[app/contexts/application_commands/ApplicationCommandContext.ts:50](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L50)
 
 ___
 
@@ -140,7 +140,7 @@ BaseCommandContext.guildId
 
 #### Defined in
 
-[app/contexts/Base.ts:47](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L47)
+[app/contexts/Base.ts:47](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L47)
 
 ___
 
@@ -154,7 +154,7 @@ BaseCommandContext.guildLocale
 
 #### Defined in
 
-[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L54)
+[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L54)
 
 ___
 
@@ -168,7 +168,7 @@ BaseCommandContext.id
 
 #### Defined in
 
-[app/contexts/application_commands/ApplicationCommandContext.ts:46](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L46)
+[app/contexts/application_commands/ApplicationCommandContext.ts:47](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L47)
 
 ___
 
@@ -182,7 +182,7 @@ BaseCommandContext.interactionId
 
 #### Defined in
 
-[app/contexts/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L40)
+[app/contexts/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L40)
 
 ___
 
@@ -196,7 +196,7 @@ BaseCommandContext.isDM
 
 #### Defined in
 
-[app/contexts/Base.ts:45](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L45)
+[app/contexts/Base.ts:45](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L45)
 
 ___
 
@@ -210,7 +210,7 @@ BaseCommandContext.locale
 
 #### Defined in
 
-[app/contexts/Base.ts:53](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L53)
+[app/contexts/Base.ts:53](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L53)
 
 ___
 
@@ -224,7 +224,7 @@ BaseCommandContext.member
 
 #### Defined in
 
-[app/contexts/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L51)
+[app/contexts/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L51)
 
 ___
 
@@ -238,7 +238,7 @@ BaseCommandContext.name
 
 #### Defined in
 
-[app/contexts/application_commands/ApplicationCommandContext.ts:45](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L45)
+[app/contexts/application_commands/ApplicationCommandContext.ts:46](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L46)
 
 ___
 
@@ -252,7 +252,7 @@ BaseCommandContext.raw
 
 #### Defined in
 
-[app/contexts/Base.ts:39](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L39)
+[app/contexts/Base.ts:39](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L39)
 
 ___
 
@@ -266,7 +266,7 @@ BaseCommandContext.receivedAt
 
 #### Defined in
 
-[app/contexts/Base.ts:37](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L37)
+[app/contexts/Base.ts:37](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L37)
 
 ___
 
@@ -280,7 +280,7 @@ BaseCommandContext.resolved
 
 #### Defined in
 
-[app/contexts/application_commands/ApplicationCommandContext.ts:51](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L51)
+[app/contexts/application_commands/ApplicationCommandContext.ts:52](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L52)
 
 ___
 
@@ -294,7 +294,7 @@ BaseCommandContext.signedAt
 
 #### Defined in
 
-[app/contexts/Base.ts:36](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L36)
+[app/contexts/Base.ts:36](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L36)
 
 ___
 
@@ -311,7 +311,7 @@ ___
 
 #### Defined in
 
-[app/contexts/application_commands/UserCommandContext.ts:11](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/application_commands/UserCommandContext.ts#L11)
+[app/contexts/application_commands/UserCommandContext.ts:11](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/UserCommandContext.ts#L11)
 
 ___
 
@@ -325,7 +325,7 @@ BaseCommandContext.user
 
 #### Defined in
 
-[app/contexts/Base.ts:50](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/core/src/app/contexts/Base.ts#L50)
+[app/contexts/Base.ts:50](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L50)
 
 ## Accessors
 
@@ -422,7 +422,13 @@ ___
 
 ### defer
 
-▸ **defer**(): `Promise`<`void`\>
+▸ **defer**(`flags?`): `Promise`<`void`\>
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `flags?` | `MessageFlags` |
 
 #### Returns
 

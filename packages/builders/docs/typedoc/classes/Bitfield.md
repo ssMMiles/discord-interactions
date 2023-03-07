@@ -43,7 +43,7 @@ Data structure that makes it easy to interact with a bitfield.
 
 #### Defined in
 
-[src/commands/permissions/Bitfield.ts:5](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/permissions/Bitfield.ts#L5)
+[src/commands/permissions/Bitfield.ts:5](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/permissions/Bitfield.ts#L5)
 
 ## Methods
 

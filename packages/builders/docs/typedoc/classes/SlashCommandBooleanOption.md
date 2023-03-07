@@ -61,7 +61,7 @@ SlashCommandOptionBase.description
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
+[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
 
 ___
 
@@ -75,7 +75,7 @@ SlashCommandOptionBase.description\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
+[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
 
 ___
 
@@ -89,7 +89,7 @@ SlashCommandOptionBase.name
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
+[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
 
 ___
 
@@ -103,7 +103,7 @@ SlashCommandOptionBase.name\_localizations
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
+[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
 
 ___
 
@@ -117,7 +117,7 @@ SlashCommandOptionBase.required
 
 #### Defined in
 
-[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
+[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
 
 ___
 
@@ -131,7 +131,7 @@ SlashCommandOptionBase.type
 
 #### Defined in
 
-[src/commands/options/boolean.ts:5](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/builders/src/commands/options/boolean.ts#L5)
+[src/commands/options/boolean.ts:5](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/boolean.ts#L5)
 
 ## Methods
 

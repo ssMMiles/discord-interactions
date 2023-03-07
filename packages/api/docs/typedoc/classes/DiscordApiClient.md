@@ -70,6 +70,10 @@
 
 Client.constructor
 
+#### Defined in
+
+request/dist/src/index.d.ts:6
+
 ## Properties
 
 ### createDm
@@ -93,7 +97,7 @@ Client.constructor
 
 #### Defined in
 
-[api/src/client.ts:57](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L57)
+[api/src/client.ts:57](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L57)
 
 ___
 
@@ -120,7 +124,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:37](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L37)
+[api/src/client.ts:37](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L37)
 
 ___
 
@@ -147,7 +151,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:43](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L43)
+[api/src/client.ts:43](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L43)
 
 ___
 
@@ -173,7 +177,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:33](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L33)
+[api/src/client.ts:33](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L33)
 
 ___
 
@@ -197,7 +201,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:60](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L60)
+[api/src/client.ts:60](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L60)
 
 ___
 
@@ -221,7 +225,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:48](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L48)
+[api/src/client.ts:48](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L48)
 
 ___
 
@@ -245,7 +249,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:51](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L51)
+[api/src/client.ts:51](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L51)
 
 ___
 
@@ -270,7 +274,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:54](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L54)
+[api/src/client.ts:54](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L54)
 
 ___
 
@@ -295,7 +299,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:53](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L53)
+[api/src/client.ts:53](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L53)
 
 ___
 
@@ -321,7 +325,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:39](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L39)
+[api/src/client.ts:39](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L39)
 
 ___
 
@@ -346,7 +350,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:46](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L46)
+[api/src/client.ts:46](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L46)
 
 ___
 
@@ -371,7 +375,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:56](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L56)
+[api/src/client.ts:56](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L56)
 
 ___
 
@@ -396,7 +400,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:49](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L49)
+[api/src/client.ts:49](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L49)
 
 ___
 
@@ -424,7 +428,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:36](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L36)
+[api/src/client.ts:36](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L36)
 
 ___
 
@@ -452,7 +456,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:42](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L42)
+[api/src/client.ts:42](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L42)
 
 ___
 
@@ -479,7 +483,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:35](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L35)
+[api/src/client.ts:35](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L35)
 
 ___
 
@@ -506,7 +510,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:41](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L41)
+[api/src/client.ts:41](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L41)
 
 ___
 
@@ -533,7 +537,7 @@ ___
 
 #### Defined in
 
-[api/src/client.ts:34](https://github.com/ssMMiles/discord-interactions/blob/50693ee/packages/api/src/client.ts#L34)
+[api/src/client.ts:34](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L34)
 
 ## Accessors
 
@@ -548,6 +552,10 @@ ___
 #### Inherited from
 
 Client.abortSignal
+
+#### Defined in
+
+request/dist/src/index.d.ts:10
 
 • `set` **abortSignal**(`signal`): `void`
 
@@ -564,6 +572,10 @@ Client.abortSignal
 #### Inherited from
 
 Client.abortSignal
+
+#### Defined in
+
+request/dist/src/index.d.ts:11
 
 ___
 
@@ -585,16 +597,20 @@ ___
 
 Client.api
 
-• `set` **api**(`__namedParameters`): `void`
+#### Defined in
+
+request/dist/src/index.d.ts:14
+
+• `set` **api**(`«destructured»`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | `Object` |
-| `__namedParameters.api` | `string` |
-| `__namedParameters.cdn` | `string` |
-| `__namedParameters.version` | `number` |
+| `«destructured»` | `Object` |
+| › `api` | `string` |
+| › `cdn` | `string` |
+| › `version` | `number` |
 
 #### Returns
 
@@ -603,6 +619,10 @@ Client.api
 #### Inherited from
 
 Client.api
+
+#### Defined in
+
+request/dist/src/index.d.ts:19
 
 ___
 
@@ -625,17 +645,21 @@ ___
 
 Client.callbacks
 
-• `set` **callbacks**(`__namedParameters`): `void`
+#### Defined in
+
+request/dist/src/index.d.ts:42
+
+• `set` **callbacks**(`«destructured»`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | `Object` |
-| `__namedParameters.onBucketSweep?` | (`swept`: `Map`<`string`, `Bucket`\>) => `void` |
-| `__namedParameters.onQueueSweep?` | (`swept`: `Map`<`string`, `Queue`\>) => `void` |
-| `__namedParameters.onRateLimit?` | (`data`: `RateLimitData`) => `void` |
-| `__namedParameters.onRequest?` | (`parameters`: `Route`, `resource`: `string`, `init`: `RequestInit`, `retries`: `number`) => `void` |
+| `«destructured»` | `Object` |
+| › `onBucketSweep?` | (`swept`: `Map`<`string`, `Bucket`\>) => `void` |
+| › `onQueueSweep?` | (`swept`: `Map`<`string`, `Queue`\>) => `void` |
+| › `onRateLimit?` | (`data`: `RateLimitData`) => `void` |
+| › `onRequest?` | (`parameters`: `Route`, `resource`: `string`, `init`: `RequestInit`, `retries`: `number`) => `void` |
 
 #### Returns
 
@@ -644,6 +668,10 @@ Client.callbacks
 #### Inherited from
 
 Client.callbacks
+
+#### Defined in
+
+request/dist/src/index.d.ts:48
 
 ___
 
@@ -658,6 +686,10 @@ ___
 #### Inherited from
 
 Client.globalRequestsPerSecond
+
+#### Defined in
+
+request/dist/src/index.d.ts:12
 
 • `set` **globalRequestsPerSecond**(`value`): `void`
 
@@ -674,6 +706,10 @@ Client.globalRequestsPerSecond
 #### Inherited from
 
 Client.globalRequestsPerSecond
+
+#### Defined in
+
+request/dist/src/index.d.ts:13
 
 ___
 
@@ -695,16 +731,20 @@ ___
 
 Client.requestConfig
 
-• `set` **requestConfig**(`__namedParameters`): `void`
+#### Defined in
+
+request/dist/src/index.d.ts:24
+
+• `set` **requestConfig**(`«destructured»`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | `Object` |
-| `__namedParameters.headers` | `Record`<`string`, `string`\> |
-| `__namedParameters.retries` | `number` |
-| `__namedParameters.timeout` | `number` |
+| `«destructured»` | `Object` |
+| › `headers` | `Record`<`string`, `string`\> |
+| › `retries` | `number` |
+| › `timeout` | `number` |
 
 #### Returns
 
@@ -713,6 +753,10 @@ Client.requestConfig
 #### Inherited from
 
 Client.requestConfig
+
+#### Defined in
+
+request/dist/src/index.d.ts:29
 
 ___
 
@@ -733,15 +777,19 @@ ___
 
 Client.sweepIntervals
 
-• `set` **sweepIntervals**(`__namedParameters`): `void`
+#### Defined in
+
+request/dist/src/index.d.ts:34
+
+• `set` **sweepIntervals**(`«destructured»`): `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `__namedParameters` | `Object` |
-| `__namedParameters.bucketSweepInterval` | `number` |
-| `__namedParameters.queueSweepInterval` | `number` |
+| `«destructured»` | `Object` |
+| › `bucketSweepInterval` | `number` |
+| › `queueSweepInterval` | `number` |
 
 #### Returns
 
@@ -750,6 +798,10 @@ Client.sweepIntervals
 #### Inherited from
 
 Client.sweepIntervals
+
+#### Defined in
+
+request/dist/src/index.d.ts:38
 
 ___
 
@@ -764,6 +816,10 @@ ___
 #### Overrides
 
 Client.userAgent
+
+#### Defined in
+
+[api/src/client.ts:25](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L25)
 
 • `set` **userAgent**(`value`): `void`
 
@@ -780,6 +836,10 @@ Client.userAgent
 #### Overrides
 
 Client.userAgent
+
+#### Defined in
+
+[api/src/client.ts:29](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L29)
 
 ## Methods
 
@@ -802,6 +862,10 @@ Client.userAgent
 
 Client.delete
 
+#### Defined in
+
+request/dist/src/index.d.ts:58
+
 ___
 
 ### get
@@ -822,6 +886,10 @@ ___
 #### Inherited from
 
 Client.get
+
+#### Defined in
+
+request/dist/src/index.d.ts:54
 
 ___
 
@@ -844,6 +912,10 @@ ___
 
 Client.patch
 
+#### Defined in
+
+request/dist/src/index.d.ts:57
+
 ___
 
 ### post
@@ -864,6 +936,10 @@ ___
 #### Inherited from
 
 Client.post
+
+#### Defined in
+
+request/dist/src/index.d.ts:55
 
 ___
 
@@ -886,6 +962,10 @@ ___
 
 Client.put
 
+#### Defined in
+
+request/dist/src/index.d.ts:56
+
 ___
 
 ### setToken
@@ -905,3 +985,7 @@ ___
 #### Inherited from
 
 Client.setToken
+
+#### Defined in
+
+request/dist/src/index.d.ts:7
