@@ -886,6 +886,16 @@
     "once" "^1.3.0"
     "path-is-absolute" "^1.0.0"
 
+"glob@^9.2.0":
+  "integrity" "sha512-Pxxgq3W0HyA3XUvSXcFhRSs+43Jsx0ddxcFrbjxNGkL2Ak5BAUBxLqI5G6ADDeCHLfzzXFhe0b1yYcctGmytMA=="
+  "resolved" "https://registry.npmjs.org/glob/-/glob-9.2.1.tgz"
+  "version" "9.2.1"
+  dependencies:
+    "fs.realpath" "^1.0.0"
+    "minimatch" "^7.4.1"
+    "minipass" "^4.2.4"
+    "path-scurry" "^1.6.1"
+
 "globals@^13.15.0":
   "integrity" "sha512-A1lrQfpNF+McdPOnnFqY3kSN0AFTy485bTi1bkLk4mVPODIUEcSfhHgRqA+QdXPksrSTTztYXx37NFV+GpGk3Q=="
   "resolved" "https://registry.npmjs.org/globals/-/globals-13.16.0.tgz"
@@ -1095,6 +1105,11 @@
   dependencies:
     "yallist" "^4.0.0"
 
+"lru-cache@^7.14.1":
+  "integrity" "sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA=="
+  "resolved" "https://registry.npmjs.org/lru-cache/-/lru-cache-7.18.3.tgz"
+  "version" "7.18.3"
+
 "lunr@^2.3.9":
   "integrity" "sha512-zTU3DaZaF3Rt9rhN3uBMGQD3dD2/vFQqnvZCDv4dl5iOzq2IZQqTxu90r4E5J+nP70J3ilqVCrbho2eWaeW8Ow=="
   "resolved" "https://registry.npmjs.org/lunr/-/lunr-2.3.9.tgz"
@@ -1156,10 +1171,22 @@
   dependencies:
     "brace-expansion" "^2.0.1"
 
+"minimatch@^7.4.1":
+  "integrity" "sha512-xy4q7wou3vUoC9k1xGTXc+awNdGaGVHtFUaey8tiX4H1QRc04DZ/rmDFwNm2EBsuYEhAZ6SgMmYf3InGY6OauA=="
+  "resolved" "https://registry.npmjs.org/minimatch/-/minimatch-7.4.2.tgz"
+  "version" "7.4.2"
+  dependencies:
+    "brace-expansion" "^2.0.1"
+
 "minimist@^1.2.5":
   "integrity" "sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q=="
   "resolved" "https://registry.npmjs.org/minimist/-/minimist-1.2.6.tgz"
   "version" "1.2.6"
+
+"minipass@^4.0.2", "minipass@^4.2.4":
+  "integrity" "sha512-lwycX3cBMTvcejsHITUgYj6Gy6A7Nh4Q6h9NP4sTHY1ccJlC7yKzDmiShEHsJ16Jf1nKGDEaiHxiltsJEvk0nQ=="
+  "resolved" "https://registry.npmjs.org/minipass/-/minipass-4.2.4.tgz"
+  "version" "4.2.4"
 
 "ms@2.1.2":
   "integrity" "sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w=="
@@ -1216,6 +1243,14 @@
   "integrity" "sha512-ojmeN0qd+y0jszEtoY48r0Peq5dwMEkIlCOu6Q5f41lfkswXuKtYrhgoTpLnyIcHm24Uhqx+5Tqm2InSwLhE6Q=="
   "resolved" "https://registry.npmjs.org/path-key/-/path-key-3.1.1.tgz"
   "version" "3.1.1"
+
+"path-scurry@^1.6.1":
+  "integrity" "sha512-OW+5s+7cw6253Q4E+8qQ/u1fVvcJQCJo/VFD8pje+dbJCF1n5ZRMV2AEHbGp+5Q7jxQIYJxkHopnj6nzdGeZLA=="
+  "resolved" "https://registry.npmjs.org/path-scurry/-/path-scurry-1.6.1.tgz"
+  "version" "1.6.1"
+  dependencies:
+    "lru-cache" "^7.14.1"
+    "minipass" "^4.0.2"
 
 "path-type@^4.0.0":
   "integrity" "sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw=="
@@ -1349,6 +1384,13 @@
   "version" "3.0.2"
   dependencies:
     "glob" "^7.1.3"
+
+"rimraf@^4.3.1":
+  "integrity" "sha512-GfHJHBzFQra23IxDzIdBqhOWfbtdgS1/dCHrDy+yvhpoJY5TdwdT28oWaHWfRpKFDLd3GZnGTx6Mlt4+anbsxQ=="
+  "resolved" "https://registry.npmjs.org/rimraf/-/rimraf-4.3.1.tgz"
+  "version" "4.3.1"
+  dependencies:
+    "glob" "^9.2.0"
 
 "rollup-plugin-dts@^5.2.0":
   "integrity" "sha512-B68T/haEu2MKcz4kNUhXB8/h5sq4gpplHAJIYNHbh8cp4ZkvzDvNca/11KQdFrB9ZeKucegQIotzo5T0JUtM8w=="

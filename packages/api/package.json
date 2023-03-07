@@ -15,6 +15,7 @@
     "lint": "eslint src",
     "build": "tsc",
     "build:types": "./bundle-types.sh",
+    "rimraf": "^4.2.0",
     "rollup": "rollup -c",
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests",
     "docs": "typedoc"
@@ -29,17 +30,19 @@
   },
   "dependencies": {
     "@discord-interactions/request": "^0.3.8",
-    "discord-api-types": "^0.37.18"
+    "discord-api-types": "^0.37.18",
+    "rimraf": "^4.3.1"
   },
   "devDependencies": {
     "@types/jest": "^28.1.4",
     "@types/node": "^18.0.3",
     "dts-bundle-generator": "^6.12.0",
+    "rimraf": "^4.3.1",
     "rollup": "^3.18.0",
     "rollup-plugin-dts": "^5.2.0",
-    "typescript": "^4.7.4",
     "typedoc": "^0.23.6",
-    "typedoc-plugin-markdown": "^3.13.3"
+    "typedoc-plugin-markdown": "^3.13.3",
+    "typescript": "^4.7.4"
   },
   "publishConfig": {
     "access": "public"
