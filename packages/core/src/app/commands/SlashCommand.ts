@@ -19,7 +19,7 @@ export class SlashCommand
     handler: (ctx: SlashCommandContext) => Promise<void> = async (ctx: SlashCommandContext) => {
       ctx.reply("No command handler has been defined.");
     },
-    components: Component[] = [],
+    components: (Component | Modal)[] = [],
     autocompleteHandler: (ctx: AutocompleteContext) => Promise<void> = async (ctx: AutocompleteContext) => {
       ctx.reply([]);
     }

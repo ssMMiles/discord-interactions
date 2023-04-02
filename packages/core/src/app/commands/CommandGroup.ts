@@ -24,7 +24,7 @@ export class CommandGroup implements ICommandGroup {
   public builder: CommandGroupBuilder;
   public handlers: ISubcommandHandlers;
 
-  constructor(builder: CommandGroupBuilder, handlers: ISubcommandHandlers, components: Component[] = []) {
+  constructor(builder: CommandGroupBuilder, handlers: ISubcommandHandlers, components: (Component | Modal)[] = []) {
     this.builder = builder;
     this.handlers = handlers;
 
