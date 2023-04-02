@@ -27,4 +27,6 @@ export type AutocompleteResponse = APIApplicationCommandAutocompleteResponse;
 export type ModalSubmitResponse =
   | APIInteractionResponseChannelMessageWithSource
   | APIInteractionResponseDeferredChannelMessageWithSource
+  | APIInteractionResponseUpdateMessage
+  | APIInteractionResponseDeferredMessageUpdate
   | FormData;

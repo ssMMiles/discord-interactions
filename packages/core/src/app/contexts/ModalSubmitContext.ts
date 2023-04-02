@@ -1,6 +1,7 @@
 import { MessageBuilder } from "@discord-interactions/builders";
 import type {
   APIInteractionResponseChannelMessageWithSource,
+  APIInteractionResponseUpdateMessage,
   APIMessage,
   APIModalSubmitInteraction,
   ModalSubmitComponent
@@ -49,11 +50,58 @@ export class ModalSubmitContext<State = never> extends BaseStatefulInteractionCo
     });
   }
 
+  deferFollowup(flags?: MessageFlags): Promise<void> {
+    if (this.replied) throw new InteractionResponseAlreadySent();
+
+    return this._reply({
+      type: InteractionResponseType.DeferredChannelMessageWithSource,
+      data: flags && {
+        flags
+      }
+    });
+  }
+
+  /**
+   * Note: This is only supported when replying to a component interaction.
+   */
+  deferUpdate(): Promise<void> {
+    if (this.replied) throw new InteractionResponseAlreadySent();
+
+    return this._reply({
+      type: InteractionResponseType.DeferredMessageUpdate
+    });
+  }
+
   reply(message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource | FormData): Promise<void> {
     if (typeof message === "string") message = SimpleEmbed(message);
 
     if (message instanceof MessageBuilder)
       message = message.toInteractionResponse(InteractionResponseType.ChannelMessageWithSource);
+
+    return this._reply(message);
+  }
+
+  replyFollowup(
+    message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource | FormData
+  ): Promise<void> {
+    if (typeof message === "string") message = SimpleEmbed(message);
+
+    if (message instanceof MessageBuilder)
+      message = message.toInteractionResponse(InteractionResponseType.ChannelMessageWithSource);
+
+    return this._reply(message);
+  }
+
+  /**
+   * Note: This is only supported when replying to a component interaction.
+   */
+  replyUpdate(message: string | MessageBuilder | APIInteractionResponseUpdateMessage | FormData): Promise<void> {
+    if (this.replied) throw new InteractionResponseAlreadySent();
+
+    if (typeof message === "string") message = SimpleEmbed(message);
+
+    if (message instanceof MessageBuilder)
+      message = message.toInteractionResponse(InteractionResponseType.UpdateMessage);
 
     return this._reply(message);
   }
