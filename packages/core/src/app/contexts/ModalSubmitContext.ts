@@ -8,7 +8,7 @@ import type {
 } from "discord-api-types/v10";
 import { InteractionResponseType, MessageFlags } from "discord-api-types/v10";
 import { FormData } from "formdata-node";
-import { InteractionResponseAlreadySent, SimpleEmbed } from "../../index.js";
+import { deprecationWarning, InteractionResponseAlreadySent, SimpleEmbed } from "../../index.js";
 import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
 import { BaseStatefulInteractionContext } from "./Base.js";
 import { ModalSubmitResponse } from "./response-types.js";
@@ -40,6 +40,7 @@ export class ModalSubmitContext<State = never> extends BaseStatefulInteractionCo
   }
 
   defer(flags?: MessageFlags): Promise<void> {
+    deprecationWarning("ModalSubmitContext#defer", "ModalSubmitContext#deferFollowup/deferUpdate");
     if (this.replied) throw new InteractionResponseAlreadySent();
 
     return this._reply({
@@ -73,6 +74,7 @@ export class ModalSubmitContext<State = never> extends BaseStatefulInteractionCo
   }
 
   reply(message: string | MessageBuilder | APIInteractionResponseChannelMessageWithSource | FormData): Promise<void> {
+    deprecationWarning("ModalSubmitContext#reply", "ModalSubmitContext#replyFollowup/replyUpdate");
     if (typeof message === "string") message = SimpleEmbed(message);
 
     if (message instanceof MessageBuilder)

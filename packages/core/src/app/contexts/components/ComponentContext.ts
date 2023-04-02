@@ -8,7 +8,7 @@ import type {
 } from "discord-api-types/v10";
 import { InteractionResponseType, MessageFlags } from "discord-api-types/v10";
 import type { FormData } from "formdata-node";
-import { InteractionResponseAlreadySent, SimpleEmbed } from "../../../index.js";
+import { deprecationWarning, InteractionResponseAlreadySent, SimpleEmbed } from "../../../index.js";
 import { DiscordApplication, ResponseCallback } from "../../DiscordApplication.js";
 import { BaseStatefulInteractionContext } from "../Base.js";
 import { MessageUpdateResponse } from "../response-types.js";
@@ -31,6 +31,7 @@ export class BaseComponentContext<
   }
 
   defer(): Promise<void> {
+    deprecationWarning("ComponentContext#defer", "ComponentContext#deferFollowup/deferUpdate");
     if (this.replied) throw new InteractionResponseAlreadySent();
 
     return this._reply({
@@ -66,6 +67,7 @@ export class BaseComponentContext<
       | APIModalInteractionResponse
       | FormData
   ): Promise<void> {
+    deprecationWarning("ComponentContext#reply", "ComponentContext#replyFollowup/replyUpdate");
     if (this.replied) throw new InteractionResponseAlreadySent();
 
     if (typeof message === "string") message = SimpleEmbed(message);
