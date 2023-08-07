@@ -1,7 +1,6 @@
 import { Bitfield, ButtonBuilder, ModalBuilder, SelectMenuBuilders } from "@discord-interactions/builders";
 import { Snowflake } from "discord-api-types/globals";
 import {
-  APIGuildMember,
   APIInteraction,
   APIInteractionResponse,
   APIMessageComponentInteraction,
@@ -10,12 +9,13 @@ import {
   Locale
 } from "discord-api-types/v10";
 import { LocaleString } from "discord-api-types/v6";
+import { APIInteractionGuildMember } from "discord-api-types/v9";
 import type { FormData } from "formdata-node";
 import { InteractionResponseAlreadySent, InteractionStateExpired } from "../../util/errors.js";
 import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
 import { WebhookClient } from "../WebhookClient.js";
 
-// lasts 15 minutes, 5s buffer to be safe
+// lasts 15 minutes, minus 5 second buffer to be safe
 const InteractionTokenExpiryTime = 15 * 60 * 1000 - 5000;
 
 export class BaseInteractionContext<
@@ -48,7 +48,7 @@ export class BaseInteractionContext<
   public channelId?: Snowflake;
 
   public user: APIUser;
-  public member?: APIGuildMember;
+  public member?: APIInteractionGuildMember;
 
   public locale: LocaleString;
   public guildLocale?: LocaleString;
@@ -77,14 +77,14 @@ export class BaseInteractionContext<
     if (!this.isDM) {
       this.guildId = interaction.guild_id;
       this.channelId = interaction.channel_id;
+
+      this.guildLocale = interaction.guild_locale;
     }
 
     this.user = (this.isDM ? interaction.user : interaction?.member?.user) as APIUser;
     this.member = interaction.member;
 
-    // Locale shouldn't exist for PING interactions, but oh well
     this.locale = "locale" in interaction ? interaction.locale : Locale.EnglishUS;
-    this.guildLocale = interaction.guild_locale;
   }
 
   protected async _reply(message: R): Promise<void> {
