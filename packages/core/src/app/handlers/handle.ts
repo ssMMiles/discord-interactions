@@ -215,7 +215,7 @@ export async function _handleInteraction(
           ?.get(context.commandGuildId)
           ?.[ApplicationCommandType.ChatInput]?.get(parentName);
 
-        if (guildCommand !== undefined && guildCommand.id === context.commandGuildId) {
+        if (guildCommand !== undefined) {
           command = guildCommand;
         }
       }
