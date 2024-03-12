@@ -20,16 +20,16 @@ import {
   UnknownApplicationCommandType,
   UnknownInteractionType
 } from "../../util/errors.js";
-import { SelectMenuInteraction } from "../contexts/components/select_menus/BaseSelectMenuContext.js";
 import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
+import { SelectMenuInteraction } from "../contexts/components/select_menus/BaseSelectMenuContext.js";
 import {
   AutocompleteContext,
   ButtonContext,
   ChannelSelectMenuContext,
   ComponentContext,
-  InteractionContext,
   ISubcommandGroup,
   ISubcommandHandler,
+  InteractionContext,
   MentionableSelectMenuContext,
   MessageCommandContext,
   ModalSubmitContext,
@@ -210,10 +210,6 @@ export async function _handleInteraction(
 
       let command = this.commands[ApplicationCommandType.ChatInput].get(parentName);
 
-      if (!command) {
-        throw new InteractionHandlerNotFound(interaction);
-      }
-
       if (context.commandGuildId) {
         const guildCommand = this.guildCommands
           ?.get(context.commandGuildId)
@@ -222,6 +218,10 @@ export async function _handleInteraction(
         if (guildCommand !== undefined && guildCommand.id === context.commandGuildId) {
           command = guildCommand;
         }
+      }
+
+      if (!command) {
+        throw new InteractionHandlerNotFound(interaction);
       }
 
       let handler: (ctx: SlashCommandContext | AutocompleteContext) => Promise<void>;
