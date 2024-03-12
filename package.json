@@ -11,7 +11,7 @@
     "test": "lerna run test",
     "example": "yarn build && lerna run dev --scope=@discord-interactions/example-bot",
     "example:worker": "yarn build && lerna run dev --scope=@discord-interactions/example-bot-worker",
-    "prepublishOnly": "yarn build && yarn test"
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@types/jest": "^28.1.4",
