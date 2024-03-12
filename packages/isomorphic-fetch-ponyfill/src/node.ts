@@ -1,6 +1,6 @@
 import type { BodyInit, HeadersInit, RequestInit } from "undici";
-import { fetch, Headers, Request, Response } from "undici";
+import { Headers, Request, Response, fetch } from "undici";
 
-export { fetch, Headers, Response, Request };
-export type { RequestInit, HeadersInit, BodyInit };
+export { Headers, Request, Response, fetch };
+export type { BodyInit, HeadersInit, RequestInit };
 export default fetch;
