@@ -1,7 +1,7 @@
 {
   "name": "@discord-interactions/example-bot",
   "description": "An example Discord bot using @discord-interactions/core and fastify.",
-  "version": "0.3.18",
+  "version": "0.3.19",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
@@ -9,7 +9,7 @@
   "dependencies": {
     "@discord-interactions/api": "^0.3.18",
     "@discord-interactions/builders": "^0.3.18",
-    "@discord-interactions/core": "^0.3.18",
+    "@discord-interactions/core": "^0.3.19",
     "@discord-interactions/verify-node": "^0.2.7",
     "discord-api-types": "^0.36.1",
     "fastify": "^4.2.0",
