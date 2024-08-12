@@ -78,8 +78,7 @@ export class CommandManager {
     const parsed = {
       [ApplicationCommandType.ChatInput]: new Map(),
       [ApplicationCommandType.User]: new Map(),
-      [ApplicationCommandType.Message]: new Map(),
-      [ApplicationCommandType.Launch]: new Map()
+      [ApplicationCommandType.Message]: new Map()
     };
 
     commands.map((command) => parsed[command.type]?.set(command.name, command));
