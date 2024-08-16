@@ -81,7 +81,14 @@ export class CommandManager {
       [ApplicationCommandType.Message]: new Map()
     };
 
-    commands.map((command) => parsed[command.type].set(command.name, command));
+    commands.map((command) => {
+      if (parsed?.[command.type] === undefined) {
+        console.warn(`Unrecognized command type: ${command.type}`);
+        return;
+      }
+
+      parsed[command.type].set(command.name, command);
+    });
 
     return parsed;
   }
