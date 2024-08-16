@@ -81,7 +81,14 @@ export class CommandManager {
       [ApplicationCommandType.Message]: new Map()
     };
 
-    commands.map((command) => parsed[command.type]?.set(command.name, command));
+    commands.map((command) => {
+      if (parsed?.[command.type] === undefined) {
+        console.warn(`Unrecognized command type: ${command.type}`);
+        return;
+      }
+
+      parsed[command.type].set(command.name, command);
+    });
 
     return parsed;
   }
@@ -101,11 +108,11 @@ export class CommandManager {
    * @param type Command type
    */
   get(name: string, type: ApplicationCommandType = ApplicationCommandType.ChatInput): RegisteredCommand | undefined {
-    return this[type]?.get(name);
+    return this[type].get(name);
   }
 
   set(name: string, type: ApplicationCommandType = ApplicationCommandType.ChatInput, command: RegisteredCommand): void {
-    this[type]?.set(name, command as never);
+    this[type].set(name, command as never);
   }
 
   /**
