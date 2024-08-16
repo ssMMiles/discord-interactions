@@ -15,8 +15,11 @@ import { InteractionResponseAlreadySent, InteractionStateExpired } from "../../u
 import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
 import { WebhookClient } from "../WebhookClient.js";
 
-// lasts 15 minutes, minus 5 second buffer to be safe
-const InteractionTokenExpiryTime = 15 * 60 * 1000 - 5000;
+// 15 minute token, minus 250ms to account for latency
+const TokenExpiryOffset = isNaN(Number(process.env.TOKEN_EXPIRY_OFFSET))
+  ? 250
+  : Number(process.env.TOKEN_EXPIRY_OFFSET);
+const InteractionTokenExpiryTime = 15 * 60 * 1000 - TokenExpiryOffset;
 
 export class BaseInteractionContext<
   T extends APIInteraction = APIInteraction,
