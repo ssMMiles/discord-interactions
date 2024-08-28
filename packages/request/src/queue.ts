@@ -166,7 +166,7 @@ export class Queue {
       await sleep(retryAfter, this.#shutdownSignal);
 
       // Don't bump retries for a non-server issue (the request is expected to succeed)
-      return this.#process(route, resource, init, retries);
+      return this.#process(route, resource, init, retries + 1);
     }
 
     // If given a server error, retry the request
