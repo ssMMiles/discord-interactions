@@ -1,7 +1,7 @@
 {
   "name": "@discord-interactions/core",
   "description": "A full command framework for Discord interactions.",
-  "version": "0.3.21",
+  "version": "0.3.22",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
