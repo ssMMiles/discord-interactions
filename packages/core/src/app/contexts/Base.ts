@@ -15,12 +15,8 @@ import { InteractionResponseAlreadySent, InteractionStateExpired } from "../../u
 import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
 import { WebhookClient } from "../WebhookClient.js";
 
-// Date functions return a fixed time in workers so doesn't apply there
-// Can be used to make up for the latency to Discord when calculating expiry times.
-const TokenExpiryOffset =
-  process === undefined || isNaN(Number(process.env.TOKEN_EXPIRY_OFFSET)) ? 0 : Number(process.env.TOKEN_EXPIRY_OFFSET);
-    
-const InteractionTokenExpiryTime = 15 * 60 * 1000 - TokenExpiryOffset;
+// 15 Minutes
+const InteractionTokenExpiryTime = 15 * 60 * 1000;
 
 export class BaseInteractionContext<
   T extends APIInteraction = APIInteraction,
