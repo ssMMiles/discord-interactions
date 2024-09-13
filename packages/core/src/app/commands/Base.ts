@@ -1,13 +1,20 @@
 import {
   CommandGroupBuilder,
+  CommandGroupData,
   MessageCommandBuilder,
+  MessageCommandData,
   SlashCommandBuilder,
-  UserCommandBuilder
+  SlashCommandData,
+  UserCommandBuilder,
+  UserCommandData
 } from "@discord-interactions/builders";
-import { Snowflake } from "discord-api-types/globals";
-import { APIApplicationCommand } from "discord-api-types/v10";
 import { Component, MessageCommandContext, Modal, SlashCommandContext, UserCommandContext } from "../index.js";
+
+import { APIApplicationCommand } from "discord-api-types/v10";
 import { CommandManager } from "../managers/CommandManager.js";
+import { Snowflake } from "discord-api-types/globals";
+
+type CommandDataTypes = CommandGroupData | UserCommandData | MessageCommandData | SlashCommandData;
 
 export interface ICommandBase<Builder, Context> {
   builder: Builder;
@@ -37,7 +44,7 @@ export abstract class RegisteredDiscordCommand<
     this.builder = command.builder;
   }
 
-  private synced(data: ReturnType<typeof this.builder.toJSON>): void {
+  private synced(data: CommandDataTypes | ReturnType<Builder["toJSON"]>): void {
     // console.log`Command Sync Success: ${data.name}.`);
 
     this.lastSync = data;

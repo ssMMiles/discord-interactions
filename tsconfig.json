@@ -2,13 +2,11 @@
   "compilerOptions": {
     "strict": true,
 
-    "lib": [
-      "es2021"
-    ],
-    "target": "es2021",
+    "lib": ["es2022"],
+    "target": "es2022",
 
-    "moduleResolution": "node16",
-    "module": "esnext",
+    "moduleResolution": "nodenext",
+    "module": "nodenext",
 
     "outDir": "dist",
 

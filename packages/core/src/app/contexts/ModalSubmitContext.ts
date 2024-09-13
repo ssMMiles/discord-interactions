@@ -1,4 +1,3 @@
-import { MessageBuilder } from "@discord-interactions/builders";
 import type {
   APIInteractionResponseChannelMessageWithSource,
   APIInteractionResponseUpdateMessage,
@@ -6,11 +5,13 @@ import type {
   APIModalSubmitInteraction,
   ModalSubmitComponent
 } from "discord-api-types/v10";
-import { InteractionResponseType, MessageFlags } from "discord-api-types/v10";
-import { FormData } from "formdata-node";
-import { deprecationWarning, InteractionResponseAlreadySent, SimpleEmbed } from "../../index.js";
 import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
+import { InteractionResponseAlreadySent, SimpleEmbed, deprecationWarning } from "../../index.js";
+import { InteractionResponseType, MessageFlags } from "discord-api-types/v10";
+
 import { BaseStatefulInteractionContext } from "./Base.js";
+import { FormData } from "formdata-node";
+import { MessageBuilder } from "@discord-interactions/builders";
 import { ModalSubmitResponse } from "./response-types.js";
 
 export class ModalSubmitContext<State = never> extends BaseStatefulInteractionContext<
@@ -19,8 +20,6 @@ export class ModalSubmitContext<State = never> extends BaseStatefulInteractionCo
   ModalSubmitResponse
 > {
   public components: Map<string, ModalSubmitComponent> = new Map();
-
-  public parentCommand?: string;
 
   constructor(
     manager: DiscordApplication,

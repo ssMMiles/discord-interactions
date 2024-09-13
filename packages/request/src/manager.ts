@@ -1,12 +1,14 @@
 /* eslint-disable @typescript-eslint/no-non-null-assertion */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
-import debug from "debug";
-import { FormData } from "formdata-node";
+
 import { BodyInit, Headers, RequestInit } from "isomorphic-fetch-ponyfill";
-import { Queue } from "./queue.js";
+import { OFFSET, ONE_DAY, ONE_SECOND, sleep } from "./util/time.js";
 import { RateLimitData, RequestData, RequestMethod, Route } from "./types.js";
 import { getRouteInformation, getRouteKey } from "./util/routes.js";
-import { OFFSET, ONE_DAY, ONE_SECOND, sleep } from "./util/time.js";
+
+import { FormData } from "undici";
+import { Queue } from "./queue.js";
+import debug from "debug";
 
 const log = debug("discord-request:manager");
 
@@ -53,8 +55,8 @@ export class Manager {
   buckets: Map<string, Bucket>;
   queues: Map<string, Queue>;
 
-  #bucketSweeper!: NodeJS.Timer;
-  #queueSweeper!: NodeJS.Timer;
+  #bucketSweeper!: NodeJS.Timeout | string | number | undefined;
+  #queueSweeper!: NodeJS.Timeout | string | number | undefined;
 
   bucketSweepInterval: number;
   queueSweepInterval: number;

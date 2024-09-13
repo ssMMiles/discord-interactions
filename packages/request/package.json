@@ -29,15 +29,16 @@
     "debug": "^4.3.4",
     "discord-api-types": "^0.37.18",
     "formdata-node": "^4.3.3",
-    "isomorphic-fetch-ponyfill": "^0.3.18"
+    "isomorphic-fetch-ponyfill": "^0.3.18",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@types/jest": "^28.1.4",
-    "@types/node": "^18.0.3",
+    "@types/node": "^18.19.50",
     "rimraf": "^4.2.0",
     "rollup": "^3.18.0",
     "rollup-plugin-dts": "^5.2.0",
-    "typescript": "^4.7.4"
+    "typescript": "^4.9.5"
   },
   "publishConfig": {
     "access": "public"

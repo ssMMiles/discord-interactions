@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import type {
   APIActionRowComponent,
   APIAllowedMentions,
@@ -8,9 +9,10 @@ import type {
   APIMessageActionRowComponent,
   RESTPostAPIWebhookWithTokenJSONBody
 } from "discord-api-types/v10";
-import { InteractionResponseType, MessageFlags } from "discord-api-types/v10";
-import { Blob, FormData } from "formdata-node";
 import type { ActionRowBuilder, MessageActionRowComponentBuilders } from "../components/ActionRowBuilder.js";
+import { Blob, FormData } from "formdata-node";
+import { InteractionResponseType, MessageFlags } from "discord-api-types/v10";
+
 import { EmbedBuilder } from "./EmbedBuilder.js";
 
 export interface AttachedFile {
@@ -65,7 +67,8 @@ export class MessageBuilder {
   }
 
   private setMessageFlag(flag: MessageFlags, value: boolean): this {
-    if (this.data.flags === undefined) this.data.flags = 0;
+    // We need this hack because we can't set it to 0 as an incompatible type.
+    if (this.data.flags === undefined) this.data.flags = flag &= ~flag;
 
     if (value) {
       this.data.flags |= flag;
