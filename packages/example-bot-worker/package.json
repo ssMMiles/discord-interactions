@@ -1,6 +1,6 @@
 {
   "name": "@discord-interactions/example-bot-worker",
-  "version": "0.3.22",
+  "version": "0.3.23",
   "type": "module",
   "devDependencies": {
     "@cloudflare/workers-types": "^3.14.0",
@@ -29,7 +29,7 @@
   },
   "dependencies": {
     "@discord-interactions/builders": "^0.3.18",
-    "@discord-interactions/core": "^0.3.22",
+    "@discord-interactions/core": "^0.3.23",
     "@discord-interactions/verify": "^0.3.16"
   }
 }
