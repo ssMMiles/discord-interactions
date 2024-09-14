@@ -28,3 +28,4 @@ jobs:
           PUBLIC_KEY: ${{ secrets.PUBLIC_KEY }}
           TOKEN: ${{ secrets.TOKEN }}
           PORT: 8080
+
