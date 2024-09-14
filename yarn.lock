@@ -939,12 +939,12 @@
 
 "@nx/nx-linux-x64-gnu@19.7.2":
   version "19.7.2"
-  resolved "https://registry.yarnpkg.com/@nx/nx-linux-x64-gnu/-/nx-linux-x64-gnu-19.7.2.tgz#91d2f50a554afe5db89aae41eb30c821f30dc6e4"
+  resolved "https://registry.npmjs.org/@nx/nx-linux-x64-gnu/-/nx-linux-x64-gnu-19.7.2.tgz"
   integrity sha512-P5HQhLoxLodpbhF5Col+ygScXfcVnk0gqXPxbc7kOnhdCwwIISZxHPsrgm0jbWaB5TufBuZNlo+ST8Evtnzojg==
 
 "@nx/nx-linux-x64-musl@19.7.2":
   version "19.7.2"
-  resolved "https://registry.yarnpkg.com/@nx/nx-linux-x64-musl/-/nx-linux-x64-musl-19.7.2.tgz#3a2ccc349b41978baf9db32d84c3962319d20bab"
+  resolved "https://registry.npmjs.org/@nx/nx-linux-x64-musl/-/nx-linux-x64-musl-19.7.2.tgz"
   integrity sha512-b08iqgz4Z2jKRJ66rf7ci/n0LFZ3CnaxdpXnOpb1FM/ZBLn3BuNah36K03UWamBlkrVEmAORZtPKZ5OuQHnlMg==
 
 "@nx/nx-win32-arm64-msvc@19.7.2":
@@ -954,7 +954,7 @@
 
 "@nx/nx-win32-x64-msvc@19.7.2":
   version "19.7.2"
-  resolved "https://registry.npmjs.org/@nx/nx-win32-x64-msvc/-/nx-win32-x64-msvc-19.7.2.tgz"
+  resolved "https://registry.yarnpkg.com/@nx/nx-win32-x64-msvc/-/nx-win32-x64-msvc-19.7.2.tgz#1057f69560ac73fffd722beba94347ecd55f5b11"
   integrity sha512-gK5XnkeiVbjs9+dkukGmZedXrxSL845t/ntlA8wp4joOnb7xUED/xvwhIP7DRjL6VefFbFIzhxgPaSaKfzaiiA==
 
 "@octokit/auth-token@^3.0.0":
@@ -1305,10 +1305,12 @@
   resolved "https://registry.npmjs.org/@types/minimist/-/minimist-1.2.5.tgz"
   integrity sha512-hov8bUuiLiyFPGyFPE1lwWhmzYbirOXQNNo40+y3zow8aFVTeyn3VWL0VFFfdNddA8S4Vf0Tc062rzyNr7Paag==
 
-"@types/node@*", "@types/node@^18.0.3":
-  version "18.0.3"
-  resolved "https://registry.npmjs.org/@types/node/-/node-18.0.3.tgz"
-  integrity sha512-HzNRZtp4eepNitP+BD6k2L6DROIDG4Q0fm4x+dwfsr6LGmROENnok75VGw40628xf+iR24WeMFcHuuBDUAzzsQ==
+"@types/node@*", "@types/node@^18.19.50":
+  version "18.19.50"
+  resolved "https://registry.npmjs.org/@types/node/-/node-18.19.50.tgz"
+  integrity sha512-xonK+NRrMBRtkL1hVCc3G+uXtjh1Al4opBLjqVmipe5ZAaBYWW6cNAiBVZ1BvmkBhep698rP3UM3aRAdSALuhg==
+  dependencies:
+    undici-types "~5.26.4"
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.4"
@@ -5858,6 +5860,11 @@ uglify-js@^3.1.4:
   version "3.16.2"
   resolved "https://registry.npmjs.org/uglify-js/-/uglify-js-3.16.2.tgz"
   integrity sha512-AaQNokTNgExWrkEYA24BTNMSjyqEXPSfhqoS0AxmHkCJ4U+Dyy5AvbGV/sqxuxficEfGGoX3zWw9R7QpLFfEsg==
+
+undici-types@~5.26.4:
+  version "5.26.5"
+  resolved "https://registry.npmjs.org/undici-types/-/undici-types-5.26.5.tgz"
+  integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
 
 unique-filename@^3.0.0:
   version "3.0.0"
