@@ -2,7 +2,6 @@
   "name": "@discord-interactions/discord-interactions",
   "version": "0.0.1",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
     "build": "lerna run build",
     "format": "lerna run format",

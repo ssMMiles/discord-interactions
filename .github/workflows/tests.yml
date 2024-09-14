@@ -17,8 +17,6 @@ jobs:
           node-version: '18'
       - name: Install
         run: yarn install
-      - name: Bootstrap
-        run: yarn bootstrap
       - name: Build
         run: yarn build
       - name: Tests
