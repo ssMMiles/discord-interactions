@@ -203,6 +203,7 @@ export async function _handleInteraction(
   timestamps: { signature: Date; received: Date },
   responseCallback: ResponseCallback
 ): Promise<InteractionContext> {
+  // eslint-disable-next-line prefer-const
   let [context, hooks] = getExecutionContext(this, interaction, timestamps, responseCallback);
 
   for (const hook of hooks) {
@@ -342,6 +343,7 @@ export async function _handleInteraction(
       if (!component) throw new InteractionHandlerNotFound(interaction);
 
       try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         await component.handler(context as any);
       } catch (err: unknown) {
         throw new InteractionHandlerError(interaction, err);

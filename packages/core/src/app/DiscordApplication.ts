@@ -236,15 +236,15 @@ export class DiscordApplication {
 
   /**
    * Handle an incoming webhook event request (Webhook Events URL).
-   * Webhook events use the same Ed25519 signature scheme as interactions, and must always be
-   * acknowledged with an empty 204 response within 3 seconds - respond immediately after this
-   * resolves, then await the returned promise to finish running your event hooks.
+   * Webhook events use the same Ed25519 signature scheme as interactions. Throws
+   * UnauthorizedInteraction for invalid signatures (respond 401); otherwise runs the
+   * registered event hooks. Discord expects an empty 204 acknowledgement within 3 seconds,
+   * so either keep hooks fast or send your response before awaiting this promise.
    * @param body Raw request body
    * @param signature Request's "X-Signature-Ed25519" header or false to skip signature verification
    * @param timestamp Request's "X-Signature-Timestamp" header
-   * @returns A promise which runs this event's registered hooks (PING events resolve immediately)
    */
-  async handleWebhookEvent(body: string, signature: string | false, timestamp?: string): Promise<Promise<void>> {
+  async handleWebhookEvent(body: string, signature: string | false, timestamp?: string): Promise<void> {
     let isValidSignature = false;
 
     if (signature === false) {

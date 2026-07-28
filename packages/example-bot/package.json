@@ -10,7 +10,6 @@
     "@discord-interactions/api": "^0.3.21",
     "@discord-interactions/builders": "^0.3.18",
     "@discord-interactions/core": "^0.3.23",
-    "@discord-interactions/verify-node": "^0.2.7",
     "discord-api-types": "^0.38.52",
     "fastify": "^4.2.0",
     "fastify-raw-body": "^4.0.0",

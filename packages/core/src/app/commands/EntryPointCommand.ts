@@ -12,9 +12,14 @@ export class EntryPointCommand extends HandledInteraction<
   EntryPointCommandBuilder,
   EntryPointCommandContext
 > {
-  public handler = async (ctx: EntryPointCommandContext) => {
-    ctx.launchActivity();
-  };
+  constructor(
+    builder: EntryPointCommandBuilder,
+    handler: (ctx: EntryPointCommandContext) => Promise<void> = async (ctx: EntryPointCommandContext) => {
+      ctx.launchActivity();
+    }
+  ) {
+    super(builder, handler);
+  }
 }
 
 export class RegisteredEntryPointCommand extends RegisteredCommandBase<
