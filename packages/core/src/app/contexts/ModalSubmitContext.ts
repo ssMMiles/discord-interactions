@@ -121,6 +121,18 @@ export class ModalSubmitContext<State = never> extends BaseStatefulInteractionCo
       .filter((attachment): attachment is APIAttachment => attachment !== undefined);
   }
 
+  /**
+   * Launch your app's Activity in response to this modal submission.
+   * Only available to apps with Activities enabled.
+   */
+  launchActivity(): Promise<void> {
+    if (this.replied) throw new InteractionResponseAlreadySent();
+
+    return this._reply({
+      type: InteractionResponseType.LaunchActivity
+    });
+  }
+
   defer(flags?: MessageFlags): Promise<void> {
     deprecationWarning("ModalSubmitContext#defer", "ModalSubmitContext#deferFollowup/deferUpdate");
     if (this.replied) throw new InteractionResponseAlreadySent();

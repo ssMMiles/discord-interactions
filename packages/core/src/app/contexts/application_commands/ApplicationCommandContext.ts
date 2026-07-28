@@ -83,6 +83,18 @@ export class BaseCommandContext<
     return super.createGlobalComponent(`${this.name}.${name}`, state, ttl);
   }
 
+  /**
+   * Launch your app's Activity in response to this interaction.
+   * Only available to apps with Activities enabled.
+   */
+  launchActivity(): Promise<void> {
+    if (this.replied) throw new InteractionResponseAlreadySent();
+
+    return this._reply({
+      type: InteractionResponseType.LaunchActivity
+    });
+  }
+
   defer(flags?: MessageFlags): Promise<void> {
     if (this.replied) throw new InteractionResponseAlreadySent();
 

@@ -1,12 +1,20 @@
 import {
   CommandGroupBuilder,
+  EntryPointCommandBuilder,
   MessageCommandBuilder,
   SlashCommandBuilder,
   UserCommandBuilder
 } from "@discord-interactions/builders";
 import { Snowflake } from "discord-api-types/globals";
 import { APIApplicationCommand } from "discord-api-types/v10";
-import { Component, MessageCommandContext, Modal, SlashCommandContext, UserCommandContext } from "../index.js";
+import {
+  Component,
+  EntryPointCommandContext,
+  MessageCommandContext,
+  Modal,
+  SlashCommandContext,
+  UserCommandContext
+} from "../index.js";
 import { CommandManager } from "../managers/CommandManager.js";
 
 export interface ICommandBase<Builder, Context> {
@@ -18,7 +26,12 @@ export interface ICommandBase<Builder, Context> {
 }
 
 export abstract class RegisteredDiscordCommand<
-  Builder extends SlashCommandBuilder | CommandGroupBuilder | MessageCommandBuilder | UserCommandBuilder
+  Builder extends
+    | SlashCommandBuilder
+    | CommandGroupBuilder
+    | MessageCommandBuilder
+    | UserCommandBuilder
+    | EntryPointCommandBuilder
 > {
   private manager: CommandManager;
 
@@ -144,8 +157,8 @@ export abstract class RegisteredDiscordCommand<
 }
 
 export abstract class RegisteredCommandBase<
-    Builder extends SlashCommandBuilder | UserCommandBuilder | MessageCommandBuilder,
-    Context extends SlashCommandContext | UserCommandContext | MessageCommandContext
+    Builder extends SlashCommandBuilder | UserCommandBuilder | MessageCommandBuilder | EntryPointCommandBuilder,
+    Context extends SlashCommandContext | UserCommandContext | MessageCommandContext | EntryPointCommandContext
   >
   extends RegisteredDiscordCommand<Builder>
   implements ICommandBase<Builder, Context>

@@ -2,10 +2,11 @@
 // @ts-ignore
 import { DiscordApiClient } from "@discord-interactions/api";
 import _verifyInteractionSignature from "@discord-interactions/verify";
-import type { APIInteraction, APIInteractionResponse, Snowflake } from "discord-api-types/v10";
+import type { APIInteraction, APIInteractionResponse, APIWebhookEvent, Snowflake } from "discord-api-types/v10";
 import type { FormData } from "formdata-node";
 import { InteractionHandlerTimedOut, UnauthorizedInteraction } from "../util/errors.js";
 import { ContextMap, InteractionHooks, _handleInteraction } from "./index.js";
+import { dispatchWebhookEvent, WebhookEventHooks } from "./handlers/webhookEvents.js";
 import { CommandManager } from "./managers/CommandManager.js";
 import { ComponentManager } from "./managers/ComponentManager.js";
 
@@ -30,6 +31,9 @@ export interface DiscordApplicationOptions {
 
   /** Hooks to perform additional processing on certain interactions before passing to their handlers. Upon returning true, all further execution is halted. */
   hooks?: Partial<InteractionHooks>;
+
+  /** Handlers for HTTP-pushed webhook events (Webhook Events URL), e.g. APPLICATION_AUTHORIZED or ENTITLEMENT_CREATE. */
+  webhookEvents?: Partial<WebhookEventHooks>;
 
   /** Component State Cache */
   cache?: GenericCache;
@@ -82,11 +86,23 @@ export class DiscordApplication {
     "command.autocomplete": [],
     "command.user": [],
     "command.message": [],
+    "command.entryPoint": [],
 
     "component.button": [],
     "component.selectMenu": [],
 
     modal: []
+  };
+
+  public webhookEventHooks: WebhookEventHooks = {
+    applicationAuthorized: [],
+    applicationDeauthorized: [],
+
+    entitlementCreate: [],
+    entitlementUpdate: [],
+    entitlementDelete: [],
+
+    questUserEnrollment: []
   };
 
   public rest!: DiscordApiClient;
@@ -110,6 +126,10 @@ export class DiscordApplication {
 
     if (options.hooks) {
       Object.assign(this.hooks, options.hooks);
+    }
+
+    if (options.webhookEvents) {
+      Object.assign(this.webhookEventHooks, options.webhookEvents);
     }
   }
 
@@ -207,5 +227,38 @@ export class DiscordApplication {
     handler: (ctx: ContextMap[T]) => Promise<void | true>
   ): void {
     (this.hooks[hook] as ((ctx: ContextMap[T]) => Promise<void | true>)[]).push(handler);
+  }
+
+  public addWebhookEventHook<T extends keyof WebhookEventHooks>(event: T, handler: WebhookEventHooks[T][number]): void {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    (this.webhookEventHooks[event] as any[]).push(handler);
+  }
+
+  /**
+   * Handle an incoming webhook event request (Webhook Events URL).
+   * Webhook events use the same Ed25519 signature scheme as interactions, and must always be
+   * acknowledged with an empty 204 response within 3 seconds - respond immediately after this
+   * resolves, then await the returned promise to finish running your event hooks.
+   * @param body Raw request body
+   * @param signature Request's "X-Signature-Ed25519" header or false to skip signature verification
+   * @param timestamp Request's "X-Signature-Timestamp" header
+   * @returns A promise which runs this event's registered hooks (PING events resolve immediately)
+   */
+  async handleWebhookEvent(body: string, signature: string | false, timestamp?: string): Promise<Promise<void>> {
+    let isValidSignature = false;
+
+    if (signature === false) {
+      isValidSignature = true;
+    } else if (typeof timestamp === "string") {
+      isValidSignature = await this.verifyInteractionSignature(signature, timestamp, body);
+    }
+
+    if (!isValidSignature) {
+      throw new UnauthorizedInteraction(body);
+    }
+
+    const event = JSON.parse(body) as APIWebhookEvent;
+
+    return dispatchWebhookEvent(this.webhookEventHooks, event);
   }
 }
