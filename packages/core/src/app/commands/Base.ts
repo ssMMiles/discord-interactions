@@ -5,7 +5,7 @@ import {
   SlashCommandBuilder,
   UserCommandBuilder
 } from "@discord-interactions/builders";
-import { Snowflake } from "discord-api-types/globals";
+import type { Snowflake } from "discord-api-types/v10";
 import { APIApplicationCommand } from "discord-api-types/v10";
 import {
   Component,

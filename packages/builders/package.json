@@ -1,7 +1,7 @@
 {
   "name": "@discord-interactions/builders",
   "description": "Simple builder classes for Discord interaction responses (Messages/Modals), Components and Commands.",
-  "version": "0.3.18",
+  "version": "0.4.0",
   "license": "Apache-2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -38,7 +38,7 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "publishConfig": {
     "access": "public"

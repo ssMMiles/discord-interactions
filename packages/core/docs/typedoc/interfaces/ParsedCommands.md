@@ -1,41 +1,41 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / ParsedCommands
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / ParsedCommands
 
 # Interface: ParsedCommands
 
-## Table of contents
-
-### Properties
-
-- [1](ParsedCommands.md#1)
-- [2](ParsedCommands.md#2)
-- [3](ParsedCommands.md#3)
+Defined in: [app/managers/CommandManager.ts:36](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/managers/CommandManager.ts#L36)
 
 ## Properties
 
 ### 1
 
-• **1**: `Map`<`string`, [`APIApplicationSlashCommand`](APIApplicationSlashCommand.md)\>
+> **1**: `Map`\<`string`, [`APIApplicationSlashCommand`](APIApplicationSlashCommand.md)\>
 
-#### Defined in
+Defined in: [app/managers/CommandManager.ts:37](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/managers/CommandManager.ts#L37)
 
-[app/managers/CommandManager.ts:31](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/managers/CommandManager.ts#L31)
-
-___
+***
 
 ### 2
 
-• **2**: `Map`<`string`, [`APIApplicationMessageCommand`](APIApplicationMessageCommand.md)\>
+> **2**: `Map`\<`string`, [`APIApplicationMessageCommand`](APIApplicationMessageCommand.md)\>
 
-#### Defined in
+Defined in: [app/managers/CommandManager.ts:39](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/managers/CommandManager.ts#L39)
 
-[app/managers/CommandManager.ts:33](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/managers/CommandManager.ts#L33)
-
-___
+***
 
 ### 3
 
-• **3**: `Map`<`string`, [`APIApplicationUserCommand`](APIApplicationUserCommand.md)\>
+> **3**: `Map`\<`string`, [`APIApplicationUserCommand`](APIApplicationUserCommand.md)\>
 
-#### Defined in
+Defined in: [app/managers/CommandManager.ts:38](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/managers/CommandManager.ts#L38)
 
-[app/managers/CommandManager.ts:32](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/managers/CommandManager.ts#L32)
+***
+
+### 4
+
+> **4**: `Map`\<`string`, [`APIApplicationEntryPointCommand`](APIApplicationEntryPointCommand.md)\>
+
+Defined in: [app/managers/CommandManager.ts:40](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/managers/CommandManager.ts#L40)

@@ -4,4 +4,5 @@ node_modules
 
 # Build artifacts
 dist
-yarn-error.logdiscord-api-docs/
+yarn-error.log
+discord-api-docs/

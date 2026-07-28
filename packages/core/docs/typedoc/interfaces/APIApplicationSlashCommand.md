@@ -1,29 +1,27 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / APIApplicationSlashCommand
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / APIApplicationSlashCommand
 
 # Interface: APIApplicationSlashCommand
 
-## Hierarchy
+Defined in: [app/managers/CommandManager.ts:20](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/managers/CommandManager.ts#L20)
+
+## Extends
 
 - `APIApplicationCommand`
-
-  ↳ **`APIApplicationSlashCommand`**
-
-## Table of contents
-
-### Properties
-
-- [type](APIApplicationSlashCommand.md#type)
 
 ## Properties
 
 ### type
 
-• **type**: `ChatInput`
+> **type**: `ChatInput`
+
+Defined in: [app/managers/CommandManager.ts:21](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/managers/CommandManager.ts#L21)
+
+Type of the command
 
 #### Overrides
 
-APIApplicationCommand.type
-
-#### Defined in
-
-[app/managers/CommandManager.ts:19](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/managers/CommandManager.ts#L19)
+`APIApplicationCommand.type`

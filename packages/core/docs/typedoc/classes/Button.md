@@ -1,245 +1,231 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / Button
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / Button
 
 # Class: Button
 
-## Hierarchy
+Defined in: [app/components/Button.ts:6](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Button.ts#L6)
 
-- `ComponentBase`<`APIButtonComponentWithCustomId`, `ButtonBuilder`, [`ButtonContext`](ButtonContext.md)\>
+## Extends
 
-  ↳ **`Button`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](Button.md#constructor)
-
-### Properties
-
-- [allowExpired](Button.md#allowexpired)
-- [builder](Button.md#builder)
-- [components](Button.md#components)
-- [handler](Button.md#handler)
-- [id](Button.md#id)
-- [parentCommand](Button.md#parentcommand)
-
-### Accessors
-
-- [data](Button.md#data)
-
-### Methods
-
-- [createInstance](Button.md#createinstance)
-- [setAllowExpired](Button.md#setallowexpired)
-- [setHandler](Button.md#sethandler)
-- [setId](Button.md#setid)
+- [`ComponentBase`](ComponentBase.md)\<`APIButtonComponentWithCustomId`, `ButtonBuilder`, [`ButtonContext`](ButtonContext.md)\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new Button**(`id`, `builder`, `handler?`)
+> **new Button**(`id`, `builder`, `handler?`): `Button`
+
+Defined in: [app/components/Button.ts:7](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Button.ts#L7)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
-| `builder` | `ButtonBuilder` |
-| `handler` | (`ctx`: [`ButtonContext`](ButtonContext.md)<`never`\>) => `Promise`<`void`\> |
+##### id
+
+`string`
+
+##### builder
+
+`ButtonBuilder`
+
+##### handler?
+
+(`ctx`) => `Promise`\<`void`\>
+
+#### Returns
+
+`Button`
 
 #### Overrides
 
-ComponentBase&lt;APIButtonComponentWithCustomId, ButtonBuilder, ButtonContext\&gt;.constructor
+[`ComponentBase`](ComponentBase.md).[`constructor`](ComponentBase.md#constructor)
 
 ## Properties
 
 ### allowExpired
 
-• **allowExpired**: `boolean` = `false`
+> **allowExpired**: `boolean` = `false`
+
+Defined in: [app/components/Base.ts:16](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L16)
 
 #### Inherited from
 
-ComponentBase.allowExpired
+[`ComponentBase`](ComponentBase.md).[`allowExpired`](ComponentBase.md#allowexpired)
 
-#### Defined in
-
-[app/components/Base.ts:10](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/components/Base.ts#L10)
-
-___
+***
 
 ### builder
 
-• **builder**: `ButtonBuilder`
+> **builder**: `ButtonBuilder`
+
+Defined in: [app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 #### Inherited from
 
-ComponentBase.builder
+[`ComponentBase`](ComponentBase.md).[`builder`](ComponentBase.md#builder-1)
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L4)
-
-___
+***
 
 ### components
 
-• **components**: ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[]
+> **components**: ([`Component`](../type-aliases/Component.md) \| [`Modal`](Modal.md))[]
+
+Defined in: [app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 #### Inherited from
 
-ComponentBase.components
+[`EntryPointCommand`](EntryPointCommand.md).[`components`](EntryPointCommand.md#components)
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L11)
-
-___
+***
 
 ### handler
 
-• **handler**: (`ctx`: [`ButtonContext`](ButtonContext.md)<`never`\>) => `Promise`<`void`\>
+> **handler**: (`ctx`) => `Promise`\<`void`\>
 
-#### Type declaration
+Defined in: [app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L9)
 
-▸ (`ctx`): `Promise`<`void`\>
+#### Parameters
 
-##### Parameters
+##### ctx
 
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`ButtonContext`](ButtonContext.md)<`never`\> |
+[`ButtonContext`](ButtonContext.md)
 
-##### Returns
+#### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-ComponentBase.handler
+[`ComponentBase`](ComponentBase.md).[`handler`](ComponentBase.md#handler)
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L9)
-
-___
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
+
+Defined in: [app/components/Base.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L15)
 
 #### Inherited from
 
-ComponentBase.id
+[`ComponentBase`](ComponentBase.md).[`id`](ComponentBase.md#id)
 
-#### Defined in
+***
 
-[app/components/Base.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/components/Base.ts#L9)
+### parentCommand?
 
-___
+> `optional` **parentCommand?**: `string`
 
-### parentCommand
-
-• `Optional` **parentCommand**: `string`
+Defined in: [app/components/Base.ts:18](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L18)
 
 #### Inherited from
 
-ComponentBase.parentCommand
-
-#### Defined in
-
-[app/components/Base.ts:12](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/components/Base.ts#L12)
+[`ComponentBase`](ComponentBase.md).[`parentCommand`](ComponentBase.md#parentcommand)
 
 ## Accessors
 
 ### data
 
-• `get` **data**(): `Data`
+#### Get Signature
 
-#### Returns
+> **get** **data**(): `Data`
+
+Defined in: [app/handlers/HandledInteraction.ts:5](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L5)
+
+##### Returns
 
 `Data`
 
 #### Inherited from
 
-ComponentBase.data
+[`ComponentBase`](ComponentBase.md).[`data`](ComponentBase.md#data-1)
 
 ## Methods
 
-### createInstance
+### createInstance()
 
-▸ **createInstance**(`state`): `ButtonBuilder`
+> **createInstance**(`state`): `ButtonBuilder`
+
+Defined in: [app/components/Button.ts:17](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Button.ts#L17)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `state` | `string` |
+##### state
+
+`string`
 
 #### Returns
 
 `ButtonBuilder`
 
-___
+***
 
-### setAllowExpired
+### setAllowExpired()
 
-▸ **setAllowExpired**(`value`): [`Button`](Button.md)
+> **setAllowExpired**(`value`): `Button`
+
+Defined in: [app/components/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L40)
 
 Set whether component execution should continue when state data has expired
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | `boolean` |
+##### value
+
+`boolean`
 
 #### Returns
 
-[`Button`](Button.md)
+`Button`
 
 #### Inherited from
 
-ComponentBase.setAllowExpired
+[`ComponentBase`](ComponentBase.md).[`setAllowExpired`](ComponentBase.md#setallowexpired)
 
-___
+***
 
-### setHandler
+### setHandler()
 
-▸ **setHandler**(`handler`): [`Button`](Button.md)
+> **setHandler**(`handler`): `this`
+
+Defined in: [app/handlers/HandledInteraction.ts:20](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L20)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `handler` | (`ctx`: [`ButtonContext`](ButtonContext.md)<`never`\>) => `Promise`<`void`\> |
+##### handler
+
+(`ctx`) => `Promise`\<`void`\>
 
 #### Returns
 
-[`Button`](Button.md)
+`this`
 
 #### Inherited from
 
-ComponentBase.setHandler
+[`ComponentBase`](ComponentBase.md).[`setHandler`](ComponentBase.md#sethandler)
 
-___
+***
 
-### setId
+### setId()
 
-▸ **setId**(`id`): [`Button`](Button.md)
+> **setId**(`id`): `Button`
+
+Defined in: [app/components/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L34)
 
 Set the component ID
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
+##### id
+
+`string`
 
 #### Returns
 
-[`Button`](Button.md)
+`Button`
 
 #### Inherited from
 
-ComponentBase.setId
+[`ComponentBase`](ComponentBase.md).[`setId`](ComponentBase.md#setid)

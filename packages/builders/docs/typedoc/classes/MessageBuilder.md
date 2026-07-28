@@ -1,339 +1,464 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / MessageBuilder
+[**@discord-interactions/builders**](../README.md)
+
+***
+
+[@discord-interactions/builders](../globals.md) / MessageBuilder
 
 # Class: MessageBuilder
 
-## Table of contents
-
-### Constructors
-
-- [constructor](MessageBuilder.md#constructor)
-
-### Properties
-
-- [data](MessageBuilder.md#data)
-- [files](MessageBuilder.md#files)
-
-### Methods
-
-- [addAttachments](MessageBuilder.md#addattachments)
-- [addComponents](MessageBuilder.md#addcomponents)
-- [addEmbeds](MessageBuilder.md#addembeds)
-- [setAllowedMentions](MessageBuilder.md#setallowedmentions)
-- [setAttachments](MessageBuilder.md#setattachments)
-- [setComponents](MessageBuilder.md#setcomponents)
-- [setContent](MessageBuilder.md#setcontent)
-- [setEmbeds](MessageBuilder.md#setembeds)
-- [setEphemeral](MessageBuilder.md#setephemeral)
-- [setTts](MessageBuilder.md#settts)
-- [suppressEmbeds](MessageBuilder.md#suppressembeds)
-- [toInteractionJSON](MessageBuilder.md#tointeractionjson)
-- [toInteractionResponse](MessageBuilder.md#tointeractionresponse)
-- [toJSON](MessageBuilder.md#tojson)
-- [toWebhook](MessageBuilder.md#towebhook)
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:44](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L44)
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new MessageBuilder**(`data?`)
+> **new MessageBuilder**(`data?`): `MessageBuilder`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:48](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L48)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `data?` | `string` \| `APIInteractionResponseCallbackData` \| [`EmbedBuilder`](EmbedBuilder.md) |
+##### data?
+
+`string` \| `APIInteractionResponseCallbackData` \| [`EmbedBuilder`](EmbedBuilder.md)
+
+#### Returns
+
+`MessageBuilder`
 
 ## Properties
 
 ### data
 
-• **data**: `APIInteractionResponseCallbackData` = `{}`
+> **data**: `APIInteractionResponseCallbackData` = `{}`
 
-#### Defined in
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:45](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L45)
 
-[src/responses/MessageBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/responses/MessageBuilder.ts#L24)
+***
 
-___
+### files?
 
-### files
+> `optional` **files?**: [`AttachedFile`](../interfaces/AttachedFile.md)[]
 
-• `Optional` **files**: [`AttachedFile`](../interfaces/AttachedFile.md)[]
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:46](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L46)
 
-#### Defined in
+## Accessors
 
-[src/responses/MessageBuilder.ts:25](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/responses/MessageBuilder.ts#L25)
+### isComponentsV2
+
+#### Get Signature
+
+> **get** **isComponentsV2**(): `boolean`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:142](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L142)
+
+Whether this message has the IsComponentsV2 flag set.
+
+##### Returns
+
+`boolean`
 
 ## Methods
 
-### addAttachments
+### addAttachments()
 
-▸ **addAttachments**(...`files`): [`MessageBuilder`](MessageBuilder.md)
+> **addAttachments**(...`files`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:218](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L218)
 
 Add one or more files to this message.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `...files` | [`AttachedFile`](../interfaces/AttachedFile.md)[] | Files to attach to this message. |
+##### files
+
+...[`AttachedFile`](../interfaces/AttachedFile.md)[]
+
+Files to attach to this message.
 
 #### Returns
 
-[`MessageBuilder`](MessageBuilder.md)
+`this`
 
-___
+***
 
-### addComponents
+### addComponents()
 
-▸ **addComponents**(...`components`): [`MessageBuilder`](MessageBuilder.md)
+> **addComponents**(...`components`): `this`
 
-Add one or more Action Rows to the message. Maximum of 5.
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:189](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L189)
+
+Add one or more top-level components to the message.
+Legacy messages accept up to 5 Action Rows; adding any other component type
+automatically flags this message as Components V2 (max 40 components total).
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `...components` | [`ActionRowBuilder`](ActionRowBuilder.md)<[`MessageActionRowComponentBuilders`](../modules.md#messageactionrowcomponentbuilders)\>[] | Action Rows to add to this message. |
+##### components
+
+...[`MessageTopLevelComponentBuilders`](../type-aliases/MessageTopLevelComponentBuilders.md)[]
+
+Components to add to this message.
 
 #### Returns
 
-[`MessageBuilder`](MessageBuilder.md)
+`this`
 
-___
+***
 
-### addEmbeds
+### addEmbeds()
 
-▸ **addEmbeds**(...`embeds`): [`MessageBuilder`](MessageBuilder.md)
+> **addEmbeds**(...`embeds`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:161](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L161)
 
 Add one or more embeds to this message. Maximum of 10.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `...embeds` | [`EmbedBuilder`](EmbedBuilder.md)[] | Embeds to add to this message. |
+##### embeds
+
+...[`EmbedBuilder`](EmbedBuilder.md)[]
+
+Embeds to add to this message.
 
 #### Returns
 
-[`MessageBuilder`](MessageBuilder.md)
+`this`
 
-___
+***
 
-### setAllowedMentions
+### setAllowedMentions()
 
-▸ **setAllowedMentions**(`allowedMentions`): [`MessageBuilder`](MessageBuilder.md)
+> **setAllowedMentions**(`allowedMentions`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:82](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L82)
 
 Set which mentions will be allowed in this message.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `allowedMentions` | `APIAllowedMentions` | Allowed mentions for this message. https://discord.com/developers/docs/resources/channel#allowed-mentions-object-allowed-mentions-structure - TODO: Builder for this |
+##### allowedMentions
+
+`APIAllowedMentions`
+
+Allowed mentions for this message. https://discord.com/developers/docs/resources/channel#allowed-mentions-object-allowed-mentions-structure - TODO: Builder for this
 
 #### Returns
 
-[`MessageBuilder`](MessageBuilder.md)
+`this`
 
-___
+***
 
-### setAttachments
+### setAttachments()
 
-▸ **setAttachments**(...`files`): [`MessageBuilder`](MessageBuilder.md)
+> **setAttachments**(...`files`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:244](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L244)
 
 Set an array of files to be sent with this message.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `...files` | [`AttachedFile`](../interfaces/AttachedFile.md)[] | Array of files to be sent. |
+##### files
+
+...[`AttachedFile`](../interfaces/AttachedFile.md)[]
+
+Array of files to be sent.
 
 #### Returns
 
-[`MessageBuilder`](MessageBuilder.md)
+`this`
 
-___
+***
 
-### setComponents
+### setComponents()
 
-▸ **setComponents**(`components?`): [`MessageBuilder`](MessageBuilder.md)
+> **setComponents**(`components?`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:207](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L207)
 
 Set an array of Action Rows to be sent with this message.
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `components` | `APIActionRowComponent`<`APIMessageActionRowComponent`\>[] | `[]` | Array of Action Rows to be sent. |
+##### components?
+
+`APIActionRowComponent`\<`APIComponentInMessageActionRow`\>[] = `[]`
+
+Array of Action Rows to be sent.
 
 #### Returns
 
-[`MessageBuilder`](MessageBuilder.md)
+`this`
 
-___
+***
 
-### setContent
+### setComponentsV2()
 
-▸ **setContent**(`content`): [`MessageBuilder`](MessageBuilder.md)
+> **setComponentsV2**(`value?`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:135](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L135)
+
+Set the IsComponentsV2 flag on this message. Components V2 messages can use layout and
+content components (Text Display, Section, Container, Media Gallery, Separator, File),
+but cannot use content, embeds, polls or stickers. This flag cannot be removed once
+a message has been sent with it.
+
+#### Parameters
+
+##### value?
+
+`boolean` = `true`
+
+Whether or not this message uses Components V2.
+
+#### Returns
+
+`this`
+
+***
+
+### setContent()
+
+> **setContent**(`content`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:60](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L60)
 
 Sets the content of the message.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `content` | `string` | Text content for your message. |
+##### content
+
+`string`
+
+Text content for your message.
 
 #### Returns
 
-[`MessageBuilder`](MessageBuilder.md)
+`this`
 
-___
+***
 
-### setEmbeds
+### setEmbeds()
 
-▸ **setEmbeds**(...`embeds`): [`MessageBuilder`](MessageBuilder.md)
+> **setEmbeds**(...`embeds`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:176](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L176)
 
 Set an array of embeds to be sent with this message.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `...embeds` | [`EmbedBuilder`](EmbedBuilder.md)[] | Array of embeds to be sent. |
+##### embeds
+
+...[`EmbedBuilder`](EmbedBuilder.md)[]
+
+Array of embeds to be sent.
 
 #### Returns
 
-[`MessageBuilder`](MessageBuilder.md)
+`this`
 
-___
+***
 
-### setEphemeral
+### setEphemeral()
 
-▸ **setEphemeral**(`value`): [`MessageBuilder`](MessageBuilder.md)
+> **setEphemeral**(`value`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:116](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L116)
 
 Set the Ephemeral flag on this message. https://discord.com/developers/docs/tutorials/upgrading-to-application-commands#responding-to-a-command
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `value` | `boolean` | Whether or not the message should be ephemeral. |
+##### value
+
+`boolean`
+
+Whether or not the message should be ephemeral.
 
 #### Returns
 
-[`MessageBuilder`](MessageBuilder.md)
+`this`
 
-___
+***
 
-### setTts
+### setPoll()
 
-▸ **setTts**(`tts`): [`MessageBuilder`](MessageBuilder.md)
+> **setPoll**(`poll`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:150](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L150)
+
+Attach a poll to this message. Not available on Components V2 messages.
+
+#### Parameters
+
+##### poll
+
+`RESTAPIPoll` \| [`PollBuilder`](PollBuilder.md)
+
+A PollBuilder or raw poll create request.
+
+#### Returns
+
+`this`
+
+***
+
+### setSuppressNotifications()
+
+> **setSuppressNotifications**(`value?`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:124](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L124)
+
+Set the SuppressNotifications flag on this message, sending it without triggering push/desktop notifications.
+
+#### Parameters
+
+##### value?
+
+`boolean` = `true`
+
+Whether or not notifications should be suppressed.
+
+#### Returns
+
+`this`
+
+***
+
+### setTts()
+
+> **setTts**(`tts`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:71](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L71)
 
 Set whether to enable TTS for this message.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `tts` | `boolean` | Whether or not the message should be read aloud. |
+##### tts
+
+`boolean`
+
+Whether or not the message should be read aloud.
 
 #### Returns
 
-[`MessageBuilder`](MessageBuilder.md)
+`this`
 
-___
+***
 
-### suppressEmbeds
+### suppressEmbeds()
 
-▸ **suppressEmbeds**(`value`): [`MessageBuilder`](MessageBuilder.md)
+> **suppressEmbeds**(`value`): `this`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:107](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L107)
 
 Set the SuppressEmbeds flag on this messgae.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `value` | `boolean` | Whether or not embeds in this message should be suppressed (hidden). |
+##### value
+
+`boolean`
+
+Whether or not embeds in this message should be suppressed (hidden).
 
 #### Returns
 
-[`MessageBuilder`](MessageBuilder.md)
+`this`
 
-___
+***
 
-### toInteractionJSON
+### toInteractionJSON()
 
-▸ **toInteractionJSON**<`T`\>(`responseType`): [`ResponseMap`](../modules.md#responsemap)[`T`]
+> **toInteractionJSON**\<`T`\>(`responseType`): [`ResponseMap`](../type-aliases/ResponseMap.md)\[`T`\]
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:278](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L278)
 
 Fetch this message's data as an HTTP interaction response.
 
-#### Type parameters
+#### Type Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `ChannelMessageWithSource` \| `UpdateMessage` |
+##### T
+
+`T` *extends* `ChannelMessageWithSource` \| `UpdateMessage`
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `responseType` | `T` | The interaction response type, depending on whether this is a response to a message or a reaction. |
+##### responseType
+
+`T`
+
+The interaction response type, depending on whether this is a response to a message or a reaction.
 
 #### Returns
 
-[`ResponseMap`](../modules.md#responsemap)[`T`]
+[`ResponseMap`](../type-aliases/ResponseMap.md)\[`T`\]
 
-___
+***
 
-### toInteractionResponse
+### toInteractionResponse()
 
-▸ **toInteractionResponse**<`T`\>(`responseType`): `FormData` \| [`ResponseMap`](../modules.md#responsemap)[`T`]
+> **toInteractionResponse**\<`T`\>(`responseType`): `FormData` \| [`ResponseMap`](../type-aliases/ResponseMap.md)\[`T`\]
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:292](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L292)
 
 Fetch this message and its files as an HTTP interaction response.
 
-#### Type parameters
+#### Type Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends `ChannelMessageWithSource` \| `UpdateMessage` |
+##### T
+
+`T` *extends* `ChannelMessageWithSource` \| `UpdateMessage`
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `responseType` | `T` | The interaction response type, depending on whether this is a response to a message or a reaction. |
+##### responseType
+
+`T`
+
+The interaction response type, depending on whether this is a response to a message or a reaction.
 
 #### Returns
 
-`FormData` \| [`ResponseMap`](../modules.md#responsemap)[`T`]
+`FormData` \| [`ResponseMap`](../type-aliases/ResponseMap.md)\[`T`\]
 
-___
+***
 
-### toJSON
+### toJSON()
 
-▸ **toJSON**(): `APIInteractionResponseCallbackData`
+> **toJSON**(): `APIInteractionResponseCallbackData`
 
-Fetch this message's data as an object.
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:303](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L303)
+
+Fetch this message's data as an object, validating Components V2 constraints.
 
 #### Returns
 
 `APIInteractionResponseCallbackData`
 
-___
+***
 
-### toWebhook
+### toWebhook()
 
-▸ **toWebhook**(`username?`, `avatar_url?`): `AddUndefinedToPossiblyUndefinedPropertiesOfInterface`<{ `allowed_mentions?`: `APIAllowedMentions` ; `attachments?`: `Pick`<`APIAttachment`, ``"description"`` \| ``"id"``\> & `Partial`<`Pick`<`APIAttachment`, ``"filename"``\>\>[] ; `avatar_url?`: `string` ; `components?`: `APIActionRowComponent`<`APIMessageActionRowComponent`\>[] ; `content?`: `string` ; `embeds?`: `APIEmbed`[] ; `flags?`: `MessageFlags` ; `thread_name?`: `string` ; `tts?`: `boolean` ; `username?`: `string`  }\> \| `FormData`
+> **toWebhook**(`username?`, `avatar_url?`): `RESTPostAPIWebhookWithTokenJSONBody` \| `FormData`
+
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:326](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L326)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `username?` | `string` |
-| `avatar_url?` | `string` |
+##### username?
+
+`string`
+
+##### avatar\_url?
+
+`string`
 
 #### Returns
 
-`AddUndefinedToPossiblyUndefinedPropertiesOfInterface`<{ `allowed_mentions?`: `APIAllowedMentions` ; `attachments?`: `Pick`<`APIAttachment`, ``"description"`` \| ``"id"``\> & `Partial`<`Pick`<`APIAttachment`, ``"filename"``\>\>[] ; `avatar_url?`: `string` ; `components?`: `APIActionRowComponent`<`APIMessageActionRowComponent`\>[] ; `content?`: `string` ; `embeds?`: `APIEmbed`[] ; `flags?`: `MessageFlags` ; `thread_name?`: `string` ; `tts?`: `boolean` ; `username?`: `string`  }\> \| `FormData`
+`RESTPostAPIWebhookWithTokenJSONBody` \| `FormData`
