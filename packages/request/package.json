@@ -27,17 +27,17 @@
   },
   "dependencies": {
     "debug": "^4.3.4",
-    "discord-api-types": "^0.37.18",
+    "discord-api-types": "^0.38.52",
     "formdata-node": "^4.3.3",
     "isomorphic-fetch-ponyfill": "^0.3.18"
   },
   "devDependencies": {
-    "@types/jest": "^28.1.4",
-    "@types/node": "^18.0.3",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^22.15.0",
     "rimraf": "^4.2.0",
     "rollup": "^3.18.0",
     "rollup-plugin-dts": "^5.2.0",
-    "typescript": "^4.7.4"
+    "typescript": "^5.5.4"
   },
   "publishConfig": {
     "access": "public"

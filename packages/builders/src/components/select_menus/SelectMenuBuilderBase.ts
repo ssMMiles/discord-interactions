@@ -13,7 +13,8 @@ export type SelectMenuComponentTypes =
  */
 export class SelectMenuBuilderBase extends ComponentBuilderBase<APISelectMenuComponent> {
   public constructor(type: SelectMenuComponentTypes, data?: Partial<APISelectMenuComponent>) {
-    super({ ...data, type });
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+    super({ ...data, type } as Partial<APISelectMenuComponent>);
   }
 
   /**

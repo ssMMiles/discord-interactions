@@ -1,4 +1,4 @@
-import { APIActionRowComponent, APIMessageActionRowComponent, ComponentType } from "discord-api-types/v10";
+import { APIActionRowComponent, APIComponentInMessageActionRow, ComponentType } from "discord-api-types/v10";
 import type { ButtonBuilder, LinkButtonBuilder } from "./ButtonBuilder.js";
 import { ComponentBuilderBase } from "./ComponentBuilderBase.js";
 import { SelectMenuBuilders } from "./index.js";
@@ -17,7 +17,7 @@ export type ModalActionRowBuilder = ActionRowBuilder<ModalActionRowComponentBuil
  */
 export class ActionRowBuilder<
   T extends ComponentBuilders = MessageActionRowComponentBuilders
-> extends ComponentBuilderBase<APIActionRowComponent<APIMessageActionRowComponent /* | APIModalActionRowComponent*/>> {
+> extends ComponentBuilderBase<APIActionRowComponent<APIComponentInMessageActionRow /* | APIComponentInModalActionRow*/>> {
   /**
    * The components within this action row
    */

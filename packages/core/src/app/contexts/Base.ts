@@ -2,14 +2,14 @@ import { Bitfield, ButtonBuilder, ModalBuilder, SelectMenuBuilders } from "@disc
 import { Snowflake } from "discord-api-types/globals";
 import {
   APIInteraction,
+  APIInteractionGuildMember,
   APIInteractionResponse,
   APIMessageComponentInteraction,
   APIModalSubmitInteraction,
   APIUser,
-  Locale
+  Locale,
+  LocaleString
 } from "discord-api-types/v10";
-import { LocaleString } from "discord-api-types/v6";
-import { APIInteractionGuildMember } from "discord-api-types/v9";
 import type { FormData } from "formdata-node";
 import { InteractionResponseAlreadySent, InteractionStateExpired } from "../../util/errors.js";
 import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";

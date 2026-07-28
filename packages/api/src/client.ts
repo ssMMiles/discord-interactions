@@ -1,5 +1,7 @@
 import Client from "@discord-interactions/request";
-import pkg from "../package.json" assert { type: "json" };
+
+// Kept in sync with package.json manually - JSON imports are not portable across node/worker runtimes.
+const VERSION = "0.4.0";
 import {
   deleteApplicationCommand,
   getApplicationCommands,
@@ -23,11 +25,11 @@ import {
 
 export class DiscordApiClient extends Client {
   get userAgent() {
-    return this.userAgent;
+    return super.userAgent;
   }
 
   set userAgent(value: string) {
-    this.userAgent = `${value}, @discord-interactions/api ${pkg.version}`;
+    super.userAgent = `${value}, @discord-interactions/api ${VERSION}`;
   }
 
   getApplicationCommands = getApplicationCommands;

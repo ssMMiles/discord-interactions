@@ -6,6 +6,8 @@ import {
   APIApplicationCommandSubcommandOption,
   ApplicationCommandOptionType,
   ApplicationCommandType,
+  ApplicationIntegrationType,
+  InteractionContextType,
   LocalizationMap,
   RESTPostAPIApplicationCommandsJSONBody,
   RESTPostAPIChatInputApplicationCommandsJSONBody
@@ -16,7 +18,12 @@ import { Bitfield } from "./permissions/Bitfield.js";
 /**
  * @hidden
  */
-export type CommandDataBase = Omit<APIApplicationCommand, "id" | "application_id" | "guild_id" | "version">;
+export type CommandDataBase = Omit<
+  APIApplicationCommand,
+  "id" | "application_id" | "guild_id" | "version" | "contexts"
+> & {
+  contexts?: InteractionContextType[];
+};
 
 /**
  * @hidden

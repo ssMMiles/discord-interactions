@@ -4,8 +4,8 @@ import type {
   APIAllowedMentions,
   APIInteractionResponseCallbackData,
   APIInteractionResponseChannelMessageWithSource,
+  APIComponentInMessageActionRow,
   APIInteractionResponseUpdateMessage,
-  APIMessageActionRowComponent,
   RESTPostAPIWebhookWithTokenJSONBody
 } from "discord-api-types/v10";
 import { InteractionResponseType, MessageFlags } from "discord-api-types/v10";
@@ -65,13 +65,15 @@ export class MessageBuilder {
   }
 
   private setMessageFlag(flag: MessageFlags, value: boolean): this {
-    if (this.data.flags === undefined) this.data.flags = 0;
+    let flags = this.data.flags ?? 0;
 
     if (value) {
-      this.data.flags |= flag;
+      flags |= flag;
     } else {
-      this.data.flags &= ~flag;
+      flags &= ~flag;
     }
+
+    this.data.flags = flags;
 
     return this;
   }
@@ -138,7 +140,7 @@ export class MessageBuilder {
    * @param components Array of Action Rows to be sent.
    * @returns
    */
-  public setComponents(components: APIActionRowComponent<APIMessageActionRowComponent>[] = []): this {
+  public setComponents(components: APIActionRowComponent<APIComponentInMessageActionRow>[] = []): this {
     this.data.components = components;
 
     return this;
@@ -187,7 +189,9 @@ export class MessageBuilder {
    * @param data Data to be included as the `payload_json` property.
    * @returns
    */
-  private toFormData(data: RESTPostAPIWebhookWithTokenJSONBody | APIInteractionResponseCallbackData): FormData {
+  private toFormData(
+    data: RESTPostAPIWebhookWithTokenJSONBody | APIInteractionResponseCallbackData | ResponseMap[keyof ResponseMap]
+  ): FormData {
     const form = new FormData();
 
     form.append("payload_json", JSON.stringify(data));

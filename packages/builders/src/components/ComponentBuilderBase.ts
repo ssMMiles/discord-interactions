@@ -1,9 +1,12 @@
 import type {
   APIActionRowComponent,
-  APIActionRowComponentTypes,
   APIBaseComponent,
+  APIComponentInMessageActionRow,
+  APIComponentInModalActionRow,
   ComponentType
 } from "discord-api-types/v10";
+
+export type APIActionRowComponentTypes = APIComponentInMessageActionRow | APIComponentInModalActionRow;
 
 export type AnyAPIActionRowComponent = APIActionRowComponentTypes | APIActionRowComponent<APIActionRowComponentTypes>;
 

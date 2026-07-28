@@ -65,10 +65,13 @@ export class BaseCommandContext<
     this.commandGuildId = interaction.data.guild_id;
 
     this.resolved = new ResolvedData();
-    if (interaction.data.resolved !== undefined) {
-      for (const [key, map] of Object.entries(interaction.data.resolved)) {
-        for (const [id, value] of Object.entries(map)) {
-          this.resolved[key].set(id, value);
+    // Entry Point command interactions carry no resolved data
+    const resolved = "resolved" in interaction.data ? interaction.data.resolved : undefined;
+    if (resolved !== undefined) {
+      for (const [key, map] of Object.entries(resolved)) {
+        for (const [id, value] of Object.entries(map as object)) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (this.resolved as any)[key].set(id, value);
         }
       }
     }

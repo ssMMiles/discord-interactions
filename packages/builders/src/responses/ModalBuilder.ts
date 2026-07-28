@@ -1,6 +1,6 @@
 import type {
   APIActionRowComponent,
-  APIModalActionRowComponent,
+  APIComponentInModalActionRow,
   APIModalInteractionResponseCallbackData
 } from "discord-api-types/v10";
 import type { ActionRowBuilder, ModalActionRowComponentBuilders } from "../components/ActionRowBuilder.js";
@@ -34,7 +34,7 @@ export class ModalBuilder {
     return this;
   }
 
-  public setComponents(components: APIActionRowComponent<APIModalActionRowComponent>[] = []) {
+  public setComponents(components: APIActionRowComponent<APIComponentInModalActionRow>[] = []) {
     if (!this.data.components) this.data.components = [];
 
     this.data.components = components;

@@ -68,6 +68,7 @@ export class SlashCommandNumberOption extends SlashCommandOptionBase {
   }
 
   public toJSON(): APIApplicationCommandNumberOption {
-    return { ...this };
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+    return { ...this } as APIApplicationCommandNumberOption;
   }
 }
