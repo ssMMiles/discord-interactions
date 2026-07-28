@@ -1,46 +1,47 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / InteractionContextError
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / InteractionContextError
 
 # Class: InteractionContextError
 
-## Hierarchy
+Defined in: [util/errors.ts:24](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L24)
+
+## Extends
 
 - `Error`
 
-  ↳ **`InteractionContextError`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](InteractionContextError.md#constructor)
-
-### Properties
-
-- [context](InteractionContextError.md#context)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new InteractionContextError**(`message`, `context`)
+> **new InteractionContextError**(`message`, `context`): `InteractionContextError`
+
+Defined in: [util/errors.ts:27](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L27)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `message` | `string` |
-| `context` | `BaseInteractionContext`<`APIInteraction`, `APIInteractionResponse`\> |
+##### message
+
+`string`
+
+##### context
+
+`BaseInteractionContext`\<`APIInteraction`, `APIInteractionResponse`\>
+
+#### Returns
+
+`InteractionContextError`
 
 #### Overrides
 
-Error.constructor
+`Error.constructor`
 
 ## Properties
 
 ### context
 
-• **context**: `BaseInteractionContext`<`APIInteraction`, `APIInteractionResponse`\>
+> **context**: `BaseInteractionContext`\<`APIInteraction`, `APIInteractionResponse`\>
 
-#### Defined in
-
-[util/errors.ts:25](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/util/errors.ts#L25)
+Defined in: [util/errors.ts:25](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L25)

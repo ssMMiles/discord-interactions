@@ -19,11 +19,9 @@ export class UserCommandBuilder extends CommandBuilderBase<
 
   public toJSON(): UserCommandData {
     return {
-      name: this.name,
-      type: this.type,
+      ...this.baseToJSON(),
 
-      dm_permission: this.dm_permission,
-      default_member_permissions: this.default_member_permissions.toJSON()
+      type: this.type
     };
   }
 
@@ -43,11 +41,9 @@ export class MessageCommandBuilder extends CommandBuilderBase<
 
   public toJSON(): MessageCommandData {
     return {
-      name: this.name,
-      type: this.type,
+      ...this.baseToJSON(),
 
-      dm_permission: this.dm_permission,
-      default_member_permissions: this.default_member_permissions.toJSON()
+      type: this.type
     };
   }
 

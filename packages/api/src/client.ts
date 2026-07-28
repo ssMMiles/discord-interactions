@@ -1,5 +1,8 @@
 import Client from "@discord-interactions/request";
-import pkg from "../package.json" assert { type: "json" };
+
+// Kept in sync with package.json manually - JSON imports are not portable across node/worker runtimes.
+const VERSION = "0.4.0";
+import { editCurrentApplication, getCurrentApplication } from "./routes/application.js";
 import {
   deleteApplicationCommand,
   getApplicationCommands,
@@ -7,9 +10,32 @@ import {
   postApplicationCommand,
   putApplicationCommands
 } from "./routes/commands.js";
-import { getGuild } from "./routes/guild.js";
-import { deleteInteractionFollowup, patchInteractionFollowup, postInteractionFollowup } from "./routes/interactions.js";
+import {
+  createApplicationEmoji,
+  deleteApplicationEmoji,
+  editApplicationEmoji,
+  getApplicationEmoji,
+  getApplicationEmojis
+} from "./routes/emoji.js";
+import {
+  consumeEntitlement,
+  createTestEntitlement,
+  deleteTestEntitlement,
+  getEntitlement,
+  getEntitlements
+} from "./routes/entitlements.js";
+import { getGuild, searchGuildMessages } from "./routes/guild.js";
+import {
+  deleteInteractionFollowup,
+  patchInteractionFollowup,
+  postInteractionCallback,
+  postInteractionFollowup
+} from "./routes/interactions.js";
+import { createMessage, deleteMessage, editMessage, getChannelMessage, getChannelMessages } from "./routes/messages.js";
+import { getSKUs, getSKUSubscription, getSKUSubscriptions } from "./routes/monetization.js";
 import { getCurrentBotApplication } from "./routes/oauth2.js";
+import { getChannelMessagePins, pinMessage, unpinMessage } from "./routes/pins.js";
+import { expirePoll, getPollAnswerVoters } from "./routes/polls.js";
 import {
   createDm,
   getCurrentUser,
@@ -23,11 +49,11 @@ import {
 
 export class DiscordApiClient extends Client {
   get userAgent() {
-    return this.userAgent;
+    return super.userAgent;
   }
 
   set userAgent(value: string) {
-    this.userAgent = `${value}, @discord-interactions/api ${pkg.version}`;
+    super.userAgent = `${value}, @discord-interactions/api ${VERSION}`;
   }
 
   getApplicationCommands = getApplicationCommands;
@@ -37,10 +63,51 @@ export class DiscordApiClient extends Client {
   deleteApplicationCommand = deleteApplicationCommand;
 
   getGuild = getGuild;
+  searchGuildMessages = searchGuildMessages;
+
+  postInteractionCallback = postInteractionCallback;
 
   postInteractionFollowup = postInteractionFollowup;
   patchInteractionFollowup = patchInteractionFollowup;
   deleteInteractionFollowup = deleteInteractionFollowup;
+
+  // Application
+  getCurrentApplication = getCurrentApplication;
+  editCurrentApplication = editCurrentApplication;
+
+  // Application Emoji
+  getApplicationEmojis = getApplicationEmojis;
+  getApplicationEmoji = getApplicationEmoji;
+  createApplicationEmoji = createApplicationEmoji;
+  editApplicationEmoji = editApplicationEmoji;
+  deleteApplicationEmoji = deleteApplicationEmoji;
+
+  // Monetization
+  getEntitlements = getEntitlements;
+  getEntitlement = getEntitlement;
+  consumeEntitlement = consumeEntitlement;
+  createTestEntitlement = createTestEntitlement;
+  deleteTestEntitlement = deleteTestEntitlement;
+
+  getSKUs = getSKUs;
+  getSKUSubscriptions = getSKUSubscriptions;
+  getSKUSubscription = getSKUSubscription;
+
+  // Messages
+  getChannelMessages = getChannelMessages;
+  getChannelMessage = getChannelMessage;
+  createMessage = createMessage;
+  editMessage = editMessage;
+  deleteMessage = deleteMessage;
+
+  // Pins
+  getChannelMessagePins = getChannelMessagePins;
+  pinMessage = pinMessage;
+  unpinMessage = unpinMessage;
+
+  // Polls
+  getPollAnswerVoters = getPollAnswerVoters;
+  expirePoll = expirePoll;
 
   // User
   getUser = getUser;

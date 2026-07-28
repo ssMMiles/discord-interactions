@@ -1,58 +1,45 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / ISubcommandHandler
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / ISubcommandHandler
 
 # Interface: ISubcommandHandler
 
-## Table of contents
-
-### Properties
-
-- [autocompleteHandler](ISubcommandHandler.md#autocompletehandler)
-- [handler](ISubcommandHandler.md#handler)
+Defined in: [app/commands/CommandGroup.ts:7](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/CommandGroup.ts#L7)
 
 ## Properties
 
-### autocompleteHandler
+### autocompleteHandler?
 
-• `Optional` **autocompleteHandler**: (`ctx`: [`AutocompleteContext`](../classes/AutocompleteContext.md)) => `Promise`<`void`\>
+> `optional` **autocompleteHandler?**: (`ctx`) => `Promise`\<`void`\>
 
-#### Type declaration
+Defined in: [app/commands/CommandGroup.ts:9](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/CommandGroup.ts#L9)
 
-▸ (`ctx`): `Promise`<`void`\>
+#### Parameters
 
-##### Parameters
+##### ctx
 
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`AutocompleteContext`](../classes/AutocompleteContext.md) |
+[`AutocompleteContext`](../classes/AutocompleteContext.md)
 
-##### Returns
+#### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
-#### Defined in
-
-[app/commands/CommandGroup.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/CommandGroup.ts#L9)
-
-___
+***
 
 ### handler
 
-• **handler**: (`ctx`: [`SlashCommandContext`](../classes/SlashCommandContext.md)) => `Promise`<`void`\>
+> **handler**: (`ctx`) => `Promise`\<`void`\>
 
-#### Type declaration
+Defined in: [app/commands/CommandGroup.ts:8](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/CommandGroup.ts#L8)
 
-▸ (`ctx`): `Promise`<`void`\>
+#### Parameters
 
-##### Parameters
+##### ctx
 
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`SlashCommandContext`](../classes/SlashCommandContext.md) |
+[`SlashCommandContext`](../classes/SlashCommandContext.md)
 
-##### Returns
+#### Returns
 
-`Promise`<`void`\>
-
-#### Defined in
-
-[app/commands/CommandGroup.ts:8](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/CommandGroup.ts#L8)
+`Promise`\<`void`\>

@@ -1,21 +1,21 @@
 {
   "name": "@discord-interactions/example-bot-worker",
-  "version": "0.3.23",
+  "version": "0.4.0",
   "type": "module",
   "devDependencies": {
     "@cloudflare/workers-types": "^3.14.0",
-    "@types/jest": "^28.1.4",
-    "@typescript-eslint/eslint-plugin": "^5.17.0",
-    "@typescript-eslint/parser": "^5.17.0",
+    "@types/jest": "^29.5.13",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
     "dotenv": "^13.0.0",
-    "jest": "^28.1.2",
+    "jest": "^29.7.0",
     "prettier": "^2.6.2",
     "rimraf": "^4.3.1",
-    "ts-jest": "^28.0.5",
+    "ts-jest": "^29.2.5",
     "ts-node": "^10.4.0",
-    "typedoc": "^0.23.6",
-    "typedoc-plugin-markdown": "^3.13.3",
-    "typescript": "^4.7.4",
+    "typedoc": "^0.28.0",
+    "typedoc-plugin-markdown": "^4.2.10",
+    "typescript": "^5.5.4",
     "wrangler": "2.0.16"
   },
   "private": true,
@@ -28,8 +28,8 @@
     "dev": "wrangler dev & yarn proxy"
   },
   "dependencies": {
-    "@discord-interactions/builders": "^0.3.18",
-    "@discord-interactions/core": "^0.3.23",
-    "@discord-interactions/verify": "^0.3.16"
+    "@discord-interactions/builders": "^0.4.0",
+    "@discord-interactions/core": "^0.4.0",
+    "@discord-interactions/verify": "^0.4.0"
   }
 }

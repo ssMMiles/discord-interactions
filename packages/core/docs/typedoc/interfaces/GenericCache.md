@@ -1,75 +1,65 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / GenericCache
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / GenericCache
 
 # Interface: GenericCache
 
+Defined in: [app/DiscordApplication.ts:14](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L14)
+
 Cache used to store component states. Redis is recommended.
-
-## Table of contents
-
-### Properties
-
-- [get](GenericCache.md#get)
-- [set](GenericCache.md#set)
-- [ttl](GenericCache.md#ttl)
 
 ## Properties
 
 ### get
 
-• **get**: (`key`: `string`) => `Promise`<``null`` \| `string`\>
+> **get**: (`key`) => `Promise`\<`string` \| `null`\>
 
-#### Type declaration
+Defined in: [app/DiscordApplication.ts:18](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L18)
 
-▸ (`key`): `Promise`<``null`` \| `string`\>
+#### Parameters
 
-##### Parameters
+##### key
 
-| Name | Type |
-| :------ | :------ |
-| `key` | `string` |
+`string`
 
-##### Returns
+#### Returns
 
-`Promise`<``null`` \| `string`\>
+`Promise`\<`string` \| `null`\>
 
-#### Defined in
-
-[app/DiscordApplication.ts:17](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L17)
-
-___
+***
 
 ### set
 
-• **set**: (`key`: `string`, `ttl`: `number`, `value`: `string`) => `Promise`<`string` \| `void`\>
+> **set**: (`key`, `ttl`, `value`) => `Promise`\<`string` \| `void`\>
 
-#### Type declaration
+Defined in: [app/DiscordApplication.ts:19](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L19)
 
-▸ (`key`, `ttl`, `value`): `Promise`<`string` \| `void`\>
+#### Parameters
 
-##### Parameters
+##### key
 
-| Name | Type |
-| :------ | :------ |
-| `key` | `string` |
-| `ttl` | `number` |
-| `value` | `string` |
+`string`
 
-##### Returns
+##### ttl
 
-`Promise`<`string` \| `void`\>
+`number`
 
-#### Defined in
+##### value
 
-[app/DiscordApplication.ts:18](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L18)
+`string`
 
-___
+#### Returns
 
-### ttl
+`Promise`\<`string` \| `void`\>
 
-• `Optional` **ttl**: `number`
+***
+
+### ttl?
+
+> `optional` **ttl?**: `number`
+
+Defined in: [app/DiscordApplication.ts:16](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L16)
 
 Default Time To Live for cache entries, defaults to 900.
-
-#### Defined in
-
-[app/DiscordApplication.ts:15](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L15)

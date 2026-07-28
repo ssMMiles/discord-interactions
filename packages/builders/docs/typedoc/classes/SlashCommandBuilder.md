@@ -1,414 +1,460 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / SlashCommandBuilder
+[**@discord-interactions/builders**](../README.md)
+
+***
+
+[@discord-interactions/builders](../globals.md) / SlashCommandBuilder
 
 # Class: SlashCommandBuilder
 
-## Hierarchy
+Defined in: [packages/builders/src/commands/SlashCommandBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/SlashCommandBuilder.ts#L18)
 
-- `ChatInputCommandBuilderBase`<`APIApplicationCommandBasicOption`\>
+## Extends
 
-  ↳ **`SlashCommandBuilder`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](SlashCommandBuilder.md#constructor)
-
-### Properties
-
-- [default\_member\_permissions](SlashCommandBuilder.md#default_member_permissions)
-- [description](SlashCommandBuilder.md#description)
-- [description\_localizations](SlashCommandBuilder.md#description_localizations)
-- [dm\_permission](SlashCommandBuilder.md#dm_permission)
-- [name](SlashCommandBuilder.md#name)
-- [name\_localizations](SlashCommandBuilder.md#name_localizations)
-- [options](SlashCommandBuilder.md#options)
-- [type](SlashCommandBuilder.md#type)
-
-### Methods
-
-- [addAttachmentOption](SlashCommandBuilder.md#addattachmentoption)
-- [addBooleanOption](SlashCommandBuilder.md#addbooleanoption)
-- [addChannelOption](SlashCommandBuilder.md#addchanneloption)
-- [addIntegerOption](SlashCommandBuilder.md#addintegeroption)
-- [addMentionableOption](SlashCommandBuilder.md#addmentionableoption)
-- [addNumberOption](SlashCommandBuilder.md#addnumberoption)
-- [addRequiredPermissions](SlashCommandBuilder.md#addrequiredpermissions)
-- [addRoleOption](SlashCommandBuilder.md#addroleoption)
-- [addStringOption](SlashCommandBuilder.md#addstringoption)
-- [addUserOption](SlashCommandBuilder.md#adduseroption)
-- [clearRequiredPermissions](SlashCommandBuilder.md#clearrequiredpermissions)
-- [disallowAllPermissions](SlashCommandBuilder.md#disallowallpermissions)
-- [equals](SlashCommandBuilder.md#equals)
-- [removeRequiredPermissions](SlashCommandBuilder.md#removerequiredpermissions)
-- [setDMEnabled](SlashCommandBuilder.md#setdmenabled)
-- [setDescription](SlashCommandBuilder.md#setdescription)
-- [setDescriptionLocalizations](SlashCommandBuilder.md#setdescriptionlocalizations)
-- [setLocalizedDescription](SlashCommandBuilder.md#setlocalizeddescription)
-- [setLocalizedName](SlashCommandBuilder.md#setlocalizedname)
-- [setName](SlashCommandBuilder.md#setname)
-- [setNameLocalizations](SlashCommandBuilder.md#setnamelocalizations)
-- [setRequiredPermissions](SlashCommandBuilder.md#setrequiredpermissions)
-- [toJSON](SlashCommandBuilder.md#tojson)
+- `ChatInputCommandBuilderBase`\<`APIApplicationCommandBasicOption`\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new SlashCommandBuilder**(`name`, `description?`)
+> **new SlashCommandBuilder**(`name`, `description?`): `SlashCommandBuilder`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:258](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L258)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` \| `RESTPostAPIChatInputApplicationCommandsJSONBody` |
-| `description?` | `string` |
+##### name
+
+`string` \| `RESTPostAPIChatInputApplicationCommandsJSONBody`
+
+##### description?
+
+`string`
+
+#### Returns
+
+`SlashCommandBuilder`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase<APIApplicationCommandBasicOption\>.constructor
+`ChatInputCommandBuilderBase<APIApplicationCommandBasicOption>.constructor`
 
 ## Properties
 
+### contexts?
+
+> `optional` **contexts?**: `InteractionContextType`[]
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:66](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L66)
+
+Interaction contexts where this command can be used - Only for global commands.
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.contexts`
+
+***
+
 ### default\_member\_permissions
 
-• **default\_member\_permissions**: [`Bitfield`](Bitfield.md)
+> **default\_member\_permissions**: [`Bitfield`](Bitfield.md)
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:56](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L56)
 
 Default member permissions required to use the command
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.default\_member\_permissions
+`ChatInputCommandBuilderBase.default_member_permissions`
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:48](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L48)
-
-___
+***
 
 ### description
 
-• **description**: `string`
+> **description**: `string`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:253](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L253)
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.description
+`ChatInputCommandBuilderBase.description`
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:161](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L161)
-
-___
+***
 
 ### description\_localizations
 
-• **description\_localizations**: `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> = `{}`
+> **description\_localizations**: `LocalizationMap` = `{}`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:254](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L254)
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.description\_localizations
+`ChatInputCommandBuilderBase.description_localizations`
 
-#### Defined in
+***
 
-[src/commands/CommandBuilderBase.ts:162](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L162)
+### ~~dm\_permission?~~
 
-___
+> `optional` **dm\_permission?**: `boolean`
 
-### dm\_permission
-
-• `Optional` **dm\_permission**: `boolean`
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:51](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L51)
 
 Whether the command is visible in DMs - Only available for global commands and defaults to true.
 
+#### Deprecated
+
+Use CommandBuilderBase.setContexts instead.
+
 #### Inherited from
 
-ChatInputCommandBuilderBase.dm\_permission
+`ChatInputCommandBuilderBase.dm_permission`
 
-#### Defined in
+***
 
-[src/commands/CommandBuilderBase.ts:43](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L43)
+### integration\_types?
 
-___
+> `optional` **integration\_types?**: `ApplicationIntegrationType`[]
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:61](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L61)
+
+Installation contexts where this command is available - Only for global commands.
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.integration_types`
+
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:35](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L35)
 
 The name of this context menu command
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.name
+`ChatInputCommandBuilderBase.name`
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:28](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L28)
-
-___
+***
 
 ### name\_localizations
 
-• **name\_localizations**: `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> = `{}`
+> **name\_localizations**: `LocalizationMap` = `{}`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:40](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L40)
 
 The localized names for this command
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.name\_localizations
+`ChatInputCommandBuilderBase.name_localizations`
 
-#### Defined in
+***
 
-[src/commands/CommandBuilderBase.ts:33](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L33)
+### nsfw?
 
-___
+> `optional` **nsfw?**: `boolean`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:71](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L71)
+
+Whether this command is age-restricted.
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.nsfw`
+
+***
 
 ### options
 
-• **options**: `ToAPIApplicationCommandOptions`<`APIApplicationCommandBasicOption`\>[] = `[]`
+> **options**: `ToAPIApplicationCommandOptions`\<`APIApplicationCommandBasicOption`\>[] = `[]`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:256](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L256)
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.options
+`ChatInputCommandBuilderBase.options`
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:164](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L164)
-
-___
+***
 
 ### type
 
-• **type**: `ChatInput` = `ApplicationCommandType.ChatInput`
+> **type**: `ChatInput` = `ApplicationCommandType.ChatInput`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:251](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L251)
+
+The type of this context menu command
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.type
-
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:159](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L159)
+`ChatInputCommandBuilderBase.type`
 
 ## Methods
 
-### addAttachmentOption
+### addAttachmentOption()
 
-▸ **addAttachmentOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **addAttachmentOption**(`input`): `this`
+
+Defined in: [packages/builders/src/commands/SlashCommandBuilder.ts:64](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/SlashCommandBuilder.ts#L64)
 
 Adds an attachment option
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | [`SlashCommandAttachmentOption`](SlashCommandAttachmentOption.md) | A function that returns an option builder, or an already built builder |
+##### input
+
+[`SlashCommandAttachmentOption`](SlashCommandAttachmentOption.md)
+
+A function that returns an option builder, or an already built builder
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
-___
+***
 
-### addBooleanOption
+### addBooleanOption()
 
-▸ **addBooleanOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **addBooleanOption**(`input`): `this`
+
+Defined in: [packages/builders/src/commands/SlashCommandBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/SlashCommandBuilder.ts#L24)
 
 Adds a boolean option
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | [`SlashCommandBooleanOption`](SlashCommandBooleanOption.md) | A function that returns an option builder, or an already built builder |
+##### input
+
+[`SlashCommandBooleanOption`](SlashCommandBooleanOption.md)
+
+A function that returns an option builder, or an already built builder
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
-___
+***
 
-### addChannelOption
+### addChannelOption()
 
-▸ **addChannelOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **addChannelOption**(`input`): `this`
+
+Defined in: [packages/builders/src/commands/SlashCommandBuilder.ts:44](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/SlashCommandBuilder.ts#L44)
 
 Adds a channel option
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | [`SlashCommandChannelOption`](SlashCommandChannelOption.md) | A function that returns an option builder, or an already built builder |
+##### input
+
+[`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+
+A function that returns an option builder, or an already built builder
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
-___
+***
 
-### addIntegerOption
+### addIntegerOption()
 
-▸ **addIntegerOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **addIntegerOption**(`input`): `this`
+
+Defined in: [packages/builders/src/commands/SlashCommandBuilder.ts:99](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/SlashCommandBuilder.ts#L99)
 
 Adds an integer option
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | [`SlashCommandIntegerOption`](SlashCommandIntegerOption.md) \| `Omit`<[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md), ``"addChoices"``\> | A function that returns an option builder, or an already built builder |
+##### input
+
+[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md) \| `Omit`\<[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md), `"setAutocomplete"`\> \| `Omit`\<[`SlashCommandIntegerOption`](SlashCommandIntegerOption.md), `"addChoices"`\>
+
+A function that returns an option builder, or an already built builder
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
-___
+***
 
-### addMentionableOption
+### addMentionableOption()
 
-▸ **addMentionableOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **addMentionableOption**(`input`): `this`
+
+Defined in: [packages/builders/src/commands/SlashCommandBuilder.ts:74](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/SlashCommandBuilder.ts#L74)
 
 Adds a mentionable option
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | [`SlashCommandMentionableOption`](SlashCommandMentionableOption.md) | A function that returns an option builder, or an already built builder |
+##### input
+
+[`SlashCommandMentionableOption`](SlashCommandMentionableOption.md)
+
+A function that returns an option builder, or an already built builder
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
-___
+***
 
-### addNumberOption
+### addNumberOption()
 
-▸ **addNumberOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **addNumberOption**(`input`): `this`
+
+Defined in: [packages/builders/src/commands/SlashCommandBuilder.ts:114](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/SlashCommandBuilder.ts#L114)
 
 Adds a number option
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | [`SlashCommandNumberOption`](SlashCommandNumberOption.md) \| `Omit`<[`SlashCommandNumberOption`](SlashCommandNumberOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandNumberOption`](SlashCommandNumberOption.md), ``"addChoices"``\> | A function that returns an option builder, or an already built builder |
+##### input
+
+[`SlashCommandNumberOption`](SlashCommandNumberOption.md) \| `Omit`\<[`SlashCommandNumberOption`](SlashCommandNumberOption.md), `"setAutocomplete"`\> \| `Omit`\<[`SlashCommandNumberOption`](SlashCommandNumberOption.md), `"addChoices"`\>
+
+A function that returns an option builder, or an already built builder
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
-___
+***
 
-### addRequiredPermissions
+### addRequiredPermissions()
 
-▸ **addRequiredPermissions**(...`permissions`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **addRequiredPermissions**(...`permissions`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:176](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L176)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...permissions` | `bigint`[] |
+##### permissions
+
+...`bigint`[]
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.addRequiredPermissions
+`ChatInputCommandBuilderBase.addRequiredPermissions`
 
-___
+***
 
-### addRoleOption
+### addRoleOption()
 
-▸ **addRoleOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **addRoleOption**(`input`): `this`
+
+Defined in: [packages/builders/src/commands/SlashCommandBuilder.ts:54](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/SlashCommandBuilder.ts#L54)
 
 Adds a role option
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | [`SlashCommandRoleOption`](SlashCommandRoleOption.md) | A function that returns an option builder, or an already built builder |
+##### input
+
+[`SlashCommandRoleOption`](SlashCommandRoleOption.md)
+
+A function that returns an option builder, or an already built builder
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
-___
+***
 
-### addStringOption
+### addStringOption()
 
-▸ **addStringOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **addStringOption**(`input`): `this`
+
+Defined in: [packages/builders/src/commands/SlashCommandBuilder.ts:84](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/SlashCommandBuilder.ts#L84)
 
 Adds a string option
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | [`SlashCommandStringOption`](SlashCommandStringOption.md) \| `Omit`<[`SlashCommandStringOption`](SlashCommandStringOption.md), ``"setAutocomplete"``\> \| `Omit`<[`SlashCommandStringOption`](SlashCommandStringOption.md), ``"addChoices"``\> | A function that returns an option builder, or an already built builder |
+##### input
+
+[`SlashCommandStringOption`](SlashCommandStringOption.md) \| `Omit`\<[`SlashCommandStringOption`](SlashCommandStringOption.md), `"setAutocomplete"`\> \| `Omit`\<[`SlashCommandStringOption`](SlashCommandStringOption.md), `"addChoices"`\>
+
+A function that returns an option builder, or an already built builder
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
-___
+***
 
-### addUserOption
+### addUserOption()
 
-▸ **addUserOption**(`input`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **addUserOption**(`input`): `this`
+
+Defined in: [packages/builders/src/commands/SlashCommandBuilder.ts:34](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/SlashCommandBuilder.ts#L34)
 
 Adds a user option
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `input` | [`SlashCommandUserOption`](SlashCommandUserOption.md) | A function that returns an option builder, or an already built builder |
+##### input
+
+[`SlashCommandUserOption`](SlashCommandUserOption.md)
+
+A function that returns an option builder, or an already built builder
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
-___
+***
 
-### clearRequiredPermissions
+### clearRequiredPermissions()
 
-▸ **clearRequiredPermissions**(): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **clearRequiredPermissions**(): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:188](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L188)
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.clearRequiredPermissions
+`ChatInputCommandBuilderBase.clearRequiredPermissions`
 
-___
+***
 
-### disallowAllPermissions
+### disallowAllPermissions()
 
-▸ **disallowAllPermissions**(): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **disallowAllPermissions**(): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:194](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L194)
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.disallowAllPermissions
+`ChatInputCommandBuilderBase.disallowAllPermissions`
 
-___
+***
 
-### equals
+### equals()
 
-▸ **equals**(`remote`): `boolean`
+> **equals**(`remote`): `boolean`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:292](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L292)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `remote` | `APIApplicationCommand` & { `type`: `ChatInput`  } |
+##### remote
+
+`APIApplicationCommand` & `object`
 
 #### Returns
 
@@ -416,214 +462,322 @@ ___
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.equals
+`ChatInputCommandBuilderBase.equals`
 
-___
+***
 
-### removeRequiredPermissions
+### removeRequiredPermissions()
 
-▸ **removeRequiredPermissions**(...`permissions`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **removeRequiredPermissions**(...`permissions`): `this`
 
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `...permissions` | `bigint`[] |
-
-#### Returns
-
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
-
-#### Inherited from
-
-ChatInputCommandBuilderBase.removeRequiredPermissions
-
-___
-
-### setDMEnabled
-
-▸ **setDMEnabled**(`value`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
-
-Set whether this command will be visible in DMs - Only applicable to Global commands.
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:182](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L182)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | `boolean` |
+##### permissions
+
+...`bigint`[]
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setDMEnabled
+`ChatInputCommandBuilderBase.removeRequiredPermissions`
 
-___
+***
 
-### setDescription
+### setContexts()
 
-▸ **setDescription**(`description`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **setContexts**(...`contexts`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:137](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L137)
+
+Set the interaction contexts where this command can be used (guild, bot DM, private channel).
+Only applicable to Global commands.
+
+#### Parameters
+
+##### contexts
+
+...`InteractionContextType`[]
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.setContexts`
+
+***
+
+### setDescription()
+
+> **setDescription**(`description`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:269](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L269)
 
 Set the description
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `description` | `string` | The description |
+##### description
+
+`string`
+
+The description
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setDescription
+`ChatInputCommandBuilderBase.setDescription`
 
-___
+***
 
-### setDescriptionLocalizations
+### setDescriptionLocalizations()
 
-▸ **setDescriptionLocalizations**(`localizations`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **setDescriptionLocalizations**(`localizations`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:278](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L278)
 
 Set a dictionary of localized descriptions
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localizations` | `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> |
+##### localizations
+
+`LocalizationMap`
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setDescriptionLocalizations
+`ChatInputCommandBuilderBase.setDescriptionLocalizations`
 
-___
+***
 
-### setLocalizedDescription
+### ~~setDMEnabled()~~
 
-▸ **setLocalizedDescription**(`locale`, `description`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **setDMEnabled**(`value`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:117](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L117)
+
+Set whether this command will be visible in DMs - Only applicable to Global commands.
+
+#### Parameters
+
+##### value
+
+`boolean`
+
+#### Returns
+
+`this`
+
+#### Deprecated
+
+Use CommandBuilderBase.setContexts instead.
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.setDMEnabled`
+
+***
+
+### setIntegrationTypes()
+
+> **setIntegrationTypes**(...`integrationTypes`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:127](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L127)
+
+Set the installation contexts where this command is available (guild install and/or user install).
+Only applicable to Global commands.
+
+#### Parameters
+
+##### integrationTypes
+
+...`ApplicationIntegrationType`[]
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.setIntegrationTypes`
+
+***
+
+### setLocalizedDescription()
+
+> **setLocalizedDescription**(`locale`, `description`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:287](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L287)
 
 Set a single locale's description
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `locale` | ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"`` |
-| `description` | `string` |
+##### locale
+
+`Locale`
+
+##### description
+
+`string`
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setLocalizedDescription
+`ChatInputCommandBuilderBase.setLocalizedDescription`
 
-___
+***
 
-### setLocalizedName
+### setLocalizedName()
 
-▸ **setLocalizedName**(`locale`, `name`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **setLocalizedName**(`locale`, `name`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:107](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L107)
 
 Set a single locale's name
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `locale` | ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"`` |
-| `name` | `string` |
+##### locale
+
+`Locale`
+
+##### name
+
+`string`
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setLocalizedName
+`ChatInputCommandBuilderBase.setLocalizedName`
 
-___
+***
 
-### setName
+### setName()
 
-▸ **setName**(`name`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **setName**(`name`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:89](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L89)
 
 Set the name
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+##### name
+
+`string`
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setName
+`ChatInputCommandBuilderBase.setName`
 
-___
+***
 
-### setNameLocalizations
+### setNameLocalizations()
 
-▸ **setNameLocalizations**(`localizations`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **setNameLocalizations**(`localizations`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:98](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L98)
 
 Set a dictionary of localized names
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localizations` | `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> |
+##### localizations
+
+`LocalizationMap`
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setNameLocalizations
+`ChatInputCommandBuilderBase.setNameLocalizations`
 
-___
+***
 
-### setRequiredPermissions
+### setNSFW()
 
-▸ **setRequiredPermissions**(`permissions`): [`SlashCommandBuilder`](SlashCommandBuilder.md)
+> **setNSFW**(`nsfw?`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:146](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L146)
+
+Set whether this command is age-restricted.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `permissions` | [`Bitfield`](Bitfield.md) |
+##### nsfw?
+
+`boolean` = `true`
 
 #### Returns
 
-[`SlashCommandBuilder`](SlashCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setRequiredPermissions
+`ChatInputCommandBuilderBase.setNSFW`
 
-___
+***
 
-### toJSON
+### setRequiredPermissions()
 
-▸ **toJSON**(): [`SlashCommandData`](../modules.md#slashcommanddata)
+> **setRequiredPermissions**(`permissions`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:170](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L170)
+
+#### Parameters
+
+##### permissions
+
+[`Bitfield`](Bitfield.md)
 
 #### Returns
 
-[`SlashCommandData`](../modules.md#slashcommanddata)
+`this`
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.setRequiredPermissions`
+
+***
+
+### toJSON()
+
+> **toJSON**(): [`SlashCommandData`](../type-aliases/SlashCommandData.md)
+
+Defined in: [packages/builders/src/commands/SlashCommandBuilder.ts:124](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/SlashCommandBuilder.ts#L124)
+
+Returns the final data that should be sent to Discord.
+
+#### Returns
+
+[`SlashCommandData`](../type-aliases/SlashCommandData.md)
 
 #### Overrides
 
-ChatInputCommandBuilderBase.toJSON
+`ChatInputCommandBuilderBase.toJSON`

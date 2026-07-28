@@ -1,61 +1,59 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / InteractionHandlerError
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / InteractionHandlerError
 
 # Class: InteractionHandlerError
 
-## Hierarchy
+Defined in: [util/errors.ts:82](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L82)
+
+## Extends
 
 - [`InteractionError`](InteractionError.md)
 
-  ↳ **`InteractionHandlerError`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](InteractionHandlerError.md#constructor)
-
-### Properties
-
-- [cause](InteractionHandlerError.md#cause)
-- [interaction](InteractionHandlerError.md#interaction)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new InteractionHandlerError**(`interaction`, `error`)
+> **new InteractionHandlerError**(`interaction`, `error`): `InteractionHandlerError`
+
+Defined in: [util/errors.ts:85](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L85)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `interaction` | `APIInteraction` |
-| `error` | `unknown` |
+##### interaction
+
+`APIInteraction`
+
+##### error
+
+`unknown`
+
+#### Returns
+
+`InteractionHandlerError`
 
 #### Overrides
 
-[InteractionError](InteractionError.md).[constructor](InteractionError.md#constructor)
+[`InteractionError`](InteractionError.md).[`constructor`](InteractionError.md#constructor)
 
 ## Properties
 
 ### cause
 
-• **cause**: `unknown`
+> **cause**: `unknown`
 
-#### Defined in
+Defined in: [util/errors.ts:83](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L83)
 
-[util/errors.ts:83](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/util/errors.ts#L83)
-
-___
+***
 
 ### interaction
 
-• **interaction**: `APIInteraction`
+> **interaction**: `APIInteraction`
+
+Defined in: [util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L15)
 
 #### Inherited from
 
-[InteractionError](InteractionError.md).[interaction](InteractionError.md#interaction)
-
-#### Defined in
-
-[util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/util/errors.ts#L15)
+[`InteractionError`](InteractionError.md).[`interaction`](InteractionError.md#interaction)

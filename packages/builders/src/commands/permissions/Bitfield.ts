@@ -41,7 +41,7 @@ export class Bitfield {
     if (!this.bitfield) this.bitfield = 0n;
 
     for (const bit of bits) {
-      this.bitfield &= bit;
+      this.bitfield &= ~bit;
     }
 
     return this;

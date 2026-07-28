@@ -20,10 +20,15 @@ export class WebhookClient {
 
   send(message: string | MessageBuilder, wait = true): Promise<APIMessage> {
     if (typeof message === "string") message = SimpleEmbed(message);
+
+    const query = new URLSearchParams(`wait=${wait ? "true" : "false"}`);
+    // Non-app-owned webhooks require with_components to send components; app-owned webhooks ignore it
+    if (message.isComponentsV2) query.set("with_components", "true");
+
     const data = message.toWebhook();
 
     return this.rest.post(Routes.webhook(this.id, this.token), {
-      query: new URLSearchParams(`wait=${wait ? "true" : "false"}`),
+      query,
       body: data,
       rawBody: data instanceof FormData,
       auth: false
@@ -32,9 +37,13 @@ export class WebhookClient {
 
   edit(message: string | MessageBuilder, id: Snowflake): Promise<APIMessage> {
     if (typeof message === "string") message = SimpleEmbed(message);
+
+    const query = message.isComponentsV2 ? new URLSearchParams({ with_components: "true" }) : undefined;
+
     const data = message.toWebhook();
 
     return this.rest.patch(Routes.webhookMessage(this.id, this.token, id), {
+      query,
       body: data,
       rawBody: data instanceof FormData,
       auth: false

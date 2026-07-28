@@ -8,7 +8,7 @@
     "target": "es2021",
 
     "moduleResolution": "node16",
-    "module": "esnext",
+    "module": "node16",
 
     "outDir": "dist",
 

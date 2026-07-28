@@ -1,415 +1,446 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / AutocompleteContext
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / AutocompleteContext
 
 # Class: AutocompleteContext
 
-## Hierarchy
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:21](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L21)
 
-- `BaseInteractionContext`<`APIApplicationCommandAutocompleteInteraction`, `APIApplicationCommandAutocompleteResponse`\>
+## Extends
 
-  ↳ **`AutocompleteContext`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](AutocompleteContext.md#constructor)
-
-### Properties
-
-- [app](AutocompleteContext.md#app)
-- [app\_permissions](AutocompleteContext.md#app_permissions)
-- [channelId](AutocompleteContext.md#channelid)
-- [commandGuildId](AutocompleteContext.md#commandguildid)
-- [group](AutocompleteContext.md#group)
-- [guildId](AutocompleteContext.md#guildid)
-- [guildLocale](AutocompleteContext.md#guildlocale)
-- [id](AutocompleteContext.md#id)
-- [interactionId](AutocompleteContext.md#interactionid)
-- [isDM](AutocompleteContext.md#isdm)
-- [locale](AutocompleteContext.md#locale)
-- [member](AutocompleteContext.md#member)
-- [name](AutocompleteContext.md#name)
-- [option](AutocompleteContext.md#option)
-- [parentCommand](AutocompleteContext.md#parentcommand)
-- [raw](AutocompleteContext.md#raw)
-- [receivedAt](AutocompleteContext.md#receivedat)
-- [resolved](AutocompleteContext.md#resolved)
-- [signedAt](AutocompleteContext.md#signedat)
-- [user](AutocompleteContext.md#user)
-
-### Accessors
-
-- [expired](AutocompleteContext.md#expired)
-
-### Methods
-
-- [createComponent](AutocompleteContext.md#createcomponent)
-- [createGlobalComponent](AutocompleteContext.md#createglobalcomponent)
-- [decorate](AutocompleteContext.md#decorate)
-- [getIntegerOption](AutocompleteContext.md#getintegeroption)
-- [getNumberOption](AutocompleteContext.md#getnumberoption)
-- [getStringOption](AutocompleteContext.md#getstringoption)
-- [rawReply](AutocompleteContext.md#rawreply)
-- [reply](AutocompleteContext.md#reply)
+- `BaseInteractionContext`\<`APIApplicationCommandAutocompleteInteraction`, `APIApplicationCommandAutocompleteResponse`\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new AutocompleteContext**(`app`, `interaction`, `timestamps`, `responseCallback`)
+> **new AutocompleteContext**(`app`, `interaction`, `timestamps`, `responseCallback`): `AutocompleteContext`
+
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:45](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L45)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `app` | [`DiscordApplication`](DiscordApplication.md) |
-| `interaction` | `APIApplicationCommandAutocompleteInteraction` |
-| `timestamps` | `Object` |
-| `timestamps.received` | `Date` |
-| `timestamps.signature` | `Date` |
-| `responseCallback` | [`ResponseCallback`](../modules.md#responsecallback)<`APIApplicationCommandAutocompleteResponse`\> |
+##### app
+
+[`DiscordApplication`](DiscordApplication.md)
+
+##### interaction
+
+`APIApplicationCommandAutocompleteInteraction`
+
+##### timestamps
+
+###### received
+
+`Date`
+
+###### signature
+
+`Date`
+
+##### responseCallback
+
+[`ResponseCallback`](../type-aliases/ResponseCallback.md)\<`APIApplicationCommandAutocompleteResponse`\>
+
+#### Returns
+
+`AutocompleteContext`
 
 #### Overrides
 
-BaseInteractionContext&lt;
-  APIApplicationCommandAutocompleteInteraction,
-  APIApplicationCommandAutocompleteResponse
-\&gt;.constructor
+`BaseInteractionContext< APIApplicationCommandAutocompleteInteraction, APIApplicationCommandAutocompleteResponse >.constructor`
 
 ## Properties
 
 ### app
 
-• **app**: [`DiscordApplication`](DiscordApplication.md)
+> **app**: [`DiscordApplication`](DiscordApplication.md)
+
+Defined in: [app/contexts/Base.ts:38](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L38)
 
 #### Inherited from
 
-BaseInteractionContext.app
+`BaseInteractionContext.app`
 
-#### Defined in
-
-[app/contexts/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L34)
-
-___
+***
 
 ### app\_permissions
 
-• **app\_permissions**: `Bitfield`
+> **app\_permissions**: `Bitfield`
+
+Defined in: [app/contexts/Base.ts:47](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L47)
 
 #### Inherited from
 
-BaseInteractionContext.app\_permissions
+`BaseInteractionContext.app_permissions`
 
-#### Defined in
+***
 
-[app/contexts/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L43)
+### attachmentSizeLimit?
 
-___
+> `optional` **attachmentSizeLimit?**: `number`
 
-### channelId
+Defined in: [app/contexts/Base.ts:67](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L67)
 
-• `Optional` **channelId**: `string`
+Attachment size limit for the invoking user/guild, in bytes.
 
 #### Inherited from
 
-BaseInteractionContext.channelId
+`BaseInteractionContext.attachmentSizeLimit`
 
-#### Defined in
+***
 
-[app/contexts/Base.ts:48](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L48)
+### authorizingIntegrationOwners?
 
-___
+> `optional` **authorizingIntegrationOwners?**: `APIAuthorizingIntegrationOwnersMap`
 
-### commandGuildId
+Defined in: [app/contexts/Base.ts:64](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L64)
 
-• `Optional` **commandGuildId**: `string`
+Mapping of installation contexts that authorized the interaction to their owner ids.
 
-#### Defined in
+#### Inherited from
 
-[app/contexts/application_commands/AutocompleteContext.ts:29](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L29)
+`BaseInteractionContext.authorizingIntegrationOwners`
 
-___
+***
 
-### group
+### channelId?
 
-• `Optional` **group**: `string`
+> `optional` **channelId?**: `string`
+
+Defined in: [app/contexts/Base.ts:52](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L52)
+
+#### Inherited from
+
+`BaseInteractionContext.channelId`
+
+***
+
+### commandGuildId?
+
+> `optional` **commandGuildId?**: `string`
+
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:29](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L29)
+
+***
+
+### entitlements
+
+> **entitlements**: `APIEntitlement`[] = `[]`
+
+Defined in: [app/contexts/Base.ts:70](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L70)
+
+For monetized apps, entitlements of the invoking user.
+
+#### Inherited from
+
+`BaseInteractionContext.entitlements`
+
+***
+
+### group?
+
+> `optional` **group?**: `string`
+
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:43](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L43)
 
 The subcommand group
 
-#### Defined in
+***
 
-[app/contexts/application_commands/AutocompleteContext.ts:43](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L43)
+### guild?
 
-___
+> `optional` **guild?**: `APIPartialInteractionGuild`
 
-### guildId
+Defined in: [app/contexts/Base.ts:73](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L73)
 
-• `Optional` **guildId**: `string`
-
-#### Inherited from
-
-BaseInteractionContext.guildId
-
-#### Defined in
-
-[app/contexts/Base.ts:47](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L47)
-
-___
-
-### guildLocale
-
-• `Optional` **guildLocale**: ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``
+Partial guild object for the guild the interaction was sent from.
 
 #### Inherited from
 
-BaseInteractionContext.guildLocale
+`BaseInteractionContext.guild`
 
-#### Defined in
+***
 
-[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L54)
+### guildId?
 
-___
+> `optional` **guildId?**: `string`
+
+Defined in: [app/contexts/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L51)
+
+#### Inherited from
+
+`BaseInteractionContext.guildId`
+
+***
+
+### guildLocale?
+
+> `optional` **guildLocale?**: `"id"` \| `"hr"` \| `"th"` \| `"tr"` \| `"en-US"` \| `"en-GB"` \| `"bg"` \| `"zh-CN"` \| `"zh-TW"` \| `"cs"` \| `"da"` \| `"nl"` \| `"fi"` \| `"fr"` \| `"de"` \| `"el"` \| `"hi"` \| `"hu"` \| `"it"` \| `"ja"` \| `"ko"` \| `"lt"` \| `"no"` \| `"pl"` \| `"pt-BR"` \| `"ro"` \| `"ru"` \| `"es-ES"` \| `"es-419"` \| `"sv-SE"` \| `"uk"` \| `"vi"`
+
+Defined in: [app/contexts/Base.ts:58](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L58)
+
+#### Inherited from
+
+`BaseInteractionContext.guildLocale`
+
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
 
-#### Defined in
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:26](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L26)
 
-[app/contexts/application_commands/AutocompleteContext.ts:26](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L26)
+***
 
-___
+### interactionContext?
+
+> `optional` **interactionContext?**: `InteractionContextType`
+
+Defined in: [app/contexts/Base.ts:61](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L61)
+
+Where this interaction was triggered from (guild, bot DM or private channel).
+
+#### Inherited from
+
+`BaseInteractionContext.interactionContext`
+
+***
 
 ### interactionId
 
-• **interactionId**: `string`
+> **interactionId**: `string`
+
+Defined in: [app/contexts/Base.ts:44](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L44)
 
 #### Inherited from
 
-BaseInteractionContext.interactionId
+`BaseInteractionContext.interactionId`
 
-#### Defined in
-
-[app/contexts/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L40)
-
-___
+***
 
 ### isDM
 
-• **isDM**: `boolean`
+> **isDM**: `boolean`
+
+Defined in: [app/contexts/Base.ts:49](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L49)
 
 #### Inherited from
 
-BaseInteractionContext.isDM
+`BaseInteractionContext.isDM`
 
-#### Defined in
-
-[app/contexts/Base.ts:45](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L45)
-
-___
+***
 
 ### locale
 
-• **locale**: ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``
+> **locale**: `"id"` \| `"hr"` \| `"th"` \| `"tr"` \| `"en-US"` \| `"en-GB"` \| `"bg"` \| `"zh-CN"` \| `"zh-TW"` \| `"cs"` \| `"da"` \| `"nl"` \| `"fi"` \| `"fr"` \| `"de"` \| `"el"` \| `"hi"` \| `"hu"` \| `"it"` \| `"ja"` \| `"ko"` \| `"lt"` \| `"no"` \| `"pl"` \| `"pt-BR"` \| `"ro"` \| `"ru"` \| `"es-ES"` \| `"es-419"` \| `"sv-SE"` \| `"uk"` \| `"vi"`
+
+Defined in: [app/contexts/Base.ts:57](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L57)
 
 #### Inherited from
 
-BaseInteractionContext.locale
+`BaseInteractionContext.locale`
 
-#### Defined in
+***
 
-[app/contexts/Base.ts:53](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L53)
+### member?
 
-___
+> `optional` **member?**: `APIInteractionGuildMember`
 
-### member
-
-• `Optional` **member**: `APIGuildMember`
+Defined in: [app/contexts/Base.ts:55](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L55)
 
 #### Inherited from
 
-BaseInteractionContext.member
+`BaseInteractionContext.member`
 
-#### Defined in
-
-[app/contexts/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L51)
-
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
 
-#### Defined in
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:25](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L25)
 
-[app/contexts/application_commands/AutocompleteContext.ts:25](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L25)
-
-___
+***
 
 ### option
 
-• **option**: [`AutocompleteSupportedOptions`](../modules.md#autocompletesupportedoptions)
+> **option**: [`AutocompleteSupportedOptions`](../type-aliases/AutocompleteSupportedOptions.md)
 
-#### Defined in
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:33](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L33)
 
-[app/contexts/application_commands/AutocompleteContext.ts:33](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L33)
+***
 
-___
+### parentCommand?
 
-### parentCommand
+> `optional` **parentCommand?**: `string`
 
-• `Optional` **parentCommand**: `string`
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:38](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L38)
 
 The parent command, if this is a subcommand.
 
-#### Defined in
+***
 
-[app/contexts/application_commands/AutocompleteContext.ts:38](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L38)
+### raw?
 
-___
+> `optional` **raw?**: `APIApplicationCommandAutocompleteInteraction`
 
-### raw
-
-• `Optional` **raw**: `APIApplicationCommandAutocompleteInteraction`
+Defined in: [app/contexts/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L43)
 
 #### Inherited from
 
-BaseInteractionContext.raw
+`BaseInteractionContext.raw`
 
-#### Defined in
-
-[app/contexts/Base.ts:39](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L39)
-
-___
+***
 
 ### receivedAt
 
-• **receivedAt**: `Date`
+> **receivedAt**: `Date`
+
+Defined in: [app/contexts/Base.ts:41](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L41)
 
 #### Inherited from
 
-BaseInteractionContext.receivedAt
+`BaseInteractionContext.receivedAt`
 
-#### Defined in
-
-[app/contexts/Base.ts:37](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L37)
-
-___
+***
 
 ### resolved
 
-• **resolved**: `ResolvedData`
+> **resolved**: `ResolvedData`
 
-#### Defined in
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:31](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L31)
 
-[app/contexts/application_commands/AutocompleteContext.ts:31](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L31)
-
-___
+***
 
 ### signedAt
 
-• **signedAt**: `Date`
+> **signedAt**: `Date`
+
+Defined in: [app/contexts/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L40)
 
 #### Inherited from
 
-BaseInteractionContext.signedAt
+`BaseInteractionContext.signedAt`
 
-#### Defined in
-
-[app/contexts/Base.ts:36](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L36)
-
-___
+***
 
 ### user
 
-• **user**: `APIUser`
+> **user**: `APIUser`
+
+Defined in: [app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L54)
 
 #### Inherited from
 
-BaseInteractionContext.user
-
-#### Defined in
-
-[app/contexts/Base.ts:50](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L50)
+`BaseInteractionContext.user`
 
 ## Accessors
 
 ### expired
 
-• `get` **expired**(): `boolean`
+#### Get Signature
 
-#### Returns
+> **get** **expired**(): `boolean`
+
+Defined in: [app/contexts/Base.ts:33](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L33)
+
+##### Returns
 
 `boolean`
 
 #### Inherited from
 
-BaseInteractionContext.expired
+`BaseInteractionContext.expired`
 
 ## Methods
 
-### createComponent
+### createComponent()
 
-▸ **createComponent**<`Builder`\>(`name`, `state?`, `ttl?`): `Promise`<`Builder`\>
+> **createComponent**\<`Builder`\>(`name`, `state?`, `ttl?`): `Promise`\<`Builder`\>
 
-#### Type parameters
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:83](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L83)
 
-| Name | Type |
-| :------ | :------ |
-| `Builder` | extends `ButtonBuilder` \| `SelectMenuBuilders` \| `ModalBuilder` = `ButtonBuilder` \| `SelectMenuBuilders` |
+#### Type Parameters
 
-#### Parameters
+##### Builder
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `state` | `object` |
-| `ttl?` | `number` |
-
-#### Returns
-
-`Promise`<`Builder`\>
-
-___
-
-### createGlobalComponent
-
-▸ **createGlobalComponent**<`Builder`\>(`name`, `state?`, `ttl?`): `Promise`<`Builder`\>
-
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `Builder` | extends `ButtonBuilder` \| `SelectMenuBuilders` \| `ModalBuilder` = `ButtonBuilder` \| `SelectMenuBuilders` |
+`Builder` *extends* `ButtonBuilder` \| `SelectMenuBuilders` \| `ModalBuilder` = `ButtonBuilder` \| `SelectMenuBuilders`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `state` | `object` |
-| `ttl?` | `number` |
+##### name
+
+`string`
+
+##### state?
+
+`object` = `{}`
+
+##### ttl?
+
+`number`
 
 #### Returns
 
-`Promise`<`Builder`\>
+`Promise`\<`Builder`\>
+
+***
+
+### createGlobalComponent()
+
+> **createGlobalComponent**\<`Builder`\>(`name`, `state?`, `ttl?`): `Promise`\<`Builder`\>
+
+Defined in: [app/contexts/Base.ts:135](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L135)
+
+#### Type Parameters
+
+##### Builder
+
+`Builder` *extends* `ButtonBuilder` \| `SelectMenuBuilders` \| `ModalBuilder` = `ButtonBuilder` \| `SelectMenuBuilders`
+
+#### Parameters
+
+##### name
+
+`string`
+
+##### state?
+
+`object` = `{}`
+
+##### ttl?
+
+`number`
+
+#### Returns
+
+`Promise`\<`Builder`\>
 
 #### Inherited from
 
-BaseInteractionContext.createGlobalComponent
+`BaseInteractionContext.createGlobalComponent`
 
-___
+***
 
-### decorate
+### decorate()
 
-▸ **decorate**(`key`, `value`): `void`
+> **decorate**(`key`, `value`): `void`
+
+Defined in: [app/contexts/Base.ts:128](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L128)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `key` | `string` |
-| `value` | `unknown` |
+##### key
+
+`string`
+
+##### value
+
+`unknown`
 
 #### Returns
 
@@ -417,88 +448,98 @@ ___
 
 #### Inherited from
 
-BaseInteractionContext.decorate
+`BaseInteractionContext.decorate`
 
-___
+***
 
-### getIntegerOption
+### getIntegerOption()
 
-▸ **getIntegerOption**(`name`): `APIApplicationCommandInteractionDataNumberOption`
+> **getIntegerOption**(`name`): `APIApplicationCommandInteractionDataNumberOption`
+
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:105](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L105)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+##### name
+
+`string`
 
 #### Returns
 
 `APIApplicationCommandInteractionDataNumberOption`
 
-___
+***
 
-### getNumberOption
+### getNumberOption()
 
-▸ **getNumberOption**(`name`): `APIApplicationCommandInteractionDataNumberOption`
+> **getNumberOption**(`name`): `APIApplicationCommandInteractionDataNumberOption`
+
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:112](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L112)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+##### name
+
+`string`
 
 #### Returns
 
 `APIApplicationCommandInteractionDataNumberOption`
 
-___
+***
 
-### getStringOption
+### getStringOption()
 
-▸ **getStringOption**(`name`): `APIApplicationCommandInteractionDataStringOption`
+> **getStringOption**(`name`): `APIApplicationCommandInteractionDataStringOption`
+
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:98](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L98)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+##### name
+
+`string`
 
 #### Returns
 
 `APIApplicationCommandInteractionDataStringOption`
 
-___
+***
 
-### rawReply
+### rawReply()
 
-▸ **rawReply**(`message`): `Promise`<`void`\>
+> **rawReply**(`message`): `Promise`\<`void`\>
+
+Defined in: [app/contexts/Base.ts:124](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L124)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `message` | `APIApplicationCommandAutocompleteResponse` |
+##### message
+
+`APIApplicationCommandAutocompleteResponse`
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-BaseInteractionContext.rawReply
+`BaseInteractionContext.rawReply`
 
-___
+***
 
-### reply
+### reply()
 
-▸ **reply**(`choices`): `Promise`<`void`\>
+> **reply**(`choices`): `Promise`\<`void`\>
+
+Defined in: [app/contexts/application\_commands/AutocompleteContext.ts:89](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/AutocompleteContext.ts#L89)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `choices` | `APIApplicationCommandOptionChoice`<`string` \| `number`\>[] |
+##### choices
+
+`APIApplicationCommandOptionChoice`\<`string` \| `number`\>[]
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>

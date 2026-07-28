@@ -1,245 +1,231 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / Modal
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / Modal
 
 # Class: Modal
 
-## Hierarchy
+Defined in: [app/components/Modal.ts:6](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Modal.ts#L6)
 
-- `ComponentBase`<`APIModalInteractionResponseCallbackData`, `ModalBuilder`, [`ModalSubmitContext`](ModalSubmitContext.md)\>
+## Extends
 
-  ↳ **`Modal`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](Modal.md#constructor)
-
-### Properties
-
-- [allowExpired](Modal.md#allowexpired)
-- [builder](Modal.md#builder)
-- [components](Modal.md#components)
-- [handler](Modal.md#handler)
-- [id](Modal.md#id)
-- [parentCommand](Modal.md#parentcommand)
-
-### Accessors
-
-- [data](Modal.md#data)
-
-### Methods
-
-- [createInstance](Modal.md#createinstance)
-- [setAllowExpired](Modal.md#setallowexpired)
-- [setHandler](Modal.md#sethandler)
-- [setId](Modal.md#setid)
+- [`ComponentBase`](ComponentBase.md)\<`APIModalInteractionResponseCallbackData`, `ModalBuilder`, [`ModalSubmitContext`](ModalSubmitContext.md)\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new Modal**(`id`, `builder`, `handler?`)
+> **new Modal**(`id`, `builder`, `handler?`): `Modal`
+
+Defined in: [app/components/Modal.ts:7](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Modal.ts#L7)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
-| `builder` | `ModalBuilder` |
-| `handler` | (`ctx`: [`ModalSubmitContext`](ModalSubmitContext.md)<`never`\>) => `Promise`<`void`\> |
+##### id
+
+`string`
+
+##### builder
+
+`ModalBuilder`
+
+##### handler?
+
+(`ctx`) => `Promise`\<`void`\>
+
+#### Returns
+
+`Modal`
 
 #### Overrides
 
-ComponentBase&lt;APIModalInteractionResponseCallbackData, ModalBuilder, ModalSubmitContext\&gt;.constructor
+[`ComponentBase`](ComponentBase.md).[`constructor`](ComponentBase.md#constructor)
 
 ## Properties
 
 ### allowExpired
 
-• **allowExpired**: `boolean` = `false`
+> **allowExpired**: `boolean` = `false`
+
+Defined in: [app/components/Base.ts:16](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L16)
 
 #### Inherited from
 
-ComponentBase.allowExpired
+[`ComponentBase`](ComponentBase.md).[`allowExpired`](ComponentBase.md#allowexpired)
 
-#### Defined in
-
-[app/components/Base.ts:10](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/components/Base.ts#L10)
-
-___
+***
 
 ### builder
 
-• **builder**: `ModalBuilder`
+> **builder**: `ModalBuilder`
+
+Defined in: [app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 #### Inherited from
 
-ComponentBase.builder
+[`ComponentBase`](ComponentBase.md).[`builder`](ComponentBase.md#builder-1)
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L4)
-
-___
+***
 
 ### components
 
-• **components**: ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[]
+> **components**: ([`Component`](../type-aliases/Component.md) \| `Modal`)[]
+
+Defined in: [app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 #### Inherited from
 
-ComponentBase.components
+[`EntryPointCommand`](EntryPointCommand.md).[`components`](EntryPointCommand.md#components)
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L11)
-
-___
+***
 
 ### handler
 
-• **handler**: (`ctx`: [`ModalSubmitContext`](ModalSubmitContext.md)<`never`\>) => `Promise`<`void`\>
+> **handler**: (`ctx`) => `Promise`\<`void`\>
 
-#### Type declaration
+Defined in: [app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L9)
 
-▸ (`ctx`): `Promise`<`void`\>
+#### Parameters
 
-##### Parameters
+##### ctx
 
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`ModalSubmitContext`](ModalSubmitContext.md)<`never`\> |
+[`ModalSubmitContext`](ModalSubmitContext.md)
 
-##### Returns
+#### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-ComponentBase.handler
+[`ComponentBase`](ComponentBase.md).[`handler`](ComponentBase.md#handler)
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L9)
-
-___
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
+
+Defined in: [app/components/Base.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L15)
 
 #### Inherited from
 
-ComponentBase.id
+[`ComponentBase`](ComponentBase.md).[`id`](ComponentBase.md#id)
 
-#### Defined in
+***
 
-[app/components/Base.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/components/Base.ts#L9)
+### parentCommand?
 
-___
+> `optional` **parentCommand?**: `string`
 
-### parentCommand
-
-• `Optional` **parentCommand**: `string`
+Defined in: [app/components/Base.ts:18](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L18)
 
 #### Inherited from
 
-ComponentBase.parentCommand
-
-#### Defined in
-
-[app/components/Base.ts:12](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/components/Base.ts#L12)
+[`ComponentBase`](ComponentBase.md).[`parentCommand`](ComponentBase.md#parentcommand)
 
 ## Accessors
 
 ### data
 
-• `get` **data**(): `Data`
+#### Get Signature
 
-#### Returns
+> **get** **data**(): `Data`
+
+Defined in: [app/handlers/HandledInteraction.ts:5](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L5)
+
+##### Returns
 
 `Data`
 
 #### Inherited from
 
-ComponentBase.data
+[`ComponentBase`](ComponentBase.md).[`data`](ComponentBase.md#data-1)
 
 ## Methods
 
-### createInstance
+### createInstance()
 
-▸ **createInstance**(`state`): `ModalBuilder`
+> **createInstance**(`state`): `ModalBuilder`
+
+Defined in: [app/components/Modal.ts:17](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Modal.ts#L17)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `state` | `string` |
+##### state
+
+`string`
 
 #### Returns
 
 `ModalBuilder`
 
-___
+***
 
-### setAllowExpired
+### setAllowExpired()
 
-▸ **setAllowExpired**(`value`): [`Modal`](Modal.md)
+> **setAllowExpired**(`value`): `Modal`
+
+Defined in: [app/components/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L40)
 
 Set whether component execution should continue when state data has expired
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | `boolean` |
+##### value
+
+`boolean`
 
 #### Returns
 
-[`Modal`](Modal.md)
+`Modal`
 
 #### Inherited from
 
-ComponentBase.setAllowExpired
+[`ComponentBase`](ComponentBase.md).[`setAllowExpired`](ComponentBase.md#setallowexpired)
 
-___
+***
 
-### setHandler
+### setHandler()
 
-▸ **setHandler**(`handler`): [`Modal`](Modal.md)
+> **setHandler**(`handler`): `this`
+
+Defined in: [app/handlers/HandledInteraction.ts:20](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L20)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `handler` | (`ctx`: [`ModalSubmitContext`](ModalSubmitContext.md)<`never`\>) => `Promise`<`void`\> |
+##### handler
+
+(`ctx`) => `Promise`\<`void`\>
 
 #### Returns
 
-[`Modal`](Modal.md)
+`this`
 
 #### Inherited from
 
-ComponentBase.setHandler
+[`ComponentBase`](ComponentBase.md).[`setHandler`](ComponentBase.md#sethandler)
 
-___
+***
 
-### setId
+### setId()
 
-▸ **setId**(`id`): [`Modal`](Modal.md)
+> **setId**(`id`): `Modal`
+
+Defined in: [app/components/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L34)
 
 Set the component ID
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
+##### id
+
+`string`
 
 #### Returns
 
-[`Modal`](Modal.md)
+`Modal`
 
 #### Inherited from
 
-ComponentBase.setId
+[`ComponentBase`](ComponentBase.md).[`setId`](ComponentBase.md#setid)

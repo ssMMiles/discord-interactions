@@ -1,4 +1,6 @@
-@discord-interactions/api / [Exports](modules.md)
+**@discord-interactions/api**
+
+***
 
 # @discord-interactions/api
 <div align="center">

@@ -1,134 +1,148 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / ActionRowBuilder
+[**@discord-interactions/builders**](../README.md)
 
-# Class: ActionRowBuilder<T\>
+***
+
+[@discord-interactions/builders](../globals.md) / ActionRowBuilder
+
+# Class: ActionRowBuilder\<T\>
+
+Defined in: [packages/builders/src/components/ActionRowBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ActionRowBuilder.ts#L18)
 
 Represents an action row component
 
-## Type parameters
+## Type Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends [`ComponentBuilders`](../modules.md#componentbuilders) = [`MessageActionRowComponentBuilders`](../modules.md#messageactionrowcomponentbuilders) |
+### T
 
-## Hierarchy
-
-- `ComponentBuilderBase`<`APIActionRowComponent`<`APIMessageActionRowComponent`\>\>
-
-  ↳ **`ActionRowBuilder`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](ActionRowBuilder.md#constructor)
-
-### Properties
-
-- [components](ActionRowBuilder.md#components)
-- [data](ActionRowBuilder.md#data)
-
-### Methods
-
-- [addComponents](ActionRowBuilder.md#addcomponents)
-- [setComponents](ActionRowBuilder.md#setcomponents)
-- [toJSON](ActionRowBuilder.md#tojson)
+`T` *extends* [`ComponentBuilders`](../type-aliases/ComponentBuilders.md) = [`MessageActionRowComponentBuilders`](../type-aliases/MessageActionRowComponentBuilders.md)
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new ActionRowBuilder**<`T`\>(`components?`)
+> **new ActionRowBuilder**\<`T`\>(`components?`): `ActionRowBuilder`\<`T`\>
 
-#### Type parameters
-
-| Name | Type |
-| :------ | :------ |
-| `T` | extends [`ComponentBuilders`](../modules.md#componentbuilders) = [`MessageActionRowComponentBuilders`](../modules.md#messageactionrowcomponentbuilders) |
+Defined in: [packages/builders/src/components/ActionRowBuilder.ts:26](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ActionRowBuilder.ts#L26)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `components?` | `T`[] |
+##### components?
+
+`T`[]
+
+#### Returns
+
+`ActionRowBuilder`\<`T`\>
 
 #### Overrides
 
-ComponentBuilderBase&lt;APIActionRowComponent&lt;APIMessageActionRowComponent /* \| APIModalActionRowComponent*/\&gt;\&gt;.constructor
+ComponentBuilderBase\<APIActionRowComponent\<APIComponentInMessageActionRow /\* \| APIComponentInModalActionRow\*/\>\>.constructor
 
 ## Properties
 
 ### components
 
-• `Readonly` **components**: `T`[] = `[]`
+> `readonly` **components**: `T`[] = `[]`
+
+Defined in: [packages/builders/src/components/ActionRowBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ActionRowBuilder.ts#L24)
 
 The components within this action row
 
-#### Defined in
-
-[src/components/ActionRowBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/components/ActionRowBuilder.ts#L24)
-
-___
+***
 
 ### data
 
-• `Readonly` **data**: `Partial`<`APIActionRowComponent`<`APIMessageActionRowComponent`\>\>
+> `readonly` **data**: `Partial`\<`DataType`\>
+
+Defined in: [packages/builders/src/components/ComponentBuilderBase.ts:22](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ComponentBuilderBase.ts#L22)
 
 The API data associated with this component
 
 #### Inherited from
 
-ComponentBuilderBase.data
-
-#### Defined in
-
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+`ComponentBuilderBase.data`
 
 ## Methods
 
-### addComponents
+### addComponents()
 
-▸ **addComponents**(...`components`): [`ActionRowBuilder`](ActionRowBuilder.md)<`T`\>
+> **addComponents**(...`components`): `this`
+
+Defined in: [packages/builders/src/components/ActionRowBuilder.ts:36](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ActionRowBuilder.ts#L36)
 
 Adds components to this action row.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `...components` | `T`[] | The components to add to this action row. |
+##### components
+
+...`T`[]
+
+The components to add to this action row.
 
 #### Returns
 
-[`ActionRowBuilder`](ActionRowBuilder.md)<`T`\>
+`this`
 
-___
+***
 
-### setComponents
+### setComponents()
 
-▸ **setComponents**(`components`): [`ActionRowBuilder`](ActionRowBuilder.md)<`T`\>
+> **setComponents**(`components`): `this`
+
+Defined in: [packages/builders/src/components/ActionRowBuilder.ts:45](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ActionRowBuilder.ts#L45)
 
 Sets the components in this action row
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `components` | `T`[] | The components to set this row to |
+##### components
+
+`T`[]
+
+The components to set this row to
 
 #### Returns
 
-[`ActionRowBuilder`](ActionRowBuilder.md)<`T`\>
+`this`
 
-___
+***
 
-### toJSON
+### setId()
 
-▸ **toJSON**(): `APIActionRowComponent`<`ReturnType`<`T`[``"toJSON"``]\>\>
+> **setId**(`id`): `this`
+
+Defined in: [packages/builders/src/components/ComponentBuilderBase.ts:34](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ComponentBuilderBase.ts#L34)
+
+Sets this component's optional 32-bit numeric identifier, unique within the message.
+Discord generates sequential ids for components sent without one.
+
+#### Parameters
+
+##### id
+
+`number`
 
 #### Returns
 
-`APIActionRowComponent`<`ReturnType`<`T`[``"toJSON"``]\>\>
+`this`
+
+#### Inherited from
+
+`ComponentBuilderBase.setId`
+
+***
+
+### toJSON()
+
+> **toJSON**(): `APIActionRowComponent`\<`ReturnType`\<`T`\[`"toJSON"`\]\>\>
+
+Defined in: [packages/builders/src/components/ActionRowBuilder.ts:50](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ActionRowBuilder.ts#L50)
+
+#### Returns
+
+`APIActionRowComponent`\<`ReturnType`\<`T`\[`"toJSON"`\]\>\>
 
 #### Overrides
 
-ComponentBuilderBase.toJSON
+`ComponentBuilderBase.toJSON`

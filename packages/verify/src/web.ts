@@ -24,8 +24,7 @@ async function getCryptoKey(publicKey: string) {
     "raw",
     hexToBinary(publicKey),
     {
-      name: "NODE-ED25519",
-      namedCurve: "NODE-ED25519"
+      name: "Ed25519"
     },
     true,
     ["verify"]
@@ -56,5 +55,5 @@ export default async function verifyInteractionSignature(
     return false;
   }
 
-  return crypto.subtle.verify("NODE-ED25519", key, signatureBin, encoder.encode(timestamp + body));
+  return crypto.subtle.verify("Ed25519", key, signatureBin, encoder.encode(timestamp + body));
 }

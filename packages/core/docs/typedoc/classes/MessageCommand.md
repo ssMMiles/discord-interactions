@@ -1,133 +1,129 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / MessageCommand
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / MessageCommand
 
 # Class: MessageCommand
 
-## Hierarchy
+Defined in: [app/commands/MessageCommand.ts:9](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/MessageCommand.ts#L9)
 
-- `HandledInteraction`<`RESTPostAPIContextMenuApplicationCommandsJSONBody` & { `type`: `ApplicationCommandType.Message`  }, `MessageCommandBuilder`, [`MessageCommandContext`](MessageCommandContext.md)\>
+## Extends
 
-  ↳ **`MessageCommand`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](MessageCommand.md#constructor)
-
-### Properties
-
-- [builder](MessageCommand.md#builder)
-- [components](MessageCommand.md#components)
-
-### Accessors
-
-- [data](MessageCommand.md#data)
-
-### Methods
-
-- [handler](MessageCommand.md#handler)
-- [setHandler](MessageCommand.md#sethandler)
+- `HandledInteraction`\<`RESTPostAPIContextMenuApplicationCommandsJSONBody` & `object`, `MessageCommandBuilder`, [`MessageCommandContext`](MessageCommandContext.md)\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new MessageCommand**(`builder`, `handler`, `components?`)
+> **new MessageCommand**(`builder`, `handler`, `components?`): `MessageCommand`
+
+Defined in: [app/handlers/HandledInteraction.ts:13](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L13)
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `builder` | `MessageCommandBuilder` | `undefined` |
-| `handler` | (`ctx`: [`MessageCommandContext`](MessageCommandContext.md)) => `Promise`<`void`\> | `undefined` |
-| `components` | ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[] | `[]` |
+##### builder
+
+`MessageCommandBuilder`
+
+##### handler
+
+(`ctx`) => `Promise`\<`void`\>
+
+##### components?
+
+([`Component`](../type-aliases/Component.md) \| [`Modal`](Modal.md))[] = `[]`
+
+#### Returns
+
+`MessageCommand`
 
 #### Inherited from
 
-HandledInteraction<
-  RESTPostAPIContextMenuApplicationCommandsJSONBody & { type: ApplicationCommandType.Message },
-  MessageCommandBuilder,
-  MessageCommandContext
-\>.constructor
+`HandledInteraction< RESTPostAPIContextMenuApplicationCommandsJSONBody & { type: ApplicationCommandType.Message }, MessageCommandBuilder, MessageCommandContext >.constructor`
 
 ## Properties
 
 ### builder
 
-• **builder**: `MessageCommandBuilder`
+> **builder**: `MessageCommandBuilder`
+
+Defined in: [app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 #### Inherited from
 
-HandledInteraction.builder
+`HandledInteraction.builder`
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L4)
-
-___
+***
 
 ### components
 
-• **components**: ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[]
+> **components**: ([`Component`](../type-aliases/Component.md) \| [`Modal`](Modal.md))[]
+
+Defined in: [app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 #### Inherited from
 
-HandledInteraction.components
-
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L11)
+`HandledInteraction.components`
 
 ## Accessors
 
 ### data
 
-• `get` **data**(): `Data`
+#### Get Signature
 
-#### Returns
+> **get** **data**(): `Data`
+
+Defined in: [app/handlers/HandledInteraction.ts:5](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L5)
+
+##### Returns
 
 `Data`
 
 #### Inherited from
 
-HandledInteraction.data
+`HandledInteraction.data`
 
 ## Methods
 
-### handler
+### handler()
 
-▸ **handler**(`ctx`): `Promise`<`void`\>
+> **handler**(`ctx`): `Promise`\<`void`\>
+
+Defined in: [app/commands/MessageCommand.ts:14](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/MessageCommand.ts#L14)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`MessageCommandContext`](MessageCommandContext.md) |
+##### ctx
+
+[`MessageCommandContext`](MessageCommandContext.md)
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Overrides
 
-HandledInteraction.handler
+`HandledInteraction.handler`
 
-___
+***
 
-### setHandler
+### setHandler()
 
-▸ **setHandler**(`handler`): [`MessageCommand`](MessageCommand.md)
+> **setHandler**(`handler`): `this`
+
+Defined in: [app/handlers/HandledInteraction.ts:20](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L20)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `handler` | (`ctx`: [`MessageCommandContext`](MessageCommandContext.md)) => `Promise`<`void`\> |
+##### handler
+
+(`ctx`) => `Promise`\<`void`\>
 
 #### Returns
 
-[`MessageCommand`](MessageCommand.md)
+`this`
 
 #### Inherited from
 
-HandledInteraction.setHandler
+`HandledInteraction.setHandler`

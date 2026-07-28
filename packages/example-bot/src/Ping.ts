@@ -11,9 +11,9 @@ import {
   ButtonContext,
   ISlashCommand,
   SlashCommandContext,
+  UserSelectMenu,
   UserSelectMenuContext
 } from "@discord-interactions/core";
-import { UserSelectMenu } from "@discord-interactions/core/dist/app/components/select_menus/UserSelectMenu.js";
 
 type TestButtonState = {
   ping: boolean;
@@ -27,7 +27,10 @@ export class Ping implements ISlashCommand {
     const menu = await ctx.createComponent("testSelect");
 
     return ctx.reply(
-      new MessageBuilder(new EmbedBuilder().setTitle("Pong!")).addComponents(new ActionRowBuilder().addComponents(menu))
+      new MessageBuilder(new EmbedBuilder().setTitle("Pong!")).addComponents(
+        new ActionRowBuilder().addComponents(button),
+        new ActionRowBuilder().addComponents(menu)
+      )
     );
   };
 

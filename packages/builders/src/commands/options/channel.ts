@@ -5,11 +5,14 @@ export const AllowedChannelTypes = [
   ChannelType.GuildText,
   ChannelType.GuildVoice,
   ChannelType.GuildCategory,
-  ChannelType.GuildNews,
-  ChannelType.GuildNewsThread,
-  ChannelType.GuildPublicThread,
-  ChannelType.GuildPrivateThread,
-  ChannelType.GuildStageVoice
+  ChannelType.GuildAnnouncement,
+  ChannelType.AnnouncementThread,
+  ChannelType.PublicThread,
+  ChannelType.PrivateThread,
+  ChannelType.GuildStageVoice,
+  ChannelType.GuildDirectory,
+  ChannelType.GuildForum,
+  ChannelType.GuildMedia
 ] as const;
 
 export type ApplicationCommandOptionAllowedChannelTypes = typeof AllowedChannelTypes[number];
@@ -32,6 +35,7 @@ export class SlashCommandChannelOption extends SlashCommandOptionBase {
   }
 
   public toJSON(): APIApplicationCommandChannelOption {
-    return { ...this };
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+    return { ...this } as APIApplicationCommandChannelOption;
   }
 }

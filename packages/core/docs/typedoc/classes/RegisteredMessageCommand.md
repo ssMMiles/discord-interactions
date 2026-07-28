@@ -1,189 +1,178 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / RegisteredMessageCommand
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / RegisteredMessageCommand
 
 # Class: RegisteredMessageCommand
 
-## Hierarchy
+Defined in: [app/commands/MessageCommand.ts:19](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/MessageCommand.ts#L19)
 
-- `RegisteredCommandBase`<`MessageCommandBuilder`, [`MessageCommandContext`](MessageCommandContext.md)\>
+## Extends
 
-  ↳ **`RegisteredMessageCommand`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](RegisteredMessageCommand.md#constructor)
-
-### Properties
-
-- [builder](RegisteredMessageCommand.md#builder)
-- [components](RegisteredMessageCommand.md#components)
-- [handler](RegisteredMessageCommand.md#handler)
-- [id](RegisteredMessageCommand.md#id)
-- [lastSyncedAt](RegisteredMessageCommand.md#lastsyncedat)
-
-### Methods
-
-- [create](RegisteredMessageCommand.md#create)
-- [delete](RegisteredMessageCommand.md#delete)
-- [setHandler](RegisteredMessageCommand.md#sethandler)
-- [sync](RegisteredMessageCommand.md#sync)
-- [update](RegisteredMessageCommand.md#update)
+- `RegisteredCommandBase`\<`MessageCommandBuilder`, [`MessageCommandContext`](MessageCommandContext.md)\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new RegisteredMessageCommand**(`manager`, `command`)
+> **new RegisteredMessageCommand**(`manager`, `command`): `RegisteredMessageCommand`
+
+Defined in: [app/commands/Base.ts:168](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L168)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `manager` | [`CommandManager`](CommandManager.md) |
-| `command` | `Object` |
-| `command.builder` | `MessageCommandBuilder` |
-| `command.handler` | (`ctx`: [`MessageCommandContext`](MessageCommandContext.md)) => `Promise`<`void`\> |
+##### manager
+
+[`CommandManager`](CommandManager.md)
+
+##### command
+
+###### builder
+
+`MessageCommandBuilder`
+
+###### handler
+
+(`ctx`) => `Promise`\<`void`\>
+
+#### Returns
+
+`RegisteredMessageCommand`
 
 #### Inherited from
 
-RegisteredCommandBase<MessageCommandBuilder, MessageCommandContext\>.constructor
+`RegisteredCommandBase<MessageCommandBuilder, MessageCommandContext>.constructor`
 
 ## Properties
 
 ### builder
 
-• **builder**: `MessageCommandBuilder`
+> **builder**: `MessageCommandBuilder`
+
+Defined in: [app/commands/Base.ts:41](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L41)
 
 #### Inherited from
 
-RegisteredCommandBase.builder
+`RegisteredCommandBase.builder`
 
-#### Defined in
+***
 
-[app/commands/Base.ts:28](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L28)
+### components?
 
-___
+> `optional` **components?**: ([`Component`](../type-aliases/Component.md) \| [`Modal`](Modal.md))[]
 
-### components
-
-• `Optional` **components**: ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[]
+Defined in: [app/commands/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L43)
 
 #### Inherited from
 
-RegisteredCommandBase.components
+`RegisteredCommandBase.components`
 
-#### Defined in
-
-[app/commands/Base.ts:30](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L30)
-
-___
+***
 
 ### handler
 
-• **handler**: (`ctx`: [`MessageCommandContext`](MessageCommandContext.md)) => `Promise`<`void`\>
+> **handler**: (`ctx`) => `Promise`\<`void`\>
 
-#### Type declaration
+Defined in: [app/commands/Base.ts:166](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L166)
 
-▸ (`ctx`): `Promise`<`void`\>
+#### Parameters
 
-##### Parameters
+##### ctx
 
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`MessageCommandContext`](MessageCommandContext.md) |
+[`MessageCommandContext`](MessageCommandContext.md)
 
-##### Returns
+#### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredCommandBase.handler
+`RegisteredCommandBase.handler`
 
-#### Defined in
-
-[app/commands/Base.ts:153](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L153)
-
-___
+***
 
 ### id
 
-• **id**: `string` = `"0"`
+> **id**: `string` = `"0"`
+
+Defined in: [app/commands/Base.ts:45](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L45)
 
 #### Inherited from
 
-RegisteredCommandBase.id
+`RegisteredCommandBase.id`
 
-#### Defined in
+***
 
-[app/commands/Base.ts:32](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L32)
+### lastSyncedAt?
 
-___
+> `optional` **lastSyncedAt?**: `Date`
 
-### lastSyncedAt
-
-• `Optional` **lastSyncedAt**: `Date`
+Defined in: [app/commands/Base.ts:39](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L39)
 
 #### Inherited from
 
-RegisteredCommandBase.lastSyncedAt
-
-#### Defined in
-
-[app/commands/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L26)
+`RegisteredCommandBase.lastSyncedAt`
 
 ## Methods
 
-### create
+### create()
 
-▸ **create**(): `Promise`<`void`\>
+> **create**(): `Promise`\<`void`\>
+
+Defined in: [app/commands/Base.ts:63](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L63)
 
 Create this command in Discord
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredCommandBase.create
+`RegisteredCommandBase.create`
 
-___
+***
 
-### delete
+### delete()
 
-▸ **delete**(`id?`): `Promise`<`void`\>
+> **delete**(`id?`): `Promise`\<`void`\>
+
+Defined in: [app/commands/Base.ts:95](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L95)
 
 Delete this command from Discord
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id?` | `string` |
+##### id?
+
+`string`
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredCommandBase.delete
+`RegisteredCommandBase.delete`
 
-___
+***
 
-### setHandler
+### setHandler()
 
-▸ **setHandler**(`handler`): `void`
+> **setHandler**(`handler`): `void`
+
+Defined in: [app/commands/Base.ts:178](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L178)
 
 Update this command's handler function
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `handler` | (`ctx`: [`MessageCommandContext`](MessageCommandContext.md)) => `Promise`<`void`\> | New command handler |
+##### handler
+
+(`ctx`) => `Promise`\<`void`\>
+
+New command handler
 
 #### Returns
 
@@ -191,46 +180,50 @@ Update this command's handler function
 
 #### Inherited from
 
-RegisteredCommandBase.setHandler
+`RegisteredCommandBase.setHandler`
 
-___
+***
 
-### sync
+### sync()
 
-▸ **sync**(`remoteCommand?`): `Promise`<`void`\>
+> **sync**(`remoteCommand?`): `Promise`\<`void`\>
+
+Defined in: [app/commands/Base.ts:110](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L110)
 
 Sync this command with Discord
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `remoteCommand?` | `APIApplicationCommand` |
+##### remoteCommand?
+
+`APIApplicationCommand`
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredCommandBase.sync
+`RegisteredCommandBase.sync`
 
-___
+***
 
-### update
+### update()
 
-▸ **update**(`id?`): `Promise`<`void`\>
+> **update**(`id?`): `Promise`\<`void`\>
+
+Defined in: [app/commands/Base.ts:78](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L78)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id?` | `string` |
+##### id?
+
+`string`
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredCommandBase.update
+`RegisteredCommandBase.update`

@@ -30,6 +30,18 @@ export class BaseComponentContext<
     this.message = interaction.message;
   }
 
+  /**
+   * Launch your app's Activity in response to this component interaction.
+   * Only available to apps with Activities enabled.
+   */
+  launchActivity(): Promise<void> {
+    if (this.replied) throw new InteractionResponseAlreadySent();
+
+    return this._reply({
+      type: InteractionResponseType.LaunchActivity
+    });
+  }
+
   defer(): Promise<void> {
     deprecationWarning("ComponentContext#defer", "ComponentContext#deferFollowup/deferUpdate");
     if (this.replied) throw new InteractionResponseAlreadySent();

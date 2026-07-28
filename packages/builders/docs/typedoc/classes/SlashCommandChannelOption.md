@@ -1,227 +1,216 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / SlashCommandChannelOption
+[**@discord-interactions/builders**](../README.md)
+
+***
+
+[@discord-interactions/builders](../globals.md) / SlashCommandChannelOption
 
 # Class: SlashCommandChannelOption
 
-## Hierarchy
+Defined in: [packages/builders/src/commands/options/channel.ts:20](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/channel.ts#L20)
+
+## Extends
 
 - `SlashCommandOptionBase`
 
-  ↳ **`SlashCommandChannelOption`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](SlashCommandChannelOption.md#constructor)
-
-### Properties
-
-- [channel\_types](SlashCommandChannelOption.md#channel_types)
-- [description](SlashCommandChannelOption.md#description)
-- [description\_localizations](SlashCommandChannelOption.md#description_localizations)
-- [name](SlashCommandChannelOption.md#name)
-- [name\_localizations](SlashCommandChannelOption.md#name_localizations)
-- [required](SlashCommandChannelOption.md#required)
-- [type](SlashCommandChannelOption.md#type)
-
-### Methods
-
-- [addChannelTypes](SlashCommandChannelOption.md#addchanneltypes)
-- [setDescriptionLocalizations](SlashCommandChannelOption.md#setdescriptionlocalizations)
-- [setLocalizedDescription](SlashCommandChannelOption.md#setlocalizeddescription)
-- [setLocalizedName](SlashCommandChannelOption.md#setlocalizedname)
-- [setNameLocalizations](SlashCommandChannelOption.md#setnamelocalizations)
-- [setRequired](SlashCommandChannelOption.md#setrequired)
-- [toJSON](SlashCommandChannelOption.md#tojson)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new SlashCommandChannelOption**(`name`, `description`)
+> **new SlashCommandChannelOption**(`name`, `description`): `SlashCommandChannelOption`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:17](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L17)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `description` | `string` |
+##### name
+
+`string`
+
+##### description
+
+`string`
+
+#### Returns
+
+`SlashCommandChannelOption`
 
 #### Inherited from
 
-SlashCommandOptionBase.constructor
+`SlashCommandOptionBase.constructor`
 
 ## Properties
 
-### channel\_types
+### channel\_types?
 
-• `Optional` **channel\_types**: (`GuildText` \| `GuildVoice` \| `GuildCategory` \| `GuildAnnouncement` \| `AnnouncementThread` \| `PublicThread` \| `PrivateThread` \| `GuildStageVoice`)[]
+> `optional` **channel\_types?**: (`GuildText` \| `GuildVoice` \| `GuildCategory` \| `GuildAnnouncement` \| `AnnouncementThread` \| `PublicThread` \| `PrivateThread` \| `GuildStageVoice` \| `GuildDirectory` \| `GuildForum` \| `GuildMedia`)[]
 
-#### Defined in
+Defined in: [packages/builders/src/commands/options/channel.ts:22](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/channel.ts#L22)
 
-[src/commands/options/channel.ts:19](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/channel.ts#L19)
-
-___
+***
 
 ### description
 
-• **description**: `string`
+> **description**: `string`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
 
 #### Inherited from
 
-SlashCommandOptionBase.description
+`SlashCommandOptionBase.description`
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
-
-___
+***
 
 ### description\_localizations
 
-• **description\_localizations**: `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> = `{}`
+> **description\_localizations**: `LocalizationMap` = `{}`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
 
 #### Inherited from
 
-SlashCommandOptionBase.description\_localizations
+`SlashCommandOptionBase.description_localizations`
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
-
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
 
 #### Inherited from
 
-SlashCommandOptionBase.name
+`SlashCommandOptionBase.name`
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
-
-___
+***
 
 ### name\_localizations
 
-• **name\_localizations**: `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> = `{}`
+> **name\_localizations**: `LocalizationMap` = `{}`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
 
 #### Inherited from
 
-SlashCommandOptionBase.name\_localizations
+`SlashCommandOptionBase.name_localizations`
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
-
-___
+***
 
 ### required
 
-• **required**: `boolean` = `false`
+> **required**: `boolean` = `false`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
 
 #### Inherited from
 
-SlashCommandOptionBase.required
+`SlashCommandOptionBase.required`
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
-
-___
+***
 
 ### type
 
-• `Readonly` **type**: `Channel`
+> `readonly` **type**: `Channel`
+
+Defined in: [packages/builders/src/commands/options/channel.ts:21](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/channel.ts#L21)
 
 #### Overrides
 
-SlashCommandOptionBase.type
-
-#### Defined in
-
-[src/commands/options/channel.ts:18](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/channel.ts#L18)
+`SlashCommandOptionBase.type`
 
 ## Methods
 
-### addChannelTypes
+### addChannelTypes()
 
-▸ **addChannelTypes**(...`channelTypes`): [`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+> **addChannelTypes**(...`channelTypes`): `SlashCommandChannelOption`
+
+Defined in: [packages/builders/src/commands/options/channel.ts:29](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/channel.ts#L29)
 
 Adds channel types to this option
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `...channelTypes` | (`GuildText` \| `GuildVoice` \| `GuildCategory` \| `GuildAnnouncement` \| `AnnouncementThread` \| `PublicThread` \| `PrivateThread` \| `GuildStageVoice`)[] | The channel types to add |
+##### channelTypes
+
+...(`GuildText` \| `GuildVoice` \| `GuildCategory` \| `GuildAnnouncement` \| `AnnouncementThread` \| `PublicThread` \| `PrivateThread` \| `GuildStageVoice` \| `GuildDirectory` \| `GuildForum` \| `GuildMedia`)[]
+
+The channel types to add
 
 #### Returns
 
-[`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+`SlashCommandChannelOption`
 
-___
+***
 
-### setDescriptionLocalizations
+### setDescriptionLocalizations()
 
-▸ **setDescriptionLocalizations**(`localizations`): [`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+> **setDescriptionLocalizations**(`localizations`): `this`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:52](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L52)
 
 Set a dictionary of localized descriptions
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localizations` | `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> |
+##### localizations
+
+`LocalizationMap`
 
 #### Returns
 
-[`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+`this`
 
 #### Inherited from
 
-SlashCommandOptionBase.setDescriptionLocalizations
+`SlashCommandOptionBase.setDescriptionLocalizations`
 
-___
+***
 
-### setLocalizedDescription
+### setLocalizedDescription()
 
-▸ **setLocalizedDescription**(`locale`, `description`): [`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+> **setLocalizedDescription**(`locale`, `description`): `this`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:61](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L61)
 
 Set a single locale's description
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `locale` | ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"`` |
-| `description` | `string` |
+##### locale
+
+`Locale`
+
+##### description
+
+`string`
 
 #### Returns
 
-[`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+`this`
 
 #### Inherited from
 
-SlashCommandOptionBase.setLocalizedDescription
+`SlashCommandOptionBase.setLocalizedDescription`
 
-___
+***
 
-### setLocalizedName
+### setLocalizedName()
 
-▸ **setLocalizedName**(`locale`, `name`): `void`
+> **setLocalizedName**(`locale`, `name`): `void`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:45](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L45)
 
 Set a single locale's name
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `locale` | ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"`` |
-| `name` | `string` |
+##### locale
+
+`Locale`
+
+##### name
+
+`string`
 
 #### Returns
 
@@ -229,57 +218,65 @@ Set a single locale's name
 
 #### Inherited from
 
-SlashCommandOptionBase.setLocalizedName
+`SlashCommandOptionBase.setLocalizedName`
 
-___
+***
 
-### setNameLocalizations
+### setNameLocalizations()
 
-▸ **setNameLocalizations**(`localizations`): [`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+> **setNameLocalizations**(`localizations`): `SlashCommandChannelOption`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:36](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L36)
 
 Set a dictionary of localized names
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localizations` | `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> |
+##### localizations
+
+`LocalizationMap`
 
 #### Returns
 
-[`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+`SlashCommandChannelOption`
 
 #### Inherited from
 
-SlashCommandOptionBase.setNameLocalizations
+`SlashCommandOptionBase.setNameLocalizations`
 
-___
+***
 
-### setRequired
+### setRequired()
 
-▸ **setRequired**(`required`): [`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+> **setRequired**(`required`): `SlashCommandChannelOption`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L27)
 
 Marks the option as required
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `required` | `boolean` | If this option should be required |
+##### required
+
+`boolean`
+
+If this option should be required
 
 #### Returns
 
-[`SlashCommandChannelOption`](SlashCommandChannelOption.md)
+`SlashCommandChannelOption`
 
 #### Inherited from
 
-SlashCommandOptionBase.setRequired
+`SlashCommandOptionBase.setRequired`
 
-___
+***
 
-### toJSON
+### toJSON()
 
-▸ **toJSON**(): `APIApplicationCommandChannelOption`
+> **toJSON**(): `APIApplicationCommandChannelOption`
+
+Defined in: [packages/builders/src/commands/options/channel.ts:37](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/channel.ts#L37)
 
 #### Returns
 
@@ -287,4 +284,4 @@ ___
 
 #### Overrides
 
-SlashCommandOptionBase.toJSON
+`SlashCommandOptionBase.toJSON`
