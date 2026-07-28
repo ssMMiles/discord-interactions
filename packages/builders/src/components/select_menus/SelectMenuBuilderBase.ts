@@ -54,11 +54,21 @@ export class SelectMenuBuilderBase extends ComponentBuilderBase<APISelectMenuCom
   }
 
   /**
-   * Sets whether or not this select menu is disabled
+   * Sets whether or not this select menu is disabled.
+   * Note: disabled select menus are not allowed in modals.
    * @param disabled Whether or not this select menu is disabled
    */
   public setDisabled(disabled = true): this {
     this.data.disabled = disabled;
+    return this;
+  }
+
+  /**
+   * Sets whether a selection is required to submit the modal (defaults to true).
+   * Only used when this select menu is placed in a modal; ignored in messages.
+   */
+  public setRequired(required = true): this {
+    this.data.required = required;
     return this;
   }
 

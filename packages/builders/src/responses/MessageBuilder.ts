@@ -8,10 +8,31 @@ import type {
   APIInteractionResponseUpdateMessage,
   RESTPostAPIWebhookWithTokenJSONBody
 } from "discord-api-types/v10";
+import type { RESTAPIPoll } from "discord-api-types/v10";
 import { InteractionResponseType, MessageFlags } from "discord-api-types/v10";
 import { Blob, FormData } from "formdata-node";
-import type { ActionRowBuilder, MessageActionRowComponentBuilders } from "../components/ActionRowBuilder.js";
+import { ActionRowBuilder, MessageActionRowComponentBuilders } from "../components/ActionRowBuilder.js";
+import type { ContainerBuilder } from "../components/v2/ContainerBuilder.js";
+import type { FileBuilder } from "../components/v2/FileBuilder.js";
+import type { MediaGalleryBuilder } from "../components/v2/MediaGalleryBuilder.js";
+import type { SectionBuilder } from "../components/v2/SectionBuilder.js";
+import type { SeparatorBuilder } from "../components/v2/SeparatorBuilder.js";
+import type { TextDisplayBuilder } from "../components/v2/TextDisplayBuilder.js";
 import { EmbedBuilder } from "./EmbedBuilder.js";
+import type { PollBuilder } from "./PollBuilder.js";
+
+/**
+ * Top-level components allowed in a message. Anything other than an Action Row
+ * requires the message to be flagged as Components V2.
+ */
+export type MessageTopLevelComponentBuilders =
+  | ActionRowBuilder<MessageActionRowComponentBuilders>
+  | TextDisplayBuilder
+  | SectionBuilder
+  | ContainerBuilder
+  | MediaGalleryBuilder
+  | SeparatorBuilder
+  | FileBuilder;
 
 export interface AttachedFile {
   name?: string;
@@ -97,6 +118,42 @@ export class MessageBuilder {
   }
 
   /**
+   * Set the SuppressNotifications flag on this message, sending it without triggering push/desktop notifications.
+   * @param value Whether or not notifications should be suppressed.
+   */
+  public setSuppressNotifications(value = true): this {
+    return this.setMessageFlag(MessageFlags.SuppressNotifications, value);
+  }
+
+  /**
+   * Set the IsComponentsV2 flag on this message. Components V2 messages can use layout and
+   * content components (Text Display, Section, Container, Media Gallery, Separator, File),
+   * but cannot use content, embeds, polls or stickers. This flag cannot be removed once
+   * a message has been sent with it.
+   * @param value Whether or not this message uses Components V2.
+   */
+  public setComponentsV2(value = true): this {
+    return this.setMessageFlag(MessageFlags.IsComponentsV2, value);
+  }
+
+  /**
+   * Whether this message has the IsComponentsV2 flag set.
+   */
+  public get isComponentsV2(): boolean {
+    return ((this.data.flags ?? 0) & MessageFlags.IsComponentsV2) !== 0;
+  }
+
+  /**
+   * Attach a poll to this message. Not available on Components V2 messages.
+   * @param poll A PollBuilder or raw poll create request.
+   */
+  public setPoll(poll: PollBuilder | RESTAPIPoll): this {
+    this.data.poll = "toJSON" in poll && typeof poll.toJSON === "function" ? poll.toJSON() : (poll as RESTAPIPoll);
+
+    return this;
+  }
+
+  /**
    * Add one or more embeds to this message. Maximum of 10.
    * @param embeds Embeds to add to this message.
    * @returns
@@ -123,14 +180,21 @@ export class MessageBuilder {
   }
 
   /**
-   * Add one or more Action Rows to the message. Maximum of 5.
-   * @param components Action Rows to add to this message.
+   * Add one or more top-level components to the message.
+   * Legacy messages accept up to 5 Action Rows; adding any other component type
+   * automatically flags this message as Components V2 (max 40 components total).
+   * @param components Components to add to this message.
    * @returns
    */
-  public addComponents(...components: ActionRowBuilder<MessageActionRowComponentBuilders>[]): this {
+  public addComponents(...components: MessageTopLevelComponentBuilders[]): this {
     if (!this.data.components) this.data.components = [];
 
-    this.data.components.push(...components.map((component) => component.toJSON()));
+    for (const component of components) {
+      if (!(component instanceof ActionRowBuilder)) this.setComponentsV2(true);
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      this.data.components.push(component.toJSON() as any);
+    }
 
     return this;
   }
@@ -234,9 +298,28 @@ export class MessageBuilder {
   }
 
   /**
-   * Fetch this message's data as an object.
+   * Fetch this message's data as an object, validating Components V2 constraints.
    */
   public toJSON(): APIInteractionResponseCallbackData {
+    if (this.isComponentsV2) {
+      if (this.data.content) {
+        throw new Error("Components V2 messages cannot have content - use a Text Display component instead.");
+      }
+
+      if (this.data.embeds?.length) {
+        throw new Error("Components V2 messages cannot have embeds - use a Container component instead.");
+      }
+
+      if (this.data.poll) {
+        throw new Error("Components V2 messages cannot have a poll.");
+      }
+
+      const count = countComponents(this.data.components ?? []);
+      if (count > 40) {
+        throw new RangeError(`Components V2 messages can contain at most 40 components, got ${count}.`);
+      }
+    }
+
     return this.data;
   }
 
@@ -257,3 +340,22 @@ export type ResponseMap = {
   [InteractionResponseType.ChannelMessageWithSource]: APIInteractionResponseChannelMessageWithSource;
   [InteractionResponseType.UpdateMessage]: APIInteractionResponseUpdateMessage;
 };
+
+/** Recursively counts components, including children of Action Rows, Sections and Containers. */
+function countComponents(components: object[]): number {
+  let count = 0;
+
+  for (const component of components) {
+    count++;
+
+    if ("components" in component && Array.isArray(component.components)) {
+      count += countComponents(component.components);
+    }
+
+    if ("accessory" in component && component.accessory) {
+      count++;
+    }
+  }
+
+  return count;
+}

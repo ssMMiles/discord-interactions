@@ -21,9 +21,18 @@ export abstract class ComponentBuilderBase<
    */
   public readonly data: Partial<DataType>;
 
-  public abstract toJSON(): AnyAPIActionRowComponent;
+  public abstract toJSON(): object;
 
   public constructor(data: Partial<DataType>) {
     this.data = data;
+  }
+
+  /**
+   * Sets this component's optional 32-bit numeric identifier, unique within the message.
+   * Discord generates sequential ids for components sent without one.
+   */
+  public setId(id: number): this {
+    this.data.id = id;
+    return this;
   }
 }
