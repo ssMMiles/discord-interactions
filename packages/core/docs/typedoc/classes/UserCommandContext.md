@@ -1,414 +1,454 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / UserCommandContext
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / UserCommandContext
 
 # Class: UserCommandContext
 
-## Hierarchy
+Defined in: [app/contexts/application\_commands/UserCommandContext.ts:10](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/UserCommandContext.ts#L10)
 
-- `BaseCommandContext`<`APIUserApplicationCommandInteraction`\>
+## Extends
 
-  ↳ **`UserCommandContext`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](UserCommandContext.md#constructor)
-
-### Properties
-
-- [app](UserCommandContext.md#app)
-- [app\_permissions](UserCommandContext.md#app_permissions)
-- [channelId](UserCommandContext.md#channelid)
-- [commandGuildId](UserCommandContext.md#commandguildid)
-- [guildId](UserCommandContext.md#guildid)
-- [guildLocale](UserCommandContext.md#guildlocale)
-- [id](UserCommandContext.md#id)
-- [interactionId](UserCommandContext.md#interactionid)
-- [isDM](UserCommandContext.md#isdm)
-- [locale](UserCommandContext.md#locale)
-- [member](UserCommandContext.md#member)
-- [name](UserCommandContext.md#name)
-- [raw](UserCommandContext.md#raw)
-- [receivedAt](UserCommandContext.md#receivedat)
-- [resolved](UserCommandContext.md#resolved)
-- [signedAt](UserCommandContext.md#signedat)
-- [target](UserCommandContext.md#target)
-- [user](UserCommandContext.md#user)
-
-### Accessors
-
-- [expired](UserCommandContext.md#expired)
-
-### Methods
-
-- [createComponent](UserCommandContext.md#createcomponent)
-- [createGlobalComponent](UserCommandContext.md#createglobalcomponent)
-- [decorate](UserCommandContext.md#decorate)
-- [defer](UserCommandContext.md#defer)
-- [delete](UserCommandContext.md#delete)
-- [edit](UserCommandContext.md#edit)
-- [rawReply](UserCommandContext.md#rawreply)
-- [reply](UserCommandContext.md#reply)
-- [send](UserCommandContext.md#send)
+- `BaseCommandContext`\<`APIUserApplicationCommandInteraction`\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new UserCommandContext**(`app`, `interaction`, `timestamps`, `responseCallback`)
+> **new UserCommandContext**(`app`, `interaction`, `timestamps`, `responseCallback`): `UserCommandContext`
+
+Defined in: [app/contexts/application\_commands/UserCommandContext.ts:16](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/UserCommandContext.ts#L16)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `app` | [`DiscordApplication`](DiscordApplication.md) |
-| `interaction` | `APIUserApplicationCommandInteraction` |
-| `timestamps` | `Object` |
-| `timestamps.received` | `Date` |
-| `timestamps.signature` | `Date` |
-| `responseCallback` | [`ResponseCallback`](../modules.md#responsecallback)<[`ChannelMessageResponse`](../modules.md#channelmessageresponse)\> |
+##### app
+
+[`DiscordApplication`](DiscordApplication.md)
+
+##### interaction
+
+`APIUserApplicationCommandInteraction`
+
+##### timestamps
+
+###### received
+
+`Date`
+
+###### signature
+
+`Date`
+
+##### responseCallback
+
+[`ResponseCallback`](../type-aliases/ResponseCallback.md)\<[`ChannelMessageResponse`](../type-aliases/ChannelMessageResponse.md)\>
+
+#### Returns
+
+`UserCommandContext`
 
 #### Overrides
 
-BaseCommandContext&lt;APIUserApplicationCommandInteraction\&gt;.constructor
+`BaseCommandContext<APIUserApplicationCommandInteraction>.constructor`
 
 ## Properties
 
 ### app
 
-• **app**: [`DiscordApplication`](DiscordApplication.md)
+> **app**: [`DiscordApplication`](DiscordApplication.md)
+
+Defined in: [app/contexts/Base.ts:38](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L38)
 
 #### Inherited from
 
-BaseCommandContext.app
+`BaseCommandContext.app`
 
-#### Defined in
-
-[app/contexts/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L34)
-
-___
+***
 
 ### app\_permissions
 
-• **app\_permissions**: `Bitfield`
+> **app\_permissions**: `Bitfield`
+
+Defined in: [app/contexts/Base.ts:47](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L47)
 
 #### Inherited from
 
-BaseCommandContext.app\_permissions
+`BaseCommandContext.app_permissions`
 
-#### Defined in
+***
 
-[app/contexts/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L43)
+### attachmentSizeLimit?
 
-___
+> `optional` **attachmentSizeLimit?**: `number`
 
-### channelId
+Defined in: [app/contexts/Base.ts:67](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L67)
 
-• `Optional` **channelId**: `string`
-
-#### Inherited from
-
-BaseCommandContext.channelId
-
-#### Defined in
-
-[app/contexts/Base.ts:48](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L48)
-
-___
-
-### commandGuildId
-
-• `Optional` **commandGuildId**: `string`
+Attachment size limit for the invoking user/guild, in bytes.
 
 #### Inherited from
 
-BaseCommandContext.commandGuildId
+`BaseCommandContext.attachmentSizeLimit`
 
-#### Defined in
+***
 
-[app/contexts/application_commands/ApplicationCommandContext.ts:50](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L50)
+### authorizingIntegrationOwners?
 
-___
+> `optional` **authorizingIntegrationOwners?**: `APIAuthorizingIntegrationOwnersMap`
 
-### guildId
+Defined in: [app/contexts/Base.ts:64](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L64)
 
-• `Optional` **guildId**: `string`
-
-#### Inherited from
-
-BaseCommandContext.guildId
-
-#### Defined in
-
-[app/contexts/Base.ts:47](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L47)
-
-___
-
-### guildLocale
-
-• `Optional` **guildLocale**: ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``
+Mapping of installation contexts that authorized the interaction to their owner ids.
 
 #### Inherited from
 
-BaseCommandContext.guildLocale
+`BaseCommandContext.authorizingIntegrationOwners`
 
-#### Defined in
+***
 
-[app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L54)
+### channelId?
 
-___
+> `optional` **channelId?**: `string`
+
+Defined in: [app/contexts/Base.ts:52](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L52)
+
+#### Inherited from
+
+`BaseCommandContext.channelId`
+
+***
+
+### commandGuildId?
+
+> `optional` **commandGuildId?**: `string`
+
+Defined in: [app/contexts/application\_commands/ApplicationCommandContext.ts:50](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L50)
+
+#### Inherited from
+
+`BaseCommandContext.commandGuildId`
+
+***
+
+### entitlements
+
+> **entitlements**: `APIEntitlement`[] = `[]`
+
+Defined in: [app/contexts/Base.ts:70](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L70)
+
+For monetized apps, entitlements of the invoking user.
+
+#### Inherited from
+
+`BaseCommandContext.entitlements`
+
+***
+
+### guild?
+
+> `optional` **guild?**: `APIPartialInteractionGuild`
+
+Defined in: [app/contexts/Base.ts:73](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L73)
+
+Partial guild object for the guild the interaction was sent from.
+
+#### Inherited from
+
+`BaseCommandContext.guild`
+
+***
+
+### guildId?
+
+> `optional` **guildId?**: `string`
+
+Defined in: [app/contexts/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L51)
+
+#### Inherited from
+
+`BaseCommandContext.guildId`
+
+***
+
+### guildLocale?
+
+> `optional` **guildLocale?**: `"id"` \| `"hr"` \| `"th"` \| `"tr"` \| `"en-US"` \| `"en-GB"` \| `"bg"` \| `"zh-CN"` \| `"zh-TW"` \| `"cs"` \| `"da"` \| `"nl"` \| `"fi"` \| `"fr"` \| `"de"` \| `"el"` \| `"hi"` \| `"hu"` \| `"it"` \| `"ja"` \| `"ko"` \| `"lt"` \| `"no"` \| `"pl"` \| `"pt-BR"` \| `"ro"` \| `"ru"` \| `"es-ES"` \| `"es-419"` \| `"sv-SE"` \| `"uk"` \| `"vi"`
+
+Defined in: [app/contexts/Base.ts:58](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L58)
+
+#### Inherited from
+
+`BaseCommandContext.guildLocale`
+
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
+
+Defined in: [app/contexts/application\_commands/ApplicationCommandContext.ts:47](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L47)
 
 #### Inherited from
 
-BaseCommandContext.id
+`BaseCommandContext.id`
 
-#### Defined in
+***
 
-[app/contexts/application_commands/ApplicationCommandContext.ts:47](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L47)
+### interactionContext?
 
-___
+> `optional` **interactionContext?**: `InteractionContextType`
+
+Defined in: [app/contexts/Base.ts:61](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L61)
+
+Where this interaction was triggered from (guild, bot DM or private channel).
+
+#### Inherited from
+
+`BaseCommandContext.interactionContext`
+
+***
 
 ### interactionId
 
-• **interactionId**: `string`
+> **interactionId**: `string`
+
+Defined in: [app/contexts/Base.ts:44](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L44)
 
 #### Inherited from
 
-BaseCommandContext.interactionId
+`BaseCommandContext.interactionId`
 
-#### Defined in
-
-[app/contexts/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L40)
-
-___
+***
 
 ### isDM
 
-• **isDM**: `boolean`
+> **isDM**: `boolean`
+
+Defined in: [app/contexts/Base.ts:49](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L49)
 
 #### Inherited from
 
-BaseCommandContext.isDM
+`BaseCommandContext.isDM`
 
-#### Defined in
-
-[app/contexts/Base.ts:45](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L45)
-
-___
+***
 
 ### locale
 
-• **locale**: ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``
+> **locale**: `"id"` \| `"hr"` \| `"th"` \| `"tr"` \| `"en-US"` \| `"en-GB"` \| `"bg"` \| `"zh-CN"` \| `"zh-TW"` \| `"cs"` \| `"da"` \| `"nl"` \| `"fi"` \| `"fr"` \| `"de"` \| `"el"` \| `"hi"` \| `"hu"` \| `"it"` \| `"ja"` \| `"ko"` \| `"lt"` \| `"no"` \| `"pl"` \| `"pt-BR"` \| `"ro"` \| `"ru"` \| `"es-ES"` \| `"es-419"` \| `"sv-SE"` \| `"uk"` \| `"vi"`
+
+Defined in: [app/contexts/Base.ts:57](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L57)
 
 #### Inherited from
 
-BaseCommandContext.locale
+`BaseCommandContext.locale`
 
-#### Defined in
+***
 
-[app/contexts/Base.ts:53](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L53)
+### member?
 
-___
+> `optional` **member?**: `APIInteractionGuildMember`
 
-### member
-
-• `Optional` **member**: `APIGuildMember`
+Defined in: [app/contexts/Base.ts:55](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L55)
 
 #### Inherited from
 
-BaseCommandContext.member
+`BaseCommandContext.member`
 
-#### Defined in
-
-[app/contexts/Base.ts:51](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L51)
-
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
+
+Defined in: [app/contexts/application\_commands/ApplicationCommandContext.ts:46](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L46)
 
 #### Inherited from
 
-BaseCommandContext.name
+`BaseCommandContext.name`
 
-#### Defined in
+***
 
-[app/contexts/application_commands/ApplicationCommandContext.ts:46](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L46)
+### raw?
 
-___
+> `optional` **raw?**: `APIUserApplicationCommandInteraction`
 
-### raw
-
-• `Optional` **raw**: `APIUserApplicationCommandInteraction`
+Defined in: [app/contexts/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L43)
 
 #### Inherited from
 
-BaseCommandContext.raw
+`BaseCommandContext.raw`
 
-#### Defined in
-
-[app/contexts/Base.ts:39](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L39)
-
-___
+***
 
 ### receivedAt
 
-• **receivedAt**: `Date`
+> **receivedAt**: `Date`
+
+Defined in: [app/contexts/Base.ts:41](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L41)
 
 #### Inherited from
 
-BaseCommandContext.receivedAt
+`BaseCommandContext.receivedAt`
 
-#### Defined in
-
-[app/contexts/Base.ts:37](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L37)
-
-___
+***
 
 ### resolved
 
-• **resolved**: `ResolvedData`
+> **resolved**: `ResolvedData`
+
+Defined in: [app/contexts/application\_commands/ApplicationCommandContext.ts:52](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L52)
 
 #### Inherited from
 
-BaseCommandContext.resolved
+`BaseCommandContext.resolved`
 
-#### Defined in
-
-[app/contexts/application_commands/ApplicationCommandContext.ts:52](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L52)
-
-___
+***
 
 ### signedAt
 
-• **signedAt**: `Date`
+> **signedAt**: `Date`
+
+Defined in: [app/contexts/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L40)
 
 #### Inherited from
 
-BaseCommandContext.signedAt
+`BaseCommandContext.signedAt`
 
-#### Defined in
-
-[app/contexts/Base.ts:36](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L36)
-
-___
+***
 
 ### target
 
-• **target**: `Object`
+> **target**: `object`
 
-#### Type declaration
+Defined in: [app/contexts/application\_commands/UserCommandContext.ts:11](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/UserCommandContext.ts#L11)
 
-| Name | Type |
-| :------ | :------ |
-| `member?` | `APIInteractionDataResolvedGuildMember` |
-| `user` | `APIUser` |
+#### member?
 
-#### Defined in
+> `optional` **member?**: `APIInteractionDataResolvedGuildMember`
 
-[app/contexts/application_commands/UserCommandContext.ts:11](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/application_commands/UserCommandContext.ts#L11)
+#### user
 
-___
+> **user**: `APIUser`
+
+***
 
 ### user
 
-• **user**: `APIUser`
+> **user**: `APIUser`
+
+Defined in: [app/contexts/Base.ts:54](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L54)
 
 #### Inherited from
 
-BaseCommandContext.user
-
-#### Defined in
-
-[app/contexts/Base.ts:50](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/contexts/Base.ts#L50)
+`BaseCommandContext.user`
 
 ## Accessors
 
 ### expired
 
-• `get` **expired**(): `boolean`
+#### Get Signature
 
-#### Returns
+> **get** **expired**(): `boolean`
+
+Defined in: [app/contexts/Base.ts:33](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L33)
+
+##### Returns
 
 `boolean`
 
 #### Inherited from
 
-BaseCommandContext.expired
+`BaseCommandContext.expired`
 
 ## Methods
 
-### createComponent
+### createComponent()
 
-▸ **createComponent**<`Builder`\>(`name`, `state?`, `ttl?`): `Promise`<`Builder`\>
+> **createComponent**\<`Builder`\>(`name`, `state?`, `ttl?`): `Promise`\<`Builder`\>
 
-#### Type parameters
+Defined in: [app/contexts/application\_commands/ApplicationCommandContext.ts:80](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L80)
 
-| Name | Type |
-| :------ | :------ |
-| `Builder` | extends `ButtonBuilder` \| `SelectMenuBuilders` \| `ModalBuilder` = `ButtonBuilder` \| `SelectMenuBuilders` |
+#### Type Parameters
+
+##### Builder
+
+`Builder` *extends* `ButtonBuilder` \| `SelectMenuBuilders` \| `ModalBuilder` = `ButtonBuilder` \| `SelectMenuBuilders`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `state` | `object` |
-| `ttl?` | `number` |
+##### name
+
+`string`
+
+##### state?
+
+`object` = `{}`
+
+##### ttl?
+
+`number`
 
 #### Returns
 
-`Promise`<`Builder`\>
+`Promise`\<`Builder`\>
 
 #### Inherited from
 
-BaseCommandContext.createComponent
+`BaseCommandContext.createComponent`
 
-___
+***
 
-### createGlobalComponent
+### createGlobalComponent()
 
-▸ **createGlobalComponent**<`Builder`\>(`name`, `state?`, `ttl?`): `Promise`<`Builder`\>
+> **createGlobalComponent**\<`Builder`\>(`name`, `state?`, `ttl?`): `Promise`\<`Builder`\>
 
-#### Type parameters
+Defined in: [app/contexts/Base.ts:135](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L135)
 
-| Name | Type |
-| :------ | :------ |
-| `Builder` | extends `ButtonBuilder` \| `SelectMenuBuilders` \| `ModalBuilder` = `ButtonBuilder` \| `SelectMenuBuilders` |
+#### Type Parameters
+
+##### Builder
+
+`Builder` *extends* `ButtonBuilder` \| `SelectMenuBuilders` \| `ModalBuilder` = `ButtonBuilder` \| `SelectMenuBuilders`
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `state` | `object` |
-| `ttl?` | `number` |
+##### name
+
+`string`
+
+##### state?
+
+`object` = `{}`
+
+##### ttl?
+
+`number`
 
 #### Returns
 
-`Promise`<`Builder`\>
+`Promise`\<`Builder`\>
 
 #### Inherited from
 
-BaseCommandContext.createGlobalComponent
+`BaseCommandContext.createGlobalComponent`
 
-___
+***
 
-### decorate
+### decorate()
 
-▸ **decorate**(`key`, `value`): `void`
+> **decorate**(`key`, `value`): `void`
+
+Defined in: [app/contexts/Base.ts:128](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L128)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `key` | `string` |
-| `value` | `unknown` |
+##### key
+
+`string`
+
+##### value
+
+`unknown`
 
 #### Returns
 
@@ -416,118 +456,149 @@ ___
 
 #### Inherited from
 
-BaseCommandContext.decorate
+`BaseCommandContext.decorate`
 
-___
+***
 
-### defer
+### defer()
 
-▸ **defer**(`flags?`): `Promise`<`void`\>
+> **defer**(`flags?`): `Promise`\<`void`\>
 
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `flags?` | `MessageFlags` |
-
-#### Returns
-
-`Promise`<`void`\>
-
-#### Inherited from
-
-BaseCommandContext.defer
-
-___
-
-### delete
-
-▸ **delete**(): `Promise`<`void`\>
-
-#### Returns
-
-`Promise`<`void`\>
-
-#### Inherited from
-
-BaseCommandContext.delete
-
-___
-
-### edit
-
-▸ **edit**(`message`): `Promise`<`APIMessage`\>
+Defined in: [app/contexts/application\_commands/ApplicationCommandContext.ts:98](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L98)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `message` | `string` \| `MessageBuilder` |
+##### flags?
+
+`MessageFlags`
 
 #### Returns
 
-`Promise`<`APIMessage`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-BaseCommandContext.edit
+`BaseCommandContext.defer`
 
-___
+***
 
-### rawReply
+### delete()
 
-▸ **rawReply**(`message`): `Promise`<`void`\>
+> **delete**(): `Promise`\<`void`\>
+
+Defined in: [app/contexts/application\_commands/ApplicationCommandContext.ts:141](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L141)
+
+#### Returns
+
+`Promise`\<`void`\>
+
+#### Inherited from
+
+`BaseCommandContext.delete`
+
+***
+
+### edit()
+
+> **edit**(`message`): `Promise`\<`APIMessage`\>
+
+Defined in: [app/contexts/application\_commands/ApplicationCommandContext.ts:137](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L137)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `message` | [`ChannelMessageResponse`](../modules.md#channelmessageresponse) |
+##### message
+
+`string` \| `MessageBuilder`
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`APIMessage`\>
 
 #### Inherited from
 
-BaseCommandContext.rawReply
+`BaseCommandContext.edit`
 
-___
+***
 
-### reply
+### launchActivity()
 
-▸ **reply**(`message`): `Promise`<`void`\>
+> **launchActivity**(): `Promise`\<`void`\>
+
+Defined in: [app/contexts/application\_commands/ApplicationCommandContext.ts:90](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L90)
+
+Launch your app's Activity in response to this interaction.
+Only available to apps with Activities enabled.
+
+#### Returns
+
+`Promise`\<`void`\>
+
+#### Inherited from
+
+`BaseCommandContext.launchActivity`
+
+***
+
+### rawReply()
+
+> **rawReply**(`message`): `Promise`\<`void`\>
+
+Defined in: [app/contexts/Base.ts:124](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/Base.ts#L124)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `message` | `string` \| `APIInteractionResponseChannelMessageWithSource` \| `APIModalInteractionResponse` \| `FormData` \| `MessageBuilder` \| `ModalBuilder` |
+##### message
+
+[`ChannelMessageResponse`](../type-aliases/ChannelMessageResponse.md)
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-BaseCommandContext.reply
+`BaseCommandContext.rawReply`
 
-___
+***
 
-### send
+### reply()
 
-▸ **send**(`message`): `Promise`<`APIMessage`\>
+> **reply**(`message`): `Promise`\<`void`\>
+
+Defined in: [app/contexts/application\_commands/ApplicationCommandContext.ts:109](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L109)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `message` | `string` \| `MessageBuilder` |
+##### message
+
+`string` \| `APIInteractionResponseChannelMessageWithSource` \| `APIModalInteractionResponse` \| `FormData` \| `MessageBuilder` \| `ModalBuilder`
 
 #### Returns
 
-`Promise`<`APIMessage`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-BaseCommandContext.send
+`BaseCommandContext.reply`
+
+***
+
+### send()
+
+> **send**(`message`): `Promise`\<`APIMessage`\>
+
+Defined in: [app/contexts/application\_commands/ApplicationCommandContext.ts:133](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/contexts/application_commands/ApplicationCommandContext.ts#L133)
+
+#### Parameters
+
+##### message
+
+`string` \| `MessageBuilder`
+
+#### Returns
+
+`Promise`\<`APIMessage`\>
+
+#### Inherited from
+
+`BaseCommandContext.send`

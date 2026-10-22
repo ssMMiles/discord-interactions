@@ -1,16 +1,13 @@
-import { APITextInputComponent, ComponentType } from "discord-api-types/v10";
+import { APITextInputComponent, ComponentType, TextInputStyle } from "discord-api-types/v10";
 import { ComponentBuilderBase } from "./ComponentBuilderBase.js";
 
-export enum TextInputStyle {
-  Short = 1, // Single-line
-  Paragraph = 2 // Multi-line
-}
+export { TextInputStyle };
 
 /**
  * Represents a non-validated text input component
  */
 export class TextInputBuilder extends ComponentBuilderBase<APITextInputComponent> {
-  public constructor(id: string, label: string, style: TextInputStyle) {
+  public constructor(id: string, label?: string, style: TextInputStyle = TextInputStyle.Short) {
     super({
       type: ComponentType.TextInput,
 
@@ -39,8 +36,9 @@ export class TextInputBuilder extends ComponentBuilderBase<APITextInputComponent
   }
 
   /**
-   * Sets the label for this button
-   * @param label The label to display on this button
+   * Sets the label for this text input
+   * @param label The label to display above this text input
+   * @deprecated Wrap the text input in a Label component (LabelBuilder) instead.
    */
   public setLabel(label: string): this {
     this.data.label = label;

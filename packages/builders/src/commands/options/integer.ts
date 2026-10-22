@@ -68,6 +68,7 @@ export class SlashCommandIntegerOption extends SlashCommandOptionBase {
   }
 
   public toJSON(): APIApplicationCommandIntegerOption {
-    return { ...this };
+    // eslint-disable-next-line @typescript-eslint/consistent-type-assertions
+    return { ...this } as APIApplicationCommandIntegerOption;
   }
 }

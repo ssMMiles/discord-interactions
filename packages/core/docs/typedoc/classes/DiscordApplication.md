@@ -1,244 +1,323 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / DiscordApplication
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / DiscordApplication
 
 # Class: DiscordApplication
 
+Defined in: [app/DiscordApplication.ts:64](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L64)
+
 Main class for managing a Discord Application's commands and handling interactions.
-
-## Table of contents
-
-### Constructors
-
-- [constructor](DiscordApplication.md#constructor)
-
-### Properties
-
-- [cache](DiscordApplication.md#cache)
-- [clientId](DiscordApplication.md#clientid)
-- [commands](DiscordApplication.md#commands)
-- [components](DiscordApplication.md#components)
-- [guildCommands](DiscordApplication.md#guildcommands)
-- [hooks](DiscordApplication.md#hooks)
-- [preserveRaw](DiscordApplication.md#preserveraw)
-- [publicKey](DiscordApplication.md#publickey)
-- [rest](DiscordApplication.md#rest)
-- [timeout](DiscordApplication.md#timeout)
-
-### Methods
-
-- [addHook](DiscordApplication.md#addhook)
-- [createGuildCommandManager](DiscordApplication.md#createguildcommandmanager)
-- [handleInteraction](DiscordApplication.md#handleinteraction)
-- [setAPIClient](DiscordApplication.md#setapiclient)
-- [verifyInteractionSignature](DiscordApplication.md#verifyinteractionsignature)
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new DiscordApplication**(`options`)
+> **new DiscordApplication**(`options`): `DiscordApplication`
+
+Defined in: [app/DiscordApplication.ts:110](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L110)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options` | [`DiscordApplicationOptions`](../interfaces/DiscordApplicationOptions.md) |
+##### options
+
+[`DiscordApplicationOptions`](../interfaces/DiscordApplicationOptions.md)
+
+#### Returns
+
+`DiscordApplication`
 
 ## Properties
 
-### cache
+### cache?
 
-• `Optional` **cache**: [`GenericCache`](../interfaces/GenericCache.md)
+> `optional` **cache?**: [`GenericCache`](../interfaces/GenericCache.md)
 
-#### Defined in
+Defined in: [app/DiscordApplication.ts:70](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L70)
 
-[app/DiscordApplication.ts:66](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L66)
-
-___
+***
 
 ### clientId
 
-• **clientId**: `string`
+> **clientId**: `string`
 
-#### Defined in
+Defined in: [app/DiscordApplication.ts:68](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L68)
 
-[app/DiscordApplication.ts:64](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L64)
-
-___
+***
 
 ### commands
 
-• **commands**: [`CommandManager`](CommandManager.md)
+> **commands**: [`CommandManager`](CommandManager.md)
 
-#### Defined in
+Defined in: [app/DiscordApplication.ts:72](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L72)
 
-[app/DiscordApplication.ts:68](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L68)
-
-___
+***
 
 ### components
 
-• **components**: [`ComponentManager`](ComponentManager.md)
+> **components**: [`ComponentManager`](ComponentManager.md)
 
-#### Defined in
+Defined in: [app/DiscordApplication.ts:75](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L75)
 
-[app/DiscordApplication.ts:71](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L71)
-
-___
+***
 
 ### guildCommands
 
-• **guildCommands**: `Map`<`string`, [`CommandManager`](CommandManager.md)\>
+> **guildCommands**: `Map`\<`string`, [`CommandManager`](CommandManager.md)\>
 
-#### Defined in
+Defined in: [app/DiscordApplication.ts:73](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L73)
 
-[app/DiscordApplication.ts:69](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L69)
-
-___
+***
 
 ### hooks
 
-• **hooks**: [`InteractionHooks`](../modules.md#interactionhooks)
+> **hooks**: [`InteractionHooks`](../type-aliases/InteractionHooks.md)
 
-#### Defined in
+Defined in: [app/DiscordApplication.ts:80](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L80)
 
-[app/DiscordApplication.ts:76](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L76)
-
-___
+***
 
 ### preserveRaw
 
-• **preserveRaw**: `boolean`
+> **preserveRaw**: `boolean`
 
-#### Defined in
+Defined in: [app/DiscordApplication.ts:77](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L77)
 
-[app/DiscordApplication.ts:73](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L73)
-
-___
+***
 
 ### publicKey
 
-• **publicKey**: `string`
+> **publicKey**: `string`
 
-#### Defined in
+Defined in: [app/DiscordApplication.ts:67](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L67)
 
-[app/DiscordApplication.ts:63](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L63)
-
-___
+***
 
 ### rest
 
-• **rest**: `DiscordApiClient`
+> **rest**: `DiscordApiClient`
 
-#### Defined in
+Defined in: [app/DiscordApplication.ts:108](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L108)
 
-[app/DiscordApplication.ts:92](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L92)
-
-___
+***
 
 ### timeout
 
-• **timeout**: `number` = `2500`
+> **timeout**: `number` = `2500`
 
-#### Defined in
+Defined in: [app/DiscordApplication.ts:78](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L78)
 
-[app/DiscordApplication.ts:74](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L74)
+***
+
+### webhookEventHooks
+
+> **webhookEventHooks**: [`WebhookEventHooks`](../type-aliases/WebhookEventHooks.md)
+
+Defined in: [app/DiscordApplication.ts:97](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L97)
 
 ## Methods
 
-### addHook
+### addHook()
 
-▸ **addHook**<`T`\>(`hook`, `handler`): `void`
+> **addHook**\<`T`\>(`hook`, `handler`): `void`
 
-#### Type parameters
+Defined in: [app/DiscordApplication.ts:225](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L225)
 
-| Name | Type |
-| :------ | :------ |
-| `T` | extends keyof [`InteractionHooks`](../modules.md#interactionhooks) |
+#### Type Parameters
+
+##### T
+
+`T` *extends* keyof [`InteractionHooks`](../type-aliases/InteractionHooks.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `hook` | `T` |
-| `handler` | (`ctx`: [`ContextMap`](../modules.md#contextmap)[`T`]) => `Promise`<``true`` \| `void`\> |
+##### hook
+
+`T`
+
+##### handler
+
+(`ctx`) => `Promise`\<`true` \| `void`\>
 
 #### Returns
 
 `void`
 
-___
+***
 
-### createGuildCommandManager
+### addWebhookEventHook()
 
-▸ **createGuildCommandManager**(`guildId`, `syncMode?`): [`CommandManager`](CommandManager.md)
+> **addWebhookEventHook**\<`T`\>(`event`, `handler`): `void`
+
+Defined in: [app/DiscordApplication.ts:232](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L232)
+
+#### Type Parameters
+
+##### T
+
+`T` *extends* keyof [`WebhookEventHooks`](../type-aliases/WebhookEventHooks.md)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `guildId` | `string` |
-| `syncMode?` | [`SyncMode`](../enums/SyncMode.md) |
+##### event
+
+`T`
+
+##### handler
+
+[`WebhookEventHooks`](../type-aliases/WebhookEventHooks.md)\[`T`\]\[`number`\]
+
+#### Returns
+
+`void`
+
+***
+
+### createGuildCommandManager()
+
+> **createGuildCommandManager**(`guildId`, `syncMode?`): [`CommandManager`](CommandManager.md)
+
+Defined in: [app/DiscordApplication.ts:147](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L147)
+
+#### Parameters
+
+##### guildId
+
+`string`
+
+##### syncMode?
+
+[`SyncMode`](../enumerations/SyncMode.md)
 
 #### Returns
 
 [`CommandManager`](CommandManager.md)
 
-___
+***
 
-### handleInteraction
+### handleInteraction()
 
-▸ **handleInteraction**(`body`, `signature`, `timestamp?`): `Promise`<[`Promise`<`APIInteractionResponse` \| `FormData`\>, `Promise`<`void`\>]\>
+> **handleInteraction**(`body`, `signature`, `timestamp?`): `Promise`\<\[`Promise`\<`APIInteractionResponse` \| `FormData`\>, `Promise`\<`void`\>\]\>
+
+Defined in: [app/DiscordApplication.ts:164](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L164)
 
 Handle an incoming interaction request
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `body` | `string` | Raw interaction body |
-| `signature` | `string` \| ``false`` | Request's "X-Signature-Ed25519" header or false to skip signature verification |
-| `timestamp?` | `string` | Request's "X-Signature-Timestamp" header |
+##### body
+
+`string`
+
+Raw interaction body
+
+##### signature
+
+`string` \| `false`
+
+Request's "X-Signature-Ed25519" header or false to skip signature verification
+
+##### timestamp?
+
+`string`
+
+Request's "X-Signature-Timestamp" header
 
 #### Returns
 
-`Promise`<[`Promise`<`APIInteractionResponse` \| `FormData`\>, `Promise`<`void`\>]\>
+`Promise`\<\[`Promise`\<`APIInteractionResponse` \| `FormData`\>, `Promise`\<`void`\>\]\>
 
 Array containing the interaction response, and a callback to be called after you have sent the response
 
-___
+***
 
-### setAPIClient
+### handleWebhookEvent()
 
-▸ **setAPIClient**(`client`): `void`
+> **handleWebhookEvent**(`body`, `signature`, `timestamp?`): `Promise`\<`void`\>
+
+Defined in: [app/DiscordApplication.ts:247](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L247)
+
+Handle an incoming webhook event request (Webhook Events URL).
+Webhook events use the same Ed25519 signature scheme as interactions. Throws
+UnauthorizedInteraction for invalid signatures (respond 401); otherwise runs the
+registered event hooks. Discord expects an empty 204 acknowledgement within 3 seconds,
+so either keep hooks fast or send your response before awaiting this promise.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `client` | `DiscordApiClient` |
+##### body
+
+`string`
+
+Raw request body
+
+##### signature
+
+`string` \| `false`
+
+Request's "X-Signature-Ed25519" header or false to skip signature verification
+
+##### timestamp?
+
+`string`
+
+Request's "X-Signature-Timestamp" header
+
+#### Returns
+
+`Promise`\<`void`\>
+
+***
+
+### setAPIClient()
+
+> **setAPIClient**(`client`): `void`
+
+Defined in: [app/DiscordApplication.ts:153](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L153)
+
+#### Parameters
+
+##### client
+
+`DiscordApiClient`
 
 #### Returns
 
 `void`
 
-___
+***
 
-### verifyInteractionSignature
+### verifyInteractionSignature()
 
-▸ **verifyInteractionSignature**(`signature`, `timestamp`, `body`): `Promise`<`boolean`\>
+> **verifyInteractionSignature**(`signature`, `timestamp`, `body`): `Promise`\<`boolean`\>
+
+Defined in: [app/DiscordApplication.ts:143](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L143)
 
 Verify an incoming interaction's signature.
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `signature` | `string` | Interaction Request's "X-Signature-Ed25519" Header |
-| `timestamp` | `string` | Interaction Request's "X-Signature-Timestamp" Header |
-| `body` | `string` | Raw Interaction Request Body - If you parse this as JSON beforehand, verification will fail for certain interactions. |
+##### signature
+
+`string`
+
+Interaction Request's "X-Signature-Ed25519" Header
+
+##### timestamp
+
+`string`
+
+Interaction Request's "X-Signature-Timestamp" Header
+
+##### body
+
+`string`
+
+Raw Interaction Request Body - If you parse this as JSON beforehand, verification will fail for certain interactions.
 
 #### Returns
 
-`Promise`<`boolean`\>
+`Promise`\<`boolean`\>
 
 Whether or not the request signature is valid.

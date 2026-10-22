@@ -6,6 +6,8 @@ import {
   APIApplicationCommandSubcommandOption,
   ApplicationCommandOptionType,
   ApplicationCommandType,
+  ApplicationIntegrationType,
+  InteractionContextType,
   LocalizationMap,
   RESTPostAPIApplicationCommandsJSONBody,
   RESTPostAPIChatInputApplicationCommandsJSONBody
@@ -16,7 +18,12 @@ import { Bitfield } from "./permissions/Bitfield.js";
 /**
  * @hidden
  */
-export type CommandDataBase = Omit<APIApplicationCommand, "id" | "application_id" | "guild_id" | "version">;
+export type CommandDataBase = Omit<
+  APIApplicationCommand,
+  "id" | "application_id" | "guild_id" | "version" | "contexts"
+> & {
+  contexts?: InteractionContextType[];
+};
 
 /**
  * @hidden
@@ -39,6 +46,7 @@ export abstract class CommandBuilderBase<Data extends RESTPostAPIApplicationComm
 
   /**
    * Whether the command is visible in DMs - Only available for global commands and defaults to true.
+   * @deprecated Use {@link CommandBuilderBase.setContexts} instead.
    */
   public dm_permission?: boolean;
 
@@ -46,6 +54,21 @@ export abstract class CommandBuilderBase<Data extends RESTPostAPIApplicationComm
    * Default member permissions required to use the command
    */
   public default_member_permissions: Bitfield = new Bitfield();
+
+  /**
+   * Installation contexts where this command is available - Only for global commands.
+   */
+  public integration_types?: ApplicationIntegrationType[];
+
+  /**
+   * Interaction contexts where this command can be used - Only for global commands.
+   */
+  public contexts?: InteractionContextType[];
+
+  /**
+   * Whether this command is age-restricted.
+   */
+  public nsfw?: boolean;
 
   constructor(data: Data | string) {
     if (typeof data === "string") {
@@ -89,11 +112,59 @@ export abstract class CommandBuilderBase<Data extends RESTPostAPIApplicationComm
 
   /**
    * Set whether this command will be visible in DMs - Only applicable to Global commands.
+   * @deprecated Use {@link CommandBuilderBase.setContexts} instead.
    */
   setDMEnabled(value: boolean): this {
     this.dm_permission = value;
 
     return this;
+  }
+
+  /**
+   * Set the installation contexts where this command is available (guild install and/or user install).
+   * Only applicable to Global commands.
+   */
+  setIntegrationTypes(...integrationTypes: ApplicationIntegrationType[]): this {
+    this.integration_types = integrationTypes;
+
+    return this;
+  }
+
+  /**
+   * Set the interaction contexts where this command can be used (guild, bot DM, private channel).
+   * Only applicable to Global commands.
+   */
+  setContexts(...contexts: InteractionContextType[]): this {
+    this.contexts = contexts;
+
+    return this;
+  }
+
+  /**
+   * Set whether this command is age-restricted.
+   */
+  setNSFW(nsfw = true): this {
+    this.nsfw = nsfw;
+
+    return this;
+  }
+
+  /**
+   * Shared command fields sent to Discord - used by subclass toJSON implementations.
+   * @hidden
+   */
+  protected baseToJSON() {
+    return {
+      name: this.name,
+      name_localizations: this.name_localizations,
+
+      dm_permission: this.dm_permission,
+      default_member_permissions: this.default_member_permissions.toJSON(),
+
+      integration_types: this.integration_types,
+      contexts: this.contexts,
+      nsfw: this.nsfw
+    };
   }
 
   setRequiredPermissions(permissions: Bitfield): this {
@@ -131,6 +202,27 @@ export abstract class CommandBuilderBase<Data extends RESTPostAPIApplicationComm
 
     if (this.name !== remote.name) return false;
     if (!shallowEquals(this.name_localizations ?? {}, remote.name_localizations ?? {})) return false;
+
+    // Only compare fields the local builder sets - unset fields fall back to Discord's defaults
+    if (this.nsfw !== undefined && this.nsfw !== (remote.nsfw ?? false)) return false;
+
+    if (this.contexts !== undefined) {
+      const remoteContexts = remote.contexts ?? [];
+      if (
+        this.contexts.length !== remoteContexts.length ||
+        this.contexts.some((context) => !remoteContexts.includes(context))
+      )
+        return false;
+    }
+
+    if (this.integration_types !== undefined) {
+      const remoteTypes = remote.integration_types ?? [];
+      if (
+        this.integration_types.length !== remoteTypes.length ||
+        this.integration_types.some((type) => !remoteTypes.includes(type))
+      )
+        return false;
+    }
 
     return true;
   }

@@ -1,15 +1,19 @@
 import { Bitfield, ButtonBuilder, ModalBuilder, SelectMenuBuilders } from "@discord-interactions/builders";
-import { Snowflake } from "discord-api-types/globals";
+import type { Snowflake } from "discord-api-types/v10";
 import {
+  APIAuthorizingIntegrationOwnersMap,
+  APIEntitlement,
   APIInteraction,
+  APIInteractionGuildMember,
   APIInteractionResponse,
   APIMessageComponentInteraction,
   APIModalSubmitInteraction,
+  APIPartialInteractionGuild,
   APIUser,
-  Locale
+  InteractionContextType,
+  Locale,
+  LocaleString
 } from "discord-api-types/v10";
-import { LocaleString } from "discord-api-types/v6";
-import { APIInteractionGuildMember } from "discord-api-types/v9";
 import type { FormData } from "formdata-node";
 import { InteractionResponseAlreadySent, InteractionStateExpired } from "../../util/errors.js";
 import { DiscordApplication, ResponseCallback } from "../DiscordApplication.js";
@@ -53,6 +57,21 @@ export class BaseInteractionContext<
   public locale: LocaleString;
   public guildLocale?: LocaleString;
 
+  /** Where this interaction was triggered from (guild, bot DM or private channel). */
+  public interactionContext?: InteractionContextType;
+
+  /** Mapping of installation contexts that authorized the interaction to their owner ids. */
+  public authorizingIntegrationOwners?: APIAuthorizingIntegrationOwnersMap;
+
+  /** Attachment size limit for the invoking user/guild, in bytes. */
+  public attachmentSizeLimit?: number;
+
+  /** For monetized apps, entitlements of the invoking user. */
+  public entitlements: APIEntitlement[] = [];
+
+  /** Partial guild object for the guild the interaction was sent from. */
+  public guild?: APIPartialInteractionGuild;
+
   constructor(
     app: DiscordApplication,
     interaction: T,
@@ -85,6 +104,12 @@ export class BaseInteractionContext<
     this.member = interaction.member;
 
     this.locale = "locale" in interaction ? interaction.locale : Locale.EnglishUS;
+
+    this.interactionContext = interaction.context;
+    this.authorizingIntegrationOwners = interaction.authorizing_integration_owners;
+    this.attachmentSizeLimit = interaction.attachment_size_limit;
+    this.entitlements = interaction.entitlements ?? [];
+    this.guild = interaction.guild;
   }
 
   protected async _reply(message: R): Promise<void> {

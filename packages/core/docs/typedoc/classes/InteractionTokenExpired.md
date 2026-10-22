@@ -1,49 +1,47 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / InteractionTokenExpired
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / InteractionTokenExpired
 
 # Class: InteractionTokenExpired
 
-## Hierarchy
+Defined in: [util/errors.ts:58](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L58)
+
+## Extends
 
 - [`InteractionError`](InteractionError.md)
 
-  ↳ **`InteractionTokenExpired`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](InteractionTokenExpired.md#constructor)
-
-### Properties
-
-- [interaction](InteractionTokenExpired.md#interaction)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new InteractionTokenExpired**(`interaction`)
+> **new InteractionTokenExpired**(`interaction`): `InteractionTokenExpired`
+
+Defined in: [util/errors.ts:59](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L59)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `interaction` | `APIInteraction` |
+##### interaction
+
+`APIInteraction`
+
+#### Returns
+
+`InteractionTokenExpired`
 
 #### Overrides
 
-[InteractionError](InteractionError.md).[constructor](InteractionError.md#constructor)
+[`InteractionError`](InteractionError.md).[`constructor`](InteractionError.md#constructor)
 
 ## Properties
 
 ### interaction
 
-• **interaction**: `APIInteraction`
+> **interaction**: `APIInteraction`
+
+Defined in: [util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L15)
 
 #### Inherited from
 
-[InteractionError](InteractionError.md).[interaction](InteractionError.md#interaction)
-
-#### Defined in
-
-[util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/util/errors.ts#L15)
+[`InteractionError`](InteractionError.md).[`interaction`](InteractionError.md#interaction)

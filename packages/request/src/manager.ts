@@ -53,8 +53,8 @@ export class Manager {
   buckets: Map<string, Bucket>;
   queues: Map<string, Queue>;
 
-  #bucketSweeper!: NodeJS.Timer;
-  #queueSweeper!: NodeJS.Timer;
+  #bucketSweeper!: NodeJS.Timeout;
+  #queueSweeper!: NodeJS.Timeout;
 
   bucketSweepInterval: number;
   queueSweepInterval: number;
@@ -267,7 +267,7 @@ export class Manager {
         formData.append("payload_json", JSON.stringify(data.body));
       }
 
-      body = formData;
+      body = formData as unknown as RequestInit["body"];
     } else if (data.body != null) {
       if (data.rawBody) {
         body = data.body as BodyInit;

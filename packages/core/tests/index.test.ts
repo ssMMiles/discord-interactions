@@ -13,7 +13,8 @@ import {
   CommandGroup,
   DiscordApplication,
   DiscordApplicationOptions,
-  SlashCommand
+  SlashCommand,
+  SyncMode
 } from "../dist/index.js";
 
 import data from "./data.json";
@@ -23,20 +24,25 @@ import data2 from "./data2.json";
 const { PUBLIC_KEY, BODY_INVALID, SIGNATURE_INVALID, TIMESTAMP_INVALID, BODY_VALID, SIGNATURE_VALID, TIMESTAMP_VALID } =
   data2;
 
-if (
-  typeof process.env.CLIENT_ID !== "string" ||
-  typeof process.env.TOKEN !== "string" ||
-  typeof process.env.PUBLIC_KEY !== "string"
-) {
-  console.error("Please set the CLIENT_ID, TOKEN, and PUBLIC_KEY environment variables.");
-  process.exit(1);
-}
+// With live credentials, command registration syncs against the real Discord API.
+// Without them, tests run fully offline with command syncing disabled.
+const hasCredentials =
+  typeof process.env.CLIENT_ID === "string" &&
+  typeof process.env.TOKEN === "string" &&
+  typeof process.env.PUBLIC_KEY === "string";
 
-const options: DiscordApplicationOptions = {
-  clientId: process.env.CLIENT_ID,
-  token: process.env.TOKEN,
-  publicKey: process.env.PUBLIC_KEY
-};
+const options: DiscordApplicationOptions = hasCredentials
+  ? {
+      clientId: process.env.CLIENT_ID as string,
+      token: process.env.TOKEN as string,
+      publicKey: process.env.PUBLIC_KEY as string
+    }
+  : {
+      clientId: "123456789",
+      token: "offline-test-token",
+      publicKey: PUBLIC_KEY,
+      syncMode: SyncMode.Disabled
+    };
 
 describe("Discord Application", () => {
   const app = new DiscordApplication(options);

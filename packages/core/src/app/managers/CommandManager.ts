@@ -4,12 +4,14 @@ import { ApplicationCommandType } from "discord-api-types/v10";
 import { DiscordApplication, SyncMode } from "../DiscordApplication.js";
 import {
   ICommand,
+  IEntryPointCommand,
   IMessageCommand,
   isCommandGroup,
   ISlashCommand,
   IUserCommand,
   RegisteredCommand,
   RegisteredCommandGroup,
+  RegisteredEntryPointCommand,
   RegisteredMessageCommand,
   RegisteredSlashCommand,
   RegisteredUserCommand
@@ -27,16 +29,22 @@ export interface APIApplicationMessageCommand extends APIApplicationCommand {
   type: ApplicationCommandType.Message;
 }
 
+export interface APIApplicationEntryPointCommand extends APIApplicationCommand {
+  type: ApplicationCommandType.PrimaryEntryPoint;
+}
+
 export interface ParsedCommands {
   [ApplicationCommandType.ChatInput]: Map<string, APIApplicationSlashCommand>;
   [ApplicationCommandType.Message]: Map<string, APIApplicationUserCommand>;
   [ApplicationCommandType.User]: Map<string, APIApplicationMessageCommand>;
+  [ApplicationCommandType.PrimaryEntryPoint]: Map<string, APIApplicationEntryPointCommand>;
 }
 
 export type MappedCommandTypes = {
   [ApplicationCommandType.ChatInput]: RegisteredSlashCommand | RegisteredCommandGroup;
   [ApplicationCommandType.Message]: RegisteredMessageCommand;
   [ApplicationCommandType.User]: RegisteredUserCommand;
+  [ApplicationCommandType.PrimaryEntryPoint]: RegisteredEntryPointCommand;
 };
 
 /**
@@ -46,6 +54,7 @@ export class CommandManager {
   public [ApplicationCommandType.ChatInput]: Map<string, RegisteredSlashCommand | RegisteredCommandGroup> = new Map();
   public [ApplicationCommandType.User]: Map<string, RegisteredUserCommand> = new Map();
   public [ApplicationCommandType.Message]: Map<string, RegisteredMessageCommand> = new Map();
+  public [ApplicationCommandType.PrimaryEntryPoint]: Map<string, RegisteredEntryPointCommand> = new Map();
 
   public app: DiscordApplication;
   public syncMode: SyncMode;
@@ -78,7 +87,8 @@ export class CommandManager {
     const parsed = {
       [ApplicationCommandType.ChatInput]: new Map(),
       [ApplicationCommandType.User]: new Map(),
-      [ApplicationCommandType.Message]: new Map()
+      [ApplicationCommandType.Message]: new Map(),
+      [ApplicationCommandType.PrimaryEntryPoint]: new Map()
     };
 
     commands.map((command) => {
@@ -140,7 +150,8 @@ export class CommandManager {
         : {
             [ApplicationCommandType.ChatInput]: new Map(),
             [ApplicationCommandType.User]: new Map(),
-            [ApplicationCommandType.Message]: new Map()
+            [ApplicationCommandType.Message]: new Map(),
+            [ApplicationCommandType.PrimaryEntryPoint]: new Map()
           };
 
     const registeredCommands: RegisteredCommand[] = [];
@@ -168,6 +179,13 @@ export class CommandManager {
           break;
         case ApplicationCommandType.Message:
           registeredCommand = new RegisteredMessageCommand(this, command as IMessageCommand);
+          break;
+        case ApplicationCommandType.PrimaryEntryPoint:
+          if (this.guildId !== undefined) {
+            throw new Error("Entry Point commands cannot be registered as guild commands.");
+          }
+
+          registeredCommand = new RegisteredEntryPointCommand(this, command as IEntryPointCommand);
           break;
         default:
           throw new Error(`Unknown command type.`);
@@ -215,7 +233,8 @@ export class CommandManager {
     for (const command of [
       ...this[ApplicationCommandType.ChatInput].values(),
       ...this[ApplicationCommandType.User].values(),
-      ...this[ApplicationCommandType.Message].values()
+      ...this[ApplicationCommandType.Message].values(),
+      ...this[ApplicationCommandType.PrimaryEntryPoint].values()
     ]) {
       await command.sync(remoteCommands[command.builder.type].get(command.builder.name));
     }
@@ -230,6 +249,8 @@ export class CommandManager {
     const commands = this.parse(await this.app.rest.getApplicationCommands(this.app.clientId));
     // console.log"Purging Non-Local Commands");
 
+    // Entry Point commands are intentionally excluded - Discord auto-creates a default
+    // "Launch" command for Activities that should not be deleted by strict sync.
     for (const [localCommands, remoteCommands] of [
       [this[ApplicationCommandType.ChatInput], commands[ApplicationCommandType.ChatInput]],
       [this[ApplicationCommandType.User], commands[ApplicationCommandType.User]],
@@ -253,7 +274,8 @@ export class CommandManager {
     for (const command of [
       ...this[ApplicationCommandType.ChatInput].values(),
       ...this[ApplicationCommandType.User].values(),
-      ...this[ApplicationCommandType.Message].values()
+      ...this[ApplicationCommandType.Message].values(),
+      ...this[ApplicationCommandType.PrimaryEntryPoint].values()
     ]) {
       commandData.push(command.builder.toJSON());
     }

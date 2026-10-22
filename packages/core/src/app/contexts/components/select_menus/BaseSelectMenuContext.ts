@@ -1,11 +1,16 @@
 import { APIBaseInteraction, APIMessageSelectMenuInteractionData, InteractionType } from "discord-api-types/v10";
-import { APIMessageStringSelectInteractionData } from "discord-api-types/v9";
+import { APIMessageStringSelectInteractionData } from "discord-api-types/v10";
 import { DiscordApplication, ResponseCallback } from "../../../DiscordApplication.js";
 import { MessageUpdateResponse } from "../../response-types.js";
 import { BaseComponentContext } from "../ComponentContext.js";
 
 export type SelectMenuInteraction<DataType> = APIBaseInteraction<InteractionType.MessageComponent, DataType> &
-  Required<Pick<APIBaseInteraction<InteractionType.MessageComponent, DataType>, "channel_id" | "data" | "message">>;
+  Required<
+    Pick<
+      APIBaseInteraction<InteractionType.MessageComponent, DataType>,
+      "channel_id" | "channel" | "data" | "message" | "app_permissions"
+    >
+  >;
 
 export class BaseSelectMenuContext<
   S = never,

@@ -1,304 +1,286 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / SlashCommandNumberOption
+[**@discord-interactions/builders**](../README.md)
+
+***
+
+[@discord-interactions/builders](../globals.md) / SlashCommandNumberOption
 
 # Class: SlashCommandNumberOption
 
-## Hierarchy
+Defined in: [packages/builders/src/commands/options/number.ts:8](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/number.ts#L8)
+
+## Extends
 
 - `SlashCommandOptionBase`
 
-  ↳ **`SlashCommandNumberOption`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](SlashCommandNumberOption.md#constructor)
-
-### Properties
-
-- [autocomplete](SlashCommandNumberOption.md#autocomplete)
-- [choices](SlashCommandNumberOption.md#choices)
-- [description](SlashCommandNumberOption.md#description)
-- [description\_localizations](SlashCommandNumberOption.md#description_localizations)
-- [max\_value](SlashCommandNumberOption.md#max_value)
-- [min\_value](SlashCommandNumberOption.md#min_value)
-- [name](SlashCommandNumberOption.md#name)
-- [name\_localizations](SlashCommandNumberOption.md#name_localizations)
-- [required](SlashCommandNumberOption.md#required)
-- [type](SlashCommandNumberOption.md#type)
-
-### Methods
-
-- [addChoices](SlashCommandNumberOption.md#addchoices)
-- [setAutocomplete](SlashCommandNumberOption.md#setautocomplete)
-- [setChoices](SlashCommandNumberOption.md#setchoices)
-- [setDescriptionLocalizations](SlashCommandNumberOption.md#setdescriptionlocalizations)
-- [setLocalizedDescription](SlashCommandNumberOption.md#setlocalizeddescription)
-- [setLocalizedName](SlashCommandNumberOption.md#setlocalizedname)
-- [setMaxValue](SlashCommandNumberOption.md#setmaxvalue)
-- [setMinValue](SlashCommandNumberOption.md#setminvalue)
-- [setNameLocalizations](SlashCommandNumberOption.md#setnamelocalizations)
-- [setRequired](SlashCommandNumberOption.md#setrequired)
-- [toJSON](SlashCommandNumberOption.md#tojson)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new SlashCommandNumberOption**(`name`, `description`)
+> **new SlashCommandNumberOption**(`name`, `description`): `SlashCommandNumberOption`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:17](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L17)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
-| `description` | `string` |
+##### name
+
+`string`
+
+##### description
+
+`string`
+
+#### Returns
+
+`SlashCommandNumberOption`
 
 #### Inherited from
 
-SlashCommandOptionBase.constructor
+`SlashCommandOptionBase.constructor`
 
 ## Properties
 
-### autocomplete
+### autocomplete?
 
-• `Optional` **autocomplete**: `boolean`
+> `optional` **autocomplete?**: `boolean`
 
-#### Defined in
+Defined in: [packages/builders/src/commands/options/number.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/number.ts#L15)
 
-[src/commands/options/number.ts:15](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/number.ts#L15)
+***
 
-___
+### choices?
 
-### choices
+> `optional` **choices?**: `APIApplicationCommandOptionChoice`\<`number`\>[]
 
-• `Optional` **choices**: `APIApplicationCommandOptionChoice`<`number`\>[]
+Defined in: [packages/builders/src/commands/options/number.ts:14](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/number.ts#L14)
 
-#### Defined in
-
-[src/commands/options/number.ts:14](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/number.ts#L14)
-
-___
+***
 
 ### description
 
-• **description**: `string`
+> **description**: `string`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
 
 #### Inherited from
 
-SlashCommandOptionBase.description
+`SlashCommandOptionBase.description`
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:14](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L14)
-
-___
+***
 
 ### description\_localizations
 
-• **description\_localizations**: `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> = `{}`
+> **description\_localizations**: `LocalizationMap` = `{}`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
 
 #### Inherited from
 
-SlashCommandOptionBase.description\_localizations
+`SlashCommandOptionBase.description_localizations`
 
-#### Defined in
+***
 
-[src/commands/options/SlashCommandOptionBase.ts:15](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L15)
+### max\_value?
 
-___
+> `optional` **max\_value?**: `number`
 
-### max\_value
+Defined in: [packages/builders/src/commands/options/number.ts:11](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/number.ts#L11)
 
-• `Optional` **max\_value**: `number`
+***
 
-#### Defined in
+### min\_value?
 
-[src/commands/options/number.ts:11](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/number.ts#L11)
+> `optional` **min\_value?**: `number`
 
-___
+Defined in: [packages/builders/src/commands/options/number.ts:12](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/number.ts#L12)
 
-### min\_value
-
-• `Optional` **min\_value**: `number`
-
-#### Defined in
-
-[src/commands/options/number.ts:12](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/number.ts#L12)
-
-___
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
 
 #### Inherited from
 
-SlashCommandOptionBase.name
+`SlashCommandOptionBase.name`
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:11](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L11)
-
-___
+***
 
 ### name\_localizations
 
-• **name\_localizations**: `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> = `{}`
+> **name\_localizations**: `LocalizationMap` = `{}`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
 
 #### Inherited from
 
-SlashCommandOptionBase.name\_localizations
+`SlashCommandOptionBase.name_localizations`
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:12](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L12)
-
-___
+***
 
 ### required
 
-• **required**: `boolean` = `false`
+> **required**: `boolean` = `false`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
 
 #### Inherited from
 
-SlashCommandOptionBase.required
+`SlashCommandOptionBase.required`
 
-#### Defined in
-
-[src/commands/options/SlashCommandOptionBase.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L9)
-
-___
+***
 
 ### type
 
-• **type**: `Number`
+> **type**: `Number`
+
+Defined in: [packages/builders/src/commands/options/number.ts:9](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/number.ts#L9)
 
 #### Overrides
 
-SlashCommandOptionBase.type
-
-#### Defined in
-
-[src/commands/options/number.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/options/number.ts#L9)
+`SlashCommandOptionBase.type`
 
 ## Methods
 
-### addChoices
+### addChoices()
 
-▸ **addChoices**(...`choices`): [`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+> **addChoices**(...`choices`): `this`
+
+Defined in: [packages/builders/src/commands/options/number.ts:34](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/number.ts#L34)
 
 Adds multiple choices for this option
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `...choices` | `APIApplicationCommandOptionChoice`<`number`\>[] | The choices to add |
+##### choices
+
+...`APIApplicationCommandOptionChoice`\<`number`\>[]
+
+The choices to add
 
 #### Returns
 
-[`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+`this`
 
-___
+***
 
-### setAutocomplete
+### setAutocomplete()
 
-▸ **setAutocomplete**(`autocomplete`): [`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+> **setAutocomplete**(`autocomplete`): `this`
+
+Defined in: [packages/builders/src/commands/options/number.ts:64](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/number.ts#L64)
 
 Marks the option as autocompletable
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `autocomplete` | `boolean` | If this option should be autocompletable |
+##### autocomplete
+
+`boolean`
+
+If this option should be autocompletable
 
 #### Returns
 
-[`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+`this`
 
-___
+***
 
-### setChoices
+### setChoices()
 
-▸ **setChoices**<`Input`\>(...`choices`): [`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+> **setChoices**\<`Input`\>(...`choices`): `this`
 
-#### Type parameters
+Defined in: [packages/builders/src/commands/options/number.ts:50](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/number.ts#L50)
 
-| Name | Type |
-| :------ | :------ |
-| `Input` | extends `APIApplicationCommandOptionChoice`<`number`\>[] |
+#### Type Parameters
+
+##### Input
+
+`Input` *extends* `APIApplicationCommandOptionChoice`\<`number`\>[]
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...choices` | `Input` |
+##### choices
+
+...`Input`
 
 #### Returns
 
-[`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+`this`
 
-___
+***
 
-### setDescriptionLocalizations
+### setDescriptionLocalizations()
 
-▸ **setDescriptionLocalizations**(`localizations`): [`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+> **setDescriptionLocalizations**(`localizations`): `this`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:52](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L52)
 
 Set a dictionary of localized descriptions
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localizations` | `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> |
+##### localizations
+
+`LocalizationMap`
 
 #### Returns
 
-[`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+`this`
 
 #### Inherited from
 
-SlashCommandOptionBase.setDescriptionLocalizations
+`SlashCommandOptionBase.setDescriptionLocalizations`
 
-___
+***
 
-### setLocalizedDescription
+### setLocalizedDescription()
 
-▸ **setLocalizedDescription**(`locale`, `description`): [`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+> **setLocalizedDescription**(`locale`, `description`): `this`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:61](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L61)
 
 Set a single locale's description
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `locale` | ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"`` |
-| `description` | `string` |
+##### locale
+
+`Locale`
+
+##### description
+
+`string`
 
 #### Returns
 
-[`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+`this`
 
 #### Inherited from
 
-SlashCommandOptionBase.setLocalizedDescription
+`SlashCommandOptionBase.setLocalizedDescription`
 
-___
+***
 
-### setLocalizedName
+### setLocalizedName()
 
-▸ **setLocalizedName**(`locale`, `name`): `void`
+> **setLocalizedName**(`locale`, `name`): `void`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:45](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L45)
 
 Set a single locale's name
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `locale` | ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"`` |
-| `name` | `string` |
+##### locale
+
+`Locale`
+
+##### name
+
+`string`
 
 #### Returns
 
@@ -306,89 +288,101 @@ Set a single locale's name
 
 #### Inherited from
 
-SlashCommandOptionBase.setLocalizedName
+`SlashCommandOptionBase.setLocalizedName`
 
-___
+***
 
-### setMaxValue
+### setMaxValue()
 
-▸ **setMaxValue**(`max`): [`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+> **setMaxValue**(`max`): `this`
 
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `max` | `number` |
-
-#### Returns
-
-[`SlashCommandNumberOption`](SlashCommandNumberOption.md)
-
-___
-
-### setMinValue
-
-▸ **setMinValue**(`min`): [`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+Defined in: [packages/builders/src/commands/options/number.ts:17](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/number.ts#L17)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `min` | `number` |
+##### max
+
+`number`
 
 #### Returns
 
-[`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+`this`
 
-___
+***
 
-### setNameLocalizations
+### setMinValue()
 
-▸ **setNameLocalizations**(`localizations`): [`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+> **setMinValue**(`min`): `this`
+
+Defined in: [packages/builders/src/commands/options/number.ts:23](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/number.ts#L23)
+
+#### Parameters
+
+##### min
+
+`number`
+
+#### Returns
+
+`this`
+
+***
+
+### setNameLocalizations()
+
+> **setNameLocalizations**(`localizations`): `SlashCommandNumberOption`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:36](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L36)
 
 Set a dictionary of localized names
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localizations` | `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> |
+##### localizations
+
+`LocalizationMap`
 
 #### Returns
 
-[`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+`SlashCommandNumberOption`
 
 #### Inherited from
 
-SlashCommandOptionBase.setNameLocalizations
+`SlashCommandOptionBase.setNameLocalizations`
 
-___
+***
 
-### setRequired
+### setRequired()
 
-▸ **setRequired**(`required`): [`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+> **setRequired**(`required`): `SlashCommandNumberOption`
+
+Defined in: [packages/builders/src/commands/options/SlashCommandOptionBase.ts:27](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/SlashCommandOptionBase.ts#L27)
 
 Marks the option as required
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `required` | `boolean` | If this option should be required |
+##### required
+
+`boolean`
+
+If this option should be required
 
 #### Returns
 
-[`SlashCommandNumberOption`](SlashCommandNumberOption.md)
+`SlashCommandNumberOption`
 
 #### Inherited from
 
-SlashCommandOptionBase.setRequired
+`SlashCommandOptionBase.setRequired`
 
-___
+***
 
-### toJSON
+### toJSON()
 
-▸ **toJSON**(): `APIApplicationCommandNumberOption`
+> **toJSON**(): `APIApplicationCommandNumberOption`
+
+Defined in: [packages/builders/src/commands/options/number.ts:70](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/options/number.ts#L70)
 
 #### Returns
 
@@ -396,4 +390,4 @@ ___
 
 #### Overrides
 
-SlashCommandOptionBase.toJSON
+`SlashCommandOptionBase.toJSON`

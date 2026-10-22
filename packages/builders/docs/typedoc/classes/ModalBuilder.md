@@ -1,117 +1,125 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / ModalBuilder
+[**@discord-interactions/builders**](../README.md)
+
+***
+
+[@discord-interactions/builders](../globals.md) / ModalBuilder
 
 # Class: ModalBuilder
 
-## Table of contents
-
-### Constructors
-
-- [constructor](ModalBuilder.md#constructor)
-
-### Properties
-
-- [data](ModalBuilder.md#data)
-
-### Methods
-
-- [addComponents](ModalBuilder.md#addcomponents)
-- [setComponents](ModalBuilder.md#setcomponents)
-- [setCustomId](ModalBuilder.md#setcustomid)
-- [setTitle](ModalBuilder.md#settitle)
-- [toJSON](ModalBuilder.md#tojson)
+Defined in: [packages/builders/src/responses/ModalBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/ModalBuilder.ts#L18)
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new ModalBuilder**(`id`, `title?`)
+> **new ModalBuilder**(`id`, `title?`): `ModalBuilder`
+
+Defined in: [packages/builders/src/responses/ModalBuilder.ts:21](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/ModalBuilder.ts#L21)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` \| `APIModalInteractionResponseCallbackData` |
-| `title?` | `string` |
+##### id
+
+`string` \| `APIModalInteractionResponseCallbackData`
+
+##### title?
+
+`string`
+
+#### Returns
+
+`ModalBuilder`
 
 ## Properties
 
 ### data
 
-• **data**: `Partial`<`APIModalInteractionResponseCallbackData`\>
+> **data**: `Partial`\<`APIModalInteractionResponseCallbackData`\>
 
-#### Defined in
-
-[src/responses/ModalBuilder.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/responses/ModalBuilder.ts#L9)
+Defined in: [packages/builders/src/responses/ModalBuilder.ts:19](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/ModalBuilder.ts#L19)
 
 ## Methods
 
-### addComponents
+### addComponents()
 
-▸ **addComponents**(...`components`): [`ModalBuilder`](ModalBuilder.md)
+> **addComponents**(...`components`): `ModalBuilder`
 
-#### Parameters
+Defined in: [packages/builders/src/responses/ModalBuilder.ts:43](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/ModalBuilder.ts#L43)
 
-| Name | Type |
-| :------ | :------ |
-| `...components` | [`ActionRowBuilder`](ActionRowBuilder.md)<[`TextInputBuilder`](TextInputBuilder.md)\>[] |
-
-#### Returns
-
-[`ModalBuilder`](ModalBuilder.md)
-
-___
-
-### setComponents
-
-▸ **setComponents**(`components?`): [`ModalBuilder`](ModalBuilder.md)
+Adds top-level components to this modal (1-5 total).
+Interactive components must be wrapped in a Label component; Action Rows are deprecated.
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `components` | `APIActionRowComponent`<`APITextInputComponent`\>[] | `[]` |
+##### components
+
+...[`ModalTopLevelComponentBuilders`](../type-aliases/ModalTopLevelComponentBuilders.md)[]
 
 #### Returns
 
-[`ModalBuilder`](ModalBuilder.md)
+`ModalBuilder`
 
-___
+***
 
-### setCustomId
+### setComponents()
 
-▸ **setCustomId**(`id`): [`ModalBuilder`](ModalBuilder.md)
+> **setComponents**(`components?`): `ModalBuilder`
+
+Defined in: [packages/builders/src/responses/ModalBuilder.ts:54](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/ModalBuilder.ts#L54)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
+##### components?
+
+`APIModalInteractionResponseCallbackComponent`[] = `[]`
 
 #### Returns
 
-[`ModalBuilder`](ModalBuilder.md)
+`ModalBuilder`
 
-___
+***
 
-### setTitle
+### setCustomId()
 
-▸ **setTitle**(`title`): [`ModalBuilder`](ModalBuilder.md)
+> **setCustomId**(`id`): `this`
+
+Defined in: [packages/builders/src/responses/ModalBuilder.ts:29](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/ModalBuilder.ts#L29)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `title` | `string` |
+##### id
+
+`string`
 
 #### Returns
 
-[`ModalBuilder`](ModalBuilder.md)
+`this`
 
-___
+***
 
-### toJSON
+### setTitle()
 
-▸ **toJSON**(): `APIModalInteractionResponseCallbackData`
+> **setTitle**(`title`): `this`
+
+Defined in: [packages/builders/src/responses/ModalBuilder.ts:34](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/ModalBuilder.ts#L34)
+
+#### Parameters
+
+##### title
+
+`string`
+
+#### Returns
+
+`this`
+
+***
+
+### toJSON()
+
+> **toJSON**(): `APIModalInteractionResponseCallbackData`
+
+Defined in: [packages/builders/src/responses/ModalBuilder.ts:60](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/ModalBuilder.ts#L60)
 
 #### Returns
 

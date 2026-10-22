@@ -1,991 +1,1744 @@
-[@discord-interactions/api](../README.md) / [Exports](../modules.md) / DiscordApiClient
+[**@discord-interactions/api**](../README.md)
+
+***
+
+[@discord-interactions/api](../globals.md) / DiscordApiClient
 
 # Class: DiscordApiClient
 
-## Hierarchy
+Defined in: [api/src/client.ts:50](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L50)
+
+## Extends
 
 - `default`
 
-  ↳ **`DiscordApiClient`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](DiscordApiClient.md#constructor)
-
-### Properties
-
-- [createDm](DiscordApiClient.md#createdm)
-- [deleteApplicationCommand](DiscordApiClient.md#deleteapplicationcommand)
-- [deleteInteractionFollowup](DiscordApiClient.md#deleteinteractionfollowup)
-- [getApplicationCommands](DiscordApiClient.md#getapplicationcommands)
-- [getCurrentBotApplication](DiscordApiClient.md#getcurrentbotapplication)
-- [getCurrentUser](DiscordApiClient.md#getcurrentuser)
-- [getCurrentUserConnections](DiscordApiClient.md#getcurrentuserconnections)
-- [getCurrentUserGuildMember](DiscordApiClient.md#getcurrentuserguildmember)
-- [getCurrentUserGuilds](DiscordApiClient.md#getcurrentuserguilds)
-- [getGuild](DiscordApiClient.md#getguild)
-- [getUser](DiscordApiClient.md#getuser)
-- [leaveGuild](DiscordApiClient.md#leaveguild)
-- [modifyCurrentUser](DiscordApiClient.md#modifycurrentuser)
-- [patchApplicationCommand](DiscordApiClient.md#patchapplicationcommand)
-- [patchInteractionFollowup](DiscordApiClient.md#patchinteractionfollowup)
-- [postApplicationCommand](DiscordApiClient.md#postapplicationcommand)
-- [postInteractionFollowup](DiscordApiClient.md#postinteractionfollowup)
-- [putApplicationCommands](DiscordApiClient.md#putapplicationcommands)
-
-### Accessors
-
-- [abortSignal](DiscordApiClient.md#abortsignal)
-- [api](DiscordApiClient.md#api)
-- [callbacks](DiscordApiClient.md#callbacks)
-- [globalRequestsPerSecond](DiscordApiClient.md#globalrequestspersecond)
-- [requestConfig](DiscordApiClient.md#requestconfig)
-- [sweepIntervals](DiscordApiClient.md#sweepintervals)
-- [userAgent](DiscordApiClient.md#useragent)
-
-### Methods
-
-- [delete](DiscordApiClient.md#delete)
-- [get](DiscordApiClient.md#get)
-- [patch](DiscordApiClient.md#patch)
-- [post](DiscordApiClient.md#post)
-- [put](DiscordApiClient.md#put)
-- [setToken](DiscordApiClient.md#settoken)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new DiscordApiClient**(`options?`)
+> **new DiscordApiClient**(`options?`): `DiscordApiClient`
+
+Defined in: request/dist/src/client.d.ts:5
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `options?` | `ManagerArgs` |
+##### options?
+
+`ManagerArgs`
+
+#### Returns
+
+`DiscordApiClient`
 
 #### Inherited from
 
-Client.constructor
-
-#### Defined in
-
-request/dist/src/index.d.ts:6
+`Client.constructor`
 
 ## Properties
 
+### consumeEntitlement
+
+> **consumeEntitlement**: (`this`, `applicationId`, `entitlementId`) => `Promise`\<`never`\>
+
+Defined in: [api/src/client.ts:88](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L88)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### applicationId
+
+`string`
+
+##### entitlementId
+
+`string`
+
+#### Returns
+
+`Promise`\<`never`\>
+
+***
+
+### createApplicationEmoji
+
+> **createApplicationEmoji**: (`this`, `applicationId`, `data`) => `Promise`\<`APIApplicationEmoji`\>
+
+Defined in: [api/src/client.ts:81](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L81)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### applicationId
+
+`string`
+
+##### data
+
+`RESTPostAPIApplicationEmojiJSONBody`
+
+#### Returns
+
+`Promise`\<`APIApplicationEmoji`\>
+
+***
+
 ### createDm
 
-• **createDm**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `userId`: `string`) => `Promise`<`RESTPostAPICurrentUserCreateDMChannelJSONBody`\> = `createDm`
+> **createDm**: (`this`, `userId`) => `Promise`\<`RESTPostAPICurrentUserCreateDMChannelJSONBody`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:124](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L124)
 
-▸ (`this`, `userId`): `Promise`<`RESTPostAPICurrentUserCreateDMChannelJSONBody`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `userId` | `string` |
+`DiscordApiClient`
 
-##### Returns
+##### userId
 
-`Promise`<`RESTPostAPICurrentUserCreateDMChannelJSONBody`\>
+`string`
 
-#### Defined in
+#### Returns
 
-[api/src/client.ts:57](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L57)
+`Promise`\<`RESTPostAPICurrentUserCreateDMChannelJSONBody`\>
 
-___
+***
+
+### createMessage
+
+> **createMessage**: (`this`, `channelId`, `data`) => `Promise`\<`APIMessage`\>
+
+Defined in: [api/src/client.ts:99](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L99)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### channelId
+
+`string`
+
+##### data
+
+`RESTPostAPIChannelMessageJSONBody`
+
+#### Returns
+
+`Promise`\<`APIMessage`\>
+
+***
+
+### createTestEntitlement
+
+> **createTestEntitlement**: (`this`, `applicationId`, `data`) => `Promise`\<`Partial`\<`Omit`\<`APIEntitlement`, `"ends_at"` \| `"starts_at"`\>\>\>
+
+Defined in: [api/src/client.ts:89](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L89)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### applicationId
+
+`string`
+
+##### data
+
+`RESTPostAPIEntitlementJSONBody`
+
+#### Returns
+
+`Promise`\<`Partial`\<`Omit`\<`APIEntitlement`, `"ends_at"` \| `"starts_at"`\>\>\>
+
+***
 
 ### deleteApplicationCommand
 
-• **deleteApplicationCommand**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `applicationId`: `string`, `commandId`: `string`, `guildId?`: `string`) => `Promise`<`unknown`\> = `deleteApplicationCommand`
+> **deleteApplicationCommand**: (`this`, `applicationId`, `commandId`, `guildId?`) => `Promise`\<`unknown`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:63](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L63)
 
-▸ (`this`, `applicationId`, `commandId`, `guildId?`): `Promise`<`unknown`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `applicationId` | `string` |
-| `commandId` | `string` |
-| `guildId?` | `string` |
+`DiscordApiClient`
 
-##### Returns
+##### applicationId
 
-`Promise`<`unknown`\>
+`string`
 
-#### Defined in
+##### commandId
 
-[api/src/client.ts:37](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L37)
+`string`
 
-___
+##### guildId?
+
+`string`
+
+#### Returns
+
+`Promise`\<`unknown`\>
+
+***
+
+### deleteApplicationEmoji
+
+> **deleteApplicationEmoji**: (`this`, `applicationId`, `emojiId`) => `Promise`\<`never`\>
+
+Defined in: [api/src/client.ts:83](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L83)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### applicationId
+
+`string`
+
+##### emojiId
+
+`string`
+
+#### Returns
+
+`Promise`\<`never`\>
+
+***
 
 ### deleteInteractionFollowup
 
-• **deleteInteractionFollowup**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `applicationId`: `string`, `interactionToken`: `string`, `id`: `string`) => `Promise`<`never`\> = `deleteInteractionFollowup`
+> **deleteInteractionFollowup**: (`this`, `applicationId`, `interactionToken`, `id`) => `Promise`\<`undefined`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:72](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L72)
 
-▸ (`this`, `applicationId`, `interactionToken`, `id`): `Promise`<`never`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `applicationId` | `string` |
-| `interactionToken` | `string` |
-| `id` | `string` |
+`DiscordApiClient`
 
-##### Returns
+##### applicationId
 
-`Promise`<`never`\>
+`string`
 
-#### Defined in
+##### interactionToken
 
-[api/src/client.ts:43](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L43)
+`string`
 
-___
+##### id
+
+`string`
+
+#### Returns
+
+`Promise`\<`undefined`\>
+
+***
+
+### deleteMessage
+
+> **deleteMessage**: (`this`, `channelId`, `messageId`) => `Promise`\<`never`\>
+
+Defined in: [api/src/client.ts:101](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L101)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### channelId
+
+`string`
+
+##### messageId
+
+`string`
+
+#### Returns
+
+`Promise`\<`never`\>
+
+***
+
+### deleteTestEntitlement
+
+> **deleteTestEntitlement**: (`this`, `applicationId`, `entitlementId`) => `Promise`\<`never`\>
+
+Defined in: [api/src/client.ts:90](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L90)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### applicationId
+
+`string`
+
+##### entitlementId
+
+`string`
+
+#### Returns
+
+`Promise`\<`never`\>
+
+***
+
+### editApplicationEmoji
+
+> **editApplicationEmoji**: (`this`, `applicationId`, `emojiId`, `data`) => `Promise`\<`APIApplicationEmoji`\>
+
+Defined in: [api/src/client.ts:82](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L82)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### applicationId
+
+`string`
+
+##### emojiId
+
+`string`
+
+##### data
+
+`RESTPatchAPIApplicationEmojiJSONBody`
+
+#### Returns
+
+`Promise`\<`APIApplicationEmoji`\>
+
+***
+
+### editCurrentApplication
+
+> **editCurrentApplication**: (`this`, `data`) => `Promise`\<`APIApplication`\>
+
+Defined in: [api/src/client.ts:76](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L76)
+
+Edit properties of the current application - including event_webhooks_url and
+event_webhooks_types for receiving webhook events.
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### data
+
+`RESTPatchCurrentApplicationJSONBody`
+
+#### Returns
+
+`Promise`\<`APIApplication`\>
+
+***
+
+### editMessage
+
+> **editMessage**: (`this`, `channelId`, `messageId`, `data`) => `Promise`\<`APIMessage`\>
+
+Defined in: [api/src/client.ts:100](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L100)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### channelId
+
+`string`
+
+##### messageId
+
+`string`
+
+##### data
+
+`RESTPatchAPIChannelMessageJSONBody`
+
+#### Returns
+
+`Promise`\<`APIMessage`\>
+
+***
+
+### expirePoll
+
+> **expirePoll**: (`this`, `channelId`, `messageId`) => `Promise`\<`APIMessage`\>
+
+Defined in: [api/src/client.ts:110](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L110)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### channelId
+
+`string`
+
+##### messageId
+
+`string`
+
+#### Returns
+
+`Promise`\<`APIMessage`\>
+
+***
 
 ### getApplicationCommands
 
-• **getApplicationCommands**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `applicationId`: `string`, `guildId?`: `string`) => `Promise`<`RESTGetAPIApplicationCommandsResult`\> = `getApplicationCommands`
+> **getApplicationCommands**: (`this`, `applicationId`, `guildId?`) => `Promise`\<`RESTGetAPIApplicationCommandsResult`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:59](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L59)
 
-▸ (`this`, `applicationId`, `guildId?`): `Promise`<`RESTGetAPIApplicationCommandsResult`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `applicationId` | `string` |
-| `guildId?` | `string` |
+`DiscordApiClient`
 
-##### Returns
+##### applicationId
 
-`Promise`<`RESTGetAPIApplicationCommandsResult`\>
+`string`
 
-#### Defined in
+##### guildId?
 
-[api/src/client.ts:33](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L33)
+`string`
 
-___
+#### Returns
+
+`Promise`\<`RESTGetAPIApplicationCommandsResult`\>
+
+***
+
+### getApplicationEmoji
+
+> **getApplicationEmoji**: (`this`, `applicationId`, `emojiId`) => `Promise`\<`APIApplicationEmoji`\>
+
+Defined in: [api/src/client.ts:80](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L80)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### applicationId
+
+`string`
+
+##### emojiId
+
+`string`
+
+#### Returns
+
+`Promise`\<`APIApplicationEmoji`\>
+
+***
+
+### getApplicationEmojis
+
+> **getApplicationEmojis**: (`this`, `applicationId`) => `Promise`\<`RESTGetAPIApplicationEmojisResult`\>
+
+Defined in: [api/src/client.ts:79](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L79)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### applicationId
+
+`string`
+
+#### Returns
+
+`Promise`\<`RESTGetAPIApplicationEmojisResult`\>
+
+***
+
+### getChannelMessage
+
+> **getChannelMessage**: (`this`, `channelId`, `messageId`) => `Promise`\<`APIMessage`\>
+
+Defined in: [api/src/client.ts:98](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L98)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### channelId
+
+`string`
+
+##### messageId
+
+`string`
+
+#### Returns
+
+`Promise`\<`APIMessage`\>
+
+***
+
+### getChannelMessagePins
+
+> **getChannelMessagePins**: (`this`, `channelId`, `query?`) => `Promise`\<`RESTGetAPIChannelMessagesPinsResult`\>
+
+Defined in: [api/src/client.ts:104](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L104)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### channelId
+
+`string`
+
+##### query?
+
+`RESTGetAPIChannelMessagesPinsQuery`
+
+#### Returns
+
+`Promise`\<`RESTGetAPIChannelMessagesPinsResult`\>
+
+***
+
+### getChannelMessages
+
+> **getChannelMessages**: (`this`, `channelId`, `query?`) => `Promise`\<`RESTGetAPIChannelMessagesResult`\>
+
+Defined in: [api/src/client.ts:97](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L97)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### channelId
+
+`string`
+
+##### query?
+
+`RESTGetAPIChannelMessagesQuery`
+
+#### Returns
+
+`Promise`\<`RESTGetAPIChannelMessagesResult`\>
+
+***
+
+### getCurrentApplication
+
+> **getCurrentApplication**: (`this`) => `Promise`\<`APIApplication`\>
+
+Defined in: [api/src/client.ts:75](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L75)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+#### Returns
+
+`Promise`\<`APIApplication`\>
+
+***
 
 ### getCurrentBotApplication
 
-• **getCurrentBotApplication**: (`this`: [`DiscordApiClient`](DiscordApiClient.md)) => `Promise`<`APIApplication`\> = `getCurrentBotApplication`
+> **getCurrentBotApplication**: (`this`) => `Promise`\<`APIApplication`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:127](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L127)
 
-▸ (`this`): `Promise`<`APIApplication`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
+`DiscordApiClient`
 
-##### Returns
+#### Returns
 
-`Promise`<`APIApplication`\>
+`Promise`\<`APIApplication`\>
 
-#### Defined in
-
-[api/src/client.ts:60](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L60)
-
-___
+***
 
 ### getCurrentUser
 
-• **getCurrentUser**: (`this`: [`DiscordApiClient`](DiscordApiClient.md)) => `Promise`<`APIUser`\> = `getCurrentUser`
+> **getCurrentUser**: (`this`) => `Promise`\<`APIUser`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:115](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L115)
 
-▸ (`this`): `Promise`<`APIUser`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
+`DiscordApiClient`
 
-##### Returns
+#### Returns
 
-`Promise`<`APIUser`\>
+`Promise`\<`APIUser`\>
 
-#### Defined in
-
-[api/src/client.ts:48](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L48)
-
-___
+***
 
 ### getCurrentUserConnections
 
-• **getCurrentUserConnections**: (`this`: [`DiscordApiClient`](DiscordApiClient.md)) => `Promise`<`RESTGetAPICurrentUserConnectionsResult`\> = `getCurrentUserConnections`
+> **getCurrentUserConnections**: (`this`) => `Promise`\<`RESTGetAPICurrentUserConnectionsResult`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:118](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L118)
 
-▸ (`this`): `Promise`<`RESTGetAPICurrentUserConnectionsResult`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
+`DiscordApiClient`
 
-##### Returns
+#### Returns
 
-`Promise`<`RESTGetAPICurrentUserConnectionsResult`\>
+`Promise`\<`RESTGetAPICurrentUserConnectionsResult`\>
 
-#### Defined in
-
-[api/src/client.ts:51](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L51)
-
-___
+***
 
 ### getCurrentUserGuildMember
 
-• **getCurrentUserGuildMember**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `guildId`: `string`) => `Promise`<`APIGuildMember`\> = `getCurrentUserGuildMember`
+> **getCurrentUserGuildMember**: (`this`, `guildId`) => `Promise`\<`APIGuildMember`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:121](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L121)
 
-▸ (`this`, `guildId`): `Promise`<`APIGuildMember`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `guildId` | `string` |
+`DiscordApiClient`
 
-##### Returns
+##### guildId
 
-`Promise`<`APIGuildMember`\>
+`string`
 
-#### Defined in
+#### Returns
 
-[api/src/client.ts:54](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L54)
+`Promise`\<`APIGuildMember`\>
 
-___
+***
 
 ### getCurrentUserGuilds
 
-• **getCurrentUserGuilds**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `query?`: `RESTGetAPICurrentUserGuildsQuery`) => `Promise`<`RESTGetAPICurrentUserGuildsResult`\> = `getCurrentUserGuilds`
+> **getCurrentUserGuilds**: (`this`, `query?`) => `Promise`\<`RESTGetAPICurrentUserGuildsResult`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:120](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L120)
 
-▸ (`this`, `query?`): `Promise`<`RESTGetAPICurrentUserGuildsResult`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `query?` | `RESTGetAPICurrentUserGuildsQuery` |
+`DiscordApiClient`
 
-##### Returns
+##### query?
 
-`Promise`<`RESTGetAPICurrentUserGuildsResult`\>
+`RESTGetAPICurrentUserGuildsQuery`
 
-#### Defined in
+#### Returns
 
-[api/src/client.ts:53](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L53)
+`Promise`\<`RESTGetAPICurrentUserGuildsResult`\>
 
-___
+***
+
+### getEntitlement
+
+> **getEntitlement**: (`this`, `applicationId`, `entitlementId`) => `Promise`\<`APIEntitlement`\>
+
+Defined in: [api/src/client.ts:87](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L87)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### applicationId
+
+`string`
+
+##### entitlementId
+
+`string`
+
+#### Returns
+
+`Promise`\<`APIEntitlement`\>
+
+***
+
+### getEntitlements
+
+> **getEntitlements**: (`this`, `applicationId`, `query?`) => `Promise`\<`RESTGetAPIEntitlementsResult`\>
+
+Defined in: [api/src/client.ts:86](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L86)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### applicationId
+
+`string`
+
+##### query?
+
+`RESTGetAPIEntitlementsQuery`
+
+#### Returns
+
+`Promise`\<`RESTGetAPIEntitlementsResult`\>
+
+***
 
 ### getGuild
 
-• **getGuild**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `id`: `string`, `query?`: `RESTGetAPIGuildQuery`) => `Promise`<`APIGuild`\> = `getGuild`
+> **getGuild**: (`this`, `id`, `query?`) => `Promise`\<`APIGuild`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:65](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L65)
 
-▸ (`this`, `id`, `query?`): `Promise`<`APIGuild`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `id` | `string` |
-| `query?` | `RESTGetAPIGuildQuery` |
+`DiscordApiClient`
 
-##### Returns
+##### id
 
-`Promise`<`APIGuild`\>
+`string`
 
-#### Defined in
+##### query?
 
-[api/src/client.ts:39](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L39)
+`RESTGetAPIGuildQuery`
 
-___
+#### Returns
+
+`Promise`\<`APIGuild`\>
+
+***
+
+### getPollAnswerVoters
+
+> **getPollAnswerVoters**: (`this`, `channelId`, `messageId`, `answerId`, `query?`) => `Promise`\<`RESTGetAPIPollAnswerVotersResult`\>
+
+Defined in: [api/src/client.ts:109](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L109)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### channelId
+
+`string`
+
+##### messageId
+
+`string`
+
+##### answerId
+
+`number`
+
+##### query?
+
+`RESTGetAPIPollAnswerVotersQuery`
+
+#### Returns
+
+`Promise`\<`RESTGetAPIPollAnswerVotersResult`\>
+
+***
+
+### getSKUs
+
+> **getSKUs**: (`this`, `applicationId`) => `Promise`\<`RESTGetAPISKUsResult`\>
+
+Defined in: [api/src/client.ts:92](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L92)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### applicationId
+
+`string`
+
+#### Returns
+
+`Promise`\<`RESTGetAPISKUsResult`\>
+
+***
+
+### getSKUSubscription
+
+> **getSKUSubscription**: (`this`, `skuId`, `subscriptionId`) => `Promise`\<`APISubscription`\>
+
+Defined in: [api/src/client.ts:94](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L94)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### skuId
+
+`string`
+
+##### subscriptionId
+
+`string`
+
+#### Returns
+
+`Promise`\<`APISubscription`\>
+
+***
+
+### getSKUSubscriptions
+
+> **getSKUSubscriptions**: (`this`, `skuId`, `query?`) => `Promise`\<`RESTGetAPISKUSubscriptionsResult`\>
+
+Defined in: [api/src/client.ts:93](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L93)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### skuId
+
+`string`
+
+##### query?
+
+`RESTGetAPISKUSubscriptionsQuery`
+
+#### Returns
+
+`Promise`\<`RESTGetAPISKUSubscriptionsResult`\>
+
+***
 
 ### getUser
 
-• **getUser**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `userId?`: `string`) => `Promise`<`APIUser`\> = `getUser`
+> **getUser**: (`this`, `userId?`) => `Promise`\<`APIUser`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:113](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L113)
 
-▸ (`this`, `userId?`): `Promise`<`APIUser`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `userId?` | `string` |
+`DiscordApiClient`
 
-##### Returns
+##### userId?
 
-`Promise`<`APIUser`\>
+`string`
 
-#### Defined in
+#### Returns
 
-[api/src/client.ts:46](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L46)
+`Promise`\<`APIUser`\>
 
-___
+***
 
 ### leaveGuild
 
-• **leaveGuild**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `guildId`: `string`) => `Promise`<`void`\> = `leaveGuild`
+> **leaveGuild**: (`this`, `guildId`) => `Promise`\<`void`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:123](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L123)
 
-▸ (`this`, `guildId`): `Promise`<`void`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `guildId` | `string` |
+`DiscordApiClient`
 
-##### Returns
+##### guildId
 
-`Promise`<`void`\>
+`string`
 
-#### Defined in
+#### Returns
 
-[api/src/client.ts:56](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L56)
+`Promise`\<`void`\>
 
-___
+***
 
 ### modifyCurrentUser
 
-• **modifyCurrentUser**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `data`: `AddUndefinedToPossiblyUndefinedPropertiesOfInterface`<{}\>) => `Promise`<`APIUser`\> = `modifyCurrentUser`
+> **modifyCurrentUser**: (`this`, `data`) => `Promise`\<`APIUser`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:116](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L116)
 
-▸ (`this`, `data`): `Promise`<`APIUser`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `data` | `AddUndefinedToPossiblyUndefinedPropertiesOfInterface`<{}\> |
+`DiscordApiClient`
 
-##### Returns
+##### data
 
-`Promise`<`APIUser`\>
+`RESTPatchAPICurrentUserJSONBody`
 
-#### Defined in
+#### Returns
 
-[api/src/client.ts:49](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L49)
+`Promise`\<`APIUser`\>
 
-___
+***
 
 ### patchApplicationCommand
 
-• **patchApplicationCommand**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `applicationId`: `string`, `commandId`: `string`, `command`: `RESTPatchAPIApplicationCommandJSONBody`, `guildId?`: `string`) => `Promise`<`APIApplicationCommand`\> = `patchApplicationCommand`
+> **patchApplicationCommand**: (`this`, `applicationId`, `commandId`, `command`, `guildId?`) => `Promise`\<`APIApplicationCommand`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:62](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L62)
 
-▸ (`this`, `applicationId`, `commandId`, `command`, `guildId?`): `Promise`<`APIApplicationCommand`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `applicationId` | `string` |
-| `commandId` | `string` |
-| `command` | `RESTPatchAPIApplicationCommandJSONBody` |
-| `guildId?` | `string` |
+`DiscordApiClient`
 
-##### Returns
+##### applicationId
 
-`Promise`<`APIApplicationCommand`\>
+`string`
 
-#### Defined in
+##### commandId
 
-[api/src/client.ts:36](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L36)
+`string`
 
-___
+##### command
+
+`RESTPatchAPIApplicationCommandJSONBody`
+
+##### guildId?
+
+`string`
+
+#### Returns
+
+`Promise`\<`APIApplicationCommand`\>
+
+***
 
 ### patchInteractionFollowup
 
-• **patchInteractionFollowup**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `applicationId`: `string`, `interactionToken`: `string`, `id`: `string`, `data`: `AddUndefinedToPossiblyUndefinedPropertiesOfInterface`<`Nullable`<`Pick`<`AddUndefinedToPossiblyUndefinedPropertiesOfInterface`<{}\>, ``"content"`` \| ``"embeds"`` \| ``"allowed_mentions"`` \| ``"components"``\>\> & {}\>) => `Promise`<`APIMessage`\> = `patchInteractionFollowup`
+> **patchInteractionFollowup**: (`this`, `applicationId`, `interactionToken`, `id`, `data`, `withComponents?`) => `Promise`\<`APIMessage`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:71](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L71)
 
-▸ (`this`, `applicationId`, `interactionToken`, `id`, `data`): `Promise`<`APIMessage`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `applicationId` | `string` |
-| `interactionToken` | `string` |
-| `id` | `string` |
-| `data` | `AddUndefinedToPossiblyUndefinedPropertiesOfInterface`<`Nullable`<`Pick`<`AddUndefinedToPossiblyUndefinedPropertiesOfInterface`<{}\>, ``"content"`` \| ``"embeds"`` \| ``"allowed_mentions"`` \| ``"components"``\>\> & {}\> |
+`DiscordApiClient`
 
-##### Returns
+##### applicationId
 
-`Promise`<`APIMessage`\>
+`string`
 
-#### Defined in
+##### interactionToken
 
-[api/src/client.ts:42](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L42)
+`string`
 
-___
+##### id
+
+`string`
+
+##### data
+
+`RESTPatchAPIWebhookWithTokenMessageJSONBody`
+
+##### withComponents?
+
+`boolean`
+
+#### Returns
+
+`Promise`\<`APIMessage`\>
+
+***
+
+### pinMessage
+
+> **pinMessage**: (`this`, `channelId`, `messageId`) => `Promise`\<`never`\>
+
+Defined in: [api/src/client.ts:105](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L105)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### channelId
+
+`string`
+
+##### messageId
+
+`string`
+
+#### Returns
+
+`Promise`\<`never`\>
+
+***
 
 ### postApplicationCommand
 
-• **postApplicationCommand**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `applicationId`: `string`, `command`: `RESTPostAPIApplicationCommandsJSONBody`, `guildId?`: `string`) => `Promise`<`APIApplicationCommand`\> = `postApplicationCommand`
+> **postApplicationCommand**: (`this`, `applicationId`, `command`, `guildId?`) => `Promise`\<`APIApplicationCommand`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:61](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L61)
 
-▸ (`this`, `applicationId`, `command`, `guildId?`): `Promise`<`APIApplicationCommand`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `applicationId` | `string` |
-| `command` | `RESTPostAPIApplicationCommandsJSONBody` |
-| `guildId?` | `string` |
+`DiscordApiClient`
 
-##### Returns
+##### applicationId
 
-`Promise`<`APIApplicationCommand`\>
+`string`
 
-#### Defined in
+##### command
 
-[api/src/client.ts:35](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L35)
+`RESTPostAPIApplicationCommandsJSONBody`
 
-___
+##### guildId?
+
+`string`
+
+#### Returns
+
+`Promise`\<`APIApplicationCommand`\>
+
+***
+
+### postInteractionCallback
+
+> **postInteractionCallback**: (`this`, `interactionId`, `interactionToken`, `data`, `withResponse?`) => `Promise`\<`RESTPostAPIInteractionCallbackWithResponseResult` \| `undefined`\>
+
+Defined in: [api/src/client.ts:68](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L68)
+
+Respond to an interaction via the REST callback endpoint (rather than the HTTP response body).
+Pass withResponse to receive the created resource (message/activity instance) back.
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### interactionId
+
+`string`
+
+##### interactionToken
+
+`string`
+
+##### data
+
+`APIInteractionResponse`
+
+##### withResponse?
+
+`boolean`
+
+#### Returns
+
+`Promise`\<`RESTPostAPIInteractionCallbackWithResponseResult` \| `undefined`\>
+
+***
 
 ### postInteractionFollowup
 
-• **postInteractionFollowup**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `applicationId`: `string`, `interactionToken`: `string`, `data`: `APIInteractionResponseCallbackData`) => `Promise`<`APIMessage`\> = `postInteractionFollowup`
+> **postInteractionFollowup**: (`this`, `applicationId`, `interactionToken`, `data`, `withComponents?`) => `Promise`\<`APIMessage`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:70](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L70)
 
-▸ (`this`, `applicationId`, `interactionToken`, `data`): `Promise`<`APIMessage`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `applicationId` | `string` |
-| `interactionToken` | `string` |
-| `data` | `APIInteractionResponseCallbackData` |
+`DiscordApiClient`
 
-##### Returns
+##### applicationId
 
-`Promise`<`APIMessage`\>
+`string`
 
-#### Defined in
+##### interactionToken
 
-[api/src/client.ts:41](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L41)
+`string`
 
-___
+##### data
+
+`RESTPostAPIInteractionFollowupJSONBody`
+
+##### withComponents?
+
+`boolean`
+
+#### Returns
+
+`Promise`\<`APIMessage`\>
+
+***
 
 ### putApplicationCommands
 
-• **putApplicationCommands**: (`this`: [`DiscordApiClient`](DiscordApiClient.md), `applicationId`: `string`, `commands`: `RESTPutAPIApplicationCommandsJSONBody`, `guildId?`: `string`) => `Promise`<`RESTPutAPIApplicationCommandsResult`\> = `putApplicationCommands`
+> **putApplicationCommands**: (`this`, `applicationId`, `commands`, `guildId?`) => `Promise`\<`RESTPutAPIApplicationCommandsResult`\>
 
-#### Type declaration
+Defined in: [api/src/client.ts:60](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L60)
 
-▸ (`this`, `applicationId`, `commands`, `guildId?`): `Promise`<`RESTPutAPIApplicationCommandsResult`\>
+#### Parameters
 
-##### Parameters
+##### this
 
-| Name | Type |
-| :------ | :------ |
-| `this` | [`DiscordApiClient`](DiscordApiClient.md) |
-| `applicationId` | `string` |
-| `commands` | `RESTPutAPIApplicationCommandsJSONBody` |
-| `guildId?` | `string` |
+`DiscordApiClient`
 
-##### Returns
+##### applicationId
 
-`Promise`<`RESTPutAPIApplicationCommandsResult`\>
+`string`
 
-#### Defined in
+##### commands
 
-[api/src/client.ts:34](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L34)
+`RESTPutAPIApplicationCommandsJSONBody`
+
+##### guildId?
+
+`string`
+
+#### Returns
+
+`Promise`\<`RESTPutAPIApplicationCommandsResult`\>
+
+***
+
+### searchGuildMessages
+
+> **searchGuildMessages**: (`this`, `id`, `query`) => `Promise`\<\{ `messages`: `APIMessage`[]; \}\>
+
+Defined in: [api/src/client.ts:66](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L66)
+
+Search a guild's messages. Requires READ_MESSAGE_HISTORY and the message content intent.
+Returns 202 with error code 110000 while the guild's messages are still being indexed.
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### id
+
+`string`
+
+##### query
+
+`RESTGetAPIGuildMessagesSearchQuery`
+
+#### Returns
+
+`Promise`\<\{ `messages`: `APIMessage`[]; \}\>
+
+***
+
+### unpinMessage
+
+> **unpinMessage**: (`this`, `channelId`, `messageId`) => `Promise`\<`never`\>
+
+Defined in: [api/src/client.ts:106](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L106)
+
+#### Parameters
+
+##### this
+
+`DiscordApiClient`
+
+##### channelId
+
+`string`
+
+##### messageId
+
+`string`
+
+#### Returns
+
+`Promise`\<`never`\>
 
 ## Accessors
 
 ### abortSignal
 
-• `get` **abortSignal**(): `undefined` \| ``null`` \| `AbortSignal`
+#### Get Signature
 
-#### Returns
+> **get** **abortSignal**(): `AbortSignal` \| `null` \| `undefined`
 
-`undefined` \| ``null`` \| `AbortSignal`
+Defined in: request/dist/src/client.d.ts:9
 
-#### Inherited from
+##### Returns
 
-Client.abortSignal
+`AbortSignal` \| `null` \| `undefined`
 
-#### Defined in
+#### Set Signature
 
-request/dist/src/index.d.ts:10
+> **set** **abortSignal**(`signal`): `void`
 
-• `set` **abortSignal**(`signal`): `void`
+Defined in: request/dist/src/client.d.ts:10
 
-#### Parameters
+##### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `signal` | `undefined` \| ``null`` \| `AbortSignal` |
+###### signal
 
-#### Returns
+`AbortSignal` \| `null` \| `undefined`
+
+##### Returns
 
 `void`
 
 #### Inherited from
 
-Client.abortSignal
+`Client.abortSignal`
 
-#### Defined in
-
-request/dist/src/index.d.ts:11
-
-___
+***
 
 ### api
 
-• `get` **api**(): `Object`
+#### Get Signature
 
-#### Returns
+> **get** **api**(): `object`
 
-`Object`
+Defined in: request/dist/src/client.d.ts:13
 
-| Name | Type |
-| :------ | :------ |
-| `api` | `string` |
-| `cdn` | `string` |
-| `version` | `number` |
+##### Returns
 
-#### Inherited from
+`object`
 
-Client.api
+###### api
 
-#### Defined in
+> **api**: `string`
 
-request/dist/src/index.d.ts:14
+###### cdn
 
-• `set` **api**(`«destructured»`): `void`
+> **cdn**: `string`
 
-#### Parameters
+###### version
 
-| Name | Type |
-| :------ | :------ |
-| `«destructured»` | `Object` |
-| › `api` | `string` |
-| › `cdn` | `string` |
-| › `version` | `number` |
+> **version**: `number`
 
-#### Returns
+#### Set Signature
 
-`void`
+> **set** **api**(`__namedParameters`): `void`
 
-#### Inherited from
+Defined in: request/dist/src/client.d.ts:18
 
-Client.api
+##### Parameters
 
-#### Defined in
+###### \_\_namedParameters
 
-request/dist/src/index.d.ts:19
-
-___
-
-### callbacks
-
-• `get` **callbacks**(): `Object`
-
-#### Returns
-
-`Object`
-
-| Name | Type |
-| :------ | :------ |
-| `onBucketSweep?` | (`swept`: `Map`<`string`, `Bucket`\>) => `void` |
-| `onQueueSweep?` | (`swept`: `Map`<`string`, `Queue`\>) => `void` |
-| `onRateLimit?` | (`data`: `RateLimitData`) => `void` |
-| `onRequest?` | (`parameters`: `Route`, `resource`: `string`, `init`: `RequestInit`, `retries`: `number`) => `void` |
-
-#### Inherited from
-
-Client.callbacks
-
-#### Defined in
-
-request/dist/src/index.d.ts:42
-
-• `set` **callbacks**(`«destructured»`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `«destructured»` | `Object` |
-| › `onBucketSweep?` | (`swept`: `Map`<`string`, `Bucket`\>) => `void` |
-| › `onQueueSweep?` | (`swept`: `Map`<`string`, `Queue`\>) => `void` |
-| › `onRateLimit?` | (`data`: `RateLimitData`) => `void` |
-| › `onRequest?` | (`parameters`: `Route`, `resource`: `string`, `init`: `RequestInit`, `retries`: `number`) => `void` |
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-Client.callbacks
-
-#### Defined in
-
-request/dist/src/index.d.ts:48
-
-___
-
-### globalRequestsPerSecond
-
-• `get` **globalRequestsPerSecond**(): `number`
-
-#### Returns
-
-`number`
-
-#### Inherited from
-
-Client.globalRequestsPerSecond
-
-#### Defined in
-
-request/dist/src/index.d.ts:12
-
-• `set` **globalRequestsPerSecond**(`value`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `value` | `number` |
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-Client.globalRequestsPerSecond
-
-#### Defined in
-
-request/dist/src/index.d.ts:13
-
-___
-
-### requestConfig
-
-• `get` **requestConfig**(): `Object`
-
-#### Returns
-
-`Object`
-
-| Name | Type |
-| :------ | :------ |
-| `headers` | `Record`<`string`, `string`\> |
-| `retries` | `number` |
-| `timeout` | `number` |
-
-#### Inherited from
-
-Client.requestConfig
-
-#### Defined in
-
-request/dist/src/index.d.ts:24
-
-• `set` **requestConfig**(`«destructured»`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `«destructured»` | `Object` |
-| › `headers` | `Record`<`string`, `string`\> |
-| › `retries` | `number` |
-| › `timeout` | `number` |
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-Client.requestConfig
-
-#### Defined in
-
-request/dist/src/index.d.ts:29
-
-___
-
-### sweepIntervals
-
-• `get` **sweepIntervals**(): `Object`
-
-#### Returns
-
-`Object`
-
-| Name | Type |
-| :------ | :------ |
-| `bucketSweepInterval` | `number` |
-| `queueSweepInterval` | `number` |
-
-#### Inherited from
-
-Client.sweepIntervals
-
-#### Defined in
-
-request/dist/src/index.d.ts:34
-
-• `set` **sweepIntervals**(`«destructured»`): `void`
-
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `«destructured»` | `Object` |
-| › `bucketSweepInterval` | `number` |
-| › `queueSweepInterval` | `number` |
-
-#### Returns
-
-`void`
-
-#### Inherited from
-
-Client.sweepIntervals
-
-#### Defined in
-
-request/dist/src/index.d.ts:38
-
-___
-
-### userAgent
-
-• `get` **userAgent**(): `string`
-
-#### Returns
+###### api
 
 `string`
 
-#### Overrides
+###### cdn
 
-Client.userAgent
+`string`
 
-#### Defined in
+###### version
 
-[api/src/client.ts:25](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L25)
+`number`
 
-• `set` **userAgent**(`value`): `void`
+##### Returns
 
-#### Parameters
+`void`
 
-| Name | Type |
-| :------ | :------ |
-| `value` | `string` |
+#### Inherited from
 
-#### Returns
+`Client.api`
+
+***
+
+### callbacks
+
+#### Get Signature
+
+> **get** **callbacks**(): `object`
+
+Defined in: request/dist/src/client.d.ts:41
+
+##### Returns
+
+`object`
+
+###### onBucketSweep?
+
+> `optional` **onBucketSweep?**: (`swept`) => `void`
+
+###### Parameters
+
+###### swept
+
+`Map`\<`string`, `Bucket`\>
+
+###### Returns
+
+`void`
+
+###### onQueueSweep?
+
+> `optional` **onQueueSweep?**: (`swept`) => `void`
+
+###### Parameters
+
+###### swept
+
+`Map`\<`string`, `Queue`\>
+
+###### Returns
+
+`void`
+
+###### onRateLimit?
+
+> `optional` **onRateLimit?**: (`data`) => `void`
+
+###### Parameters
+
+###### data
+
+`RateLimitData`
+
+###### Returns
+
+`void`
+
+###### onRequest?
+
+> `optional` **onRequest?**: (`parameters`, `resource`, `init`, `retries`) => `void`
+
+###### Parameters
+
+###### parameters
+
+`Route`
+
+###### resource
+
+`string`
+
+###### init
+
+`RequestInit`
+
+###### retries
+
+`number`
+
+###### Returns
+
+`void`
+
+#### Set Signature
+
+> **set** **callbacks**(`__namedParameters`): `void`
+
+Defined in: request/dist/src/client.d.ts:47
+
+##### Parameters
+
+###### \_\_namedParameters
+
+###### onBucketSweep?
+
+(`swept`) => `void`
+
+###### onQueueSweep?
+
+(`swept`) => `void`
+
+###### onRateLimit?
+
+(`data`) => `void`
+
+###### onRequest?
+
+(`parameters`, `resource`, `init`, `retries`) => `void`
+
+##### Returns
+
+`void`
+
+#### Inherited from
+
+`Client.callbacks`
+
+***
+
+### globalRequestsPerSecond
+
+#### Get Signature
+
+> **get** **globalRequestsPerSecond**(): `number`
+
+Defined in: request/dist/src/client.d.ts:11
+
+##### Returns
+
+`number`
+
+#### Set Signature
+
+> **set** **globalRequestsPerSecond**(`value`): `void`
+
+Defined in: request/dist/src/client.d.ts:12
+
+##### Parameters
+
+###### value
+
+`number`
+
+##### Returns
+
+`void`
+
+#### Inherited from
+
+`Client.globalRequestsPerSecond`
+
+***
+
+### requestConfig
+
+#### Get Signature
+
+> **get** **requestConfig**(): `object`
+
+Defined in: request/dist/src/client.d.ts:23
+
+##### Returns
+
+`object`
+
+###### headers
+
+> **headers**: `Record`\<`string`, `string`\>
+
+###### retries
+
+> **retries**: `number`
+
+###### timeout
+
+> **timeout**: `number`
+
+#### Set Signature
+
+> **set** **requestConfig**(`__namedParameters`): `void`
+
+Defined in: request/dist/src/client.d.ts:28
+
+##### Parameters
+
+###### \_\_namedParameters
+
+###### headers
+
+`Record`\<`string`, `string`\>
+
+###### retries
+
+`number`
+
+###### timeout
+
+`number`
+
+##### Returns
+
+`void`
+
+#### Inherited from
+
+`Client.requestConfig`
+
+***
+
+### sweepIntervals
+
+#### Get Signature
+
+> **get** **sweepIntervals**(): `object`
+
+Defined in: request/dist/src/client.d.ts:33
+
+##### Returns
+
+`object`
+
+###### bucketSweepInterval
+
+> **bucketSweepInterval**: `number`
+
+###### queueSweepInterval
+
+> **queueSweepInterval**: `number`
+
+#### Set Signature
+
+> **set** **sweepIntervals**(`__namedParameters`): `void`
+
+Defined in: request/dist/src/client.d.ts:37
+
+##### Parameters
+
+###### \_\_namedParameters
+
+###### bucketSweepInterval
+
+`number`
+
+###### queueSweepInterval
+
+`number`
+
+##### Returns
+
+`void`
+
+#### Inherited from
+
+`Client.sweepIntervals`
+
+***
+
+### userAgent
+
+#### Get Signature
+
+> **get** **userAgent**(): `string`
+
+Defined in: [api/src/client.ts:51](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L51)
+
+##### Returns
+
+`string`
+
+#### Set Signature
+
+> **set** **userAgent**(`value`): `void`
+
+Defined in: [api/src/client.ts:55](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/api/src/client.ts#L55)
+
+##### Parameters
+
+###### value
+
+`string`
+
+##### Returns
 
 `void`
 
 #### Overrides
 
-Client.userAgent
-
-#### Defined in
-
-[api/src/client.ts:29](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/api/src/client.ts#L29)
+`Client.userAgent`
 
 ## Methods
 
-### delete
+### delete()
 
-▸ **delete**(`path`, `options?`): `Promise`<`unknown`\>
+> **delete**(`path`, `options?`): `Promise`\<`unknown`\>
 
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `path` | `string` |
-| `options?` | `RequestOptions` |
-
-#### Returns
-
-`Promise`<`unknown`\>
-
-#### Inherited from
-
-Client.delete
-
-#### Defined in
-
-request/dist/src/index.d.ts:58
-
-___
-
-### get
-
-▸ **get**(`path`, `options?`): `Promise`<`unknown`\>
+Defined in: request/dist/src/client.d.ts:57
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `path` | `string` |
-| `options?` | `RequestOptions` |
+##### path
+
+`string`
+
+##### options?
+
+`RequestOptions`
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Inherited from
 
-Client.get
+`Client.delete`
 
-#### Defined in
+***
 
-request/dist/src/index.d.ts:54
+### get()
 
-___
+> **get**(`path`, `options?`): `Promise`\<`unknown`\>
 
-### patch
-
-▸ **patch**(`path`, `options?`): `Promise`<`unknown`\>
+Defined in: request/dist/src/client.d.ts:53
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `path` | `string` |
-| `options?` | `RequestOptions` |
+##### path
+
+`string`
+
+##### options?
+
+`RequestOptions`
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Inherited from
 
-Client.patch
+`Client.get`
 
-#### Defined in
+***
 
-request/dist/src/index.d.ts:57
+### patch()
 
-___
+> **patch**(`path`, `options?`): `Promise`\<`unknown`\>
 
-### post
-
-▸ **post**(`path`, `options?`): `Promise`<`unknown`\>
+Defined in: request/dist/src/client.d.ts:56
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `path` | `string` |
-| `options?` | `RequestOptions` |
+##### path
+
+`string`
+
+##### options?
+
+`RequestOptions`
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Inherited from
 
-Client.post
+`Client.patch`
 
-#### Defined in
+***
 
-request/dist/src/index.d.ts:55
+### post()
 
-___
+> **post**(`path`, `options?`): `Promise`\<`unknown`\>
 
-### put
-
-▸ **put**(`path`, `options?`): `Promise`<`unknown`\>
+Defined in: request/dist/src/client.d.ts:54
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `path` | `string` |
-| `options?` | `RequestOptions` |
+##### path
+
+`string`
+
+##### options?
+
+`RequestOptions`
 
 #### Returns
 
-`Promise`<`unknown`\>
+`Promise`\<`unknown`\>
 
 #### Inherited from
 
-Client.put
+`Client.post`
 
-#### Defined in
+***
 
-request/dist/src/index.d.ts:56
+### put()
 
-___
+> **put**(`path`, `options?`): `Promise`\<`unknown`\>
 
-### setToken
-
-▸ **setToken**(`token`): [`DiscordApiClient`](DiscordApiClient.md)
+Defined in: request/dist/src/client.d.ts:55
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `token` | `string` |
+##### path
+
+`string`
+
+##### options?
+
+`RequestOptions`
 
 #### Returns
 
-[`DiscordApiClient`](DiscordApiClient.md)
+`Promise`\<`unknown`\>
 
 #### Inherited from
 
-Client.setToken
+`Client.put`
 
-#### Defined in
+***
 
-request/dist/src/index.d.ts:7
+### setToken()
+
+> **setToken**(`token`): `this`
+
+Defined in: request/dist/src/client.d.ts:6
+
+#### Parameters
+
+##### token
+
+`string`
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+`Client.setToken`

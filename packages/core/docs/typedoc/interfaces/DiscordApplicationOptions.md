@@ -1,112 +1,99 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / DiscordApplicationOptions
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / DiscordApplicationOptions
 
 # Interface: DiscordApplicationOptions
 
-## Table of contents
-
-### Properties
-
-- [cache](DiscordApplicationOptions.md#cache)
-- [clientId](DiscordApplicationOptions.md#clientid)
-- [hooks](DiscordApplicationOptions.md#hooks)
-- [preserveRaw](DiscordApplicationOptions.md#preserveraw)
-- [publicKey](DiscordApplicationOptions.md#publickey)
-- [syncMode](DiscordApplicationOptions.md#syncmode)
-- [timeout](DiscordApplicationOptions.md#timeout)
-- [token](DiscordApplicationOptions.md#token)
+Defined in: [app/DiscordApplication.ts:22](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L22)
 
 ## Properties
 
-### cache
+### cache?
 
-• `Optional` **cache**: [`GenericCache`](GenericCache.md)
+> `optional` **cache?**: [`GenericCache`](GenericCache.md)
+
+Defined in: [app/DiscordApplication.ts:39](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L39)
 
 Component State Cache
 
-#### Defined in
-
-[app/DiscordApplication.ts:35](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L35)
-
-___
+***
 
 ### clientId
 
-• **clientId**: `string`
+> **clientId**: `string`
+
+Defined in: [app/DiscordApplication.ts:24](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L24)
 
 Application Client ID
 
-#### Defined in
+***
 
-[app/DiscordApplication.ts:23](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L23)
+### hooks?
 
-___
+> `optional` **hooks?**: `Partial`\<[`InteractionHooks`](../type-aliases/InteractionHooks.md)\>
 
-### hooks
-
-• `Optional` **hooks**: `Partial`<[`InteractionHooks`](../modules.md#interactionhooks)\>
+Defined in: [app/DiscordApplication.ts:33](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L33)
 
 Hooks to perform additional processing on certain interactions before passing to their handlers. Upon returning true, all further execution is halted.
 
-#### Defined in
+***
 
-[app/DiscordApplication.ts:32](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L32)
+### preserveRaw?
 
-___
+> `optional` **preserveRaw?**: `boolean`
 
-### preserveRaw
-
-• `Optional` **preserveRaw**: `boolean`
+Defined in: [app/DiscordApplication.ts:45](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L45)
 
 Whether to preserve the raw interaction object in contexts under ctx.raw - Default: false
 
-#### Defined in
-
-[app/DiscordApplication.ts:41](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L41)
-
-___
+***
 
 ### publicKey
 
-• **publicKey**: `string`
+> **publicKey**: `string`
+
+Defined in: [app/DiscordApplication.ts:27](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L27)
 
 Application Public Key
 
-#### Defined in
+***
 
-[app/DiscordApplication.ts:26](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L26)
+### syncMode?
 
-___
+> `optional` **syncMode?**: [`SyncMode`](../enumerations/SyncMode.md)
 
-### syncMode
-
-• `Optional` **syncMode**: [`SyncMode`](../enums/SyncMode.md)
+Defined in: [app/DiscordApplication.ts:42](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L42)
 
 What mode to use for syncing the global command manager.
 
-#### Defined in
+***
 
-[app/DiscordApplication.ts:38](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L38)
+### timeout?
 
-___
+> `optional` **timeout?**: `number`
 
-### timeout
-
-• `Optional` **timeout**: `number`
+Defined in: [app/DiscordApplication.ts:48](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L48)
 
 Timeout after which InteractionHandlerTimedOut is thrown - Default: 2500ms
 
-#### Defined in
-
-[app/DiscordApplication.ts:44](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L44)
-
-___
+***
 
 ### token
 
-• **token**: `string`
+> **token**: `string`
+
+Defined in: [app/DiscordApplication.ts:30](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L30)
 
 Application Bot Token
 
-#### Defined in
+***
 
-[app/DiscordApplication.ts:29](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/DiscordApplication.ts#L29)
+### webhookEvents?
+
+> `optional` **webhookEvents?**: `Partial`\<[`WebhookEventHooks`](../type-aliases/WebhookEventHooks.md)\>
+
+Defined in: [app/DiscordApplication.ts:36](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/DiscordApplication.ts#L36)
+
+Handlers for HTTP-pushed webhook events (Webhook Events URL), e.g. APPLICATION_AUTHORIZED or ENTITLEMENT_CREATE.

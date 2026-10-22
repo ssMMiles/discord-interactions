@@ -1,45 +1,43 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / UnauthorizedInteraction
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / UnauthorizedInteraction
 
 # Class: UnauthorizedInteraction
 
-## Hierarchy
+Defined in: [util/errors.ts:4](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L4)
+
+## Extends
 
 - `Error`
 
-  ↳ **`UnauthorizedInteraction`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](UnauthorizedInteraction.md#constructor)
-
-### Properties
-
-- [body](UnauthorizedInteraction.md#body)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new UnauthorizedInteraction**(`body`)
+> **new UnauthorizedInteraction**(`body`): `UnauthorizedInteraction`
+
+Defined in: [util/errors.ts:7](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L7)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `body` | `string` |
+##### body
+
+`string`
+
+#### Returns
+
+`UnauthorizedInteraction`
 
 #### Overrides
 
-Error.constructor
+`Error.constructor`
 
 ## Properties
 
 ### body
 
-• **body**: `string`
+> **body**: `string`
 
-#### Defined in
-
-[util/errors.ts:5](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/util/errors.ts#L5)
+Defined in: [util/errors.ts:5](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L5)

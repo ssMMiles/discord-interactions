@@ -4,3 +4,5 @@ declare function verifyInteractionSignature(
   timestamp: string,
   body: string
 ): Promise<boolean>;
+
+export default verifyInteractionSignature;

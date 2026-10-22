@@ -1,79 +1,97 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / WebhookClient
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / WebhookClient
 
 # Class: WebhookClient
 
-## Table of contents
-
-### Constructors
-
-- [constructor](WebhookClient.md#constructor)
-
-### Methods
-
-- [delete](WebhookClient.md#delete)
-- [edit](WebhookClient.md#edit)
-- [send](WebhookClient.md#send)
+Defined in: [app/WebhookClient.ts:8](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/WebhookClient.ts#L8)
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new WebhookClient**(`id`, `token`, `rest?`)
+> **new WebhookClient**(`id`, `token`, `rest?`): `WebhookClient`
+
+Defined in: [app/WebhookClient.ts:14](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/WebhookClient.ts#L14)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
-| `token` | `string` |
-| `rest?` | `DiscordApiClient` |
+##### id
+
+`string`
+
+##### token
+
+`string`
+
+##### rest?
+
+`DiscordApiClient`
+
+#### Returns
+
+`WebhookClient`
 
 ## Methods
 
-### delete
+### delete()
 
-▸ **delete**(`id`): `Promise`<`void`\>
+> **delete**(`id`): `Promise`\<`void`\>
 
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
-
-#### Returns
-
-`Promise`<`void`\>
-
-___
-
-### edit
-
-▸ **edit**(`message`, `id`): `Promise`<`APIMessage`\>
+Defined in: [app/WebhookClient.ts:53](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/WebhookClient.ts#L53)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `message` | `string` \| `MessageBuilder` |
-| `id` | `string` |
+##### id
+
+`string`
 
 #### Returns
 
-`Promise`<`APIMessage`\>
+`Promise`\<`void`\>
 
-___
+***
 
-### send
+### edit()
 
-▸ **send**(`message`, `wait?`): `Promise`<`APIMessage`\>
+> **edit**(`message`, `id`): `Promise`\<`APIMessage`\>
+
+Defined in: [app/WebhookClient.ts:38](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/WebhookClient.ts#L38)
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `message` | `string` \| `MessageBuilder` | `undefined` |
-| `wait` | `boolean` | `true` |
+##### message
+
+`string` \| `MessageBuilder`
+
+##### id
+
+`string`
 
 #### Returns
 
-`Promise`<`APIMessage`\>
+`Promise`\<`APIMessage`\>
+
+***
+
+### send()
+
+> **send**(`message`, `wait?`): `Promise`\<`APIMessage`\>
+
+Defined in: [app/WebhookClient.ts:21](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/WebhookClient.ts#L21)
+
+#### Parameters
+
+##### message
+
+`string` \| `MessageBuilder`
+
+##### wait?
+
+`boolean` = `true`
+
+#### Returns
+
+`Promise`\<`APIMessage`\>

@@ -1,283 +1,302 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / CommandGroupBuilder
+[**@discord-interactions/builders**](../README.md)
+
+***
+
+[@discord-interactions/builders](../globals.md) / CommandGroupBuilder
 
 # Class: CommandGroupBuilder
 
-## Hierarchy
+Defined in: [packages/builders/src/commands/CommandGroupBuilder.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandGroupBuilder.ts#L15)
 
-- `ChatInputCommandBuilderBase`<`APIApplicationCommandSubcommandGroupOption` \| `APIApplicationCommandSubcommandOption`\>
+## Extends
 
-  ↳ **`CommandGroupBuilder`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](CommandGroupBuilder.md#constructor)
-
-### Properties
-
-- [default\_member\_permissions](CommandGroupBuilder.md#default_member_permissions)
-- [description](CommandGroupBuilder.md#description)
-- [description\_localizations](CommandGroupBuilder.md#description_localizations)
-- [dm\_permission](CommandGroupBuilder.md#dm_permission)
-- [name](CommandGroupBuilder.md#name)
-- [name\_localizations](CommandGroupBuilder.md#name_localizations)
-- [options](CommandGroupBuilder.md#options)
-- [type](CommandGroupBuilder.md#type)
-
-### Methods
-
-- [addRequiredPermissions](CommandGroupBuilder.md#addrequiredpermissions)
-- [addSubcommandGroups](CommandGroupBuilder.md#addsubcommandgroups)
-- [addSubcommands](CommandGroupBuilder.md#addsubcommands)
-- [clearRequiredPermissions](CommandGroupBuilder.md#clearrequiredpermissions)
-- [disallowAllPermissions](CommandGroupBuilder.md#disallowallpermissions)
-- [equals](CommandGroupBuilder.md#equals)
-- [removeRequiredPermissions](CommandGroupBuilder.md#removerequiredpermissions)
-- [setDMEnabled](CommandGroupBuilder.md#setdmenabled)
-- [setDescription](CommandGroupBuilder.md#setdescription)
-- [setDescriptionLocalizations](CommandGroupBuilder.md#setdescriptionlocalizations)
-- [setLocalizedDescription](CommandGroupBuilder.md#setlocalizeddescription)
-- [setLocalizedName](CommandGroupBuilder.md#setlocalizedname)
-- [setName](CommandGroupBuilder.md#setname)
-- [setNameLocalizations](CommandGroupBuilder.md#setnamelocalizations)
-- [setRequiredPermissions](CommandGroupBuilder.md#setrequiredpermissions)
-- [toJSON](CommandGroupBuilder.md#tojson)
+- `ChatInputCommandBuilderBase`\<`APIApplicationCommandSubcommandGroupOption` \| `APIApplicationCommandSubcommandOption`\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new CommandGroupBuilder**(`name`, `description?`)
+> **new CommandGroupBuilder**(`name`, `description?`): `CommandGroupBuilder`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:258](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L258)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` \| `RESTPostAPIChatInputApplicationCommandsJSONBody` |
-| `description?` | `string` |
+##### name
+
+`string` \| `RESTPostAPIChatInputApplicationCommandsJSONBody`
+
+##### description?
+
+`string`
+
+#### Returns
+
+`CommandGroupBuilder`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase<
-  APIApplicationCommandSubcommandGroupOption \| APIApplicationCommandSubcommandOption
-\>.constructor
+ChatInputCommandBuilderBase\< APIApplicationCommandSubcommandGroupOption \| APIApplicationCommandSubcommandOption \>.constructor
 
 ## Properties
 
+### contexts?
+
+> `optional` **contexts?**: `InteractionContextType`[]
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:66](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L66)
+
+Interaction contexts where this command can be used - Only for global commands.
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.contexts`
+
+***
+
 ### default\_member\_permissions
 
-• **default\_member\_permissions**: [`Bitfield`](Bitfield.md)
+> **default\_member\_permissions**: [`Bitfield`](Bitfield.md)
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:56](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L56)
 
 Default member permissions required to use the command
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.default\_member\_permissions
+`ChatInputCommandBuilderBase.default_member_permissions`
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:48](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L48)
-
-___
+***
 
 ### description
 
-• **description**: `string`
+> **description**: `string`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:253](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L253)
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.description
+`ChatInputCommandBuilderBase.description`
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:161](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L161)
-
-___
+***
 
 ### description\_localizations
 
-• **description\_localizations**: `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> = `{}`
+> **description\_localizations**: `LocalizationMap` = `{}`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:254](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L254)
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.description\_localizations
+`ChatInputCommandBuilderBase.description_localizations`
 
-#### Defined in
+***
 
-[src/commands/CommandBuilderBase.ts:162](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L162)
+### ~~dm\_permission?~~
 
-___
+> `optional` **dm\_permission?**: `boolean`
 
-### dm\_permission
-
-• `Optional` **dm\_permission**: `boolean`
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:51](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L51)
 
 Whether the command is visible in DMs - Only available for global commands and defaults to true.
 
+#### Deprecated
+
+Use CommandBuilderBase.setContexts instead.
+
 #### Inherited from
 
-ChatInputCommandBuilderBase.dm\_permission
+`ChatInputCommandBuilderBase.dm_permission`
 
-#### Defined in
+***
 
-[src/commands/CommandBuilderBase.ts:43](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L43)
+### integration\_types?
 
-___
+> `optional` **integration\_types?**: `ApplicationIntegrationType`[]
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:61](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L61)
+
+Installation contexts where this command is available - Only for global commands.
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.integration_types`
+
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:35](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L35)
 
 The name of this context menu command
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.name
+`ChatInputCommandBuilderBase.name`
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:28](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L28)
-
-___
+***
 
 ### name\_localizations
 
-• **name\_localizations**: `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> = `{}`
+> **name\_localizations**: `LocalizationMap` = `{}`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:40](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L40)
 
 The localized names for this command
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.name\_localizations
+`ChatInputCommandBuilderBase.name_localizations`
 
-#### Defined in
+***
 
-[src/commands/CommandBuilderBase.ts:33](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L33)
+### nsfw?
 
-___
+> `optional` **nsfw?**: `boolean`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:71](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L71)
+
+Whether this command is age-restricted.
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.nsfw`
+
+***
 
 ### options
 
-• **options**: `ToAPIApplicationCommandOptions`<`APIApplicationCommandSubcommandOption` \| `APIApplicationCommandSubcommandGroupOption`\>[] = `[]`
+> **options**: `ToAPIApplicationCommandOptions`\<`APIApplicationCommandSubcommandOption` \| `APIApplicationCommandSubcommandGroupOption`\>[] = `[]`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:256](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L256)
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.options
+`ChatInputCommandBuilderBase.options`
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:164](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L164)
-
-___
+***
 
 ### type
 
-• **type**: `ChatInput` = `ApplicationCommandType.ChatInput`
+> **type**: `ChatInput` = `ApplicationCommandType.ChatInput`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:251](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L251)
+
+The type of this context menu command
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.type
-
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:159](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L159)
+`ChatInputCommandBuilderBase.type`
 
 ## Methods
 
-### addRequiredPermissions
+### addRequiredPermissions()
 
-▸ **addRequiredPermissions**(...`permissions`): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **addRequiredPermissions**(...`permissions`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:176](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L176)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...permissions` | `bigint`[] |
+##### permissions
+
+...`bigint`[]
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.addRequiredPermissions
+`ChatInputCommandBuilderBase.addRequiredPermissions`
 
-___
+***
 
-### addSubcommandGroups
+### addSubcommandGroups()
 
-▸ **addSubcommandGroups**(...`subcommandGroups`): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **addSubcommandGroups**(...`subcommandGroups`): `this`
+
+Defined in: [packages/builders/src/commands/CommandGroupBuilder.ts:23](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandGroupBuilder.ts#L23)
 
 Adds an integer option
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...subcommandGroups` | [`SubcommandGroupOption`](SubcommandGroupOption.md)[] |
+##### subcommandGroups
+
+...[`SubcommandGroupOption`](SubcommandGroupOption.md)[]
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
-___
+***
 
-### addSubcommands
+### addSubcommands()
 
-▸ **addSubcommands**(...`subcommands`): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **addSubcommands**(...`subcommands`): `this`
+
+Defined in: [packages/builders/src/commands/CommandGroupBuilder.ts:34](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandGroupBuilder.ts#L34)
 
 Adds a subcommand
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...subcommands` | [`SubcommandOption`](SubcommandOption.md)[] |
+##### subcommands
+
+...[`SubcommandOption`](SubcommandOption.md)[]
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
-___
+***
 
-### clearRequiredPermissions
+### clearRequiredPermissions()
 
-▸ **clearRequiredPermissions**(): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **clearRequiredPermissions**(): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:188](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L188)
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.clearRequiredPermissions
+`ChatInputCommandBuilderBase.clearRequiredPermissions`
 
-___
+***
 
-### disallowAllPermissions
+### disallowAllPermissions()
 
-▸ **disallowAllPermissions**(): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **disallowAllPermissions**(): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:194](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L194)
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.disallowAllPermissions
+`ChatInputCommandBuilderBase.disallowAllPermissions`
 
-___
+***
 
-### equals
+### equals()
 
-▸ **equals**(`remote`): `boolean`
+> **equals**(`remote`): `boolean`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:292](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L292)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `remote` | `APIApplicationCommand` & { `type`: `ChatInput`  } |
+##### remote
+
+`APIApplicationCommand` & `object`
 
 #### Returns
 
@@ -285,214 +304,322 @@ ___
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.equals
+`ChatInputCommandBuilderBase.equals`
 
-___
+***
 
-### removeRequiredPermissions
+### removeRequiredPermissions()
 
-▸ **removeRequiredPermissions**(...`permissions`): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **removeRequiredPermissions**(...`permissions`): `this`
 
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `...permissions` | `bigint`[] |
-
-#### Returns
-
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
-
-#### Inherited from
-
-ChatInputCommandBuilderBase.removeRequiredPermissions
-
-___
-
-### setDMEnabled
-
-▸ **setDMEnabled**(`value`): [`CommandGroupBuilder`](CommandGroupBuilder.md)
-
-Set whether this command will be visible in DMs - Only applicable to Global commands.
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:182](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L182)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | `boolean` |
+##### permissions
+
+...`bigint`[]
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setDMEnabled
+`ChatInputCommandBuilderBase.removeRequiredPermissions`
 
-___
+***
 
-### setDescription
+### setContexts()
 
-▸ **setDescription**(`description`): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **setContexts**(...`contexts`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:137](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L137)
+
+Set the interaction contexts where this command can be used (guild, bot DM, private channel).
+Only applicable to Global commands.
+
+#### Parameters
+
+##### contexts
+
+...`InteractionContextType`[]
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.setContexts`
+
+***
+
+### setDescription()
+
+> **setDescription**(`description`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:269](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L269)
 
 Set the description
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `description` | `string` | The description |
+##### description
+
+`string`
+
+The description
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setDescription
+`ChatInputCommandBuilderBase.setDescription`
 
-___
+***
 
-### setDescriptionLocalizations
+### setDescriptionLocalizations()
 
-▸ **setDescriptionLocalizations**(`localizations`): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **setDescriptionLocalizations**(`localizations`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:278](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L278)
 
 Set a dictionary of localized descriptions
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localizations` | `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> |
+##### localizations
+
+`LocalizationMap`
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setDescriptionLocalizations
+`ChatInputCommandBuilderBase.setDescriptionLocalizations`
 
-___
+***
 
-### setLocalizedDescription
+### ~~setDMEnabled()~~
 
-▸ **setLocalizedDescription**(`locale`, `description`): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **setDMEnabled**(`value`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:117](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L117)
+
+Set whether this command will be visible in DMs - Only applicable to Global commands.
+
+#### Parameters
+
+##### value
+
+`boolean`
+
+#### Returns
+
+`this`
+
+#### Deprecated
+
+Use CommandBuilderBase.setContexts instead.
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.setDMEnabled`
+
+***
+
+### setIntegrationTypes()
+
+> **setIntegrationTypes**(...`integrationTypes`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:127](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L127)
+
+Set the installation contexts where this command is available (guild install and/or user install).
+Only applicable to Global commands.
+
+#### Parameters
+
+##### integrationTypes
+
+...`ApplicationIntegrationType`[]
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.setIntegrationTypes`
+
+***
+
+### setLocalizedDescription()
+
+> **setLocalizedDescription**(`locale`, `description`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:287](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L287)
 
 Set a single locale's description
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `locale` | ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"`` |
-| `description` | `string` |
+##### locale
+
+`Locale`
+
+##### description
+
+`string`
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setLocalizedDescription
+`ChatInputCommandBuilderBase.setLocalizedDescription`
 
-___
+***
 
-### setLocalizedName
+### setLocalizedName()
 
-▸ **setLocalizedName**(`locale`, `name`): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **setLocalizedName**(`locale`, `name`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:107](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L107)
 
 Set a single locale's name
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `locale` | ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"`` |
-| `name` | `string` |
+##### locale
+
+`Locale`
+
+##### name
+
+`string`
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setLocalizedName
+`ChatInputCommandBuilderBase.setLocalizedName`
 
-___
+***
 
-### setName
+### setName()
 
-▸ **setName**(`name`): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **setName**(`name`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:89](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L89)
 
 Set the name
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+##### name
+
+`string`
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setName
+`ChatInputCommandBuilderBase.setName`
 
-___
+***
 
-### setNameLocalizations
+### setNameLocalizations()
 
-▸ **setNameLocalizations**(`localizations`): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **setNameLocalizations**(`localizations`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:98](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L98)
 
 Set a dictionary of localized names
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localizations` | `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> |
+##### localizations
+
+`LocalizationMap`
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setNameLocalizations
+`ChatInputCommandBuilderBase.setNameLocalizations`
 
-___
+***
 
-### setRequiredPermissions
+### setNSFW()
 
-▸ **setRequiredPermissions**(`permissions`): [`CommandGroupBuilder`](CommandGroupBuilder.md)
+> **setNSFW**(`nsfw?`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:146](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L146)
+
+Set whether this command is age-restricted.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `permissions` | [`Bitfield`](Bitfield.md) |
+##### nsfw?
+
+`boolean` = `true`
 
 #### Returns
 
-[`CommandGroupBuilder`](CommandGroupBuilder.md)
+`this`
 
 #### Inherited from
 
-ChatInputCommandBuilderBase.setRequiredPermissions
+`ChatInputCommandBuilderBase.setNSFW`
 
-___
+***
 
-### toJSON
+### setRequiredPermissions()
 
-▸ **toJSON**(): [`CommandGroupData`](../modules.md#commandgroupdata)
+> **setRequiredPermissions**(`permissions`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:170](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L170)
+
+#### Parameters
+
+##### permissions
+
+[`Bitfield`](Bitfield.md)
 
 #### Returns
 
-[`CommandGroupData`](../modules.md#commandgroupdata)
+`this`
+
+#### Inherited from
+
+`ChatInputCommandBuilderBase.setRequiredPermissions`
+
+***
+
+### toJSON()
+
+> **toJSON**(): [`CommandGroupData`](../type-aliases/CommandGroupData.md)
+
+Defined in: [packages/builders/src/commands/CommandGroupBuilder.ts:42](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandGroupBuilder.ts#L42)
+
+Returns the final data that should be sent to Discord.
+
+#### Returns
+
+[`CommandGroupData`](../type-aliases/CommandGroupData.md)
 
 #### Overrides
 
-ChatInputCommandBuilderBase.toJSON
+`ChatInputCommandBuilderBase.toJSON`

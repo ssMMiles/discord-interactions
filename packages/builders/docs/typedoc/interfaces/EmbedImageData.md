@@ -1,78 +1,148 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / EmbedImageData
+[**@discord-interactions/builders**](../README.md)
+
+***
+
+[@discord-interactions/builders](../globals.md) / EmbedImageData
 
 # Interface: EmbedImageData
 
-## Hierarchy
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:24](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L24)
 
-- `Omit`<`APIEmbedImage`, ``"proxy_url"``\>
+## Extends
 
-  ↳ **`EmbedImageData`**
-
-## Table of contents
-
-### Properties
-
-- [height](EmbedImageData.md#height)
-- [proxyURL](EmbedImageData.md#proxyurl)
-- [url](EmbedImageData.md#url)
-- [width](EmbedImageData.md#width)
+- `Omit`\<`APIEmbedImage`, `"proxy_url"`\>
 
 ## Properties
 
-### height
+### content\_type?
 
-• `Optional` **height**: `number`
+> `optional` **content\_type?**: `string`
+
+Defined in: node\_modules/discord-api-types/payloads/v10/message.d.ts:769
+
+The image's media type
+
+#### See
+
+[https://en.wikipedia.org/wiki/Media\_type](https://en.wikipedia.org/wiki/Media_type)
+
+#### Inherited from
+
+`Omit.content_type`
+
+***
+
+### description?
+
+> `optional` **description?**: `string`
+
+Defined in: node\_modules/discord-api-types/payloads/v10/message.d.ts:783
+
+Description (alt text) for the image
+
+#### Inherited from
+
+`Omit.description`
+
+***
+
+### flags?
+
+> `optional` **flags?**: `EmbedMediaFlags`
+
+Defined in: node\_modules/discord-api-types/payloads/v10/message.d.ts:790
+
+Embed media flags combined as a bitfield
+
+#### See
+
+ - [https://docs.discord.com/developers/resources/message#embed-object-embed-media-flags](https://docs.discord.com/developers/resources/message#embed-object-embed-media-flags)
+ - [https://en.wikipedia.org/wiki/Bit\_field](https://en.wikipedia.org/wiki/Bit_field)
+
+#### Inherited from
+
+`Omit.flags`
+
+***
+
+### height?
+
+> `optional` **height?**: `number`
+
+Defined in: node\_modules/discord-api-types/payloads/v10/message.d.ts:759
 
 Height of image
 
 #### Inherited from
 
-Omit.height
+`Omit.height`
 
-#### Defined in
+***
 
-node_modules/discord-api-types/payloads/v10/channel.d.ts:1020
+### placeholder?
 
-___
+> `optional` **placeholder?**: `string`
 
-### proxyURL
+Defined in: node\_modules/discord-api-types/payloads/v10/message.d.ts:775
 
-• `Optional` **proxyURL**: `string`
+ThumbHash placeholder of the image
+
+#### See
+
+[https://evanw.github.io/thumbhash/](https://evanw.github.io/thumbhash/)
+
+#### Inherited from
+
+`Omit.placeholder`
+
+***
+
+### placeholder\_version?
+
+> `optional` **placeholder\_version?**: `number`
+
+Defined in: node\_modules/discord-api-types/payloads/v10/message.d.ts:779
+
+Version of the placeholder
+
+#### Inherited from
+
+`Omit.placeholder_version`
+
+***
+
+### proxyURL?
+
+> `optional` **proxyURL?**: `string`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:28](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L28)
 
 The proxy URL for the image
 
-#### Defined in
-
-[src/responses/EmbedBuilder.ts:28](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/responses/EmbedBuilder.ts#L28)
-
-___
+***
 
 ### url
 
-• **url**: `string`
+> **url**: `string`
+
+Defined in: node\_modules/discord-api-types/payloads/v10/message.d.ts:751
 
 Source url of image (only supports http(s) and attachments)
 
 #### Inherited from
 
-Omit.url
+`Omit.url`
 
-#### Defined in
+***
 
-node_modules/discord-api-types/payloads/v10/channel.d.ts:1012
+### width?
 
-___
+> `optional` **width?**: `number`
 
-### width
-
-• `Optional` **width**: `number`
+Defined in: node\_modules/discord-api-types/payloads/v10/message.d.ts:763
 
 Width of image
 
 #### Inherited from
 
-Omit.width
-
-#### Defined in
-
-node_modules/discord-api-types/payloads/v10/channel.d.ts:1024
+`Omit.width`

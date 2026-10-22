@@ -1,281 +1,328 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / EmbedBuilder
+[**@discord-interactions/builders**](../README.md)
+
+***
+
+[@discord-interactions/builders](../globals.md) / EmbedBuilder
 
 # Class: EmbedBuilder
 
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:34](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L34)
+
 Represents a non-validated embed in a message (image/video preview, rich embed, etc.)
-
-## Table of contents
-
-### Constructors
-
-- [constructor](EmbedBuilder.md#constructor)
-
-### Properties
-
-- [data](EmbedBuilder.md#data)
-
-### Methods
-
-- [addFields](EmbedBuilder.md#addfields)
-- [setAuthor](EmbedBuilder.md#setauthor)
-- [setColor](EmbedBuilder.md#setcolor)
-- [setDescription](EmbedBuilder.md#setdescription)
-- [setFields](EmbedBuilder.md#setfields)
-- [setFooter](EmbedBuilder.md#setfooter)
-- [setImage](EmbedBuilder.md#setimage)
-- [setThumbnail](EmbedBuilder.md#setthumbnail)
-- [setTimestamp](EmbedBuilder.md#settimestamp)
-- [setTitle](EmbedBuilder.md#settitle)
-- [setURL](EmbedBuilder.md#seturl)
-- [spliceFields](EmbedBuilder.md#splicefields)
-- [toJSON](EmbedBuilder.md#tojson)
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new EmbedBuilder**(`data?`, `description?`)
+> **new EmbedBuilder**(`data?`, `description?`): `EmbedBuilder`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:37](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L37)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `data` | `string` \| `APIEmbed` |
-| `description?` | `string` |
+##### data?
+
+`string` \| `APIEmbed`
+
+##### description?
+
+`string`
+
+#### Returns
+
+`EmbedBuilder`
 
 ## Properties
 
 ### data
 
-• `Readonly` **data**: `APIEmbed`
+> `readonly` **data**: `APIEmbed`
 
-#### Defined in
-
-[src/responses/EmbedBuilder.ts:35](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/responses/EmbedBuilder.ts#L35)
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:35](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L35)
 
 ## Methods
 
-### addFields
+### addFields()
 
-▸ **addFields**(...`fields`): [`EmbedBuilder`](EmbedBuilder.md)
+> **addFields**(...`fields`): `this`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:56](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L56)
 
 Adds fields to the embed (max 25)
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `...fields` | `APIEmbedField`[] | The fields to add |
+##### fields
+
+...`APIEmbedField`[]
+
+The fields to add
 
 #### Returns
 
-[`EmbedBuilder`](EmbedBuilder.md)
+`this`
 
-___
+***
 
-### setAuthor
+### setAuthor()
 
-▸ **setAuthor**(`options`): [`EmbedBuilder`](EmbedBuilder.md)
+> **setAuthor**(`options`): `this`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:92](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L92)
 
 Sets the author of this embed
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options` | ``null`` \| [`EmbedAuthorOptions`](../modules.md#embedauthoroptions) | The options for the author |
+##### options
+
+[`EmbedAuthorOptions`](../type-aliases/EmbedAuthorOptions.md) \| `null`
+
+The options for the author
 
 #### Returns
 
-[`EmbedBuilder`](EmbedBuilder.md)
+`this`
 
-___
+***
 
-### setColor
+### setColor()
 
-▸ **setColor**(`color`): [`EmbedBuilder`](EmbedBuilder.md)
+> **setColor**(`color`): `this`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:107](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L107)
 
 Sets the color of this embed
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `color` | ``null`` \| `number` \| [`RGBTuple`](../modules.md#rgbtuple) | The color of the embed |
+##### color
+
+`number` \| [`RGBTuple`](../type-aliases/RGBTuple.md) \| `null`
+
+The color of the embed
 
 #### Returns
 
-[`EmbedBuilder`](EmbedBuilder.md)
+`this`
 
-___
+***
 
-### setDescription
+### setDescription()
 
-▸ **setDescription**(`description`): [`EmbedBuilder`](EmbedBuilder.md)
+> **setDescription**(`description`): `this`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:122](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L122)
 
 Sets the description of this embed
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `description` | ``null`` \| `string` | The description |
+##### description
+
+`string` \| `null`
+
+The description
 
 #### Returns
 
-[`EmbedBuilder`](EmbedBuilder.md)
+`this`
 
-___
+***
 
-### setFields
+### setFields()
 
-▸ **setFields**(`fields`): [`EmbedBuilder`](EmbedBuilder.md)
+> **setFields**(`fields`): `EmbedBuilder`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:82](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L82)
 
 Sets the embed's fields (max 25).
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `fields` | `APIEmbedField`[] | The fields to set |
+##### fields
+
+`APIEmbedField`[]
+
+The fields to set
 
 #### Returns
 
-[`EmbedBuilder`](EmbedBuilder.md)
+`EmbedBuilder`
 
-___
+***
 
-### setFooter
+### setFooter()
 
-▸ **setFooter**(`options`): [`EmbedBuilder`](EmbedBuilder.md)
+> **setFooter**(`options`): `this`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:132](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L132)
 
 Sets the footer of this embed
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `options` | ``null`` \| [`EmbedFooterOptions`](../modules.md#embedfooteroptions) | The options for the footer |
+##### options
+
+[`EmbedFooterOptions`](../type-aliases/EmbedFooterOptions.md) \| `null`
+
+The options for the footer
 
 #### Returns
 
-[`EmbedBuilder`](EmbedBuilder.md)
+`this`
 
-___
+***
 
-### setImage
+### setImage()
 
-▸ **setImage**(`url`): [`EmbedBuilder`](EmbedBuilder.md)
+> **setImage**(`url`): `this`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:147](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L147)
 
 Sets the image of this embed
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `url` | ``null`` \| `string` | The URL of the image |
+##### url
+
+`string` \| `null`
+
+The URL of the image
 
 #### Returns
 
-[`EmbedBuilder`](EmbedBuilder.md)
+`this`
 
-___
+***
 
-### setThumbnail
+### setThumbnail()
 
-▸ **setThumbnail**(`url`): [`EmbedBuilder`](EmbedBuilder.md)
+> **setThumbnail**(`url`): `this`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:157](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L157)
 
 Sets the thumbnail of this embed
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `url` | ``null`` \| `string` | The URL of the thumbnail |
+##### url
+
+`string` \| `null`
+
+The URL of the thumbnail
 
 #### Returns
 
-[`EmbedBuilder`](EmbedBuilder.md)
+`this`
 
-___
+***
 
-### setTimestamp
+### setTimestamp()
 
-▸ **setTimestamp**(`timestamp?`): [`EmbedBuilder`](EmbedBuilder.md)
+> **setTimestamp**(`timestamp?`): `this`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:167](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L167)
 
 Sets the timestamp of this embed
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `timestamp` | ``null`` \| `number` \| `Date` | The timestamp or date |
+##### timestamp?
+
+`number` \| `Date` \| `null`
+
+The timestamp or date
 
 #### Returns
 
-[`EmbedBuilder`](EmbedBuilder.md)
+`this`
 
-___
+***
 
-### setTitle
+### setTitle()
 
-▸ **setTitle**(`title`): [`EmbedBuilder`](EmbedBuilder.md)
+> **setTitle**(`title`): `this`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:177](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L177)
 
 Sets the title of this embed
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `title` | ``null`` \| `string` | The title |
+##### title
+
+`string` \| `null`
+
+The title
 
 #### Returns
 
-[`EmbedBuilder`](EmbedBuilder.md)
+`this`
 
-___
+***
 
-### setURL
+### setURL()
 
-▸ **setURL**(`url`): [`EmbedBuilder`](EmbedBuilder.md)
+> **setURL**(`url`): `this`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:187](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L187)
 
 Sets the URL of this embed
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `url` | ``null`` \| `string` | The URL |
+##### url
+
+`string` \| `null`
+
+The URL
 
 #### Returns
 
-[`EmbedBuilder`](EmbedBuilder.md)
+`this`
 
-___
+***
 
-### spliceFields
+### spliceFields()
 
-▸ **spliceFields**(`index`, `deleteCount`, ...`fields`): [`EmbedBuilder`](EmbedBuilder.md)
+> **spliceFields**(`index`, `deleteCount`, ...`fields`): `this`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:72](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L72)
 
 Removes, replaces, or inserts fields in the embed (max 25)
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `index` | `number` | The index to start at |
-| `deleteCount` | `number` | The number of fields to remove |
-| `...fields` | `APIEmbedField`[] | The replacing field objects |
+##### index
+
+`number`
+
+The index to start at
+
+##### deleteCount
+
+`number`
+
+The number of fields to remove
+
+##### fields
+
+...`APIEmbedField`[]
+
+The replacing field objects
 
 #### Returns
 
-[`EmbedBuilder`](EmbedBuilder.md)
+`this`
 
-___
+***
 
-### toJSON
+### toJSON()
 
-▸ **toJSON**(): `APIEmbed`
+> **toJSON**(): `APIEmbed`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:195](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L195)
 
 Transforms the embed to a plain object
 

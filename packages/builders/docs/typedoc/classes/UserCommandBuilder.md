@@ -1,196 +1,222 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / UserCommandBuilder
+[**@discord-interactions/builders**](../README.md)
+
+***
+
+[@discord-interactions/builders](../globals.md) / UserCommandBuilder
 
 # Class: UserCommandBuilder
 
-## Hierarchy
+Defined in: [packages/builders/src/commands/ContextMenuCommandBuilder.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L15)
 
-- `CommandBuilderBase`<`RESTPostAPIContextMenuApplicationCommandsJSONBody` & { `type`: `ApplicationCommandType.User`  }\>
+## Extends
 
-  ↳ **`UserCommandBuilder`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](UserCommandBuilder.md#constructor)
-
-### Properties
-
-- [default\_member\_permissions](UserCommandBuilder.md#default_member_permissions)
-- [dm\_permission](UserCommandBuilder.md#dm_permission)
-- [name](UserCommandBuilder.md#name)
-- [name\_localizations](UserCommandBuilder.md#name_localizations)
-- [type](UserCommandBuilder.md#type)
-
-### Methods
-
-- [addRequiredPermissions](UserCommandBuilder.md#addrequiredpermissions)
-- [clearRequiredPermissions](UserCommandBuilder.md#clearrequiredpermissions)
-- [disallowAllPermissions](UserCommandBuilder.md#disallowallpermissions)
-- [equals](UserCommandBuilder.md#equals)
-- [removeRequiredPermissions](UserCommandBuilder.md#removerequiredpermissions)
-- [setDMEnabled](UserCommandBuilder.md#setdmenabled)
-- [setLocalizedName](UserCommandBuilder.md#setlocalizedname)
-- [setName](UserCommandBuilder.md#setname)
-- [setNameLocalizations](UserCommandBuilder.md#setnamelocalizations)
-- [setRequiredPermissions](UserCommandBuilder.md#setrequiredpermissions)
-- [toJSON](UserCommandBuilder.md#tojson)
+- `CommandBuilderBase`\<`RESTPostAPIContextMenuApplicationCommandsJSONBody` & `object`\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new UserCommandBuilder**(`data`)
+> **new UserCommandBuilder**(`data`): `UserCommandBuilder`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:73](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L73)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `data` | `string` \| `RESTPostAPIContextMenuApplicationCommandsJSONBody` & { `type`: `User`  } |
+##### data
+
+`string` \| `RESTPostAPIContextMenuApplicationCommandsJSONBody` & `object`
+
+#### Returns
+
+`UserCommandBuilder`
 
 #### Inherited from
 
-CommandBuilderBase<
-  RESTPostAPIContextMenuApplicationCommandsJSONBody & { type: ApplicationCommandType.User }
-\>.constructor
+`CommandBuilderBase< RESTPostAPIContextMenuApplicationCommandsJSONBody & { type: ApplicationCommandType.User } >.constructor`
 
 ## Properties
 
+### contexts?
+
+> `optional` **contexts?**: `InteractionContextType`[]
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:66](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L66)
+
+Interaction contexts where this command can be used - Only for global commands.
+
+#### Inherited from
+
+`CommandBuilderBase.contexts`
+
+***
+
 ### default\_member\_permissions
 
-• **default\_member\_permissions**: [`Bitfield`](Bitfield.md)
+> **default\_member\_permissions**: [`Bitfield`](Bitfield.md)
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:56](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L56)
 
 Default member permissions required to use the command
 
 #### Inherited from
 
-CommandBuilderBase.default\_member\_permissions
+`CommandBuilderBase.default_member_permissions`
 
-#### Defined in
+***
 
-[src/commands/CommandBuilderBase.ts:48](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L48)
+### ~~dm\_permission?~~
 
-___
+> `optional` **dm\_permission?**: `boolean`
 
-### dm\_permission
-
-• `Optional` **dm\_permission**: `boolean`
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:51](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L51)
 
 Whether the command is visible in DMs - Only available for global commands and defaults to true.
 
+#### Deprecated
+
+Use CommandBuilderBase.setContexts instead.
+
 #### Inherited from
 
-CommandBuilderBase.dm\_permission
+`CommandBuilderBase.dm_permission`
 
-#### Defined in
+***
 
-[src/commands/CommandBuilderBase.ts:43](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L43)
+### integration\_types?
 
-___
+> `optional` **integration\_types?**: `ApplicationIntegrationType`[]
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:61](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L61)
+
+Installation contexts where this command is available - Only for global commands.
+
+#### Inherited from
+
+`CommandBuilderBase.integration_types`
+
+***
 
 ### name
 
-• **name**: `string`
+> **name**: `string`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:35](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L35)
 
 The name of this context menu command
 
 #### Inherited from
 
-CommandBuilderBase.name
+`CommandBuilderBase.name`
 
-#### Defined in
-
-[src/commands/CommandBuilderBase.ts:28](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L28)
-
-___
+***
 
 ### name\_localizations
 
-• **name\_localizations**: `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> = `{}`
+> **name\_localizations**: `LocalizationMap` = `{}`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:40](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L40)
 
 The localized names for this command
 
 #### Inherited from
 
-CommandBuilderBase.name\_localizations
+`CommandBuilderBase.name_localizations`
 
-#### Defined in
+***
 
-[src/commands/CommandBuilderBase.ts:33](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/CommandBuilderBase.ts#L33)
+### nsfw?
 
-___
+> `optional` **nsfw?**: `boolean`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:71](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L71)
+
+Whether this command is age-restricted.
+
+#### Inherited from
+
+`CommandBuilderBase.nsfw`
+
+***
 
 ### type
 
-• **type**: `User` = `ApplicationCommandType.User`
+> **type**: `User` = `ApplicationCommandType.User`
+
+Defined in: [packages/builders/src/commands/ContextMenuCommandBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L18)
+
+The type of this context menu command
 
 #### Overrides
 
-CommandBuilderBase.type
-
-#### Defined in
-
-[src/commands/ContextMenuCommandBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L18)
+`CommandBuilderBase.type`
 
 ## Methods
 
-### addRequiredPermissions
+### addRequiredPermissions()
 
-▸ **addRequiredPermissions**(...`permissions`): [`UserCommandBuilder`](UserCommandBuilder.md)
+> **addRequiredPermissions**(...`permissions`): `this`
 
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `...permissions` | `bigint`[] |
-
-#### Returns
-
-[`UserCommandBuilder`](UserCommandBuilder.md)
-
-#### Inherited from
-
-CommandBuilderBase.addRequiredPermissions
-
-___
-
-### clearRequiredPermissions
-
-▸ **clearRequiredPermissions**(): [`UserCommandBuilder`](UserCommandBuilder.md)
-
-#### Returns
-
-[`UserCommandBuilder`](UserCommandBuilder.md)
-
-#### Inherited from
-
-CommandBuilderBase.clearRequiredPermissions
-
-___
-
-### disallowAllPermissions
-
-▸ **disallowAllPermissions**(): [`UserCommandBuilder`](UserCommandBuilder.md)
-
-#### Returns
-
-[`UserCommandBuilder`](UserCommandBuilder.md)
-
-#### Inherited from
-
-CommandBuilderBase.disallowAllPermissions
-
-___
-
-### equals
-
-▸ **equals**(`other`): `boolean`
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:176](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L176)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `other` | `APIApplicationCommand` & { `type`: `User`  } |
+##### permissions
+
+...`bigint`[]
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+`CommandBuilderBase.addRequiredPermissions`
+
+***
+
+### clearRequiredPermissions()
+
+> **clearRequiredPermissions**(): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:188](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L188)
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+`CommandBuilderBase.clearRequiredPermissions`
+
+***
+
+### disallowAllPermissions()
+
+> **disallowAllPermissions**(): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:194](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L194)
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+`CommandBuilderBase.disallowAllPermissions`
+
+***
+
+### equals()
+
+> **equals**(`other`): `boolean`
+
+Defined in: [packages/builders/src/commands/ContextMenuCommandBuilder.ts:28](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L28)
+
+#### Parameters
+
+##### other
+
+`APIApplicationCommand` & `object`
 
 #### Returns
 
@@ -198,147 +224,244 @@ ___
 
 #### Overrides
 
-CommandBuilderBase.equals
+`CommandBuilderBase.equals`
 
-___
+***
 
-### removeRequiredPermissions
+### removeRequiredPermissions()
 
-▸ **removeRequiredPermissions**(...`permissions`): [`UserCommandBuilder`](UserCommandBuilder.md)
+> **removeRequiredPermissions**(...`permissions`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:182](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L182)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `...permissions` | `bigint`[] |
+##### permissions
+
+...`bigint`[]
 
 #### Returns
 
-[`UserCommandBuilder`](UserCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-CommandBuilderBase.removeRequiredPermissions
+`CommandBuilderBase.removeRequiredPermissions`
 
-___
+***
 
-### setDMEnabled
+### setContexts()
 
-▸ **setDMEnabled**(`value`): [`UserCommandBuilder`](UserCommandBuilder.md)
+> **setContexts**(...`contexts`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:137](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L137)
+
+Set the interaction contexts where this command can be used (guild, bot DM, private channel).
+Only applicable to Global commands.
+
+#### Parameters
+
+##### contexts
+
+...`InteractionContextType`[]
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+`CommandBuilderBase.setContexts`
+
+***
+
+### ~~setDMEnabled()~~
+
+> **setDMEnabled**(`value`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:117](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L117)
 
 Set whether this command will be visible in DMs - Only applicable to Global commands.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | `boolean` |
+##### value
+
+`boolean`
 
 #### Returns
 
-[`UserCommandBuilder`](UserCommandBuilder.md)
+`this`
+
+#### Deprecated
+
+Use CommandBuilderBase.setContexts instead.
 
 #### Inherited from
 
-CommandBuilderBase.setDMEnabled
+`CommandBuilderBase.setDMEnabled`
 
-___
+***
 
-### setLocalizedName
+### setIntegrationTypes()
 
-▸ **setLocalizedName**(`locale`, `name`): [`UserCommandBuilder`](UserCommandBuilder.md)
+> **setIntegrationTypes**(...`integrationTypes`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:127](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L127)
+
+Set the installation contexts where this command is available (guild install and/or user install).
+Only applicable to Global commands.
+
+#### Parameters
+
+##### integrationTypes
+
+...`ApplicationIntegrationType`[]
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+`CommandBuilderBase.setIntegrationTypes`
+
+***
+
+### setLocalizedName()
+
+> **setLocalizedName**(`locale`, `name`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:107](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L107)
 
 Set a single locale's name
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `locale` | ``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"`` |
-| `name` | `string` |
+##### locale
+
+`Locale`
+
+##### name
+
+`string`
 
 #### Returns
 
-[`UserCommandBuilder`](UserCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-CommandBuilderBase.setLocalizedName
+`CommandBuilderBase.setLocalizedName`
 
-___
+***
 
-### setName
+### setName()
 
-▸ **setName**(`name`): [`UserCommandBuilder`](UserCommandBuilder.md)
+> **setName**(`name`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:89](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L89)
 
 Set the name
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `name` | `string` |
+##### name
+
+`string`
 
 #### Returns
 
-[`UserCommandBuilder`](UserCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-CommandBuilderBase.setName
+`CommandBuilderBase.setName`
 
-___
+***
 
-### setNameLocalizations
+### setNameLocalizations()
 
-▸ **setNameLocalizations**(`localizations`): [`UserCommandBuilder`](UserCommandBuilder.md)
+> **setNameLocalizations**(`localizations`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:98](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L98)
 
 Set a dictionary of localized names
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `localizations` | `Partial`<`Record`<``"hr"`` \| ``"th"`` \| ``"tr"`` \| ``"en-US"`` \| ``"en-GB"`` \| ``"bg"`` \| ``"zh-CN"`` \| ``"zh-TW"`` \| ``"cs"`` \| ``"da"`` \| ``"nl"`` \| ``"fi"`` \| ``"fr"`` \| ``"de"`` \| ``"el"`` \| ``"hi"`` \| ``"hu"`` \| ``"it"`` \| ``"ja"`` \| ``"ko"`` \| ``"lt"`` \| ``"no"`` \| ``"pl"`` \| ``"pt-BR"`` \| ``"ro"`` \| ``"ru"`` \| ``"es-ES"`` \| ``"sv-SE"`` \| ``"uk"`` \| ``"vi"``, ``null`` \| `string`\>\> |
+##### localizations
+
+`LocalizationMap`
 
 #### Returns
 
-[`UserCommandBuilder`](UserCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-CommandBuilderBase.setNameLocalizations
+`CommandBuilderBase.setNameLocalizations`
 
-___
+***
 
-### setRequiredPermissions
+### setNSFW()
 
-▸ **setRequiredPermissions**(`permissions`): [`UserCommandBuilder`](UserCommandBuilder.md)
+> **setNSFW**(`nsfw?`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:146](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L146)
+
+Set whether this command is age-restricted.
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `permissions` | [`Bitfield`](Bitfield.md) |
+##### nsfw?
+
+`boolean` = `true`
 
 #### Returns
 
-[`UserCommandBuilder`](UserCommandBuilder.md)
+`this`
 
 #### Inherited from
 
-CommandBuilderBase.setRequiredPermissions
+`CommandBuilderBase.setNSFW`
 
-___
+***
 
-### toJSON
+### setRequiredPermissions()
 
-▸ **toJSON**(): [`UserCommandData`](../modules.md#usercommanddata)
+> **setRequiredPermissions**(`permissions`): `this`
+
+Defined in: [packages/builders/src/commands/CommandBuilderBase.ts:170](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/CommandBuilderBase.ts#L170)
+
+#### Parameters
+
+##### permissions
+
+[`Bitfield`](Bitfield.md)
 
 #### Returns
 
-[`UserCommandData`](../modules.md#usercommanddata)
+`this`
+
+#### Inherited from
+
+`CommandBuilderBase.setRequiredPermissions`
+
+***
+
+### toJSON()
+
+> **toJSON**(): [`UserCommandData`](../type-aliases/UserCommandData.md)
+
+Defined in: [packages/builders/src/commands/ContextMenuCommandBuilder.ts:20](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/commands/ContextMenuCommandBuilder.ts#L20)
+
+Returns the final data that should be sent to Discord.
+
+#### Returns
+
+[`UserCommandData`](../type-aliases/UserCommandData.md)
 
 #### Overrides
 
-CommandBuilderBase.toJSON
+`CommandBuilderBase.toJSON`

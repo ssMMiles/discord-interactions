@@ -1,49 +1,47 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / InteractionHandlerNotFound
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / InteractionHandlerNotFound
 
 # Class: InteractionHandlerNotFound
 
-## Hierarchy
+Defined in: [util/errors.ts:70](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L70)
+
+## Extends
 
 - [`InteractionError`](InteractionError.md)
 
-  ↳ **`InteractionHandlerNotFound`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](InteractionHandlerNotFound.md#constructor)
-
-### Properties
-
-- [interaction](InteractionHandlerNotFound.md#interaction)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new InteractionHandlerNotFound**(`interaction`)
+> **new InteractionHandlerNotFound**(`interaction`): `InteractionHandlerNotFound`
+
+Defined in: [util/errors.ts:71](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L71)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `interaction` | `APIInteraction` |
+##### interaction
+
+`APIInteraction`
+
+#### Returns
+
+`InteractionHandlerNotFound`
 
 #### Overrides
 
-[InteractionError](InteractionError.md).[constructor](InteractionError.md#constructor)
+[`InteractionError`](InteractionError.md).[`constructor`](InteractionError.md#constructor)
 
 ## Properties
 
 ### interaction
 
-• **interaction**: `APIInteraction`
+> **interaction**: `APIInteraction`
+
+Defined in: [util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L15)
 
 #### Inherited from
 
-[InteractionError](InteractionError.md).[interaction](InteractionError.md#interaction)
-
-#### Defined in
-
-[util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/util/errors.ts#L15)
+[`InteractionError`](InteractionError.md).[`interaction`](InteractionError.md#interaction)

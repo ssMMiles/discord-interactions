@@ -1,19 +1,14 @@
 import type {
   APIButtonComponent,
   APIButtonComponentWithCustomId,
+  APIButtonComponentWithSKUId,
   APIButtonComponentWithURL,
   APIMessageComponentEmoji
 } from "discord-api-types/v10";
-import { ComponentType } from "discord-api-types/v10";
+import { ButtonStyle, ComponentType } from "discord-api-types/v10";
 import { ComponentBuilderBase } from "./ComponentBuilderBase.js";
 
-export enum ButtonStyle {
-  Primary = 1,
-  Secondary = 2,
-  Success = 3,
-  Danger = 4,
-  Link = 5
-}
+export { ButtonStyle };
 
 abstract class ButtonBuilderBase extends ComponentBuilderBase<APIButtonComponent> {
   public constructor(data?: Partial<APIButtonComponent> | ButtonStyle, label?: string) {
@@ -43,7 +38,7 @@ abstract class ButtonBuilderBase extends ComponentBuilderBase<APIButtonComponent
    * @param emoji The emoji to display on this button
    */
   public setEmoji(emoji: APIMessageComponentEmoji): this {
-    this.data.emoji = emoji;
+    (this.data as Partial<APIButtonComponentWithCustomId>).emoji = emoji;
     return this;
   }
 
@@ -61,7 +56,7 @@ abstract class ButtonBuilderBase extends ComponentBuilderBase<APIButtonComponent
    * @param label The label to display on this button
    */
   public setLabel(label: string): this {
-    this.data.label = label;
+    (this.data as Partial<APIButtonComponentWithCustomId>).label = label;
     return this;
   }
 
@@ -107,5 +102,41 @@ export class LinkButtonBuilder extends ButtonBuilderBase {
     return {
       ...this.data
     } as APIButtonComponentWithURL;
+  }
+}
+
+/**
+ * A premium (SKU) button. Premium buttons have no custom_id, label, url or emoji,
+ * and clicking one opens the SKU's purchase flow instead of sending an interaction.
+ */
+export class PremiumButtonBuilder extends ComponentBuilderBase<APIButtonComponentWithSKUId> {
+  public constructor(skuId?: string) {
+    super({ type: ComponentType.Button, style: ButtonStyle.Premium });
+
+    if (skuId) this.setSkuId(skuId);
+  }
+
+  /**
+   * Sets the SKU this button offers for purchase
+   * @param skuId The id of a purchasable SKU
+   */
+  public setSkuId(skuId: string): this {
+    this.data.sku_id = skuId;
+    return this;
+  }
+
+  /**
+   * Sets whether this button is disabled or not
+   * @param disabled Whether or not to disable this button
+   */
+  public setDisabled(disabled = true): this {
+    this.data.disabled = disabled;
+    return this;
+  }
+
+  public toJSON(): APIButtonComponentWithSKUId {
+    return {
+      ...this.data
+    } as APIButtonComponentWithSKUId;
   }
 }

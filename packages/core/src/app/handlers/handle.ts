@@ -2,6 +2,7 @@ import {
   APIChatInputApplicationCommandInteraction,
   APIInteraction,
   APIMessageApplicationCommandInteraction,
+  APIPrimaryEntryPointCommandInteraction,
   APIMessageChannelSelectInteractionData,
   APIMessageComponentButtonInteraction,
   APIMessageMentionableSelectInteractionData,
@@ -27,6 +28,7 @@ import {
   ButtonContext,
   ChannelSelectMenuContext,
   ComponentContext,
+  EntryPointCommandContext,
   ISubcommandGroup,
   ISubcommandHandler,
   InteractionContext,
@@ -34,6 +36,7 @@ import {
   MessageCommandContext,
   ModalSubmitContext,
   PingContext,
+  RegisteredEntryPointCommand,
   RegisteredMessageCommand,
   RegisteredUserCommand,
   RoleSelectMenuContext,
@@ -88,6 +91,16 @@ function getExecutionContext(
             responseCallback
           );
           hook = "command.message";
+
+          break;
+        case ApplicationCommandType.PrimaryEntryPoint:
+          context = new EntryPointCommandContext(
+            app,
+            interaction as APIPrimaryEntryPointCommandInteraction,
+            timestamps,
+            responseCallback
+          );
+          hook = "command.entryPoint";
 
           break;
         default:
@@ -190,6 +203,7 @@ export async function _handleInteraction(
   timestamps: { signature: Date; received: Date },
   responseCallback: ResponseCallback
 ): Promise<InteractionContext> {
+  // eslint-disable-next-line prefer-const
   let [context, hooks] = getExecutionContext(this, interaction, timestamps, responseCallback);
 
   for (const hook of hooks) {
@@ -285,6 +299,26 @@ export async function _handleInteraction(
       break;
     }
 
+    case EntryPointCommandContext: {
+      context = context as EntryPointCommandContext;
+      interaction = interaction as APIPrimaryEntryPointCommandInteraction;
+
+      // Entry Point commands are global-only
+      const command = this.commands[ApplicationCommandType.PrimaryEntryPoint].get(context.name) as
+        | RegisteredEntryPointCommand
+        | undefined;
+
+      if (!command) throw new InteractionHandlerNotFound(interaction);
+
+      try {
+        await command.handler(context);
+      } catch (err: unknown) {
+        throw new InteractionHandlerError(interaction, err);
+      }
+
+      break;
+    }
+
     case ButtonContext:
     case StringSelectMenuContext:
     case UserSelectMenuContext:
@@ -309,6 +343,7 @@ export async function _handleInteraction(
       if (!component) throw new InteractionHandlerNotFound(interaction);
 
       try {
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         await component.handler(context as any);
       } catch (err: unknown) {
         throw new InteractionHandlerError(interaction, err);

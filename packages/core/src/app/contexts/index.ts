@@ -1,5 +1,6 @@
 import type {
   AutocompleteContext,
+  EntryPointCommandContext,
   MessageCommandContext,
   SlashCommandContext,
   UserCommandContext
@@ -28,7 +29,11 @@ export type InteractionContext =
   | ModalSubmitContext
   | PingContext;
 
-export type ApplicationCommandContext = SlashCommandContext | UserCommandContext | MessageCommandContext;
+export type ApplicationCommandContext =
+  | SlashCommandContext
+  | UserCommandContext
+  | MessageCommandContext
+  | EntryPointCommandContext;
 
 export type ComponentContext<S = never> = ButtonContext<S> | SelectMenuContext<S>;
 export type SelectMenuContext<S = never> =

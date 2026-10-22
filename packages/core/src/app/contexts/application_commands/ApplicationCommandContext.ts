@@ -65,10 +65,13 @@ export class BaseCommandContext<
     this.commandGuildId = interaction.data.guild_id;
 
     this.resolved = new ResolvedData();
-    if (interaction.data.resolved !== undefined) {
-      for (const [key, map] of Object.entries(interaction.data.resolved)) {
-        for (const [id, value] of Object.entries(map)) {
-          this.resolved[key].set(id, value);
+    // Entry Point command interactions carry no resolved data
+    const resolved = "resolved" in interaction.data ? interaction.data.resolved : undefined;
+    if (resolved !== undefined) {
+      for (const [key, map] of Object.entries(resolved)) {
+        for (const [id, value] of Object.entries(map as object)) {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          (this.resolved as any)[key].set(id, value);
         }
       }
     }
@@ -78,6 +81,18 @@ export class BaseCommandContext<
     Builder extends ButtonBuilder | SelectMenuBuilders | ModalBuilder = ButtonBuilder | SelectMenuBuilders
   >(name: string, state: object = {}, ttl?: number): Promise<Builder> {
     return super.createGlobalComponent(`${this.name}.${name}`, state, ttl);
+  }
+
+  /**
+   * Launch your app's Activity in response to this interaction.
+   * Only available to apps with Activities enabled.
+   */
+  launchActivity(): Promise<void> {
+    if (this.replied) throw new InteractionResponseAlreadySent();
+
+    return this._reply({
+      type: InteractionResponseType.LaunchActivity
+    });
   }
 
   defer(flags?: MessageFlags): Promise<void> {

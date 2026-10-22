@@ -1,178 +1,217 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / ButtonBuilder
+[**@discord-interactions/builders**](../README.md)
+
+***
+
+[@discord-interactions/builders](../globals.md) / ButtonBuilder
 
 # Class: ButtonBuilder
 
+Defined in: [packages/builders/src/components/ButtonBuilder.ts:74](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ButtonBuilder.ts#L74)
+
 Represents a non-validated button component
 
-## Hierarchy
+## Extends
 
 - `ButtonBuilderBase`
 
-  ↳ **`ButtonBuilder`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](ButtonBuilder.md#constructor)
-
-### Properties
-
-- [data](ButtonBuilder.md#data)
-
-### Methods
-
-- [setCustomId](ButtonBuilder.md#setcustomid)
-- [setDisabled](ButtonBuilder.md#setdisabled)
-- [setEmoji](ButtonBuilder.md#setemoji)
-- [setLabel](ButtonBuilder.md#setlabel)
-- [setStyle](ButtonBuilder.md#setstyle)
-- [toJSON](ButtonBuilder.md#tojson)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new ButtonBuilder**(`data?`, `label?`)
+> **new ButtonBuilder**(`data?`, `label?`): `ButtonBuilder`
+
+Defined in: [packages/builders/src/components/ButtonBuilder.ts:14](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ButtonBuilder.ts#L14)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `data?` | `Partial`<`APIButtonComponent`\> \| [`ButtonStyle`](../enums/ButtonStyle.md) |
-| `label?` | `string` |
+##### data?
+
+[`ButtonStyle`](../enumerations/ButtonStyle.md) \| `Partial`\<`APIButtonComponent`\>
+
+##### label?
+
+`string`
+
+#### Returns
+
+`ButtonBuilder`
 
 #### Inherited from
 
-ButtonBuilderBase.constructor
+`ButtonBuilderBase.constructor`
 
 ## Properties
 
 ### data
 
-• `Readonly` **data**: `Partial`<`APIButtonComponent`\>
+> `readonly` **data**: `Partial`\<`APIButtonComponent`\>
+
+Defined in: [packages/builders/src/components/ComponentBuilderBase.ts:22](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ComponentBuilderBase.ts#L22)
 
 The API data associated with this component
 
 #### Inherited from
 
-ButtonBuilderBase.data
-
-#### Defined in
-
-[src/components/ComponentBuilderBase.ts:19](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/components/ComponentBuilderBase.ts#L19)
+`ButtonBuilderBase.data`
 
 ## Methods
 
-### setCustomId
+### setCustomId()
 
-▸ **setCustomId**(`customId`): [`ButtonBuilder`](ButtonBuilder.md)
+> **setCustomId**(`customId`): `this`
+
+Defined in: [packages/builders/src/components/ButtonBuilder.ts:79](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ButtonBuilder.ts#L79)
 
 Sets the custom Id for this button
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `customId` | `string` | The custom id to use for this button |
+##### customId
+
+`string`
+
+The custom id to use for this button
 
 #### Returns
 
-[`ButtonBuilder`](ButtonBuilder.md)
+`this`
 
-___
+***
 
-### setDisabled
+### setDisabled()
 
-▸ **setDisabled**(`disabled?`): [`ButtonBuilder`](ButtonBuilder.md)
+> **setDisabled**(`disabled?`): `this`
+
+Defined in: [packages/builders/src/components/ButtonBuilder.ts:49](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ButtonBuilder.ts#L49)
 
 Sets whether this button is disable or not
 
 #### Parameters
 
-| Name | Type | Default value | Description |
-| :------ | :------ | :------ | :------ |
-| `disabled` | `boolean` | `true` | Whether or not to disable this button or not |
+##### disabled?
+
+`boolean` = `true`
+
+Whether or not to disable this button or not
 
 #### Returns
 
-[`ButtonBuilder`](ButtonBuilder.md)
+`this`
 
 #### Inherited from
 
-ButtonBuilderBase.setDisabled
+`ButtonBuilderBase.setDisabled`
 
-___
+***
 
-### setEmoji
+### setEmoji()
 
-▸ **setEmoji**(`emoji`): [`ButtonBuilder`](ButtonBuilder.md)
+> **setEmoji**(`emoji`): `this`
+
+Defined in: [packages/builders/src/components/ButtonBuilder.ts:40](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ButtonBuilder.ts#L40)
 
 Sets the emoji to display on this button
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `emoji` | `APIMessageComponentEmoji` | The emoji to display on this button |
+##### emoji
+
+`APIMessageComponentEmoji`
+
+The emoji to display on this button
 
 #### Returns
 
-[`ButtonBuilder`](ButtonBuilder.md)
+`this`
 
 #### Inherited from
 
-ButtonBuilderBase.setEmoji
+`ButtonBuilderBase.setEmoji`
 
-___
+***
 
-### setLabel
+### setId()
 
-▸ **setLabel**(`label`): [`ButtonBuilder`](ButtonBuilder.md)
+> **setId**(`id`): `this`
+
+Defined in: [packages/builders/src/components/ComponentBuilderBase.ts:34](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ComponentBuilderBase.ts#L34)
+
+Sets this component's optional 32-bit numeric identifier, unique within the message.
+Discord generates sequential ids for components sent without one.
+
+#### Parameters
+
+##### id
+
+`number`
+
+#### Returns
+
+`this`
+
+#### Inherited from
+
+`ButtonBuilderBase.setId`
+
+***
+
+### setLabel()
+
+> **setLabel**(`label`): `this`
+
+Defined in: [packages/builders/src/components/ButtonBuilder.ts:58](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ButtonBuilder.ts#L58)
 
 Sets the label for this button
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `label` | `string` | The label to display on this button |
+##### label
+
+`string`
+
+The label to display on this button
 
 #### Returns
 
-[`ButtonBuilder`](ButtonBuilder.md)
+`this`
 
 #### Inherited from
 
-ButtonBuilderBase.setLabel
+`ButtonBuilderBase.setLabel`
 
-___
+***
 
-### setStyle
+### setStyle()
 
-▸ **setStyle**(`style`): [`ButtonBuilder`](ButtonBuilder.md)
+> **setStyle**(`style`): `this`
+
+Defined in: [packages/builders/src/components/ButtonBuilder.ts:31](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ButtonBuilder.ts#L31)
 
 Sets the style of this button
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `style` | [`ButtonStyle`](../enums/ButtonStyle.md) | The style of the button |
+##### style
+
+[`ButtonStyle`](../enumerations/ButtonStyle.md)
+
+The style of the button
 
 #### Returns
 
-[`ButtonBuilder`](ButtonBuilder.md)
+`this`
 
 #### Inherited from
 
-ButtonBuilderBase.setStyle
+`ButtonBuilderBase.setStyle`
 
-___
+***
 
-### toJSON
+### toJSON()
 
-▸ **toJSON**(): `APIButtonComponentWithCustomId`
+> **toJSON**(): `APIButtonComponentWithCustomId`
+
+Defined in: [packages/builders/src/components/ButtonBuilder.ts:84](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/components/ButtonBuilder.ts#L84)
 
 #### Returns
 
@@ -180,4 +219,4 @@ ___
 
 #### Overrides
 
-ButtonBuilderBase.toJSON
+`ButtonBuilderBase.toJSON`

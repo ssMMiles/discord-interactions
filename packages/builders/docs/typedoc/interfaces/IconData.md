@@ -1,34 +1,29 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / IconData
+[**@discord-interactions/builders**](../README.md)
+
+***
+
+[@discord-interactions/builders](../globals.md) / IconData
 
 # Interface: IconData
 
-## Table of contents
-
-### Properties
-
-- [iconURL](IconData.md#iconurl)
-- [proxyIconURL](IconData.md#proxyiconurl)
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:5](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L5)
 
 ## Properties
 
-### iconURL
+### iconURL?
 
-• `Optional` **iconURL**: `string`
+> `optional` **iconURL?**: `string`
+
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:9](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L9)
 
 The URL of the icon
 
-#### Defined in
+***
 
-[src/responses/EmbedBuilder.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/responses/EmbedBuilder.ts#L9)
+### proxyIconURL?
 
-___
+> `optional` **proxyIconURL?**: `string`
 
-### proxyIconURL
-
-• `Optional` **proxyIconURL**: `string`
+Defined in: [packages/builders/src/responses/EmbedBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/EmbedBuilder.ts#L13)
 
 The proxy URL of the icon
-
-#### Defined in
-
-[src/responses/EmbedBuilder.ts:13](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/responses/EmbedBuilder.ts#L13)

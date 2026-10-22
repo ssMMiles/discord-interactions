@@ -1,234 +1,225 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / SlashCommand
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / SlashCommand
 
 # Class: SlashCommand
 
-## Hierarchy
+Defined in: [app/commands/SlashCommand.ts:11](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/SlashCommand.ts#L11)
 
-- `HandledInteraction`<`RESTPostAPIChatInputApplicationCommandsJSONBody`, `SlashCommandBuilder`, [`SlashCommandContext`](SlashCommandContext.md)\>
+## Extends
 
-  ↳ **`SlashCommand`**
+- `HandledInteraction`\<`RESTPostAPIChatInputApplicationCommandsJSONBody`, `SlashCommandBuilder`, [`SlashCommandContext`](SlashCommandContext.md)\>
 
 ## Implements
 
 - [`ISlashCommand`](../interfaces/ISlashCommand.md)
 
-## Table of contents
-
-### Constructors
-
-- [constructor](SlashCommand.md#constructor)
-
-### Properties
-
-- [autocompleteHandler](SlashCommand.md#autocompletehandler)
-- [builder](SlashCommand.md#builder)
-- [components](SlashCommand.md#components)
-- [handler](SlashCommand.md#handler)
-
-### Accessors
-
-- [data](SlashCommand.md#data)
-
-### Methods
-
-- [addComponents](SlashCommand.md#addcomponents)
-- [setAutocompleteHandler](SlashCommand.md#setautocompletehandler)
-- [setComponents](SlashCommand.md#setcomponents)
-- [setHandler](SlashCommand.md#sethandler)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new SlashCommand**(`builder`, `handler?`, `components?`, `autocompleteHandler?`)
+> **new SlashCommand**(`builder`, `handler?`, `components?`, `autocompleteHandler?`): `SlashCommand`
+
+Defined in: [app/commands/SlashCommand.ts:17](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/SlashCommand.ts#L17)
 
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `builder` | `SlashCommandBuilder` | `undefined` |
-| `handler` | (`ctx`: [`SlashCommandContext`](SlashCommandContext.md)) => `Promise`<`void`\> | `undefined` |
-| `components` | [`Component`](../modules.md#component)[] | `[]` |
-| `autocompleteHandler` | (`ctx`: [`AutocompleteContext`](AutocompleteContext.md)) => `Promise`<`void`\> | `undefined` |
+##### builder
+
+`SlashCommandBuilder`
+
+##### handler?
+
+(`ctx`) => `Promise`\<`void`\>
+
+##### components?
+
+([`Component`](../type-aliases/Component.md) \| [`Modal`](Modal.md))[] = `[]`
+
+##### autocompleteHandler?
+
+(`ctx`) => `Promise`\<`void`\>
+
+#### Returns
+
+`SlashCommand`
 
 #### Overrides
 
-HandledInteraction&lt;RESTPostAPIChatInputApplicationCommandsJSONBody, SlashCommandBuilder, SlashCommandContext\&gt;.constructor
+`HandledInteraction<RESTPostAPIChatInputApplicationCommandsJSONBody, SlashCommandBuilder, SlashCommandContext>.constructor`
 
 ## Properties
 
 ### autocompleteHandler
 
-• **autocompleteHandler**: (`ctx`: [`AutocompleteContext`](AutocompleteContext.md)) => `Promise`<`void`\>
+> **autocompleteHandler**: (`ctx`) => `Promise`\<`void`\>
 
-#### Type declaration
+Defined in: [app/commands/SlashCommand.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/SlashCommand.ts#L15)
 
-▸ (`ctx`): `Promise`<`void`\>
+#### Parameters
 
-##### Parameters
+##### ctx
 
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`AutocompleteContext`](AutocompleteContext.md) |
+[`AutocompleteContext`](AutocompleteContext.md)
 
-##### Returns
+#### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Implementation of
 
-[ISlashCommand](../interfaces/ISlashCommand.md).[autocompleteHandler](../interfaces/ISlashCommand.md#autocompletehandler)
+[`ISlashCommand`](../interfaces/ISlashCommand.md).[`autocompleteHandler`](../interfaces/ISlashCommand.md#autocompletehandler)
 
-#### Defined in
-
-[app/commands/SlashCommand.ts:15](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/SlashCommand.ts#L15)
-
-___
+***
 
 ### builder
 
-• **builder**: `SlashCommandBuilder`
+> **builder**: `SlashCommandBuilder`
+
+Defined in: [app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 #### Implementation of
 
-[ISlashCommand](../interfaces/ISlashCommand.md).[builder](../interfaces/ISlashCommand.md#builder)
+[`ISlashCommand`](../interfaces/ISlashCommand.md).[`builder`](../interfaces/ISlashCommand.md#builder)
 
 #### Inherited from
 
-HandledInteraction.builder
+`HandledInteraction.builder`
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L4)
-
-___
+***
 
 ### components
 
-• **components**: ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[]
+> **components**: ([`Component`](../type-aliases/Component.md) \| [`Modal`](Modal.md))[]
+
+Defined in: [app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 #### Implementation of
 
-[ISlashCommand](../interfaces/ISlashCommand.md).[components](../interfaces/ISlashCommand.md#components)
+[`ISlashCommand`](../interfaces/ISlashCommand.md).[`components`](../interfaces/ISlashCommand.md#components)
 
 #### Inherited from
 
-HandledInteraction.components
+`HandledInteraction.components`
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L11)
-
-___
+***
 
 ### handler
 
-• **handler**: (`ctx`: [`SlashCommandContext`](SlashCommandContext.md)) => `Promise`<`void`\>
+> **handler**: (`ctx`) => `Promise`\<`void`\>
 
-#### Type declaration
+Defined in: [app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L9)
 
-▸ (`ctx`): `Promise`<`void`\>
+#### Parameters
 
-##### Parameters
+##### ctx
 
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`SlashCommandContext`](SlashCommandContext.md) |
+[`SlashCommandContext`](SlashCommandContext.md)
 
-##### Returns
+#### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Implementation of
 
-[ISlashCommand](../interfaces/ISlashCommand.md).[handler](../interfaces/ISlashCommand.md#handler)
+[`ISlashCommand`](../interfaces/ISlashCommand.md).[`handler`](../interfaces/ISlashCommand.md#handler)
 
 #### Inherited from
 
-HandledInteraction.handler
-
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L9)
+`HandledInteraction.handler`
 
 ## Accessors
 
 ### data
 
-• `get` **data**(): `Data`
+#### Get Signature
 
-#### Returns
+> **get** **data**(): `Data`
+
+Defined in: [app/handlers/HandledInteraction.ts:5](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L5)
+
+##### Returns
 
 `Data`
 
 #### Inherited from
 
-HandledInteraction.data
+`HandledInteraction.data`
 
 ## Methods
 
-### addComponents
+### addComponents()
 
-▸ **addComponents**(...`components`): [`SlashCommand`](SlashCommand.md)
+> **addComponents**(...`components`): `this`
 
-#### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `...components` | ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[] |
-
-#### Returns
-
-[`SlashCommand`](SlashCommand.md)
-
-___
-
-### setAutocompleteHandler
-
-▸ **setAutocompleteHandler**(`handler`): [`SlashCommand`](SlashCommand.md)
+Defined in: [app/commands/SlashCommand.ts:44](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/SlashCommand.ts#L44)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `handler` | (`ctx`: [`AutocompleteContext`](AutocompleteContext.md)) => `Promise`<`void`\> |
+##### components
+
+...([`Component`](../type-aliases/Component.md) \| [`Modal`](Modal.md))[]
 
 #### Returns
 
-[`SlashCommand`](SlashCommand.md)
+`this`
 
-___
+***
 
-### setComponents
+### setAutocompleteHandler()
 
-▸ **setComponents**(`components`): [`SlashCommand`](SlashCommand.md)
+> **setAutocompleteHandler**(`handler`): `SlashCommand`
+
+Defined in: [app/commands/SlashCommand.ts:32](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/SlashCommand.ts#L32)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `components` | ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[] |
+##### handler
+
+(`ctx`) => `Promise`\<`void`\>
 
 #### Returns
 
-[`SlashCommand`](SlashCommand.md)
+`SlashCommand`
 
-___
+***
 
-### setHandler
+### setComponents()
 
-▸ **setHandler**(`handler`): [`SlashCommand`](SlashCommand.md)
+> **setComponents**(`components`): `this`
+
+Defined in: [app/commands/SlashCommand.ts:38](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/SlashCommand.ts#L38)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `handler` | (`ctx`: [`SlashCommandContext`](SlashCommandContext.md)) => `Promise`<`void`\> |
+##### components
+
+([`Component`](../type-aliases/Component.md) \| [`Modal`](Modal.md))[]
 
 #### Returns
 
-[`SlashCommand`](SlashCommand.md)
+`this`
+
+***
+
+### setHandler()
+
+> **setHandler**(`handler`): `this`
+
+Defined in: [app/handlers/HandledInteraction.ts:20](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L20)
+
+#### Parameters
+
+##### handler
+
+(`ctx`) => `Promise`\<`void`\>
+
+#### Returns
+
+`this`
 
 #### Inherited from
 
-HandledInteraction.setHandler
+`HandledInteraction.setHandler`

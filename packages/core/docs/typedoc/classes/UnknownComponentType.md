@@ -1,49 +1,47 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / UnknownComponentType
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / UnknownComponentType
 
 # Class: UnknownComponentType
 
-## Hierarchy
+Defined in: [util/errors.ts:46](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L46)
+
+## Extends
 
 - [`InteractionError`](InteractionError.md)
 
-  ↳ **`UnknownComponentType`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](UnknownComponentType.md#constructor)
-
-### Properties
-
-- [interaction](UnknownComponentType.md#interaction)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new UnknownComponentType**(`interaction`)
+> **new UnknownComponentType**(`interaction`): `UnknownComponentType`
+
+Defined in: [util/errors.ts:47](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L47)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `interaction` | `APIInteraction` |
+##### interaction
+
+`APIInteraction`
+
+#### Returns
+
+`UnknownComponentType`
 
 #### Overrides
 
-[InteractionError](InteractionError.md).[constructor](InteractionError.md#constructor)
+[`InteractionError`](InteractionError.md).[`constructor`](InteractionError.md#constructor)
 
 ## Properties
 
 ### interaction
 
-• **interaction**: `APIInteraction`
+> **interaction**: `APIInteraction`
+
+Defined in: [util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L15)
 
 #### Inherited from
 
-[InteractionError](InteractionError.md).[interaction](InteractionError.md#interaction)
-
-#### Defined in
-
-[util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/util/errors.ts#L15)
+[`InteractionError`](InteractionError.md).[`interaction`](InteractionError.md#interaction)

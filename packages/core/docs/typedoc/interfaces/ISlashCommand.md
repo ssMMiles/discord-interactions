@@ -1,102 +1,77 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / ISlashCommand
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / ISlashCommand
 
 # Interface: ISlashCommand
 
-## Hierarchy
+Defined in: [app/commands/SlashCommand.ts:7](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/SlashCommand.ts#L7)
 
-- `ICommandBase`<`SlashCommandBuilder`, [`SlashCommandContext`](../classes/SlashCommandContext.md)\>
+## Extends
 
-  ↳ **`ISlashCommand`**
-
-## Implemented by
-
-- [`SlashCommand`](../classes/SlashCommand.md)
-
-## Table of contents
-
-### Properties
-
-- [autocompleteHandler](ISlashCommand.md#autocompletehandler)
-- [builder](ISlashCommand.md#builder)
-- [components](ISlashCommand.md#components)
-- [handler](ISlashCommand.md#handler)
+- `ICommandBase`\<`SlashCommandBuilder`, [`SlashCommandContext`](../classes/SlashCommandContext.md)\>
 
 ## Properties
 
-### autocompleteHandler
+### autocompleteHandler?
 
-• `Optional` **autocompleteHandler**: (`ctx`: [`AutocompleteContext`](../classes/AutocompleteContext.md)) => `Promise`<`void`\>
+> `optional` **autocompleteHandler?**: (`ctx`) => `Promise`\<`void`\>
 
-#### Type declaration
+Defined in: [app/commands/SlashCommand.ts:8](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/SlashCommand.ts#L8)
 
-▸ (`ctx`): `Promise`<`void`\>
+#### Parameters
 
-##### Parameters
+##### ctx
 
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`AutocompleteContext`](../classes/AutocompleteContext.md) |
+[`AutocompleteContext`](../classes/AutocompleteContext.md)
 
-##### Returns
+#### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
-#### Defined in
-
-[app/commands/SlashCommand.ts:8](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/SlashCommand.ts#L8)
-
-___
+***
 
 ### builder
 
-• **builder**: `SlashCommandBuilder`
+> **builder**: `SlashCommandBuilder`
+
+Defined in: [app/commands/Base.ts:21](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L21)
 
 #### Inherited from
 
-ICommandBase.builder
+`ICommandBase.builder`
 
-#### Defined in
+***
 
-[app/commands/Base.ts:13](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L13)
+### components?
 
-___
+> `optional` **components?**: ([`Component`](../type-aliases/Component.md) \| [`Modal`](../classes/Modal.md))[]
 
-### components
-
-• `Optional` **components**: ([`Component`](../modules.md#component) \| [`Modal`](../classes/Modal.md))[]
+Defined in: [app/commands/Base.ts:25](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L25)
 
 #### Inherited from
 
-ICommandBase.components
+`ICommandBase.components`
 
-#### Defined in
-
-[app/commands/Base.ts:17](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L17)
-
-___
+***
 
 ### handler
 
-• **handler**: (`ctx`: [`SlashCommandContext`](../classes/SlashCommandContext.md)) => `Promise`<`void`\>
+> **handler**: (`ctx`) => `Promise`\<`void`\>
 
-#### Type declaration
+Defined in: [app/commands/Base.ts:23](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L23)
 
-▸ (`ctx`): `Promise`<`void`\>
+#### Parameters
 
-##### Parameters
+##### ctx
 
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`SlashCommandContext`](../classes/SlashCommandContext.md) |
+[`SlashCommandContext`](../classes/SlashCommandContext.md)
 
-##### Returns
+#### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-ICommandBase.handler
-
-#### Defined in
-
-[app/commands/Base.ts:15](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L15)
+`ICommandBase.handler`

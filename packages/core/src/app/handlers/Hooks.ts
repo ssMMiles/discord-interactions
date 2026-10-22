@@ -1,6 +1,7 @@
 import {
   AutocompleteContext,
   ButtonContext,
+  EntryPointCommandContext,
   InteractionContext,
   MessageCommandContext,
   ModalSubmitContext,
@@ -19,6 +20,7 @@ export type ContextMap = {
   "command.autocomplete": AutocompleteContext;
   "command.user": UserCommandContext;
   "command.message": MessageCommandContext;
+  "command.entryPoint": EntryPointCommandContext;
 
   "component.button": ButtonContext;
   "component.selectMenu": SelectMenuContext;
@@ -39,6 +41,7 @@ export type InteractionHooks = {
   "command.autocomplete": ((ctx: AutocompleteContext) => Promise<void | true>)[];
   "command.user": ((ctx: UserCommandContext) => Promise<void | true>)[];
   "command.message": ((ctx: MessageCommandContext) => Promise<void | true>)[];
+  "command.entryPoint": ((ctx: EntryPointCommandContext) => Promise<void | true>)[];
 
   "component.button": ((ctx: ButtonContext) => Promise<void | true>)[];
   "component.selectMenu": ((ctx: SelectMenuContext) => Promise<void | true>)[];

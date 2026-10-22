@@ -1,223 +1,214 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / RegisteredSlashCommand
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / RegisteredSlashCommand
 
 # Class: RegisteredSlashCommand
 
-## Hierarchy
+Defined in: [app/commands/SlashCommand.ts:51](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/SlashCommand.ts#L51)
 
-- `RegisteredCommandBase`<`SlashCommandBuilder`, [`SlashCommandContext`](SlashCommandContext.md)\>
+## Extends
 
-  ↳ **`RegisteredSlashCommand`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](RegisteredSlashCommand.md#constructor)
-
-### Properties
-
-- [builder](RegisteredSlashCommand.md#builder)
-- [components](RegisteredSlashCommand.md#components)
-- [handler](RegisteredSlashCommand.md#handler)
-- [id](RegisteredSlashCommand.md#id)
-- [lastSyncedAt](RegisteredSlashCommand.md#lastsyncedat)
-
-### Methods
-
-- [autocompleteHandler](RegisteredSlashCommand.md#autocompletehandler)
-- [create](RegisteredSlashCommand.md#create)
-- [delete](RegisteredSlashCommand.md#delete)
-- [setAutocompleteHandler](RegisteredSlashCommand.md#setautocompletehandler)
-- [setHandler](RegisteredSlashCommand.md#sethandler)
-- [sync](RegisteredSlashCommand.md#sync)
-- [update](RegisteredSlashCommand.md#update)
+- `RegisteredCommandBase`\<`SlashCommandBuilder`, [`SlashCommandContext`](SlashCommandContext.md)\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new RegisteredSlashCommand**(`manager`, `command`)
+> **new RegisteredSlashCommand**(`manager`, `command`): `RegisteredSlashCommand`
+
+Defined in: [app/commands/Base.ts:168](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L168)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `manager` | [`CommandManager`](CommandManager.md) |
-| `command` | `Object` |
-| `command.builder` | `SlashCommandBuilder` |
-| `command.handler` | (`ctx`: [`SlashCommandContext`](SlashCommandContext.md)) => `Promise`<`void`\> |
+##### manager
+
+[`CommandManager`](CommandManager.md)
+
+##### command
+
+###### builder
+
+`SlashCommandBuilder`
+
+###### handler
+
+(`ctx`) => `Promise`\<`void`\>
+
+#### Returns
+
+`RegisteredSlashCommand`
 
 #### Inherited from
 
-RegisteredCommandBase<SlashCommandBuilder, SlashCommandContext\>.constructor
+`RegisteredCommandBase<SlashCommandBuilder, SlashCommandContext>.constructor`
 
 ## Properties
 
 ### builder
 
-• **builder**: `SlashCommandBuilder`
+> **builder**: `SlashCommandBuilder`
+
+Defined in: [app/commands/Base.ts:41](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L41)
 
 #### Inherited from
 
-RegisteredCommandBase.builder
+`RegisteredCommandBase.builder`
 
-#### Defined in
+***
 
-[app/commands/Base.ts:28](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L28)
+### components?
 
-___
+> `optional` **components?**: ([`Component`](../type-aliases/Component.md) \| [`Modal`](Modal.md))[]
 
-### components
-
-• `Optional` **components**: ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[]
+Defined in: [app/commands/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L43)
 
 #### Inherited from
 
-RegisteredCommandBase.components
+`RegisteredCommandBase.components`
 
-#### Defined in
-
-[app/commands/Base.ts:30](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L30)
-
-___
+***
 
 ### handler
 
-• **handler**: (`ctx`: [`SlashCommandContext`](SlashCommandContext.md)) => `Promise`<`void`\>
+> **handler**: (`ctx`) => `Promise`\<`void`\>
 
-#### Type declaration
-
-▸ (`ctx`): `Promise`<`void`\>
-
-##### Parameters
-
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`SlashCommandContext`](SlashCommandContext.md) |
-
-##### Returns
-
-`Promise`<`void`\>
-
-#### Inherited from
-
-RegisteredCommandBase.handler
-
-#### Defined in
-
-[app/commands/Base.ts:153](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L153)
-
-___
-
-### id
-
-• **id**: `string` = `"0"`
-
-#### Inherited from
-
-RegisteredCommandBase.id
-
-#### Defined in
-
-[app/commands/Base.ts:32](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L32)
-
-___
-
-### lastSyncedAt
-
-• `Optional` **lastSyncedAt**: `Date`
-
-#### Inherited from
-
-RegisteredCommandBase.lastSyncedAt
-
-#### Defined in
-
-[app/commands/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L26)
-
-## Methods
-
-### autocompleteHandler
-
-▸ **autocompleteHandler**(`ctx`): `Promise`<`void`\>
+Defined in: [app/commands/Base.ts:166](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L166)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`AutocompleteContext`](AutocompleteContext.md) |
+##### ctx
+
+[`SlashCommandContext`](SlashCommandContext.md)
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
-___
+#### Inherited from
 
-### create
+`RegisteredCommandBase.handler`
 
-▸ **create**(): `Promise`<`void`\>
+***
+
+### id
+
+> **id**: `string` = `"0"`
+
+Defined in: [app/commands/Base.ts:45](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L45)
+
+#### Inherited from
+
+`RegisteredCommandBase.id`
+
+***
+
+### lastSyncedAt?
+
+> `optional` **lastSyncedAt?**: `Date`
+
+Defined in: [app/commands/Base.ts:39](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L39)
+
+#### Inherited from
+
+`RegisteredCommandBase.lastSyncedAt`
+
+## Methods
+
+### autocompleteHandler()
+
+> **autocompleteHandler**(`ctx`): `Promise`\<`void`\>
+
+Defined in: [app/commands/SlashCommand.ts:52](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/SlashCommand.ts#L52)
+
+#### Parameters
+
+##### ctx
+
+[`AutocompleteContext`](AutocompleteContext.md)
+
+#### Returns
+
+`Promise`\<`void`\>
+
+***
+
+### create()
+
+> **create**(): `Promise`\<`void`\>
+
+Defined in: [app/commands/Base.ts:63](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L63)
 
 Create this command in Discord
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredCommandBase.create
+`RegisteredCommandBase.create`
 
-___
+***
 
-### delete
+### delete()
 
-▸ **delete**(`id?`): `Promise`<`void`\>
+> **delete**(`id?`): `Promise`\<`void`\>
+
+Defined in: [app/commands/Base.ts:95](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L95)
 
 Delete this command from Discord
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id?` | `string` |
+##### id?
+
+`string`
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredCommandBase.delete
+`RegisteredCommandBase.delete`
 
-___
+***
 
-### setAutocompleteHandler
+### setAutocompleteHandler()
 
-▸ **setAutocompleteHandler**(`handler`): [`RegisteredSlashCommand`](RegisteredSlashCommand.md)
+> **setAutocompleteHandler**(`handler`): `RegisteredSlashCommand`
+
+Defined in: [app/commands/SlashCommand.ts:56](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/SlashCommand.ts#L56)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `handler` | (`ctx`: [`AutocompleteContext`](AutocompleteContext.md)) => `Promise`<`void`\> |
+##### handler
+
+(`ctx`) => `Promise`\<`void`\>
 
 #### Returns
 
-[`RegisteredSlashCommand`](RegisteredSlashCommand.md)
+`RegisteredSlashCommand`
 
-___
+***
 
-### setHandler
+### setHandler()
 
-▸ **setHandler**(`handler`): `void`
+> **setHandler**(`handler`): `void`
+
+Defined in: [app/commands/Base.ts:178](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L178)
 
 Update this command's handler function
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `handler` | (`ctx`: [`SlashCommandContext`](SlashCommandContext.md)) => `Promise`<`void`\> | New command handler |
+##### handler
+
+(`ctx`) => `Promise`\<`void`\>
+
+New command handler
 
 #### Returns
 
@@ -225,46 +216,50 @@ Update this command's handler function
 
 #### Inherited from
 
-RegisteredCommandBase.setHandler
+`RegisteredCommandBase.setHandler`
 
-___
+***
 
-### sync
+### sync()
 
-▸ **sync**(`remoteCommand?`): `Promise`<`void`\>
+> **sync**(`remoteCommand?`): `Promise`\<`void`\>
+
+Defined in: [app/commands/Base.ts:110](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L110)
 
 Sync this command with Discord
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `remoteCommand?` | `APIApplicationCommand` |
+##### remoteCommand?
+
+`APIApplicationCommand`
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredCommandBase.sync
+`RegisteredCommandBase.sync`
 
-___
+***
 
-### update
+### update()
 
-▸ **update**(`id?`): `Promise`<`void`\>
+> **update**(`id?`): `Promise`\<`void`\>
+
+Defined in: [app/commands/Base.ts:78](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L78)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id?` | `string` |
+##### id?
+
+`string`
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredCommandBase.update
+`RegisteredCommandBase.update`

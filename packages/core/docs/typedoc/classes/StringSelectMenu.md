@@ -1,249 +1,231 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / StringSelectMenu
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / StringSelectMenu
 
 # Class: StringSelectMenu
 
-## Hierarchy
+Defined in: [app/components/select\_menus/StringSelectMenu.ts:6](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/select_menus/StringSelectMenu.ts#L6)
 
-- `ComponentBase`<`APIStringSelectComponent`, `StringSelectMenuBuilder`, [`StringSelectMenuContext`](StringSelectMenuContext.md)\>
+## Extends
 
-  ↳ **`StringSelectMenu`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](StringSelectMenu.md#constructor)
-
-### Properties
-
-- [allowExpired](StringSelectMenu.md#allowexpired)
-- [builder](StringSelectMenu.md#builder)
-- [components](StringSelectMenu.md#components)
-- [handler](StringSelectMenu.md#handler)
-- [id](StringSelectMenu.md#id)
-- [parentCommand](StringSelectMenu.md#parentcommand)
-
-### Accessors
-
-- [data](StringSelectMenu.md#data)
-
-### Methods
-
-- [createInstance](StringSelectMenu.md#createinstance)
-- [setAllowExpired](StringSelectMenu.md#setallowexpired)
-- [setHandler](StringSelectMenu.md#sethandler)
-- [setId](StringSelectMenu.md#setid)
+- [`ComponentBase`](ComponentBase.md)\<`APIStringSelectComponent`, `StringSelectMenuBuilder`, [`StringSelectMenuContext`](StringSelectMenuContext.md)\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new StringSelectMenu**(`id`, `builder`, `handler?`)
+> **new StringSelectMenu**(`id`, `builder`, `handler?`): `StringSelectMenu`
+
+Defined in: [app/components/select\_menus/StringSelectMenu.ts:11](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/select_menus/StringSelectMenu.ts#L11)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
-| `builder` | `StringSelectMenuBuilder` |
-| `handler` | (`ctx`: [`SelectMenuContext`](../modules.md#selectmenucontext)<`never`\>) => `Promise`<`void`\> |
+##### id
+
+`string`
+
+##### builder
+
+`StringSelectMenuBuilder`
+
+##### handler?
+
+(`ctx`) => `Promise`\<`void`\>
+
+#### Returns
+
+`StringSelectMenu`
 
 #### Overrides
 
-ComponentBase&lt;
-  APIStringSelectComponent,
-  StringSelectMenuBuilder,
-  StringSelectMenuContext
-\&gt;.constructor
+[`ComponentBase`](ComponentBase.md).[`constructor`](ComponentBase.md#constructor)
 
 ## Properties
 
 ### allowExpired
 
-• **allowExpired**: `boolean` = `false`
+> **allowExpired**: `boolean` = `false`
+
+Defined in: [app/components/Base.ts:16](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L16)
 
 #### Inherited from
 
-ComponentBase.allowExpired
+[`ComponentBase`](ComponentBase.md).[`allowExpired`](ComponentBase.md#allowexpired)
 
-#### Defined in
-
-[app/components/Base.ts:10](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/components/Base.ts#L10)
-
-___
+***
 
 ### builder
 
-• **builder**: `StringSelectMenuBuilder`
+> **builder**: `StringSelectMenuBuilder`
+
+Defined in: [app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L4)
 
 #### Inherited from
 
-ComponentBase.builder
+[`ComponentBase`](ComponentBase.md).[`builder`](ComponentBase.md#builder-1)
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:4](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L4)
-
-___
+***
 
 ### components
 
-• **components**: ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[]
+> **components**: ([`Component`](../type-aliases/Component.md) \| [`Modal`](Modal.md))[]
+
+Defined in: [app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L11)
 
 #### Inherited from
 
-ComponentBase.components
+[`EntryPointCommand`](EntryPointCommand.md).[`components`](EntryPointCommand.md#components)
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:11](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L11)
-
-___
+***
 
 ### handler
 
-• **handler**: (`ctx`: [`StringSelectMenuContext`](StringSelectMenuContext.md)<`never`\>) => `Promise`<`void`\>
+> **handler**: (`ctx`) => `Promise`\<`void`\>
 
-#### Type declaration
+Defined in: [app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L9)
 
-▸ (`ctx`): `Promise`<`void`\>
+#### Parameters
 
-##### Parameters
+##### ctx
 
-| Name | Type |
-| :------ | :------ |
-| `ctx` | [`StringSelectMenuContext`](StringSelectMenuContext.md)<`never`\> |
+[`StringSelectMenuContext`](StringSelectMenuContext.md)
 
-##### Returns
+#### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-ComponentBase.handler
+[`ComponentBase`](ComponentBase.md).[`handler`](ComponentBase.md#handler)
 
-#### Defined in
-
-[app/handlers/HandledInteraction.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/handlers/HandledInteraction.ts#L9)
-
-___
+***
 
 ### id
 
-• **id**: `string`
+> **id**: `string`
+
+Defined in: [app/components/Base.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L15)
 
 #### Inherited from
 
-ComponentBase.id
+[`ComponentBase`](ComponentBase.md).[`id`](ComponentBase.md#id)
 
-#### Defined in
+***
 
-[app/components/Base.ts:9](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/components/Base.ts#L9)
+### parentCommand?
 
-___
+> `optional` **parentCommand?**: `string`
 
-### parentCommand
-
-• `Optional` **parentCommand**: `string`
+Defined in: [app/components/Base.ts:18](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L18)
 
 #### Inherited from
 
-ComponentBase.parentCommand
-
-#### Defined in
-
-[app/components/Base.ts:12](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/components/Base.ts#L12)
+[`ComponentBase`](ComponentBase.md).[`parentCommand`](ComponentBase.md#parentcommand)
 
 ## Accessors
 
 ### data
 
-• `get` **data**(): `Data`
+#### Get Signature
 
-#### Returns
+> **get** **data**(): `Data`
+
+Defined in: [app/handlers/HandledInteraction.ts:5](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L5)
+
+##### Returns
 
 `Data`
 
 #### Inherited from
 
-ComponentBase.data
+[`ComponentBase`](ComponentBase.md).[`data`](ComponentBase.md#data-1)
 
 ## Methods
 
-### createInstance
+### createInstance()
 
-▸ **createInstance**(`state`): `StringSelectMenuBuilder`
+> **createInstance**(`state`): `StringSelectMenuBuilder`
+
+Defined in: [app/components/select\_menus/StringSelectMenu.ts:21](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/select_menus/StringSelectMenu.ts#L21)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `state` | `string` |
+##### state
+
+`string`
 
 #### Returns
 
 `StringSelectMenuBuilder`
 
-___
+***
 
-### setAllowExpired
+### setAllowExpired()
 
-▸ **setAllowExpired**(`value`): [`StringSelectMenu`](StringSelectMenu.md)
+> **setAllowExpired**(`value`): `StringSelectMenu`
+
+Defined in: [app/components/Base.ts:40](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L40)
 
 Set whether component execution should continue when state data has expired
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | `boolean` |
+##### value
+
+`boolean`
 
 #### Returns
 
-[`StringSelectMenu`](StringSelectMenu.md)
+`StringSelectMenu`
 
 #### Inherited from
 
-ComponentBase.setAllowExpired
+[`ComponentBase`](ComponentBase.md).[`setAllowExpired`](ComponentBase.md#setallowexpired)
 
-___
+***
 
-### setHandler
+### setHandler()
 
-▸ **setHandler**(`handler`): [`StringSelectMenu`](StringSelectMenu.md)
+> **setHandler**(`handler`): `this`
+
+Defined in: [app/handlers/HandledInteraction.ts:20](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/handlers/HandledInteraction.ts#L20)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `handler` | (`ctx`: [`StringSelectMenuContext`](StringSelectMenuContext.md)<`never`\>) => `Promise`<`void`\> |
+##### handler
+
+(`ctx`) => `Promise`\<`void`\>
 
 #### Returns
 
-[`StringSelectMenu`](StringSelectMenu.md)
+`this`
 
 #### Inherited from
 
-ComponentBase.setHandler
+[`ComponentBase`](ComponentBase.md).[`setHandler`](ComponentBase.md#sethandler)
 
-___
+***
 
-### setId
+### setId()
 
-▸ **setId**(`id`): [`StringSelectMenu`](StringSelectMenu.md)
+> **setId**(`id`): `StringSelectMenu`
+
+Defined in: [app/components/Base.ts:34](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/components/Base.ts#L34)
 
 Set the component ID
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id` | `string` |
+##### id
+
+`string`
 
 #### Returns
 
-[`StringSelectMenu`](StringSelectMenu.md)
+`StringSelectMenu`
 
 #### Inherited from
 
-ComponentBase.setId
+[`ComponentBase`](ComponentBase.md).[`setId`](ComponentBase.md#setid)

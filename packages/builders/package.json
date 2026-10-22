@@ -1,31 +1,31 @@
 {
   "name": "@discord-interactions/builders",
   "description": "Simple builder classes for Discord interaction responses (Messages/Modals), Components and Commands.",
-  "version": "0.3.18",
+  "version": "0.4.0",
   "license": "Apache-2.0",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "type": "module",
   "dependencies": {
-    "discord-api-types": "^0.37.18",
+    "discord-api-types": "^0.38.52",
     "formdata-node": "^4.3.3"
   },
   "devDependencies": {
-    "@types/jest": "^28.1.4",
-    "@types/node": "^18.0.3",
-    "@typescript-eslint/eslint-plugin": "^5.17.0",
-    "@typescript-eslint/parser": "^5.17.0",
-    "dts-bundle-generator": "^6.12.0",
-    "eslint": "^8.19.0",
-    "jest": "^28.1.2",
+    "@types/jest": "^29.5.13",
+    "@types/node": "^22.15.0",
+    "@typescript-eslint/eslint-plugin": "^8.8.0",
+    "@typescript-eslint/parser": "^8.8.0",
+    "dts-bundle-generator": "^9.5.1",
+    "eslint": "^8.57.0",
+    "jest": "^29.7.0",
     "prettier": "^2.6.2",
     "rimraf": "^4.3.1",
     "rollup": "^3.18.0",
     "rollup-plugin-dts": "^5.2.0",
-    "ts-jest": "^28.0.5",
-    "typedoc": "^0.23.6",
-    "typedoc-plugin-markdown": "^3.13.3",
-    "typescript": "^4.5.4"
+    "ts-jest": "^29.2.5",
+    "typedoc": "^0.28.0",
+    "typedoc-plugin-markdown": "^4.2.10",
+    "typescript": "^5.5.4"
   },
   "scripts": {
     "clean": "rimraf dist",
@@ -38,7 +38,7 @@
     "test": "NODE_OPTIONS=--experimental-vm-modules npx jest tests"
   },
   "engines": {
-    "node": ">=16"
+    "node": ">=18"
   },
   "publishConfig": {
     "access": "public"

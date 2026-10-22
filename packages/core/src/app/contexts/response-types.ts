@@ -3,6 +3,7 @@ import type {
   APIInteractionResponseChannelMessageWithSource,
   APIInteractionResponseDeferredChannelMessageWithSource,
   APIInteractionResponseDeferredMessageUpdate,
+  APIInteractionResponseLaunchActivity,
   APIInteractionResponseUpdateMessage,
   APIModalInteractionResponse
 } from "discord-api-types/v10";
@@ -14,12 +15,14 @@ export type MessageUpdateResponse =
   | APIInteractionResponseDeferredChannelMessageWithSource
   | APIInteractionResponseUpdateMessage
   | APIInteractionResponseDeferredMessageUpdate
+  | APIInteractionResponseLaunchActivity
   | FormData;
 
 export type ChannelMessageResponse =
   | APIModalInteractionResponse
   | APIInteractionResponseChannelMessageWithSource
   | APIInteractionResponseDeferredChannelMessageWithSource
+  | APIInteractionResponseLaunchActivity
   | FormData;
 
 export type AutocompleteResponse = APIApplicationCommandAutocompleteResponse;
@@ -29,4 +32,5 @@ export type ModalSubmitResponse =
   | APIInteractionResponseDeferredChannelMessageWithSource
   | APIInteractionResponseUpdateMessage
   | APIInteractionResponseDeferredMessageUpdate
+  | APIInteractionResponseLaunchActivity
   | FormData;

@@ -1,214 +1,211 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / RegisteredCommandGroup
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / RegisteredCommandGroup
 
 # Class: RegisteredCommandGroup
 
-## Hierarchy
+Defined in: [app/commands/CommandGroup.ts:43](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/CommandGroup.ts#L43)
 
-- `RegisteredDiscordCommand`<`CommandGroupBuilder`\>
+## Extends
 
-  ↳ **`RegisteredCommandGroup`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](RegisteredCommandGroup.md#constructor)
-
-### Properties
-
-- [builder](RegisteredCommandGroup.md#builder)
-- [components](RegisteredCommandGroup.md#components)
-- [handlers](RegisteredCommandGroup.md#handlers)
-- [id](RegisteredCommandGroup.md#id)
-- [lastSyncedAt](RegisteredCommandGroup.md#lastsyncedat)
-
-### Methods
-
-- [create](RegisteredCommandGroup.md#create)
-- [delete](RegisteredCommandGroup.md#delete)
-- [setHandlers](RegisteredCommandGroup.md#sethandlers)
-- [sync](RegisteredCommandGroup.md#sync)
-- [update](RegisteredCommandGroup.md#update)
+- `RegisteredDiscordCommand`\<`CommandGroupBuilder`\>
 
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new RegisteredCommandGroup**(`manager`, `command`)
+> **new RegisteredCommandGroup**(`manager`, `command`): `RegisteredCommandGroup`
+
+Defined in: [app/commands/CommandGroup.ts:45](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/CommandGroup.ts#L45)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `manager` | [`CommandManager`](CommandManager.md) |
-| `command` | `Object` |
-| `command.builder` | `CommandGroupBuilder` |
-| `command.handlers` | [`ISubcommandHandlers`](../modules.md#isubcommandhandlers) |
+##### manager
+
+[`CommandManager`](CommandManager.md)
+
+##### command
+
+###### builder
+
+`CommandGroupBuilder`
+
+###### handlers
+
+[`ISubcommandHandlers`](../type-aliases/ISubcommandHandlers.md)
+
+#### Returns
+
+`RegisteredCommandGroup`
 
 #### Overrides
 
-RegisteredDiscordCommand&lt;CommandGroupBuilder\&gt;.constructor
+`RegisteredDiscordCommand<CommandGroupBuilder>.constructor`
 
 ## Properties
 
 ### builder
 
-• **builder**: `CommandGroupBuilder`
+> **builder**: `CommandGroupBuilder`
+
+Defined in: [app/commands/Base.ts:41](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L41)
 
 #### Inherited from
 
-RegisteredDiscordCommand.builder
+`RegisteredDiscordCommand.builder`
 
-#### Defined in
+***
 
-[app/commands/Base.ts:28](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L28)
+### components?
 
-___
+> `optional` **components?**: ([`Component`](../type-aliases/Component.md) \| [`Modal`](Modal.md))[]
 
-### components
-
-• `Optional` **components**: ([`Component`](../modules.md#component) \| [`Modal`](Modal.md))[]
+Defined in: [app/commands/Base.ts:43](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L43)
 
 #### Inherited from
 
-RegisteredDiscordCommand.components
+`RegisteredDiscordCommand.components`
 
-#### Defined in
-
-[app/commands/Base.ts:30](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L30)
-
-___
+***
 
 ### handlers
 
-• **handlers**: `Record`<`string`, [`ISubcommandHandler`](../interfaces/ISubcommandHandler.md) \| [`ISubcommandGroup`](../modules.md#isubcommandgroup)\>
+> **handlers**: `Record`\<`string`, [`ISubcommandHandler`](../interfaces/ISubcommandHandler.md) \| [`ISubcommandGroup`](../type-aliases/ISubcommandGroup.md)\>
 
-#### Defined in
+Defined in: [app/commands/CommandGroup.ts:44](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/CommandGroup.ts#L44)
 
-[app/commands/CommandGroup.ts:44](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/CommandGroup.ts#L44)
-
-___
+***
 
 ### id
 
-• **id**: `string` = `"0"`
+> **id**: `string` = `"0"`
+
+Defined in: [app/commands/Base.ts:45](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L45)
 
 #### Inherited from
 
-RegisteredDiscordCommand.id
+`RegisteredDiscordCommand.id`
 
-#### Defined in
+***
 
-[app/commands/Base.ts:32](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L32)
+### lastSyncedAt?
 
-___
+> `optional` **lastSyncedAt?**: `Date`
 
-### lastSyncedAt
-
-• `Optional` **lastSyncedAt**: `Date`
+Defined in: [app/commands/Base.ts:39](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L39)
 
 #### Inherited from
 
-RegisteredDiscordCommand.lastSyncedAt
-
-#### Defined in
-
-[app/commands/Base.ts:26](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/app/commands/Base.ts#L26)
+`RegisteredDiscordCommand.lastSyncedAt`
 
 ## Methods
 
-### create
+### create()
 
-▸ **create**(): `Promise`<`void`\>
+> **create**(): `Promise`\<`void`\>
+
+Defined in: [app/commands/Base.ts:63](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L63)
 
 Create this command in Discord
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredDiscordCommand.create
+`RegisteredDiscordCommand.create`
 
-___
+***
 
-### delete
+### delete()
 
-▸ **delete**(`id?`): `Promise`<`void`\>
+> **delete**(`id?`): `Promise`\<`void`\>
+
+Defined in: [app/commands/Base.ts:95](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L95)
 
 Delete this command from Discord
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id?` | `string` |
+##### id?
+
+`string`
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredDiscordCommand.delete
+`RegisteredDiscordCommand.delete`
 
-___
+***
 
-### setHandlers
+### setHandlers()
 
-▸ **setHandlers**(`handler`): `void`
+> **setHandlers**(`handler`): `void`
+
+Defined in: [app/commands/CommandGroup.ts:55](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/CommandGroup.ts#L55)
 
 Update this command's handler function
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
-| `handler` | [`ISubcommandHandlers`](../modules.md#isubcommandhandlers) | New command handler |
+##### handler
+
+[`ISubcommandHandlers`](../type-aliases/ISubcommandHandlers.md)
+
+New command handler
 
 #### Returns
 
 `void`
 
-___
+***
 
-### sync
+### sync()
 
-▸ **sync**(`remoteCommand?`): `Promise`<`void`\>
+> **sync**(`remoteCommand?`): `Promise`\<`void`\>
+
+Defined in: [app/commands/Base.ts:110](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L110)
 
 Sync this command with Discord
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `remoteCommand?` | `APIApplicationCommand` |
+##### remoteCommand?
+
+`APIApplicationCommand`
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredDiscordCommand.sync
+`RegisteredDiscordCommand.sync`
 
-___
+***
 
-### update
+### update()
 
-▸ **update**(`id?`): `Promise`<`void`\>
+> **update**(`id?`): `Promise`\<`void`\>
+
+Defined in: [app/commands/Base.ts:78](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/app/commands/Base.ts#L78)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `id?` | `string` |
+##### id?
+
+`string`
 
 #### Returns
 
-`Promise`<`void`\>
+`Promise`\<`void`\>
 
 #### Inherited from
 
-RegisteredDiscordCommand.update
+`RegisteredDiscordCommand.update`

@@ -1,49 +1,47 @@
-[@discord-interactions/core](../README.md) / [Exports](../modules.md) / UnknownApplicationCommandType
+[**@discord-interactions/core**](../README.md)
+
+***
+
+[@discord-interactions/core](../globals.md) / UnknownApplicationCommandType
 
 # Class: UnknownApplicationCommandType
 
-## Hierarchy
+Defined in: [util/errors.ts:40](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L40)
+
+## Extends
 
 - [`InteractionError`](InteractionError.md)
 
-  ↳ **`UnknownApplicationCommandType`**
-
-## Table of contents
-
-### Constructors
-
-- [constructor](UnknownApplicationCommandType.md#constructor)
-
-### Properties
-
-- [interaction](UnknownApplicationCommandType.md#interaction)
-
 ## Constructors
 
-### constructor
+### Constructor
 
-• **new UnknownApplicationCommandType**(`interaction`)
+> **new UnknownApplicationCommandType**(`interaction`): `UnknownApplicationCommandType`
+
+Defined in: [util/errors.ts:41](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L41)
 
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `interaction` | `APIInteraction` |
+##### interaction
+
+`APIInteraction`
+
+#### Returns
+
+`UnknownApplicationCommandType`
 
 #### Overrides
 
-[InteractionError](InteractionError.md).[constructor](InteractionError.md#constructor)
+[`InteractionError`](InteractionError.md).[`constructor`](InteractionError.md#constructor)
 
 ## Properties
 
 ### interaction
 
-• **interaction**: `APIInteraction`
+> **interaction**: `APIInteraction`
+
+Defined in: [util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/core/src/util/errors.ts#L15)
 
 #### Inherited from
 
-[InteractionError](InteractionError.md).[interaction](InteractionError.md#interaction)
-
-#### Defined in
-
-[util/errors.ts:15](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/core/src/util/errors.ts#L15)
+[`InteractionError`](InteractionError.md).[`interaction`](InteractionError.md#interaction)

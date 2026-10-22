@@ -1,41 +1,33 @@
-[@discord-interactions/builders](../README.md) / [Exports](../modules.md) / AttachedFile
+[**@discord-interactions/builders**](../README.md)
+
+***
+
+[@discord-interactions/builders](../globals.md) / AttachedFile
 
 # Interface: AttachedFile
 
-## Table of contents
-
-### Properties
-
-- [data](AttachedFile.md#data)
-- [description](AttachedFile.md#description)
-- [name](AttachedFile.md#name)
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:37](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L37)
 
 ## Properties
 
 ### data
 
-• **data**: `string` \| `Uint8Array` \| `Blob`
+> **data**: `string` \| `Uint8Array`\<`ArrayBufferLike`\> \| `Blob`
 
-#### Defined in
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:41](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L41)
 
-[src/responses/MessageBuilder.ts:20](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/responses/MessageBuilder.ts#L20)
+***
 
-___
+### description?
 
-### description
+> `optional` **description?**: `string`
 
-• `Optional` **description**: `string`
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:39](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L39)
 
-#### Defined in
+***
 
-[src/responses/MessageBuilder.ts:18](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/responses/MessageBuilder.ts#L18)
+### name?
 
-___
+> `optional` **name?**: `string`
 
-### name
-
-• `Optional` **name**: `string`
-
-#### Defined in
-
-[src/responses/MessageBuilder.ts:17](https://github.com/ssMMiles/discord-interactions/blob/c2e131f/packages/builders/src/responses/MessageBuilder.ts#L17)
+Defined in: [packages/builders/src/responses/MessageBuilder.ts:38](https://github.com/ssMMiles/discord-interactions/blob/6f83de924580b28f6a9d2d51d6c72bfcd26a7e85/packages/builders/src/responses/MessageBuilder.ts#L38)
